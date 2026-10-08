@@ -1,0 +1,11 @@
+import {it,expect} from 'vitest';import {selectQuestions} from '../../src/study/selection';import {question} from '../fixtures';
+const now=new Date('2026-10-08T12:00:00Z');
+function input(count=12){const questions=Array.from({length:count},(_,i)=>question({id:'q'+i,status:'reviewed',assessmentReserved:i===count-1}));return {questions,trust:questions.map(q=>({questionId:q.id,revision:1,sourceCheckedAt:now.toISOString(),humanReviewedAt:now.toISOString(),reviewer:'Reviewer',invalidatedAt:null})),reviewItems:[],objectiveStats:[],previousSessionIds:[],attemptedIds:[],requestedCount:10,mode:'learn' as const,useReserved:false,now,random:()=>0.5}}
+it('no_duplicates_across_pools and stable selection',()=>{const result=selectQuestions(input());expect(result.questions).toHaveLength(10);expect(new Set(result.questions.map(q=>q.id)).size).toBe(10);expect(selectQuestions(input())).toEqual(result)});
+it('domain_filter_before_sampling',()=>expect(selectQuestions({...input(),domainId:'storage'}).availableCount).toBe(0));
+it('three_available_never_becomes_ten',()=>expect(selectQuestions({...input(3),useReserved:true}).questions).toHaveLength(3));
+it('draft_and_invalidated_are_excluded',()=>{const i=input();i.questions[0].status='draft';i.trust[1].invalidatedAt=now.toISOString() as any;expect(selectQuestions(i).questions.some(q=>['q0','q1'].includes(q.id))).toBe(false)});
+it('holdout_needs_explicit_consent',()=>{expect(selectQuestions(input(3)).questions).toHaveLength(2);expect(selectQuestions({...input(3),useReserved:true}).releasesReservedIds).toEqual(['q2'])});
+it('previous_session_avoided_when_possible',()=>expect(selectQuestions({...input(20),previousSessionIds:['q0']}).questions.map(q=>q.id)).not.toContain('q0'));
+it('timed_weighted_sampling_shortfall_is_reported',()=>expect(selectQuestions({...input(),mode:'timed'}).shortages.length).toBeGreaterThan(0));
+it('ten_question_mix',()=>{const i=input(30);const reviewItems=i.questions.slice(0,8).map(q=>({questionId:q.id,revision:1,stage:0 as const,dueAt:'2026-10-01T00:00:00Z',misconception:false}));const result=selectQuestions({...i,reviewItems});expect(result.allocations).toEqual([4,3,2,1])});
