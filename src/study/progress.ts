@@ -1,0 +1,10 @@
+import type {Question} from '../content/types';import type {Attempt} from '../sessions/types';import bp from '../../content/blueprints/az104-2026-04-17.json';
+interface Metric {distinctAttempts:number;accuracy:number|null;insufficientEvidence:boolean;confidentWrongCount:number;available:number;covered:number}
+export interface ProgressSummary {domains:Record<string,Metric>;objectives:Record<string,Metric>;recent:{learn:{count:number;accuracy:number|null};timed:{count:number;accuracy:number|null}};contentGaps:string[];weakObjectives:string[];totalDistinct:number}
+export function calculateProgress(attempts:Attempt[],eligible:Question[],_now:Date):ProgressSummary{
+ const valid=attempts.filter(a=>a.mode!=='draft-preview'&&eligible.some(q=>q.id===a.questionId&&q.revision===a.questionRevision)).sort((a,b)=>Date.parse(a.submittedAt)-Date.parse(b.submittedAt));const latest=[...new Map(valid.map(a=>[a.questionId,a])).values()];
+ const metric=(qs:Question[]):Metric=>{const data=latest.filter(a=>qs.some(q=>q.id===a.questionId));return {distinctAttempts:data.length,accuracy:data.length?data.filter(a=>a.correct).length/data.length:null,insufficientEvidence:data.length<5,confidentWrongCount:data.filter(a=>!a.correct&&a.confidence==='confident').length,available:qs.length,covered:data.length}};
+ const domains=Object.fromEntries(bp.domains.map(d=>[d.id,metric(eligible.filter(q=>q.domainId===d.id))]));const objectives=Object.fromEntries(bp.domains.flatMap(d=>d.objectives.map(o=>[o.id,metric(eligible.filter(q=>q.objectiveId===o.id))])));
+ const recentMode=(mode:'learn'|'timed')=>{const data=valid.filter(a=>a.mode===mode).slice(-50);return {count:data.length,accuracy:data.length?data.filter(a=>a.correct).length/data.length:null}};
+ return {domains,objectives,recent:{learn:recentMode('learn'),timed:recentMode('timed')},contentGaps:Object.entries(objectives).filter(([,m])=>!m.available).map(([id])=>id),weakObjectives:Object.entries(objectives).filter(([,m])=>!m.insufficientEvidence&&(m.accuracy!<.7||m.confidentWrongCount>0)).sort((a,b)=>a[1].accuracy!-b[1].accuracy!).map(([id])=>id),totalDistinct:latest.length};
+}

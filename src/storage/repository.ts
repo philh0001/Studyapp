@@ -12,4 +12,8 @@ export class StudyRepository{
   for(const old of previous?.questions??[]){const next=pack.questions.find(q=>q.id===old.id);if(!next||next.revision!==old.revision){const oldTrust=await this.db.contentTrust.get([old.id,old.revision]);if(oldTrust)await this.db.contentTrust.put({...oldTrust,invalidatedAt:new Date().toISOString()});await this.db.reviews.delete(old.id);await this.db.sessions.filter(s=>s.questionSnapshots.some(q=>q.id===old.id&&q.revision===old.revision)).modify(s=>{if(!s.correctionWarnings.some(i=>i.questionId===old.id&&i.revision===old.revision))s.correctionWarnings.push({questionId:old.id,revision:old.revision})});}else if(JSON.stringify(next)!==JSON.stringify(old)&&JSON.stringify({...next,status:old.status,review:old.review})!==JSON.stringify(old))throw Error('Changed content requires a new question revision');}
   await this.db.packs.put(pack);if(checks.length)await this.db.sourceChecks.bulkPut(checks);
  })}
+ async saveNote(questionId:string,revision:number,text:string):Promise<void>{if(text.length>10000)throw Error('Note limit is 10000 characters');const existing=await this.db.notes.get(questionId);await this.db.notes.put({questionId,revision,text,createdAt:existing?.createdAt??new Date().toISOString()})}
+ async setBookmark(questionId:string,revision:number,enabled:boolean):Promise<void>{if(enabled)await this.db.bookmarks.put({questionId,revision,createdAt:new Date().toISOString()});else await this.db.bookmarks.delete(questionId)}
+ async getContentReviewQueue():Promise<Question[]>{return (await this.getQuestions()).filter(q=>q.status==='draft')}
+
 }
