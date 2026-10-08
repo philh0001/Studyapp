@@ -20,3 +20,8 @@ Routing and headers follow current Cloudflare documentation retrieved on 2026-10
 - https://developers.cloudflare.com/workers/static-assets/routing/single-page-application/
 
 The shipped bank is draft preview until the owner performs explicit source review in the app. A valid build does not imply Microsoft endorsement, content approval or a pass prediction.
+
+
+## Hosting choice — 2026-10-08
+
+The owner selected Cloudflare hosting like Showtime. Showtime's production README and current Worker inventory were checked read-only: its public website is served by a Static Assets Worker. Studyapp will use the same website delivery approach through the separate `az104-revision-web` identity, initially at its returned `workers.dev` URL. No custom domain or paid resource is required. Study progress remains browser-local; bundled questions are publicly retrievable. Production publication of the verified draft-preview build remains subject to the separate release approval.

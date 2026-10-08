@@ -17,3 +17,5 @@ Official-source requirement: all supplied question answers, option explanations,
 Current stage: first application build implemented on 8 October 2026, with parallel build assistance explicitly requested by the user. [Implementation plan](docs/superpowers/plans/2026-10-08-az104-revision.md) tracks the approved scope. Fifty original AI-assisted drafts cite retrieved official Microsoft Learn pages; zero are represented as human-reviewed in the shipped pack. Local manual approval enables scored study. Whole-app verification and independent review are recorded in the release notes. No changes to Showtime or remote Cloudflare resources.
 
 Release constraints from the supplied plan: no production deployment or paid services without approval. Maintain documentation and verification evidence throughout work.
+
+Hosting preference confirmed: Cloudflare like Showtime, with a separate Static Assets Worker and initially a workers.dev URL. Production release approval remains the final publication gate; no custom domain, private Access layer or account backend has been requested.
