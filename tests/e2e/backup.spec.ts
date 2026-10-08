@@ -26,3 +26,14 @@ test('exports personal settings and restores them only after downloading a recov
  await expect(page.getByLabel('Exam date')).toHaveValue('2027-03-19');await expect(page.getByLabel('Appearance')).toHaveValue('dark');
  await page.reload();await expect(page.getByLabel('Exam date')).toHaveValue('2027-03-19');
 });
+
+test('imports a local gzip backup and retains recovery-before-replacement safeguards',async({page})=>{
+ await page.goto('/#/settings');await expect(page.getByRole('button',{name:'Export backup',exact:true})).toBeVisible();
+ await page.getByLabel('Appearance').selectOption('dark');
+ const downloaded=page.waitForEvent('download');await page.getByRole('button',{name:'Export backup',exact:true}).click();const json=await readFile((await (await downloaded).path())!,'utf8');
+ const gzip=await page.evaluate(async text=>{const blob=await new Response(new Blob([text]).stream().pipeThrough(new CompressionStream('gzip'))).blob();return Array.from(new Uint8Array(await blob.arrayBuffer()))},json);
+ await page.getByLabel('Appearance').selectOption('light');
+ await page.getByLabel('Import backup').setInputFiles({name:'personal-backup.json.gz',mimeType:'application/gzip',buffer:Buffer.from(gzip)});
+ const confirmation=page.getByRole('group',{name:'Confirm backup replacement'});await expect(confirmation).toBeVisible();await expect(confirmation.getByRole('button',{name:'Confirm replace',exact:true})).toBeDisabled();
+ const recovery=page.waitForEvent('download');await confirmation.getByRole('button',{name:'Download recovery backup',exact:true}).click();await recovery;await confirmation.getByRole('button',{name:'Confirm replace',exact:true}).click();await expect(page.getByLabel('Appearance')).toHaveValue('dark');
+});

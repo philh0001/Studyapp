@@ -4,10 +4,11 @@ A personal, phone-first revision website for Microsoft AZ-104. Study at your own
 
 ## Current status
 
-The first application build is implemented on `feature/az104-revision`: phone-first learning, timed practice, spaced review, progress, notes/bookmarks, validated backups and offline installation. The public draft-preview website is live at [az104-revision-web.showtime-workers.workers.dev](https://az104-revision-web.showtime-workers.workers.dev). The 50-question starter pack remains draft until explicit human source review.
+The first application build is implemented on `feature/az104-revision`: phone-first learning, timed practice, spaced review, progress, notes/bookmarks, validated backups and offline installation. The public draft-preview website is live at [az104-revision-web.showtime-workers.workers.dev](https://az104-revision-web.showtime-workers.workers.dev). The expanded bank has 300 original drafts covering all 82 published subskills. It includes advanced scenarios, ordering/matching, exhibits, linked cases and draft timed practice. All content remains draft until explicit human source review.
 
 ## Start here
 
+- [Approved twenty-improvement plan](docs/superpowers/plans/2026-10-08-exam-alignment-improvements.md).
 - [Implementation plan](docs/superpowers/plans/2026-10-08-az104-revision.md): 12 tasks, interfaces, tests, and release checkpoints.
 - [Product design](docs/superpowers/specs/2026-10-08-az104-revision-design.md): agreed scope and behaviour.
 - [Project context](PROJECT_CONTEXT.md): decisions and current stage.
@@ -30,10 +31,12 @@ npm ci
 npm run dev
 ```
 
-For verification: `npm run check`. For browser checks: install the Playwright Chromium browser, then `npm run test:e2e`. `npm run build` produces `dist/`; `npx vite preview --host 0.0.0.0` previews that installable build.
+For verification: `npm run check`. For browser checks: install the Playwright Chromium and WebKit browsers with their system dependencies, then `npm run test:e2e`. `npm run build` produces `dist/`; `npx vite preview --host 0.0.0.0` previews that installable build.
 
 Start with **Explore draft questions** for unscored practice. In **Review → Content review**, check each cited Microsoft Learn source and approve individual revisions to enable scored learning and timed practice. A source check is separate from technical approval. There is no bulk approval. Set an exam date only when you want one.
 
-Settings contains local JSON export/restore and explicit data deletion. Restored content requires fresh local review; historical attempts are preserved. Source documents open online, while the installed app and question bank work offline. Updates wait until active sessions are finished.
+Settings contains local JSON/gzip export/restore and explicit data deletion. Restored content requires fresh local review; historical attempts are preserved. Source documents open online, while the installed app and question bank work offline. Updates wait until active sessions are finished.
 
-See [live deployment verification](docs/verification/2026-10-08-cloudflare-release.md), [hosting preparation](production/web/README.md) and [release verification](docs/verification/2026-10-08-release-preparation.md). Production deployment and paid resources require separate release approval. Product work uses a feature branch and pull request.
+See [live deployment verification](docs/verification/2026-10-08-cloudflare-release.md), [hosting preparation](production/web/README.md) and [release verification](docs/verification/2026-10-08-release-preparation.md). The owner authorised the draft publication and this improvement deployment. Paid services and unrelated resources remain outside the approved scope. Product work uses a feature branch and pull request.
+
+Detailed coverage separates installed, approved and studied subskills. The home page suggests a flexible study week without a fixed exam date. Source rechecks produce reviewable reports; see [source freshness](docs/SOURCE_FRESHNESS.md). Real-phone installation and screen-reader checks remain to be performed on the actual device; the Settings checklist records only checks you do yourself.

@@ -1,0 +1,3834 @@
+{
+  "id": "az104-monitoring-expanded-draft",
+  "version": 1,
+  "blueprintId": "az104-2026-04-17",
+  "checkedAt": "2026-10-08T01:41:29.732Z",
+  "questions": [
+    {
+      "id": "az104-monitoring-plus-01",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A CPU chart averages one-minute samples across a busy hour. Brief spikes disappear.",
+      "prompt": "Which aggregation best exposes the highest recorded sample in each interval?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Max",
+          "explanation": "Max selects the highest measurement in each aggregation interval, preserving the observed peak for that interval.",
+          "referenceIds": [
+            "monx-metrics"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Average",
+          "explanation": "Average combines measurements into a mean; this can hide a short CPU spike among lower readings.",
+          "referenceIds": [
+            "monx-metrics"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Count",
+          "explanation": "Count reports the number of measurements and does not identify the highest recorded CPU percentage.",
+          "referenceIds": [
+            "monx-metrics"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Max selects the highest measurement in each aggregation interval, preserving the observed peak for that interval.",
+      "summaryReferenceIds": [
+        "monx-metrics"
+      ],
+      "references": [
+        {
+          "id": "monx-metrics",
+          "title": "Azure Monitor metrics aggregation and display explained - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained",
+          "section": "Aggregation types",
+          "checkedAt": "2026-10-08T01:38:44.843Z",
+          "documentUpdatedAt": "2026-08-10T22:17:00Z",
+          "evidenceSummary": "Retrieved section Aggregation types. Scenario claim evidence: Max selects the highest measurement in each aggregation interval, preserving the observed peak for that interval. Average combines measurements into a mean; this can hide a short CPU spike among lower readings. Count reports the number of measurements and does not identify the highest recorded CPU percentage.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "metrics"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-02",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A storage metric contains an API-name dimension. Operations needs separate lines for each API.",
+      "prompt": "Which chart configuration meets the requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Split by API name",
+          "explanation": "Splitting displays separate metric series for the selected dimension values, revealing each API independently.",
+          "referenceIds": [
+            "monx-metrics"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Use a single aggregate without splitting",
+          "explanation": "A single aggregate combines the dimension values and therefore does not provide separate API lines.",
+          "referenceIds": [
+            "monx-metrics"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Increase time grain only",
+          "explanation": "Time grain controls time aggregation; increasing it does not separate values of the API-name dimension.",
+          "referenceIds": [
+            "monx-metrics"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Splitting displays separate metric series for the selected dimension values, revealing each API independently.",
+      "summaryReferenceIds": [
+        "monx-metrics"
+      ],
+      "references": [
+        {
+          "id": "monx-metrics",
+          "title": "Azure Monitor metrics aggregation and display explained - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained",
+          "section": "Dimensions, splitting, and filtering",
+          "checkedAt": "2026-10-08T01:38:44.843Z",
+          "documentUpdatedAt": "2026-08-10T22:17:00Z",
+          "evidenceSummary": "Retrieved section Dimensions, splitting, and filtering. Scenario claim evidence: Splitting displays separate metric series for the selected dimension values, revealing each API independently. A single aggregate combines the dimension values and therefore does not provide separate API lines. Time grain controls time aggregation; increasing it does not separate values of the API-name dimension.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "metrics"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-03",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.1"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "An engineer compares the same 24-hour metric range at one-minute and one-hour time grains.",
+      "prompt": "Choose TWO supported interpretations.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The hour grain aggregates more samples per plotted interval",
+          "explanation": "Time granularity is the period over which values are aggregated, so an hour interval combines more minute samples.",
+          "referenceIds": [
+            "monx-metrics"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The time range is still 24 hours",
+          "explanation": "The displayed time range and the aggregation time grain are separate settings; changing grain alone keeps the range.",
+          "referenceIds": [
+            "monx-metrics"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Hour grain necessarily creates new underlying measurements",
+          "explanation": "Aggregation combines collected values for display; it does not create extra underlying metric measurements.",
+          "referenceIds": [
+            "monx-metrics"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "A grain equal to the range produces many intervals",
+          "explanation": "The document explains that a grain as large as the range yields just one value for that chart range.",
+          "referenceIds": [
+            "monx-metrics"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Time granularity is the period over which values are aggregated, so an hour interval combines more minute samples. The displayed time range and the aggregation time grain are separate settings; changing grain alone keeps the range.",
+      "summaryReferenceIds": [
+        "monx-metrics"
+      ],
+      "references": [
+        {
+          "id": "monx-metrics",
+          "title": "Azure Monitor metrics aggregation and display explained - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained",
+          "section": "Overview and terms",
+          "checkedAt": "2026-10-08T01:38:44.843Z",
+          "documentUpdatedAt": "2026-08-10T22:17:00Z",
+          "evidenceSummary": "Retrieved section Overview and terms. Scenario claim evidence: Time granularity is the period over which values are aggregated, so an hour interval combines more minute samples. The displayed time range and the aggregation time grain are separate settings; changing grain alone keeps the range. Aggregation combines collected values for display; it does not create extra underlying metric measurements. The document explains that a grain as large as the range yields just one value for that chart range.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "metrics"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-04",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A regional service must send resource logs to two existing Log Analytics workspaces. Access is already granted.",
+      "prompt": "Which configuration is supported?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Two diagnostic settings, one workspace in each",
+          "explanation": "One setting permits only one destination of each type; separate settings support two Log Analytics workspaces.",
+          "referenceIds": [
+            "monx-diagnostic"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Two workspaces in one diagnostic setting",
+          "explanation": "A single diagnostic setting cannot define two destinations of the same destination type.",
+          "referenceIds": [
+            "monx-diagnostic"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A workspace-free metric chart",
+          "explanation": "Metric charts do not configure resource-log routing to either of the required Log Analytics workspaces.",
+          "referenceIds": [
+            "monx-diagnostic"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "One setting permits only one destination of each type; separate settings support two Log Analytics workspaces.",
+      "summaryReferenceIds": [
+        "monx-diagnostic"
+      ],
+      "references": [
+        {
+          "id": "monx-diagnostic",
+          "title": "Diagnostic Settings in Azure Monitor - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings",
+          "section": "Destinations",
+          "checkedAt": "2026-10-08T01:38:45.406Z",
+          "documentUpdatedAt": "2026-09-22T06:04:00Z",
+          "evidenceSummary": "Retrieved section Destinations. Scenario claim evidence: One setting permits only one destination of each type; separate settings support two Log Analytics workspaces. A single diagnostic setting cannot define two destinations of the same destination type. Metric charts do not configure resource-log routing to either of the required Log Analytics workspaces.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "diagnostic"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-05",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.2"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "foundation",
+      "scenario": "A regional resource sends logs to an existing storage account protected by a virtual-network firewall.",
+      "prompt": "Which TWO prerequisites are documented?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Use storage in the resource region",
+          "explanation": "For regional resources the Storage account destination must be in the same region as the monitored resource.",
+          "referenceIds": [
+            "monx-diagnostic"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Allow trusted Microsoft services to bypass the firewall",
+          "explanation": "Diagnostic settings require the trusted Microsoft services bypass when destination Storage has virtual networks enabled.",
+          "referenceIds": [
+            "monx-diagnostic"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Create the storage destination after the setting",
+          "explanation": "The destination must already exist before creating the diagnostic setting; later creation is not the prerequisite.",
+          "referenceIds": [
+            "monx-diagnostic"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Use any storage region without restriction",
+          "explanation": "The documented same-region requirement applies to regional resources sending diagnostics to Storage or Event Hubs.",
+          "referenceIds": [
+            "monx-diagnostic"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "For regional resources the Storage account destination must be in the same region as the monitored resource. Diagnostic settings require the trusted Microsoft services bypass when destination Storage has virtual networks enabled.",
+      "summaryReferenceIds": [
+        "monx-diagnostic"
+      ],
+      "references": [
+        {
+          "id": "monx-diagnostic",
+          "title": "Diagnostic Settings in Azure Monitor - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings",
+          "section": "Destinations",
+          "checkedAt": "2026-10-08T01:38:45.406Z",
+          "documentUpdatedAt": "2026-09-22T06:04:00Z",
+          "evidenceSummary": "Retrieved section Destinations. Scenario claim evidence: For regional resources the Storage account destination must be in the same region as the monitored resource. Diagnostic settings require the trusted Microsoft services bypass when destination Storage has virtual networks enabled. The destination must already exist before creating the diagnostic setting; later creation is not the prerequisite. The documented same-region requirement applies to regional resources sending diagnostics to Storage or Event Hubs.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "diagnostic"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-06",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A resource has five diagnostic settings. Each routes to a different destination and all must remain.",
+      "prompt": "Can a sixth setting be added directly?",
+      "options": [
+        {
+          "id": "a",
+          "text": "No; each resource supports up to five diagnostic settings",
+          "explanation": "Microsoft documents a limit of five diagnostic settings per resource; redesign the existing routing instead.",
+          "referenceIds": [
+            "monx-diagnostic"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Yes; each resource has unlimited diagnostic settings",
+          "explanation": "The documented limit is five settings, so unrestricted additions are not supported.",
+          "referenceIds": [
+            "monx-diagnostic"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Yes; choosing Log Analytics removes the setting limit",
+          "explanation": "Choosing a Log Analytics destination does not remove the documented per-resource limit of five settings.",
+          "referenceIds": [
+            "monx-diagnostic"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Microsoft documents a limit of five diagnostic settings per resource; redesign the existing routing instead.",
+      "summaryReferenceIds": [
+        "monx-diagnostic"
+      ],
+      "references": [
+        {
+          "id": "monx-diagnostic",
+          "title": "Diagnostic Settings in Azure Monitor - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings",
+          "section": "Destinations",
+          "checkedAt": "2026-10-08T01:38:45.406Z",
+          "documentUpdatedAt": "2026-09-22T06:04:00Z",
+          "evidenceSummary": "Retrieved section Destinations. Scenario claim evidence: Microsoft documents a limit of five diagnostic settings per resource; redesign the existing routing instead. The documented limit is five settings, so unrestricted additions are not supported. Choosing a Log Analytics destination does not remove the documented per-resource limit of five settings.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "diagnostic"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-07",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "Thirty VMs use the same guest-event collection specification through Azure Monitor Agent.",
+      "prompt": "Which design avoids a separate identical rule per VM?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Associate the VMs with one shared DCR",
+          "explanation": "DCR associations are many-to-many; multiple resources can be associated with the same data collection rule.",
+          "referenceIds": [
+            "monx-dcr"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Create a diagnostic setting on the VM resource only",
+          "explanation": "A diagnostic setting routes resource platform data; the given requirement is guest-event collection through Azure Monitor Agent using a DCR association.",
+          "referenceIds": [
+            "monx-dcr"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Use one action group as the collection definition",
+          "explanation": "Action groups notify or invoke actions after alerts; they do not supply the guest-event collection configuration described by a DCR.",
+          "referenceIds": [
+            "monx-dcr"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "DCR associations are many-to-many; multiple resources can be associated with the same data collection rule.",
+      "summaryReferenceIds": [
+        "monx-dcr"
+      ],
+      "references": [
+        {
+          "id": "monx-dcr",
+          "title": "Data Collection Rules in Azure Monitor - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview",
+          "section": "Data collection rule associations (DCRAs)",
+          "checkedAt": "2026-10-08T01:38:44.778Z",
+          "documentUpdatedAt": "2026-09-22T06:04:00Z",
+          "evidenceSummary": "Retrieved section Data collection rule associations (DCRAs). Scenario claim evidence: DCR associations are many-to-many; multiple resources can be associated with the same data collection rule. A diagnostic setting routes resource platform data; the given requirement is guest-event collection through Azure Monitor Agent using a DCR association. Action groups notify or invoke actions after alerts; they do not supply the guest-event collection configuration described by a DCR.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "dcr"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-08",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.2"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "foundation",
+      "scenario": "A guest log stream contains noisy entries that should be filtered before storage.",
+      "prompt": "Choose TWO DCR capabilities relevant to this goal.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Define a transformation",
+          "explanation": "A data collection rule can transform incoming data to filter or modify it before sending it to a destination.",
+          "referenceIds": [
+            "monx-dcr"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Define the destination",
+          "explanation": "A DCR describes the destination where collected data is sent along with its collection and transformation configuration.",
+          "referenceIds": [
+            "monx-dcr"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Replace backup recovery points",
+          "explanation": "Data collection rules govern monitoring data, not the backup recovery points stored by Azure Backup.",
+          "referenceIds": [
+            "monx-dcr"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Acknowledge all existing alerts",
+          "explanation": "Acknowledgement is an alert user response and is not the pre-ingestion filtering purpose of a DCR.",
+          "referenceIds": [
+            "monx-dcr"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "A data collection rule can transform incoming data to filter or modify it before sending it to a destination. A DCR describes the destination where collected data is sent along with its collection and transformation configuration.",
+      "summaryReferenceIds": [
+        "monx-dcr"
+      ],
+      "references": [
+        {
+          "id": "monx-dcr",
+          "title": "Data Collection Rules in Azure Monitor - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview",
+          "section": "Data collection process",
+          "checkedAt": "2026-10-08T01:38:44.778Z",
+          "documentUpdatedAt": "2026-09-22T06:04:00Z",
+          "evidenceSummary": "Retrieved section Data collection process. Scenario claim evidence: A data collection rule can transform incoming data to filter or modify it before sending it to a destination. A DCR describes the destination where collected data is sent along with its collection and transformation configuration. Data collection rules govern monitoring data, not the backup recovery points stored by Azure Backup. Acknowledgement is an alert user response and is not the pre-ingestion filtering purpose of a DCR.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "dcr"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-09",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "The SecurityEvent table includes EventID and Computer. Only event 4625 is relevant.",
+      "prompt": "Which operator restricts rows to that event?",
+      "options": [
+        {
+          "id": "a",
+          "text": "where EventID == 4625",
+          "explanation": "The where operator filters rows using a condition, so this retains only records whose EventID is 4625.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "project EventID",
+          "explanation": "Project selects output columns; selecting EventID alone does not filter the records to event 4625.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "take 4625",
+          "explanation": "Take returns up to a row count without selecting a particular EventID; 4625 here would be a row limit.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The where operator filters rows using a condition, so this retains only records whose EventID is 4625.",
+      "summaryReferenceIds": [
+        "monx-kql"
+      ],
+      "references": [
+        {
+          "id": "monx-kql",
+          "title": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+          "section": "Filter results",
+          "checkedAt": "2026-10-08T01:38:44.919Z",
+          "documentUpdatedAt": "2026-08-25T17:19:00Z",
+          "evidenceSummary": "Retrieved section Filter results. Scenario claim evidence: The where operator filters rows using a condition, so this retains only records whose EventID is 4625. Project selects output columns; selecting EventID alone does not filter the records to event 4625. Take returns up to a row count without selecting a particular EventID; 4625 here would be a row limit.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "kql"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "code",
+          "title": "Relevant table shape",
+          "language": "text",
+          "text": "SecurityEvent(TimeGenerated:datetime, Computer:string, EventID:int)"
+        }
+      ]
+    },
+    {
+      "id": "az104-monitoring-plus-10",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A workspace has security events from many computers. The engineer needs one row per computer with event count.",
+      "prompt": "Which expression produces that result?",
+      "options": [
+        {
+          "id": "a",
+          "text": "summarize count() by Computer",
+          "explanation": "Summarize groups records by Computer and count() calculates how many records are in each group.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "project Computer",
+          "explanation": "Project outputs the Computer column for existing records and does not aggregate them into computer counts.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "sort by Computer",
+          "explanation": "Sort changes row order but does not aggregate records or create a count for each computer.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Summarize groups records by Computer and count() calculates how many records are in each group.",
+      "summaryReferenceIds": [
+        "monx-kql"
+      ],
+      "references": [
+        {
+          "id": "monx-kql",
+          "title": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+          "section": "Aggregate groups of rows",
+          "checkedAt": "2026-10-08T01:38:44.919Z",
+          "documentUpdatedAt": "2026-08-25T17:19:00Z",
+          "evidenceSummary": "Retrieved section Aggregate groups of rows. Scenario claim evidence: Summarize groups records by Computer and count() calculates how many records are in each group. Project outputs the Computer column for existing records and does not aggregate them into computer counts. Sort changes row order but does not aggregate records or create a count for each computer.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "kql"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-11",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A responder needs the newest ten security records, with deterministic newest-first order.",
+      "prompt": "Which expression fits?",
+      "options": [
+        {
+          "id": "a",
+          "text": "top 10 by TimeGenerated desc",
+          "explanation": "Top selects a limited number of records ordered by the named column; descending TimeGenerated returns the newest first.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "take 10",
+          "explanation": "Take limits records but the tutorial says it does not select or sort them in a particular order.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "project TimeGenerated",
+          "explanation": "Project selects columns rather than limiting and ordering the ten most recent security records.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Top selects a limited number of records ordered by the named column; descending TimeGenerated returns the newest first.",
+      "summaryReferenceIds": [
+        "monx-kql"
+      ],
+      "references": [
+        {
+          "id": "monx-kql",
+          "title": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+          "section": "Sort results",
+          "checkedAt": "2026-10-08T01:38:44.919Z",
+          "documentUpdatedAt": "2026-08-25T17:19:00Z",
+          "evidenceSummary": "Retrieved section Sort results. Scenario claim evidence: Top selects a limited number of records ordered by the named column; descending TimeGenerated returns the newest first. Take limits records but the tutorial says it does not select or sort them in a particular order. Project selects columns rather than limiting and ordering the ten most recent security records.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "kql"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-12",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.3"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "Perf contains minute-level values. The chart needs mean CounterValue for each hour.",
+      "prompt": "Which TWO query elements are required?",
+      "options": [
+        {
+          "id": "a",
+          "text": "avg(CounterValue)",
+          "explanation": "The avg aggregate computes the mean of CounterValue within each grouping interval.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "bin(TimeGenerated, 1h)",
+          "explanation": "The bin function groups timestamps into one-hour buckets for a time-based summarize expression.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "project Computer only",
+          "explanation": "Selecting Computer alone discards the value and time columns needed for the requested hourly calculation.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "take 1 before aggregation",
+          "explanation": "Keeping one arbitrary input record would discard the samples required to compute a meaningful hourly mean.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "The avg aggregate computes the mean of CounterValue within each grouping interval. The bin function groups timestamps into one-hour buckets for a time-based summarize expression.",
+      "summaryReferenceIds": [
+        "monx-kql"
+      ],
+      "references": [
+        {
+          "id": "monx-kql",
+          "title": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+          "section": "Summarize by a time column",
+          "checkedAt": "2026-10-08T01:38:44.919Z",
+          "documentUpdatedAt": "2026-08-25T17:19:00Z",
+          "evidenceSummary": "Retrieved section Summarize by a time column. Scenario claim evidence: The avg aggregate computes the mean of CounterValue within each grouping interval. The bin function groups timestamps into one-hour buckets for a time-based summarize expression. Selecting Computer alone discards the value and time columns needed for the requested hourly calculation. Keeping one arbitrary input record would discard the samples required to compute a meaningful hourly mean.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "kql"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "code",
+          "title": "Query to complete",
+          "language": "kql",
+          "text": "Perf | summarize <aggregate> by <time-bucket>"
+        }
+      ]
+    },
+    {
+      "id": "az104-monitoring-plus-13",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A query should return Computer and TimeGenerated without other table columns.",
+      "prompt": "Which operator should be used?",
+      "options": [
+        {
+          "id": "a",
+          "text": "project Computer, TimeGenerated",
+          "explanation": "Project selects the specified columns in the result and can also rename or define columns.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "where Computer != \"\"",
+          "explanation": "Where filters rows using a condition; it does not choose just these two columns for the result.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "sort by TimeGenerated",
+          "explanation": "Sort determines row order and does not remove the unwanted columns from the result.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Project selects the specified columns in the result and can also rename or define columns.",
+      "summaryReferenceIds": [
+        "monx-kql"
+      ],
+      "references": [
+        {
+          "id": "monx-kql",
+          "title": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+          "section": "Include or exclude columns in query results",
+          "checkedAt": "2026-10-08T01:38:44.919Z",
+          "documentUpdatedAt": "2026-08-25T17:19:00Z",
+          "evidenceSummary": "Retrieved section Include or exclude columns in query results. Scenario claim evidence: Project selects the specified columns in the result and can also rename or define columns. Where filters rows using a condition; it does not choose just these two columns for the result. Sort determines row order and does not remove the unwanted columns from the result.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "kql"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-14",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.4"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "foundation",
+      "scenario": "A payment application needs alerts for CPU thresholds and separately for KQL results.",
+      "prompt": "Choose TWO correct pairings.",
+      "options": [
+        {
+          "id": "a",
+          "text": "CPU metric threshold: metric alert",
+          "explanation": "Metric alerts evaluate resource metrics at regular intervals and are appropriate for a CPU metric threshold.",
+          "referenceIds": [
+            "monx-alerts"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "KQL result condition: log search alert",
+          "explanation": "Log search alerts evaluate resource logs using a Log Analytics query at a predefined frequency.",
+          "referenceIds": [
+            "monx-alerts"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "KQL query: Prometheus alert rule",
+          "explanation": "Prometheus alert rules use PromQL; the requested Log Analytics query is a log search alert signal.",
+          "referenceIds": [
+            "monx-alerts"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "CPU threshold: user response",
+          "explanation": "User response labels an existing alert; it does not define the metric threshold evaluation rule.",
+          "referenceIds": [
+            "monx-alerts"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Metric alerts evaluate resource metrics at regular intervals and are appropriate for a CPU metric threshold. Log search alerts evaluate resource logs using a Log Analytics query at a predefined frequency.",
+      "summaryReferenceIds": [
+        "monx-alerts"
+      ],
+      "references": [
+        {
+          "id": "monx-alerts",
+          "title": "Overview of Azure Monitor alerts - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+          "section": "Types of alerts",
+          "checkedAt": "2026-10-08T01:38:45.154Z",
+          "documentUpdatedAt": "2026-07-08T22:11:00Z",
+          "evidenceSummary": "Retrieved section Types of alerts. Scenario claim evidence: Metric alerts evaluate resource metrics at regular intervals and are appropriate for a CPU metric threshold. Log search alerts evaluate resource logs using a Log Analytics query at a predefined frequency. Prometheus alert rules use PromQL; the requested Log Analytics query is a log search alert signal. User response labels an existing alert; it does not define the metric threshold evaluation rule.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "alerts"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-15",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.4"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A database team keeps alert rules active but wants to suppress action-group notifications each Sunday maintenance window.",
+      "prompt": "What should be configured?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A scheduled alert processing rule",
+          "explanation": "Alert processing rules can suppress action groups for matching fired alerts on a predefined schedule.",
+          "referenceIds": [
+            "monx-processing"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Acknowledge yesterday’s alert",
+          "explanation": "Acknowledgement changes one alert user response; it does not apply scheduled suppression to future fired alerts.",
+          "referenceIds": [
+            "monx-processing"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A new metric time grain",
+          "explanation": "Metric time grain changes chart aggregation, not the notification processing schedule for triggered alerts.",
+          "referenceIds": [
+            "monx-processing"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Alert processing rules can suppress action groups for matching fired alerts on a predefined schedule.",
+      "summaryReferenceIds": [
+        "monx-processing"
+      ],
+      "references": [
+        {
+          "id": "monx-processing",
+          "title": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules",
+          "section": "Suppress notifications during planned maintenance",
+          "checkedAt": "2026-10-08T01:38:45.619Z",
+          "documentUpdatedAt": "2026-04-30T17:09:00Z",
+          "evidenceSummary": "Retrieved section Suppress notifications during planned maintenance. Scenario claim evidence: Alert processing rules can suppress action groups for matching fired alerts on a predefined schedule. Acknowledgement changes one alert user response; it does not apply scheduled suppression to future fired alerts. Metric time grain changes chart aggregation, not the notification processing schedule for triggered alerts.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "processing"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-16",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.4"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An operator changes a fired alert user response to Closed while its underlying condition remains true.",
+      "prompt": "Which interpretation is correct?",
+      "options": [
+        {
+          "id": "a",
+          "text": "User response and condition state remain independent",
+          "explanation": "The user sets New, Acknowledged, or Closed; the monitored condition determines the system Fired or Resolved state.",
+          "referenceIds": [
+            "monx-alerts"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Closed always clears the underlying metric breach",
+          "explanation": "A user response does not change the metric values or force the monitored condition to clear.",
+          "referenceIds": [
+            "monx-alerts"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Closed changes the alert threshold automatically",
+          "explanation": "Existing alerts are read-only; the user response is distinct from changing rule thresholds for future alerts.",
+          "referenceIds": [
+            "monx-alerts"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The user sets New, Acknowledged, or Closed; the monitored condition determines the system Fired or Resolved state.",
+      "summaryReferenceIds": [
+        "monx-alerts"
+      ],
+      "references": [
+        {
+          "id": "monx-alerts",
+          "title": "Overview of Azure Monitor alerts - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+          "section": "Alerts and state",
+          "checkedAt": "2026-10-08T01:38:45.154Z",
+          "documentUpdatedAt": "2026-07-08T22:11:00Z",
+          "evidenceSummary": "Retrieved section Alerts and state. Scenario claim evidence: The user sets New, Acknowledged, or Closed; the monitored condition determines the system Fired or Resolved state. A user response does not change the metric values or force the monitored condition to clear. Existing alerts are read-only; the user response is distinct from changing rule thresholds for future alerts.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "alerts"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-17",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.5"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "foundation",
+      "scenario": "A VM displays host metrics but lacks guest logs. No enhanced guest monitoring has been configured.",
+      "prompt": "Which TWO interpretations are supported?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Host metrics are collected by default",
+          "explanation": "The current VM monitoring documentation says host metrics, including availability, are collected by default.",
+          "referenceIds": [
+            "monx-insights"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Guest metrics and logs require additional monitoring configuration",
+          "explanation": "Guest metrics and logs require enhanced monitoring configuration; host metric visibility alone does not enable them.",
+          "referenceIds": [
+            "monx-insights"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "All Windows guest event logs are collected automatically",
+          "explanation": "The document distinguishes default host metrics from guest logs that require extra collection configuration.",
+          "referenceIds": [
+            "monx-insights"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Azure Backup policy enables guest logging",
+          "explanation": "A VM backup policy protects recovery data and does not configure the Azure Monitor guest-log collection pipeline.",
+          "referenceIds": [
+            "monx-insights"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "The current VM monitoring documentation says host metrics, including availability, are collected by default. Guest metrics and logs require enhanced monitoring configuration; host metric visibility alone does not enable them.",
+      "summaryReferenceIds": [
+        "monx-insights"
+      ],
+      "references": [
+        {
+          "id": "monx-insights",
+          "title": "Monitor virtual machines in Azure - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+          "section": "View VM health",
+          "checkedAt": "2026-10-08T01:38:45.724Z",
+          "documentUpdatedAt": "2026-09-22T06:04:00Z",
+          "evidenceSummary": "Retrieved section View VM health. Scenario claim evidence: The current VM monitoring documentation says host metrics, including availability, are collected by default. Guest metrics and logs require enhanced monitoring configuration; host metric visibility alone does not enable them. The document distinguishes default host metrics from guest logs that require extra collection configuration. A VM backup policy protects recovery data and does not configure the Azure Monitor guest-log collection pipeline.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "insights"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-18",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.5"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "An operator needs an overview of storage availability, latency, and capacity across accounts.",
+      "prompt": "Which experience is suited to that requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Storage insights",
+          "explanation": "Storage insights provides a unified view of storage performance, capacity, and availability across storage accounts.",
+          "referenceIds": [
+            "monx-storage"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Only Recovery Services vault inventory",
+          "explanation": "Recovery Services vault inventory concerns protected backup items rather than storage transaction latency and capacity.",
+          "referenceIds": [
+            "monx-storage"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Only Network Watcher packet capture",
+          "explanation": "Packet capture collects network packets for diagnosis and does not provide the storage-account capacity workbook.",
+          "referenceIds": [
+            "monx-storage"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Storage insights provides a unified view of storage performance, capacity, and availability across storage accounts.",
+      "summaryReferenceIds": [
+        "monx-storage"
+      ],
+      "references": [
+        {
+          "id": "monx-storage",
+          "title": "Monitor Azure Storage services with Azure Monitor Storage insights",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview",
+          "section": "Introduction to Storage insights",
+          "checkedAt": "2026-10-08T01:38:44.951Z",
+          "documentUpdatedAt": "2025-09-23T17:23:00Z",
+          "evidenceSummary": "Retrieved section Introduction to Storage insights. Scenario claim evidence: Storage insights provides a unified view of storage performance, capacity, and availability across storage accounts. Recovery Services vault inventory concerns protected backup items rather than storage transaction latency and capacity. Packet capture collects network packets for diagnosis and does not provide the storage-account capacity workbook.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "storage"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-19",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.5"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "An analyst sees storage metrics in the default insights workbook and needs a tailored threshold view.",
+      "prompt": "Choose TWO supported actions.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Customize the workbook and save it",
+          "explanation": "Storage insights permits customization of metrics and thresholds, and saving a workbook tailored to the user’s requirements.",
+          "referenceIds": [
+            "monx-storage"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Pin workbook charts to a dashboard",
+          "explanation": "The Storage insights documentation explicitly allows workbook charts to be pinned to an Azure dashboard.",
+          "referenceIds": [
+            "monx-storage"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Change workbook thresholds to change stored blob contents",
+          "explanation": "Workbook thresholds alter monitoring presentation; they do not modify the underlying stored blob contents.",
+          "referenceIds": [
+            "monx-storage"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Replace metric collection with a backup schedule",
+          "explanation": "Backup schedules protect recovery data; they do not replace the default collection of storage platform metrics.",
+          "referenceIds": [
+            "monx-storage"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Storage insights permits customization of metrics and thresholds, and saving a workbook tailored to the user’s requirements. The Storage insights documentation explicitly allows workbook charts to be pinned to an Azure dashboard.",
+      "summaryReferenceIds": [
+        "monx-storage"
+      ],
+      "references": [
+        {
+          "id": "monx-storage",
+          "title": "Monitor Azure Storage services with Azure Monitor Storage insights",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview",
+          "section": "Introduction to Storage insights",
+          "checkedAt": "2026-10-08T01:38:44.951Z",
+          "documentUpdatedAt": "2025-09-23T17:23:00Z",
+          "evidenceSummary": "Retrieved section Introduction to Storage insights. Scenario claim evidence: Storage insights permits customization of metrics and thresholds, and saving a workbook tailored to the user’s requirements. The Storage insights documentation explicitly allows workbook charts to be pinned to an Azure dashboard. Workbook thresholds alter monitoring presentation; they do not modify the underlying stored blob contents. Backup schedules protect recovery data; they do not replace the default collection of storage platform metrics.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "storage"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-20",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.6"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A VM cannot receive TCP traffic from a specific address. The engineer suspects an NSG deny rule.",
+      "prompt": "Which tool tests whether the packet is allowed and names the responsible rule?",
+      "options": [
+        {
+          "id": "a",
+          "text": "IP flow verify",
+          "explanation": "IP flow verify checks whether a packet to or from an IP address is allowed or denied and identifies the matching security rule.",
+          "referenceIds": [
+            "monx-watcher"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Next hop",
+          "explanation": "Next hop identifies the routing destination and route type rather than the NSG rule that allows or denies a packet.",
+          "referenceIds": [
+            "monx-watcher"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A Backup report",
+          "explanation": "Backup reports describe protection activity; they do not test traffic filtering by a VM network security rule.",
+          "referenceIds": [
+            "monx-watcher"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "IP flow verify checks whether a packet to or from an IP address is allowed or denied and identifies the matching security rule.",
+      "summaryReferenceIds": [
+        "monx-watcher"
+      ],
+      "references": [
+        {
+          "id": "monx-watcher",
+          "title": "Azure Network Watcher Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+          "section": "IP flow verify",
+          "checkedAt": "2026-10-08T01:38:45.633Z",
+          "documentUpdatedAt": "2026-02-25T23:33:00Z",
+          "evidenceSummary": "Retrieved section IP flow verify. Scenario claim evidence: IP flow verify checks whether a packet to or from an IP address is allowed or denied and identifies the matching security rule. Next hop identifies the routing destination and route type rather than the NSG rule that allows or denies a packet. Backup reports describe protection activity; they do not test traffic filtering by a VM network security rule.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "watcher"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-21",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.6"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A VM sends traffic toward an appliance. The route selection must be checked before packet analysis.",
+      "prompt": "Which tool identifies the next-hop route?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Next hop",
+          "explanation": "The Next hop tool determines the next-hop type and IP address for traffic from a VM toward a destination.",
+          "referenceIds": [
+            "monx-watcher"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "IP flow verify",
+          "explanation": "IP flow verify evaluates traffic filtering by security rules; it does not replace the next-hop routing diagnosis.",
+          "referenceIds": [
+            "monx-watcher"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Alert user response",
+          "explanation": "A user response labels an alert and contains no next-hop routing computation for the destination.",
+          "referenceIds": [
+            "monx-watcher"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The Next hop tool determines the next-hop type and IP address for traffic from a VM toward a destination.",
+      "summaryReferenceIds": [
+        "monx-watcher"
+      ],
+      "references": [
+        {
+          "id": "monx-watcher",
+          "title": "Azure Network Watcher Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+          "section": "Next hop",
+          "checkedAt": "2026-10-08T01:38:45.633Z",
+          "documentUpdatedAt": "2026-02-25T23:33:00Z",
+          "evidenceSummary": "Retrieved section Next hop. Scenario claim evidence: The Next hop tool determines the next-hop type and IP address for traffic from a VM toward a destination. IP flow verify evaluates traffic filtering by security rules; it does not replace the next-hop routing diagnosis. A user response labels an alert and contains no next-hop routing computation for the destination.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "watcher"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-22",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.6"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A test group contains three source endpoints, two destinations, and two test configurations.",
+      "prompt": "How many individual tests are generated?",
+      "options": [
+        {
+          "id": "a",
+          "text": "12",
+          "explanation": "Connection monitor expands sources, destinations, and configurations into combinations: 3 × 2 × 2 equals twelve tests.",
+          "referenceIds": [
+            "monx-connection"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "7",
+          "explanation": "Adding the endpoint and configuration counts is not the documented Cartesian combination of individual tests.",
+          "referenceIds": [
+            "monx-connection"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "3",
+          "explanation": "Three counts only sources and ignores the two destinations and two configurations applied to each source.",
+          "referenceIds": [
+            "monx-connection"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Connection monitor expands sources, destinations, and configurations into combinations: 3 × 2 × 2 equals twelve tests.",
+      "summaryReferenceIds": [
+        "monx-connection"
+      ],
+      "references": [
+        {
+          "id": "monx-connection",
+          "title": "Connection Monitor Overview - Azure Network Watcher",
+          "url": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview",
+          "section": "Create a connection monitor",
+          "checkedAt": "2026-10-08T01:38:45.132Z",
+          "documentUpdatedAt": "2026-08-27T22:11:00Z",
+          "evidenceSummary": "Retrieved section Create a connection monitor. Scenario claim evidence: Connection monitor expands sources, destinations, and configurations into combinations: 3 × 2 × 2 equals twelve tests. Adding the endpoint and configuration counts is not the documented Cartesian combination of individual tests. Three counts only sources and ignores the two destinations and two configurations applied to each source.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "connection"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "table",
+          "title": "Test group definition",
+          "columns": [
+            "Component",
+            "Count"
+          ],
+          "rows": [
+            [
+              "Sources",
+              "3"
+            ],
+            [
+              "Destinations",
+              "2"
+            ],
+            [
+              "Test configurations",
+              "2"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "az104-monitoring-plus-23",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.6"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "foundation",
+      "scenario": "A hybrid app needs ongoing checks of latency and failures between Azure and on-premises endpoints.",
+      "prompt": "Choose TWO supported monitoring signals.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Round-trip time",
+          "explanation": "Connection monitor measures latency as round-trip time for tests between configured source and destination endpoints.",
+          "referenceIds": [
+            "monx-connection"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Percentage of failed checks",
+          "explanation": "Connection monitor summarizes checks that fail and supports alerting on monitored connectivity results.",
+          "referenceIds": [
+            "monx-connection"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "VM backup retention days",
+          "explanation": "Backup retention is unrelated to Connection monitor’s endpoint connectivity test results.",
+          "referenceIds": [
+            "monx-connection"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Blob capacity by access tier",
+          "explanation": "Storage capacity is a storage metric and is not the requested connectivity test latency or failure signal.",
+          "referenceIds": [
+            "monx-connection"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Connection monitor measures latency as round-trip time for tests between configured source and destination endpoints. Connection monitor summarizes checks that fail and supports alerting on monitored connectivity results.",
+      "summaryReferenceIds": [
+        "monx-connection"
+      ],
+      "references": [
+        {
+          "id": "monx-connection",
+          "title": "Connection Monitor Overview - Azure Network Watcher",
+          "url": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview",
+          "section": "Use cases",
+          "checkedAt": "2026-10-08T01:38:45.132Z",
+          "documentUpdatedAt": "2026-08-27T22:11:00Z",
+          "evidenceSummary": "Retrieved section Use cases. Scenario claim evidence: Connection monitor measures latency as round-trip time for tests between configured source and destination endpoints. Connection monitor summarizes checks that fail and supports alerting on monitored connectivity results. Backup retention is unrelated to Connection monitor’s endpoint connectivity test results. Storage capacity is a storage metric and is not the requested connectivity test latency or failure signal.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "connection"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-24",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "VMs needing protection are located in two Azure regions.",
+      "prompt": "Which vault placement follows the documented requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Create a vault in each data-source region",
+          "explanation": "The Recovery Services vault must be in the same region as the protected data source; multiple source regions require regional vaults.",
+          "referenceIds": [
+            "monx-vault"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Use one vault in the replication target region",
+          "explanation": "Replication target placement does not override Azure Backup’s requirement that the vault share the protected data source region.",
+          "referenceIds": [
+            "monx-vault"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Use one vault in the subscription’s default region",
+          "explanation": "A subscription-wide region choice does not override the requirement for a vault colocated with each regional data source.",
+          "referenceIds": [
+            "monx-vault"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The Recovery Services vault must be in the same region as the protected data source; multiple source regions require regional vaults.",
+      "summaryReferenceIds": [
+        "monx-vault"
+      ],
+      "references": [
+        {
+          "id": "monx-vault",
+          "title": "Create and Configure Recovery Services Vaults - Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault",
+          "section": "Create a Recovery Services vault",
+          "checkedAt": "2026-10-08T01:38:44.878Z",
+          "documentUpdatedAt": "2026-04-03T11:10:00Z",
+          "evidenceSummary": "Retrieved section Create a Recovery Services vault. Scenario claim evidence: The Recovery Services vault must be in the same region as the protected data source; multiple source regions require regional vaults. Replication target placement does not override Azure Backup’s requirement that the vault share the protected data source region. A subscription-wide region choice does not override the requirement for a vault colocated with each regional data source.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "vault"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-25",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An empty Recovery Services vault must use a different storage replication type. No backups are configured yet.",
+      "prompt": "When should the change be made?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Before configuring backup in the vault",
+          "explanation": "The documentation requires changing the storage replication type before backup configuration; the setting is disabled afterward.",
+          "referenceIds": [
+            "monx-vault"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "After the first protected backup completes",
+          "explanation": "After backup is configured, the replication-type modification option is disabled, so this is too late for the direct change.",
+          "referenceIds": [
+            "monx-vault"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Only by editing a VM metric alert",
+          "explanation": "A VM metric alert does not configure backup vault storage redundancy; the setting belongs to the vault properties.",
+          "referenceIds": [
+            "monx-vault"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The documentation requires changing the storage replication type before backup configuration; the setting is disabled afterward.",
+      "summaryReferenceIds": [
+        "monx-vault"
+      ],
+      "references": [
+        {
+          "id": "monx-vault",
+          "title": "Create and Configure Recovery Services Vaults - Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault",
+          "section": "Set storage redundancy",
+          "checkedAt": "2026-10-08T01:38:44.878Z",
+          "documentUpdatedAt": "2026-04-03T11:10:00Z",
+          "evidenceSummary": "Retrieved section Set storage redundancy. Scenario claim evidence: The documentation requires changing the storage replication type before backup configuration; the setting is disabled afterward. After backup is configured, the replication-type modification option is disabled, so this is too late for the direct change. A VM metric alert does not configure backup vault storage redundancy; the setting belongs to the vault properties.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "vault"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-26",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A Backup vault needs access to an Azure disk data source.",
+      "prompt": "What mechanism supports access by the vault?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Managed identity with assigned Azure roles",
+          "explanation": "The Backup vault documentation describes managed identities and assigned Azure roles to grant access to resources such as Azure Disks.",
+          "referenceIds": [
+            "monx-backupvault"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Assign permissions only to the human who created the vault",
+          "explanation": "The vault must access protected resources through its managed identity; permissions held only by the creating human do not grant that identity access.",
+          "referenceIds": [
+            "monx-backupvault"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Grant access by renaming the vault to the disk resource name",
+          "explanation": "Resource naming is not authorization; Backup vault data-source access uses identity and role assignments.",
+          "referenceIds": [
+            "monx-backupvault"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The Backup vault documentation describes managed identities and assigned Azure roles to grant access to resources such as Azure Disks.",
+      "summaryReferenceIds": [
+        "monx-backupvault"
+      ],
+      "references": [
+        {
+          "id": "monx-backupvault",
+          "title": "Overview of the Backup vaults - Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-vault-overview",
+          "section": "Role-Based Access Control (RBAC) in Backup vault",
+          "checkedAt": "2026-10-08T01:38:44.991Z",
+          "documentUpdatedAt": "2026-02-12T18:37:00Z",
+          "evidenceSummary": "Retrieved section Role-Based Access Control (RBAC) in Backup vault. Scenario claim evidence: The Backup vault documentation describes managed identities and assigned Azure roles to grant access to resources such as Azure Disks. The vault must access protected resources through its managed identity; permissions held only by the creating human do not grant that identity access. Resource naming is not authorization; Backup vault data-source access uses identity and role assignments.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "backupvault"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-27",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A supported Azure VM requires multiple scheduled backups each day, as frequently as every four hours.",
+      "prompt": "Which policy type is documented for this cadence?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Enhanced policy",
+          "explanation": "The Enhanced policy supports Azure VM backup schedules as frequently as every four hours.",
+          "referenceIds": [
+            "monx-policy"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "A Standard policy with only a daily backup schedule",
+          "explanation": "The requested multiple daily four-hour schedule is documented as an Enhanced-policy capability rather than this daily-only configuration.",
+          "referenceIds": [
+            "monx-policy"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A retention-only change without a backup schedule change",
+          "explanation": "Retention determines how long recovery points remain; changing retention alone does not schedule four-hour backups.",
+          "referenceIds": [
+            "monx-policy"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The Enhanced policy supports Azure VM backup schedules as frequently as every four hours.",
+      "summaryReferenceIds": [
+        "monx-policy"
+      ],
+      "references": [
+        {
+          "id": "monx-policy",
+          "title": "Back Up Azure VMs with the Enhanced Policy - Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy",
+          "section": "Create an Enhanced policy and configure the VM backup",
+          "checkedAt": "2026-10-08T01:38:45.629Z",
+          "documentUpdatedAt": "2026-06-16T11:54:00Z",
+          "evidenceSummary": "Retrieved section Create an Enhanced policy and configure the VM backup. Scenario claim evidence: The Enhanced policy supports Azure VM backup schedules as frequently as every four hours. The requested multiple daily four-hour schedule is documented as an Enhanced-policy capability rather than this daily-only configuration. Retention determines how long recovery points remain; changing retention alone does not schedule four-hour backups.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "policy"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-28",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.3"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A supported VM uses Premium SSD v2 disks and needs protection with current Azure VM backup policy support.",
+      "prompt": "Choose TWO documented Enhanced-policy capabilities.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Support Premium SSD v2 and Ultra Disks",
+          "explanation": "The Enhanced-policy document lists support for newer offerings including Premium SSD v2 and Ultra Disks.",
+          "referenceIds": [
+            "monx-policy"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Snapshot-tier retention up to 30 days",
+          "explanation": "Enhanced policy provides longer snapshot operational-tier retention, documented as up to thirty days.",
+          "referenceIds": [
+            "monx-policy"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Unlimited snapshot retention without limits",
+          "explanation": "The document specifies an upper operational-tier retention bound rather than unlimited snapshot retention.",
+          "referenceIds": [
+            "monx-policy"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Standard policy supports all the same new disk offerings",
+          "explanation": "The document explicitly states Standard policy does not support Ultra Disk and Premium SSD v2 protection.",
+          "referenceIds": [
+            "monx-policy"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "The Enhanced-policy document lists support for newer offerings including Premium SSD v2 and Ultra Disks. Enhanced policy provides longer snapshot operational-tier retention, documented as up to thirty days.",
+      "summaryReferenceIds": [
+        "monx-policy"
+      ],
+      "references": [
+        {
+          "id": "monx-policy",
+          "title": "Back Up Azure VMs with the Enhanced Policy - Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy",
+          "section": "Create an Enhanced policy and configure the VM backup",
+          "checkedAt": "2026-10-08T01:38:45.629Z",
+          "documentUpdatedAt": "2026-06-16T11:54:00Z",
+          "evidenceSummary": "Retrieved section Create an Enhanced policy and configure the VM backup. Scenario claim evidence: The Enhanced-policy document lists support for newer offerings including Premium SSD v2 and Ultra Disks. Enhanced policy provides longer snapshot operational-tier retention, documented as up to thirty days. The document specifies an upper operational-tier retention bound rather than unlimited snapshot retention. The document explicitly states Standard policy does not support Ultra Disk and Premium SSD v2 protection.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "policy"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-29",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.4"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A backed-up VM was deleted. Operations needs to recover a VM from its recovery point.",
+      "prompt": "Which option cannot be used because the original VM no longer exists?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Replace existing",
+          "explanation": "Replace existing requires the current VM to exist; the restore documentation says it cannot be used if the VM was deleted.",
+          "referenceIds": [
+            "monx-restore"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Create a VM",
+          "explanation": "Creating a new VM is a supported restore approach and does not require the deleted original VM to still exist.",
+          "referenceIds": [
+            "monx-restore"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Restore disks",
+          "explanation": "Restoring disks is a supported route to recover disks and construct a VM without replacing disks on an existing VM.",
+          "referenceIds": [
+            "monx-restore"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Replace existing requires the current VM to exist; the restore documentation says it cannot be used if the VM was deleted.",
+      "summaryReferenceIds": [
+        "monx-restore"
+      ],
+      "references": [
+        {
+          "id": "monx-restore",
+          "title": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms",
+          "section": "Restore options",
+          "checkedAt": "2026-10-08T01:38:45.069Z",
+          "documentUpdatedAt": "2026-05-27T12:06:00Z",
+          "evidenceSummary": "Retrieved section Restore options. Scenario claim evidence: Replace existing requires the current VM to exist; the restore documentation says it cannot be used if the VM was deleted. Creating a new VM is a supported restore approach and does not require the deleted original VM to still exist. Restoring disks is a supported route to recover disks and construct a VM without replacing disks on an existing VM.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "restore"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-30",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.4"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "Recovery needs a customized VM configuration rather than the simple portal-created VM settings.",
+      "prompt": "Which restore path supplies disks for customization?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Restore disks and use the generated template",
+          "explanation": "Restore disks creates recovered disks and a template that can be used to customize a restored virtual machine.",
+          "referenceIds": [
+            "monx-restore"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Replace existing without recovering disks",
+          "explanation": "Replace existing replaces disks on the current VM rather than supplying the disk/template route requested for customized VM creation.",
+          "referenceIds": [
+            "monx-restore"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Choose only Create a VM with simple portal settings",
+          "explanation": "The scenario explicitly needs configuration beyond the simple portal-created VM settings; Restore disks and a template supports that customization.",
+          "referenceIds": [
+            "monx-restore"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Restore disks creates recovered disks and a template that can be used to customize a restored virtual machine.",
+      "summaryReferenceIds": [
+        "monx-restore"
+      ],
+      "references": [
+        {
+          "id": "monx-restore",
+          "title": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms",
+          "section": "Restore disks",
+          "checkedAt": "2026-10-08T01:38:45.069Z",
+          "documentUpdatedAt": "2026-05-27T12:06:00Z",
+          "evidenceSummary": "Retrieved section Restore disks. Scenario claim evidence: Restore disks creates recovered disks and a template that can be used to customize a restored virtual machine. Replace existing replaces disks on the current VM rather than supplying the disk/template route requested for customized VM creation. The scenario explicitly needs configuration beyond the simple portal-created VM settings; Restore disks and a template supports that customization.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "restore"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-31",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.4"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A VM completed its initial backup. Only a portion of disk blocks changed before the next backup.",
+      "prompt": "What data transfer model is documented?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Incremental backup of changed data",
+          "explanation": "Azure VM backup is incremental after the initial backup and determines changed blocks for subsequent data transfer.",
+          "referenceIds": [
+            "monx-backup"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Always transfer every unchanged disk block",
+          "explanation": "The documented incremental behavior transfers changed data rather than always transferring every unchanged block.",
+          "referenceIds": [
+            "monx-backup"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Transfer only the temporary disk",
+          "explanation": "Temporary storage is excluded from the VM backup sizing discussion; backup protects the applicable VM disk data.",
+          "referenceIds": [
+            "monx-backup"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Azure VM backup is incremental after the initial backup and determines changed blocks for subsequent data transfer.",
+      "summaryReferenceIds": [
+        "monx-backup"
+      ],
+      "references": [
+        {
+          "id": "monx-backup",
+          "title": "About Azure VM backup - Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+          "section": "Backup and restore considerations",
+          "checkedAt": "2026-10-08T01:38:45.151Z",
+          "documentUpdatedAt": "2026-04-03T11:10:00Z",
+          "evidenceSummary": "Retrieved section Backup and restore considerations. Scenario claim evidence: Azure VM backup is incremental after the initial backup and determines changed blocks for subsequent data transfer. The documented incremental behavior transfers changed data rather than always transferring every unchanged block. Temporary storage is excluded from the VM backup sizing discussion; backup protects the applicable VM disk data.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "backup"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-32",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.4"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "foundation",
+      "scenario": "A vault has supported Cross Region Restore configured. An operator restores an Azure VM in the secondary region.",
+      "prompt": "Choose TWO available restore approaches.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Create a VM",
+          "explanation": "The Cross Region Restore section documents creating a VM in the secondary region as an available restore option.",
+          "referenceIds": [
+            "monx-restore"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Restore disks",
+          "explanation": "Restoring disks is also documented for Cross Region Restore in the secondary region.",
+          "referenceIds": [
+            "monx-restore"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Replace existing disks in the secondary region",
+          "explanation": "The current Cross Region Restore section explicitly says Replace existing disks is not supported.",
+          "referenceIds": [
+            "monx-restore"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Restore without any recovery point",
+          "explanation": "A backup restore uses an available recovery point; the secondary-region option does not eliminate that requirement.",
+          "referenceIds": [
+            "monx-restore"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "The Cross Region Restore section documents creating a VM in the secondary region as an available restore option. Restoring disks is also documented for Cross Region Restore in the secondary region.",
+      "summaryReferenceIds": [
+        "monx-restore"
+      ],
+      "references": [
+        {
+          "id": "monx-restore",
+          "title": "Restore VMs by using the Azure portal using Azure Backup - Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms",
+          "section": "Cross Region Restore",
+          "checkedAt": "2026-10-08T01:38:45.069Z",
+          "documentUpdatedAt": "2026-05-27T12:06:00Z",
+          "evidenceSummary": "Retrieved section Cross Region Restore. Scenario claim evidence: The Cross Region Restore section documents creating a VM in the secondary region as an available restore option. Restoring disks is also documented for Cross Region Restore in the secondary region. The current Cross Region Restore section explicitly says Replace existing disks is not supported. A backup restore uses an available recovery point; the secondary-region option does not eliminate that requirement.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "restore"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-33",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.5"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A VM will replicate from East Asia to Southeast Asia through Site Recovery.",
+      "prompt": "Where is the cache storage account used for source changes located?",
+      "options": [
+        {
+          "id": "a",
+          "text": "In the source region",
+          "explanation": "Site Recovery uses a cache storage account in the source region to track and stage changes before replication to the target.",
+          "referenceIds": [
+            "monx-replication"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Only in the target region",
+          "explanation": "The replication setup documentation places the cache account in the source region, not solely in the target region.",
+          "referenceIds": [
+            "monx-replication"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Only on the VM temporary disk",
+          "explanation": "The documented cache is an Azure storage account in the source region, not merely the VM’s temporary disk.",
+          "referenceIds": [
+            "monx-replication"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Site Recovery uses a cache storage account in the source region to track and stage changes before replication to the target.",
+      "summaryReferenceIds": [
+        "monx-replication"
+      ],
+      "references": [
+        {
+          "id": "monx-replication",
+          "title": "Configure replication for Azure VMs in Azure Site Recovery - Azure Site Recovery",
+          "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-replication",
+          "section": "Enable replication",
+          "checkedAt": "2026-10-08T01:38:45.146Z",
+          "documentUpdatedAt": "2026-09-17T11:41:00Z",
+          "evidenceSummary": "Retrieved section Enable replication. Scenario claim evidence: Site Recovery uses a cache storage account in the source region to track and stage changes before replication to the target. The replication setup documentation places the cache account in the source region, not solely in the target region. The documented cache is an Azure storage account in the source region, not merely the VM’s temporary disk.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "replication"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-34",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.5"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A replicated workload needs app-consistent recovery points and retention settings.",
+      "prompt": "What does the replication policy define?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Recovery-point retention and app-consistent snapshot frequency",
+          "explanation": "The Site Recovery replication policy defines recovery-point retention and the frequency of application-consistent snapshots.",
+          "referenceIds": [
+            "monx-replication"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Only notification recipients and email frequency",
+          "explanation": "Replication policy settings define recovery-point retention and app-consistent snapshot frequency, rather than alert notification recipients.",
+          "referenceIds": [
+            "monx-replication"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Only the target virtual network name",
+          "explanation": "Target networking is another replication setup choice and does not replace the policy’s retention and snapshot-frequency settings.",
+          "referenceIds": [
+            "monx-replication"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The Site Recovery replication policy defines recovery-point retention and the frequency of application-consistent snapshots.",
+      "summaryReferenceIds": [
+        "monx-replication"
+      ],
+      "references": [
+        {
+          "id": "monx-replication",
+          "title": "Configure replication for Azure VMs in Azure Site Recovery - Azure Site Recovery",
+          "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-replication",
+          "section": "Enable replication",
+          "checkedAt": "2026-10-08T01:38:45.146Z",
+          "documentUpdatedAt": "2026-09-17T11:41:00Z",
+          "evidenceSummary": "Retrieved section Enable replication. Scenario claim evidence: The Site Recovery replication policy defines recovery-point retention and the frequency of application-consistent snapshots. Replication policy settings define recovery-point retention and app-consistent snapshot frequency, rather than alert notification recipients. Target networking is another replication setup choice and does not replace the policy’s retention and snapshot-frequency settings.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "replication"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-35",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.6"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A healthy protected VM needs a disaster recovery drill while production continues.",
+      "prompt": "Which target network does the tutorial recommend?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A non-production network",
+          "explanation": "The test failover tutorial recommends selecting a non-production target network to avoid affecting production during the drill.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Always the live production network",
+          "explanation": "Using the live production network is not the tutorial’s recommendation for avoiding drill impact.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "No target virtual network",
+          "explanation": "The test failover workflow selects a target-region Azure virtual network for the VM created during the drill.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The test failover tutorial recommends selecting a non-production target network to avoid affecting production during the drill.",
+      "summaryReferenceIds": [
+        "monx-testfailover"
+      ],
+      "references": [
+        {
+          "id": "monx-testfailover",
+          "title": "Tutorial to run an Azure VM disaster recovery drill with Azure Site Recovery - Azure Site Recovery",
+          "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill",
+          "section": "Verify VM settings",
+          "checkedAt": "2026-10-08T01:38:45.613Z",
+          "documentUpdatedAt": "2025-10-07T11:10:00Z",
+          "evidenceSummary": "Retrieved section Verify VM settings. Scenario claim evidence: The test failover tutorial recommends selecting a non-production target network to avoid affecting production during the drill. Using the live production network is not the tutorial’s recommendation for avoiding drill impact. The test failover workflow selects a target-region Azure virtual network for the VM created during the drill.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "testfailover"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-36",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.6"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A drill prioritizes a low RTO and can use the latest point already processed by Site Recovery.",
+      "prompt": "Which recovery point option avoids additional processing time?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Latest processed",
+          "explanation": "Latest processed uses the most recent already processed recovery point and spends no time processing data, providing low RTO.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Latest",
+          "explanation": "Latest processes all data sent to Site Recovery before failover; it favors lowest RPO rather than avoiding processing time.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Latest app-consistent always processes no data and has the lowest RPO",
+          "explanation": "Latest app-consistent selects the latest application-consistent point; that is a different objective from latest processed or latest.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Latest processed uses the most recent already processed recovery point and spends no time processing data, providing low RTO.",
+      "summaryReferenceIds": [
+        "monx-testfailover"
+      ],
+      "references": [
+        {
+          "id": "monx-testfailover",
+          "title": "Tutorial to run an Azure VM disaster recovery drill with Azure Site Recovery - Azure Site Recovery",
+          "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill",
+          "section": "Run a test failover",
+          "checkedAt": "2026-10-08T01:38:45.613Z",
+          "documentUpdatedAt": "2025-10-07T11:10:00Z",
+          "evidenceSummary": "Retrieved section Run a test failover. Scenario claim evidence: Latest processed uses the most recent already processed recovery point and spends no time processing data, providing low RTO. Latest processes all data sent to Site Recovery before failover; it favors lowest RPO rather than avoiding processing time. Latest app-consistent selects the latest application-consistent point; that is a different objective from latest processed or latest.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "testfailover"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-37",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.6"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "After failover, the secondary VM has been validated and the operator is ready to commit.",
+      "prompt": "What consequence must be accepted?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Commit deletes available Site Recovery recovery points",
+          "explanation": "Committing finalizes failover and deletes available recovery points for that VM, so the recovery point can no longer be changed.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Commit retains every point for repeated point switching",
+          "explanation": "The document states committing deletes the available points and prevents further recovery-point changes.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Commit automatically changes every Azure Backup policy",
+          "explanation": "Site Recovery commit finalizes its failover; it does not redefine all Azure Backup protection policies.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Committing finalizes failover and deletes available recovery points for that VM, so the recovery point can no longer be changed.",
+      "summaryReferenceIds": [
+        "monx-failover"
+      ],
+      "references": [
+        {
+          "id": "monx-failover",
+          "title": "Tutorial to fail over Azure VMs to a secondary region for disaster recovery with Azure Site Recovery. - Azure Site Recovery",
+          "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback",
+          "section": "Run a failover",
+          "checkedAt": "2026-10-08T01:38:45.108Z",
+          "documentUpdatedAt": "2026-09-17T11:41:00Z",
+          "evidenceSummary": "Retrieved section Run a failover. Scenario claim evidence: Committing finalizes failover and deletes available recovery points for that VM, so the recovery point can no longer be changed. The document states committing deletes the available points and prevents further recovery-point changes. Site Recovery commit finalizes its failover; it does not redefine all Azure Backup protection policies.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "failover"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-38",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.6"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "foundation",
+      "scenario": "The failed-over VM is committed and the primary region is available again.",
+      "prompt": "Which TWO statements describe reprotection?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Replication runs from secondary toward primary",
+          "explanation": "Reprotect reverses the replication direction so the VM running in the secondary region is protected toward the primary region.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The VM should be in Failover committed status first",
+          "explanation": "The tutorial requires Failover committed status before reprotection and requires access and permissions in the primary region.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Reprotect is the same operation as a test failover cleanup",
+          "explanation": "Cleanup removes drill resources; reprotect establishes reverse-direction protection after actual committed failover.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Reprotect changes monitoring time grain only",
+          "explanation": "Reprotect initiates data replication and is unrelated to metric chart time granularity.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Reprotect reverses the replication direction so the VM running in the secondary region is protected toward the primary region. The tutorial requires Failover committed status before reprotection and requires access and permissions in the primary region.",
+      "summaryReferenceIds": [
+        "monx-failover"
+      ],
+      "references": [
+        {
+          "id": "monx-failover",
+          "title": "Tutorial to fail over Azure VMs to a secondary region for disaster recovery with Azure Site Recovery. - Azure Site Recovery",
+          "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback",
+          "section": "Reprotect the VM",
+          "checkedAt": "2026-10-08T01:38:45.108Z",
+          "documentUpdatedAt": "2026-09-17T11:41:00Z",
+          "evidenceSummary": "Retrieved section Reprotect the VM. Scenario claim evidence: Reprotect reverses the replication direction so the VM running in the secondary region is protected toward the primary region. The tutorial requires Failover committed status before reprotection and requires access and permissions in the primary region. Cleanup removes drill resources; reprotect establishes reverse-direction protection after actual committed failover. Reprotect initiates data replication and is unrelated to metric chart time granularity.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "failover"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-39",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.7"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "Backup reports must aggregate protection activity from several vaults.",
+      "prompt": "Which collection configuration is needed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Send vault diagnostic data to Log Analytics",
+          "explanation": "Backup reports use vault diagnostic data sent to a Log Analytics workspace; configure diagnostics on the relevant vaults.",
+          "referenceIds": [
+            "monx-reports"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Enable diagnostics only on the protected VM",
+          "explanation": "The Backup reports setup requires diagnostics on the backup vaults; VM-only telemetry does not supply the required vault reporting data.",
+          "referenceIds": [
+            "monx-reports"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Keep vault diagnostics disabled and rely on metric charts",
+          "explanation": "Metric charts alone do not provide the vault log data in Log Analytics that Backup reports consume.",
+          "referenceIds": [
+            "monx-reports"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Backup reports use vault diagnostic data sent to a Log Analytics workspace; configure diagnostics on the relevant vaults.",
+      "summaryReferenceIds": [
+        "monx-reports"
+      ],
+      "references": [
+        {
+          "id": "monx-reports",
+          "title": "Configure Azure Backup reports - Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/configure-reports",
+          "section": "2. Configure diagnostics settings to send data to Log Analytics",
+          "checkedAt": "2026-10-08T01:38:45.094Z",
+          "documentUpdatedAt": "2026-10-07T12:02:00Z",
+          "evidenceSummary": "Retrieved section 2. Configure diagnostics settings to send data to Log Analytics. Scenario claim evidence: Backup reports use vault diagnostic data sent to a Log Analytics workspace; configure diagnostics on the relevant vaults. The Backup reports setup requires diagnostics on the backup vaults; VM-only telemetry does not supply the required vault reporting data. Metric charts alone do not provide the vault log data in Log Analytics that Backup reports consume.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "reports"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-40",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.7"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A backup administrator needs a custom cross-vault alert condition beyond the built-in backup notifications. Vault diagnostics already flow into Log Analytics.",
+      "prompt": "Which approach is documented for custom backup alerting?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Create a log alert from the relevant Kusto query and use an action group",
+          "explanation": "Azure Backup’s Azure Monitor Logs guide describes creating alerts on custom Kusto queries and using action groups to supplement built-in notifications.",
+          "referenceIds": [
+            "monx-backupalerts"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Change the Backup reports workbook time range only",
+          "explanation": "Changing a workbook time range changes a report view; custom notification conditions are configured as alerts on the relevant log queries.",
+          "referenceIds": [
+            "monx-backupalerts"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Assume every custom query automatically creates an alert rule",
+          "explanation": "The documentation directs creating alerts on the queries; writing a query alone does not configure the alert rule and notification actions.",
+          "referenceIds": [
+            "monx-backupalerts"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Azure Backup’s Azure Monitor Logs guide describes creating alerts on custom Kusto queries and using action groups to supplement built-in notifications.",
+      "summaryReferenceIds": [
+        "monx-backupalerts"
+      ],
+      "references": [
+        {
+          "id": "monx-backupalerts",
+          "title": "Azure Monitor Logs in Azure Backup - Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-monitoring-use-azuremonitor",
+          "section": "Create alerts by using Log Analytics",
+          "checkedAt": "2026-10-08T01:38:45.021Z",
+          "documentUpdatedAt": "2025-11-26T12:09:00Z",
+          "evidenceSummary": "Azure Backup’s Azure Monitor Logs guide describes creating alerts on custom Kusto queries and using action groups to supplement built-in notifications. Changing a workbook time range changes a report view; custom notification conditions are configured as alerts on the relevant log queries. The documentation directs creating alerts on the queries; writing a query alone does not configure the alert rule and notification actions.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "backupalerts"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-plus-41",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.3"
+      ],
+      "type": "ordering",
+      "requiredSelections": 4,
+      "difficulty": "foundation",
+      "scenario": "SecurityEvent has the standard Computer and TimeGenerated columns. Build a query that counts last-hour records per computer and returns the largest count first.",
+      "prompt": "Order these query stages.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Start from SecurityEvent",
+          "explanation": "A table-based KQL query starts with the table whose records form the input to the pipeline.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Filter TimeGenerated > ago(1h)",
+          "explanation": "Where restricts input to the last hour before aggregation so older records do not affect the counts.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Summarize count() by Computer",
+          "explanation": "Summarize produces one count per computer from the filtered input records.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Sort the resulting count descending",
+          "explanation": "Sort orders the summarized rows using the generated count column after that column exists.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "summaryExplanation": "A table-based KQL query starts with the table whose records form the input to the pipeline. Where restricts input to the last hour before aggregation so older records do not affect the counts. Summarize produces one count per computer from the filtered input records. Sort orders the summarized rows using the generated count column after that column exists.",
+      "summaryReferenceIds": [
+        "monx-kql"
+      ],
+      "references": [
+        {
+          "id": "monx-kql",
+          "title": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+          "section": "Structure a query",
+          "checkedAt": "2026-10-08T01:38:44.919Z",
+          "documentUpdatedAt": "2026-08-25T17:19:00Z",
+          "evidenceSummary": "Retrieved section Structure a query. Scenario claim evidence: A table-based KQL query starts with the table whose records form the input to the pipeline. Where restricts input to the last hour before aggregation so older records do not affect the counts. Summarize produces one count per computer from the filtered input records. Sort orders the summarized rows using the generated count column after that column exists.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "kql"
+      ],
+      "assessmentReserved": true,
+      "exhibits": [
+        {
+          "type": "code",
+          "title": "Desired result columns",
+          "language": "text",
+          "text": "Computer | count_\nMost events first; last hour only."
+        }
+      ]
+    },
+    {
+      "id": "az104-monitoring-plus-42",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.6"
+      ],
+      "type": "ordering",
+      "requiredSelections": 4,
+      "difficulty": "advanced",
+      "scenario": "A disaster recovery operator must fail over, validate, commit, and then start reverse replication.",
+      "prompt": "Order the milestones in the documented flow.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Run failover to the secondary region",
+          "explanation": "Failover creates the target VM from the selected recovery point before the operator can validate its workload.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Validate the failed-over VM",
+          "explanation": "The tutorial directs verification of the VM in the target region before finalizing the failover with Commit.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Commit the failover",
+          "explanation": "Commit finalizes the failover; the required status before reprotect is Failover committed.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Reprotect toward the primary region",
+          "explanation": "After commit and primary-region availability checks, Re-Protect starts replication from secondary back toward primary.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "summaryExplanation": "Failover creates the target VM from the selected recovery point before the operator can validate its workload. The tutorial directs verification of the VM in the target region before finalizing the failover with Commit. Commit finalizes the failover; the required status before reprotect is Failover committed. After commit and primary-region availability checks, Re-Protect starts replication from secondary back toward primary.",
+      "summaryReferenceIds": [
+        "monx-failover"
+      ],
+      "references": [
+        {
+          "id": "monx-failover",
+          "title": "Tutorial to fail over Azure VMs to a secondary region for disaster recovery with Azure Site Recovery. - Azure Site Recovery",
+          "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback",
+          "section": "Reprotect the VM",
+          "checkedAt": "2026-10-08T01:38:45.108Z",
+          "documentUpdatedAt": "2026-09-17T11:41:00Z",
+          "evidenceSummary": "Retrieved section Reprotect the VM. Scenario claim evidence: Failover creates the target VM from the selected recovery point before the operator can validate its workload. The tutorial directs verification of the VM in the target region before finalizing the failover with Commit. Commit finalizes the failover; the required status before reprotect is Failover committed. After commit and primary-region availability checks, Re-Protect starts replication from secondary back toward primary.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "failover"
+      ],
+      "assessmentReserved": true,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Recovery direction",
+          "text": "Before: primary VM -> secondary region\nAfter failover/reprotect: secondary VM -> primary region"
+        }
+      ]
+    },
+    {
+      "id": "az104-monitoring-plus-43",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.6"
+      ],
+      "type": "matching",
+      "requiredSelections": 3,
+      "difficulty": "intermediate",
+      "scenario": "A network operator has three separate diagnostic questions for a VM.",
+      "prompt": "Match each request to the appropriate tool.",
+      "options": [
+        {
+          "id": "a",
+          "text": "IP flow verify",
+          "explanation": "IP flow verify determines whether traffic is allowed or denied and identifies the matching security rule.",
+          "referenceIds": [
+            "monx-watcher"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Next hop",
+          "explanation": "Next hop determines the next-hop routing destination and type for a selected VM traffic destination.",
+          "referenceIds": [
+            "monx-watcher"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Packet capture",
+          "explanation": "Packet capture records packets to and from a VM for inspection rather than evaluating only a rule or route.",
+          "referenceIds": [
+            "monx-watcher"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "IP flow verify determines whether traffic is allowed or denied and identifies the matching security rule. Next hop determines the next-hop routing destination and type for a selected VM traffic destination. Packet capture records packets to and from a VM for inspection rather than evaluating only a rule or route.",
+      "summaryReferenceIds": [
+        "monx-watcher"
+      ],
+      "references": [
+        {
+          "id": "monx-watcher",
+          "title": "Azure Network Watcher Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+          "section": "Network diagnostic tools",
+          "checkedAt": "2026-10-08T01:38:45.633Z",
+          "documentUpdatedAt": "2026-02-25T23:33:00Z",
+          "evidenceSummary": "Retrieved section Network diagnostic tools. Scenario claim evidence: IP flow verify determines whether traffic is allowed or denied and identifies the matching security rule. Next hop determines the next-hop routing destination and type for a selected VM traffic destination. Packet capture records packets to and from a VM for inspection rather than evaluating only a rule or route.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "watcher"
+      ],
+      "assessmentReserved": true,
+      "matchPrompts": [
+        {
+          "id": "p1",
+          "text": "Identify the NSG rule allowing or denying one packet"
+        },
+        {
+          "id": "p2",
+          "text": "Identify where the selected route sends traffic next"
+        },
+        {
+          "id": "p3",
+          "text": "Collect packet contents for detailed troubleshooting"
+        }
+      ],
+      "exhibits": [
+        {
+          "type": "table",
+          "title": "Incident requests",
+          "columns": [
+            "Request",
+            "Scope"
+          ],
+          "rows": [
+            [
+              "Filtering",
+              "One VM packet"
+            ],
+            [
+              "Routing",
+              "One destination"
+            ],
+            [
+              "Capture",
+              "Traffic trace"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "az104-monitoring-plus-44",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.3"
+      ],
+      "type": "matching",
+      "requiredSelections": 3,
+      "difficulty": "foundation",
+      "scenario": "An analyst needs to choose operators for different stages of a table-based log query.",
+      "prompt": "Match each requirement to its KQL operator.",
+      "options": [
+        {
+          "id": "a",
+          "text": "where",
+          "explanation": "Where restricts rows to those that satisfy the supplied condition without merely selecting columns.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "project",
+          "explanation": "Project chooses output columns and can rename or define them, rather than grouping the input rows.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "summarize",
+          "explanation": "Summarize aggregates records into groups using aggregate functions such as count or avg.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "Where restricts rows to those that satisfy the supplied condition without merely selecting columns. Project chooses output columns and can rename or define them, rather than grouping the input rows. Summarize aggregates records into groups using aggregate functions such as count or avg.",
+      "summaryReferenceIds": [
+        "monx-kql"
+      ],
+      "references": [
+        {
+          "id": "monx-kql",
+          "title": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+          "section": "Structure a query",
+          "checkedAt": "2026-10-08T01:38:44.919Z",
+          "documentUpdatedAt": "2026-08-25T17:19:00Z",
+          "evidenceSummary": "Retrieved section Structure a query. Scenario claim evidence: Where restricts rows to those that satisfy the supplied condition without merely selecting columns. Project chooses output columns and can rename or define them, rather than grouping the input rows. Summarize aggregates records into groups using aggregate functions such as count or avg.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "kql"
+      ],
+      "assessmentReserved": true,
+      "matchPrompts": [
+        {
+          "id": "p1",
+          "text": "Keep only rows with a particular EventID"
+        },
+        {
+          "id": "p2",
+          "text": "Return Computer and TimeGenerated only"
+        },
+        {
+          "id": "p3",
+          "text": "Produce event counts grouped by Computer"
+        }
+      ],
+      "exhibits": [
+        {
+          "type": "code",
+          "title": "Available table",
+          "language": "text",
+          "text": "SecurityEvent: TimeGenerated, Computer, EventID, Activity"
+        }
+      ]
+    },
+    {
+      "id": "az104-monitoring-plus-45",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "Harbor has authored one guest-event DCR but app02 is not associated with it.",
+      "prompt": "What configuration step connects app02 to the collection rule?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Create the app02-to-DCR association",
+          "explanation": "For agent collection scenarios, a DCR association establishes the relationship between the monitored resource and its collection rule.",
+          "referenceIds": [
+            "monx-dcr"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Close app02’s previous alert",
+          "explanation": "A user response on an old alert does not connect the VM to its data collection rule.",
+          "referenceIds": [
+            "monx-dcr"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Change the vault backup schedule",
+          "explanation": "A backup policy schedule does not configure the VM’s Azure Monitor Agent DCR association.",
+          "referenceIds": [
+            "monx-dcr"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "For agent collection scenarios, a DCR association establishes the relationship between the monitored resource and its collection rule.",
+      "summaryReferenceIds": [
+        "monx-dcr"
+      ],
+      "references": [
+        {
+          "id": "monx-dcr",
+          "title": "Data Collection Rules in Azure Monitor - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview",
+          "section": "Data collection rule associations (DCRAs)",
+          "checkedAt": "2026-10-08T01:38:44.778Z",
+          "documentUpdatedAt": "2026-09-22T06:04:00Z",
+          "evidenceSummary": "Retrieved section Data collection rule associations (DCRAs). Scenario claim evidence: For agent collection scenarios, a DCR association establishes the relationship between the monitored resource and its collection rule. A user response on an old alert does not connect the VM to its data collection rule. A backup policy schedule does not configure the VM’s Azure Monitor Agent DCR association.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "dcr"
+      ],
+      "assessmentReserved": true,
+      "caseStudy": {
+        "id": "monitoring-case-telemetry",
+        "title": "Harbor telemetry rollout",
+        "overview": "Harbor operates app01 and app02 in West Europe. The team has a Log Analytics workspace, Azure Monitor Agent installed on both VMs, and regional Storage available for diagnostics. Guest-event collection still needs a DCR association. Operators want last-hour error counts and maintenance notification suppression."
+      },
+      "exhibits": [
+        {
+          "type": "table",
+          "title": "Collection inventory",
+          "columns": [
+            "VM",
+            "AMA",
+            "DCR association"
+          ],
+          "rows": [
+            [
+              "app01",
+              "Installed",
+              "Present"
+            ],
+            [
+              "app02",
+              "Installed",
+              "Missing"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "az104-monitoring-plus-46",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.3"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "Harbor’s collected SecurityEvent records include TimeGenerated, Computer, and EventID. The required EventID is 4625.",
+      "prompt": "Which TWO steps produce last-hour counts per computer?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Filter TimeGenerated > ago(1h) and EventID == 4625",
+          "explanation": "Where can combine conditions so only the last-hour records for the required event feed aggregation.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Summarize count() by Computer",
+          "explanation": "After filtering, summarize count() by Computer produces the required per-computer event counts.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Use take 4625 as the event filter",
+          "explanation": "Take limits the number of input rows and does not select rows by their EventID value.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Project only TimeGenerated before grouping",
+          "explanation": "Projecting only TimeGenerated removes Computer and prevents grouping by the required computer column.",
+          "referenceIds": [
+            "monx-kql"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Where can combine conditions so only the last-hour records for the required event feed aggregation. After filtering, summarize count() by Computer produces the required per-computer event counts.",
+      "summaryReferenceIds": [
+        "monx-kql"
+      ],
+      "references": [
+        {
+          "id": "monx-kql",
+          "title": "Get started with log queries in Azure Monitor Logs - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+          "section": "Aggregate groups of rows",
+          "checkedAt": "2026-10-08T01:38:44.919Z",
+          "documentUpdatedAt": "2026-08-25T17:19:00Z",
+          "evidenceSummary": "Retrieved section Aggregate groups of rows. Scenario claim evidence: Where can combine conditions so only the last-hour records for the required event feed aggregation. After filtering, summarize count() by Computer produces the required per-computer event counts. Take limits the number of input rows and does not select rows by their EventID value. Projecting only TimeGenerated removes Computer and prevents grouping by the required computer column.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "kql"
+      ],
+      "assessmentReserved": true,
+      "caseStudy": {
+        "id": "monitoring-case-telemetry",
+        "title": "Harbor telemetry rollout",
+        "overview": "Harbor operates app01 and app02 in West Europe. The team has a Log Analytics workspace, Azure Monitor Agent installed on both VMs, and regional Storage available for diagnostics. Guest-event collection still needs a DCR association. Operators want last-hour error counts and maintenance notification suppression."
+      },
+      "exhibits": [
+        {
+          "type": "code",
+          "title": "Query intent",
+          "language": "text",
+          "text": "Input: SecurityEvent\nScope: last hour, EventID 4625\nOutput: Computer, event count"
+        }
+      ]
+    },
+    {
+      "id": "az104-monitoring-plus-47",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "subObjectiveIds": [
+        "monitor.4"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "Harbor wants alerts recorded during Sunday maintenance but no action-group notifications for the two app VMs.",
+      "prompt": "Which configuration handles the notification requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Scheduled suppression with an alert processing rule",
+          "explanation": "Alert processing rules suppress action groups on matching fired alerts and can apply on a predefined maintenance schedule.",
+          "referenceIds": [
+            "monx-processing"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Delete the collection rule every Sunday",
+          "explanation": "Deleting monitoring collection is not the documented action-group suppression mechanism and removes the required telemetry.",
+          "referenceIds": [
+            "monx-processing"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Label one existing alert Closed",
+          "explanation": "Closing one alert response does not apply recurring notification suppression to later alerts for both VMs.",
+          "referenceIds": [
+            "monx-processing"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Alert processing rules suppress action groups on matching fired alerts and can apply on a predefined maintenance schedule.",
+      "summaryReferenceIds": [
+        "monx-processing"
+      ],
+      "references": [
+        {
+          "id": "monx-processing",
+          "title": "Alert processing rules for Azure Monitor alerts - Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules",
+          "section": "Suppress notifications during planned maintenance",
+          "checkedAt": "2026-10-08T01:38:45.619Z",
+          "documentUpdatedAt": "2026-04-30T17:09:00Z",
+          "evidenceSummary": "Retrieved section Suppress notifications during planned maintenance. Scenario claim evidence: Alert processing rules suppress action groups on matching fired alerts and can apply on a predefined maintenance schedule. Deleting monitoring collection is not the documented action-group suppression mechanism and removes the required telemetry. Closing one alert response does not apply recurring notification suppression to later alerts for both VMs.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "processing"
+      ],
+      "assessmentReserved": true,
+      "caseStudy": {
+        "id": "monitoring-case-telemetry",
+        "title": "Harbor telemetry rollout",
+        "overview": "Harbor operates app01 and app02 in West Europe. The team has a Log Analytics workspace, Azure Monitor Agent installed on both VMs, and regional Storage available for diagnostics. Guest-event collection still needs a DCR association. Operators want last-hour error counts and maintenance notification suppression."
+      }
+    },
+    {
+      "id": "az104-monitoring-plus-48",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.6"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "Linden needs a low-impact rehearsal and a recovery point with no extra processing time.",
+      "prompt": "Choose TWO appropriate drill choices.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Choose the separate non-production target network",
+          "explanation": "The test-failover tutorial recommends a non-production network to prevent drill interference with production.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Choose Latest processed",
+          "explanation": "Latest processed uses an already processed point with no additional processing time, favoring low RTO.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Commit production failover before every rehearsal",
+          "explanation": "A test failover rehearsal does not require committing an actual production failover first.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Disable protection before the drill",
+          "explanation": "The tutorial requires a protected healthy VM before the drill; disabling protection conflicts with that prerequisite.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "The test-failover tutorial recommends a non-production network to prevent drill interference with production. Latest processed uses an already processed point with no additional processing time, favoring low RTO.",
+      "summaryReferenceIds": [
+        "monx-testfailover"
+      ],
+      "references": [
+        {
+          "id": "monx-testfailover",
+          "title": "Tutorial to run an Azure VM disaster recovery drill with Azure Site Recovery - Azure Site Recovery",
+          "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill",
+          "section": "Run a test failover",
+          "checkedAt": "2026-10-08T01:38:45.613Z",
+          "documentUpdatedAt": "2025-10-07T11:10:00Z",
+          "evidenceSummary": "Retrieved section Run a test failover. Scenario claim evidence: The test-failover tutorial recommends a non-production network to prevent drill interference with production. Latest processed uses an already processed point with no additional processing time, favoring low RTO. A test failover rehearsal does not require committing an actual production failover first. The tutorial requires a protected healthy VM before the drill; disabling protection conflicts with that prerequisite.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "testfailover"
+      ],
+      "assessmentReserved": true,
+      "caseStudy": {
+        "id": "monitoring-case-recovery",
+        "title": "Linden regional recovery",
+        "overview": "Linden has Azure VMs protected by Site Recovery from North Europe to West Europe. Replication is healthy. A separate non-production network exists in West Europe. The team first rehearses recovery, then responds to a regional outage, validates the failed-over VM, and prepares replication back when North Europe returns."
+      },
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Regional layout",
+          "text": "North Europe: protected production VM\nWest Europe: replication target + isolated rehearsal network"
+        }
+      ]
+    },
+    {
+      "id": "az104-monitoring-plus-49",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.6"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "During the real outage, Linden validates the VM running in West Europe. The operator now selects Commit.",
+      "prompt": "What should the operator understand?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The recovery point can no longer be changed after commit",
+          "explanation": "Commit deletes the available Site Recovery recovery points for the VM and finalizes the selected failover point.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Commit automatically runs a non-production drill",
+          "explanation": "Commit finalizes the actual failover; test failover to a drill network is a different workflow.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Commit leaves all recovery points selectable forever",
+          "explanation": "The failover tutorial explicitly states Commit deletes the available points and prevents changing the selected point.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Commit deletes the available Site Recovery recovery points for the VM and finalizes the selected failover point.",
+      "summaryReferenceIds": [
+        "monx-failover"
+      ],
+      "references": [
+        {
+          "id": "monx-failover",
+          "title": "Tutorial to fail over Azure VMs to a secondary region for disaster recovery with Azure Site Recovery. - Azure Site Recovery",
+          "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback",
+          "section": "Run a failover",
+          "checkedAt": "2026-10-08T01:38:45.108Z",
+          "documentUpdatedAt": "2026-09-17T11:41:00Z",
+          "evidenceSummary": "Retrieved section Run a failover. Scenario claim evidence: Commit deletes the available Site Recovery recovery points for the VM and finalizes the selected failover point. Commit finalizes the actual failover; test failover to a drill network is a different workflow. The failover tutorial explicitly states Commit deletes the available points and prevents changing the selected point.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "failover"
+      ],
+      "assessmentReserved": true,
+      "caseStudy": {
+        "id": "monitoring-case-recovery",
+        "title": "Linden regional recovery",
+        "overview": "Linden has Azure VMs protected by Site Recovery from North Europe to West Europe. Replication is healthy. A separate non-production network exists in West Europe. The team first rehearses recovery, then responds to a regional outage, validates the failed-over VM, and prepares replication back when North Europe returns."
+      }
+    },
+    {
+      "id": "az104-monitoring-plus-50",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "subObjectiveIds": [
+        "backup-recovery.6"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "North Europe is available again. Linden’s VM status is Failover committed and the operator has resource-creation permission there.",
+      "prompt": "Which direction should Re-Protect establish?",
+      "options": [
+        {
+          "id": "a",
+          "text": "West Europe to North Europe",
+          "explanation": "After failover, reprotect replicates the secondary-region VM back toward the primary region; here that is West Europe to North Europe.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "North Europe to West Europe without protecting the running VM",
+          "explanation": "The running failed-over VM must be reprotected from secondary to primary; keeping only the old direction does not meet the flow.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A report-only link with no data replication",
+          "explanation": "Reprotect sends initial data and subsequent deltas to the target; it is not just a reporting relationship.",
+          "referenceIds": [
+            "monx-failover"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "After failover, reprotect replicates the secondary-region VM back toward the primary region; here that is West Europe to North Europe.",
+      "summaryReferenceIds": [
+        "monx-failover"
+      ],
+      "references": [
+        {
+          "id": "monx-failover",
+          "title": "Tutorial to fail over Azure VMs to a secondary region for disaster recovery with Azure Site Recovery. - Azure Site Recovery",
+          "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback",
+          "section": "Reprotect the VM",
+          "checkedAt": "2026-10-08T01:38:45.108Z",
+          "documentUpdatedAt": "2026-09-17T11:41:00Z",
+          "evidenceSummary": "Retrieved section Reprotect the VM. Scenario claim evidence: After failover, reprotect replicates the secondary-region VM back toward the primary region; here that is West Europe to North Europe. The running failed-over VM must be reprotected from secondary to primary; keeping only the old direction does not meet the flow. Reprotect sends initial data and subsequent deltas to the target; it is not just a reporting relationship.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "monitoring-expanded",
+        "failover"
+      ],
+      "assessmentReserved": true,
+      "caseStudy": {
+        "id": "monitoring-case-recovery",
+        "title": "Linden regional recovery",
+        "overview": "Linden has Azure VMs protected by Site Recovery from North Europe to West Europe. Replication is healthy. A separate non-production network exists in West Europe. The team first rehearses recovery, then responds to a regional outage, validates the failed-over VM, and prepares replication back when North Europe returns."
+      }
+    }
+  ]
+}

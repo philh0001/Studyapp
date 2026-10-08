@@ -1,14 +1,14 @@
 import type {DatabaseSnapshot} from '../sessions/types';
 import {StudyRepository} from '../storage/repository';
 import type {StudyDatabase} from '../storage/database';
-import {backupTables,type BackupV1,type RestoreConfirmation} from './types';
+import {backupTables,MAX_BACKUP_BYTES,type BackupV1,type RestoreConfirmation} from './types';
 import {validateBackup} from './validate';
-export function exportBackup(snapshot:DatabaseSnapshot):Blob{return new Blob([JSON.stringify({...snapshot,schemaVersion:1,exportedAt:new Date().toISOString()})],{type:'application/json'})}
+export function exportBackup(snapshot:DatabaseSnapshot):Blob{const blob=new Blob([JSON.stringify({...snapshot,schemaVersion:1,exportedAt:new Date().toISOString()})],{type:'application/json'});if(blob.size>MAX_BACKUP_BYTES)throw Error('This history needs a compressed backup. Use the app’s Export backup button.');return blob}
 function database(target:StudyRepository|StudyDatabase):StudyDatabase{return target instanceof StudyRepository?target.db:target}
 export async function restoreBackup(target:StudyRepository|StudyDatabase,input:BackupV1,confirmation:RestoreConfirmation):Promise<void>{
  if(!confirmation.replaceConfirmed)return;
  if(!confirmation.recoveryBackup||confirmation.recoveryBackup.size===0)throw Error('Prepare a recovery backup before replacement.');
- const encoded=JSON.stringify(input),validated=validateBackup(input,new Blob([encoded]).size);
+ const encoded=JSON.stringify(input),validated=validateBackup(input,new Blob([encoded]).size,confirmation.compressedImport??false);
  if(!validated.valid||!validated.backup)throw Error(validated.issues.map(i=>`${i.path}: ${i.message}`).join('\n'));
  // Installed approval is local provenance, not authority supplied by an imported file.
  // Historical snapshots remain untouched to preserve what the learner actually answered.

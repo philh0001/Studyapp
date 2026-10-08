@@ -1,0 +1,3847 @@
+{
+  "id": "az104-networking-expanded-draft",
+  "version": 1,
+  "blueprintId": "az104-2026-04-17",
+  "checkedAt": "2026-10-08T01:42:23.144Z",
+  "questions": [
+    {
+      "id": "az104-networking-plus-01",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A startup owns contoso-example.net at a registrar and wants Azure to host its public DNS zone.",
+      "prompt": "Which responsibility remains outside Azure DNS?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Hosting authoritative records.",
+          "explanation": "Azure DNS provides DNS hosting for zones.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Managing records through Azure APIs.",
+          "explanation": "Azure DNS supports resource management APIs; this is not domain registration.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Registering ownership of the domain.",
+          "explanation": "Azure DNS hosts DNS records; domain purchase requires a registrar.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Azure DNS hosts DNS records; domain purchase requires a registrar.",
+      "summaryReferenceIds": [
+        "networking-plus-records"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-records",
+          "title": "DNS Zones and Records Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+          "section": "Domain names",
+          "checkedAt": "2026-10-08T01:38:21.600Z",
+          "documentUpdatedAt": "2026-09-14T17:12:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Domain names. Azure DNS hosts DNS records; domain purchase requires a registrar. Azure DNS provides DNS hosting for zones. Azure DNS supports resource management APIs; this is not domain registration.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-02",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A public zone exists in Azure DNS. Its records work when queried against the assigned Azure name servers, but ordinary clients still use the previous provider.",
+      "prompt": "What change makes Azure authoritative?",
+      "options": [
+        {
+          "id": "c",
+          "text": "Link a private DNS zone to a virtual network.",
+          "explanation": "Private virtual-network links do not change public parent delegation.",
+          "referenceIds": [
+            "networking-plus-delegate"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Update the parent delegation to the Azure-assigned name servers.",
+          "explanation": "Delegation at the registrar or parent points recursive resolvers to Azure DNS.",
+          "referenceIds": [
+            "networking-plus-delegate"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Add an A record named NS.",
+          "explanation": "Delegation uses NS records, not an A record with the text NS.",
+          "referenceIds": [
+            "networking-plus-delegate"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Delegation at the registrar or parent points recursive resolvers to Azure DNS.",
+      "summaryReferenceIds": [
+        "networking-plus-delegate"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-delegate",
+          "title": "Tutorial: Host your domain in Azure DNS",
+          "url": "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns",
+          "section": "Overview",
+          "checkedAt": "2026-10-08T01:38:21.625Z",
+          "documentUpdatedAt": "2025-10-08T05:12:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Overview. Delegation at the registrar or parent points recursive resolvers to Azure DNS. Delegation uses NS records, not an A record with the text NS. Private virtual-network links do not change public parent delegation.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Delegation state",
+          "text": "Registrar NS: ns1.old-provider.example\nAzure zone NS: the four name servers assigned to this zone\nDirect Azure query: expected A record\nRecursive query: old provider"
+        }
+      ]
+    },
+    {
+      "id": "az104-networking-plus-03",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A zone must map www to a different fully qualified DNS name. The owner requires an alias record below the zone apex.",
+      "prompt": "Which record type meets the requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "CNAME.",
+          "explanation": "A CNAME maps one name to another DNS name.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "A.",
+          "explanation": "An A record maps a name to an IPv4 address rather than another name.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "MX.",
+          "explanation": "An MX record identifies mail exchangers rather than a general host alias.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "A CNAME maps one name to another DNS name.",
+      "summaryReferenceIds": [
+        "networking-plus-records"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-records",
+          "title": "DNS Zones and Records Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+          "section": "Record types",
+          "checkedAt": "2026-10-08T01:38:21.600Z",
+          "documentUpdatedAt": "2026-09-14T17:12:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Record types. A CNAME maps one name to another DNS name. An A record maps a name to an IPv4 address rather than another name. An MX record identifies mail exchangers rather than a general host alias.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-04",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "The application publishes two IPv4 addresses for api in the same zone.",
+      "prompt": "How should the records be represented?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Two separate A record sets with the identical name and type.",
+          "explanation": "A zone cannot contain duplicate record sets for the same name and type.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "One CNAME record for each IPv4 address.",
+          "explanation": "CNAME values are DNS names, not IPv4 addresses.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "One A record set named api containing both addresses.",
+          "explanation": "Records with the same name and type belong to one record set.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Records with the same name and type belong to one record set.",
+      "summaryReferenceIds": [
+        "networking-plus-records"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-records",
+          "title": "DNS Zones and Records Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+          "section": "Record sets",
+          "checkedAt": "2026-10-08T01:38:21.600Z",
+          "documentUpdatedAt": "2026-09-14T17:12:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Record sets. Records with the same name and type belong to one record set. A zone cannot contain duplicate record sets for the same name and type. CNAME values are DNS names, not IPv4 addresses.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-05",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An administrator lowers the TTL before changing a public A record.",
+      "prompt": "Which effect should the team expect?",
+      "options": [
+        {
+          "id": "c",
+          "text": "TTL controls the TCP idle timeout of the server.",
+          "explanation": "DNS TTL concerns cache lifetime, not network connection timeout.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Resolvers can retain an answer in cache for its TTL.",
+          "explanation": "TTL controls caching lifetime; previously cached records retain their existing TTL.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "All existing resolver caches are immediately erased.",
+          "explanation": "Changing the authoritative TTL does not forcibly clear existing caches.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "TTL controls caching lifetime; previously cached records retain their existing TTL.",
+      "summaryReferenceIds": [
+        "networking-plus-records"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-records",
+          "title": "DNS Zones and Records Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+          "section": "Time-to-live",
+          "checkedAt": "2026-10-08T01:38:21.600Z",
+          "documentUpdatedAt": "2026-09-14T17:12:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Time-to-live. TTL controls caching lifetime; previously cached records retain their existing TTL. Changing the authoritative TTL does not forcibly clear existing caches. DNS TTL concerns cache lifetime, not network connection timeout.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-06",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.1"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A private zone is linked to VNet-A without autoregistration. VM-A queries Azure-provided DNS.",
+      "prompt": "Which TWO statements apply?",
+      "options": [
+        {
+          "id": "c",
+          "text": "Manually created records can be resolved through the link.",
+          "explanation": "Resolution-only links resolve both manual and autoregistered records.",
+          "referenceIds": [
+            "networking-plus-privateLinks"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "The private zone becomes authoritative for public internet clients.",
+          "explanation": "Virtual-network links provide private resolution, not public delegation.",
+          "referenceIds": [
+            "networking-plus-privateLinks"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "VM-A can resolve records in the linked private zone.",
+          "explanation": "A resolution link permits private-zone record lookup.",
+          "referenceIds": [
+            "networking-plus-privateLinks"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Deploying VM-A automatically creates its record in this zone.",
+          "explanation": "Automatic VM records require autoregistration.",
+          "referenceIds": [
+            "networking-plus-privateLinks"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "c"
+      ],
+      "summaryExplanation": "A resolution link permits private-zone record lookup. Resolution-only links resolve both manual and autoregistered records.",
+      "summaryReferenceIds": [
+        "networking-plus-privateLinks"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-privateLinks",
+          "title": "What is a virtual network link subresource of Azure DNS private zones",
+          "url": "https://learn.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links",
+          "section": "Resolution virtual network",
+          "checkedAt": "2026-10-08T01:38:21.582Z",
+          "documentUpdatedAt": "2025-06-19T22:03:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Resolution virtual network. A resolution link permits private-zone record lookup. Automatic VM records require autoregistration. Resolution-only links resolve both manual and autoregistered records. Virtual-network links provide private resolution, not public delegation.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-07",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "VNet-A already has autoregistration enabled for zone-a.internal. An administrator proposes a second autoregistration zone.",
+      "prompt": "Which constraint applies?",
+      "options": [
+        {
+          "id": "b",
+          "text": "A private zone can have only one registration virtual network.",
+          "explanation": "The documentation permits multiple registration VNets for one zone.",
+          "referenceIds": [
+            "networking-plus-privateLinks"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A resolution-only link creates VM records automatically.",
+          "explanation": "Without autoregistration, the VNet is resolution-only.",
+          "referenceIds": [
+            "networking-plus-privateLinks"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Each virtual network can have only one registration zone.",
+          "explanation": "A VNet can link to multiple resolution zones but only one registration zone.",
+          "referenceIds": [
+            "networking-plus-privateLinks"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "A VNet can link to multiple resolution zones but only one registration zone.",
+      "summaryReferenceIds": [
+        "networking-plus-privateLinks"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-privateLinks",
+          "title": "What is a virtual network link subresource of Azure DNS private zones",
+          "url": "https://learn.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links",
+          "section": "Registration virtual network",
+          "checkedAt": "2026-10-08T01:38:21.582Z",
+          "documentUpdatedAt": "2025-06-19T22:03:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Registration virtual network. A VNet can link to multiple resolution zones but only one registration zone. The documentation permits multiple registration VNets for one zone. Without autoregistration, the VNet is resolution-only.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Private zone links",
+          "text": "VNet-A -> zone-a.internal: registration enabled\nProposed VNet-A -> zone-b.internal: registration enabled"
+        }
+      ]
+    },
+    {
+      "id": "az104-networking-plus-08",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.1"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "foundation",
+      "scenario": "An internal application needs a DNS namespace available to linked Azure networks without operating DNS VMs.",
+      "prompt": "Which TWO benefits does Azure Private DNS provide?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Managed DNS hosting for private names.",
+          "explanation": "Private DNS supplies a managed private namespace.",
+          "referenceIds": [
+            "networking-plus-privateDns"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Optional VM record autoregistration through VNet links.",
+          "explanation": "Autoregistration is supported on registration links.",
+          "referenceIds": [
+            "networking-plus-privateDns"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Purchase of a public domain name.",
+          "explanation": "Azure DNS does not provide registrar domain purchase.",
+          "referenceIds": [
+            "networking-plus-privateDns"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "A publicly delegated private zone accessible to all internet clients.",
+          "explanation": "Private zones resolve within linked virtual networks, not via public delegation.",
+          "referenceIds": [
+            "networking-plus-privateDns"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Private DNS supplies a managed private namespace. Autoregistration is supported on registration links.",
+      "summaryReferenceIds": [
+        "networking-plus-privateDns"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-privateDns",
+          "title": "Azure Private DNS: Secure DNS for Virtual Networks",
+          "url": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview",
+          "section": "Benefits",
+          "checkedAt": "2026-10-08T01:38:21.414Z",
+          "documentUpdatedAt": "2026-10-01T17:22:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Benefits. Private DNS supplies a managed private namespace. Autoregistration is supported on registration links. Azure DNS does not provide registrar domain purchase. Private zones resolve within linked virtual networks, not via public delegation.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-09",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A legacy TCP service runs on three VMs. Clients must use one frontend address. No HTTP path routing or TLS termination is required.",
+      "prompt": "Which service directly fits these conditions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Azure Load Balancer.",
+          "explanation": "Load Balancer distributes Layer 4 TCP/UDP traffic to VM backends.",
+          "referenceIds": [
+            "networking-plus-lb"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "An Azure DNS record set as a health-probing load balancer.",
+          "explanation": "DNS records publish names and addresses, not Load Balancer health probes.",
+          "referenceIds": [
+            "networking-plus-lb"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "An NSG as the frontend traffic distributor.",
+          "explanation": "NSGs filter traffic; they are not Layer 4 load balancers.",
+          "referenceIds": [
+            "networking-plus-lb"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Load Balancer distributes Layer 4 TCP/UDP traffic to VM backends.",
+      "summaryReferenceIds": [
+        "networking-plus-lb"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-lb",
+          "title": "What is Azure Load Balancer? - Azure Load Balancer",
+          "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+          "section": "How Azure Load Balancer distributes Layer 4 traffic",
+          "checkedAt": "2026-10-08T01:38:21.508Z",
+          "documentUpdatedAt": "2026-08-21T05:10:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: How Azure Load Balancer distributes Layer 4 traffic. Load Balancer distributes Layer 4 TCP/UDP traffic to VM backends. DNS records publish names and addresses, not Load Balancer health probes. NSGs filter traffic; they are not Layer 4 load balancers.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-10",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "The finance service must expose its TCP endpoint through a private frontend inside the virtual network.",
+      "prompt": "Which frontend design should be used?",
+      "options": [
+        {
+          "id": "b",
+          "text": "A public load balancer frontend IP.",
+          "explanation": "Public frontends serve internet-facing traffic and do not satisfy a private-only frontend.",
+          "referenceIds": [
+            "networking-plus-lb"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A public DNS zone without a load balancer.",
+          "explanation": "DNS hosting does not itself provide the requested private load-balancing frontend.",
+          "referenceIds": [
+            "networking-plus-lb"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "An internal load balancer with a private frontend IP.",
+          "explanation": "Internal load balancing uses private frontend addresses.",
+          "referenceIds": [
+            "networking-plus-lb"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Internal load balancing uses private frontend addresses.",
+      "summaryReferenceIds": [
+        "networking-plus-lb"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-lb",
+          "title": "What is Azure Load Balancer? - Azure Load Balancer",
+          "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+          "section": "How Azure Load Balancer distributes Layer 4 traffic",
+          "checkedAt": "2026-10-08T01:38:21.508Z",
+          "documentUpdatedAt": "2026-08-21T05:10:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: How Azure Load Balancer distributes Layer 4 traffic. Internal load balancing uses private frontend addresses. Public frontends serve internet-facing traffic and do not satisfy a private-only frontend. DNS hosting does not itself provide the requested private load-balancing frontend.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "caseStudy": {
+        "id": "networking-case-meridian",
+        "title": "Meridian private API",
+        "overview": "Meridian is an invented company with a private TCP API on Azure VMs behind an internal Standard Load Balancer. Its health probe targets /ready. Azure-provided DNS is used by VMs linked to its private namespace. Treat each question configuration as the current state."
+      }
+    },
+    {
+      "id": "az104-networking-plus-11",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.2"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "An internal Standard Load Balancer should distribute TCP 443 traffic to VMs listening on TCP 8443.",
+      "prompt": "Which TWO components are part of this configuration?",
+      "options": [
+        {
+          "id": "d",
+          "text": "An NSG priority value used as the frontend IP.",
+          "explanation": "NSG rule priorities are filter ordering, not frontend addresses.",
+          "referenceIds": [
+            "networking-plus-components"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "A load-balancing rule relating frontend and backend ports.",
+          "explanation": "The rule defines frontend and backend traffic distribution settings.",
+          "referenceIds": [
+            "networking-plus-components"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "A backend pool containing the target instances.",
+          "explanation": "Backend pools identify resources receiving balanced traffic.",
+          "referenceIds": [
+            "networking-plus-components"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A DNS MX record defining TCP backend health.",
+          "explanation": "MX records concern mail routing, not backend pool membership or probes.",
+          "referenceIds": [
+            "networking-plus-components"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "The rule defines frontend and backend traffic distribution settings. Backend pools identify resources receiving balanced traffic.",
+      "summaryReferenceIds": [
+        "networking-plus-components"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-components",
+          "title": "Azure Load Balancer Components Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/load-balancer/components",
+          "section": "Load balancer rules",
+          "checkedAt": "2026-10-08T01:42:23.144Z",
+          "documentUpdatedAt": "2026-08-17T18:22:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Load balancer rules. The rule defines frontend and backend traffic distribution settings. Backend pools identify resources receiving balanced traffic. MX records concern mail routing, not backend pool membership or probes. NSG rule priorities are filter ordering, not frontend addresses.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "caseStudy": {
+        "id": "networking-case-meridian",
+        "title": "Meridian private API",
+        "overview": "Meridian is an invented company with a private TCP API on Azure VMs behind an internal Standard Load Balancer. Its health probe targets /ready. Azure-provided DNS is used by VMs linked to its private namespace. Treat each question configuration as the current state."
+      }
+    },
+    {
+      "id": "az104-networking-plus-12",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "Two VMs accept TCP connections on port 8080, but one application returns HTTP 503 at /ready. A configured HTTP health probe targets /ready.",
+      "prompt": "What should happen to new connections for that backend?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The failing backend is marked unhealthy and stops receiving new connections.",
+          "explanation": "HTTP probes require HTTP 200; failure removes the instance from new-flow selection.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The HTTP 503 is considered healthy because TCP connected.",
+          "explanation": "An HTTP probe evaluates its HTTP response, unlike a TCP-only probe.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The probe rewrites application responses to HTTP 200.",
+          "explanation": "Probes observe health and do not repair or rewrite the application.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "HTTP probes require HTTP 200; failure removes the instance from new-flow selection.",
+      "summaryReferenceIds": [
+        "networking-plus-probe"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-probe",
+          "title": "Azure Load Balancer health probes",
+          "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+          "section": "Probe protocols",
+          "checkedAt": "2026-10-08T01:38:21.430Z",
+          "documentUpdatedAt": "2026-09-10T22:03:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Probe protocols. HTTP probes require HTTP 200; failure removes the instance from new-flow selection. An HTTP probe evaluates its HTTP response, unlike a TCP-only probe. Probes observe health and do not repair or rewrite the application.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Probe results",
+          "text": "Backend-1 /ready: HTTP 200\nBackend-2 /ready: HTTP 503\nProbe protocol: HTTP"
+        }
+      ],
+      "caseStudy": {
+        "id": "networking-case-meridian",
+        "title": "Meridian private API",
+        "overview": "Meridian is an invented company with a private TCP API on Azure VMs behind an internal Standard Load Balancer. Its health probe targets /ready. Azure-provided DNS is used by VMs linked to its private namespace. Treat each question configuration as the current state."
+      }
+    },
+    {
+      "id": "az104-networking-plus-13",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A backend TCP probe succeeds, but users receive application errors after connecting.",
+      "prompt": "What limitation explains the mismatch?",
+      "options": [
+        {
+          "id": "b",
+          "text": "TCP probes evaluate every HTTP response body.",
+          "explanation": "HTTP semantics are not evaluated by a TCP probe.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Successful probing guarantees every application dependency is healthy.",
+          "explanation": "A probe only tests its configured endpoint, not all dependencies.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "A successful TCP connection does not prove HTTP application health.",
+          "explanation": "TCP probes check that the TCP listener accepts connections.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "TCP probes check that the TCP listener accepts connections.",
+      "summaryReferenceIds": [
+        "networking-plus-probe"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-probe",
+          "title": "Azure Load Balancer health probes",
+          "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+          "section": "Probe protocol",
+          "checkedAt": "2026-10-08T01:38:21.430Z",
+          "documentUpdatedAt": "2026-09-10T22:03:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Probe protocol. TCP probes check that the TCP listener accepts connections. HTTP semantics are not evaluated by a TCP probe. A probe only tests its configured endpoint, not all dependencies.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-14",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.3"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "Load Balancer health probes fail after a restrictive inbound NSG rule is introduced. The app listens on the expected probe port.",
+      "prompt": "Which TWO checks are relevant?",
+      "options": [
+        {
+          "id": "c",
+          "text": "Change the public DNS TTL to change NSG matching.",
+          "explanation": "DNS caching does not alter probe packet filtering.",
+          "referenceIds": [
+            "networking-plus-troubleshoot"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Remove backend pool membership from all VMs.",
+          "explanation": "Removing all backends prevents service distribution rather than fixing blocked probes.",
+          "referenceIds": [
+            "networking-plus-troubleshoot"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Confirm NSG rules permit the health probe source and destination port.",
+          "explanation": "NSG filtering can block probe traffic before it reaches the instance.",
+          "referenceIds": [
+            "networking-plus-troubleshoot"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Inspect guest firewall permissions for the probe port.",
+          "explanation": "Guest firewalls can independently prevent probe access.",
+          "referenceIds": [
+            "networking-plus-troubleshoot"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "NSG filtering can block probe traffic before it reaches the instance. Guest firewalls can independently prevent probe access.",
+      "summaryReferenceIds": [
+        "networking-plus-troubleshoot"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-troubleshoot",
+          "title": "Troubleshoot Azure Load Balancer health probe status - Azure",
+          "url": "https://learn.microsoft.com/en-us/troubleshoot/azure/load-balancer/load-balancer-troubleshoot-health-probe-status",
+          "section": "Cause 3: Firewall, or a network security group is blocking the port on the load balancer backend pool VMs",
+          "checkedAt": "2026-10-08T01:38:22.085Z",
+          "documentUpdatedAt": "2026-09-08T18:07:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Cause 3: Firewall, or a network security group is blocking the port on the load balancer backend pool VMs. NSG filtering can block probe traffic before it reaches the instance. Guest firewalls can independently prevent probe access. DNS caching does not alter probe packet filtering. Removing all backends prevents service distribution rather than fixing blocked probes.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Traffic checks",
+          "text": "Backend listener: TCP 8080\nProbe port: TCP 8080\nRecent change: deny inbound platform probe traffic"
+        }
+      ]
+    },
+    {
+      "id": "az104-networking-plus-15",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An NSG must permit IPv4 Load Balancer probe traffic while denying unrelated traffic.",
+      "prompt": "Which source identification is documented?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The AzureLoadBalancer service tag, representing probe source 168.63.129.16.",
+          "explanation": "Microsoft documents this platform source and service tag for IPv4 probes.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The public frontend address as the probe source.",
+          "explanation": "Health probes originate from the platform probe address, not the client frontend.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The administrator workstation public address.",
+          "explanation": "The workstation is not the Azure platform health probe source.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Microsoft documents this platform source and service tag for IPv4 probes.",
+      "summaryReferenceIds": [
+        "networking-plus-probe"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-probe",
+          "title": "Azure Load Balancer health probes",
+          "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+          "section": "Probe source IP address",
+          "checkedAt": "2026-10-08T01:38:21.430Z",
+          "documentUpdatedAt": "2026-09-10T22:03:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Probe source IP address. Microsoft documents this platform source and service tag for IPv4 probes. Health probes originate from the platform probe address, not the client frontend. The workstation is not the Azure platform health probe source.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-16",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.3"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "One backend fails its probe while a second backend remains healthy. Existing TCP flows are being investigated separately.",
+      "prompt": "Which TWO statements are justified?",
+      "options": [
+        {
+          "id": "a",
+          "text": "New connections avoid the unhealthy backend.",
+          "explanation": "Health status determines backend selection for new connections.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Other healthy backends can still receive new connections.",
+          "explanation": "One failed instance does not mark the entire backend pool unhealthy.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A probe failure always immediately resets every existing TCP connection.",
+          "explanation": "Existing-flow behavior differs from new-flow selection; immediate reset is not guaranteed.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "A health probe automatically restarts the failed application.",
+          "explanation": "Health probes detect availability; they do not restart the app.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Health status determines backend selection for new connections. One failed instance does not mark the entire backend pool unhealthy.",
+      "summaryReferenceIds": [
+        "networking-plus-probe"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-probe",
+          "title": "Azure Load Balancer health probes",
+          "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+          "section": "Probe down behavior",
+          "checkedAt": "2026-10-08T01:38:21.430Z",
+          "documentUpdatedAt": "2026-09-10T22:03:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Probe down behavior. Health status determines backend selection for new connections. One failed instance does not mark the entire backend pool unhealthy. Existing-flow behavior differs from new-flow selection; immediate reset is not guaranteed. Health probes detect availability; they do not restart the app.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-17",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.1"
+      ],
+      "type": "ordering",
+      "requiredSelections": 4,
+      "difficulty": "intermediate",
+      "scenario": "A team is moving a newly purchased domain to Azure DNS; no Azure zone exists yet. Each listed stage must finish before its dependent stage.",
+      "prompt": "Order the migration stages.",
+      "options": [
+        {
+          "id": "b",
+          "text": "Read the assigned Azure DNS name servers for that zone.",
+          "explanation": "The delegation targets are obtained from the created zone.",
+          "referenceIds": [
+            "networking-plus-delegate"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Set the parent delegation to those name servers.",
+          "explanation": "The parent must point to the obtained targets before recursive lookup can use them.",
+          "referenceIds": [
+            "networking-plus-delegate"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Verify recursive lookup uses the Azure delegation.",
+          "explanation": "Verification follows the parent delegation change; allow DNS caching delays.",
+          "referenceIds": [
+            "networking-plus-delegate"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Create the Azure public DNS zone.",
+          "explanation": "The zone must exist before its assigned name servers can be obtained.",
+          "referenceIds": [
+            "networking-plus-delegate"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "summaryExplanation": "The zone must exist before its assigned name servers can be obtained. The delegation targets are obtained from the created zone. The parent must point to the obtained targets before recursive lookup can use them. Verification follows the parent delegation change; allow DNS caching delays.",
+      "summaryReferenceIds": [
+        "networking-plus-delegate"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-delegate",
+          "title": "Tutorial: Host your domain in Azure DNS",
+          "url": "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns",
+          "section": "Overview",
+          "checkedAt": "2026-10-08T01:38:21.625Z",
+          "documentUpdatedAt": "2025-10-08T05:12:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Overview. The zone must exist before its assigned name servers can be obtained. The delegation targets are obtained from the created zone. The parent must point to the obtained targets before recursive lookup can use them. Verification follows the parent delegation change; allow DNS caching delays.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-18",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.3"
+      ],
+      "type": "matching",
+      "requiredSelections": 3,
+      "difficulty": "intermediate",
+      "scenario": "Operations describes three health checks by their protocol behavior.",
+      "prompt": "Match each check to its probe protocol.",
+      "options": [
+        {
+          "id": "b",
+          "text": "HTTP.",
+          "explanation": "An HTTP probe requests a path and requires HTTP 200.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "HTTPS.",
+          "explanation": "An HTTPS probe uses TLS before performing its HTTP health check.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "TCP.",
+          "explanation": "A TCP probe establishes a TCP connection.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "A TCP probe establishes a TCP connection. An HTTP probe requests a path and requires HTTP 200. An HTTPS probe uses TLS before performing its HTTP health check.",
+      "summaryReferenceIds": [
+        "networking-plus-probe"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-probe",
+          "title": "Azure Load Balancer health probes",
+          "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+          "section": "Probe protocols",
+          "checkedAt": "2026-10-08T01:38:21.430Z",
+          "documentUpdatedAt": "2026-09-10T22:03:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Probe protocols. A TCP probe establishes a TCP connection. An HTTP probe requests a path and requires HTTP 200. An HTTPS probe uses TLS before performing its HTTP health check.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "matchPrompts": [
+        {
+          "id": "tcp",
+          "text": "Establishes a connection to the configured TCP port."
+        },
+        {
+          "id": "http",
+          "text": "Uses unencrypted HTTP and requires status 200 at the configured path."
+        },
+        {
+          "id": "https",
+          "text": "Uses TLS and requires HTTP status 200 at the configured path."
+        }
+      ]
+    },
+    {
+      "id": "az104-networking-plus-19",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.1"
+      ],
+      "type": "matching",
+      "requiredSelections": 3,
+      "difficulty": "foundation",
+      "scenario": "A DNS change request includes an IPv4 host, an IPv6 host, and a mail exchanger.",
+      "prompt": "Match each requirement to the record type.",
+      "options": [
+        {
+          "id": "b",
+          "text": "AAAA.",
+          "explanation": "An AAAA record publishes an IPv6 address.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "MX.",
+          "explanation": "An MX record publishes a mail exchanger and preference.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "A.",
+          "explanation": "An A record publishes an IPv4 address.",
+          "referenceIds": [
+            "networking-plus-records"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "An A record publishes an IPv4 address. An AAAA record publishes an IPv6 address. An MX record publishes a mail exchanger and preference.",
+      "summaryReferenceIds": [
+        "networking-plus-records"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-records",
+          "title": "DNS Zones and Records Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+          "section": "Record types",
+          "checkedAt": "2026-10-08T01:38:21.600Z",
+          "documentUpdatedAt": "2026-09-14T17:12:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Record types. An A record publishes an IPv4 address. An AAAA record publishes an IPv6 address. An MX record publishes a mail exchanger and preference.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "matchPrompts": [
+        {
+          "id": "ipv4",
+          "text": "Publish an IPv4 host address."
+        },
+        {
+          "id": "ipv6",
+          "text": "Publish an IPv6 host address."
+        },
+        {
+          "id": "mail",
+          "text": "Identify a mail exchanger and preference."
+        }
+      ]
+    },
+    {
+      "id": "az104-networking-plus-20",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "subObjectiveIds": [
+        "dns-balancing.2"
+      ],
+      "type": "ordering",
+      "requiredSelections": 4,
+      "difficulty": "advanced",
+      "scenario": "A deployment team needs an internal TCP load balancer. Resources have not been created. Stages are grouped so references exist before rules use them.",
+      "prompt": "Order these dependency stages.",
+      "options": [
+        {
+          "id": "b",
+          "text": "Create the frontend, backend pool, and health probe using those chosen values.",
+          "explanation": "A load-balancing rule references these existing components.",
+          "referenceIds": [
+            "networking-plus-components"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Create the rule using the created frontend, pool, and probe.",
+          "explanation": "The rule ties the prior components together.",
+          "referenceIds": [
+            "networking-plus-components"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Test traffic and backend health through the private frontend.",
+          "explanation": "End-to-end verification follows creation of the rule.",
+          "referenceIds": [
+            "networking-plus-components"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Choose the frontend subnet and address, backend targets, and probe listener settings.",
+          "explanation": "Required component values must be chosen before those components can be created.",
+          "referenceIds": [
+            "networking-plus-components"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b",
+        "c",
+        "d"
+      ],
+      "summaryExplanation": "Required component values must be chosen before those components can be created. A load-balancing rule references these existing components. The rule ties the prior components together. End-to-end verification follows creation of the rule.",
+      "summaryReferenceIds": [
+        "networking-plus-components"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-components",
+          "title": "Azure Load Balancer Components Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/load-balancer/components",
+          "section": "Load balancer rules",
+          "checkedAt": "2026-10-08T01:42:23.144Z",
+          "documentUpdatedAt": "2026-08-17T18:22:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Load balancer rules. Required component values must be chosen before those components can be created. A load-balancing rule references these existing components. The rule ties the prior components together. End-to-end verification follows creation of the rule.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-21",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A new IPv4 /29 subnet contains eight addresses. No addresses have yet been assigned to NICs.",
+      "prompt": "How many addresses are usable for resources?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Three.",
+          "explanation": "Azure reserves five addresses in each IPv4 subnet, leaving 8 minus 5.",
+          "referenceIds": [
+            "networking-plus-subnet"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Eight.",
+          "explanation": "This counts Azure-reserved addresses as usable.",
+          "referenceIds": [
+            "networking-plus-subnet"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Six.",
+          "explanation": "Azure reserves more than the conventional network and broadcast pair.",
+          "referenceIds": [
+            "networking-plus-subnet"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Azure reserves five addresses in each IPv4 subnet, leaving 8 minus 5.",
+      "summaryReferenceIds": [
+        "networking-plus-subnet"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-subnet",
+          "title": "Add, change, or delete a subnet",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet",
+          "section": "Add a subnet",
+          "checkedAt": "2026-10-08T01:38:21.435Z",
+          "documentUpdatedAt": "2026-04-09T17:25:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Add a subnet. Azure reserves five addresses in each IPv4 subnet, leaving 8 minus 5. This counts Azure-reserved addresses as usable. Azure reserves more than the conventional network and broadcast pair.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-22",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An architect proposes subnet 10.40.2.0/24 in a VNet whose only range is 10.40.0.0/24.",
+      "prompt": "Which change is needed before that subnet can be added?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Set an NSG allow rule for 10.40.2.0/24.",
+          "explanation": "NSG rules do not extend VNet address space.",
+          "referenceIds": [
+            "networking-plus-subnet"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Attach a public IP to the subnet.",
+          "explanation": "A public IP does not make an out-of-range subnet valid.",
+          "referenceIds": [
+            "networking-plus-subnet"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Add a suitable VNet address range that contains the subnet.",
+          "explanation": "Subnet address space must fit within the VNet address space.",
+          "referenceIds": [
+            "networking-plus-subnet"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Subnet address space must fit within the VNet address space.",
+      "summaryReferenceIds": [
+        "networking-plus-subnet"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-subnet",
+          "title": "Add, change, or delete a subnet",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet",
+          "section": "Add a subnet",
+          "checkedAt": "2026-10-08T01:38:21.435Z",
+          "documentUpdatedAt": "2026-04-09T17:25:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Add a subnet. Subnet address space must fit within the VNet address space. NSG rules do not extend VNet address space. A public IP does not make an out-of-range subnet valid.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-23",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "Two departments need separate subnets inside 10.50.0.0/16. The proposed ranges are 10.50.1.0/24 and 10.50.1.128/25.",
+      "prompt": "What is wrong with the design?",
+      "options": [
+        {
+          "id": "c",
+          "text": "A VNet can only contain one subnet.",
+          "explanation": "Virtual networks support multiple nonoverlapping subnets.",
+          "referenceIds": [
+            "networking-plus-subnet"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "The subnet address ranges overlap.",
+          "explanation": "The /25 lies within the /24; subnet ranges in a VNet must not overlap.",
+          "referenceIds": [
+            "networking-plus-subnet"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "All subnets must use identical prefix lengths.",
+          "explanation": "Different prefix lengths are permitted if valid and nonoverlapping.",
+          "referenceIds": [
+            "networking-plus-subnet"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The /25 lies within the /24; subnet ranges in a VNet must not overlap.",
+      "summaryReferenceIds": [
+        "networking-plus-subnet"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-subnet",
+          "title": "Add, change, or delete a subnet",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet",
+          "section": "Add a subnet",
+          "checkedAt": "2026-10-08T01:38:21.435Z",
+          "documentUpdatedAt": "2026-04-09T17:25:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Add a subnet. The /25 lies within the /24; subnet ranges in a VNet must not overlap. Different prefix lengths are permitted if valid and nonoverlapping. Virtual networks support multiple nonoverlapping subnets.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Subnet proposal",
+          "text": "VNet: 10.50.0.0/16\nSubnet-A: 10.50.1.0/24\nSubnet-B: 10.50.1.128/25"
+        }
+      ]
+    },
+    {
+      "id": "az104-networking-plus-24",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "VNet-A uses 10.0.0.0/16 and VNet-B uses 10.0.8.0/24. The owner wants direct peering.",
+      "prompt": "Which blocking condition must be addressed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The VNet address spaces overlap.",
+          "explanation": "Peered virtual networks must have nonoverlapping address spaces.",
+          "referenceIds": [
+            "networking-plus-managePeering"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The networks have different prefix lengths.",
+          "explanation": "Different sizes are allowed; overlap is the problem.",
+          "referenceIds": [
+            "networking-plus-managePeering"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The networks do not share a public IP.",
+          "explanation": "Public IP sharing is not a peering prerequisite.",
+          "referenceIds": [
+            "networking-plus-managePeering"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Peered virtual networks must have nonoverlapping address spaces.",
+      "summaryReferenceIds": [
+        "networking-plus-managePeering"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-managePeering",
+          "title": "Create, Change, or Delete Azure Virtual Network Peering",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering",
+          "section": "Requirements and constraints",
+          "checkedAt": "2026-10-08T01:41:35.477Z",
+          "documentUpdatedAt": "2026-08-13T22:14:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Requirements and constraints. Peered virtual networks must have nonoverlapping address spaces. Different sizes are allowed; overlap is the problem. Public IP sharing is not a peering prerequisite.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-25",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "VNet-A is peered with VNet-B, and VNet-B is peered with VNet-C. There is no A-C peering, gateway transit, or forwarding appliance.",
+      "prompt": "Can A use these peerings as an automatically transitive path to C?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Yes; all peering chains are transitive.",
+          "explanation": "This contradicts the documented nontransitive peering model.",
+          "referenceIds": [
+            "networking-plus-managePeering"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Yes; a public DNS record enables transit.",
+          "explanation": "Name resolution cannot create a missing network transit path.",
+          "referenceIds": [
+            "networking-plus-managePeering"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "No; peering is not transitive.",
+          "explanation": "A-B and B-C do not automatically establish A-C connectivity.",
+          "referenceIds": [
+            "networking-plus-managePeering"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "A-B and B-C do not automatically establish A-C connectivity.",
+      "summaryReferenceIds": [
+        "networking-plus-managePeering"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-managePeering",
+          "title": "Create, Change, or Delete Azure Virtual Network Peering",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering",
+          "section": "Requirements and constraints",
+          "checkedAt": "2026-10-08T01:41:35.477Z",
+          "documentUpdatedAt": "2026-08-13T22:14:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Requirements and constraints. A-B and B-C do not automatically establish A-C connectivity. This contradicts the documented nontransitive peering model. Name resolution cannot create a missing network transit path.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Peering topology",
+          "text": "VNet-A <-> VNet-B <-> VNet-C\nNo A-C peering; no forwarding appliance; no gateway transit"
+        }
+      ]
+    },
+    {
+      "id": "az104-networking-plus-26",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.2"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "A hub has a VPN gateway, and a spoke has no gateway. Supported peering will let the spoke use the hub gateway.",
+      "prompt": "Which TWO peering settings form this arrangement?",
+      "options": [
+        {
+          "id": "c",
+          "text": "Create a second local gateway in the spoke while keeping remote gateway use.",
+          "explanation": "A VNet using a remote gateway cannot simultaneously have a local gateway.",
+          "referenceIds": [
+            "networking-plus-managePeering"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Treat the gateway settings as unnecessary because all peerings provide gateway transit.",
+          "explanation": "Gateway transit requires explicit configuration.",
+          "referenceIds": [
+            "networking-plus-managePeering"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Allow gateway transit on the hub peering.",
+          "explanation": "The hub permits peers to use its gateway.",
+          "referenceIds": [
+            "networking-plus-managePeering"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Use remote gateways on the spoke peering.",
+          "explanation": "The spoke selects the gateway supplied by its peer.",
+          "referenceIds": [
+            "networking-plus-managePeering"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "The hub permits peers to use its gateway. The spoke selects the gateway supplied by its peer.",
+      "summaryReferenceIds": [
+        "networking-plus-managePeering"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-managePeering",
+          "title": "Create, Change, or Delete Azure Virtual Network Peering",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering",
+          "section": "Create a virtual network peering",
+          "checkedAt": "2026-10-08T01:41:35.477Z",
+          "documentUpdatedAt": "2026-08-13T22:14:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Create a virtual network peering. The hub permits peers to use its gateway. The spoke selects the gateway supplied by its peer. A VNet using a remote gateway cannot simultaneously have a local gateway. Gateway transit requires explicit configuration.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-27",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.2"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A peered VNet gains 10.70.0.0/16 as an additional address range. The remote peer still lists only the old range.",
+      "prompt": "Which TWO actions or interpretations are supported?",
+      "options": [
+        {
+          "id": "d",
+          "text": "Assume a private DNS zone link updates peering address ranges.",
+          "explanation": "DNS links do not synchronize peering topology.",
+          "referenceIds": [
+            "networking-plus-peering"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Synchronize the peering after the address-space update.",
+          "explanation": "Microsoft directs administrators to sync peers after resizing.",
+          "referenceIds": [
+            "networking-plus-peering"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Check that the new ranges still do not overlap peers.",
+          "explanation": "Peering requires nonoverlapping address spaces.",
+          "referenceIds": [
+            "networking-plus-peering"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Delete every existing VM to advertise the new range.",
+          "explanation": "Peer synchronization does not require deleting VMs.",
+          "referenceIds": [
+            "networking-plus-peering"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Microsoft directs administrators to sync peers after resizing. Peering requires nonoverlapping address spaces.",
+      "summaryReferenceIds": [
+        "networking-plus-peering"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-peering",
+          "title": "Azure Virtual Network Peering",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+          "section": "Resize the address space of Azure virtual networks that are peered",
+          "checkedAt": "2026-10-08T01:38:21.406Z",
+          "documentUpdatedAt": "2026-09-17T04:41:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Resize the address space of Azure virtual networks that are peered. Microsoft directs administrators to sync peers after resizing. Peering requires nonoverlapping address spaces. Peer synchronization does not require deleting VMs. DNS links do not synchronize peering topology.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-28",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A new internet-facing VM needs a supported Standard public IPv4 address. The administrator proposes dynamic allocation.",
+      "prompt": "Which allocation method applies?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Dynamic, because all IPv4 public IPs are dynamic.",
+          "explanation": "Standard IPv4 does not use Basic dynamic allocation behavior.",
+          "referenceIds": [
+            "networking-plus-ip"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A private subnet DHCP lease as its public allocation.",
+          "explanation": "Private addresses are separate from the public IP resource.",
+          "referenceIds": [
+            "networking-plus-ip"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Static.",
+          "explanation": "Standard public IP allocation is static.",
+          "referenceIds": [
+            "networking-plus-ip"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Standard public IP allocation is static.",
+      "summaryReferenceIds": [
+        "networking-plus-ip"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-ip",
+          "title": "Public IP addresses in Azure - Azure Virtual Network",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses",
+          "section": "SKU",
+          "checkedAt": "2026-10-08T01:38:21.713Z",
+          "documentUpdatedAt": "2026-02-25T06:24:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: SKU. Standard public IP allocation is static. Standard IPv4 does not use Basic dynamic allocation behavior. Private addresses are separate from the public IP resource.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-29",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A migration checklist dated October 2026 still recommends creating Basic public IPs for new services.",
+      "prompt": "Which correction is supported by the current documentation?",
+      "options": [
+        {
+          "id": "c",
+          "text": "All public IP resources were retired with Basic.",
+          "explanation": "Retirement applies to Basic, not the Standard offering.",
+          "referenceIds": [
+            "networking-plus-ip"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Use Standard; Basic public IPs were retired on September 30, 2025.",
+          "explanation": "The retrieved public IP page records the Basic retirement date.",
+          "referenceIds": [
+            "networking-plus-ip"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Basic public IPs are the recommended new default in 2026.",
+          "explanation": "That recommendation conflicts with the documented retirement.",
+          "referenceIds": [
+            "networking-plus-ip"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The retrieved public IP page records the Basic retirement date.",
+      "summaryReferenceIds": [
+        "networking-plus-ip"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-ip",
+          "title": "Public IP addresses in Azure - Azure Virtual Network",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses",
+          "section": "SKU",
+          "checkedAt": "2026-10-08T01:38:21.713Z",
+          "documentUpdatedAt": "2026-02-25T06:24:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: SKU. The retrieved public IP page records the Basic retirement date. That recommendation conflicts with the documented retirement. Retirement applies to Basic, not the Standard offering.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-30",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.3"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A Standard public IP is attached to a VM NIC. The team expects inbound access simply because a public address exists.",
+      "prompt": "Which TWO statements should inform configuration?",
+      "options": [
+        {
+          "id": "c",
+          "text": "Standard public IP automatically permits every inbound TCP port.",
+          "explanation": "This contradicts Standard secure-by-default behavior.",
+          "referenceIds": [
+            "networking-plus-ip"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Assigning a public IP encrypts all application payloads.",
+          "explanation": "Public addressing does not provide application encryption.",
+          "referenceIds": [
+            "networking-plus-ip"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Standard public IPs require explicitly permitted inbound traffic through an NSG.",
+          "explanation": "Standard public IP security is closed to inbound unless allowed.",
+          "referenceIds": [
+            "networking-plus-ip"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "A public IP address does not replace packet-filtering rules.",
+          "explanation": "Addressing and NSG access policy are separate controls.",
+          "referenceIds": [
+            "networking-plus-ip"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Standard public IP security is closed to inbound unless allowed. Addressing and NSG access policy are separate controls.",
+      "summaryReferenceIds": [
+        "networking-plus-ip"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-ip",
+          "title": "Public IP addresses in Azure - Azure Virtual Network",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses",
+          "section": "SKU",
+          "checkedAt": "2026-10-08T01:38:21.713Z",
+          "documentUpdatedAt": "2026-02-25T06:24:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: SKU. Standard public IP security is closed to inbound unless allowed. Addressing and NSG access policy are separate controls. This contradicts Standard secure-by-default behavior. Public addressing does not provide application encryption.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-31",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.4"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A subnet route table contains 10.80.0.0/16 via appliance-A and 10.80.4.0/24 via appliance-B. Destination is 10.80.4.19. Both routes are valid.",
+      "prompt": "Which route is selected?",
+      "options": [
+        {
+          "id": "b",
+          "text": "10.80.0.0/16 via appliance-A because it covers more addresses.",
+          "explanation": "Greater coverage means a shorter prefix, not higher specificity.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Both appliances receive a copy of every packet.",
+          "explanation": "Route selection chooses a next hop rather than duplicating packets.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "10.80.4.0/24 via appliance-B.",
+          "explanation": "Azure selects the longest matching destination prefix.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Azure selects the longest matching destination prefix.",
+      "summaryReferenceIds": [
+        "networking-plus-route"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-route",
+          "title": "Azure virtual network traffic routing",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+          "section": "How Azure selects routes for traffic routing",
+          "checkedAt": "2026-10-08T01:38:21.610Z",
+          "documentUpdatedAt": "2026-09-16T11:51:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: How Azure selects routes for traffic routing. Azure selects the longest matching destination prefix. Greater coverage means a shorter prefix, not higher specificity. Route selection chooses a next hop rather than duplicating packets.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Route table",
+          "text": "10.80.0.0/16 -> appliance-A\n10.80.4.0/24 -> appliance-B\nDestination: 10.80.4.19"
+        }
+      ]
+    },
+    {
+      "id": "az104-networking-plus-32",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.4"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A valid user-defined route and a BGP route advertise the identical destination prefix. No special service-endpoint route applies.",
+      "prompt": "Which route type has priority?",
+      "options": [
+        {
+          "id": "c",
+          "text": "Whichever route has the lower NSG rule priority.",
+          "explanation": "NSG priorities do not choose routing precedence.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "The user-defined route.",
+          "explanation": "For identical prefixes, UDR priority precedes BGP and system routes.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The BGP route in all cases.",
+          "explanation": "BGP does not override a UDR with the same prefix under these conditions.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "For identical prefixes, UDR priority precedes BGP and system routes.",
+      "summaryReferenceIds": [
+        "networking-plus-route"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-route",
+          "title": "Azure virtual network traffic routing",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+          "section": "How Azure selects routes for traffic routing",
+          "checkedAt": "2026-10-08T01:38:21.610Z",
+          "documentUpdatedAt": "2026-09-16T11:51:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: How Azure selects routes for traffic routing. For identical prefixes, UDR priority precedes BGP and system routes. BGP does not override a UDR with the same prefix under these conditions. NSG priorities do not choose routing precedence.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Equal-prefix candidates",
+          "text": "UDR: 10.100.0.0/16\nBGP: 10.100.0.0/16\nNo special service-endpoint route"
+        }
+      ]
+    },
+    {
+      "id": "az104-networking-plus-33",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.4"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A route table must direct a workload subnet through a network virtual appliance.",
+      "prompt": "Which TWO settings are part of this design?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Use next-hop type Virtual appliance with the appliance private IP.",
+          "explanation": "Virtual appliance routes identify the forwarding appliance by its private IP.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Associate the route table only with a DNS zone.",
+          "explanation": "Route tables are associated with subnets, not DNS zones.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Use an NSG application group name as the route next-hop IP.",
+          "explanation": "Application security groups are rule groupings, not route next-hop addresses.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Associate the route table with the workload subnet.",
+          "explanation": "UDR tables affect associated subnets.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "UDR tables affect associated subnets. Virtual appliance routes identify the forwarding appliance by its private IP.",
+      "summaryReferenceIds": [
+        "networking-plus-route"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-route",
+          "title": "Azure virtual network traffic routing",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+          "section": "User-defined routes",
+          "checkedAt": "2026-10-08T01:38:21.610Z",
+          "documentUpdatedAt": "2026-09-16T11:51:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: User-defined routes. UDR tables affect associated subnets. Virtual appliance routes identify the forwarding appliance by its private IP. Route tables are associated with subnets, not DNS zones. Application security groups are rule groupings, not route next-hop addresses.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-34",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.4"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A security design uses a route with prefix 10.90.0.0/16 and next-hop type None.",
+      "prompt": "What happens to matching packets when that route is selected?",
+      "options": [
+        {
+          "id": "b",
+          "text": "They are sent automatically to the public internet.",
+          "explanation": "None does not designate an Internet next hop.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "They are stored until the route is removed.",
+          "explanation": "Routing does not queue packets indefinitely for future configuration changes.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "They are dropped.",
+          "explanation": "The None next-hop type discards matching traffic.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The None next-hop type discards matching traffic.",
+      "summaryReferenceIds": [
+        "networking-plus-route"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-route",
+          "title": "Azure virtual network traffic routing",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+          "section": "Default system routes",
+          "checkedAt": "2026-10-08T01:38:21.610Z",
+          "documentUpdatedAt": "2026-09-16T11:51:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Default system routes. The None next-hop type discards matching traffic. None does not designate an Internet next hop. Routing does not queue packets indefinitely for future configuration changes.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-35",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.5"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A VM cannot connect to a specific remote TCP endpoint. The administrator needs an on-demand Azure diagnosis from that VM to the destination.",
+      "prompt": "Which capability directly fits?",
+      "options": [
+        {
+          "id": "c",
+          "text": "A resource tag named reachable.",
+          "explanation": "Resource tags are metadata, not connectivity tests.",
+          "referenceIds": [
+            "networking-plus-watcher"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Network Watcher Connection troubleshoot.",
+          "explanation": "It checks a connection from a source VM to a specified destination.",
+          "referenceIds": [
+            "networking-plus-watcher"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "A public DNS MX record.",
+          "explanation": "MX records do not diagnose VM TCP reachability.",
+          "referenceIds": [
+            "networking-plus-watcher"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "It checks a connection from a source VM to a specified destination.",
+      "summaryReferenceIds": [
+        "networking-plus-watcher"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-watcher",
+          "title": "Connection Troubleshoot Overview - Azure Network Watcher",
+          "url": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview",
+          "section": "Supported source and destination types",
+          "checkedAt": "2026-10-08T01:38:21.797Z",
+          "documentUpdatedAt": "2026-09-21T11:41:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Supported source and destination types. It checks a connection from a source VM to a specified destination. MX records do not diagnose VM TCP reachability. Resource tags are metadata, not connectivity tests.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-36",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.5"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "Traffic unexpectedly bypasses the intended appliance. The subnet association and destination prefix need investigation.",
+      "prompt": "Which TWO checks directly inform the routing diagnosis?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Inspect the NIC effective routes.",
+          "explanation": "Effective routes show the combined routes applied to a NIC.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Confirm the intended route table is associated with the source subnet.",
+          "explanation": "An unassociated table does not apply its UDRs to this subnet.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Lower the private DNS TTL to change UDR priority.",
+          "explanation": "DNS TTL cannot change route selection precedence.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Raise an NSG deny rule priority to make a route visible.",
+          "explanation": "NSG filtering priorities do not create or reveal UDR associations.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Effective routes show the combined routes applied to a NIC. An unassociated table does not apply its UDRs to this subnet.",
+      "summaryReferenceIds": [
+        "networking-plus-route"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-route",
+          "title": "Azure virtual network traffic routing",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+          "section": "Route tables",
+          "checkedAt": "2026-10-08T01:38:21.610Z",
+          "documentUpdatedAt": "2026-09-16T11:51:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Route tables. Effective routes show the combined routes applied to a NIC. An unassociated table does not apply its UDRs to this subnet. DNS TTL cannot change route selection precedence. NSG filtering priorities do not create or reveal UDR associations.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-37",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.1"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A web tier must admit HTTPS from the internet but deny new inbound HTTP. All other controls permit HTTPS.",
+      "prompt": "Which TWO NSG rule facts apply?",
+      "options": [
+        {
+          "id": "b",
+          "text": "A matching allow rule for TCP 443 can permit new HTTPS flows.",
+          "explanation": "A permitted TCP destination port enables the NSG portion of access.",
+          "referenceIds": [
+            "networking-plus-nsg"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "One allow for TCP 443 automatically allows TCP 80.",
+          "explanation": "Port 443 matching does not cover port 80.",
+          "referenceIds": [
+            "networking-plus-nsg"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "NSG rules perform TLS certificate renewal.",
+          "explanation": "NSGs filter network traffic and do not manage application certificates.",
+          "referenceIds": [
+            "networking-plus-nsg"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "A rule can match protocol, source, destination, and destination port.",
+          "explanation": "NSGs evaluate these packet attributes with rule priority.",
+          "referenceIds": [
+            "networking-plus-nsg"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "NSGs evaluate these packet attributes with rule priority. A permitted TCP destination port enables the NSG portion of access.",
+      "summaryReferenceIds": [
+        "networking-plus-nsg"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-nsg",
+          "title": "Azure network security groups overview",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+          "section": "Security rules",
+          "checkedAt": "2026-10-08T01:38:21.631Z",
+          "documentUpdatedAt": "2025-10-23T11:11:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Security rules. NSGs evaluate these packet attributes with rule priority. A permitted TCP destination port enables the NSG portion of access. Port 443 matching does not cover port 80. NSGs filter network traffic and do not manage application certificates.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-38",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "Two NICs in different virtual networks are proposed as members of one application security group.",
+      "prompt": "Which restriction prevents this design?",
+      "options": [
+        {
+          "id": "c",
+          "text": "ASGs can contain only one NIC.",
+          "explanation": "Multiple eligible NICs can belong to the group.",
+          "referenceIds": [
+            "networking-plus-asg"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "NICs assigned to an application security group must be in the same VNet.",
+          "explanation": "ASG membership is constrained to the same virtual network.",
+          "referenceIds": [
+            "networking-plus-asg"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "ASGs require every VM to have a public IP.",
+          "explanation": "The grouping does not require public IP addresses.",
+          "referenceIds": [
+            "networking-plus-asg"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "ASG membership is constrained to the same virtual network.",
+      "summaryReferenceIds": [
+        "networking-plus-asg"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-asg",
+          "title": "Azure Application Security Groups Overview",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups",
+          "section": "Application security groups",
+          "checkedAt": "2026-10-08T01:38:21.612Z",
+          "documentUpdatedAt": "2025-07-25T22:07:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Application security groups. ASG membership is constrained to the same virtual network. The grouping does not require public IP addresses. Multiple eligible NICs can belong to the group.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-39",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A VM NIC NSG allows a new inbound TCP 443 flow; its subnet NSG denies that flow. There is no overriding security admin rule.",
+      "prompt": "What is the result?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Denied.",
+          "explanation": "For inbound traffic, subnet and NIC NSG rules must both permit the flow.",
+          "referenceIds": [
+            "networking-plus-effective"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Allowed because NIC rules override subnet rules.",
+          "explanation": "An allow at one scope does not cancel a deny at the other.",
+          "referenceIds": [
+            "networking-plus-effective"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Allowed because all rules are merged by numeric priority across NSGs.",
+          "explanation": "Separate NSGs are evaluated in their traffic path; priorities do not override the other NSG.",
+          "referenceIds": [
+            "networking-plus-effective"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "For inbound traffic, subnet and NIC NSG rules must both permit the flow.",
+      "summaryReferenceIds": [
+        "networking-plus-effective"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-effective",
+          "title": "How Network Security Groups Filter Network Traffic in Azure",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works",
+          "section": "Inbound traffic",
+          "checkedAt": "2026-10-08T01:38:21.617Z",
+          "documentUpdatedAt": "2025-07-29T05:09:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Inbound traffic. For inbound traffic, subnet and NIC NSG rules must both permit the flow. An allow at one scope does not cancel a deny at the other. Separate NSGs are evaluated in their traffic path; priorities do not override the other NSG.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Inbound rules",
+          "text": "Subnet NSG: deny TCP 443\nNIC NSG: allow TCP 443\nNo security admin rule"
+        }
+      ]
+    },
+    {
+      "id": "az104-networking-plus-40",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.2"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "A NIC NSG blocks a new outbound TCP flow that the subnet NSG permits. Security admin policy is absent.",
+      "prompt": "Which TWO statements apply?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The flow is denied by the NIC NSG.",
+          "explanation": "Outbound evaluation checks the NIC NSG and subnet NSG; a deny blocks it.",
+          "referenceIds": [
+            "networking-plus-effective"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The subnet allow does not override the NIC deny.",
+          "explanation": "Both applicable NSGs must allow the flow.",
+          "referenceIds": [
+            "networking-plus-effective"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Subnet NSGs never evaluate outbound traffic.",
+          "explanation": "Subnet NSGs apply to outbound as well as inbound flows.",
+          "referenceIds": [
+            "networking-plus-effective"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "The allowed subnet rule deletes the NIC rule.",
+          "explanation": "Rules in different NSGs remain separate configuration objects.",
+          "referenceIds": [
+            "networking-plus-effective"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Outbound evaluation checks the NIC NSG and subnet NSG; a deny blocks it. Both applicable NSGs must allow the flow.",
+      "summaryReferenceIds": [
+        "networking-plus-effective"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-effective",
+          "title": "How Network Security Groups Filter Network Traffic in Azure",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works",
+          "section": "Outbound traffic",
+          "checkedAt": "2026-10-08T01:38:21.617Z",
+          "documentUpdatedAt": "2025-07-29T05:09:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Outbound traffic. Outbound evaluation checks the NIC NSG and subnet NSG; a deny blocks it. Both applicable NSGs must allow the flow. Subnet NSGs apply to outbound as well as inbound flows. Rules in different NSGs remain separate configuration objects.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-plus-41",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An administrator needs the combined applicable NSG rules for a VM NIC without changing its configuration.",
+      "prompt": "Which view should be inspected?",
+      "options": [
+        {
+          "id": "c",
+          "text": "The storage account access keys.",
+          "explanation": "Storage credentials do not describe NIC packet filtering.",
+          "referenceIds": [
+            "networking-plus-effective"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "The NIC effective security rules.",
+          "explanation": "The view aggregates applicable subnet and NIC NSG rules.",
+          "referenceIds": [
+            "networking-plus-effective"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The public DNS zone record sets.",
+          "explanation": "DNS record sets do not enumerate NSG rules.",
+          "referenceIds": [
+            "networking-plus-effective"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The view aggregates applicable subnet and NIC NSG rules.",
+      "summaryReferenceIds": [
+        "networking-plus-effective"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-effective",
+          "title": "How Network Security Groups Filter Network Traffic in Azure",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works",
+          "section": "Inbound traffic",
+          "checkedAt": "2026-10-08T01:38:21.617Z",
+          "documentUpdatedAt": "2025-07-29T05:09:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Inbound traffic. The view aggregates applicable subnet and NIC NSG rules. DNS record sets do not enumerate NSG rules. Storage credentials do not describe NIC packet filtering.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-networking-plus-42",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.3"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A new dedicated Basic Bastion deployment is planned for October 2026. Developer SKU is not being used.",
+      "prompt": "Which TWO subnet conditions are required?",
+      "options": [
+        {
+          "id": "c",
+          "text": "Place Bastion in any subnet named AdminSubnet.",
+          "explanation": "The required dedicated subnet name is AzureBastionSubnet.",
+          "referenceIds": [
+            "networking-plus-bastion"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Use /28 because new deployments need only a few addresses.",
+          "explanation": "/28 is smaller than the required /26 minimum.",
+          "referenceIds": [
+            "networking-plus-bastion"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Name the dedicated subnet AzureBastionSubnet.",
+          "explanation": "Non-Developer dedicated Bastion deployments require this exact subnet name.",
+          "referenceIds": [
+            "networking-plus-bastion"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Use /26 or a larger address range.",
+          "explanation": "New dedicated deployments require /26 or larger.",
+          "referenceIds": [
+            "networking-plus-bastion"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Non-Developer dedicated Bastion deployments require this exact subnet name. New dedicated deployments require /26 or larger.",
+      "summaryReferenceIds": [
+        "networking-plus-bastion"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-bastion",
+          "title": "About Azure Bastion configuration settings",
+          "url": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings",
+          "section": "Azure Bastion subnet",
+          "checkedAt": "2026-10-08T01:38:21.632Z",
+          "documentUpdatedAt": "2026-08-12T22:14:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Azure Bastion subnet. Non-Developer dedicated Bastion deployments require this exact subnet name. New dedicated deployments require /26 or larger. The required dedicated subnet name is AzureBastionSubnet. /28 is smaller than the required /26 minimum.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-networking-plus-43",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A Basic Bastion instance uses a public IP rather than Developer or Premium private-only deployment.",
+      "prompt": "Which public IP settings are required?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Basic SKU with dynamic allocation.",
+          "explanation": "This does not satisfy the documented Bastion public IP requirements.",
+          "referenceIds": [
+            "networking-plus-bastion"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A public IP already attached to a different active resource.",
+          "explanation": "The eligible public IP must not already be in use.",
+          "referenceIds": [
+            "networking-plus-bastion"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Standard SKU and static allocation.",
+          "explanation": "The dedicated public Bastion IP must be Standard and Static.",
+          "referenceIds": [
+            "networking-plus-bastion"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The dedicated public Bastion IP must be Standard and Static.",
+      "summaryReferenceIds": [
+        "networking-plus-bastion"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-bastion",
+          "title": "About Azure Bastion configuration settings",
+          "url": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings",
+          "section": "Public IP address",
+          "checkedAt": "2026-10-08T01:38:21.632Z",
+          "documentUpdatedAt": "2026-08-12T22:14:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Public IP address. The dedicated public Bastion IP must be Standard and Static. This does not satisfy the documented Bastion public IP requirements. The eligible public IP must not already be in use.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-networking-plus-44",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "The admin team requires a Bastion connection to a VM SSH listener on a custom port.",
+      "prompt": "Which SKU capability is required?",
+      "options": [
+        {
+          "id": "c",
+          "text": "Changing a public DNS TTL enables custom ports on every SKU.",
+          "explanation": "DNS TTL does not change Bastion feature availability.",
+          "referenceIds": [
+            "networking-plus-bastion"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Standard SKU or higher for custom port connections.",
+          "explanation": "Custom ports are supported by Standard and higher.",
+          "referenceIds": [
+            "networking-plus-bastion"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Basic SKU always supports custom ports.",
+          "explanation": "Basic is excluded from the documented custom-port feature.",
+          "referenceIds": [
+            "networking-plus-bastion"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Custom ports are supported by Standard and higher.",
+      "summaryReferenceIds": [
+        "networking-plus-bastion"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-bastion",
+          "title": "About Azure Bastion configuration settings",
+          "url": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings",
+          "section": "Custom ports",
+          "checkedAt": "2026-10-08T01:38:21.632Z",
+          "documentUpdatedAt": "2026-08-12T22:14:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Custom ports. Custom ports are supported by Standard and higher. Basic is excluded from the documented custom-port feature. DNS TTL does not change Bastion feature availability.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-networking-plus-45",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.4"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A workload subnet uses a service endpoint for an Azure Storage account protected by a virtual-network rule.",
+      "prompt": "Which TWO statements describe the model?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Service traffic uses the Azure backbone with optimized routing.",
+          "explanation": "The service endpoint supplies a direct service path.",
+          "referenceIds": [
+            "networking-plus-endpoint"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The service endpoint necessarily creates a private NIC in the subnet.",
+          "explanation": "A private NIC is the private endpoint model, not service endpoints.",
+          "referenceIds": [
+            "networking-plus-endpoint"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Enabling the endpoint grants every storage data permission.",
+          "explanation": "Network access does not replace the service authorization mechanisms.",
+          "referenceIds": [
+            "networking-plus-endpoint"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "The endpoint extends subnet identity to the Azure service.",
+          "explanation": "Service endpoints allow service-side virtual-network access rules.",
+          "referenceIds": [
+            "networking-plus-endpoint"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Service endpoints allow service-side virtual-network access rules. The service endpoint supplies a direct service path.",
+      "summaryReferenceIds": [
+        "networking-plus-endpoint"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-endpoint",
+          "title": "Azure virtual network service endpoints",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview",
+          "section": "Key benefits",
+          "checkedAt": "2026-10-08T01:38:21.811Z",
+          "documentUpdatedAt": "2026-10-07T22:20:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Key benefits. Service endpoints allow service-side virtual-network access rules. The service endpoint supplies a direct service path. A private NIC is the private endpoint model, not service endpoints. Network access does not replace the service authorization mechanisms.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-networking-plus-46",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.4"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "An administrator enables Microsoft.Storage on a subnet but leaves the storage account broadly accessible. The requirement is access restricted to that subnet.",
+      "prompt": "What additional step supplies the service-side network restriction?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Assume enabling the subnet endpoint automatically deletes all service firewall access.",
+          "explanation": "Endpoint enablement and service-side restriction are separate actions.",
+          "referenceIds": [
+            "networking-plus-endpoint"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Create a DNS MX record for the subnet.",
+          "explanation": "An MX record does not enforce storage network access.",
+          "referenceIds": [
+            "networking-plus-endpoint"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Configure the storage resource virtual-network access rule and restrictive network policy.",
+          "explanation": "The service endpoint must be paired with the service resource access rules.",
+          "referenceIds": [
+            "networking-plus-endpoint"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The service endpoint must be paired with the service resource access rules.",
+      "summaryReferenceIds": [
+        "networking-plus-endpoint"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-endpoint",
+          "title": "Azure virtual network service endpoints",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview",
+          "section": "Secure Azure services to virtual networks",
+          "checkedAt": "2026-10-08T01:38:21.811Z",
+          "documentUpdatedAt": "2026-10-07T22:20:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Secure Azure services to virtual networks. The service endpoint must be paired with the service resource access rules. Endpoint enablement and service-side restriction are separate actions. An MX record does not enforce storage network access.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-networking-plus-47",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.4"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "An on-premises client connects over VPN to an Azure VNet whose subnet has a service endpoint. The team expects that on-premises client to acquire the subnet service-endpoint identity automatically.",
+      "prompt": "Which limitation must be considered?",
+      "options": [
+        {
+          "id": "c",
+          "text": "A DNS CNAME grants service-endpoint identity to the on-premises client.",
+          "explanation": "DNS names do not create subnet-origin identity.",
+          "referenceIds": [
+            "networking-plus-endpoint"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "On-premises traffic does not automatically inherit service-endpoint subnet identity.",
+          "explanation": "Service endpoints apply to traffic originating in the configured virtual-network subnet; on-premises access needs a supported alternative.",
+          "referenceIds": [
+            "networking-plus-endpoint"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Every VPN client receives a private endpoint NIC when a service endpoint is enabled.",
+          "explanation": "Service endpoints do not create private endpoint NICs for VPN clients.",
+          "referenceIds": [
+            "networking-plus-endpoint"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Service endpoints apply to traffic originating in the configured virtual-network subnet; on-premises access needs a supported alternative.",
+      "summaryReferenceIds": [
+        "networking-plus-endpoint"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-endpoint",
+          "title": "Azure virtual network service endpoints",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview",
+          "section": "Limitations",
+          "checkedAt": "2026-10-08T01:38:21.811Z",
+          "documentUpdatedAt": "2026-10-07T22:20:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Limitations. Service endpoints apply to traffic originating in the configured virtual-network subnet; on-premises access needs a supported alternative. Service endpoints do not create private endpoint NICs for VPN clients. DNS names do not create subnet-origin identity.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-networking-plus-48",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.5"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "A storage private endpoint has been created and approved. Clients must reach it through a private address.",
+      "prompt": "Which TWO statements describe the endpoint?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It uses a private IP address from the selected subnet.",
+          "explanation": "A private endpoint is represented by a network interface with private addressing.",
+          "referenceIds": [
+            "networking-plus-privateEndpoint"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "DNS must resolve the service name to the appropriate private address for these clients.",
+          "explanation": "Name resolution is part of routing service requests to the private endpoint.",
+          "referenceIds": [
+            "networking-plus-privateEndpoint"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "It requires a public IP on each client VM.",
+          "explanation": "Private endpoint communication does not require client public IP addresses.",
+          "referenceIds": [
+            "networking-plus-privateEndpoint"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "It is identical to enabling a service endpoint without a NIC.",
+          "explanation": "Private endpoints have their own network interface and private IP.",
+          "referenceIds": [
+            "networking-plus-privateEndpoint"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "A private endpoint is represented by a network interface with private addressing. Name resolution is part of routing service requests to the private endpoint.",
+      "summaryReferenceIds": [
+        "networking-plus-privateEndpoint"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-privateEndpoint",
+          "title": "What is a private endpoint? - Azure Private Link",
+          "url": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+          "section": "Private endpoint properties",
+          "checkedAt": "2026-10-08T01:38:21.556Z",
+          "documentUpdatedAt": "2026-08-11T17:12:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Private endpoint properties. A private endpoint is represented by a network interface with private addressing. Name resolution is part of routing service requests to the private endpoint. Private endpoint communication does not require client public IP addresses. Private endpoints have their own network interface and private IP.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": true,
+      "caseStudy": {
+        "id": "networking-case-river",
+        "title": "River secure storage",
+        "overview": "River is an invented company moving storage workloads to private connectivity. Workload VMs use Azure-provided DNS. Access permissions are granted separately from network controls. Each question states the service and current endpoint configuration."
+      }
+    },
+    {
+      "id": "az104-networking-plus-49",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.5"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A new private endpoint connection is Pending. The resource owner has not approved the request.",
+      "prompt": "Which action is needed before the connection can carry service traffic?",
+      "options": [
+        {
+          "id": "b",
+          "text": "Set a DNS TTL to zero to bypass approval.",
+          "explanation": "DNS caching does not change connection approval state.",
+          "referenceIds": [
+            "networking-plus-privateEndpoint"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Assign an NSG allow rule to convert Pending to Approved.",
+          "explanation": "NSG policy does not approve the private-link connection.",
+          "referenceIds": [
+            "networking-plus-privateEndpoint"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Obtain approval of the private endpoint connection.",
+          "explanation": "Only an Approved private endpoint connection can send traffic to the resource.",
+          "referenceIds": [
+            "networking-plus-privateEndpoint"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Only an Approved private endpoint connection can send traffic to the resource.",
+      "summaryReferenceIds": [
+        "networking-plus-privateEndpoint"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-privateEndpoint",
+          "title": "What is a private endpoint? - Azure Private Link",
+          "url": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+          "section": "Access to a private-link resource using approval workflow",
+          "checkedAt": "2026-10-08T01:38:21.556Z",
+          "documentUpdatedAt": "2026-08-11T17:12:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Access to a private-link resource using approval workflow. Only an Approved private endpoint connection can send traffic to the resource. DNS caching does not change connection approval state. NSG policy does not approve the private-link connection.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": true,
+      "caseStudy": {
+        "id": "networking-case-river",
+        "title": "River secure storage",
+        "overview": "River is an invented company moving storage workloads to private connectivity. Workload VMs use Azure-provided DNS. Access permissions are granted separately from network controls. Each question states the service and current endpoint configuration."
+      }
+    },
+    {
+      "id": "az104-networking-plus-50",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.5"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A private endpoint targets the Blob subresource of Azure Storage. Azure-provided DNS clients are in a VNet that must resolve the blob service name privately.",
+      "prompt": "Which design meets the DNS requirement?",
+      "options": [
+        {
+          "id": "c",
+          "text": "Publish only an MX record in a public zone.",
+          "explanation": "An MX record does not map the Blob service hostname to the private endpoint IP.",
+          "referenceIds": [
+            "networking-plus-privateDnsEndpoint"
+          ]
+        },
+        {
+          "id": "a",
+          "text": "Use the privatelink.blob.core.windows.net private zone with the endpoint record and a link to the client VNet.",
+          "explanation": "The service DNS table specifies the Blob private zone, and a VNet link provides resolution.",
+          "referenceIds": [
+            "networking-plus-privateDnsEndpoint"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Use only a private zone named privatelink.file.core.windows.net.",
+          "explanation": "The Files zone does not supply Blob endpoint name resolution.",
+          "referenceIds": [
+            "networking-plus-privateDnsEndpoint"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The service DNS table specifies the Blob private zone, and a VNet link provides resolution.",
+      "summaryReferenceIds": [
+        "networking-plus-privateDnsEndpoint"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-privateDnsEndpoint",
+          "title": "Azure Private Endpoint private DNS zone values",
+          "url": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns",
+          "section": "Azure services DNS zone configuration",
+          "checkedAt": "2026-10-08T01:38:21.694Z",
+          "documentUpdatedAt": "2026-08-11T17:12:00Z",
+          "evidenceSummary": "Retrieved official page; section focus: Azure services DNS zone configuration. The service DNS table specifies the Blob private zone, and a VNet link provides resolution. The Files zone does not supply Blob endpoint name resolution. An MX record does not map the Blob service hostname to the private endpoint IP.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "networking-expanded",
+        "original-practice",
+        "explicit-conditions"
+      ],
+      "assessmentReserved": true,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Blob endpoint configuration",
+          "text": "Target subresource: blob\nEndpoint: approved, private IP assigned\nClient DNS: Azure-provided DNS\nRequired result: storage hostname resolves privately"
+        }
+      ],
+      "caseStudy": {
+        "id": "networking-case-river",
+        "title": "River secure storage",
+        "overview": "River is an invented company moving storage workloads to private connectivity. Workload VMs use Azure-provided DNS. Access permissions are granted separately from network controls. Each question states the service and current endpoint configuration."
+      }
+    }
+  ]
+}

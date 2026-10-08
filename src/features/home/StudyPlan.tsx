@@ -1,0 +1,8 @@
+import type {Blueprint} from '../../content/types';
+import type {CoverageRow} from '../../study/coverage';
+import type {LearningResource} from '../progress/Coverage';
+import {buildStudyPlan} from '../../study/plan';
+export function StudyPlan({blueprint,rows,resources,due}:{blueprint:Blueprint;rows:CoverageRow[];resources:LearningResource[];due:number}){
+ const objectives=blueprint.domains.flatMap(d=>d.objectives).map(o=>{const relevant=rows.filter(r=>r.objectiveId===o.id),studied=Math.max(0,...relevant.map(r=>r.studied)),values=relevant.flatMap(r=>r.accuracy===null?[]:[r.accuracy]);return {id:o.id,title:o.title,studied,accuracy:values.length?values.reduce((a,b)=>a+b,0)/values.length:null}});
+ return <section className="card"><div className="section-heading"><h2>A gentle week of revision</h2><a href="#/progress/coverage">View all skills →</a></div><p>Try three short sessions when you feel comfortable. Move these suggestions to any day; there is no fixed exam deadline.</p><ol>{buildStudyPlan(objectives,due).map((step,i)=>{const resource=resources.find(r=>r.objectiveId===step.objectiveId);return <li key={i}><strong>{step.title}</strong><p>{step.reason}</p>{resource&&<p><a href={resource.url} target="_blank" rel="noopener noreferrer">Read on Microsoft Learn</a></p>}<a href={step.kind==='review'?'#/review':`#/practice?objective=${step.objectiveId}`}>{step.kind==='review'?'Open revision queue':'Choose a short practice session'} →</a></li>})}</ol><p className="fine-print">Reading and draft previews help you prepare, but approved distinct questions are needed before proficiency measures have enough evidence.</p></section>;
+}

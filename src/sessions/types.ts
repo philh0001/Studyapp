@@ -5,7 +5,8 @@ export interface Session{ id:string;mode:SessionMode;questionSnapshots:Question[
 export interface Attempt{id:string;sessionId:string;questionId:string;questionRevision:number;questionSnapshot:Question;selectedOptionIds:string[];confidence:Confidence;correct:boolean;responseMs:number;submittedAt:string;mode:SessionMode}
 export interface SessionResult{sessionId:string;submittedAt:string;correct:number;total:number;attemptIds:string[];domainResults:{domainId:string;correct:number;total:number}[]}
 export interface StartSessionInput{mode:SessionMode;selectedQuestions:Question[];durationMinutes:number|null;releasesReservedIds:string[]}
-export interface Settings{id:string;examDate:string|null;theme:'light'|'dark'|'system';textScale:1|1.2|1.4;autoAdvance:boolean}
+export function isTimedSession(session:Pick<Session,'deadlineAt'>):boolean{return session.deadlineAt!==null}
+export interface Settings{thumbControls?:boolean;id:string;examDate:string|null;theme:'light'|'dark'|'system';textScale:1|1.2|1.4;autoAdvance:boolean}
 export interface Note{questionId:string;revision:number;text:string;createdAt:string}
 export interface Bookmark{questionId:string;revision:number;createdAt:string}
 export interface DatabaseSnapshot{settings:Settings[];packs:ContentPack[];sourceChecks:SourceCheck[];contentTrust:ContentTrust[];sessions:Session[];attempts:Attempt[];reviews:ReviewItem[];bookmarks:Bookmark[];notes:Note[];releasedHoldouts:{questionId:string}[]}

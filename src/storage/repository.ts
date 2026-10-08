@@ -1,5 +1,5 @@
 import type {StudyDatabase} from './database';import type {ContentPack,SourceCheck,ContentTrust,QuestionIdentity,Question} from '../content/types';import type {DatabaseSnapshot,Settings} from '../sessions/types';
-export const defaultSettings:Settings={id:'settings',examDate:null,theme:'system',textScale:1,autoAdvance:false};
+export const defaultSettings:Settings={id:'settings',examDate:null,theme:'system',textScale:1,autoAdvance:false,thumbControls:false};
 export class StudyRepository{
  db:StudyDatabase;constructor(db:StudyDatabase){this.db=db}
  async getSnapshot():Promise<DatabaseSnapshot>{return this.db.transaction('r',this.db.tables,async()=>{const snap:Record<string,unknown>={};for(const table of this.db.tables)snap[table.name]=await table.toArray();return snap as unknown as DatabaseSnapshot})}

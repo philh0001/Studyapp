@@ -42,6 +42,7 @@ describe('explicit content approval',()=>{
  it('bootstrap preserves an approved starter revision after a closed-database restart',async()=>{
   defaultDatabaseUsed=true;await Dexie.delete('az104-studyapp');
   const first=await createAppServices();opened.push(first.repository.db);
+  const installedPackCount=await first.repository.db.packs.count();
   const q=(await first.repository.getQuestions())[0];await approveQuestion(first.repository,q.id,q.revision,true);
   first.repository.db.close();
   const restarted=await createAppServices();opened.push(restarted.repository.db);
@@ -49,6 +50,6 @@ describe('explicit content approval',()=>{
   const trust=await restarted.repository.db.contentTrust.get([q.id,q.revision]);
   expect(installed?.status).toBe('reviewed');expect(installed?.review).not.toBeNull();
   expect(classifyQuestion(installed!,trust??null)).toBe('eligible');
-  expect(await restarted.repository.db.packs.count()).toBe(1);
+  expect(await restarted.repository.db.packs.count()).toBe(installedPackCount);
  });
 });

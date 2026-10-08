@@ -10,7 +10,7 @@ Repository selected by the user: https://github.com/philh0001/Studyapp. Planning
 
 Initial scope: original reviewed questions, Learn mode, Quick 5/10/20, timed practice, explanations for all options, confidence before feedback, spaced review, progress/coverage, bookmarks, notes, offline support, backup/restore, accessibility.
 
-Source content: the supplied ZIP contains a plan, not questions. AI-assisted questions require human review before normal study. A proposed 50-question starter pack must show objective gaps and cannot be advertised as complete exam coverage.
+Source content: the supplied ZIP contains a plan, not questions. AI-assisted questions require human review before normal study. The original fifty drafts are retained unchanged. The approved expansion adds 250 drafts and maps all 82 subskills, without claiming comprehensive exam coverage or human factual approval.
 
 Official-source requirement: all supplied question answers, option explanations, and revision information must be grounded in official Microsoft documentation, preferably Microsoft Learn. Author original scenarios rather than copying Microsoft assessments. Record claim-level citations and source-check dates, expose them in feedback, recheck before pack releases, and exclude unsupported content. Personal notes remain annotations rather than verified content.
 
@@ -21,3 +21,5 @@ Release constraints from the supplied plan: no production deployment or paid ser
 Hosting preference confirmed: Cloudflare like Showtime, with a separate Static Assets Worker and initially a workers.dev URL. Production release approval remains the final publication gate; no custom domain, private Access layer or account backend has been requested.
 
 Public draft-preview release approved and deployed on 2026-10-08: https://az104-revision-web.showtime-workers.workers.dev. Verified live phone-sized navigation, durable answers and offline continuation with zero browser errors. Strict CSP compatibility was fixed through build-time standalone schema validators. See docs/verification/2026-10-08-cloudflare-release.md. Factual content approval and physical-device acceptance remain pending; PR #1 remains open.
+
+The owner authorised all twenty exam-alignment improvements without further permission gates. Implemented expansion: 300 questions, detailed subskill coverage, balanced assessment allocation, advanced and linked-case practice, safe exhibits, ordering/matching, Learn resources, a flexible study week, source-change quarantine, thumb controls, bounded compressed backups and real-device checklists. Automated acceptance includes phone-sized WebKit; it does not constitute a physical iPhone/screen-reader test. See the improvement release record for exact verification and deployment evidence.

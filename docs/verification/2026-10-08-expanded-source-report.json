@@ -1,0 +1,2106 @@
+{
+  "version": 1,
+  "generatedAt": "2026-10-08T01:52:02.971Z",
+  "entries": [
+    {
+      "referenceId": "compute-aca-ingress",
+      "previousHash": "257f7fef5ffb029a0fe89f2ef850dc2f60d286193db322666b7dc4ece5eb7430",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/container-apps/ingress-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-aca-ingress",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/ingress-overview",
+        "checkedAt": "2026-10-08T01:50:52.834Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "257f7fef5ffb029a0fe89f2ef850dc2f60d286193db322666b7dc4ece5eb7430"
+      }
+    },
+    {
+      "referenceId": "compute-aca-revisions",
+      "previousHash": "f3cd882e551677e2dcf91974d0d1521e1cde3b8d40ccfa9844c8e3f7cd876b08",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/container-apps/revisions",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-aca-revisions",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/revisions",
+        "checkedAt": "2026-10-08T01:50:54.351Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "f3cd882e551677e2dcf91974d0d1521e1cde3b8d40ccfa9844c8e3f7cd876b08"
+      }
+    },
+    {
+      "referenceId": "compute-aca-scale",
+      "previousHash": "f7026c4f7c539104848e7b4d5e3834355080871cd8a39b366894c23f7c85d2e7",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-aca-scale",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+        "checkedAt": "2026-10-08T01:50:54.989Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "f7026c4f7c539104848e7b4d5e3834355080871cd8a39b366894c23f7c85d2e7"
+      }
+    },
+    {
+      "referenceId": "compute-aci-groups",
+      "previousHash": "bc4154ff02c953b62c50f094af838f5f20f70a1007c467a5f86dfdfd581fe3b1",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-aci-groups",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups",
+        "checkedAt": "2026-10-08T01:50:55.627Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "bc4154ff02c953b62c50f094af838f5f20f70a1007c467a5f86dfdfd581fe3b1"
+      }
+    },
+    {
+      "referenceId": "compute-aci-restart",
+      "previousHash": "93ad7cdbf1324e8f96580d628891db9953e83808e55b0aa8d8a3b7294e170cd8",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-restart-policy",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-aci-restart",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-restart-policy",
+        "checkedAt": "2026-10-08T01:50:56.155Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "93ad7cdbf1324e8f96580d628891db9953e83808e55b0aa8d8a3b7294e170cd8"
+      }
+    },
+    {
+      "referenceId": "compute-acr",
+      "previousHash": "e878526cf1e96e2e7e68ab00ea4e86626f6d0f7c961f19e727967c963ef02681",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-acr",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro",
+        "checkedAt": "2026-10-08T01:50:56.793Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "e878526cf1e96e2e7e68ab00ea4e86626f6d0f7c961f19e727967c963ef02681"
+      }
+    },
+    {
+      "referenceId": "compute-acr-identity",
+      "previousHash": "cb64cced23bb76d3bc45df641ae2a7bdbf01d021c06f745235c4ab2da57651d6",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication-managed-identity",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-acr-identity",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication-managed-identity",
+        "checkedAt": "2026-10-08T01:50:57.353Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "cb64cced23bb76d3bc45df641ae2a7bdbf01d021c06f745235c4ab2da57651d6"
+      }
+    },
+    {
+      "referenceId": "compute-app-autoscale",
+      "previousHash": "1216b09e6a5e4aed2dbcdd28aec49db61d830d4b8dca22f03eb865e80c0ebc82",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-app-autoscale",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling",
+        "checkedAt": "2026-10-08T01:50:57.910Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "1216b09e6a5e4aed2dbcdd28aec49db61d830d4b8dca22f03eb865e80c0ebc82"
+      }
+    },
+    {
+      "referenceId": "compute-app-backup",
+      "previousHash": "48780e5b28263c44e81c7617bb8a5e5d298889dfc7c4bc575b34ef5d8a605028",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/app-service/manage-backup",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-app-backup",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/manage-backup",
+        "checkedAt": "2026-10-08T01:50:58.447Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "48780e5b28263c44e81c7617bb8a5e5d298889dfc7c4bc575b34ef5d8a605028"
+      }
+    },
+    {
+      "referenceId": "compute-app-domain",
+      "previousHash": "900e997b13ff11920f5913ae53c7f2e31e6e6f05f8b850be6eb40a6d93e07cbe",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-app-domain",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain",
+        "checkedAt": "2026-10-08T01:50:59.000Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "900e997b13ff11920f5913ae53c7f2e31e6e6f05f8b850be6eb40a6d93e07cbe"
+      }
+    },
+    {
+      "referenceId": "compute-app-plans",
+      "previousHash": "8303a663fcd34835270bc3b886ece00ea0fe6267f0d4527c97586dac321ab7c5",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-app-plans",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+        "checkedAt": "2026-10-08T01:50:59.417Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "8303a663fcd34835270bc3b886ece00ea0fe6267f0d4527c97586dac321ab7c5"
+      }
+    },
+    {
+      "referenceId": "compute-app-private",
+      "previousHash": "6f456a248d2efc7ef74ad82f51a77e164eb6a1a72f6af30880b0f621646895b0",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/app-service/overview-private-endpoint",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-app-private",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/overview-private-endpoint",
+        "checkedAt": "2026-10-08T01:50:59.966Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "6f456a248d2efc7ef74ad82f51a77e164eb6a1a72f6af30880b0f621646895b0"
+      }
+    },
+    {
+      "referenceId": "compute-app-scale",
+      "previousHash": "6c69cb364989bee7e125ad76babc2136f1597dbf2ba5954bc326741504f65d85",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-app-scale",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up",
+        "checkedAt": "2026-10-08T01:51:00.517Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "6c69cb364989bee7e125ad76babc2136f1597dbf2ba5954bc326741504f65d85"
+      }
+    },
+    {
+      "referenceId": "compute-app-slots",
+      "previousHash": "b9770d5cb696e9ed7b94d8ca891daf55feb7d9cf532381c62205d84484700916",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-app-slots",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+        "checkedAt": "2026-10-08T01:51:01.031Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "b9770d5cb696e9ed7b94d8ca891daf55feb7d9cf532381c62205d84484700916"
+      }
+    },
+    {
+      "referenceId": "compute-app-tls",
+      "previousHash": "5bc876dd8edeb8536d4e6289f6f40d67c472f518a2ea2b213e68ff73c7b25f40",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-bindings",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-app-tls",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-bindings",
+        "checkedAt": "2026-10-08T01:51:01.589Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "5bc876dd8edeb8536d4e6289f6f40d67c472f518a2ea2b213e68ff73c7b25f40"
+      }
+    },
+    {
+      "referenceId": "compute-app-vnet",
+      "previousHash": "2c877e8fd833f9c07154429b7aaa6c534b19464f51601388a36e765f42831fa4",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-app-vnet",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration",
+        "checkedAt": "2026-10-08T01:51:02.393Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "2c877e8fd833f9c07154429b7aaa6c534b19464f51601388a36e765f42831fa4"
+      }
+    },
+    {
+      "referenceId": "compute-arm-export",
+      "previousHash": "f4fde713a98da652814bed581c34e4a0e6aa1537044297c5298164c618eab038",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-arm-export",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal",
+        "checkedAt": "2026-10-08T01:51:02.954Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "f4fde713a98da652814bed581c34e4a0e6aa1537044297c5298164c618eab038"
+      }
+    },
+    {
+      "referenceId": "compute-arm-modes",
+      "previousHash": "45c2ceab24fcb4c71c5e8e46b483fc3f0cb75fa7b04fba409ac5f234a781be68",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-arm-modes",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes",
+        "checkedAt": "2026-10-08T01:51:03.520Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "45c2ceab24fcb4c71c5e8e46b483fc3f0cb75fa7b04fba409ac5f234a781be68"
+      }
+    },
+    {
+      "referenceId": "compute-arm-parameters",
+      "previousHash": "135004117372945d3be1a7dc7c9540a7e7e68ce4edd882fc18d138a329025e4b",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/parameters",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-arm-parameters",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/parameters",
+        "checkedAt": "2026-10-08T01:51:04.031Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "135004117372945d3be1a7dc7c9540a7e7e68ce4edd882fc18d138a329025e4b"
+      }
+    },
+    {
+      "referenceId": "compute-bicep-cli",
+      "previousHash": "18a7b2dfb0399e6b832f771598bc13949337ee03df04a5ba753e3ad98e5fae13",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-bicep-cli",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli",
+        "checkedAt": "2026-10-08T01:51:04.564Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "18a7b2dfb0399e6b832f771598bc13949337ee03df04a5ba753e3ad98e5fae13"
+      }
+    },
+    {
+      "referenceId": "compute-bicep-decompile",
+      "previousHash": "c1d2a02648efa1b5c6b04f6b3d0b02fab4b5e08763c58356d0d04736fab43acd",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-bicep-decompile",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile",
+        "checkedAt": "2026-10-08T01:51:05.093Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "c1d2a02648efa1b5c6b04f6b3d0b02fab4b5e08763c58356d0d04736fab43acd"
+      }
+    },
+    {
+      "referenceId": "compute-bicep-dependencies",
+      "previousHash": "59e48736bdf774876781f5f51815ff0d7e594cd6ca9a090f6382784818a10cde",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/resource-dependencies",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-bicep-dependencies",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/resource-dependencies",
+        "checkedAt": "2026-10-08T01:51:05.605Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "59e48736bdf774876781f5f51815ff0d7e594cd6ca9a090f6382784818a10cde"
+      }
+    },
+    {
+      "referenceId": "compute-bicep-files",
+      "previousHash": "55a3c16f1095ed1b3e3529e78dd649e48e95b3fb880002985f03cd7cfbbd9f83",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-bicep-files",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file",
+        "checkedAt": "2026-10-08T01:51:06.114Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "55a3c16f1095ed1b3e3529e78dd649e48e95b3fb880002985f03cd7cfbbd9f83"
+      }
+    },
+    {
+      "referenceId": "compute-bicep-parameters",
+      "previousHash": "b1b4207e2959f05fc826eaed0a524d6a2d0bf336b0e998c4209443379371d5e5",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameters",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-bicep-parameters",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameters",
+        "checkedAt": "2026-10-08T01:51:06.683Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "b1b4207e2959f05fc826eaed0a524d6a2d0bf336b0e998c4209443379371d5e5"
+      }
+    },
+    {
+      "referenceId": "compute-bicep-whatif",
+      "previousHash": "b9ac74f34515101886b869606fc1cc2da2742bcc325b07b0d5e56d3217d68921",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-bicep-whatif",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if",
+        "checkedAt": "2026-10-08T01:51:07.197Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "b9ac74f34515101886b869606fc1cc2da2742bcc325b07b0d5e56d3217d68921"
+      }
+    },
+    {
+      "referenceId": "compute-vm-attach",
+      "previousHash": "4d4ae8c669ff464db3cf8221ded495d924521e16fb16d6d7101e415b30f76f55",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-vm-attach",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal",
+        "checkedAt": "2026-10-08T01:51:07.840Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "4d4ae8c669ff464db3cf8221ded495d924521e16fb16d6d7101e415b30f76f55"
+      }
+    },
+    {
+      "referenceId": "compute-vm-disk-types",
+      "previousHash": "7c6c5ace1e7f3b7f012f59dba21b854ee84173b2ce2f31de162b4c48eed7b4a7",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-vm-disk-types",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types",
+        "checkedAt": "2026-10-08T01:51:08.357Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "7c6c5ace1e7f3b7f012f59dba21b854ee84173b2ce2f31de162b4c48eed7b4a7"
+      }
+    },
+    {
+      "referenceId": "compute-vm-disks",
+      "previousHash": "381281dae4bbdfeb3abc775e08603140d78b3d7b45fafbf774e5b932e74bf0b5",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-vm-disks",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview",
+        "checkedAt": "2026-10-08T01:51:08.785Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "381281dae4bbdfeb3abc775e08603140d78b3d7b45fafbf774e5b932e74bf0b5"
+      }
+    },
+    {
+      "referenceId": "compute-vm-encryption",
+      "previousHash": "d665c7b6cde06c4a3a8a9ff55de96f3204afd4d1426a8efdfed04c12e84f21a2",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-vm-encryption",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption",
+        "checkedAt": "2026-10-08T01:51:09.303Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "d665c7b6cde06c4a3a8a9ff55de96f3204afd4d1426a8efdfed04c12e84f21a2"
+      }
+    },
+    {
+      "referenceId": "compute-vm-host-encryption",
+      "previousHash": "7d5bf67c5900be1dfbeb58c09916e0e381c7145b6d6026202e55d30a27dec5f7",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-vm-host-encryption",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli",
+        "checkedAt": "2026-10-08T01:51:09.820Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "7d5bf67c5900be1dfbeb58c09916e0e381c7145b6d6026202e55d30a27dec5f7"
+      }
+    },
+    {
+      "referenceId": "compute-vm-move",
+      "previousHash": "fe594e300acc8bf7911d35ba97054005912a34fcc5168bbced55555b291aff0a",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-vm-move",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription",
+        "checkedAt": "2026-10-08T01:51:10.391Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "fe594e300acc8bf7911d35ba97054005912a34fcc5168bbced55555b291aff0a"
+      }
+    },
+    {
+      "referenceId": "compute-vm-region",
+      "previousHash": "738364faa683d19e9ebb2aafe5c772b06c6ebd3dd98618ef98b0acd00d71c715",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/resource-mover/tutorial-move-region-virtual-machines",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-vm-region",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/resource-mover/tutorial-move-region-virtual-machines",
+        "checkedAt": "2026-10-08T01:51:10.938Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "738364faa683d19e9ebb2aafe5c772b06c6ebd3dd98618ef98b0acd00d71c715"
+      }
+    },
+    {
+      "referenceId": "compute-vm-resize",
+      "previousHash": "59b7a57c4b849487c842abf3c88f3d9662f9af140aaebe65a7e1ac84f6d70e02",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-vm-resize",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm",
+        "checkedAt": "2026-10-08T01:51:11.462Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "59b7a57c4b849487c842abf3c88f3d9662f9af140aaebe65a7e1ac84f6d70e02"
+      }
+    },
+    {
+      "referenceId": "compute-vm-sets",
+      "previousHash": "ab64e18fa8645df872cbaa74b89d7115493a90005b3561f3b6b70edbf1d3bb45",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-vm-sets",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+        "checkedAt": "2026-10-08T01:51:11.992Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "ab64e18fa8645df872cbaa74b89d7115493a90005b3561f3b6b70edbf1d3bb45"
+      }
+    },
+    {
+      "referenceId": "compute-vm-zones",
+      "previousHash": "41f087beab7efc6b291dbd94b039efe37c61ba35ea11fd55892fa1e96e9e01c2",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-vm-zones",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability",
+        "checkedAt": "2026-10-08T01:51:12.509Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "41f087beab7efc6b291dbd94b039efe37c61ba35ea11fd55892fa1e96e9e01c2"
+      }
+    },
+    {
+      "referenceId": "compute-vmss-autoscale",
+      "previousHash": "3f91cf8684b4bdaa938d7370faf024fc18cba07820d8406950fae9d6bd577930",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-vmss-autoscale",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview",
+        "checkedAt": "2026-10-08T01:51:13.021Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "3f91cf8684b4bdaa938d7370faf024fc18cba07820d8406950fae9d6bd577930"
+      }
+    },
+    {
+      "referenceId": "compute-vmss-flex",
+      "previousHash": "925429b0197266ef523cb5095fd6fa69596af3942764d1034d645ad7588e0b19",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "compute-vmss-flex",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes",
+        "checkedAt": "2026-10-08T01:51:13.545Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "925429b0197266ef523cb5095fd6fa69596af3942764d1034d645ad7588e0b19"
+      }
+    },
+    {
+      "referenceId": "identity-deny",
+      "previousHash": "0f5af23a3f1500598d8853659c97660139c722d8900fea763aab176b1a18dcd1",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/deny-assignments",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-deny",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/deny-assignments",
+        "checkedAt": "2026-10-08T01:51:14.095Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "0f5af23a3f1500598d8853659c97660139c722d8900fea763aab176b1a18dcd1"
+      }
+    },
+    {
+      "referenceId": "identity-resource-groups",
+      "previousHash": "880865c99fb5982bc2c70115c273a347375883205d9e9d1ba29418e5fc3192cc",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-resource-groups",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal",
+        "checkedAt": "2026-10-08T01:51:14.636Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "880865c99fb5982bc2c70115c273a347375883205d9e9d1ba29418e5fc3192cc"
+      }
+    },
+    {
+      "referenceId": "identity-policy",
+      "previousHash": "efdacea50fa8f9efbe1e92c1eafee99b0b2a175b7679819ca08995492e78298b",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-policy",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+        "checkedAt": "2026-10-08T01:51:15.151Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "efdacea50fa8f9efbe1e92c1eafee99b0b2a175b7679819ca08995492e78298b"
+      }
+    },
+    {
+      "referenceId": "identity-rbac",
+      "previousHash": "d0ad88e2a2c777bab3c1e53a39fe8d8e7b7ac039830d885fa2d84eaeed245750",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-rbac",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+        "checkedAt": "2026-10-08T01:51:15.681Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "d0ad88e2a2c777bab3c1e53a39fe8d8e7b7ac039830d885fa2d84eaeed245750"
+      }
+    },
+    {
+      "referenceId": "identity-roles",
+      "previousHash": "62241593250b54b65ad4b4672d2553d50fc1930a80b0c0daad05b688bcb2b1b3",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-roles",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+        "checkedAt": "2026-10-08T01:51:16.057Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "62241593250b54b65ad4b4672d2553d50fc1930a80b0c0daad05b688bcb2b1b3"
+      }
+    },
+    {
+      "referenceId": "identity-guests",
+      "previousHash": "a5018a1f86ff85412cb462b4c45655fb71f6ff497210f7ab1f043b309f230c6c",
+      "previousUrl": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-guests",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator",
+        "checkedAt": "2026-10-08T01:51:16.740Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "a5018a1f86ff85412cb462b4c45655fb71f6ff497210f7ab1f043b309f230c6c"
+      }
+    },
+    {
+      "referenceId": "identity-subscriptions",
+      "previousHash": "8997ee01c830fe397573c2856ccf17c9328a080207873222969eae41e56b779a",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/add-change-subscription-administrator",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-subscriptions",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/add-change-subscription-administrator",
+        "checkedAt": "2026-10-08T01:51:17.249Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "8997ee01c830fe397573c2856ccf17c9328a080207873222969eae41e56b779a"
+      }
+    },
+    {
+      "referenceId": "identity-scope",
+      "previousHash": "76d5130c47664a383f2f0c6667b9de733f0383931d2ac5139697b7ecbd864709",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-scope",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview",
+        "checkedAt": "2026-10-08T01:51:17.754Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "76d5130c47664a383f2f0c6667b9de733f0383931d2ac5139697b7ecbd864709"
+      }
+    },
+    {
+      "referenceId": "identity-advisor",
+      "previousHash": "879301d5ec7bd8248c3a78efb76d64df3789e987b696922c90e8a47b90737223",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/advisor/advisor-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-advisor",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/advisor/advisor-overview",
+        "checkedAt": "2026-10-08T01:51:18.254Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "879301d5ec7bd8248c3a78efb76d64df3789e987b696922c90e8a47b90737223"
+      }
+    },
+    {
+      "referenceId": "identity-dynamic",
+      "previousHash": "020c982adba574e4cd9b0a3dc137dd72342f08922708f248ccfc3eb43a2b4d14",
+      "previousUrl": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-dynamic",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership",
+        "checkedAt": "2026-10-08T01:51:18.749Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "020c982adba574e4cd9b0a3dc137dd72342f08922708f248ccfc3eb43a2b4d14"
+      }
+    },
+    {
+      "referenceId": "identity-locks",
+      "previousHash": "dfdff6f551f4e5a36a411a257220a570205a4de02d57d3b80d9b16144777d6e4",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-locks",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+        "checkedAt": "2026-10-08T01:51:19.508Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "dfdff6f551f4e5a36a411a257220a570205a4de02d57d3b80d9b16144777d6e4"
+      }
+    },
+    {
+      "referenceId": "identity-management-groups",
+      "previousHash": "8dd34cc4d9e65d239bed1174edced3a53044270c4120fbe0c5b2cbcb2160e890",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-management-groups",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+        "checkedAt": "2026-10-08T01:51:19.999Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "8dd34cc4d9e65d239bed1174edced3a53044270c4120fbe0c5b2cbcb2160e890"
+      }
+    },
+    {
+      "referenceId": "identity-groups",
+      "previousHash": "7a702dda57d25527f6fe469cf3a669b587cd7b51e117f12376408174e37fda45",
+      "previousUrl": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-groups",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
+        "checkedAt": "2026-10-08T01:51:20.482Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "7a702dda57d25527f6fe469cf3a669b587cd7b51e117f12376408174e37fda45"
+      }
+    },
+    {
+      "referenceId": "identity-budgets",
+      "previousHash": "58efe03d20f2e5b72881dc82687f2c7f1c37913874800e99f929d446f5a3bf2f",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-budgets",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets",
+        "checkedAt": "2026-10-08T01:51:20.968Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "58efe03d20f2e5b72881dc82687f2c7f1c37913874800e99f929d446f5a3bf2f"
+      }
+    },
+    {
+      "referenceId": "identity-sspr",
+      "previousHash": "34ebc4baf37ac6cfd9ed5aec163e43135e8a199e147c754c44e402468ec431f4",
+      "previousUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-sspr",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+        "checkedAt": "2026-10-08T01:51:21.472Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "34ebc4baf37ac6cfd9ed5aec163e43135e8a199e147c754c44e402468ec431f4"
+      }
+    },
+    {
+      "referenceId": "identity-remediation",
+      "previousHash": "fd06c245546c379914e8357983c214863d3d76987fe3c2074ec3b5d67140f0b7",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-remediation",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
+        "checkedAt": "2026-10-08T01:51:21.950Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "fd06c245546c379914e8357983c214863d3d76987fe3c2074ec3b5d67140f0b7"
+      }
+    },
+    {
+      "referenceId": "identity-sspr-writeback",
+      "previousHash": "65bda612a252104b0784f4b33ac42294f1d1cda462d692b55ffec02262c8859c",
+      "previousUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-writeback",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-sspr-writeback",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-writeback",
+        "checkedAt": "2026-10-08T01:51:22.482Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "65bda612a252104b0784f4b33ac42294f1d1cda462d692b55ffec02262c8859c"
+      }
+    },
+    {
+      "referenceId": "identity-tags",
+      "previousHash": "da385f6fcc7d703361dff9503bba83278fc4256c01e84fff5bbf189d6794c00a",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-tags",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
+        "checkedAt": "2026-10-08T01:51:23.173Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "da385f6fcc7d703361dff9503bba83278fc4256c01e84fff5bbf189d6794c00a"
+      }
+    },
+    {
+      "referenceId": "identity-users",
+      "previousHash": "923159c37483b3361605b89e7ccec51bcd0ac0e1c4b50069c591bbbfb57fe214",
+      "previousUrl": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-users",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+        "checkedAt": "2026-10-08T01:51:23.520Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "923159c37483b3361605b89e7ccec51bcd0ac0e1c4b50069c591bbbfb57fe214"
+      }
+    },
+    {
+      "referenceId": "identity-license",
+      "previousHash": "6f5d5696856e7d731031808cc18307ef905cf0972c38e684330190ddc34b3e9a",
+      "previousUrl": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "identity-license",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+        "checkedAt": "2026-10-08T01:51:24.006Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "6f5d5696856e7d731031808cc18307ef905cf0972c38e684330190ddc34b3e9a"
+      }
+    },
+    {
+      "referenceId": "guide",
+      "previousHash": "163afaf9c861f88a35e230224e6dec2c49efeb2a8918ec88cde664848c4796de",
+      "previousUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "guide",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104",
+        "checkedAt": "2026-10-08T01:51:24.499Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "163afaf9c861f88a35e230224e6dec2c49efeb2a8918ec88cde664848c4796de"
+      }
+    },
+    {
+      "referenceId": "rbac",
+      "previousHash": "d0ad88e2a2c777bab3c1e53a39fe8d8e7b7ac039830d885fa2d84eaeed245750",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "rbac",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+        "checkedAt": "2026-10-08T01:51:15.681Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "d0ad88e2a2c777bab3c1e53a39fe8d8e7b7ac039830d885fa2d84eaeed245750"
+      }
+    },
+    {
+      "referenceId": "policy",
+      "previousHash": "efdacea50fa8f9efbe1e92c1eafee99b0b2a175b7679819ca08995492e78298b",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "policy",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+        "checkedAt": "2026-10-08T01:51:15.151Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "efdacea50fa8f9efbe1e92c1eafee99b0b2a175b7679819ca08995492e78298b"
+      }
+    },
+    {
+      "referenceId": "locks",
+      "previousHash": "dfdff6f551f4e5a36a411a257220a570205a4de02d57d3b80d9b16144777d6e4",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "locks",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+        "checkedAt": "2026-10-08T01:51:19.508Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "dfdff6f551f4e5a36a411a257220a570205a4de02d57d3b80d9b16144777d6e4"
+      }
+    },
+    {
+      "referenceId": "redundancy",
+      "previousHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "redundancy",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+        "checkedAt": "2026-10-08T01:51:24.843Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44"
+      }
+    },
+    {
+      "referenceId": "sas",
+      "previousHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "sas",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "checkedAt": "2026-10-08T01:51:25.333Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667"
+      }
+    },
+    {
+      "referenceId": "tiers",
+      "previousHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "tiers",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "checkedAt": "2026-10-08T01:51:25.814Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60"
+      }
+    },
+    {
+      "referenceId": "availability",
+      "previousHash": "ab64e18fa8645df872cbaa74b89d7115493a90005b3561f3b6b70edbf1d3bb45",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "availability",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+        "checkedAt": "2026-10-08T01:51:11.992Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "ab64e18fa8645df872cbaa74b89d7115493a90005b3561f3b6b70edbf1d3bb45"
+      }
+    },
+    {
+      "referenceId": "slots",
+      "previousHash": "b9770d5cb696e9ed7b94d8ca891daf55feb7d9cf532381c62205d84484700916",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "slots",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+        "checkedAt": "2026-10-08T01:51:01.031Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "b9770d5cb696e9ed7b94d8ca891daf55feb7d9cf532381c62205d84484700916"
+      }
+    },
+    {
+      "referenceId": "containers",
+      "previousHash": "f7026c4f7c539104848e7b4d5e3834355080871cd8a39b366894c23f7c85d2e7",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "containers",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+        "checkedAt": "2026-10-08T01:50:54.989Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "f7026c4f7c539104848e7b4d5e3834355080871cd8a39b366894c23f7c85d2e7"
+      }
+    },
+    {
+      "referenceId": "peering",
+      "previousHash": "6742103bde3e01b00d05d703b7ad56b9920c853538b7ede3b7d2314ab5d35952",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "peering",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "checkedAt": "2026-10-08T01:51:26.365Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "6742103bde3e01b00d05d703b7ad56b9920c853538b7ede3b7d2314ab5d35952"
+      }
+    },
+    {
+      "referenceId": "nsg",
+      "previousHash": "b141eccde42ed5b61214c53cb494e39e4881d53626a2ccb8fb8885feb929a2e4",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "nsg",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+        "checkedAt": "2026-10-08T01:51:26.848Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "b141eccde42ed5b61214c53cb494e39e4881d53626a2ccb8fb8885feb929a2e4"
+      }
+    },
+    {
+      "referenceId": "private",
+      "previousHash": "79325b0246194e2059b11065f8bb4bc5f728e91a1a981ef96dc6d81da74f1ce4",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "private",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+        "checkedAt": "2026-10-08T01:51:27.223Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "79325b0246194e2059b11065f8bb4bc5f728e91a1a981ef96dc6d81da74f1ce4"
+      }
+    },
+    {
+      "referenceId": "alerts",
+      "previousHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "alerts",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+        "checkedAt": "2026-10-08T01:51:27.711Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde"
+      }
+    },
+    {
+      "referenceId": "logs",
+      "previousHash": "090721822b64e6e9eac0258ba0583f5530740965d3177ffea585e3b31ed540e2",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "logs",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+        "checkedAt": "2026-10-08T01:51:28.194Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "090721822b64e6e9eac0258ba0583f5530740965d3177ffea585e3b31ed540e2"
+      }
+    },
+    {
+      "referenceId": "backup",
+      "previousHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "backup",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+        "checkedAt": "2026-10-08T01:51:28.698Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e"
+      }
+    },
+    {
+      "referenceId": "monx-dcr",
+      "previousHash": "9a693f7fe85657abc894e77d9666b14e3a17019ce69a58527c62f5d5b1a183a8",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-dcr",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview",
+        "checkedAt": "2026-10-08T01:51:29.192Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "9a693f7fe85657abc894e77d9666b14e3a17019ce69a58527c62f5d5b1a183a8"
+      }
+    },
+    {
+      "referenceId": "monx-metrics",
+      "previousHash": "a01d84be64fe061cf3d33627baad6bcd30d3deede2389271878af35f3f2a7943",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-metrics",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained",
+        "checkedAt": "2026-10-08T01:51:29.543Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "a01d84be64fe061cf3d33627baad6bcd30d3deede2389271878af35f3f2a7943"
+      }
+    },
+    {
+      "referenceId": "monx-vault",
+      "previousHash": "386905fb328ccdbac3759a3c86b829f565d34ae6d22b731c3c8e77b8bcc77d79",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-vault",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault",
+        "checkedAt": "2026-10-08T01:51:30.036Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "386905fb328ccdbac3759a3c86b829f565d34ae6d22b731c3c8e77b8bcc77d79"
+      }
+    },
+    {
+      "referenceId": "monx-kql",
+      "previousHash": "c19f7c7bfa20c506a783ef95a0e283bbc6b05e4e9d61446e2821147c5942262e",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-kql",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+        "checkedAt": "2026-10-08T01:51:30.576Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "c19f7c7bfa20c506a783ef95a0e283bbc6b05e4e9d61446e2821147c5942262e"
+      }
+    },
+    {
+      "referenceId": "monx-storage",
+      "previousHash": "2fa89c03c2ff8c774cf323aaa11f40b92a8bfa40da36e560a3bae548de8c0858",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-storage",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview",
+        "checkedAt": "2026-10-08T01:51:31.070Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "2fa89c03c2ff8c774cf323aaa11f40b92a8bfa40da36e560a3bae548de8c0858"
+      }
+    },
+    {
+      "referenceId": "monx-backupvault",
+      "previousHash": "24f0f4cdea4e9a7e1886b43fae3fb3a2dc5faa19d2f75acb6efdd1d72e1a6ea6",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-vault-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-backupvault",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-vault-overview",
+        "checkedAt": "2026-10-08T01:51:31.570Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "24f0f4cdea4e9a7e1886b43fae3fb3a2dc5faa19d2f75acb6efdd1d72e1a6ea6"
+      }
+    },
+    {
+      "referenceId": "monx-backupalerts",
+      "previousHash": "6ee02034292726a936bf07abb97a756e3808fafde34d2eb98e03ec133bb99aa9",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-monitoring-use-azuremonitor",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-backupalerts",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-monitoring-use-azuremonitor",
+        "checkedAt": "2026-10-08T01:51:32.083Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "6ee02034292726a936bf07abb97a756e3808fafde34d2eb98e03ec133bb99aa9"
+      }
+    },
+    {
+      "referenceId": "monx-restore",
+      "previousHash": "d2f7d3cd2ab8348fb822a53d46e2d0dd5c814760a722f036d8a6030ed1d5eb18",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-restore",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms",
+        "checkedAt": "2026-10-08T01:51:32.573Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "d2f7d3cd2ab8348fb822a53d46e2d0dd5c814760a722f036d8a6030ed1d5eb18"
+      }
+    },
+    {
+      "referenceId": "monx-reports",
+      "previousHash": "8bcf852e011e2b005e7b45ddb6359f7d2c0808bbb2eed4055e228af082836120",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/backup/configure-reports",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-reports",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/configure-reports",
+        "checkedAt": "2026-10-08T01:51:33.088Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "8bcf852e011e2b005e7b45ddb6359f7d2c0808bbb2eed4055e228af082836120"
+      }
+    },
+    {
+      "referenceId": "monx-failover",
+      "previousHash": "f65013b8c4256c70a04bc119c845ca610ca50d3a95a3c4b54d0f28f7dda8e0a8",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-failover",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback",
+        "checkedAt": "2026-10-08T01:51:33.565Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "f65013b8c4256c70a04bc119c845ca610ca50d3a95a3c4b54d0f28f7dda8e0a8"
+      }
+    },
+    {
+      "referenceId": "monx-connection",
+      "previousHash": "88862c456fe55b9b4c23e762b4dd57b685f55c450d2a36012d81f76ef49f23aa",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-connection",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview",
+        "checkedAt": "2026-10-08T01:51:34.080Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "88862c456fe55b9b4c23e762b4dd57b685f55c450d2a36012d81f76ef49f23aa"
+      }
+    },
+    {
+      "referenceId": "monx-replication",
+      "previousHash": "d4e977d30d5f339c8083de4d7f9f737be387a92f0cc48bc5d574b6fb0f617c8b",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-replication",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-replication",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-replication",
+        "checkedAt": "2026-10-08T01:51:34.669Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "d4e977d30d5f339c8083de4d7f9f737be387a92f0cc48bc5d574b6fb0f617c8b"
+      }
+    },
+    {
+      "referenceId": "monx-backup",
+      "previousHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-backup",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+        "checkedAt": "2026-10-08T01:51:28.698Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e"
+      }
+    },
+    {
+      "referenceId": "monx-alerts",
+      "previousHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-alerts",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+        "checkedAt": "2026-10-08T01:51:27.711Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde"
+      }
+    },
+    {
+      "referenceId": "monx-diagnostic",
+      "previousHash": "7fac41e65b4ab90b5961b552a1a08cccb1ccea6f30c8d2c7fe4811f5189e7d9b",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-diagnostic",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings",
+        "checkedAt": "2026-10-08T01:51:35.164Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "7fac41e65b4ab90b5961b552a1a08cccb1ccea6f30c8d2c7fe4811f5189e7d9b"
+      }
+    },
+    {
+      "referenceId": "monx-testfailover",
+      "previousHash": "d67792e1e03387ea3047340bea01278649d6fb8eb979507221f51c70fb91ea71",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-testfailover",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill",
+        "checkedAt": "2026-10-08T01:51:35.689Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "d67792e1e03387ea3047340bea01278649d6fb8eb979507221f51c70fb91ea71"
+      }
+    },
+    {
+      "referenceId": "monx-processing",
+      "previousHash": "c64cb90a431168cea2936035e664a0e8114838d8932ad8a6999346d32b231fd9",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-processing",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules",
+        "checkedAt": "2026-10-08T01:51:36.178Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "c64cb90a431168cea2936035e664a0e8114838d8932ad8a6999346d32b231fd9"
+      }
+    },
+    {
+      "referenceId": "monx-logs",
+      "previousHash": "090721822b64e6e9eac0258ba0583f5530740965d3177ffea585e3b31ed540e2",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-logs",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+        "checkedAt": "2026-10-08T01:51:28.194Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "090721822b64e6e9eac0258ba0583f5530740965d3177ffea585e3b31ed540e2"
+      }
+    },
+    {
+      "referenceId": "monx-policy",
+      "previousHash": "b09840bbe103c242003ff24a8c7323c25a2738b329ea77977eb203fcf72fe2f3",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-policy",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy",
+        "checkedAt": "2026-10-08T01:51:36.662Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "b09840bbe103c242003ff24a8c7323c25a2738b329ea77977eb203fcf72fe2f3"
+      }
+    },
+    {
+      "referenceId": "monx-watcher",
+      "previousHash": "b90a207a7e26eca5126ae4ff46a2496003fdedd3b21767ee25df2890e6b1c1c6",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-watcher",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+        "checkedAt": "2026-10-08T01:51:37.171Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "b90a207a7e26eca5126ae4ff46a2496003fdedd3b21767ee25df2890e6b1c1c6"
+      }
+    },
+    {
+      "referenceId": "monx-insights",
+      "previousHash": "b87cd99069585ff97ce2ceaa4e3de33181054591d1790e81d19e8d2c800d5646",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "monx-insights",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+        "checkedAt": "2026-10-08T01:51:37.660Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "b87cd99069585ff97ce2ceaa4e3de33181054591d1790e81d19e8d2c800d5646"
+      }
+    },
+    {
+      "referenceId": "networking-plus-peering",
+      "previousHash": "6742103bde3e01b00d05d703b7ad56b9920c853538b7ede3b7d2314ab5d35952",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-peering",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "checkedAt": "2026-10-08T01:51:26.365Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "6742103bde3e01b00d05d703b7ad56b9920c853538b7ede3b7d2314ab5d35952"
+      }
+    },
+    {
+      "referenceId": "networking-plus-privateDns",
+      "previousHash": "dc81631e39c2fe291565bd24e7f1a4df8435563611179dd2e3bb4bb49e112ad1",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-privateDns",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview",
+        "checkedAt": "2026-10-08T01:51:38.173Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "dc81631e39c2fe291565bd24e7f1a4df8435563611179dd2e3bb4bb49e112ad1"
+      }
+    },
+    {
+      "referenceId": "networking-plus-vnet",
+      "previousHash": "02b41cad8fa24a3a4a8be5dd52ebcb4c52c58a58a76d004daca7cd4f90775d44",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-vnet",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
+        "checkedAt": "2026-10-08T01:51:38.661Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "02b41cad8fa24a3a4a8be5dd52ebcb4c52c58a58a76d004daca7cd4f90775d44"
+      }
+    },
+    {
+      "referenceId": "networking-plus-probe",
+      "previousHash": "7cd88d9de0a362d5416895c08220b4b5d0f1341c02a80c3b086172150544bb77",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-probe",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+        "checkedAt": "2026-10-08T01:51:39.175Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "7cd88d9de0a362d5416895c08220b4b5d0f1341c02a80c3b086172150544bb77"
+      }
+    },
+    {
+      "referenceId": "networking-plus-subnet",
+      "previousHash": "43ce1f72c78eedb446bcdee2ec2ee1733055030e2970e5e4961c980bd2f88ce9",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-subnet",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet",
+        "checkedAt": "2026-10-08T01:51:39.683Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "43ce1f72c78eedb446bcdee2ec2ee1733055030e2970e5e4961c980bd2f88ce9"
+      }
+    },
+    {
+      "referenceId": "networking-plus-dns",
+      "previousHash": "3468e6ec3be842ebd2c43d6bda2b95378be974bc7f564d48a186516f92865c09",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-dns",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-overview",
+        "checkedAt": "2026-10-08T01:51:40.175Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "3468e6ec3be842ebd2c43d6bda2b95378be974bc7f564d48a186516f92865c09"
+      }
+    },
+    {
+      "referenceId": "networking-plus-lb",
+      "previousHash": "1d6e1250f6f0ebf3a38531140e653949f5fcae847510a3fa2a5ec5649f96a251",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-lb",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+        "checkedAt": "2026-10-08T01:51:40.701Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "1d6e1250f6f0ebf3a38531140e653949f5fcae847510a3fa2a5ec5649f96a251"
+      }
+    },
+    {
+      "referenceId": "networking-plus-privateEndpoint",
+      "previousHash": "79325b0246194e2059b11065f8bb4bc5f728e91a1a981ef96dc6d81da74f1ce4",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-privateEndpoint",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+        "checkedAt": "2026-10-08T01:51:27.223Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "79325b0246194e2059b11065f8bb4bc5f728e91a1a981ef96dc6d81da74f1ce4"
+      }
+    },
+    {
+      "referenceId": "networking-plus-privateLinks",
+      "previousHash": "ce686840aa5a9b9754f32b2a45a785817b363316c343eda5c6327ff5a9dfa803",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-privateLinks",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links",
+        "checkedAt": "2026-10-08T01:51:41.218Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "ce686840aa5a9b9754f32b2a45a785817b363316c343eda5c6327ff5a9dfa803"
+      }
+    },
+    {
+      "referenceId": "networking-plus-records",
+      "previousHash": "2ed9315fdfc77bc5579d8d37074016a2812b0630b2ea358961ed1383b515bd79",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-records",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+        "checkedAt": "2026-10-08T01:51:41.757Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "2ed9315fdfc77bc5579d8d37074016a2812b0630b2ea358961ed1383b515bd79"
+      }
+    },
+    {
+      "referenceId": "networking-plus-route",
+      "previousHash": "18f33fde495bdcca4f6847f14b0bda1df5e56401bde57814d8918d1e041f20c9",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-route",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "checkedAt": "2026-10-08T01:51:42.323Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "18f33fde495bdcca4f6847f14b0bda1df5e56401bde57814d8918d1e041f20c9"
+      }
+    },
+    {
+      "referenceId": "networking-plus-asg",
+      "previousHash": "7049a7e12389d4521498c71ab4bb87c32c599fcaa331a43f44a5fc7a64a23cd8",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-asg",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups",
+        "checkedAt": "2026-10-08T01:51:42.815Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "7049a7e12389d4521498c71ab4bb87c32c599fcaa331a43f44a5fc7a64a23cd8"
+      }
+    },
+    {
+      "referenceId": "networking-plus-effective",
+      "previousHash": "e8a109f05cbb48c7b6a786f12562fec24c87b22ebbf737281457f5871a6a434d",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-effective",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works",
+        "checkedAt": "2026-10-08T01:51:43.308Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "e8a109f05cbb48c7b6a786f12562fec24c87b22ebbf737281457f5871a6a434d"
+      }
+    },
+    {
+      "referenceId": "networking-plus-delegate",
+      "previousHash": "5de53b994547feba0496ed7550bc264335e018f2dbf8290e5c4519cd3f343d98",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-delegate",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns",
+        "checkedAt": "2026-10-08T01:51:43.791Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "5de53b994547feba0496ed7550bc264335e018f2dbf8290e5c4519cd3f343d98"
+      }
+    },
+    {
+      "referenceId": "networking-plus-nsg",
+      "previousHash": "b141eccde42ed5b61214c53cb494e39e4881d53626a2ccb8fb8885feb929a2e4",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-nsg",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+        "checkedAt": "2026-10-08T01:51:26.848Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "b141eccde42ed5b61214c53cb494e39e4881d53626a2ccb8fb8885feb929a2e4"
+      }
+    },
+    {
+      "referenceId": "networking-plus-bastion",
+      "previousHash": "3000e417a65d511f04195c8dd87937fc907c07d515f6e315f11418fe4d69990f",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-bastion",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings",
+        "checkedAt": "2026-10-08T01:51:44.334Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "3000e417a65d511f04195c8dd87937fc907c07d515f6e315f11418fe4d69990f"
+      }
+    },
+    {
+      "referenceId": "networking-plus-privateDnsEndpoint",
+      "previousHash": "c413263a60d2cf7e98c7347518e3bbb34a1a2d70e35dae9dd32776b627415fc6",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-privateDnsEndpoint",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns",
+        "checkedAt": "2026-10-08T01:51:44.844Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "c413263a60d2cf7e98c7347518e3bbb34a1a2d70e35dae9dd32776b627415fc6"
+      }
+    },
+    {
+      "referenceId": "networking-plus-ip",
+      "previousHash": "bbede26d4d543197c8b0ee61fb6fc9e58fbc5dc673dda731be542c2a9fb28df0",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-ip",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses",
+        "checkedAt": "2026-10-08T01:51:45.347Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "bbede26d4d543197c8b0ee61fb6fc9e58fbc5dc673dda731be542c2a9fb28df0"
+      }
+    },
+    {
+      "referenceId": "networking-plus-watcher",
+      "previousHash": "ad3e9938887678f3d6e62918f67b1ad0d728d3790a27f362ee881a2d687e5394",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-watcher",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview",
+        "checkedAt": "2026-10-08T01:51:45.852Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "ad3e9938887678f3d6e62918f67b1ad0d728d3790a27f362ee881a2d687e5394"
+      }
+    },
+    {
+      "referenceId": "networking-plus-endpoint",
+      "previousHash": "18949b591ce16e5cc6b056657fbbcb8303a8e9073178c4388725b9d54d8c89bc",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-endpoint",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview",
+        "checkedAt": "2026-10-08T01:51:46.340Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "18949b591ce16e5cc6b056657fbbcb8303a8e9073178c4388725b9d54d8c89bc"
+      }
+    },
+    {
+      "referenceId": "networking-plus-troubleshoot",
+      "previousHash": "68fd0d8b5f93a6d833c6d987e58ed85d7fb21443001e0bda06faefe84cdf3a6b",
+      "previousUrl": "https://learn.microsoft.com/en-us/troubleshoot/azure/load-balancer/load-balancer-troubleshoot-health-probe-status",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-troubleshoot",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/troubleshoot/azure/load-balancer/load-balancer-troubleshoot-health-probe-status",
+        "checkedAt": "2026-10-08T01:51:46.825Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "68fd0d8b5f93a6d833c6d987e58ed85d7fb21443001e0bda06faefe84cdf3a6b"
+      }
+    },
+    {
+      "referenceId": "networking-plus-managePeering",
+      "previousHash": "205252a6ea8932e8aec337d7e59a4b048c53193cce601132fe93c88bfa0416a0",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-managePeering",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering",
+        "checkedAt": "2026-10-08T01:51:47.328Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "205252a6ea8932e8aec337d7e59a4b048c53193cce601132fe93c88bfa0416a0"
+      }
+    },
+    {
+      "referenceId": "networking-plus-components",
+      "previousHash": "7320553524934ab92d977546555855ea89b6ef54ca20ac507907a554546bdc91",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/load-balancer/components",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "networking-plus-components",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/load-balancer/components",
+        "checkedAt": "2026-10-08T01:51:47.843Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "7320553524934ab92d977546555855ea89b6ef54ca20ac507907a554546bdc91"
+      }
+    },
+    {
+      "referenceId": "storage-plus-firewall",
+      "previousHash": "9b590e56a19268836ef39ed5911c3399c5262e5f41afcd47a0e7991cd0bb47b2",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-firewall",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+        "checkedAt": "2026-10-08T01:51:48.215Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "9b590e56a19268836ef39ed5911c3399c5262e5f41afcd47a0e7991cd0bb47b2"
+      }
+    },
+    {
+      "referenceId": "storage-plus-sas",
+      "previousHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-sas",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "checkedAt": "2026-10-08T01:51:25.333Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667"
+      }
+    },
+    {
+      "referenceId": "storage-plus-keys",
+      "previousHash": "c6c5b0c204771df0afc468878e249c6079c300365d1b09b98063054cf218f4bd",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-keys",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage",
+        "checkedAt": "2026-10-08T01:51:48.693Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "c6c5b0c204771df0afc468878e249c6079c300365d1b09b98063054cf218f4bd"
+      }
+    },
+    {
+      "referenceId": "storage-plus-file-identity",
+      "previousHash": "012bb02c3abe6d0cad7c239814b62ea541f270cb58de0804d7475f8aef9c4d33",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-file-identity",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
+        "checkedAt": "2026-10-08T01:51:49.175Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "012bb02c3abe6d0cad7c239814b62ea541f270cb58de0804d7475f8aef9c4d33"
+      }
+    },
+    {
+      "referenceId": "storage-plus-file-share-permissions",
+      "previousHash": "ef728a9f2667415e68fd853b491ffb636d70d34d8c941364f87aa284f8b73895",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-file-share-permissions",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions",
+        "checkedAt": "2026-10-08T01:51:49.699Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "ef728a9f2667415e68fd853b491ffb636d70d34d8c941364f87aa284f8b73895"
+      }
+    },
+    {
+      "referenceId": "storage-plus-file-ntfs",
+      "previousHash": "ec52acaf006cee31d3f5959253373edf3cded41cdb82b47fe679f5858737b652",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-configure-file-level-permissions",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-file-ntfs",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-configure-file-level-permissions",
+        "checkedAt": "2026-10-08T01:51:50.214Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "ec52acaf006cee31d3f5959253373edf3cded41cdb82b47fe679f5858737b652"
+      }
+    },
+    {
+      "referenceId": "storage-plus-redundancy",
+      "previousHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-redundancy",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+        "checkedAt": "2026-10-08T01:51:24.843Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44"
+      }
+    },
+    {
+      "referenceId": "storage-plus-object-replication",
+      "previousHash": "7a89668e6d3c7a34aa13d66a584cad0eaaed22e6f2e0584b91705279eee59b24",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-object-replication",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview",
+        "checkedAt": "2026-10-08T01:51:50.733Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "7a89668e6d3c7a34aa13d66a584cad0eaaed22e6f2e0584b91705279eee59b24"
+      }
+    },
+    {
+      "referenceId": "storage-plus-encryption",
+      "previousHash": "0d7f2a0620420d90dc27c2ab88ab52faa6def788229fa9d009b329d1e8954762",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-encryption",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption",
+        "checkedAt": "2026-10-08T01:51:51.224Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "0d7f2a0620420d90dc27c2ab88ab52faa6def788229fa9d009b329d1e8954762"
+      }
+    },
+    {
+      "referenceId": "storage-plus-cmk",
+      "previousHash": "a9247cc00f3eb0bba6018b492dafad893424c866502c36398b0647d4aec5608d",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-cmk",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview",
+        "checkedAt": "2026-10-08T01:51:51.705Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "a9247cc00f3eb0bba6018b492dafad893424c866502c36398b0647d4aec5608d"
+      }
+    },
+    {
+      "referenceId": "storage-plus-azcopy",
+      "previousHash": "d7df02ce1fd7542a18dd3c83579c12ef4c39723f9798750e0152e3eec5c4774d",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-azcopy",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10",
+        "checkedAt": "2026-10-08T01:51:52.187Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "d7df02ce1fd7542a18dd3c83579c12ef4c39723f9798750e0152e3eec5c4774d"
+      }
+    },
+    {
+      "referenceId": "storage-plus-azcopy-entra",
+      "previousHash": "4d0e681eec59ca6901aeee24aed6c20e79d3820ed829b7e34e1f2d9b25bcbd35",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-authorize-user-identity",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-azcopy-entra",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-authorize-user-identity",
+        "checkedAt": "2026-10-08T01:51:52.787Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "4d0e681eec59ca6901aeee24aed6c20e79d3820ed829b7e34e1f2d9b25bcbd35"
+      }
+    },
+    {
+      "referenceId": "storage-plus-azcopy-copy",
+      "previousHash": "c96aedfb4e8332805f5aeecee3c194d9cfe6d72265e2cddee5c20e80d26849aa",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-copy",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-azcopy-copy",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-copy",
+        "checkedAt": "2026-10-08T01:51:53.264Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "c96aedfb4e8332805f5aeecee3c194d9cfe6d72265e2cddee5c20e80d26849aa"
+      }
+    },
+    {
+      "referenceId": "storage-plus-azcopy-sync",
+      "previousHash": "29514889ec1b07616588252df7fa864a88c1ae5623e92bdfc4a918b85117ecd1",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-synchronize",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-azcopy-sync",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-synchronize",
+        "checkedAt": "2026-10-08T01:51:53.755Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "29514889ec1b07616588252df7fa864a88c1ae5623e92bdfc4a918b85117ecd1"
+      }
+    },
+    {
+      "referenceId": "storage-plus-lifecycle",
+      "previousHash": "fc66a2789f362b21730ec133bf8fa4845404b8a0c0b4c5f7680c32344d274d72",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-lifecycle",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+        "checkedAt": "2026-10-08T01:51:54.327Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "fc66a2789f362b21730ec133bf8fa4845404b8a0c0b4c5f7680c32344d274d72"
+      }
+    },
+    {
+      "referenceId": "storage-plus-lifecycle-policy",
+      "previousHash": "9f9f9b1d3ac647834d4fb5e210aaf46d2d0a38422f1a2e7335038e6682d570fe",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-lifecycle-policy",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure",
+        "checkedAt": "2026-10-08T01:51:54.693Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "9f9f9b1d3ac647834d4fb5e210aaf46d2d0a38422f1a2e7335038e6682d570fe"
+      }
+    },
+    {
+      "referenceId": "storage-plus-blob-delete",
+      "previousHash": "2fbc6a832df1fb6f659abca09d252c2d40d3b8292122ae7166d5131f4acdd61c",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-blob-delete",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview",
+        "checkedAt": "2026-10-08T01:51:55.182Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "2fbc6a832df1fb6f659abca09d252c2d40d3b8292122ae7166d5131f4acdd61c"
+      }
+    },
+    {
+      "referenceId": "storage-plus-container-delete",
+      "previousHash": "a3e94e65ce6488af84d80395e6277abcd685bfd5cc21ddf01d7369d09961a95e",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-container-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-container-delete",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-container-overview",
+        "checkedAt": "2026-10-08T01:51:55.673Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "a3e94e65ce6488af84d80395e6277abcd685bfd5cc21ddf01d7369d09961a95e"
+      }
+    },
+    {
+      "referenceId": "storage-plus-versioning",
+      "previousHash": "f1573941a1f246bdbbf91cf33a5d2216aded05ed3d1d3c498a5798f00f6d5a0c",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-versioning",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+        "checkedAt": "2026-10-08T01:51:56.165Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "f1573941a1f246bdbbf91cf33a5d2216aded05ed3d1d3c498a5798f00f6d5a0c"
+      }
+    },
+    {
+      "referenceId": "storage-plus-tiers",
+      "previousHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-tiers",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "checkedAt": "2026-10-08T01:51:25.814Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60"
+      }
+    },
+    {
+      "referenceId": "storage-plus-file-snapshots",
+      "previousHash": "cdea54a08f2a961a7d94c8f0bc5b6076975fc4feff218e42a0e01070fb5c33c0",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-file-snapshots",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files",
+        "checkedAt": "2026-10-08T01:51:56.679Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "cdea54a08f2a961a7d94c8f0bc5b6076975fc4feff218e42a0e01070fb5c33c0"
+      }
+    },
+    {
+      "referenceId": "storage-plus-file-delete",
+      "previousHash": "149dc8aefe75b33609015d4404868a1e198e5b34b498ea8535ba0f96bd9c983e",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-file-delete",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion",
+        "checkedAt": "2026-10-08T01:51:57.198Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "149dc8aefe75b33609015d4404868a1e198e5b34b498ea8535ba0f96bd9c983e"
+      }
+    },
+    {
+      "referenceId": "storage-plus-file-planning",
+      "previousHash": "056078e25a8e8e2872920d43a2c98eb17df956ba80853142edc5a6c5a32e791e",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-file-planning",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "checkedAt": "2026-10-08T01:51:57.710Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "056078e25a8e8e2872920d43a2c98eb17df956ba80853142edc5a6c5a32e791e"
+      }
+    },
+    {
+      "referenceId": "storage-plus-rehydrate",
+      "previousHash": "54b96ba2630f6c7439c90cec7aae18ddb157e57791cc231efdc25bf8c587667e",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-rehydrate",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview",
+        "checkedAt": "2026-10-08T01:51:58.197Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "54b96ba2630f6c7439c90cec7aae18ddb157e57791cc231efdc25bf8c587667e"
+      }
+    },
+    {
+      "referenceId": "storage-plus-containers",
+      "previousHash": "811c202ccffd0e62c0416ed17914f7025a73ebcd4f7f54815ecce9924a7e9886",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-containers",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal",
+        "checkedAt": "2026-10-08T01:51:58.700Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "811c202ccffd0e62c0416ed17914f7025a73ebcd4f7f54815ecce9924a7e9886"
+      }
+    },
+    {
+      "referenceId": "storage-plus-policy",
+      "previousHash": "143f260dbbfddf0817a2a164ba4a48c9fb2dc8750b77d7adfc1fe97537040861",
+      "previousUrl": "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-policy",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy",
+        "checkedAt": "2026-10-08T01:51:59.212Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "143f260dbbfddf0817a2a164ba4a48c9fb2dc8750b77d7adfc1fe97537040861"
+      }
+    },
+    {
+      "referenceId": "storage-plus-infrastructure-encryption",
+      "previousHash": "b2b7bff91a84aa23031e56bc4d37939d1f0dc5fd30ec998e6ee8aba2890a0e71",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/infrastructure-encryption-enable",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-infrastructure-encryption",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/infrastructure-encryption-enable",
+        "checkedAt": "2026-10-08T01:51:59.723Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "b2b7bff91a84aa23031e56bc4d37939d1f0dc5fd30ec998e6ee8aba2890a0e71"
+      }
+    },
+    {
+      "referenceId": "storage-plus-private",
+      "previousHash": "7ff58c139826b42bc249433201386cce4c5f677ff81037c75b10b1723be10c76",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-private",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints",
+        "checkedAt": "2026-10-08T01:52:00.286Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "7ff58c139826b42bc249433201386cce4c5f677ff81037c75b10b1723be10c76"
+      }
+    },
+    {
+      "referenceId": "storage-plus-firewall-limitations",
+      "previousHash": "dd0ba3819d0ec7d10e54a094dfbfb4f90e18c4c4c15216b43fa8392fc0db9b24",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-limitations",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-firewall-limitations",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-limitations",
+        "checkedAt": "2026-10-08T01:52:00.823Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "dd0ba3819d0ec7d10e54a094dfbfb4f90e18c4c4c15216b43fa8392fc0db9b24"
+      }
+    },
+    {
+      "referenceId": "storage-plus-shared-key",
+      "previousHash": "e1471ea14b57c932c33ad7a6df80ab88fa8a98339a2343aa90ae281ab3750de8",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-shared-key",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent",
+        "checkedAt": "2026-10-08T01:52:01.319Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "e1471ea14b57c932c33ad7a6df80ab88fa8a98339a2343aa90ae281ab3750de8"
+      }
+    },
+    {
+      "referenceId": "storage-plus-account-create",
+      "previousHash": "12dfe6eb12da9bd420a6d8e890decaeb6d0dd32a6ac938116d28b5f56a8c2798",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-account-create",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create",
+        "checkedAt": "2026-10-08T01:52:01.849Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "12dfe6eb12da9bd420a6d8e890decaeb6d0dd32a6ac938116d28b5f56a8c2798"
+      }
+    },
+    {
+      "referenceId": "storage-plus-service-sas",
+      "previousHash": "e613fba101012cfe82aac83312e2c20960558c1b3b303563cf1010243d4a8bf5",
+      "previousUrl": "https://learn.microsoft.com/en-us/rest/api/storageservices/create-service-sas",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-service-sas",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/rest/api/storageservices/create-service-sas",
+        "checkedAt": "2026-10-08T01:52:02.212Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "e613fba101012cfe82aac83312e2c20960558c1b3b303563cf1010243d4a8bf5"
+      }
+    },
+    {
+      "referenceId": "storage-plus-blob-rbac",
+      "previousHash": "431e5afc7e789f090dc5c3b67d6e8e128ea567e989d6bd3212c3566729215c20",
+      "previousUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access",
+      "status": "unchanged",
+      "observed": {
+        "referenceId": "storage-plus-blob-rbac",
+        "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access",
+        "checkedAt": "2026-10-08T01:52:02.572Z",
+        "evidenceSummary": "Official Microsoft Learn HTML retrieved and hashed. Hash differences require section-level review; no human factual approval is inferred.",
+        "result": "checked",
+        "contentHash": "431e5afc7e789f090dc5c3b67d6e8e128ea567e989d6bd3212c3566729215c20"
+      }
+    }
+  ]
+}

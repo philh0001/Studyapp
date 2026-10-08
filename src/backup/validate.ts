@@ -1,14 +1,15 @@
 import {isOfficialSource} from '../content/validate';
-import {scoreAnswer} from '../study/scoring';
+import {scoreAnswer,canSubmit} from '../study/scoring';
 import type {Attempt} from '../sessions/types';
+import {isTimedSession} from '../sessions/types';
 import type {Question,ValidationIssue} from '../content/types';
-import {MAX_BACKUP_BYTES,backupTables,type BackupValidation} from './types';
+import {MAX_BACKUP_BYTES,MAX_EXPANDED_BACKUP_BYTES,backupTables,type BackupValidation} from './types';
 import {checkBackup as check} from '../content/generated/validators.js';
 function canonical(value:unknown):string{if(Array.isArray(value))return '['+value.map(canonical).join(',')+']';if(value!==null&&typeof value==='object')return '{'+Object.entries(value).sort(([a],[b])=>a.localeCompare(b)).map(([key,item])=>JSON.stringify(key)+':'+canonical(item)).join(',')+'}';return JSON.stringify(value)}
-export function validateBackup(input:unknown,byteLength:number):BackupValidation{
+export function validateBackup(input:unknown,byteLength:number,compressed=false):BackupValidation{
  const issues:ValidationIssue[]=[],issue=(path:string,message:string)=>issues.push({path,message});
  const reject=():BackupValidation=>({valid:false,backup:null,issues});
- if(!Number.isFinite(byteLength)||byteLength<0||byteLength>MAX_BACKUP_BYTES){issue('file','Backup must be at most 10 MiB (10,485,760 bytes).');return reject()}
+ if(!Number.isFinite(byteLength)||byteLength<0||byteLength>(compressed?MAX_EXPANDED_BACKUP_BYTES:MAX_BACKUP_BYTES)){issue('file',compressed?'Expanded backup must be at most 64 MiB.':'Backup must be at most 10 MiB (10,485,760 bytes).');return reject()}
  if(typeof input==='object'&&input!==null&&'schemaVersion' in input&&input.schemaVersion!==1){issue('schemaVersion','Unsupported backup version. Only schema version 1 is supported.');return reject()}
  if(!check(input)){for(const e of check.errors??[])issue(e.instancePath||'backup',e.message??'Invalid record');return reject()}
  const b=input;
@@ -20,7 +21,9 @@ export function validateBackup(input:unknown,byteLength:number):BackupValidation
   identities.add(identityKey(question.id,question.revision));questionIds.add(question.id);
   const opts=new Set(question.options.map(o=>o.id)),references=new Set(question.references.map(r=>r.id));
   if(opts.size!==question.options.length||references.size!==question.references.length)issue(path,'Duplicate option or reference identity');
-  if(question.correctOptionIds.length!==question.requiredSelections||question.requiredSelections>=question.options.length||question.correctOptionIds.some(id=>!opts.has(id))||(question.type==='single'&&question.requiredSelections!==1)||(question.type==='multiple'&&question.requiredSelections<2))issue(path+'.correctOptionIds','Invalid answer count or option identity');
+  if(question.correctOptionIds.length!==question.requiredSelections||question.requiredSelections>question.options.length||(['single','multiple'].includes(question.type)&&question.requiredSelections===question.options.length)||(['ordering','matching'].includes(question.type)&&question.requiredSelections!==question.options.length)||question.correctOptionIds.some(id=>!opts.has(id))||(question.type==='single'&&question.requiredSelections!==1)||(question.type==='multiple'&&question.requiredSelections<2))issue(path+'.correctOptionIds','Invalid answer count or option identity');
+  if(question.type==='matching'&&(!question.matchPrompts||question.matchPrompts.length!==question.options.length||new Set(question.matchPrompts.map(p=>p.id)).size!==question.matchPrompts.length))issue(path+'.matchPrompts','Invalid matching prompts');
+  if(new Set(question.correctOptionIds).size!==question.correctOptionIds.length)issue(path+'.correctOptionIds','Duplicate correct answer identity');
   if(question.summaryReferenceIds.some(id=>!references.has(id))||question.options.some(o=>o.referenceIds.some(id=>!references.has(id))))issue(path+'.references','Dangling evidence reference');
   if(['verified','reviewed'].includes(question.status)&&!question.review)issue(path+'.review','Missing review record');
   for(const r of question.references){if(!isOfficialSource(r.url))issue(path+'.references','Use a canonical Microsoft Learn HTTPS source')}
@@ -39,15 +42,15 @@ export function validateBackup(input:unknown,byteLength:number):BackupValidation
   const path=`sessions[${i}]`,questions=new Map(s.questionSnapshots.map(question=>[question.id,question]));
   if(questions.size!==s.questionSnapshots.length||s.questionSnapshots.length===0||s.currentIndex>=s.questionSnapshots.length)issue(path,'Invalid session question list or position');
   if(s.deadlineAt&&(Date.parse(s.deadlineAt)<=Date.parse(s.startedAt)))issue(path+'.deadlineAt','Deadline must follow start');
-  if((s.mode==='timed')!==(s.deadlineAt!==null))issue(path+'.deadlineAt','Timed sessions require a deadline');
+  if((s.mode==='timed'&&!isTimedSession(s))||(s.mode==='learn'&&isTimedSession(s)))issue(path+'.deadlineAt','Timed sessions require a deadline and learning sessions cannot have one');
   if((s.status==='submitted')!==(s.submittedAt!==null)||s.submittedAt&&Date.parse(s.submittedAt)<Date.parse(s.startedAt))issue(path+'.submittedAt','Invalid submission date');
   for(const [id,order] of Object.entries(s.optionOrders)){const question=questions.get(id);if(!question||order.length!==question.options.length||order.some(option=>!question.options.some(o=>o.id===option)))issue(path+'.optionOrders','Invalid saved option order')}
   for(const question of s.questionSnapshots)if(!Object.hasOwn(s.optionOrders,question.id))issue(path+'.optionOrders','Missing saved option order');
-  for(const [id,answer] of Object.entries(s.answers)){const question=questions.get(id);if(!question||answer.selectedOptionIds.some(option=>!question.options.some(o=>o.id===option)))issue(path+'.answers','Invalid saved answer')}
+  for(const [id,answer] of Object.entries(s.answers)){const question=questions.get(id);if(!question||answer.selectedOptionIds.length>question.requiredSelections||answer.selectedOptionIds.some(option=>!question.options.some(o=>o.id===option)))issue(path+'.answers','Invalid saved answer')}
   if(s.flags.some(id=>!questions.has(id))||s.correctionWarnings.some(r=>!s.questionSnapshots.some(q=>q.id===r.questionId&&q.revision===r.revision)))issue(path,'Dangling session question reference');
   const sessionAttempts=attemptsBySession.get(s.id)??[];
   if((s.status==='submitted')!==(s.result!==undefined))issue(path+'.result','Submitted sessions require a result; active sessions cannot have one');
-  if(s.mode==='timed'&&s.status==='active'&&sessionAttempts.length)issue(path,'Active timed sessions cannot contain final attempts');
+  if(isTimedSession(s)&&s.status==='active'&&sessionAttempts.length)issue(path,'Active timed sessions cannot contain final attempts');
   if(s.status==='submitted'&&(sessionAttempts.length!==s.questionSnapshots.length||s.questionSnapshots.some(q=>!sessionAttempts.some(a=>a.questionId===q.id&&a.questionRevision===q.revision))))issue(path,'Submitted session must contain one attempt for every saved question');
   if(s.result){
    const r=s.result,domainIds=new Set(s.questionSnapshots.map(q=>q.domainId));
@@ -58,12 +61,12 @@ export function validateBackup(input:unknown,byteLength:number):BackupValidation
  for(const [i,a] of b.attempts.entries()){
   const s=sessions.get(a.sessionId),q=a.questionSnapshot;
   const saved=s?.questionSnapshots.find(sq=>sq.id===a.questionId&&sq.revision===a.questionRevision);
-  if(!s||!saved||canonical(saved)!==canonical(q)||q.id!==a.questionId||q.revision!==a.questionRevision||(a.mode!=='timed'&&a.selectedOptionIds.length!==q.requiredSelections)||a.selectedOptionIds.some(id=>!q.options.some(o=>o.id===id))||s.mode!==a.mode)issue(`attempts[${i}]`,'Dangling or inconsistent attempt reference');
+  if(!s||!saved||canonical(saved)!==canonical(q)||q.id!==a.questionId||q.revision!==a.questionRevision||(s&&!isTimedSession(s)&&!canSubmit(q,a.selectedOptionIds))||a.selectedOptionIds.length>q.requiredSelections||a.selectedOptionIds.some(id=>!q.options.some(o=>o.id===id))||s.mode!==a.mode)issue(`attempts[${i}]`,'Dangling or inconsistent attempt reference');
   if(a.correct!==scoreAnswer(q,a.selectedOptionIds))issue(`attempts[${i}].correct`,'Attempt score differs from its saved question');
   if(s){
-   if(Date.parse(a.submittedAt)<Date.parse(s.startedAt)||s.submittedAt&&Date.parse(a.submittedAt)>Date.parse(s.submittedAt)||s.mode==='timed'&&a.submittedAt!==s.submittedAt)issue(`attempts[${i}].submittedAt`,'Attempt submission date is inconsistent with its session');
+   if(Date.parse(a.submittedAt)<Date.parse(s.startedAt)||s.submittedAt&&Date.parse(a.submittedAt)>Date.parse(s.submittedAt)||isTimedSession(s)&&a.submittedAt!==s.submittedAt)issue(`attempts[${i}].submittedAt`,'Attempt submission date is inconsistent with its session');
    const answer=s.answers[a.questionId];
-   if(answer?(canonical(answer.selectedOptionIds)!==canonical(a.selectedOptionIds)||answer.confidence!==a.confidence||answer.responseMs!==a.responseMs):(a.mode!=='timed'||a.selectedOptionIds.length!==0||a.confidence!=='unknown'||a.responseMs!==0))issue(`attempts[${i}]`,'Attempt differs from its durable saved answer');
+   if(answer?(canonical(answer.selectedOptionIds)!==canonical(a.selectedOptionIds)||answer.confidence!==a.confidence||answer.responseMs!==a.responseMs):(!isTimedSession(s)||a.selectedOptionIds.length!==0||a.confidence!=='unknown'||a.responseMs!==0))issue(`attempts[${i}]`,'Attempt differs from its durable saved answer');
   }
  }
  return issues.length?reject():{valid:true,backup:b,issues};

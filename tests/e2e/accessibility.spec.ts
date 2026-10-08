@@ -1,3 +1,4 @@
+import {chooseAnswer} from './answer';
 import {expect,test} from '@playwright/test';
 
 for(const width of [320,390,430])test(`no horizontal overflow at ${width}px and 1.4 text scale`,async({page})=>{
@@ -18,13 +19,11 @@ test('keyboard focus reaches skip link and answer inputs with visible focus',asy
  for(let step=0;step<30&&!(await start.evaluate(node=>node===document.activeElement));step++)await page.keyboard.press('Tab');
  await expect(start).toBeFocused();await page.keyboard.press('Enter');
  const choices=page.getByRole('group',{name:'Answer choices'});await expect(choices).toBeVisible();
- const input=choices.locator('input').first();
- for(let step=0;step<20&&!(await input.evaluate(node=>node===document.activeElement));step++)await page.keyboard.press('Tab');
- await expect(input).toBeFocused();await page.keyboard.press('Space');await expect(input).toBeChecked();
- expect(await input.evaluate(node=>getComputedStyle(node).outlineStyle)).not.toBe('none');
- const instruction=await page.locator('.question-panel .eyebrow').textContent();
- const required=Number(instruction?.match(/Choose (\d+)/)?.[1]??1);
- for(let choice=1;choice<required;choice++){await page.keyboard.press('Tab');await page.keyboard.press('Space')}
+ const control=choices.locator('input,select,button').first();
+ for(let step=0;step<30&&!(await control.evaluate(node=>node===document.activeElement));step++)await page.keyboard.press('Tab');
+ await expect(control).toBeFocused();
+ expect(await control.evaluate(node=>getComputedStyle(node).outlineStyle)).not.toBe('none');
+ await chooseAnswer(page);
  const submit=page.getByRole('button',{name:'Submit answer',exact:true});
  for(let step=0;step<30&&!(await submit.evaluate(node=>node===document.activeElement));step++)await page.keyboard.press('Tab');
  await expect(submit).toBeFocused();await page.keyboard.press('Enter');

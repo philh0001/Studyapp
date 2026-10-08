@@ -1,3 +1,4 @@
+import {chooseAnswer} from './answer';
 import {expect,test} from '@playwright/test';
 
 test('precached shell reloads offline with local draft content',async({page,context})=>{
@@ -26,10 +27,7 @@ test('answers a ten-question draft preview offline and preserves completed progr
  for(let index=0;index<10;index++){
   const choices=page.getByRole('group',{name:'Answer choices'});
   await expect(choices).toBeVisible();
-  const instruction=await page.locator('.question-panel .eyebrow').textContent();
-  const required=Number(instruction?.match(/Choose (\d+)/)?.[1]??1);
-  const inputs=choices.locator('input');
-  for(let choice=0;choice<required;choice++)await inputs.nth(choice).check();
+  await chooseAnswer(page);
   await page.getByRole('button',{name:'Submit answer',exact:true}).click();
   await expect(page.getByRole('button',{name:'Next question',exact:true})).toBeVisible();
   await expect(page.getByRole('heading',{name:'Microsoft Learn sources'})).toBeVisible();

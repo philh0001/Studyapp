@@ -13,7 +13,16 @@ export function validatePack(input:unknown,blueprint:Blueprint):{pack:ContentPac
   if(q.blueprintId!==blueprint.id||!blueprint.domains.some(d=>d.id===q.domainId&&d.objectives.some(o=>o.id===q.objectiveId)))issue(p+'.objectiveId','Unknown objective/domain mapping');
   const opts=new Set(q.options.map(o=>o.id)), refs=new Set(q.references.map(r=>r.id));
   if(opts.size!==q.options.length||refs.size!==q.references.length)issue(p,'Duplicate option/reference IDs');
-  if(q.correctOptionIds.length!==q.requiredSelections||q.requiredSelections>=q.options.length||q.correctOptionIds.some(id=>!opts.has(id))||(q.type==='single'&&q.requiredSelections!==1)||(q.type==='multiple'&&q.requiredSelections<2))issue(p+'.correctOptionIds','Incorrect answer count or IDs');
+  const ordered=q.type==='ordering'||q.type==='matching';
+  if(q.correctOptionIds.length!==q.requiredSelections||(ordered?q.requiredSelections!==q.options.length:q.requiredSelections>=q.options.length)||q.correctOptionIds.some(id=>!opts.has(id))||(q.type==='single'&&q.requiredSelections!==1)||(q.type==='multiple'&&q.requiredSelections<2))issue(p+'.correctOptionIds','Incorrect answer count or IDs');
+  if(q.type==='matching'){if(!q.matchPrompts||q.matchPrompts.length!==q.options.length||new Set(q.matchPrompts.map(x=>x.id)).size!==q.matchPrompts.length)issue(p+'.matchPrompts','Matching requires unique prompts and every option once')}
+  else if(q.matchPrompts)issue(p+'.matchPrompts','Prompts are only valid for matching questions');
+  const objective=blueprint.domains.find(d=>d.id===q.domainId)?.objectives.find(o=>o.id===q.objectiveId);
+  if(q.subObjectiveIds?.some(id=>!objective?.subObjectives.some((_,index)=>id===`${objective.id}.${index+1}`)))issue(p+'.subObjectiveIds','Unknown subskill for this objective');
+  for(const [j,exhibit] of (q.exhibits??[]).entries()){
+   if(exhibit.type==='table'&&(!exhibit.columns?.length||!exhibit.rows?.length||exhibit.rows.some(row=>row.length!==exhibit.columns!.length)))issue(p+`.exhibits[${j}]`,'Table requires columns and rectangular rows');
+   if(exhibit.type!=='table'&&!exhibit.text?.trim())issue(p+`.exhibits[${j}]`,'Code and diagram exhibits require accessible text');
+  }
   for(const [j,o] of q.options.entries())if(o.referenceIds.some(id=>!refs.has(id)))issue(p+`.options[${j}].referenceIds`,'Unknown evidence reference');
   if(q.summaryReferenceIds.some(id=>!refs.has(id)))issue(p+'.summaryReferenceIds','Unknown summary evidence');
   for(const r of q.references)if(!isOfficialSource(r.url))issue(p+'.references','Use a canonical Microsoft Learn HTTPS URL');

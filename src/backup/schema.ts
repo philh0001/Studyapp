@@ -9,7 +9,7 @@ const identity={questionId:str,revision};
 const confidence=enumOf(['confident','unsure','guessed','unknown']),mode=enumOf(['learn','timed','draft-preview']);
 const result=object({sessionId:str,submittedAt:date,correct:integer,total:integer,attemptIds:ids,domainResults:rows(object({domainId:str,correct:integer,total:integer}))});
 export const backupSchema=object({schemaVersion:{const:1},exportedAt:date,
- settings:rows(object({id:{const:'settings'},examDate:{type:['string','null'],format:'date'},theme:enumOf(['light','dark','system']),textScale:enumOf([1,1.2,1.4]),autoAdvance:bool})),
+ settings:rows(object({id:{const:'settings'},examDate:{type:['string','null'],format:'date'},theme:enumOf(['light','dark','system']),textScale:enumOf([1,1.2,1.4]),autoAdvance:bool,thumbControls:bool},['thumbControls'])),
  packs:rows(packSchema),sourceChecks:rows(object({referenceId:str,canonicalUrl:{type:'string',format:'uri'},checkedAt:date,result:enumOf(['checked','unavailable','changed']),evidenceSummary:text,contentHash:text},['contentHash'])),
  contentTrust:rows(object({...identity,sourceCheckedAt:date,humanReviewedAt:nullableDate,reviewer:{type:['string','null'],maxLength:10000},invalidatedAt:nullableDate})),
  sessions:rows(object({id:str,mode,questionSnapshots:rows(q),optionOrders:{type:'object',additionalProperties:ids},answers:{type:'object',additionalProperties:object({selectedOptionIds:ids,confidence,responseMs:integer})},flags:ids,currentIndex:integer,startedAt:date,deadlineAt:nullableDate,status:enumOf(['active','submitted']),submittedAt:nullableDate,correctionWarnings:rows(object(identity)),result},['result'])),

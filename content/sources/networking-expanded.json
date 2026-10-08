@@ -1,0 +1,186 @@
+[
+  {
+    "referenceId": "networking-plus-peering",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+    "checkedAt": "2026-10-08T01:38:21.406Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "6742103bde3e01b00d05d703b7ad56b9920c853538b7ede3b7d2314ab5d35952"
+  },
+  {
+    "referenceId": "networking-plus-privateDns",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview",
+    "checkedAt": "2026-10-08T01:38:21.414Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "dc81631e39c2fe291565bd24e7f1a4df8435563611179dd2e3bb4bb49e112ad1"
+  },
+  {
+    "referenceId": "networking-plus-vnet",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
+    "checkedAt": "2026-10-08T01:38:21.420Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "02b41cad8fa24a3a4a8be5dd52ebcb4c52c58a58a76d004daca7cd4f90775d44"
+  },
+  {
+    "referenceId": "networking-plus-probe",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+    "checkedAt": "2026-10-08T01:38:21.430Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "7cd88d9de0a362d5416895c08220b4b5d0f1341c02a80c3b086172150544bb77"
+  },
+  {
+    "referenceId": "networking-plus-subnet",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet",
+    "checkedAt": "2026-10-08T01:38:21.435Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "43ce1f72c78eedb446bcdee2ec2ee1733055030e2970e5e4961c980bd2f88ce9"
+  },
+  {
+    "referenceId": "networking-plus-dns",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-overview",
+    "checkedAt": "2026-10-08T01:38:21.485Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "3468e6ec3be842ebd2c43d6bda2b95378be974bc7f564d48a186516f92865c09"
+  },
+  {
+    "referenceId": "networking-plus-lb",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+    "checkedAt": "2026-10-08T01:38:21.508Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "1d6e1250f6f0ebf3a38531140e653949f5fcae847510a3fa2a5ec5649f96a251"
+  },
+  {
+    "referenceId": "networking-plus-privateEndpoint",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+    "checkedAt": "2026-10-08T01:38:21.556Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "79325b0246194e2059b11065f8bb4bc5f728e91a1a981ef96dc6d81da74f1ce4"
+  },
+  {
+    "referenceId": "networking-plus-privateLinks",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links",
+    "checkedAt": "2026-10-08T01:38:21.582Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "ce686840aa5a9b9754f32b2a45a785817b363316c343eda5c6327ff5a9dfa803"
+  },
+  {
+    "referenceId": "networking-plus-records",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+    "checkedAt": "2026-10-08T01:38:21.600Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "2ed9315fdfc77bc5579d8d37074016a2812b0630b2ea358961ed1383b515bd79"
+  },
+  {
+    "referenceId": "networking-plus-route",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+    "checkedAt": "2026-10-08T01:38:21.610Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "18f33fde495bdcca4f6847f14b0bda1df5e56401bde57814d8918d1e041f20c9"
+  },
+  {
+    "referenceId": "networking-plus-asg",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups",
+    "checkedAt": "2026-10-08T01:38:21.612Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "7049a7e12389d4521498c71ab4bb87c32c599fcaa331a43f44a5fc7a64a23cd8"
+  },
+  {
+    "referenceId": "networking-plus-effective",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works",
+    "checkedAt": "2026-10-08T01:38:21.617Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "e8a109f05cbb48c7b6a786f12562fec24c87b22ebbf737281457f5871a6a434d"
+  },
+  {
+    "referenceId": "networking-plus-delegate",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns",
+    "checkedAt": "2026-10-08T01:38:21.625Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "5de53b994547feba0496ed7550bc264335e018f2dbf8290e5c4519cd3f343d98"
+  },
+  {
+    "referenceId": "networking-plus-nsg",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+    "checkedAt": "2026-10-08T01:38:21.631Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "b141eccde42ed5b61214c53cb494e39e4881d53626a2ccb8fb8885feb929a2e4"
+  },
+  {
+    "referenceId": "networking-plus-bastion",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings",
+    "checkedAt": "2026-10-08T01:38:21.632Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "3000e417a65d511f04195c8dd87937fc907c07d515f6e315f11418fe4d69990f"
+  },
+  {
+    "referenceId": "networking-plus-privateDnsEndpoint",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns",
+    "checkedAt": "2026-10-08T01:38:21.694Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "c413263a60d2cf7e98c7347518e3bbb34a1a2d70e35dae9dd32776b627415fc6"
+  },
+  {
+    "referenceId": "networking-plus-ip",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses",
+    "checkedAt": "2026-10-08T01:38:21.713Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "bbede26d4d543197c8b0ee61fb6fc9e58fbc5dc673dda731be542c2a9fb28df0"
+  },
+  {
+    "referenceId": "networking-plus-watcher",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview",
+    "checkedAt": "2026-10-08T01:38:21.797Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "ad3e9938887678f3d6e62918f67b1ad0d728d3790a27f362ee881a2d687e5394"
+  },
+  {
+    "referenceId": "networking-plus-endpoint",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview",
+    "checkedAt": "2026-10-08T01:38:21.811Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "18949b591ce16e5cc6b056657fbbcb8303a8e9073178c4388725b9d54d8c89bc"
+  },
+  {
+    "referenceId": "networking-plus-troubleshoot",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/troubleshoot/azure/load-balancer/load-balancer-troubleshoot-health-probe-status",
+    "checkedAt": "2026-10-08T01:38:22.085Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "68fd0d8b5f93a6d833c6d987e58ed85d7fb21443001e0bda06faefe84cdf3a6b"
+  },
+  {
+    "referenceId": "networking-plus-managePeering",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering",
+    "checkedAt": "2026-10-08T01:41:35.477Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "205252a6ea8932e8aec337d7e59a4b048c53193cce601132fe93c88bfa0416a0"
+  },
+  {
+    "referenceId": "networking-plus-components",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/load-balancer/components",
+    "checkedAt": "2026-10-08T01:42:23.144Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
+    "contentHash": "7320553524934ab92d977546555855ea89b6ef54ca20ac507907a554546bdc91"
+  }
+]

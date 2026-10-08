@@ -1,0 +1,298 @@
+[
+  {
+    "referenceId": "compute-aca-ingress",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/ingress-overview",
+    "checkedAt": "2026-10-08T01:38:37.107168Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Ingress in Azure Container Apps | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "257f7fef5ffb029a0fe89f2ef850dc2f60d286193db322666b7dc4ece5eb7430"
+  },
+  {
+    "referenceId": "compute-aca-revisions",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/revisions",
+    "checkedAt": "2026-10-08T01:38:37.168599Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Update and deploy changes in Azure Container Apps | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "f3cd882e551677e2dcf91974d0d1521e1cde3b8d40ccfa9844c8e3f7cd876b08"
+  },
+  {
+    "referenceId": "compute-aca-scale",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+    "checkedAt": "2026-10-08T01:38:36.970574Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Scaling in Azure Container Apps | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "f7026c4f7c539104848e7b4d5e3834355080871cd8a39b366894c23f7c85d2e7"
+  },
+  {
+    "referenceId": "compute-aci-groups",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups",
+    "checkedAt": "2026-10-08T01:38:36.630591Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Introduction to container groups - Azure Container Instances | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "bc4154ff02c953b62c50f094af838f5f20f70a1007c467a5f86dfdfd581fe3b1"
+  },
+  {
+    "referenceId": "compute-aci-restart",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-restart-policy",
+    "checkedAt": "2026-10-08T01:38:36.847708Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Restart policy for run-once tasks - Azure Container Instances | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "93ad7cdbf1324e8f96580d628891db9953e83808e55b0aa8d8a3b7294e170cd8"
+  },
+  {
+    "referenceId": "compute-acr",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro",
+    "checkedAt": "2026-10-08T01:38:36.445839Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Introduction to Azure Container Registry - Azure Container Registry | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "e878526cf1e96e2e7e68ab00ea4e86626f6d0f7c961f19e727967c963ef02681"
+  },
+  {
+    "referenceId": "compute-acr-identity",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication-managed-identity",
+    "checkedAt": "2026-10-08T01:38:36.602182Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Managed Identity Authentication for ACR - Azure Container Registry | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "cb64cced23bb76d3bc45df641ae2a7bdbf01d021c06f745235c4ab2da57651d6"
+  },
+  {
+    "referenceId": "compute-app-autoscale",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling",
+    "checkedAt": "2026-10-08T01:38:37.490008Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: How to Enable Automatic Scaling - Azure App Service | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "1216b09e6a5e4aed2dbcdd28aec49db61d830d4b8dca22f03eb865e80c0ebc82"
+  },
+  {
+    "referenceId": "compute-app-backup",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/manage-backup",
+    "checkedAt": "2026-10-08T01:38:37.640474Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Back Up an App - Azure App Service | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "48780e5b28263c44e81c7617bb8a5e5d298889dfc7c4bc575b34ef5d8a605028"
+  },
+  {
+    "referenceId": "compute-app-domain",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain",
+    "checkedAt": "2026-10-08T01:38:37.650858Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Set Up an Existing Custom Domain Name for Your App - Azure App Service | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "900e997b13ff11920f5913ae53c7f2e31e6e6f05f8b850be6eb40a6d93e07cbe"
+  },
+  {
+    "referenceId": "compute-app-plans",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+    "checkedAt": "2026-10-08T01:38:37.140573Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Azure App Service Plans - Azure App Service | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "8303a663fcd34835270bc3b886ece00ea0fe6267f0d4527c97586dac321ab7c5"
+  },
+  {
+    "referenceId": "compute-app-private",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/overview-private-endpoint",
+    "checkedAt": "2026-10-08T01:38:37.855853Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Use Private Endpoints for Apps - Azure App Service | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "6f456a248d2efc7ef74ad82f51a77e164eb6a1a72f6af30880b0f621646895b0"
+  },
+  {
+    "referenceId": "compute-app-scale",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up",
+    "checkedAt": "2026-10-08T01:38:37.360080Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Scale Up Features and Capacities - Azure App Service | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "6c69cb364989bee7e125ad76babc2136f1597dbf2ba5954bc326741504f65d85"
+  },
+  {
+    "referenceId": "compute-app-slots",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+    "checkedAt": "2026-10-08T01:38:38.019045Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Set Up Staging Environments - Azure App Service | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "b9770d5cb696e9ed7b94d8ca891daf55feb7d9cf532381c62205d84484700916"
+  },
+  {
+    "referenceId": "compute-app-tls",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-bindings",
+    "checkedAt": "2026-10-08T01:38:37.504415Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Secure Your Domain with TLS/SSL - Azure App Service | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "5bc876dd8edeb8536d4e6289f6f40d67c472f518a2ea2b213e68ff73c7b25f40"
+  },
+  {
+    "referenceId": "compute-app-vnet",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration",
+    "checkedAt": "2026-10-08T01:38:37.779231Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Integrate your app with an Azure virtual network - Azure App Service | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "2c877e8fd833f9c07154429b7aaa6c534b19464f51601388a36e765f42831fa4"
+  },
+  {
+    "referenceId": "compute-arm-export",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal",
+    "checkedAt": "2026-10-08T01:38:35.057799Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Export template in Azure portal - Azure Resource Manager | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "f4fde713a98da652814bed581c34e4a0e6aa1537044297c5298164c618eab038"
+  },
+  {
+    "referenceId": "compute-arm-modes",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes",
+    "checkedAt": "2026-10-08T01:40:20.235977Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Deployment modes - Azure Resource Manager | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "45c2ceab24fcb4c71c5e8e46b483fc3f0cb75fa7b04fba409ac5f234a781be68"
+  },
+  {
+    "referenceId": "compute-arm-parameters",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/parameters",
+    "checkedAt": "2026-10-08T01:40:20.393919Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Parameters in templates - Azure Resource Manager | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "135004117372945d3be1a7dc7c9540a7e7e68ce4edd882fc18d138a329025e4b"
+  },
+  {
+    "referenceId": "compute-bicep-cli",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli",
+    "checkedAt": "2026-10-08T01:38:34.944482Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Deploy Bicep files with the Azure CLI - Azure Resource Manager | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "18a7b2dfb0399e6b832f771598bc13949337ee03df04a5ba753e3ad98e5fae13"
+  },
+  {
+    "referenceId": "compute-bicep-decompile",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile",
+    "checkedAt": "2026-10-08T01:38:35.265277Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Decompile a JSON Azure Resource Manager template to Bicep - Azure Resource Manager | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "c1d2a02648efa1b5c6b04f6b3d0b02fab4b5e08763c58356d0d04736fab43acd"
+  },
+  {
+    "referenceId": "compute-bicep-dependencies",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/resource-dependencies",
+    "checkedAt": "2026-10-08T01:40:19.386705Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Set resource dependencies in Bicep - Azure Resource Manager | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "59e48736bdf774876781f5f51815ff0d7e594cd6ca9a090f6382784818a10cde"
+  },
+  {
+    "referenceId": "compute-bicep-files",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file",
+    "checkedAt": "2026-10-08T01:38:35.007324Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Bicep file structure and syntax - Azure Resource Manager | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "55a3c16f1095ed1b3e3529e78dd649e48e95b3fb880002985f03cd7cfbbd9f83"
+  },
+  {
+    "referenceId": "compute-bicep-parameters",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameters",
+    "checkedAt": "2026-10-08T01:38:34.911843Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Parameters in Bicep files - Azure Resource Manager | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "b1b4207e2959f05fc826eaed0a524d6a2d0bf336b0e998c4209443379371d5e5"
+  },
+  {
+    "referenceId": "compute-bicep-whatif",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if",
+    "checkedAt": "2026-10-08T01:38:35.079497Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Bicep What-If: Preview Changes Before Deployment - Azure Resource Manager | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "b9ac74f34515101886b869606fc1cc2da2742bcc325b07b0d5e56d3217d68921"
+  },
+  {
+    "referenceId": "compute-vm-attach",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal",
+    "checkedAt": "2026-10-08T01:38:35.797572Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Use the portal to attach a data disk to a Linux VM - Azure Virtual Machines | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "4d4ae8c669ff464db3cf8221ded495d924521e16fb16d6d7101e415b30f76f55"
+  },
+  {
+    "referenceId": "compute-vm-disk-types",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types",
+    "checkedAt": "2026-10-08T01:38:35.649902Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Select a disk type for Azure IaaS VMs - managed disks - Azure Virtual Machines | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "7c6c5ace1e7f3b7f012f59dba21b854ee84173b2ce2f31de162b4c48eed7b4a7"
+  },
+  {
+    "referenceId": "compute-vm-disks",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview",
+    "checkedAt": "2026-10-08T01:38:35.576855Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Overview of Azure Disk Storage - Azure Virtual Machines | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "381281dae4bbdfeb3abc775e08603140d78b3d7b45fafbf774e5b932e74bf0b5"
+  },
+  {
+    "referenceId": "compute-vm-encryption",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption",
+    "checkedAt": "2026-10-08T01:38:35.404895Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Server-side encryption of Azure managed disks - Azure Virtual Machines | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "d665c7b6cde06c4a3a8a9ff55de96f3204afd4d1426a8efdfed04c12e84f21a2"
+  },
+  {
+    "referenceId": "compute-vm-host-encryption",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli",
+    "checkedAt": "2026-10-08T01:38:35.451855Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Enable end-to-end encryption using encryption at host - Azure CLI - managed disks - Azure Virtual Machines | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "7d5bf67c5900be1dfbeb58c09916e0e381c7145b6d6026202e55d30a27dec5f7"
+  },
+  {
+    "referenceId": "compute-vm-move",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription",
+    "checkedAt": "2026-10-08T01:38:35.939832Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Move Azure resources to a new resource group or subscription - Azure Resource Manager | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "fe594e300acc8bf7911d35ba97054005912a34fcc5168bbced55555b291aff0a"
+  },
+  {
+    "referenceId": "compute-vm-region",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/resource-mover/tutorial-move-region-virtual-machines",
+    "checkedAt": "2026-10-08T01:38:36.102860Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Move Azure VMs across regions with Azure Resource Mover | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "738364faa683d19e9ebb2aafe5c772b06c6ebd3dd98618ef98b0acd00d71c715"
+  },
+  {
+    "referenceId": "compute-vm-resize",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm",
+    "checkedAt": "2026-10-08T01:38:35.602299Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Resize a virtual machine - Azure Virtual Machines | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "59b7a57c4b849487c842abf3c88f3d9662f9af140aaebe65a7e1ac84f6d70e02"
+  },
+  {
+    "referenceId": "compute-vm-sets",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+    "checkedAt": "2026-10-08T01:38:36.246173Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Availability sets overview - Azure Virtual Machines | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "ab64e18fa8645df872cbaa74b89d7115493a90005b3561f3b6b70edbf1d3bb45"
+  },
+  {
+    "referenceId": "compute-vm-zones",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability",
+    "checkedAt": "2026-10-08T01:38:36.074006Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Availability options for Azure Virtual Machines - Azure Virtual Machines | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "41f087beab7efc6b291dbd94b039efe37c61ba35ea11fd55892fa1e96e9e01c2"
+  },
+  {
+    "referenceId": "compute-vmss-autoscale",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview",
+    "checkedAt": "2026-10-08T01:38:36.405944Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Overview of autoscale with Azure Virtual Machine Scale Sets - Azure Virtual Machine Scale Sets | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "3f91cf8684b4bdaa938d7370faf024fc18cba07820d8406950fae9d6bd577930"
+  },
+  {
+    "referenceId": "compute-vmss-flex",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes",
+    "checkedAt": "2026-10-08T01:38:36.254116Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document actually retrieved for compute draft authoring and starter audit: Orchestration modes for Virtual Machine Scale Sets in Azure - Azure Virtual Machine Scale Sets | Microsoft Learn. Claim-level exact excerpts are recorded in question references/audit rows. This retrieval is not human approval.",
+    "contentHash": "925429b0197266ef523cb5095fd6fa69596af3942764d1034d645ad7588e0b19"
+  }
+]

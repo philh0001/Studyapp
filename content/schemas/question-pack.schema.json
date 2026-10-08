@@ -57,13 +57,15 @@
           "type": {
             "enum": [
               "single",
-              "multiple"
+              "multiple",
+              "ordering",
+              "matching"
             ]
           },
           "requiredSelections": {
             "type": "integer",
             "minimum": 1,
-            "maximum": 5
+            "maximum": 6
           },
           "difficulty": {
             "enum": [
@@ -277,6 +279,129 @@
           },
           "assessmentReserved": {
             "type": "boolean"
+          },
+          "subObjectiveIds": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 82,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]+\\.[1-9][0-9]*$",
+              "maxLength": 110
+            }
+          },
+          "matchPrompts": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 6,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "text"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]+$",
+                  "maxLength": 100
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8000
+                }
+              }
+            }
+          },
+          "caseStudy": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "title",
+              "overview"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]+$",
+                "maxLength": 100
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 8000
+              },
+              "overview": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 8000
+              }
+            }
+          },
+          "exhibits": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "type",
+                "title"
+              ],
+              "properties": {
+                "type": {
+                  "enum": [
+                    "table",
+                    "code",
+                    "diagram"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8000
+                },
+                "columns": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 20,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 8000
+                  }
+                },
+                "rows": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 100,
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 20,
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8000
+                    }
+                  }
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8000
+                },
+                "language": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                }
+              }
+            }
           }
         },
         "required": [

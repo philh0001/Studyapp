@@ -1,0 +1,231 @@
+{
+  "schemaVersion": 1,
+  "domainId": "storage",
+  "auditedAt": "2026-10-08T01:38:23.372096Z",
+  "auditMethod": "AI-assisted claim comparison against actually retrieved official Microsoft Learn documents. Original question text and revisions were not modified. This is not human factual approval.",
+  "humanReviewCompleted": false,
+  "questions": [
+    {
+      "questionId": "az104-storage-01",
+      "revision": 1,
+      "subObjectiveIds": [
+        "storage-accounts.2"
+      ],
+      "disposition": "supported",
+      "sourceReferenceIds": [
+        "storage-plus-redundancy"
+      ],
+      "findings": [
+        {
+          "claim": "ZRS synchronously replicates across at least three primary-region availability zones, with no secondary-region replica.",
+          "evidenceUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+          "checkedAt": "2026-10-08T01:38:20.949142Z",
+          "contentHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44",
+          "supportConditions": "The original scenario explicitly assumes a supported standard Blob workload and region. ZRS protects zone availability; it does not provide independent protection against application deletion or an entire regional outage.",
+          "correctionRequired": false
+        }
+      ],
+      "recommendedCorrection": null
+    },
+    {
+      "questionId": "az104-storage-02",
+      "revision": 1,
+      "subObjectiveIds": [
+        "storage-accounts.2"
+      ],
+      "disposition": "supported",
+      "sourceReferenceIds": [
+        "storage-plus-redundancy"
+      ],
+      "findings": [
+        {
+          "claim": "RA-GRS provides supported Blob workloads read access to the secondary without requiring failover; ordinary GRS does not.",
+          "evidenceUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+          "checkedAt": "2026-10-08T01:38:20.949142Z",
+          "contentHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44",
+          "supportConditions": "Retain the explicit Blob workload assumption. Azure Files has no secondary read access, and geo-replication remains asynchronous after adding the RA capability.",
+          "correctionRequired": false
+        }
+      ],
+      "recommendedCorrection": null
+    },
+    {
+      "questionId": "az104-storage-03",
+      "revision": 1,
+      "subObjectiveIds": [
+        "storage-accounts.2"
+      ],
+      "disposition": "supported",
+      "sourceReferenceIds": [
+        "storage-plus-redundancy"
+      ],
+      "findings": [
+        {
+          "claim": "Inter-region replication in GRS is asynchronous, so a secondary may not yet contain just-committed primary writes.",
+          "evidenceUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+          "checkedAt": "2026-10-08T01:38:20.949142Z",
+          "contentHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44",
+          "supportConditions": "The explanation correctly separates synchronous in-location copies from asynchronous inter-region replication. The secondary lag means failover can lose writes not yet replicated.",
+          "correctionRequired": false
+        }
+      ],
+      "recommendedCorrection": null
+    },
+    {
+      "questionId": "az104-storage-04",
+      "revision": 1,
+      "subObjectiveIds": [
+        "storage-accounts.2"
+      ],
+      "disposition": "supported",
+      "sourceReferenceIds": [
+        "storage-plus-redundancy"
+      ],
+      "findings": [
+        {
+          "claim": "GZRS combines primary-region ZRS with asynchronous replication into a separate secondary region.",
+          "evidenceUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+          "checkedAt": "2026-10-08T01:38:20.949142Z",
+          "contentHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44",
+          "supportConditions": "The original scenario does not require pre-failover secondary reads and explicitly assumes account/region support. RA-GZRS would be needed for secondary Blob reads; ordinary GZRS is sufficient for the stated requirement.",
+          "correctionRequired": false
+        }
+      ],
+      "recommendedCorrection": null
+    },
+    {
+      "questionId": "az104-storage-05",
+      "revision": 1,
+      "subObjectiveIds": [
+        "storage-access.2"
+      ],
+      "disposition": "supported",
+      "sourceReferenceIds": [
+        "storage-plus-sas"
+      ],
+      "findings": [
+        {
+          "claim": "User delegation SAS is secured with Microsoft Entra credentials; service SAS and account SAS use a storage account key.",
+          "evidenceUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+          "checkedAt": "2026-10-08T01:38:20.377399Z",
+          "contentHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667",
+          "supportConditions": "The question correctly states authorization differences without claiming user delegation SAS is supported only for Blob. The retrieved 2026 page now lists additional services, so future drafts must not impose an old Blob-only generalization.",
+          "correctionRequired": false
+        }
+      ],
+      "recommendedCorrection": null
+    },
+    {
+      "questionId": "az104-storage-06",
+      "revision": 1,
+      "subObjectiveIds": [
+        "storage-access.3"
+      ],
+      "disposition": "supported",
+      "sourceReferenceIds": [
+        "storage-plus-sas"
+      ],
+      "findings": [
+        {
+          "claim": "A policy-associated service SAS can inherit the start time, expiry time and permissions specified by its stored access policy.",
+          "evidenceUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+          "checkedAt": "2026-10-08T01:38:20.377399Z",
+          "contentHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667",
+          "supportConditions": "The original scenario already specifies service SAS and a container policy. Do not generalize policy association to account or user delegation SAS. Updates can take up to 30 seconds to propagate.",
+          "correctionRequired": false
+        }
+      ],
+      "recommendedCorrection": null
+    },
+    {
+      "questionId": "az104-storage-07",
+      "revision": 1,
+      "subObjectiveIds": [
+        "storage-access.3"
+      ],
+      "disposition": "supported",
+      "sourceReferenceIds": [
+        "storage-plus-sas"
+      ],
+      "findings": [
+        {
+          "claim": "Account SAS and user delegation SAS must be ad hoc; neither supports stored access policies.",
+          "evidenceUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+          "checkedAt": "2026-10-08T01:38:20.377399Z",
+          "contentHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667",
+          "supportConditions": "The keyed policy-managed alternative is a service SAS. Its policy provides targeted revocation, while account-key rotation can affect unrelated keyed clients and SAS tokens.",
+          "correctionRequired": false
+        }
+      ],
+      "recommendedCorrection": null
+    },
+    {
+      "questionId": "az104-storage-08",
+      "revision": 1,
+      "subObjectiveIds": [
+        "blobs-files.3"
+      ],
+      "disposition": "supported",
+      "sourceReferenceIds": [
+        "storage-plus-tiers"
+      ],
+      "findings": [
+        {
+          "claim": "Cold is an online tier for rare access with fast retrieval and a 90-day minimum, while Archive is offline and Hot targets frequent access.",
+          "evidenceUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+          "checkedAt": "2026-10-08T01:38:23.372096Z",
+          "contentHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60",
+          "supportConditions": "The original prompt explicitly compares only Hot, Cold and Archive and assumes six-month retention. It is a workload fit, not a universal cost guarantee: transactions, retrieval volume and regional prices still affect actual costs.",
+          "correctionRequired": false
+        }
+      ],
+      "recommendedCorrection": null
+    },
+    {
+      "questionId": "az104-storage-09",
+      "revision": 1,
+      "subObjectiveIds": [
+        "blobs-files.3"
+      ],
+      "disposition": "supported",
+      "sourceReferenceIds": [
+        "storage-plus-tiers"
+      ],
+      "findings": [
+        {
+          "claim": "Archived blob contents require rehydration to an online tier before they can be read; archived metadata can still be read.",
+          "evidenceUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+          "checkedAt": "2026-10-08T01:38:23.372096Z",
+          "contentHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60",
+          "supportConditions": "The original distinction is factual. Rehydration is asynchronous rather than immediate; current documentation permits an online-tier target as supported for the operation, and cost/timing should be evaluated separately.",
+          "correctionRequired": false
+        }
+      ],
+      "recommendedCorrection": null
+    },
+    {
+      "questionId": "az104-storage-10",
+      "revision": 1,
+      "subObjectiveIds": [
+        "blobs-files.3"
+      ],
+      "disposition": "supported",
+      "sourceReferenceIds": [
+        "storage-plus-tiers"
+      ],
+      "findings": [
+        {
+          "claim": "An explicitly Cool GPv2 blob permanently deleted after 21 days incurs a prorated charge equivalent to 9 remaining days of its 30-day minimum.",
+          "evidenceUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+          "checkedAt": "2026-10-08T01:38:23.372096Z",
+          "contentHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60",
+          "supportConditions": "The stated soft-delete-disabled and explicit-placement conditions are important. Cold has a 90-day minimum and Archive 180 days; costs are tier/operation dependent rather than a universal 30-day retention rule.",
+          "correctionRequired": false
+        }
+      ],
+      "recommendedCorrection": null
+    }
+  ],
+  "correctionsRequired": [],
+  "coverageFinding": "The original ten questions mainly cover redundancy, SAS and access tiers; no original question exercises storage firewalls, Azure Files identity, account creation, object replication, encryption, AzCopy, share snapshots, soft delete, lifecycle configuration or Blob versioning. The expanded pack supplies all seventeen mapped storage subskills."
+}
