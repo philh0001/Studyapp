@@ -1,6 +1,6 @@
 # Studyapp development instructions
 
-Read README.md, PROJECT_CONTEXT.md, ROADMAP.md, the product design, and the implementation plan before starting work. The current repository contains planning documents, not a running application.
+Read README.md, PROJECT_CONTEXT.md, ROADMAP.md, the product design, and the implementation plan before starting work. The implementation feature branch contains a running local-first application; see dated release verification for current evidence and limitations.
 
 ## Product and content requirements
 

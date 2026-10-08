@@ -2,15 +2,17 @@
 
 ## Current
 
-- Written product design accepted for implementation planning, including the official Microsoft source requirement.
-- Inspect current blueprint and existing Showtime delivery approach: completed.
-- [Detailed implementation plan](docs/superpowers/plans/2026-10-08-az104-revision.md) prepared for review; select execution workflow before building.
+- First mobile web build implemented: Learn/draft preview, timed practice, review queues, progress/coverage, notes/bookmarks, settings, backup/restore and offline PWA.
+- Fifty original starter drafts, ten per domain, all grounded in Microsoft Learn; ten reserved assessment questions. Objective gaps are documented in CONTENT_REVIEW.md.
+- Human source review remains pending; approvals are individual and local to the browser.
+- Standalone Cloudflare static hosting package prepared; production deployment requires release approval.
+- Browser verification and independent review are recorded in dated verification notes.
 
-## First release
+## Before production release
 
-1. Study engine, content validation, durable local state, mobile learning flow, and draft content-review preview.
-2. Human-reviewed starter pack grounded exclusively in official Microsoft sources, primarily Learn, with per-option citations and source-check dates; spaced review, progress, notes/bookmarks, timed practice, and backup/restore.
-3. Offline PWA, accessibility and browser verification, and hosted preview prepared for release review.
+1. Review draft sources and expand uncovered objectives; do not describe this pack as comprehensive exam coverage.
+2. Choose public or owner-private hosting and give release approval.
+3. Verify actual phone installation, storage/backup and screen-reader behaviour on the owner's device.
 
 ## Later
 
