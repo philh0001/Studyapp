@@ -1,0 +1,814 @@
+[
+  {
+    "lessonId": "understand-azure-active-directory--2-examine-azure-active-directory",
+    "sections": [
+      {
+        "title": "Directory boundary and resource boundary",
+        "paragraphs": [
+          "Think of a tenant as the directory that answers identity questions: which users, groups and applications exist, and how they authenticate. A subscription answers a different set of questions about Azure resources, access scope and billing. Connecting a subscription to a tenant lets identities from that directory receive Azure resource permissions. It does not give every directory member permission to administer the subscription. An organization can therefore keep one workforce directory while using separate subscriptions for development and production, with different resource permissions in each."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+        ]
+      },
+      {
+        "title": "Applications and organizational names",
+        "paragraphs": [
+          "Each tenant starts with an onmicrosoft.com domain. A verified custom domain gives users an organizational sign-in name, but does not replace the tenant’s identity boundary. Application registration similarly creates an application definition rather than a resource subscription. A service principal represents that application inside a tenant where it is used. For example, a business application defined in one tenant can have a service principal in another tenant that authorizes its local use. Entra ID provides the cloud directory and identity features without asking the customer to build domain controllers or an OU hierarchy."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "understand-azure-active-directory--3-compare-azure-active-directory-domain-services",
+    "sections": [
+      {
+        "title": "Choose by the application’s expectations",
+        "paragraphs": [
+          "An application built for AD DS might expect LDAP directory searches, Kerberos authentication and a computer joined to a Windows domain. AD DS also uses DNS to locate domain services and OUs to organize delegation and Group Policy. Moving its domain controller to an Azure VM changes where the server runs, not what directory technology it provides. You still operate the Windows Server and AD DS deployment. Entra ID is a separate cloud identity service, so simply having an Entra tenant does not supply that application with an LDAP domain controller."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services"
+        ]
+      },
+      {
+        "title": "Modern identity and device management",
+        "paragraphs": [
+          "For a web application, authentication can use protocols such as SAML or OpenID Connect, while OAuth handles authorization to protected APIs. These exchanges suit internet-based services without requiring traditional computer domain membership. Entra users and groups do not acquire AD DS Group Policy merely because their identities are in the cloud. For example, a company might retain AD DS for a legacy file application while using Entra ID for cloud application sign-in. If it deploys AD DS on Azure VMs, the module recommends separate data disks for the database, logs and SYSVOL, with host caching disabled for those disks."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "understand-azure-active-directory--4-examine-azure-directory-service-cloud-apps",
+    "sections": [
+      {
+        "title": "One directory across integrated services",
+        "paragraphs": [
+          "Using a shared tenant avoids treating each Microsoft cloud application as a completely separate user directory. The same organizational identities can support Azure, Microsoft 365, Dynamics 365 and Intune, with application integration providing single sign-on. This does not mean every user receives every application license or every resource permission. Identity establishes who the user is; the application and its access configuration determine what the user may do. A company can keep a consistent sign-in identity while giving different departments access to different integrated applications."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps"
+        ]
+      },
+      {
+        "title": "Configure sign-in and authorization deliberately",
+        "paragraphs": [
+          "App Service authentication can use an Entra app registration and tenant to validate incoming sign-in requests. Configure the app to require authentication when anonymous access is inappropriate, and choose a single-tenant or deliberately restricted tenant configuration for organizational access. Successful authentication alone is not always the complete authorization policy: by default, the associated tenant’s users may be able to access the application, so some applications need further access restrictions. Deployment slots can have separate authentication settings. A test slot should therefore be reviewed independently rather than assuming that production’s authentication configuration automatically describes its access behavior."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps",
+          "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "understand-azure-active-directory--5-compare-azure-premium-p1-p2-plans",
+    "sections": [
+      {
+        "title": "Translate a requirement into a feature",
+        "paragraphs": [
+          "Start with the required identity control rather than treating premium licensing as a general Azure subscription upgrade. P1 adds capabilities such as Conditional Access, password reset with on-premises writeback and Connect Health. These solve different problems: an access policy can consider the sign-in context, while writeback lets an eligible cloud password reset update the on-premises directory. A company that needs those controls should identify the users benefiting from them and the package containing the required entitlement. Having paid Azure resource consumption does not by itself provide all premium Entra features."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+          "https://learn.microsoft.com/en-us/entra/fundamentals/licensing",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+        ]
+      },
+      {
+        "title": "Risk protection and privileged activation",
+        "paragraphs": [
+          "P2 includes Identity Protection capabilities for risk-based identity decisions and Privileged Identity Management. Identity Protection concerns risk associated with users and sign-ins; PIM concerns how privileged access is assigned and activated. For example, an administrator can be eligible for a privileged role and activate it through a controlled workflow when needed, instead of relying on standing administrative access for all work. These are distinct controls even when one licensing package includes both. Consult the current licensing tables before selecting a package, because bundles and the entitlements of adjacent governance products can differ."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+          "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "understand-azure-active-directory--6-examine-azure-domain-services",
+    "sections": [
+      {
+        "title": "Managed domain services for legacy workloads",
+        "paragraphs": [
+          "Entra Domain Services supplies familiar domain capabilities such as domain join, Group Policy, LDAP and Kerberos or NTLM authentication, while Microsoft operates the domain controllers. This is useful when an application cannot be changed to use modern cloud identity protocols. Compare it with two alternatives: connecting Azure workloads to on-premises domain controllers over a VPN, or deploying and maintaining AD DS replicas on Azure VMs. The managed service reduces domain-controller operation, but it is still a specific managed domain with its own supported administration model and consumption charges."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services",
+          "https://learn.microsoft.com/en-us/entra/identity/domain-services/overview"
+        ]
+      },
+      {
+        "title": "Understand the synchronization direction",
+        "paragraphs": [
+          "Directory identities and credentials synchronize from Entra ID into the managed domain; this is not a two-way replacement for the source directory. Existing synchronized users and groups should be managed at their source rather than edited in the managed domain. Traditional authentication also requires the appropriate Kerberos and NTLM password hashes. Cloud users may need to change or reset their password before those hashes exist, while hybrid deployments need the corresponding password-hash synchronization configuration. For example, a successful cloud sign-in alone does not prove that an older user account is already ready to authenticate to the managed domain."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services",
+          "https://learn.microsoft.com/en-us/entra/identity/domain-services/synchronization"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-configure-manage-identities--2-users",
+    "sections": [
+      {
+        "title": "Identify where an account is maintained",
+        "paragraphs": [
+          "Before changing a user, identify the tenant and the account’s source. A cloud-managed account is maintained in Entra ID, whereas a directory-synchronized identity originates in an on-premises directory and reaches Entra ID through synchronization. External access is another dimension: a guest represents someone invited into the organization’s directory for collaboration. User type and source help interpret these differences, but they are not a substitute for checking the account’s actual access. In a company with several directories, switching to the intended tenant is an essential first step before editing users or reviewing membership."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/2-users"
+        ]
+      },
+      {
+        "title": "Plan identity lifecycle and synchronization",
+        "paragraphs": [
+          "For example, a contractor may need an invited identity for the duration of a project, while a permanent employee already has an account in the company’s on-premises AD. These cases should not automatically receive the same creation or maintenance process. Remove external access when it is no longer needed and keep synchronized identity changes connected to the authoritative directory. Cloud Sync uses cloud-managed configuration and lightweight agents; current capabilities include device synchronization when enabled. Compare it with Connect Sync against the requirements of the deployment, rather than assuming the two tools always have identical features or that the older training comparison defines today’s limits."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/2-users",
+          "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/what-is-cloud-sync"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-configure-manage-identities--3-exercise-assign-licenses-users",
+    "sections": [
+      {
+        "title": "Prepare identities before assigning products",
+        "paragraphs": [
+          "This exercise combines user creation, security-group membership and licensing. Use an appropriate tenant with permission to administer its users and groups, plus an available product that can be assigned for the test. Create a recognizable test account, set its usage location and place it directly in an assigned security group. Choose an owner who can maintain the group’s membership. The group is the vehicle for the license policy; creating the group alone does not give its users a product entitlement. Keep the account and group identifiable so the assignment and later cleanup can be checked without affecting unrelated users."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/3-exercise-assign-licenses-users",
+          "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true"
+        ]
+      },
+      {
+        "title": "Trace the inherited license to the user",
+        "paragraphs": [
+          "In the Microsoft 365 admin center, use Billing and Licenses to choose the product and assign it to the group. A supported licensing role, such as License Administrator, is needed for that stage. Review which service plans are enabled, because one product may include several services. Then inspect the group’s processing result and the test user’s effective license state. A successful configuration on the group does not mean every member immediately received a usable license: insufficient capacity or a user-specific error can still prevent assignment. Group-based licensing does not expand nested group membership, so use direct user membership for this straightforward exercise."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/3-exercise-assign-licenses-users",
+          "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-configure-manage-identities--4-exercise-restore-remove-deleted-users",
+    "sections": [
+      {
+        "title": "Deletion has a recovery window",
+        "paragraphs": [
+          "Deleting a user moves the account into Deleted users rather than immediately removing every possibility of recovery. The normal retention window is 30 days. During that period, an appropriately authorized administrator can restore a user that has not been permanently deleted. After the window expires, permanent deletion begins; deliberately permanently deleting the account also removes the restore option. This distinction matters when investigating an accidental deletion. Finding an account under Deleted users means that a restore operation may still be available, not that the user can continue signing in as though nothing happened."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users"
+        ]
+      },
+      {
+        "title": "Check recovery using a test identity",
+        "paragraphs": [
+          "Use a clearly identified test account and verify the tenant before selecting Delete user. After deletion, open Deleted users and confirm that the correct account appears. Select Restore user, confirm the operation and return to All users to verify that the restored identity is present. Review the restored account’s properties and the access or licensing relevant to the exercise, rather than treating the presence of its name as the only useful check. For example, an accidental deletion discovered after ten days belongs in this recovery process; recreating a new account is a different operation and should not be confused with restoring the original object."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-configure-manage-identities--5-groups",
+    "sections": [
+      {
+        "title": "Match the group to its purpose",
+        "paragraphs": [
+          "Security groups collect identities that should receive shared access to resources; their members can include users, devices and service principals. Microsoft 365 groups instead support a collaboration experience with a shared mailbox, calendar, files and a SharePoint site. These choices are not just different labels for the same object. For example, a group representing devices subject to an access rule belongs in a security-group design, while a sales team needing a shared collaboration workspace may fit a Microsoft 365 group. Select the group’s purpose before deciding how its membership will be maintained."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups"
+        ]
+      },
+      {
+        "title": "Keep rules and entitlements aligned",
+        "paragraphs": [
+          "Assigned membership is useful when an owner should explicitly choose each member. Dynamic user membership is useful when an attribute, such as Department, should determine inclusion automatically. Changing that attribute can then add or remove the user as rules are processed. Dynamic device membership evaluates device attributes and applies to security groups, not Microsoft 365 groups. Current product guidance requires enough P1 or Intune for Education licenses for unique users in dynamic user groups, but no member licenses for devices in dynamic device groups. Because attribute changes can affect access, consider who is allowed to modify the attributes used by a rule."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+          "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-configure-manage-identities--6-exercise-add-groups-azure-active-directory",
+    "sections": [
+      {
+        "title": "Define the collaboration boundary",
+        "paragraphs": [
+          "This exercise creates a Microsoft 365 group with assigned membership. Choose that group type because its purpose is collaboration, not because every group is interchangeable. Assigned membership means that owners or administrators maintain the chosen members rather than relying on attribute-based dynamic rules. Decide which people should collaborate before creating the group, and give it a name that explains the team it represents. An owner has responsibility for maintaining the group; being its owner is distinct from simply appearing in the member list. The lab assigns an administrator as owner and selects a member explicitly."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/6-exercise-add-groups-azure-active-directory"
+        ]
+      },
+      {
+        "title": "Verify the object and its membership",
+        "paragraphs": [
+          "In the intended Entra tenant, open Groups, create the Microsoft 365 group and choose Assigned membership. Select the owner and the intended user members before completing creation. Refresh All groups if the new object is not yet visible, then inspect the group rather than relying solely on the creation notification. Check that the type, membership model, owner and members match the intended collaboration team. For example, a manually maintained regional sales team should not accidentally become a dynamic device group. This exercise establishes the group object and membership; it is separate from granting Azure resource roles or configuring a product license policy."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/6-exercise-add-groups-azure-active-directory"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-configure-manage-identities--7-configure-manage-device-registration",
+    "sections": [
+      {
+        "title": "Registration and join solve different problems",
+        "paragraphs": [
+          "Device identity describes a device’s relationship with the directory; management tools then apply configuration and compliance controls. An Entra registered personal device can keep its normal local sign-in while adding a work account for organizational access. An Entra joined organizational Windows device uses the organizational account for device sign-in and fits cloud-oriented management. A hybrid joined device remains joined to on-premises AD DS and also has an Entra identity. For example, retaining existing AD machine authentication and Group Policy can justify hybrid join, whereas a personal laptop used for work applications may fit registration."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration"
+        ]
+      },
+      {
+        "title": "Combine identity, compliance and authentication",
+        "paragraphs": [
+          "Conditional Access can use device information, but merely creating a device identity is not the same as applying security configurations. Intune or another management system supplies the compliance and configuration controls used by the organization. Check the supported operating systems and editions before selecting a join approach; Windows Home is not included in the Windows Entra-join support described here. For Windows Hello for Business in suitable hybrid environments, cloud Kerberos trust uses Microsoft Entra Kerberos and required policies to enable on-premises authentication. It is a specific passwordless authentication design, not a claim that all historical device-writeback scenarios have the same replacement."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration",
+          "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust",
+          "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-device-writeback"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-configure-manage-identities--8-manage-licenses",
+    "sections": [
+      {
+        "title": "Separate the product from its service plans",
+        "paragraphs": [
+          "A product license can contain several service plans. Assigning the product while disabling a particular plan lets an organization adopt its services in stages. For example, a department can receive its required productivity product while a service it is not ready to use remains disabled. Licensing is managed through the Microsoft 365 admin center or supported administration tools and APIs, while Entra ID stores users’ license assignment state. Set each user’s correct usage location because service availability can depend on location; a tenant-wide default may not accurately describe a geographically distributed workforce."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/8-manage-licenses",
+          "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+          "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+        ]
+      },
+      {
+        "title": "Understand effective licenses and background processing",
+        "paragraphs": [
+          "Group-based licensing applies the group’s products to its user members and reacts to membership changes. A user can receive the same product directly and through multiple groups, but that product consumes one license for that user rather than one for every assignment path. The effective service state combines the applicable assignments. This also means removing one path does not necessarily remove every entitlement. Check processing errors and available license capacity instead of assuming group configuration guarantees success. Group-based licensing does not traverse nested groups, so users hidden inside a child group are not automatically licensed by the parent assignment."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/8-manage-licenses",
+          "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-configure-manage-identities--9-exercise-change-group-license-assignments",
+    "sections": [
+      {
+        "title": "Diagnose the error before changing assignments",
+        "paragraphs": [
+          "Group licensing runs in the background, so a user can enter an error state even though the administrator’s intention to assign a product remains recorded. Inspect the affected users and the reported error before choosing a fix. Insufficient licenses require available capacity; conflicting service plans require resolving the overlap; dependency errors require retaining the prerequisite or removing the dependent service. An unsupported usage location is not fixed by repeatedly retrying an unchanged assignment. Duplicate proxy addresses can also prevent successful processing. Correct the underlying data or assignment, then use supported reprocessing where necessary and verify the resulting license state."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments",
+          "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true"
+        ]
+      },
+      {
+        "title": "Migrate without creating a license gap",
+        "paragraphs": [
+          "A safe migration preserves the services a user already has until the replacement assignment has succeeded. Create or select the new licensing group, add the intended users and assign equivalent products and service plans. Check the group’s processing status, audit records and representative user details before gradually removing the direct assignments. The same product assigned both directly and through a group is consumed once, so this overlap need not double that user’s license consumption. Moving between licensed groups follows the same principle: add to the destination and confirm its license before removing from the source. For add-ons, keep the required prerequisite plans in the licensing group."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments",
+          "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-configure-manage-identities--10-exercise-change-user-license-assignments",
+    "sections": [
+      {
+        "title": "Prepare the individual assignment",
+        "paragraphs": [
+          "Create a test user in the correct Entra tenant and set a real, appropriate usage location. That property influences whether a service may be assigned and used; it is not simply a label for the preferred Azure region. In the Microsoft 365 admin center, choose the product under Billing and Licenses, open the licensed-user view and assign it to the intended account. Use a supported role such as License Administrator. Review which services within the product are enabled, because changing a product assignment can affect more than one application available to the user."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/10-exercise-change-user-license-assignments",
+          "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide"
+        ]
+      },
+      {
+        "title": "Inspect the user’s resulting state",
+        "paragraphs": [
+          "After assignment, verify the product on the user’s license view and check for any errors rather than stopping at the assign action. Distinguish a direct assignment made here from a license inherited through a group. A user might already have the same product through a group, in which case the additional assignment path does not consume a second copy of that product. Likewise, removing the direct assignment would not necessarily remove an inherited entitlement. For example, a lab user who remains in a product-licensed group can continue to have that product after its direct assignment is removed. Inspect the effective assignments when explaining the result."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/10-exercise-change-user-license-assignments",
+          "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide",
+          "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-configure-manage-identities--11-create-custom-security-attributes",
+    "sections": [
+      {
+        "title": "Design attributes with useful types",
+        "paragraphs": [
+          "Custom security attributes provide business-specific information on supported directory objects, including users and enterprise applications. Organize related definitions into attribute sets, and choose types according to how the information will be used. A Boolean attribute answers a yes-or-no question; an integer can represent a numerical category; a string can identify a project. Integer and string attributes can support multiple values or predefined choices, while Boolean attributes remain single-valued. For example, a project list assigned to an application can support inventory filtering, and a project identifier assigned to a user can contribute to a supported resource-access condition."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/11-create-custom-security-attributes",
+          "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview"
+        ]
+      },
+      {
+        "title": "Separate definition from assignment permissions",
+        "paragraphs": [
+          "Attribute governance is important when the values influence access or contain sensitive business information. Defining the schema and assigning values are separate administrative responsibilities, with dedicated attribute roles that can be scoped to the tenant or an attribute set. Global Administrator does not automatically receive permission to read, define or assign these attributes. This allows a department to maintain its own attributes without opening every attribute set to it. Custom security attributes can be assigned to directory-synchronized users, but they are not a general-purpose extension of every downstream directory or token: current documentation does not support them in Domain Services, SAML token claims or JWT claims."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/11-create-custom-security-attributes",
+          "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-manage",
+          "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-configure-manage-identities--12-explore-automatic-user-creation",
+    "sections": [
+      {
+        "title": "Connect provisioning to the employee lifecycle",
+        "paragraphs": [
+          "Authentication and provisioning answer different questions. Authentication verifies a sign-in; provisioning creates, updates or removes the accounts and attributes needed in an application or directory. SCIM standardizes the exchange of identity information through a schema and REST interfaces. The Entra provisioning service can connect to a target application’s SCIM endpoint to automate user and group changes. For example, an authoritative HR record can drive account creation when an employee joins, an attribute update after a role change and deprovisioning when employment ends. The value comes from keeping entitlement changes connected to those lifecycle events rather than relying on a separate manual checklist for every system."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation"
+        ]
+      },
+      {
+        "title": "Handle sources without a native SCIM endpoint",
+        "paragraphs": [
+          "An HR system does not need to expose the exact target interface itself for every inbound scenario. API-driven inbound provisioning accepts workforce information collected by an automation tool or script from an authoritative source. The source data and integration therefore determine the lifecycle changes, while the provisioning service processes those changes for the destination. Distinguish the authoritative HR system, the Entra identity repository and a target application when planning the flow. A successful application sign-in does not prove that its provisioning integration also removes accounts correctly. Review creation, updates and departure handling as separate parts of the same identity lifecycle."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "describe-core-architectural-components-of-azure--2-what-microsoft-azure",
+    "sections": [
+      {
+        "title": "Choose how much infrastructure to operate",
+        "paragraphs": [
+          "Azure offers both infrastructure services and managed application services. Moving an existing application to a VM is a practical starting point when it needs a familiar operating system and server environment. Modernizing the workload can change that operational model: a managed database reduces the need to run the database server yourself, and a managed app platform can handle parts of application hosting. These approaches can coexist. For example, an organization can keep its application on VMs initially while moving its data tier to a managed service, rather than trying to redesign every component at once."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/2-what-microsoft-azure"
+        ]
+      },
+      {
+        "title": "Relate capacity to actual demand",
+        "paragraphs": [
+          "A cloud deployment should account for how the workload’s demand changes. Scaling up changes the capacity of an instance, while scaling out adds instances where the service and application support it. During a seasonal demand increase, additional capacity can help maintain service; after demand falls, reducing unnecessary capacity can avoid paying for resources no longer needed. Selecting Azure alone does not explain which scaling approach an application can use, so consider its hosting model and operational needs. Central monitoring helps the team judge health and demand rather than leaving a larger configuration running indefinitely after a temporary spike."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/2-what-microsoft-azure"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "describe-core-architectural-components-of-azure--3-get-started-azure-accounts",
+    "sections": [
+      {
+        "title": "Accounts and subscriptions have different roles",
+        "paragraphs": [
+          "An Azure account provides the identity used to sign in, while a subscription provides access to Azure products and a boundary for creating and billing resources. The same account can be associated with more than one subscription. For example, an administrator can use one identity while keeping development resources in a different subscription from production. Check the selected subscription before following a lab, because signing in successfully does not guarantee that the tools or portal are currently targeting the subscription intended for the exercise. Resource creation and cost tracking belong to that selected subscription’s context."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/3-get-started-azure-accounts"
+        ]
+      },
+      {
+        "title": "Understand a free offer before using it",
+        "paragraphs": [
+          "Free account and student offers combine limited free services with credits that apply for specified periods. They are not promises that every Azure resource is free indefinitely. The standard free account uses payment details for identity verification and requires an upgrade before charging for continued paid use; the student offer can be obtained without a credit card when its eligibility requirements are met. Check the current offer’s included services, credit period and limits before planning a lab. Monitor actual usage and remove resources after practice, especially after moving to a paid subscription, rather than assuming a resource remains free because it was created during an introductory offer."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/3-get-started-azure-accounts"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "describe-core-architectural-components-of-azure--5-describe-azure-physical-infrastructure",
+    "sections": [
+      {
+        "title": "Pick the region and the resilience boundary",
+        "paragraphs": [
+          "A region groups nearby datacenters connected by low-latency networking. Selecting it affects where a regional workload runs and which service capabilities are available. Availability zones provide separate power, cooling and networking boundaries inside a supported region. A zonal deployment pins a resource to one selected zone; a zone-redundant service handles replication or distribution across zones. For example, putting two VMs in the same zone does not create the same physical isolation as placing them in separate zones. First confirm support for the service and region, then choose the configuration that matches the workload’s resilience requirements."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+        ]
+      },
+      {
+        "title": "Plan beyond one region deliberately",
+        "paragraphs": [
+          "Zone resilience addresses failures within a region, but a sufficiently broad incident can affect the whole region. Cross-region recovery is a different design decision. A region pair may support service recovery planning, yet not every region has a traditional pair and not every service automatically replicates or fails over to it. Review the individual service’s recovery configuration instead of relying on the pair’s existence. Also distinguish global services, such as Azure DNS and Entra ID, from resources requiring a regional placement. Sovereign Azure environments provide isolated instances for particular legal or compliance requirements; choosing one is a different decision from choosing two ordinary regions for redundancy."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "describe-core-architectural-components-of-azure--6-describe-azure-management-infrastructure",
+    "sections": [
+      {
+        "title": "Group resources by lifecycle and ownership",
+        "paragraphs": [
+          "Resource groups provide a useful lifecycle boundary for resource-group-scoped objects. A temporary environment can keep its VMs, network and storage in one group so cleanup removes that environment together. Production resources that must remain should not be mixed into a disposable group. A group cannot be nested or renamed, and a resource-group-scoped resource belongs to one group at a time. Some Azure resource types instead exist at subscription or management-group scope. Naming and grouping should therefore reflect the intended ownership and lifecycle without assuming every object in Azure must be inside an ordinary resource group."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure",
+          "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
+        ]
+      },
+      {
+        "title": "Scale governance above a single subscription",
+        "paragraphs": [
+          "Subscriptions separate billing and access-management contexts, while management groups organize subscriptions under a shared governance hierarchy. For example, a production management group can carry a location policy used by all its subscriptions, while development subscriptions sit elsewhere in the hierarchy. Azure RBAC and Azure Policy assignments apply through their scopes; this does not mean every resource property or label universally inherits from a parent. Each management group or subscription has one parent, and the management-group hierarchy supports six levels below the tenant root, excluding subscription levels. Plan shared assignments at the appropriate ancestor instead of repeating equivalent configuration independently in every subscription."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "sovereignty-policy-initiatives--cloud-adoption-framework",
+    "sections": [
+      {
+        "title": "Turn risks into operating rules",
+        "paragraphs": [
+          "Governance begins with understanding the risks of the organization’s cloud usage. A governance team assesses areas such as security, compliance, operations, costs and data handling, then documents acceptable behavior and the processes used to monitor it. A policy should therefore have a reason that people can explain, not simply a technical restriction copied from another environment. For example, a data-location requirement can become a rule limiting regional deployment, while a need for consistent cost reporting can become a tagging requirement. The rule, the business tolerance and the response to violations should remain connected."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/cloud-adoption-framework"
+        ]
+      },
+      {
+        "title": "Use automation alongside ongoing review",
+        "paragraphs": [
+          "Azure Policy turns suitable configuration rules into repeatable evaluations and effects. It can identify existing noncompliance, block some future noncompliant requests and support remediation with suitable effects. Use the compliance dashboard to move from an overall percentage to the particular resource and policy responsible for a result. Governance remains an ongoing process: the team must review what controls achieve and update them as risks or workloads change. Test new policies against representative workloads before broad enforcement, because a technically valid restriction can still interrupt a legitimate operational process. Balance the guardrails needed for control with a deployment process that teams can use predictably."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/cloud-adoption-framework"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "sovereignty-policy-initiatives--azure-policy-design-principles",
+    "sections": [
+      {
+        "title": "Understand where a request is evaluated",
+        "paragraphs": [
+          "Azure Resource Manager receives control-plane requests such as creating a storage account or changing a VM configuration. It authenticates and authorizes the request before passing it through the relevant evaluation and resource-provider processing. Data-plane requests, such as downloading a stored object or reading a secret, go to the service’s data endpoint instead. Azure Policy is integrated with Resource Manager, and particular services also implement specialized policy modes for supported data-plane scenarios. Do not assume that a generic resource policy evaluates every individual data read simply because it governs the resource that contains the data."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles"
+        ]
+      },
+      {
+        "title": "Design for new and existing resources",
+        "paragraphs": [
+          "A policy applied before deployment can evaluate a new or updated resource request against the desired target configuration. Assigning a policy after resources already exist also triggers compliance evaluation, but the effect on existing resources depends on the policy. For example, a new allowed-location deny rule can mark an existing out-of-region VM noncompliant without deleting or moving it. The same rule can block a later noncompliant request. Choose the assignment scope to match the intended governance boundary: a management group covers many subscriptions, whereas a resource-group assignment has a narrower reach. This makes staged testing and investigation easier than starting with an unnecessarily broad impact."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "sovereignty-policy-initiatives--azure-policy-resources",
+    "sections": [
+      {
+        "title": "Definition, initiative and assignment",
+        "paragraphs": [
+          "A definition contains the condition and effect of one policy. An initiative combines definitions for a shared objective, while an assignment selects the scope where a definition or initiative applies and supplies its parameter values. A custom definition’s storage location constrains where it can be assigned: a subscription definition is not a convenient way to govern unrelated subscriptions. Assignment settings can narrow evaluation through exclusions or resource selectors and can supply explanatory noncompliance messages. For example, a shared initiative can express the organization’s tagging rules while separate assignments provide the values and scopes appropriate to different environments."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+        ]
+      },
+      {
+        "title": "Exceptions, evidence and remediation",
+        "paragraphs": [
+          "An exemption records an accepted exception after assignment. Mitigated means the intent is achieved another way; Waiver means the noncompliance is accepted. Manual policies use attestations to record their compliance state rather than relying on an automated resource-property test alone. Remediation tasks serve a different purpose: they apply modify operations or deployIfNotExists deployments to existing noncompliant resources. That work requires the assignment’s managed identity and the Azure RBAC permissions needed for the change. The identity is used to perform remediation, not to turn evaluation into an unrestricted administrative operation. Configure and verify those permissions when planning the assignment."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources",
+          "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "sovereignty-policy-initiatives--azure-policy-definitions",
+    "sections": [
+      {
+        "title": "Build a rule that tests the right resources",
+        "paragraphs": [
+          "A policy definition separates its condition in the if block from the effect in the then block. Combine conditions with allOf when every condition must hold, anyOf when one matching condition is enough and not to invert a condition. Field expressions inspect properties through supported aliases, while value and count expressions handle calculated values or array membership. Parameters let one definition serve several assignments without rewriting its logic. For example, a location rule can accept an array of permitted regions, then test the resource’s location against that input rather than embedding a different region list in every copied policy."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions"
+        ]
+      },
+      {
+        "title": "Choose an effect for the intended outcome",
+        "paragraphs": [
+          "Deny blocks a matching noncompliant request, whereas audit records the issue without blocking it. Modify can add, change or remove supported properties; deployIfNotExists can deploy a related resource when its conditions are met. Their remediation behavior should not be confused with deny deleting an existing resource. AuditIfNotExists checks for a related resource, manual allows attested compliance, and denyAction can block supported deletion actions. Disabled stops evaluation for that effect. When several assignments apply, a permissive assignment does not cancel another assignment’s restriction; each rule is evaluated and the combined applicable restrictions matter. Select the resource mode as deliberately as the condition and effect."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions"
+        ]
+      },
+      {
+        "title": "Mode controls which resource types are evaluated",
+        "paragraphs": [
+          "Resource Manager modes affect the applicability of a definition. The all mode can evaluate resource groups, subscriptions and all resource types. The indexed mode evaluates resource types that support tags and location, which avoids labeling unsupported types noncompliant in a typical tagging or location policy. A rule targeting tags or location on resource groups or subscriptions should use all and deliberately target those types. Mode is therefore part of the policy design, not just metadata for its display: a sound condition cannot assess a resource that the selected mode excludes."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions",
+          "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "sovereignty-policy-initiatives--azure-policies-evaluation-resources",
+    "sections": [
+      {
+        "title": "Interpret compliance as an evaluated state",
+        "paragraphs": [
+          "Compliance can change when an assignment or resource changes, an exemption is updated, a subscription moves or a scan runs. The standard full evaluation cycle runs every 24 hours, and an on-demand scan can refresh a chosen scope when needed. Results are not necessarily instantaneous: scope size, definition complexity and system load influence processing. Investigate individual noncompliant, conflicting or error results instead of treating one overall percentage as a complete diagnosis. A policy with contradictory assignments or an evaluation error needs a different response from a resource that simply has a missing required property."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources"
+        ]
+      },
+      {
+        "title": "Roll out enforcement in stages",
+        "paragraphs": [
+          "Use enforcementMode DoNotEnforce to retain compliance evaluation while suppressing the policy effect during resource requests. This differs from a disabled effect, which prevents evaluation. Start with representative nonproduction resources, check the policy results and application health, and then progressively enable enforcement in larger deployment rings. Manual remediation can still be relevant to deployIfNotExists assignments even when automatic enforcement is disabled, so do not mistake that setting for a universal prohibition on remediation work. Policy state-change events can be sent through Event Grid to a Function, Logic App or webhook, allowing an operational process to respond without continually polling every resource."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "secure-azure-resources-with-rbac--2-rbac-overview",
+    "sections": [
+      {
+        "title": "Combine who, what and where",
+        "paragraphs": [
+          "An Azure role assignment binds a security principal to a role definition at a scope. The principal identifies who receives access, the role lists the permitted operations and the scope identifies where those permissions apply. A suitable role at the wrong scope can still give too much access. For example, Virtual Machine Contributor on one project resource group can support that team’s VM work without making the assignment apply to unrelated groups. Owner and User Access Administrator can manage access, whereas Contributor manages resources without granting Azure role assignments. Choose both the role and scope according to the actual task."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+        ]
+      },
+      {
+        "title": "Evaluate the combined grants",
+        "paragraphs": [
+          "A principal can receive access through several assignments, including group membership and parent scopes. Azure RBAC is additive: a narrow Reader assignment does not reduce a broader Contributor assignment already inherited from the subscription. NotActions subtracts operations from one role’s Actions; it is not a global deny that cancels permissions allowed by another role. Deny assignments and other applicable access restrictions still matter during authorization. When diagnosing access, inspect the effective set of grants instead of focusing on the last role added. Also distinguish management operations from service data operations: role definitions can contain separate management and data permissions."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview",
+          "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "secure-azure-resources-with-rbac--4-list-access",
+    "sections": [
+      {
+        "title": "Start with the effective scope",
+        "paragraphs": [
+          "The My permissions view helps an administrator see their own role assignments and where they apply. To investigate a particular resource group, open its Access control (IAM) and inspect Role assignments. Look at both assignments made at the current scope and those inherited from a parent. For example, a user who appears to have only Reader directly on a resource group might also inherit Contributor from the subscription. The local entry is therefore not a complete description of that user’s effective access. Identify the principal, role and assignment origin before deciding why a resource operation is allowed."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access"
+        ]
+      },
+      {
+        "title": "Inspect roles before changing them",
+        "paragraphs": [
+          "The Roles tab shows built-in and custom definitions, letting you investigate what a role permits rather than deciding from its name alone. Open the relevant definition and its assignment details when comparing access against the requested task. This is especially useful for custom roles whose names do not describe every included operation. An inherited assignment must be addressed where it was originally made; adding a more limited local role does not erase a broader parent grant. Use the inspection exercise to distinguish viewing current access, defining a role and creating an assignment, which are separate administrative operations with different purposes."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access",
+          "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "secure-azure-resources-with-rbac--5-grant-access",
+    "sections": [
+      {
+        "title": "Choose the narrowest useful grant",
+        "paragraphs": [
+          "Before opening Add role assignment, state the user’s task and the resources it should cover. The exercise gives a user VM-management permissions in one resource group using Virtual Machine Contributor. A subscription-wide Owner assignment would add both a broader scope and access-management authority that the task does not require. The administrator performing the assignment must also have role-assignment permissions at the intended scope, such as through Owner or User Access Administrator. Selecting a principal in the portal does not bypass that authorization requirement; the add action is unavailable without the necessary permission."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+        ]
+      },
+      {
+        "title": "Review the assignment and its removal",
+        "paragraphs": [
+          "In the resource group’s IAM pane, choose the role, select the intended user and review the role, member and scope before completing the grant. Verify the new assignment at the resource group after processing. When the task ends, remove that particular assignment to revoke its grant. Then check whether the user still receives the same or broader permissions through group membership or an inherited assignment. For example, deleting the direct Lab-group grant will not remove an independent subscription-level grant. Access removal is therefore a review of the relevant assignment paths, not simply a check that one visible row disappeared from the portal."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access",
+          "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "secure-azure-resources-with-rbac--6-view-activity-logs",
+    "sections": [
+      {
+        "title": "Use history to explain a change",
+        "paragraphs": [
+          "The current Role assignments view answers who has an assignment now. The Azure Activity Log answers a different question about recorded management changes, including role-assignment creation or deletion and custom-role definition changes. For an investigation, choose the relevant timespan before filtering by operation. Include the operation categories that fit the question: investigating a deleted assignment is different from investigating a custom role whose permissions were updated. For example, a report about last month’s access administration should consider both assignments and role definitions if either could explain the change under investigation."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs"
+        ]
+      },
+      {
+        "title": "Inspect details before exporting a report",
+        "paragraphs": [
+          "After applying the filters, open an event and inspect its details to understand the recorded operation and identify the change. Use the filtered results as evidence for the investigation rather than assuming that every access issue comes from a new role assignment. A CSV download can capture the selected activity records for a report. Keep its interpretation tied to the chosen timespan and operation filters: it is a report of those recorded changes, not a full export of every principal’s current effective permissions. If the question is who currently has access, return to IAM and inspect direct and inherited assignments alongside the historical evidence."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "allow-users-reset-their-password--2-self-service-password-reset",
+    "sections": [
+      {
+        "title": "Reset requires proof of identity",
+        "paragraphs": [
+          "Changing a known password while already signed in is different from recovering access after forgetting it. SSPR first identifies the account, then verifies the required authentication information before accepting a replacement password. Users must have registered enough permitted methods to satisfy the configured requirement. A method available in the policy but missing from the user’s account cannot help them recover access. Microsoft Authenticator notification and code are two uses of the app, not two independent methods for meeting a two-method requirement. Administrator accounts follow a stronger reset policy that requires two authentication gates and excludes security questions."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
+        ]
+      },
+      {
+        "title": "Plan notifications and hybrid writeback",
+        "paragraphs": [
+          "User reset notifications are configurable and help the user spot an unexpected password change. When administrator-reset notifications are enabled, Global Administrators receive notice that another administrator reset a password. Licensing must match the deployment: eligible Microsoft 365 or Entra premium licenses support cloud-only reset, while on-premises writeback needs P1/P2 or Microsoft 365 Business Premium and supported synchronization. For a synchronized user, writeback returns the cloud password change to on-premises AD through the configured Connect or Cloud Sync deployment. Enabling a cloud reset interface alone is not proof that the on-premises password will also be updated."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "allow-users-reset-their-password--3-implement-azure-ad-self-service-password-reset",
+    "sections": [
+      {
+        "title": "Use a pilot with representative users",
+        "paragraphs": [
+          "Prepare a licensed tenant, an Authentication Policy Administrator and a non-administrator test account in a security group. Selected limits the user rollout to the chosen group, while All enables the user rollout tenant-wide and None disables that ordinary-user rollout. Administrator reset policy is separate, so testing only with an administrator can produce a result that does not represent the pilot users. Choose accounts whose authentication registration and password source reflect the intended deployment. For example, a cloud-only pilot does not on its own validate the writeback path needed by synchronized production users."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+        ]
+      },
+      {
+        "title": "Configure methods in the current policy",
+        "paragraphs": [
+          "Set the required number of reset methods in Password reset, but manage the allowed methods through the Authentication methods policy. Legacy MFA and SSPR method-management controls were deprecated from September 30, 2025; security questions remain a documented exception managed through the SSPR policy. Plan registration at sign-in and reconfirmation so users maintain usable recovery information. Configure user and administrator notifications, plus the helpdesk contact for users who cannot complete self-service recovery. Before widening the pilot, verify that a non-administrator can register permitted information, satisfy the configured method count and successfully complete the intended reset or writeback flow."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-methods-manage",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "allow-users-reset-their-password--4-exercise-set-up-self-service-password-reset",
+    "sections": [
+      {
+        "title": "Build an isolated pilot configuration",
+        "paragraphs": [
+          "Use a clearly named assigned security group and add a non-administrator test user. Under Password reset, enable Selected for that group and save the scope. Review the required method count, registration behavior and reset notifications. For the email-based exercise, enable Email OTP for those users in the current Authentication methods policy, then set the helpdesk contact. This separates the user rollout scope from the policy controlling permitted authentication methods. Do not infer that a method is usable simply because the user has an email address: the user must be in scope and the method must be enabled and registered."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-methods-manage",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+        ]
+      },
+      {
+        "title": "Verify registration and then recovery",
+        "paragraphs": [
+          "Open the official registration portal as the test user, using a separate private browser session when an existing administrator session would select the wrong account. Add the email sign-in method and verify the address with the received code. Then open the official reset portal, enter the test user’s identifier, complete the identity checks and use the registered method to set a new password. These are distinct stages: registration prepares recovery information; the later reset proves that the information and policy work together. Confirm the result using the test identity and keep the configuration separate from production before cleaning up the temporary account and group."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+          "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "allow-users-reset-their-password--5-exercise-customize-directory-branding",
+    "sections": [
+      {
+        "title": "Prepare the branding and permissions",
+        "paragraphs": [
+          "Company branding gives organizational sign-in experiences a consistent visual identity through elements such as a favicon, background image, color and layout. It does not replace authentication or decide which users are authorized. Use an eligible licensed tenant and the Organizational Branding Administrator role, then prepare the images according to the current requirements shown for each branding element. A small favicon and a large background image serve different purposes and have different requirements. Verify the tenant before saving so a lab customization does not accidentally alter another organization’s sign-in experience."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+          "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
+        ]
+      },
+      {
+        "title": "Test the experience seen by the user",
+        "paragraphs": [
+          "Open Company branding, configure the chosen elements, review the result and save. Then test in a new browser window as the intended user rather than relying only on the administration preview. Check the ordinary sign-in experience and the forgotten-password flow used by the exercise. Branding depends on the account and sign-in context; it does not carry over to personal Microsoft accounts simply because a guest visits the organization’s application. Default elements remain where a custom element was not specified. For example, adding a logo without a background still leaves the appropriate default background rather than requiring every branding element to be customized."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+          "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
+        ]
+      }
+    ]
+  }
+]

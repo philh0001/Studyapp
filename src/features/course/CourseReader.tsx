@@ -9,6 +9,7 @@ import {moduleAssessments} from './assessments';
 import {HighlightedText} from './HighlightedText';
 import type {SpeechHighlight} from './speech';
 import {speechFollowScroll} from './follow';
+import {lessonReading} from './reading';
 import {COURSE_STATE_KEY,normaliseCourseState} from './state';
 import type {CoursePack,CourseState} from './types';
 import './course.css';
@@ -30,12 +31,13 @@ export function CourseReader({repository,snapshot,onSaveQueued}:{repository:Stud
  const [assessmentNavigationError,setAssessmentNavigationError]=useState('');
  const selected=lessons.find(row=>row.lesson.id===state.selectedLessonId)??lessons[0];
  const {path,module,lesson}=selected;
+ const reading=lessonReading(lesson);
  const assessment=moduleAssessments.find(pack=>pack.moduleId===module.id)!;
  const assessmentVisible=lesson.kind==='knowledge-check'||state.assessmentOpen;
  const index=ids.indexOf(lesson.id);
  const sections=useMemo(()=>{
   const selectedLessons=state.scope==='course'?lessons.map(row=>row.lesson):module.lessons;
-  return selectedLessons.filter(item=>item.kind!=='knowledge-check').map(item=>({id:item.id,title:item.title,text:[item.title,...item.points].join('\n\n')}));
+  return selectedLessons.filter(item=>item.kind!=='knowledge-check').map(item=>({id:item.id,title:item.title,text:lessonReading(item).text}));
  },[state.scope,module]);
  useEffect(()=>{
   if(!scrollRequested.current)return;
@@ -58,7 +60,7 @@ export function CourseReader({repository,snapshot,onSaveQueued}:{repository:Stud
   const delta=speechFollowScroll(bounds.top,bounds.bottom,Math.min(window.innerHeight-100,controls?.top??window.innerHeight));
   if(delta)window.scrollBy({top:delta,behavior:'auto'});
  },[highlight?.sectionId,highlight?.start,highlight?.wordStart,lesson.id,follow]);
- const pointOffsets=lesson.points.map((_,i)=>lesson.title.length+2+lesson.points.slice(0,i).reduce((sum,point)=>sum+point.length+2,0));
+ const pointBlocks=reading.blocks.filter(block=>block.kind==='point');
 
  function save(patch:Partial<CourseState>){
   const next={...current.current,...patch};current.current=next;setState(next);
@@ -104,7 +106,7 @@ export function CourseReader({repository,snapshot,onSaveQueued}:{repository:Stud
 
  return <section className="course-reader" aria-labelledby="course-title">
   <h1 id="course-title">Read &amp; listen</h1>
-  <p>AZ-104 course essentials, without repeated introductions and extra clutter.</p>
+  <p>Learn AZ-104 with key points, fuller explanations and practical examples.</p>
   <div className="card course-controls">
    <label>Learning path<select value={path.id} onChange={event=>choose(course.paths.find(item=>item.id===event.target.value)!.modules[0].lessons[0].id)}>{course.paths.map(item=><option key={item.id} value={item.id}>{item.title}</option>)}</select></label>
    <label>Module<select value={module.id} onChange={event=>choose(path.modules.find(item=>item.id===event.target.value)!.lessons[0].id)}>{path.modules.map(item=><option key={item.id} value={item.id}>{item.title}</option>)}</select></label>
@@ -118,9 +120,14 @@ export function CourseReader({repository,snapshot,onSaveQueued}:{repository:Stud
   <article className="card course-lesson" aria-labelledby="course-lesson-title">
    <p className="fine-print">{module.title} · lesson {module.lessons.indexOf(lesson)+1} of {module.lessons.length}</p>
    <h2 id="course-lesson-title" tabIndex={-1}>{lesson.kind==='knowledge-check'?'Microsoft Learn check':<HighlightedText text={lesson.title} offset={0} sectionId={lesson.id} highlight={highlight}/>}</h2>
-   {lesson.kind==='knowledge-check'?<p>Check what you have just learned with six questions about this module.</p>:<ul className="course-points">{lesson.points.map((point,i)=><li key={i}><HighlightedText text={point} offset={pointOffsets[i]} sectionId={lesson.id} highlight={highlight}/></li>)}</ul>}
-   {lesson.kind==='exercise'&&<p className="fine-print">Read the steps here; follow the full exercise on Microsoft Learn when you want hands-on practice.</p>}
    <a href={lesson.url} target="_blank" rel="noopener noreferrer">{lesson.kind==='knowledge-check'?'Open Microsoft Learn check':'Read original Microsoft Learn lesson'}</a>
+   {lesson.kind==='knowledge-check'?<p>Check what you have just learned with six questions about this module.</p>:<><h3>Key points</h3><ul className="course-points">{pointBlocks.map((block,i)=><li key={i}><HighlightedText text={block.text} offset={block.start} sectionId={lesson.id} highlight={highlight}/></li>)}</ul></>}
+   {!!lesson.sections?.length&&<div className="course-explanations">{lesson.sections.map((section,index)=>{
+    const blocks=reading.blocks.filter(block=>block.sectionIndex===index),heading=blocks.find(block=>block.kind==='section-title')!;
+    const spoken=(block:typeof heading)=><HighlightedText text={block.text} offset={block.start} sectionId={lesson.id} highlight={highlight}/>;
+    return <section key={index}><h3>{spoken(heading)}</h3>{blocks.filter(block=>block.kind==='paragraph').map((block,i)=><p key={i}>{spoken(block)}</p>)}{!!section.steps?.length&&<ol>{blocks.filter(block=>block.kind==='step').map((block,i)=><li key={i}>{spoken(block)}</li>)}</ol>}{section.code&&<pre aria-label={`${section.code.language} example`}><code>{spoken(blocks.find(block=>block.kind==='code')!)}</code></pre>}</section>;
+   })}</div>}
+   {lesson.kind==='exercise'&&<p className="fine-print">Read the steps here; follow the full exercise on Microsoft Learn when you want hands-on practice.</p>}
    {!!lesson.additionalSources?.length&&<details><summary>Supporting Microsoft documentation</summary><ul>{lesson.additionalSources.map(source=><li key={source.url}><a href={source.url} target="_blank" rel="noopener noreferrer">{source.title}</a></li>)}</ul></details>}
    <div className="course-actions"><button className="secondary" onClick={markRead} aria-pressed={state.completedIds.includes(lesson.id)}>{state.completedIds.includes(lesson.id)?'Marked read ✓':'Mark as read'}</button><button className="secondary" disabled={index===0} onClick={()=>choose(ids[index-1])}>Previous lesson</button><button disabled={index===lessons.length-1} onClick={()=>choose(ids[index+1])}>Next lesson</button></div>
   </article>
@@ -136,8 +143,8 @@ export function CourseReader({repository,snapshot,onSaveQueued}:{repository:Stud
     onSection={sectionId=>{if(current.current.selectedLessonId!==sectionId){if(assessmentNavigationBlocked()){setSpeechKey(key=>key+1);return;}save({selectedLessonId:sectionId,assessmentOpen:false})}}}/>
   </section>
   <details className="card course-sources"><summary>Course sources and coverage</summary>
-   <p>Concise AI-assisted study notes based on the Microsoft Learn AZ-104T00 syllabus: {course.paths.length} learning paths, {lessons.reduce((set,row)=>set.add(row.module.id),new Set<string>()).size} modules and {lessons.length} units. Each module includes six original revision questions here; official interactive checks remain linked on Microsoft Learn. These notes are condensed; the original lessons contain the full detail.</p>
-   <p>Sources retrieved {new Date(course.checkedAt).toLocaleDateString('en-GB',{timeZone:'Europe/London'})}. All supplied course points source-checked {new Date(course.accuracyCheckedAt??course.checkedAt).toLocaleDateString('en-GB',{timeZone:'Europe/London'})} through an AI-assisted comparison with the original units and current product documentation. Human factual approval remains separate.</p>
+   <p>Key points and expanded AI-assisted teaching based on the Microsoft Learn AZ-104T00 syllabus: {course.paths.length} learning paths, {lessons.reduce((set,row)=>set.add(row.module.id),new Set<string>()).size} modules and {lessons.length} units. Each module includes six original revision questions here; official interactive checks remain linked on Microsoft Learn. Teaching and exercise units include fuller explanations and practical examples; original lessons retain their diagrams, interactive activities and complete exercise instructions.</p>
+   <p>Sources retrieved {new Date(course.checkedAt).toLocaleDateString('en-GB',{timeZone:'Europe/London'})}. Key points and expanded explanations source-checked {new Date(course.accuracyCheckedAt??course.checkedAt).toLocaleDateString('en-GB',{timeZone:'Europe/London'})} through an AI-assisted comparison with the original units and current product documentation. Human factual approval remains separate.</p>
    <a href={course.url} target="_blank" rel="noopener noreferrer">Official Microsoft Learn course</a>
    <ol>{course.paths.map(item=><li key={item.id}><a href={item.url} target="_blank" rel="noopener noreferrer">{item.title}</a><ul>{item.modules.map(row=><li key={row.id}><button className="text-button" onClick={()=>choose(row.lessons[0].id)}>{row.title}</button></li>)}</ul></li>)}</ol>
   </details>

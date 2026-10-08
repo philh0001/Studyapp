@@ -46,3 +46,6 @@ Select-and-go fix deployed and live-verified at the existing URL. 405 unit tests
 - Delivered: six original officially sourced questions per learning module, with immediate explanations, saved/offline progress and local module scores/retry; independent source review covered all 168 questions and 672 option explanations.
 
 - Delivered: Personal reasoning workpad title acts as the closed-by-default foldout toggle, with saved notes and autosaves preserved.
+
+
+Fuller course reading now covers all 151 teaching/exercise units with explanations, practical scenarios and steps, while keeping introductions short. Expanded text is included in offline reading and browser speech/highlighting. Source and independent semantic evidence live with the course pack.

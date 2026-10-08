@@ -1,0 +1,230 @@
+{
+  "checkedAt": "2026-10-08T11:45:36.144320Z",
+  "reviewKind": "AI-assisted semantic source comparison",
+  "humanApproval": false,
+  "findings": [],
+  "lessons": [
+    {
+      "lessonId": "configure-virtual-networks--2-plan-virtual-networks",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/2-plan-virtual-networks",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Expanded planning rationale, original application example and hybrid/private addressing choices; compared with full unit and VNet/peering constraints."
+    },
+    {
+      "lessonId": "configure-virtual-networks--3-create-subnets",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Verified IPv4 /27 arithmetic, nonoverlap, dedicated subnet reasoning and routing/filtering distinctions."
+    },
+    {
+      "lessonId": "configure-virtual-networks--4-create-virtual-networks",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/4-create-virtual-networks",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ],
+      "notes": "Used portal-oriented creation workflow without falsely claiming the REST resource cannot exist without a subnet; concrete ranges independently checked."
+    },
+    {
+      "lessonId": "configure-virtual-networks--5-plan-addressing",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/5-plan-addressing",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ],
+      "notes": "Verified private allocation choices, static public lifecycle and Basic retirement; expanded why static addresses support stable dependencies."
+    },
+    {
+      "lessonId": "configure-virtual-networks--6-create-public-ip-addressing",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/6-create-public-ip-addressing",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ],
+      "notes": "Checked current public SKU allocation, Standard v2 resource-specific support, LB SKU/tier compatibility and static lifecycle."
+    },
+    {
+      "lessonId": "configure-virtual-networks--7-associate-public-ip-addresses",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/7-associate-public-ip-addresses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Verified resource association scope, secure-by-default NIC/NSG condition and current zone choices; no blanket claim that all services use NSGs identically."
+    },
+    {
+      "lessonId": "configure-virtual-networks--8-associate-private-ip-addresses",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/8-associate-private-ip-addresses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Verified subnet-bound private assignment, reservation restrictions and NIC/frontend distinction; example avoids recommending guest-only static addressing."
+    },
+    {
+      "lessonId": "configure-virtual-networks--9-simulation-create-networks",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/9-simulation-create-networks",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Compared complete exercise scenario and prerequisites; distinguishes network/peering creation from firewall inspection that the diagram alone does not configure."
+    },
+    {
+      "lessonId": "configure-network-security-groups--2-implement-network-security-groups",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/2-implement-network-security-groups",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Verified scope, association cardinality, reuse effects and independent inbound/outbound evaluation against full unit and current NSG docs."
+    },
+    {
+      "lessonId": "configure-network-security-groups--3-determine-network-security-groups-rules",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/3-determine-network-security-groups-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Verified fields, custom range, first-match behavior, immutable defaults and load-balancer-probe distinction; original priority values."
+    },
+    {
+      "lessonId": "configure-network-security-groups--4-determine-network-security-groups-effective-rules",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Compared independent scopes and intra-subnet filtering; current product docs corroborate stateful new-flow behavior and diagnostic interpretation."
+    },
+    {
+      "lessonId": "configure-network-security-groups--5-create-network-security-groups-rules",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/5-create-network-security-groups-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Corrected the source unit’s overly broad selector-mixing wording using current augmented-rule limits; verified stateful validation."
+    },
+    {
+      "lessonId": "configure-network-security-groups--6-implement-asgs",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/6-implement-asgs",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Verified ASG NIC membership/VNet limits, service-tag distinction and explicit deny needed to exclude default VirtualNetwork sources."
+    },
+    {
+      "lessonId": "configure-network-security-groups--7-simulation-create-network-groups",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/7-simulation-create-network-groups",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
+      ],
+      "notes": "Expanded exercise implementation/testing without deploying resources; verified optional DNS scope and ASG/NSG distinctions."
+    },
+    {
+      "lessonId": "host-domain-azure-dns--2-what-is-azure-dns",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+        "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-alias"
+      ],
+      "notes": "Verified record semantics/cardinality, registration versus hosting, private-zone links and optional auto-registration; omitted outdated unit DNSSEC claim."
+    },
+    {
+      "lessonId": "host-domain-azure-dns--3-configure-azure-dns-host-domain",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-domain-delegation",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+        "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Compared public delegation/TTL/SOA workflow and current private-zone/custom-DNS behavior; no public domain registration requirement for private zones."
+    },
+    {
+      "lessonId": "host-domain-azure-dns--4-exercise-create-dns-zone-a-record",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/4-exercise-create-dns-zone-a-record",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-domain-delegation"
+      ],
+      "notes": "Verified direct authoritative nslookup exercise and distinctions between zone answer, delegation and application availability."
+    },
+    {
+      "lessonId": "host-domain-azure-dns--5-resolve-name-alias-record",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/5-resolve-name-alias-record",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-alias"
+      ],
+      "notes": "Verified apex/CNAME restriction, supported Standard-public-IP target and empty-set deletion behavior; carefully separates cache/application behavior."
+    },
+    {
+      "lessonId": "host-domain-azure-dns--6-exercise-create-alias-records",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/6-exercise-create-alias-records",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-alias",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-domain-delegation",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+      ],
+      "notes": "Compared full exercise setup/alias steps; clarified its public-IP browser check is application proof, not proof of alias resolution."
+    },
+    {
+      "lessonId": "configure-vnet-peering--2-determine-uses",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
+      ],
+      "notes": "Verified public-cloud regional/global behavior, nonoverlap, DNS boundary and current address-space synchronization instead of stale training delete/recreate restriction."
+    },
+    {
+      "lessonId": "configure-vnet-peering--3-determine-gateway-transit-connectivity",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/3-determine-gateway-transit-connectivity",
+        "https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-peering-gateway-transit",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Verified hub/spoke flag direction, remote-gateway exclusion, Basic VPN gateway limitation, global support and continuing NSG filtering."
+    },
+    {
+      "lessonId": "configure-vnet-peering--4-create",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/4-create",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-peering-gateway-transit",
+        "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
+      ],
+      "notes": "Verified permission scope, reciprocal peering/status and connectivity-versus-DNS checks against creation unit and product docs."
+    },
+    {
+      "lessonId": "configure-vnet-peering--5-determine-service-chaining-uses",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/5-determine-service-chaining-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Verified nontransitivity, NVA/VPN service-chaining next hops, ExpressRoute limitation and forwarding/routing/security distinctions."
+    },
+    {
+      "lessonId": "configure-vnet-peering--6-simulation-peering",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/6-simulation-peering",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Verified exercise jobs, private-IP/status checks, optional route scope and source-subnet/reverse-path behavior; no commands executed."
+    }
+  ],
+  "sectionsReviewed": 72,
+  "wordsAdded": 5084
+}

@@ -1,0 +1,1106 @@
+[
+  {
+    "lessonId": "intro-to-azure-virtual-machines--2-compile-a-checklist-for-creating-a-vm",
+    "sections": [
+      {
+        "title": "Start with dependencies, not the size picker",
+        "paragraphs": [
+          "A VM is one resource in a larger deployment. Its network interface connects to a subnet; disks hold the operating system and application data; security rules govern traffic. Before choosing a size, identify who must connect to the server and which other systems it calls. For example, a payroll server may need private database access and restricted administrator access rather than unrestricted inbound internet traffic. Plan address ranges before connecting networks: overlapping spaces create routing problems that cannot be solved by simply choosing a larger VM."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+        ]
+      },
+      {
+        "title": "Translate workload needs into a configuration",
+        "paragraphs": [
+          "Inventory CPU, memory, disk throughput, operating-system compatibility and where the data is permitted to reside. These requirements narrow the region, VM family and disk choices. A memory-heavy analytics process and a CPU-heavy batch process can need different families even when they serve the same number of users. Region selection also affects which sizes exist and how much they cost. Put durable application data on persistent data disks; temporary storage is not a substitute for a database or document repository."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+        ]
+      },
+      {
+        "title": "Allow for change and separate costs",
+        "paragraphs": [
+          "Size limits include the number of attached disks and network interfaces, not just CPU and RAM. Resizing a running VM normally restarts it. If the desired size is outside the current hardware cluster, deallocate before selecting another available regional size. Plan that interruption before changing a production server. Compute and storage are billed separately: deallocation stops compute charges, while retained disks remain chargeable. Reservations can reduce costs for predictable sustained use, whereas pay-as-you-go suits uncertain demand."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm",
+          "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-virtual-machines--3-create-a-vm",
+    "sections": [
+      {
+        "title": "Prepare an isolated learning deployment",
+        "paragraphs": [
+          "The optional exercise creates a Linux VM through the portal. You need an Azure subscription and a resource group where you can create resources. A dedicated lab resource group makes it easier to identify what belongs to the exercise when cleaning up. Choose the subscription and region deliberately: the account selected in the portal determines where charges and resources appear. You can learn the creation sequence without deploying anything; reading the instructions does not reserve compute or create a subscription."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/3-create-a-vm"
+        ]
+      },
+      {
+        "title": "Understand the choices in the form",
+        "paragraphs": [
+          "Select a supported Ubuntu image and a VM size available in the chosen region. For SSH public-key authentication, provide an administrator username and either an existing public key or a newly generated key pair. The exercise permits inbound SSH on port 22. That network rule and the SSH credentials have separate jobs: the rule allows the connection to reach the VM, while the key proves which user can sign in. If you generate a key, keep the downloaded private key secure rather than placing it in a shared repository."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/3-create-a-vm"
+        ]
+      },
+      {
+        "title": "Validate, connect and inspect",
+        "paragraphs": [
+          "Review the configuration before creating the VM, correcting any validation errors in the indicated tab. Deployment takes time, so wait for completion before using the VM overview and its public IP to connect with an SSH client. The overview also provides access to the related disks and network settings, helping you see the resources behind the VM. After studying the result, remove only your lab resources when finished so the demonstration does not become an unintended ongoing cost."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/3-create-a-vm"
+        ],
+        "steps": [
+          "Choose the subscription, lab resource group, region, image and size.",
+          "Configure SSH public-key authentication and the exercise’s inbound SSH rule.",
+          "Review and create; download a generated private key securely.",
+          "Wait for deployment, inspect the VM overview and connect using SSH."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-virtual-machines--4-describe-other-create-vm-options",
+    "sections": [
+      {
+        "title": "Choose a tool that matches the operation",
+        "paragraphs": [
+          "The portal is useful for learning and one-off configuration, but repeating a complex deployment by clicking through forms is hard to reproduce. ARM templates express infrastructure as JSON resources and parameters. An exported template is a starting point that you should inspect and adapt, not an assurance that it reproduces every runtime detail. Terraform offers another infrastructure-as-code workflow: define resources, preview its proposed changes and apply the reviewed plan. These approaches make environment-specific names and settings explicit."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+        ]
+      },
+      {
+        "title": "Separate scripting from application integration",
+        "paragraphs": [
+          "Azure CLI and Azure PowerShell are appropriate for interactive commands and repeatable scripts. The CLI’s az vm create and PowerShell’s New-AzVM both create VMs, using different command conventions. REST APIs expose resource operations over HTTP; client SDKs package those APIs for application languages. A provisioning service with substantial business logic may benefit from an SDK, while a small administrative task may be clearer as a short script. All still require suitable Azure authorization and deployment settings.",
+          "This CLI example creates a VM using an existing lab resource group. Sign in first, choose the intended subscription and replace the example names for your lab."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+        ],
+        "code": {
+          "language": "bash",
+          "text": "az vm create \\\n  --resource-group compute-lab \\\n  --name demo-linux-vm \\\n  --image Ubuntu2204 \\\n  --admin-username azureuser \\\n  --generate-ssh-keys"
+        }
+      },
+      {
+        "title": "Manage the machine after creation",
+        "paragraphs": [
+          "Creation is only the beginning of administration. VM extensions can install or configure software after deployment, and Automation can coordinate repeated management tasks. Auto-shutdown schedules a daily shutdown in a chosen time zone, useful for a development machine that is not needed overnight. Treat it as an operational schedule, not an infrastructure template. For a team deploying test and production environments, one parameterized definition plus an explicit post-deployment configuration process is easier to reason about than two manually assembled servers."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-virtual-machines--5-high-availability",
+    "sections": [
+      {
+        "title": "Identify the failure you need to survive",
+        "paragraphs": [
+          "Azure can move a VM away from a failed host, but that recovery can include an outage and reboot. Platform maintenance can also affect running instances. A single VM therefore remains a single running application instance. For a service that must survive a datacenter failure, deploy redundant instances across supported availability zones. Independent zone power, cooling and networking reduce shared failure exposure; the application must still be able to operate when an instance or zone is unavailable."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability",
+          "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines"
+        ]
+      },
+      {
+        "title": "Combine placement, capacity and traffic distribution",
+        "paragraphs": [
+          "A scale set helps manage a group of VMs and can adjust the instance count to demand or a schedule. A load balancer distributes requests among working backends. These features solve different problems: placement spreads risk, scaling supplies capacity, and load balancing sends traffic to available instances. For example, placing three application instances across zones is useful only if requests can reach the surviving instances and the application’s data design can tolerate the failure. Merely putting a load balancer in front of one VM does not create redundancy."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+        ]
+      },
+      {
+        "title": "Plan recovery beyond the region",
+        "paragraphs": [
+          "Storage replication choices determine whether copies exist only locally, across zones or in a secondary region, and whether the secondary is readable. Azure Site Recovery instead replicates workloads and coordinates failover and failback to another location. A recovery plan can include ordered actions and manual steps, so test it before relying on it. Regional recovery and historical backup are complementary: replication supports continuity, while backup recovery points help return to an earlier state after loss or corruption."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-virtual-machines--6-backup-services",
+    "sections": [
+      {
+        "title": "Choose protection for the thing you must recover",
+        "paragraphs": [
+          "A backup plan begins with a recovery need: an entire VM, selected files or an application workload. Azure Backup offers different components for different supported sources. Native Azure VM protection and on-premises protection do not use an identical setup. For Windows files, folders and system state, the MARS agent is an option; DPM or Azure Backup Server supports additional on-premises workloads. Check the appropriate workload support before treating one agent or vault setup as universal."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-overview",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-about-mars"
+        ]
+      },
+      {
+        "title": "Understand policy and consistency",
+        "paragraphs": [
+          "A Recovery Services vault manages Azure VM recovery points and backup policies. The policy specifies when backup runs and how long recovery points remain available. Application consistency matters because an application may have pending writes or coordinated files that a simple disk image does not capture safely. Agent-based VM backups can coordinate application or filesystem consistency; supported agentless backups provide crash-consistent protection. On Linux, application-consistent backups require appropriate pre- and post-backup scripts. These are distinct recovery qualities, not interchangeable labels."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+        ]
+      },
+      {
+        "title": "Use recovery requirements to make tradeoffs",
+        "paragraphs": [
+          "Consider a reporting VM whose documents must be retained for an audit. Frequent short-term points help operational recovery, while longer retention addresses historical retrieval. Choose storage redundancy and access controls appropriate to that requirement, and test restoring the expected data. Azure manages backup storage, but you still select policies and monitor results. Availability placement does not replace this work: a highly available VM can still lose useful data through an application error, and replicas can carry that error onward."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-virtual-machine-availability--2-plan-for-maintenance-downtime",
+    "sections": [
+      {
+        "title": "Different events produce different interruptions",
+        "paragraphs": [
+          "Unplanned maintenance can begin before hardware fails, when Azure detects a component that is likely to become unreliable. Live migration moves a VM from that host while preserving its running state, with a short pause and possible performance impact. An unexpected hardware failure is different: the VM may need to restart on a healthy host, and temporary-drive contents can be lost. Scheduled platform maintenance addresses the underlying infrastructure. Avoid treating all three events as a planned reboot with an identical recovery time."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/2-plan-for-maintenance-downtime",
+          "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines"
+        ]
+      },
+      {
+        "title": "Keep platform and guest responsibilities separate",
+        "paragraphs": [
+          "Azure maintains the physical host and platform; you remain responsible for the VM’s guest operating system and application configuration. Redundant instances help only when the application can continue on an unaffected machine. For an internal ordering service, decide how users reach another instance, where durable data lives and which tasks can be retried after interruption. Keep temporary data disposable and protect important data separately. A maintenance plan should therefore connect VM placement to application recovery, rather than relying solely on Azure’s ability to repair its hosts. Test how the application behaves after an interrupted request instead of assuming a host recovery guarantees an uninterrupted user session."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/2-plan-for-maintenance-downtime",
+          "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-virtual-machine-availability--3-setup-availability-sets",
+    "sections": [
+      {
+        "title": "Spread instances that perform the same role",
+        "paragraphs": [
+          "An availability set groups related VMs so Azure distributes their infrastructure and maintenance exposure. Put redundant instances of one application tier together, with compatible software and responsibilities. For example, two web servers belong in the web-tier set, while redundant database servers belong in a separate set. Mixing every application tier into one group makes its purpose harder to reason about. Availability sets reduce shared host, rack and maintenance failures; availability zones provide broader datacenter separation where supported."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/3-setup-availability-sets",
+          "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+        ]
+      },
+      {
+        "title": "Design the set before creating the VMs",
+        "paragraphs": [
+          "Assign the availability set when you create each VM. Changing a VM’s availability-set assignment requires deleting and recreating the VM, so the choice belongs in deployment planning. Use at least two instances when you need redundancy, and provide traffic distribution such as a load balancer so users can reach the surviving application. An availability set does not repair a faulty application deployment or guest operating system. Retain backups and application recovery procedures, and use managed disks for the supported disk-placement behavior associated with the set. A set containing only one VM has no second application instance to keep serving requests when that VM becomes unavailable."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/3-setup-availability-sets",
+          "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-virtual-machine-availability--4-review-update-fault-domains",
+    "sections": [
+      {
+        "title": "Update domains describe maintenance groups",
+        "paragraphs": [
+          "An update domain groups VMs and associated hardware that can be restarted together during planned platform maintenance. Azure restarts one update domain at a time so every instance in the set is not deliberately restarted together. Availability sets support between one and twenty update domains, with five as the default. Choose the count during creation; it cannot be changed afterward. More domains do not make one VM redundant: the application still needs multiple working instances distributed across the groups."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains",
+          "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+        ]
+      },
+      {
+        "title": "Fault domains describe shared infrastructure",
+        "paragraphs": [
+          "A fault domain identifies VMs that share infrastructure such as a power source or network switch. Spreading redundant instances across fault domains reduces the chance that one hardware fault affects all of them. Each VM in an availability set belongs to both a fault domain and an update domain, because hardware failures and maintenance are different risks. Imagine two service instances: separating their fault exposure helps with a rack failure, while separating their update exposure helps during planned maintenance. Neither grouping protects the application from a software defect deployed to both instances. The supported number of fault domains varies by region, so verify the available values instead of assuming a universal count."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains",
+          "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-virtual-machine-availability--5-review-availability-zones",
+    "sections": [
+      {
+        "title": "A zone is a datacenter failure boundary",
+        "paragraphs": [
+          "A supported Azure region contains at least three physically separate availability zones. Each has independent power, cooling and networking. Place redundant application instances across zones when your design must survive the loss of a datacenter group. A zone is inside a region, so cross-zone placement does not by itself cover a region-wide disaster. Consider the entire service: the application instances, storage and dependencies must all have a recovery design consistent with the failure you are trying to survive."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones",
+          "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines"
+        ]
+      },
+      {
+        "title": "Distinguish choosing a zone from using zone redundancy",
+        "paragraphs": [
+          "A zonal resource is deployed into a particular zone, such as a VM or a zonal managed disk. You select its placement and design the redundancy around it. A zone-redundant service instead manages replication across zones for its supported configuration, such as appropriately configured Azure Storage. For example, one VM in zone one is still one application instance; zone-redundant storage does not automatically create another VM. Combine multiple instances, traffic distribution and the required data resilience. Verify region and service support before copying a zonal design between environments. For example, a replicated web tier still needs a supported traffic-distribution design and data access that works from the surviving zone."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones",
+          "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-virtual-machine-availability--6-compare-vertical-horizontal-scaling",
+    "sections": [
+      {
+        "title": "Change the machine or change the count",
+        "paragraphs": [
+          "Vertical scaling makes an individual VM larger or smaller by changing its size. It is useful when one workload needs more memory or CPU, but the available sizes and regional hardware place limits on that approach. Resizing commonly requires a restart, so capacity changes can interrupt service. Horizontal scaling adds or removes VM instances instead. It suits applications that can distribute work across several machines, allowing capacity to grow without continually replacing one server with the largest available model."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling",
+          "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
+        ]
+      },
+      {
+        "title": "Match scaling to application behavior",
+        "paragraphs": [
+          "Consider a document-processing service. If one process needs more memory to handle a document, a larger VM may help. If many independent documents arrive together, more worker instances may provide a better fit. Scaling in either direction still needs durable data planning. Reprovisioning removes an old VM and replaces it, so decide which information must move and which temporary state may be discarded. Removing an instance can also remove its local application state. Choose the strategy from the bottleneck and the application’s ability to distribute work, rather than treating all demand increases as a CPU-size problem. Increasing the instance count can be manual or automated; horizontal scaling describes the capacity change, not how the change is triggered."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling",
+          "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-virtual-machine-availability--7-implement-scale-sets",
+    "sections": [
+      {
+        "title": "Use a managed group for repeatable capacity",
+        "paragraphs": [
+          "A Virtual Machine Scale Set groups VMs for deployment and ongoing management. Instance counts can be adjusted manually or by autoscale rules, reducing the need to create each new server individually. The application must be installed and configured appropriately on those instances; a scale set does not turn a single-machine application into a distributed service. For a service that processes independent requests, adding compatible instances can spread work and preserve service when one machine becomes unavailable."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+          "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+        ]
+      },
+      {
+        "title": "Choose the orchestration model deliberately",
+        "paragraphs": [
+          "Uniform orchestration uses a common VM profile and manages instances through scale-set VM APIs. Flexible orchestration manages standard Azure VMs and supports identical or mixed VM configurations. Flexible is recommended for new deployments; requiring identical instances alone does not make Uniform mandatory. Compare the management APIs and feature support your workload needs before choosing. The mode is fixed when the scale set is created, so a change of orchestration model requires a deployment change rather than a routine configuration toggle."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+          "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+        ]
+      },
+      {
+        "title": "Add the correct traffic and availability design",
+        "paragraphs": [
+          "Use Azure Load Balancer for Layer 4 TCP/UDP distribution or Application Gateway when HTTP routing and TLS termination are needed. A scale set can have multiple instances, but users benefit only when requests reach the working application instances. Choose placement across the supported zones or fault domains according to the failure scope. Scaling, traffic distribution and placement are complementary: one supplies capacity, one routes requests, and one reduces shared infrastructure exposure. None replaces backups for important data."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+          "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-virtual-machine-availability--8-create-scale-sets",
+    "sections": [
+      {
+        "title": "Select a compatible image and architecture",
+        "paragraphs": [
+          "When creating the scale set, choose its orchestration mode, region, operating-system image, VM architecture, size and initial count. The image and architecture must support the application and its dependencies. An x64 application package is not automatically suitable for Arm64 simply because both options are offered. Size determines CPU, memory and other instance limits, while instance count determines how many machines initially run. For a new general deployment, start by evaluating Flexible orchestration and then check whether a required feature justifies another choice."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/8-create-scale-sets",
+          "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+        ]
+      },
+      {
+        "title": "Understand spreading before choosing a policy",
+        "paragraphs": [
+          "Fault-domain spreading affects how instances are distributed within the deployment. Maximum spreading places instances across as many fault domains as Azure can use on a best-effort basis. Fixed spreading requires a particular fault-domain count; insufficient available domains can prevent allocation. The supported counts and available settings depend on orchestration mode and whether the deployment is regional or zonal. Do not copy a fixed count from a diagram into every scale set. Select a supported spreading configuration, then pair it with the required zone placement and application redundancy. Maximum spreading is a distribution strategy, not a promise that every deployment receives the same fixed number of infrastructure groups."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/8-create-scale-sets",
+          "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-manage-fault-domains"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-virtual-machine-availability--9-implement-autoscale",
+    "sections": [
+      {
+        "title": "Respond to sustained demand, not every spike",
+        "paragraphs": [
+          "Autoscale changes the number of instances according to conditions that represent the workload. A scale-out rule adds capacity when demand remains high; a scale-in rule removes unneeded capacity after demand falls. Measurements over a time window help distinguish sustained pressure from a brief spike. For example, an order-processing service might tolerate a short burst while existing workers finish their requests, but need more instances when load stays elevated. Choose thresholds from acceptable application performance rather than an arbitrary percentage alone."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview"
+        ]
+      },
+      {
+        "title": "Use predictable patterns and control the range",
+        "paragraphs": [
+          "Schedules are useful when demand has a known pattern, such as a recurring working period or planned event. Scheduled profiles can apply capacity limits and rules at those times instead of waiting for the workload to become overloaded. Always define a useful minimum and a cost-conscious maximum. Combining scale-out and scale-in behavior lets the application recover capacity and later release unnecessary instances. Autoscale reduces repeated manual adjustments, but its rules still need to represent a workload that can actually use more instances and tolerate instances being removed. A scale-out trigger cannot grow capacity beyond the configured maximum, so limits need as much attention as the rule threshold."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-virtual-machine-availability--10-configure-autoscale",
+    "sections": [
+      {
+        "title": "Capacity limits and fallback serve different purposes",
+        "paragraphs": [
+          "Manual capacity holds the scale set at a configured count until you change it. Autoscale uses profiles with minimum, maximum and default counts. Minimum and maximum bound normal scaling; default is a safety fallback when metrics cannot be read. If current capacity is below the default, autoscale can scale out to it. It does not automatically scale in to the default when already above it. Select those counts using both service needs and the maximum cost you are prepared to support."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/10-configure-autoscale",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings"
+        ]
+      },
+      {
+        "title": "Make rules and removals explicit",
+        "paragraphs": [
+          "A metric rule describes what to measure, the aggregation and look-back window, the threshold and the scaling action. Define complementary scale-out and scale-in rules, allowing sufficient separation to avoid reacting to small fluctuations. A schedule chooses when a profile applies; its rules still need appropriate limits. The scale-in policy determines which instances are selected for removal. For a stateless web tier, that decision may be straightforward; for workers with local state, account for the application’s shutdown and data requirements before reducing capacity."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/10-configure-autoscale",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview"
+        ]
+      },
+      {
+        "title": "Review an example before enabling it",
+        "paragraphs": [
+          "Suppose a development service should use a small baseline but can add several instances during a regular testing period. Configure a bounded profile and examine which metric indicates its actual bottleneck. Use an averaging window that represents sustained load, then define both directions of scaling and the intended schedule. Confirm the settings as a coherent set: an unreachable maximum, a missing scale-in rule or an unsafe minimum can undermine an otherwise sensible trigger. Monitor scaling notifications and application behavior rather than assuming a rule’s existence proves it is effective."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/10-configure-autoscale",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-app-service-plans--2-implement-azure",
+    "sections": [
+      {
+        "title": "Separate the application from its hosting capacity",
+        "paragraphs": [
+          "An App Service app contains application configuration and deployment content. Its App Service plan defines the compute resources on which it runs: operating system, region, pricing tier, instance size and instance count. This separation matters because creating another app does not necessarily create another independently scaled server farm. Several apps can use the same plan. In dedicated tiers they share that plan’s allocated instances, so you need to consider their combined resource requirements rather than assessing each app in isolation."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+        ]
+      },
+      {
+        "title": "Share resources deliberately",
+        "paragraphs": [
+          "Hosting a small internal portal and a lightly used API in one plan can reduce the cost of separate compute allocations. The tradeoff is shared capacity: increased CPU or memory use by one app can affect the others. Before adding an app, compare its needs with the capacity already consumed. Standard plan-wide scaling changes apply across the apps using that capacity. Separate the apps when one is resource-intensive, requires independent scaling or must run in another region. A different plan is a compute-design choice, not merely a way to tidy the resource list. Review operating-system compatibility as well as capacity before moving another app into a shared plan."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-app-service-plans--3-determine-plan-pricing",
+    "sections": [
+      {
+        "title": "Treat the tier as a feature contract",
+        "paragraphs": [
+          "A plan tier defines more than price. It determines compute isolation, instance choices and features such as scaling and deployment slots. Free and Shared use shared infrastructure, apply CPU quotas and do not support scale-out; they are for development and testing and have no SLA. Basic, Standard and Premium provide dedicated compute for apps in that plan. Selecting dedicated compute does not mean each app receives its own private instance: apps in the same plan still share the allocated capacity."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+        ]
+      },
+      {
+        "title": "Match capabilities to the workload",
+        "paragraphs": [
+          "For a production website that needs staging slots and rule-based autoscale, compare the supported Standard or Premium offerings instead of choosing the cheapest size first. A larger Basic size does not automatically unlock every Standard feature. Premium generations differ, and current hosting choices include Premium v4, so avoid treating an older training table as a permanent catalogue. IsolatedV2 uses an App Service Environment for dedicated network isolation as well as compute isolation. Region and operating-system support also affect which plans can be selected."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+          "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+        ]
+      },
+      {
+        "title": "Make the decision in two passes",
+        "paragraphs": [
+          "First list required features: deployment slots, backup behavior, scaling method and any network-isolation requirement. Then estimate CPU, memory and instance capacity for the apps that will share the plan. This prevents two common mistakes: buying sufficient hardware in a tier missing a required feature, or paying for advanced features while underestimating the shared workload. Review current plan details before purchase because instance limits and available hardware depend on the actual offering, not a generic label such as Premium."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-app-service-plans--4-scale-up-scale-out",
+    "sections": [
+      {
+        "title": "Scaling up changes what each instance can provide",
+        "paragraphs": [
+          "Scale up when the application needs more CPU, memory or storage per instance, or a feature available in a higher tier. You can select a larger size within a tier or move to a different tier. For example, a small app may first need a tier change to gain staging slots, even if its current CPU use is low. Moving down reverses that choice, so confirm the lower tier still supports both the workload and the features it uses."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out",
+          "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up"
+        ]
+      },
+      {
+        "title": "Scaling out changes how many instances serve the app",
+        "paragraphs": [
+          "Scale out increases the number of instances rather than making each one larger. Manual scaling sets a chosen count; rule-based autoscale adjusts the count according to metrics or schedules within configured limits. The plan’s tier bounds the available choices. Apps sharing the plan generally share its scale changes unless a supported per-app configuration applies. A busy API and a quiet website can therefore compete for the same scaled capacity, which is one reason to consider separate plans for independent requirements."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+          "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up"
+        ]
+      },
+      {
+        "title": "Scale the complete service, not only the frontend",
+        "paragraphs": [
+          "App Service plan changes do not automatically resize an Azure SQL database or another external dependency. If the website’s requests are waiting on a constrained database, adding app instances may not remove that bottleneck. Use application and resource monitoring to decide which component needs capacity. For an event-registration site, choose a safe plan capacity for peak demand, then examine database throughput and storage behavior separately. Scale down after the event when appropriate, taking care that the remaining tier and instance count still meet the application’s needs."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out",
+          "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-app-service-plans--5-plan-scaling",
+    "sections": [
+      {
+        "title": "Build a bounded rule-based profile",
+        "paragraphs": [
+          "Rule-based autoscale uses profiles with capacity limits and metric rules. A rule includes a metric, evaluation window, threshold and a scale action. Pair scale-out and scale-in rules so the application can both recover under sustained demand and remove unnecessary instances later. Minimum capacity supports the required baseline, while maximum capacity limits growth and cost. The default count is a fallback when metrics are unavailable: autoscale can scale out to it if current capacity is lower, but does not automatically reduce a higher count to the default."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings"
+        ]
+      },
+      {
+        "title": "Use schedules and notifications for predictable operations",
+        "paragraphs": [
+          "A scheduled profile applies settings at specified times, useful when traffic follows a regular pattern. For example, a reservation site might need a higher baseline during a recurring booking period. Choose the aggregation and time window so the metric describes sustained demand rather than a fleeting peak. Configure email or webhook notifications for scaling events. Those notifications report what autoscale is doing; a scheduled profile is not itself a general-purpose scheduler for unrelated application jobs."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview"
+        ]
+      },
+      {
+        "title": "Distinguish automatic scaling from autoscale rules",
+        "paragraphs": [
+          "App Service automatic scaling is a separate HTTP-traffic-driven feature on supported Premium v2, v3 and v4 plans. It uses per-app settings, always-ready instances and a plan maximum burst instead of custom metric rules. Choose rule-based autoscale when custom metrics or schedules are necessary. Consider automatic scaling when the main requirement is responding to unpredictable incoming HTTP demand with less rule maintenance. Neither choice removes the need to check application state, dependencies and an appropriate maximum capacity."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+          "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-app-services--2-implement",
+    "sections": [
+      {
+        "title": "Understand what the platform manages",
+        "paragraphs": [
+          "App Service hosts web applications, mobile backends and APIs while managing the underlying hosting infrastructure. You select the application runtime and configuration rather than building a VM solely to run the web stack. Supported languages and frameworks depend on the chosen operating system and deployment approach; a custom container is another option. This is useful when the main task is delivering an HTTP application, but the application still needs compatible dependencies and suitable data services outside its code package."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/2-implement",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview"
+        ]
+      },
+      {
+        "title": "Connect development to repeatable releases",
+        "paragraphs": [
+          "Deployment integrations let repositories and build pipelines publish the application. Continuous integration can compile code and run tests, while staging slots provide a place to validate a release before production. These features support different parts of the release process: a successful build demonstrates that the artifact was produced, whereas a staging check examines how it behaves with its hosting configuration. Choose the App Service plan separately, because available deployment and scale features depend on that plan’s tier."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/2-implement",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview"
+        ]
+      },
+      {
+        "title": "Combine hosting with explicit security choices",
+        "paragraphs": [
+          "Built-in authentication can handle sign-in with supported identity providers; IP restrictions control network-based access; managed identities support access to other Azure resources. They are complementary controls rather than replacements for one another. For an internal research API, decide which users may call it, which network paths are permitted and how its backend resources authorize the app. Then use monitoring to observe failures and performance. Platform hosting reduces server administration, but does not decide the application’s authorization policy or business behavior for you."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/2-implement",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-app-services--3-create-app-service",
+    "sections": [
+      {
+        "title": "Choose a runtime and plan that can actually host the app",
+        "paragraphs": [
+          "The creation form combines an app name, publishing method, runtime stack, operating system, region and App Service plan. Code publishing relies on a supported platform runtime; a custom container includes the chosen application environment. Verify the language and version against the selected OS rather than assuming all combinations are interchangeable. The region determines which plans can host the app. The app’s default hostname is useful for an initial deployment, while custom-domain mapping is a separate configuration step."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service",
+          "https://learn.microsoft.com/en-us/azure/app-service/configure-common",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview"
+        ]
+      },
+      {
+        "title": "Understand the post-creation switches",
+        "paragraphs": [
+          "Always On keeps the app loaded during idle periods, avoiding the unload and subsequent warm-up behavior. It is required for continuous or CRON-triggered WebJobs in supported configurations. Session affinity keeps a client on the same instance during its session, which can help an app that stores session state locally; stateless apps may not need it. HTTPS Only redirects HTTP requests to HTTPS. These switches solve different problems, so do not use session affinity or Always On as a substitute for transport security."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service",
+          "https://learn.microsoft.com/en-us/azure/app-service/configure-common"
+        ]
+      },
+      {
+        "title": "Keep application configuration explicit",
+        "paragraphs": [
+          "Linux runtime and custom-container configurations can specify a startup command when needed. App settings supply environment-specific values at startup, and changing them can restart the app. For a test API, separate its runtime choice from settings such as a backend URL, then check the deployed startup behavior before assuming it is ready. This makes failures easier to distinguish: an incompatible runtime, an incorrect command and a missing configuration value can all stop an app without indicating a capacity problem."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service",
+          "https://learn.microsoft.com/en-us/azure/app-service/configure-common"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-app-services--4-explore-continuous-integration-deployment",
+    "sections": [
+      {
+        "title": "Turn a repository change into a deliberate deployment",
+        "paragraphs": [
+          "Deployment Center connects the app to supported source and build providers. With GitHub, you can use GitHub Actions or App Service Build Service; other supported integrations include Azure Repos and Bitbucket. A pipeline can compile code, run tests and publish an artifact when the configured trigger occurs. Choose the repository and branch deliberately. A deployment source defines where updates come from, while the pipeline defines how they are built and released. Changing either can change what reaches the app."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/4-explore-continuous-integration-deployment",
+          "https://learn.microsoft.com/en-us/azure/app-service/deploy-continuous-deployment"
+        ]
+      },
+      {
+        "title": "Distinguish continuous deployment from a manual push",
+        "paragraphs": [
+          "A remote Git deployment endpoint lets an administrator push code to the app manually. That is different from a connected repository triggering future deployments automatically. For a small prototype, a manual push may be sufficient. For a team-maintained service, automated builds and tests make repeated releases easier to reproduce. Neither approach alone validates production behavior: combine it with the appropriate staging, application configuration and monitoring for the chosen plan. Avoid treating a successful transfer of files as proof the application started correctly."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/4-explore-continuous-integration-deployment",
+          "https://learn.microsoft.com/en-us/azure/app-service/deploy-continuous-deployment"
+        ]
+      },
+      {
+        "title": "Use a release path you can explain",
+        "paragraphs": [
+          "Imagine a support portal maintained by several developers. Select the intended source branch, establish the build provider, run the tests and identify the deployment destination. A staging slot can serve as the destination before a controlled production swap when the plan supports slots. Keep deployment credentials and permissions appropriate to the selected provider. The useful outcome is a traceable relationship between source, built artifact and running app, rather than an update process that depends on someone remembering several undocumented clicks."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/4-explore-continuous-integration-deployment",
+          "https://learn.microsoft.com/en-us/azure/app-service/deploy-continuous-deployment",
+          "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-app-services--5-create-deployment-slots",
+    "sections": [
+      {
+        "title": "A slot is a live environment for the same app",
+        "paragraphs": [
+          "A deployment slot is a separately addressable live app with its own hostname, available on supported Standard, Premium and Isolated tiers. You can deploy new content to staging and exercise it before changing production. Slots share the hosting plan’s resources, so staging activity still consumes capacity. A slot therefore provides a release boundary, not an automatically isolated server farm. Decide what testing can run safely alongside production, particularly when both versions use external services."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots",
+          "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+        ]
+      },
+      {
+        "title": "Warm and validate before redirecting production",
+        "paragraphs": [
+          "A swap changes the application content and eligible configuration between slots. The swap process prepares the source deployment before changing traffic to help reduce cold starts and interruption. Validate the staged application and its intended settings, then perform the swap. Afterward, the other slot holds the previous production version, allowing a reverse swap if the release fails. That rollback covers the app content and swapped settings; it does not automatically reverse external database changes made by the application."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots",
+          "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+        ]
+      },
+      {
+        "title": "Choose automation with the correct limits",
+        "paragraphs": [
+          "Auto swap can streamline compatible deployments after the source is warmed, but it is not supported for Linux web apps or Web App for Containers. Use a manual or pipeline-controlled swap when that feature is unavailable or when pre-swap validation is needed. For a booking application, test a new page in staging, check its backend connections and then promote it. Review both the release and rollback path before relying on slots as a replacement for application-level testing."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots",
+          "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-app-services--6-add-deployment-slots",
+    "sections": [
+      {
+        "title": "Cloning copies configuration, not deployment content",
+        "paragraphs": [
+          "When adding a slot, you can start with an empty configuration or clone settings from an existing slot. Cloning makes it easier to reuse runtime versions and settings, but you still need to deploy the application content. Review the cloned configuration rather than assuming every property or network resource was duplicated. For example, a staging app may need a different connection string from production even when its runtime is identical. Its separate hostname lets you test those settings directly."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+          "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+        ]
+      },
+      {
+        "title": "Decide which values follow the release",
+        "paragraphs": [
+          "Some configuration follows the content during a swap; other properties remain with the slot. App settings, connection strings and mounted storage can be marked as deployment-slot settings. Mark environment-specific values when they must remain attached to staging or production instead of moving with the code. Custom domains, scale settings, managed identities and virtual network integration normally remain slot-specific. This means an identity available in one slot does not simply move with the application to the other slot."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+          "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+        ]
+      },
+      {
+        "title": "Review the whole configuration before swapping",
+        "paragraphs": [
+          "For a release that uses different test and production databases, keep the intended connection values slot-specific and confirm the staged app’s behavior with its assigned resources. Inspect runtime, startup settings, identities and network access as well as the files being deployed. A swap is a release operation across settings with distinct rules, not an unconditional exchange of every property. Reviewing the current swapped-versus-sticky table is useful whenever the application depends on a setting whose behavior is uncertain."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+          "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-app-services--7-secure-app-service",
+    "sections": [
+      {
+        "title": "Put platform authentication in front of application requests",
+        "paragraphs": [
+          "App Service’s authentication module runs separately from the application code and can authenticate through configured providers, handle tokens and add identity information to headers. It reduces the amount of sign-in plumbing the application must implement. You can also choose your framework’s authentication features instead. The platform module is a request-processing facility, not an instruction that every request should be public or every signed-in user should receive the same business permissions."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization"
+        ]
+      },
+      {
+        "title": "Choose anonymous behavior to match the user flow",
+        "paragraphs": [
+          "Allowing anonymous requests lets the application decide what public visitors can see and when to request sign-in. Requiring authentication protects the app broadly, but can also restrict a public home page. For browser experiences, a redirect to the provider may be appropriate; an API may need an unauthorized response instead of an HTML sign-in flow. Current settings support explicit rejection choices. Decide from the client’s expected behavior, rather than assuming that one default is suitable for browsers, mobile clients and APIs alike."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization"
+        ]
+      },
+      {
+        "title": "Investigate failures at the correct layer",
+        "paragraphs": [
+          "Use authentication traces and application logs to distinguish a provider or token problem from an application error after sign-in. Failed-request tracing is useful in supported Windows configurations; do not assume the same Windows module trace appears in every Linux or container deployment. For a customer portal with a public welcome page, test both anonymous and authenticated requests, then check which identity information reaches the application. A successful login is only one part of the desired access behavior."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-app-services--8-create-custom-domain-names",
+    "sections": [
+      {
+        "title": "Map a name you control to the running app",
+        "paragraphs": [
+          "The default App Service hostname provides a working address without requiring a custom domain. For a branded address, you must control the domain and configure its DNS records before adding it to the app. DNS mapping and App Service hostname validation are separate steps. A DNS record can direct traffic toward the service, but the app must also recognize the hostname. Keep the default app hostname available while checking the custom mapping so you can distinguish DNS problems from application failures."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names",
+          "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain"
+        ]
+      },
+      {
+        "title": "Choose the right DNS record and verify ownership",
+        "paragraphs": [
+          "An A record maps a name to the app’s IP address; a CNAME maps a subdomain to the app hostname. A CNAME follows changes to that target’s IP, whereas a directly mapped A record may need updating. The normal root-domain mapping uses an A record rather than a root CNAME. App Service supplies domain-verification information, and the recommended TXT record helps protect against subdomain takeover. Follow the actual values shown for your app rather than copying another deployment’s hostname or verification identifier."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names",
+          "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain"
+        ]
+      },
+      {
+        "title": "Add TLS after the domain is recognized",
+        "paragraphs": [
+          "Validate and add the hostname in App Service, then configure a suitable certificate and TLS binding. A correct DNS record alone does not provide the HTTPS certificate for your custom name. App Service Managed Certificates are available for supported configurations on Basic or higher tiers; check eligibility rather than assuming every hostname and deployment supports one. For a company help site, test the custom hostname over HTTPS and confirm it reaches the intended app after mapping and binding are complete."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names",
+          "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-app-services--9-backup-app-service",
+    "sections": [
+      {
+        "title": "Distinguish automatic backups from custom backups",
+        "paragraphs": [
+          "App Service offers automatic and custom backups on supported Basic, Standard, Premium and Isolated plans. Basic covers the production slot. Automatic backups do not require you to configure a destination storage account; custom backups use your chosen storage account and container. Backup content and limits differ between the two types. Identify which type you are relying on before assuming that a backup schedule, destination or database coverage from one applies to the other."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/9-backup-app-service",
+          "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
+        ]
+      },
+      {
+        "title": "Protect external dependencies separately",
+        "paragraphs": [
+          "Automatic backups exclude linked databases. Existing custom backups that already include linked databases continue to protect them until 31 March 2028. New custom backup configurations stopped offering linked MySQL and PostgreSQL databases in November 2025, and linked Azure SQL and SQL Server databases in April 2026. Plan database recovery through the database service’s supported backup mechanism. Custom backups can use firewall-protected storage when the documented virtual-network configuration permits the app to reach its backup storage through that network."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/9-backup-app-service",
+          "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
+        ]
+      },
+      {
+        "title": "Know what a restore will overwrite",
+        "paragraphs": [
+          "A full restore replaces the site content with the selected backup; files absent from that backup can be removed. Partial backups exclude selected files or directories, and excluded locations are left unchanged during the corresponding restore. Custom backup files include compressed content and a manifest, which can be inspected without a restore. For a portal release, identify whether you need app rollback, file recovery or database recovery before choosing an operation. Test the required restore behavior rather than treating the presence of a backup as proof the entire service is recoverable."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/9-backup-app-service",
+          "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-app-services--10-use-application-insights",
+    "sections": [
+      {
+        "title": "Observe the request path, not only the server",
+        "paragraphs": [
+          "Application Insights is an Azure Monitor capability for application performance and usage. Request rates, duration and failure rates help answer whether the service is receiving more work and whether users are experiencing problems. Compare the signals together: rising response times during increased request volume may indicate a capacity bottleneck, while failures with normal volume can point to a different issue. Instrumentation is necessary for application telemetry; hosting an app is not equivalent to collecting every application-specific event."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"
+        ]
+      },
+      {
+        "title": "Follow dependencies and investigate individual failures",
+        "paragraphs": [
+          "Dependency telemetry helps identify calls to databases or external services that contribute to slow or failed requests. Exceptions and diagnostic traces provide detail beyond a summary failure percentage. For an ordering API, a slow response might come from the API’s own processing or from a database call it waits for. Correlating the request with dependency and exception information makes that distinction more useful than repeatedly scaling the web tier without understanding the cause."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"
+        ]
+      },
+      {
+        "title": "Measure the outcomes that matter to the app",
+        "paragraphs": [
+          "Page views, user and session measurements can describe usage when the relevant client telemetry is configured. Custom events and metrics let the application record domain-specific activity, such as a completed registration or a processing queue outcome. Performance counters and host diagnostics supply additional resource context where supported. Choose telemetry that answers an operational or product question, then use trends and detailed traces together. A useful dashboard should help you decide what to investigate, not merely display all available numbers."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-app-services--11-simulation-web-apps",
+    "sections": [
+      {
+        "title": "Translate the migration into distinct tasks",
+        "paragraphs": [
+          "The optional lab migrates a PHP web application to App Service and demonstrates slots, deployment and scaling. It requires an Azure subscription; use the linked current lab for exact files and deployment settings. First identify a supported runtime and App Service plan, including a tier that supports the required staging slot and autoscale behavior. A source application’s previous server OS does not by itself determine the appropriate target runtime. Confirm the target stack rather than assuming every language and OS combination is supported."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/11-simulation-web-apps",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview",
+          "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+        ]
+      },
+      {
+        "title": "Release through staging rather than replacing production immediately",
+        "paragraphs": [
+          "Create the web app and staging slot, configure deployment, and send the new code to staging. Test its hostname and configuration before swapping it into production. The slots share plan capacity, while selected environment settings can remain slot-specific, so check both the application and the settings involved in promotion. After the swap, use the previous version retained in the other slot to understand the rollback path. Do not assume this also reverses changes made in an external database."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/11-simulation-web-apps",
+          "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+        ]
+      },
+      {
+        "title": "Test scaling as observable behavior",
+        "paragraphs": [
+          "Configure bounded autoscale settings, then follow the lab’s workload and observation steps to see whether the intended condition adds or removes capacity. A rule that exists in the portal has not necessarily been exercised. Check the app’s response and scaling results together. Keep the demonstration within resources you deliberately created, and clean up those lab resources afterward. The useful lesson is the complete release-and-capacity sequence: deploy, validate, promote, observe and then stop paying for a finished experiment."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/11-simulation-web-apps",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings",
+          "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+        ],
+        "steps": [
+          "Create the app and a supported staging slot.",
+          "Configure deployment and deploy the code to staging.",
+          "Validate the staged app and its environment settings.",
+          "Swap into production, then configure and test autoscale using the official lab."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-container-instances--2-compare-containers-to-virtual-machines",
+    "sections": [
+      {
+        "title": "Virtualize the application environment or the whole machine",
+        "paragraphs": [
+          "A VM runs a complete guest operating system, including its kernel, on virtualized hardware. A typical process-isolated container packages the application and the user-mode environment it needs while sharing the host kernel. That difference helps explain why containers often need fewer resources and start faster. It also explains why ordinary process isolation is a different security boundary from a full VM. Avoid assuming every container technology uses an identical isolation model; platform-managed hosting can provide additional isolation around containers."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview"
+        ]
+      },
+      {
+        "title": "Use packaging for consistent deployment",
+        "paragraphs": [
+          "A container image includes application code, runtime, libraries and settings needed by that workload. Reusing the image helps make deployments consistent rather than rebuilding each host by hand. The image does not magically make all operating systems, processors or storage interfaces compatible, so select an appropriate host platform. For a small API, a container can carry the required runtime alongside the code. A VM may be more appropriate when the workload needs broad control of the guest OS or machine-level dependencies."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines"
+        ]
+      },
+      {
+        "title": "Distinguish one container from orchestrated applications",
+        "paragraphs": [
+          "Running a container and coordinating a fleet are separate concerns. An orchestrator manages placement, scaling and recovery of many containers; a VM also needs an explicit availability and recovery design. Persistent data must use an appropriate durable storage service rather than assuming a replaced container or VM retains its local state. Choose the management model from the application: an isolated task may not need a cluster, while a multi-service application may need coordinated deployment and health management."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines",
+          "https://learn.microsoft.com/en-us/azure/container-apps/overview"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-container-instances--3-review",
+    "sections": [
+      {
+        "title": "Use ACI when an isolated container is enough",
+        "paragraphs": [
+          "Azure Container Instances runs container workloads without requiring you to maintain a VM or operate a Kubernetes cluster. You provide a compatible image and configure the container group. This makes it useful for an isolated processing task or a simple containerized application that does not require a full orchestration platform. An image carries the software environment, but the group still needs suitable CPU, memory, network and storage settings. Fast startup is an advantage, not a guarantee that every application is instantly ready."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview"
+        ]
+      },
+      {
+        "title": "Understand resource and platform limits",
+        "paragraphs": [
+          "Select CPU and memory when deploying. Changing CPU, memory or GPU allocation requires deleting and recreating the group rather than resizing it in place. ACI supports both Linux and Windows containers, but its features differ by platform: multi-container groups and Azure Files volume mounts are Linux-only. An Azure Files mount supplies persistent shared storage for a supported Linux workload. Do not infer that Windows support includes every feature described in a Linux example."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+        ]
+      },
+      {
+        "title": "Choose public exposure or private connectivity",
+        "paragraphs": [
+          "A publicly exposed group can have an IP address, DNS label and explicitly exposed ports. A supported Linux group deployed into a virtual network uses private connectivity and does not receive a public IP. Decide which access pattern the task needs before deploying. For an internal document-processing container, private communication with Azure resources may be more suitable than an internet-facing endpoint. For a demonstration web container, an exposed port and application response provide a straightforward way to verify the deployment."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-container-instances--4-implement-container-groups",
+    "sections": [
+      {
+        "title": "Think of a group as a shared lifecycle boundary",
+        "paragraphs": [
+          "An ACI container group schedules its containers on the same host, sharing lifecycle, resources, local networking and storage volumes. A multi-container group is similar to a Kubernetes pod in purpose, but does not require you to operate Kubernetes. In ACI, multi-container groups support Linux; a Windows group supports a single container. Group resource requirements are calculated from the containers’ requests, so a helper container consumes real capacity rather than being an unlimited add-on to the main app."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+        ]
+      },
+      {
+        "title": "Use cooperating containers for one functional unit",
+        "paragraphs": [
+          "An original example is a small reporting app paired with a helper that retrieves updated content, or an application paired with a logging component. Separate images let the components have different responsibilities while sharing the group’s local environment. Deploy the definition with an ARM template, Bicep or YAML according to the broader infrastructure workflow. YAML focuses on the container deployment, while infrastructure-as-code approaches are useful when the group is part of a larger set of Azure resources."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+        ]
+      },
+      {
+        "title": "Expose the ports the group actually uses",
+        "paragraphs": [
+          "Containers in a group share the network and port namespace. For an external client to reach a container, expose its port on both the group IP configuration and the container definition. ACI does not support translating one group port into another container port through port mapping. Plan the applications’ listening ports so they do not conflict. Deleting the group releases its assigned IP address and DNS name; do not treat those values as persistent identifiers independent of the group lifecycle."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-container-instances--5-review-docker-platform",
+    "sections": [
+      {
+        "title": "Choose managed application hosting rather than a cluster",
+        "paragraphs": [
+          "Azure Container Apps provides managed hosting for containerized APIs, microservices, event-driven workloads and jobs. It uses Kubernetes and related technologies internally without exposing the Kubernetes API for direct cluster management. This is useful when the desired outcome is running services with managed deployment and scaling, rather than controlling every Kubernetes resource. Features such as service discovery and traffic splitting help multiple components work together. Supported jobs can run on demand, on a schedule or in response to events."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform",
+          "https://learn.microsoft.com/en-us/azure/container-apps/overview"
+        ]
+      },
+      {
+        "title": "Match scaling to the event that creates work",
+        "paragraphs": [
+          "Container Apps can scale using HTTP traffic, supported event sources and KEDA scalers, including CPU or memory signals. Supported event-driven configurations can scale to zero, but a configuration without ingress or a suitable custom rule can reach zero and have no way to restart. Set a minimum of one or more replicas when the app must keep a running baseline. For a queue-driven worker, queue demand can be the useful trigger; for an HTTP API, incoming requests may be more appropriate. Select the rule from the workload rather than treating all signals as interchangeable."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform",
+          "https://learn.microsoft.com/en-us/azure/container-apps/scale-app"
+        ]
+      },
+      {
+        "title": "Compare ACI, Container Apps and AKS by control needs",
+        "paragraphs": [
+          "ACI is a direct option for isolated container tasks without cluster management. Container Apps adds a managed application experience for services and event-driven processing. AKS is the option when the design needs direct Kubernetes APIs and more control over orchestration. For example, a single short processing job does not automatically justify a cluster, while a team requiring custom Kubernetes management may need AKS. The choice is about operational features and control, not simply whether the application has already been packaged as a container."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform",
+          "https://learn.microsoft.com/en-us/azure/container-apps/overview"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "configure-azure-container-instances--6-simulation-containers",
+    "sections": [
+      {
+        "title": "Prepare a container deployment you can verify",
+        "paragraphs": [
+          "The optional lab deploys an Azure Container Instance from a Docker image and tests the resulting application. You need an Azure subscription and permission to create the lab resources. Follow the linked exercise for its exact image and settings instead of substituting unrelated commands. Before deployment, identify the image’s operating-system requirements, resource allocation and listening port. These choices have separate roles: the image supplies software, CPU and memory supply execution capacity, and networking determines which clients can reach it."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/6-simulation-containers",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview"
+        ]
+      },
+      {
+        "title": "Check both provisioning and application behavior",
+        "paragraphs": [
+          "A completed resource deployment confirms that Azure created the group, but you still need to verify that its application responds as intended. For a public web demonstration, inspect the assigned endpoint and exposed application port, then use the lab’s test to confirm the response. A private virtual-network deployment would need a client with the appropriate private connectivity instead. A wrong port or incompatible image is not fixed merely by waiting longer for the deployment notification."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/6-simulation-containers",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+        ]
+      },
+      {
+        "title": "Use the lifecycle to understand the service",
+        "paragraphs": [
+          "Inspect the group configuration and relate it to the running container. Note which data is temporary and whether a supported persistent volume is configured; do not assume group recreation preserves local application files. Keep the exercise scoped to the resources you created, and remove them after testing when they are no longer needed. The aim is to connect the image, resource settings and endpoint to an observable application result, rather than memorizing one image name from a walkthrough."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/6-simulation-containers",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview",
+          "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update"
+        ],
+        "steps": [
+          "Open the official lab and select its compatible container image.",
+          "Configure the specified group resources and networking, then deploy.",
+          "Verify group deployment and test the application through the expected endpoint.",
+          "Inspect the configuration and clean up only the completed lab resources."
+        ]
+      }
+    ]
+  }
+]

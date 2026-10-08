@@ -10,10 +10,11 @@ test('course notes navigate, save completion and reopen offline without a notes 
  await expect(page.getByLabel('Learning path')).toHaveCount(1);await expect(page.getByRole('combobox',{name:'Module',exact:true})).toHaveCount(1);
  await page.getByRole('combobox',{name:'Lesson',exact:true}).selectOption({label:'What is Azure Cloud Shell?'});
  await expect(page.locator('.course-points')).toContainText('Cloud Shell');
+ await expect(page.locator('.course-explanations')).toBeVisible();await expect(page.locator('.course-explanations h3')).toHaveCount(3);const expandedText=await page.locator('.course-explanations').innerText();expect(expandedText.split(/\s+/).length).toBeGreaterThan(180);
  await page.getByRole('button',{name:'Mark as read',exact:true}).click();await expect(page.getByRole('button',{name:'Marked read ✓',exact:true})).toBeVisible();
  await page.getByRole('link',{name:'Home',exact:true}).click();await page.getByRole('link',{name:'Read & listen',exact:true}).click();
  await expect(page.getByRole('heading',{name:'What is Azure Cloud Shell?',exact:true})).toBeVisible();await expect(page.getByRole('button',{name:'Marked read ✓',exact:true})).toBeVisible();
- await context.setOffline(true);await page.reload();await expect(page.locator('.course-points')).toContainText('Cloud Shell');await page.getByRole('button',{name:'Next lesson',exact:true}).click();await expect(page.getByRole('heading',{name:'How does Azure Cloud Shell work?',exact:true})).toBeVisible();await expect(page.getByRole('heading',{name:'How does Azure Cloud Shell work?',exact:true})).toBeInViewport({ratio:1});
+ await context.setOffline(true);await page.reload();await expect(page.locator('.course-points')).toContainText('Cloud Shell');expect(await page.locator('.course-explanations').innerText()).toBe(expandedText);await page.getByRole('button',{name:'Next lesson',exact:true}).click();await expect(page.getByRole('heading',{name:'How does Azure Cloud Shell work?',exact:true})).toBeVisible();await expect(page.getByRole('heading',{name:'How does Azure Cloud Shell work?',exact:true})).toBeInViewport({ratio:1});
  await expect(page.getByRole('textbox')).toHaveCount(0);
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
 });
@@ -42,4 +43,10 @@ test('spoken text follows passage and word events with reachable pause controls'
  await expect.poll(()=>page.evaluate(()=>{const word=document.querySelector('.course-spoken-word')!.getBoundingClientRect(),toolbar=document.querySelector('.course-playback-active')!.getBoundingClientRect();return word.top>=16&&word.bottom<=toolbar.top-12})).toBe(true);
  await expect(page.getByRole('button',{name:'Pause reading',exact:true})).toBeInViewport({ratio:1});await page.getByRole('button',{name:'Pause reading',exact:true}).click();await expect(page.locator('.course-spoken-word')).toHaveText('locally');
  await page.getByRole('button',{name:'Stop reading',exact:true}).click();await expect(page.locator('.course-reading-passage')).toHaveCount(0);
+ await page.getByRole('button',{name:'Play course notes',exact:true}).click();
+ for(let i=0;i<60&&!await page.locator('.course-explanations p .course-reading-passage').count();i++)await page.evaluate(()=>(window as any).__courseSpoken.at(-1).onend());
+ await expect(page.locator('.course-explanations p .course-reading-passage')).toBeVisible();
+ await page.evaluate(()=>{const utterance=(window as any).__courseSpoken.at(-1);utterance.onboundary({name:'word',charIndex:0,charLength:utterance.text.split(/\s+/)[0].length})});
+ await expect(page.locator('.course-explanations .course-spoken-word')).toBeVisible();await expect(page.getByRole('button',{name:'Pause reading',exact:true})).toBeInViewport({ratio:1});
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
 });

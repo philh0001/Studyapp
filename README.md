@@ -8,6 +8,8 @@ The first application build is implemented on `feature/az104-revision`: phone-fi
 
 The next100 programme adds a searchable library, personal folders/tags and presets, cited objective summaries and practical exercises, separately scheduled reviewed flashcards, detailed learning insights, self-paced cases, evidence/change dashboards, read-aloud controls, safer backups and complete offline-asset checks. See the [100-item delivery ledger](docs/verification/2026-10-08-next-100-traceability.md) and [source pipeline](docs/SOURCE_PIPELINE.md). Teaching material remains clearly labelled AI-assisted draft.
 
+The Learn reader now adds fuller explanations, scenarios and practical steps across all 151 teaching/exercise units in the 28-module course, alongside the original quick points. Expanded text is included in browser read-aloud/highlighting and offline reading. Each module also has six original source-backed assessment questions. See [course content and source reviews](content/course/README.md).
+
 ## Start here
 
 - [Authorised hundred-improvement plan](docs/superpowers/plans/2026-10-08-next-100.md).

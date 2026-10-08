@@ -1,0 +1,578 @@
+[
+  {
+    "lessonId": "control-network-traffic-flow-with-routes--2-azure-virtual-network-route",
+    "sections": [
+      {
+        "title": "Read a route as a forwarding decision",
+        "paragraphs": [
+          "A route answers where a packet should go next, using its destination address. It does not decide whether the packet is authorized. For example, a route to a firewall can be correct while an NSG still denies the connection. Azure provides subnet system routes; a route table adds administrator-defined choices without deleting that underlying routing foundation."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+        ]
+      },
+      {
+        "title": "Work through specificity and exceptions",
+        "paragraphs": [
+          "Suppose a workload has 10.64.0.0/16 through an appliance and 10.64.8.0/24 with next hop None. A packet to 10.64.8.20 selects the /24 and is dropped. For equal ordinary prefixes, a UDR precedes BGP and system routes. Preserve the important exception: preferred VNet, peering and service-endpoint system routes override BGP even when BGP is more specific; service-endpoint routes cannot be overridden by a UDR."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+        ]
+      },
+      {
+        "title": "Connect policy to the source subnet",
+        "paragraphs": [
+          "The table must be associated with the subnet whose outgoing traffic needs the custom path. One table can serve several subnets, but a subnet can use only one table. BGP supplies learned hybrid routes; service tags reduce maintenance of service address prefixes. Inspect effective NIC routes to see the combined result rather than assuming the configured UDR table is the complete route list."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem"
+        ],
+        "steps": [
+          "Identify the destination prefix and required next hop.",
+          "Check the source subnet association and effective routes.",
+          "Test the selected path and its independent security permissions."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "control-network-traffic-flow-with-routes--3-exercise-create-custom-routes",
+    "sections": [
+      {
+        "title": "Plan the three roles before creating resources",
+        "paragraphs": [
+          "Treat this exercise as building a forwarding policy before building the device that will enforce it. In an original lab design, use a client subnet, a protected-server subnet and an appliance subnet. The route destination must describe the protected servers, while the next-hop IP must identify the appliance. Swapping those two values sends traffic toward the wrong destination or device."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/3-exercise-create-custom-routes",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+        ]
+      },
+      {
+        "title": "Understand what the association changes",
+        "paragraphs": [
+          "A table stored in a resource group has no effect on an unassociated subnet. When you associate it with the client subnet, matching packets leaving that subnet take the chosen appliance path. The protected subnet does not automatically inherit this table. Creating the route first is valid, but it is not proof of working connectivity while the appliance and forwarding configuration are still absent."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/3-exercise-create-custom-routes",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+        ]
+      },
+      {
+        "title": "Review a complete configuration",
+        "paragraphs": [
+          "For example, choose protected range 10.64.20.0/24 and appliance address 10.64.30.4. The custom route uses that /24 destination, Virtual appliance as next-hop type and 10.64.30.4 as next-hop address. Keep the appliance in a separate subnet to avoid routing loops. The optional lab uses your subscription; record the resource group so you can identify the resources afterward."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/3-exercise-create-custom-routes",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+        ],
+        "steps": [
+          "Create the table and destination-specific appliance route.",
+          "Create valid, nonoverlapping client, protected and appliance subnets.",
+          "Associate the table with the client subnet and inspect the saved association."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "control-network-traffic-flow-with-routes--4-network-virtual-appliances",
+    "sections": [
+      {
+        "title": "Separate routing from inspection",
+        "paragraphs": [
+          "An NVA is software running on virtual machines that performs a network function. A routing appliance forwards traffic, while a firewall or intrusion-prevention appliance may inspect and reject it. Sending packets through a plain forwarding VM does not by itself provide threat detection. Choose the appliance function and configure its policy as well as the Azure route that sends traffic to it."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+        ]
+      },
+      {
+        "title": "Make transit possible at both layers",
+        "paragraphs": [
+          "Azure NIC IP forwarding and operating-system forwarding address different parts of the path. The NIC must permit forwarded traffic, and the guest must actually relay it toward the destination. An appliance might have a management interface separate from traffic interfaces. Put workloads in their own subnets so user-defined routes can steer the intended traffic through the appliance without placing the appliance inside its own forwarding loop."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+        ]
+      },
+      {
+        "title": "Design for an appliance failure",
+        "paragraphs": [
+          "Imagine two application tiers depending on one inspection VM. Even healthy application servers lose communication if that sole VM fails. Availability therefore includes the transit device, not just the workload VMs. Highly available NVA designs can use multiple appliances and an internal Standard Load Balancer with HA ports; the exact design must suit the appliance and traffic directions."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/components"
+        ],
+        "steps": [
+          "Identify which subnet-to-subnet flows need inspection.",
+          "Confirm Azure and guest forwarding, appliance policy and return routes.",
+          "Include a supported high-availability design before making the device a production dependency."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "control-network-traffic-flow-with-routes--5-exercise-create-nva-vm",
+    "sections": [
+      {
+        "title": "Build a forwarding device deliberately",
+        "paragraphs": [
+          "The Ubuntu VM in this exercise is a simple demonstration of forwarding, not a preconfigured production firewall. Its placement in the perimeter subnet makes it reachable as the next hop chosen earlier. Before changing settings, identify the VM and its NIC so you do not enable forwarding on a workload interface by mistake. The route must reference the appliance private IP, not its administration public IP."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+        ]
+      },
+      {
+        "title": "Understand the two forwarding switches",
+        "paragraphs": [
+          "Enabling IP forwarding on the Azure NIC permits transit packets that are not addressed to that NIC itself. Inside Linux, the IPv4 forwarding setting makes the guest relay those packets. Either missing layer can leave traffic arriving at the appliance without reaching the protected server. The exercise sets the runtime guest value; avoid assuming that a one-time command is a complete persistent appliance configuration."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+        ]
+      },
+      {
+        "title": "Check the device before blaming the route",
+        "paragraphs": [
+          "In the example design, packets for 10.64.20.0/24 are sent to 10.64.30.4. If tracing later stops there, inspect both forwarding layers and any guest filtering before changing the destination prefix. Keep the optional exercise confined to its known resource group and use its official instructions for deployment details. A successful VM deployment only establishes that the VM exists; forwarding behavior requires a traffic test."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+        ],
+        "steps": [
+          "Deploy the appliance into the designated perimeter subnet.",
+          "Confirm its private address agrees with the route next hop.",
+          "Enable Azure NIC forwarding and guest IPv4 forwarding.",
+          "Test transit between separate workload VMs after they are ready."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "control-network-traffic-flow-with-routes--6-exercise-route-traffic-through-nva",
+    "sections": [
+      {
+        "title": "Distinguish provisioning from readiness",
+        "paragraphs": [
+          "A running VM is not necessarily ready for the test: the exercise installs traceroute through cloud-init, and package installation can finish after VM provisioning. If the command is missing, allow the setup to complete before interpreting that as a networking failure. Use the named private destination for the trace; the SSH administration address and the address being traced serve different purposes."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva"
+        ]
+      },
+      {
+        "title": "Explain both traces",
+        "paragraphs": [
+          "For an original example, a client at 10.64.10.4 sends toward server 10.64.20.4 through appliance 10.64.30.4. The forward trace should reveal the appliance before the server. If only the client subnet has the custom table, the server-to-client trace can go directly over system routes. This asymmetry follows the two source subnet configurations; a successful forward trace does not show that both directions are inspected."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+        ]
+      },
+      {
+        "title": "Use evidence to choose the next check",
+        "paragraphs": [
+          "Write down the expected hops before testing, then compare the observed path with that prediction. If the appliance is never selected, check the source subnet association and effective route. If it is selected but transit fails, check NIC forwarding, guest forwarding and filtering. The lab demonstrates steering; deploying a VM called an NVA does not automatically establish a security policy or resilient firewall design."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+          "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem"
+        ],
+        "steps": [
+          "Wait for both VM provisioning and traceroute installation.",
+          "Trace client to server and record the appliance hop.",
+          "Trace server to client independently and explain the difference."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-load-balancer--2-what-is-azure-load-balancer",
+    "sections": [
+      {
+        "title": "Scale a service behind one entry point",
+        "paragraphs": [
+          "A frontend address gives clients a stable entry point while several VM instances provide the service behind it. Load balancing spreads connection flows across eligible instances; it does not turn an application into a replicated system automatically. Health probes influence which instances receive new connections. You still need correctly configured application listeners and application behavior suitable for running on several servers."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+        ]
+      },
+      {
+        "title": "Choose public or private exposure",
+        "paragraphs": [
+          "A public frontend receives internet-facing connections and maps the selected IP and port to backend private addresses and ports. An internal frontend uses a private address for a private tier. For example, internet-facing web VMs could call a calculation service through an internal frontend rather than giving each calculation VM a public endpoint. On-premises clients need an appropriate hybrid network path to reach that private address."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+        ]
+      },
+      {
+        "title": "Separate availability from access permissions",
+        "paragraphs": [
+          "Consider a private TCP service on three VMs. Define its frontend, backend pool, traffic rule and probe; then verify that the caller can reach the frontend and the selected backend can accept the connection. Standard Load Balancer follows a secure-by-default model, so a frontend resource alone is not permission to enter every port. Network security and guest listeners must permit the intended traffic, including probe access."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+        ],
+        "steps": [
+          "Decide whether clients need public or private access.",
+          "Identify the application port and meaningful health check.",
+          "Test normal service and the effect of one unhealthy backend."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-load-balancer--3-how-azure-load-balancer-works",
+    "sections": [
+      {
+        "title": "Follow a flow through the components",
+        "paragraphs": [
+          "Suppose frontend TCP 443 maps to backend TCP 8443. The frontend identifies the address clients use, the rule maps the ports, and the pool lists eligible VM instances. The default five-tuple distribution includes both addresses, both ports and protocol, so separate connections can choose different backends. It does not inspect an HTTP path, and it does not promise equal application workload on every VM."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/components",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+        ]
+      },
+      {
+        "title": "Choose probes and affinity for a reason",
+        "paragraphs": [
+          "A TCP probe proves that a listener accepts a connection. An HTTP or HTTPS probe can check an application readiness path and requires HTTP 200. If a server accepts TCP but returns 503 at that path, an HTTP probe excludes it from new-flow selection. Client-IP affinity uses fewer hash fields to keep related connections together; it is separate from HTTP cookie-based session affinity in Application Gateway."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+          "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+        ]
+      },
+      {
+        "title": "Do not confuse distribution with translation",
+        "paragraphs": [
+          "An inbound NAT rule directs a frontend port to an individual instance, useful when the destination must be a particular VM. An outbound rule provides SNAT for backend-originated connections to public endpoints. HA ports on an internal Standard Load Balancer cover all TCP and UDP ports for scenarios such as redundant NVAs. Each serves a different purpose, so adding one is not a substitute for the ordinary application traffic rule."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/components"
+        ],
+        "steps": [
+          "Check frontend and backend port mapping first.",
+          "Confirm the probe tests the intended listener or readiness path.",
+          "Inspect application distribution, affinity and translation requirements separately."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-load-balancer--4-when-to-use-azure-load-balancer",
+    "sections": [
+      {
+        "title": "Choose from the information the service must inspect",
+        "paragraphs": [
+          "Start with the protocol and routing decision. A private TCP processing service that only needs a common endpoint and healthy VM selection fits Layer 4 Load Balancer. A website requiring /orders and /images to reach different pools needs Layer 7 routing. The fact that an application uses HTTPS does not automatically choose Application Gateway; the decision depends on whether web-aware processing is required."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+        ]
+      },
+      {
+        "title": "Compare regional and global responsibilities",
+        "paragraphs": [
+          "Application Gateway supplies regional web routing and TLS processing, with optional WAF. Front Door supplies global web delivery and acceleration across regions. Traffic Manager returns DNS answers that steer clients toward endpoints; cached DNS answers affect how quickly clients adopt a new target. Load Balancer operates on TCP or UDP traffic inside its supported network scope rather than choosing destinations by HTTP hostname or URL path."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+        ]
+      },
+      {
+        "title": "Apply the comparison to a deployment",
+        "paragraphs": [
+          "Imagine an internal analytics tier with several VMs, plus two regional websites exposed to worldwide users. The private analytics endpoint can use an internal Load Balancer, while the global web requirement calls for evaluating Front Door or DNS-based Traffic Manager. These are different requirements rather than interchangeable names for one component. Before adding a pool, verify that demand or availability requirements justify multiple service instances."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+        ],
+        "steps": [
+          "List protocols, client locations and required routing decisions.",
+          "Choose public or private frontend scope.",
+          "Identify regional versus global availability needs.",
+          "Check health-probe and session-persistence requirements against the chosen service."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-application-gateway--2-what-is-azure-application-gateway",
+    "sections": [
+      {
+        "title": "Place a web-aware gateway before the application",
+        "paragraphs": [
+          "Application Gateway receives web requests and forwards them to healthy servers in a backend pool. Those servers can be Azure VMs, scale-set instances, App Service applications or reachable on-premises servers. The gateway is useful when the routing decision needs web information or when TLS processing and optional web application firewall protection belong at a shared entry point instead of on each frontend server."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+          "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+        ]
+      },
+      {
+        "title": "Separate encryption, session state and scaling",
+        "paragraphs": [
+          "TLS termination ends the client encryption connection at the gateway; HTTPS backend settings establish another encrypted connection when the backend leg must also be protected. Cookie-based affinity can retain a session on one server, but it does not replicate that server\u2019s session data. Standard_v2 and WAF_v2 support autoscaling; connection draining helps planned removal of pool members preserve existing work. These capabilities solve different problems."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+          "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+        ]
+      },
+      {
+        "title": "Work through a portal scenario",
+        "paragraphs": [
+          "Suppose a regional customer portal needs HTTPS, a healthy pool of application servers and WAF checks for common web attacks. Use the gateway as the controlled web entry point, then choose whether backend traffic requires HTTPS too. Confirm health independently of the public certificate: a correctly encrypted listener cannot make an unhealthy backend ready. During updates, plan draining and backend validation rather than treating an instance-count change as an application release procedure."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+          "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+        ],
+        "steps": [
+          "Identify backend targets and their network reachability.",
+          "Define listener TLS and backend encryption requirements separately.",
+          "Choose supported v2 scaling and WAF capabilities from the actual requirements."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-application-gateway--3-how-azure-application-gateway-works",
+    "sections": [
+      {
+        "title": "Connect listeners, rules and pools",
+        "paragraphs": [
+          "The frontend receives a connection; the listener recognizes the relevant IP, port, protocol and, for multi-site listeners, hostname. A routing rule then selects a backend pool and its settings. A basic listener accepts requests without hostname-specific selection. Place site-specific rules ahead of broad basic or wildcard matches so the broad match does not capture requests intended for a particular site."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+          "https://learn.microsoft.com/en-us/azure/application-gateway/configuration-listeners"
+        ]
+      },
+      {
+        "title": "Work through host and path routing",
+        "paragraphs": [
+          "An original design hosts portal.example and help.example on one gateway. Separate multi-site listeners can direct those hostnames to different pools. Within the portal, a path-based rule can send /reports/* to report servers and other requests to the ordinary application pool. Backend settings must match the server protocol and port, and probes must check the appropriate endpoint; the ordinary probe healthy range is 200\u2013399, unlike Load Balancer\u2019s HTTP 200 requirement."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+          "https://learn.microsoft.com/en-us/azure/application-gateway/features",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+        ]
+      },
+      {
+        "title": "Keep protocol legs and security controls distinct",
+        "paragraphs": [
+          "Listener HTTPS protects the client leg, while backend HTTPS protects the gateway-to-server leg. HTTP/2 is a client-to-gateway capability on HTTPS listeners; backend HTTP connections use HTTP/1.1. WAF inspects web requests, whereas redirects and header rewrites change request handling. Validate these separately: hostname matching, route selection, backend health and encryption can each fail even when the other components are correct."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+          "https://learn.microsoft.com/en-us/azure/application-gateway/configuration-listeners",
+          "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+        ],
+        "steps": [
+          "Map each expected hostname and path to its listener and pool.",
+          "Check rule priorities and backend protocol settings.",
+          "Test probe health, redirects and the intended HTTPS behavior."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-application-gateway--4-when-to-use-azure-application-gateway",
+    "sections": [
+      {
+        "title": "Turn application requirements into selection criteria",
+        "paragraphs": [
+          "Choose Application Gateway when a regional web application needs hostname or path routing, centralized TLS termination, session affinity or optional WAF. For example, a regional sales portal might route administrative and customer requests to separate pools while inspecting web attacks at the gateway. The requirement should explain which gateway feature is necessary; merely having a website does not establish that it needs this additional component."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/4-when-to-use-azure-application-gateway",
+          "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+        ]
+      },
+      {
+        "title": "Check the backend reachability requirement",
+        "paragraphs": [
+          "On-premises servers can be pool targets, but naming them in a pool does not build the network connection to the datacenter. The gateway must be able to reach the targets and probe them successfully. Affinity helps when an application retains session state locally, while healthy-pool selection avoids unavailable servers. HTTPS backend settings are a separate decision when encryption must continue beyond the gateway."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/4-when-to-use-azure-application-gateway",
+          "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+        ]
+      },
+      {
+        "title": "Compare alternatives before deployment",
+        "paragraphs": [
+          "A raw TCP or UDP service fits Load Balancer rather than HTTP path routing. A website needing global delivery and acceleration suggests Front Door. A requirement to steer clients among regional endpoints using DNS suggests Traffic Manager, with DNS caching affecting failover behavior. A small single-server site might need none of these distribution services. Compare the feature requirements and traffic geography before choosing a regional gateway simply because it is called a load balancer."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/4-when-to-use-azure-application-gateway",
+          "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+        ],
+        "steps": [
+          "Record the regional web-routing and security requirements.",
+          "Confirm backend reachability and meaningful probe responses.",
+          "Decide client and backend TLS independently.",
+          "Choose the service whose protocol and geographic scope match the application."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-network-watcher--2-what-is-azure-network-watcher",
+    "sections": [
+      {
+        "title": "Choose the question before the diagnostic tool",
+        "paragraphs": [
+          "Network Watcher groups tools for topology, connection monitoring, packet filtering, routing and detailed traffic investigation. A topology view explains resource relationships, not whether a TCP listener is healthy. IP flow verify answers a filtering question, while Next hop answers a routing question. Connection troubleshoot tests reachability now; Connection Monitor tracks it over time. Selecting the tool from the question prevents interpreting one successful check as proof of the whole path."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
+        ]
+      },
+      {
+        "title": "Use several evidence types together",
+        "paragraphs": [
+          "For an original example, a VM cannot reach an internal service. Start with the intended source, destination and port. Check the selected route and applicable security rules, then run a point-in-time connection test. If those results do not explain the failure, a filtered packet capture can expose what is actually sent and received. VPN troubleshoot supplies a different investigation path when the failing connection traverses a gateway."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
+        ]
+      },
+      {
+        "title": "Use current traffic logging options",
+        "paragraphs": [
+          "Flow records and Traffic analytics help investigate traffic patterns rather than application page views. Plan new logging around virtual network flow logs. New NSG flow logs cannot be created, and existing NSG flow logs retire on September 30, 2027. Network Watcher primarily targets Azure IaaS networking; use service-specific monitoring for PaaS behavior and web analytics."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/nsg-flow-logs-overview"
+        ],
+        "steps": [
+          "Identify whether the symptom concerns filtering, routing, connectivity or VPN health.",
+          "Collect the relevant test result before changing configuration.",
+          "Use historical monitoring or traffic records for recurring patterns."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-network-watcher--3-how-azure-network-watcher-works",
+    "sections": [
+      {
+        "title": "Establish the monitoring prerequisites",
+        "paragraphs": [
+          "Creating or updating a VNet normally enables Network Watcher in its subscription and region, unless automatic enablement was previously opted out. The monitoring resource being available does not mean every guest has the required agent. Azure VM and scale-set Connection Monitor sources need the Network Watcher extension; on-premises sources need Azure Arc and Azure Monitor Agent. Destination endpoints do not all require those source agents."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+        ]
+      },
+      {
+        "title": "Describe an exact test instead of a vague failure",
+        "paragraphs": [
+          "IP flow verify evaluates specified packet attributes: direction, protocol, local and remote addresses and ports, VM and NIC. Next hop reports the selected route for a destination using effective NIC routes. These inputs matter when a VM has multiple interfaces or the problem affects only one protocol or port. A check for one combination cannot establish that every flow to the same server is permitted."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
+        ]
+      },
+      {
+        "title": "Build a small continuous monitoring example",
+        "paragraphs": [
+          "Suppose two application VMs should reach a private API and an on-premises service. Define the source endpoints, destinations and test configurations, then combine them in a Connection Monitor test group. Repeated tests provide latency and failure history that a single connection test cannot show. Packet capture is another tool: its traffic filters limit recorded packets, and captures can be stored locally or in blob storage."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
+        ],
+        "steps": [
+          "Confirm regional Network Watcher availability and source agent prerequisites.",
+          "Specify the real failing addresses, protocol, port and direction.",
+          "Inspect monitoring history or capture relevant traffic when point-in-time results are insufficient."
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-network-watcher--4-when-to-use-azure-network-watcher",
+    "sections": [
+      {
+        "title": "Diagnose a blocked management connection",
+        "paragraphs": [
+          "Imagine VM-A cannot open TCP 5986 to VM-B for HTTPS-based remote management. IP flow verify can test whether the relevant NSG rules allow that specific inbound or outbound packet and identify the matching rule. An allowed result only clears that filtering check; it does not prove that the guest firewall allows the port or that the remote service is listening. Follow with connection testing when necessary."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
+        ]
+      },
+      {
+        "title": "Investigate hybrid failures and latency separately",
+        "paragraphs": [
+          "If the failed path crosses a site-to-site VPN, inspect the gateway and connection with VPN troubleshoot and read its diagnostic details and recommended actions. If connectivity works but performance is poor, use repeated Connection Monitor tests to compare endpoint latency over time. For example, compare an Azure source and an on-premises source reaching the same service before deciding that moving a workload will improve its network path."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+        ]
+      },
+      {
+        "title": "Make a change that follows the evidence",
+        "paragraphs": [
+          "A routing failure calls for route and next-hop inspection; a named NSG denial calls for checking the intended security policy; a DNS failure calls for name-resolution investigation. Change the control responsible for the observed result and rerun the same test to assess the effect. For PaaS application behavior or website analytics, use the appropriate service tools instead of treating Network Watcher as a general application monitor."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher",
+          "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
+        ],
+        "steps": [
+          "Write the exact source, destination, port and symptom.",
+          "Run the tool that examines the suspected layer.",
+          "Inspect returned rule, route or gateway diagnostics.",
+          "After an authorized correction, repeat the same test and compare results."
+        ]
+      }
+    ]
+  }
+]
