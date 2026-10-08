@@ -1,0 +1,29 @@
+{
+  "kind": "live-expanded-course-smoke",
+  "checkedAt": "2026-10-08T11:59:44.723Z",
+  "url": "https://az104-revision-web.showtime-workers.workers.dev",
+  "browser": "156.0.8078.4",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "paths": 6,
+  "modules": 28,
+  "units": 231,
+  "expandedUnits": 151,
+  "sections": 413,
+  "expandedParagraphsVerified": true,
+  "expandedPassageAndWordHighlightWithMockEvents": true,
+  "reading": true,
+  "savedCompletion": true,
+  "offlineReload": true,
+  "serviceWorkerControlled": true,
+  "passageHighlightWithMockSpeechEvents": true,
+  "wordHighlightWithMockSpeechEvents": true,
+  "pauseRetainsHighlight": true,
+  "stopClearsHighlight": true,
+  "notesCollapsed": true,
+  "practiceStarts": true,
+  "consoleErrors": 0,
+  "limitations": "Headless browser UI checks; mock speech events verify highlighting, not real audio, voice timing or physical iPhone screen-lock playback."
+}

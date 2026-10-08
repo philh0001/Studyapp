@@ -46,3 +46,5 @@ Personal reasoning workpad now uses its own title as the native collapsible summ
 
 
 Latest owner instruction expands sparse course notes into fuller teaching for all 151 substantive units: 413 original source-cited sections, more than 35,000 added words, practical examples/steps and illustrative code. Keep the 847 quick points, short introductions and all 168 module questions. Expanded content appears inline and is spoken/highlighted through shared reading offsets. Author and independent semantic reviews compare actual official pages and bind final sections; no human approval or literal full-source reproduction is claimed.
+
+Fuller teaching is deployed and live-verified: product source 81d73da; 475 automated tests, 127 full browser checks plus nine final course flows passed. All 42 deployed hashes/security headers and all 151 expanded lesson bodies verified live. Worker version 8f22b828-c3d3-484b-94f5-a7ec69bc0d19. See docs/verification/2026-10-08-expanded-course-release.md; PR #1 remains open.
