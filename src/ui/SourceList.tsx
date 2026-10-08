@@ -1,0 +1,2 @@
+import type {Reference} from '../content/types';
+export function SourceList({references}:{references:Reference[]}){return <div className="sources"><h3>Microsoft Learn sources</h3>{references.map(r=><div key={r.id}><a href={r.url+(r.section?'#'+r.section:'')} target="_blank" rel="noreferrer">{r.title} ↗</a><small>Checked {new Date(r.checkedAt).toLocaleDateString()} · opens online</small></div>)}</div>}
