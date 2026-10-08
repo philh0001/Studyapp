@@ -40,3 +40,5 @@ Settings contains local JSON/gzip export/restore and explicit data deletion. Res
 See [live deployment verification](docs/verification/2026-10-08-cloudflare-release.md), [hosting preparation](production/web/README.md) and [release verification](docs/verification/2026-10-08-release-preparation.md). The owner authorised the draft publication and this improvement deployment. Paid services and unrelated resources remain outside the approved scope. Product work uses a feature branch and pull request.
 
 Detailed coverage separates installed, approved and studied subskills. The home page suggests a flexible study week without a fixed exam date. Source rechecks produce reviewable reports; see [source freshness](docs/SOURCE_FRESHNESS.md). Real-phone installation and screen-reader checks remain to be performed on the actual device; the Settings checklist records only checks you do yourself.
+
+The [twenty-improvement release record](docs/verification/2026-10-08-exam-alignment-release.md) records 173 unit tests, 54 browser checks, official source retrieval, independent review and live deployment evidence.

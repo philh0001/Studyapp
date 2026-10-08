@@ -84,5 +84,5 @@
 **Files:** README.md, ROADMAP.md, PROJECT_CONTEXT.md, docs/CONTENT_REVIEW.md, docs/verification/*; existing PR.
 - [x] Run npm run check, complete browser suite, source audits and runtime audit; fix genuine failures.
 - [x] Obtain fresh independent review of content evidence and data/format/source-update compatibility.
-- [ ] Build and deploy approved draft improvements via existing Cloudflare direct assets workflow; verify literal live URL, strict CSP, phone flow and offline persistence.
-- [ ] Record exact counts/coverage/remaining factual and physical-device gates; push PR updates and report concise results.
+- [x] Build and deploy approved draft improvements via existing Cloudflare direct assets workflow; verify literal live URL, strict CSP, phone flow and offline persistence.
+- [x] Record exact counts/coverage/remaining factual and physical-device gates; push PR updates and report concise results.

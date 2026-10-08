@@ -44,3 +44,17 @@ The generated main JavaScript is about 1.61 MB before compression / 288 kB gzip;
 Native agents built disjoint content, schema/scoring, session/backup, coverage, formats and freshness tasks; the root integrated and independently reviewed release changes. Native tools and a local manual execution ledger substitute for skill helper scripts unavailable in the environment. User authorisation overrides optional skill permission gates; no additional approval was requested. Individual human factual review and actual-device testing cannot be fabricated and are reported as outstanding evidence, not user permission gates.
 
 No real exam questions were copied. Practice scores are not pass predictions. Original scenarios follow the published skills and official Learn documentation, rather than claiming Microsoft endorsement or exact proprietary exam formats. Local progress stays on the device, with old backup compatibility, historical snapshots, strict CSP and update deferral for active sessions preserved.
+
+## Published and live verified
+
+- URL: https://az104-revision-web.showtime-workers.workers.dev
+- Worker: `az104-revision-web`; workers.dev enabled, version previews disabled; existing hosting reused.
+- Published application source: `e673883`.
+- Cloudflare deployment: `ecb6cdca664547828585dad573b80106`, uploaded `2026-10-08T01:58:41.764197Z`.
+- Live HTTP 200 and the expected asset ETag verified. Strict `script-src 'self'` remains; no unsafe evaluation was added.
+- Actual public-site Chromium 156.0.8078.4 phone-width smoke verified 300 installed drafts, all 82 subskills, five navigation routes, thumb-controls selection, durable answer reload, controlled service worker and offline reload/next-question continuation. Zero console or page errors.
+- Final complete browser suite: 54/54; full app check: 173 tests/37 files plus typecheck, lint, six packs, blueprint and build; runtime audit: zero vulnerabilities.
+
+Deployment credentials were temporary, scoped to the asset upload and removed from workspace temporary files after use. No personal progress, test-profile approvals or secrets were included in the public assets. Code and evidence are on the existing feature branch/PR; it was not merged directly into main.
+
+Outstanding factual/physical evidence: human answer-and-option review of all 300 drafts and actual-phone installation/storage/VoiceOver checks. Draft practice is usable now, and those evidence requirements are displayed without another deployment permission request.
