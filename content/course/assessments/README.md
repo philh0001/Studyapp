@@ -1,0 +1,9 @@
+# Original module assessments
+
+The four ordered `*-modules.json` files add six independently authored single-answer revision questions to each of the 28 installed AZ-104T00 modules: 168 questions and 672 option explanations. They use taught teaching/exercise lessons and current official Microsoft documentation; Microsoft assessment questions are not copied. These are AI-assisted original practice, not actual Microsoft exam questions or human-approved content.
+
+Each question records its taught lesson IDs, correct answer and every option's explanation/source URLs. The pack's `checkedAt` records its actual source comparison date. The four author source-review records and a separate independent review cover every question and option. `accuracy-review.json` binds the final question JSON to that independent comparison with SHA-256; editing content makes the binding check fail until it is reviewed again. No source hash or valid URL is treated as proof of technical entailment.
+
+Assessments open directly for knowledge-check units or from the Module assessment button, including modules without an official knowledge check. The six questions are shown one at a time with explicit Check answer and manual advancement. Submitted choices freeze; incorrect answers show both the selected reasoning and correct explanation. Scores and retry/review are local module checks, separate from the existing practice proficiency scores and official Learn completion.
+
+Local workspace keys are `module-check:<moduleId>`. Progress uses exact content identity and validated choices; obsolete/malformed results reset instead of manufacturing a score. Authoritative database hydration restores progress when the reader's snapshot is stale. Writes serialize, failed saves block continuing/module changes until retry, and the existing root write guard protects leaving/exporting. Workspace backup/restore and installed offline use include these records.

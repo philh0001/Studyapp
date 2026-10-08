@@ -8,5 +8,5 @@ export function normaliseCourseState(value:unknown,lessonIds:readonly string[]):
  return {selectedLessonId,completedIds:Array.isArray(row.completedIds)?[...new Set(row.completedIds.filter((id):id is string=>typeof id==='string'&&lessonIds.includes(id)))]:[],
   listening:{sectionId,chunk:typeof saved.chunk==='number'&&Number.isFinite(saved.chunk)?Math.max(0,Math.min(10000,Math.floor(saved.chunk))):0},
   rate:typeof row.rate==='number'&&[.75,1,1.25,1.5].includes(row.rate)?row.rate:1,
-  voiceURI:typeof row.voiceURI==='string'?row.voiceURI.slice(0,512):'',scope:row.scope==='course'?'course':'module'};
+  voiceURI:typeof row.voiceURI==='string'?row.voiceURI.slice(0,512):'',scope:row.scope==='course'?'course':'module',assessmentOpen:row.assessmentOpen===true};
 }

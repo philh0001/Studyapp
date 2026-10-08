@@ -43,3 +43,26 @@ it('backup restore preserves course completion, selected lesson and listening pr
  render(<CourseReader repository={target} snapshot={await target.getSnapshot()} onSaveQueued={write=>write}/>);
  expect((screen.getByLabelText('Lesson') as HTMLSelectElement).value).toBe(second.id);expect(screen.getByLabelText('Listening speed')).toHaveValue('0.75');expect(screen.getByLabelText('Listen to')).toHaveValue('course');expect(screen.getByText(/1 \/ 231 units marked read/)).toBeVisible();expect(spoken).toHaveLength(0);
 });
+
+it('opens six module questions directly from both the assessment lesson and modules without a Learn check',async()=>{
+ const repo=repository();render(<CourseReader repository={repo} snapshot={await repo.getSnapshot()} onSaveQueued={write=>write}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Module assessment · 6 questions'}));
+ expect(await screen.findByRole('heading',{name:'Module assessment'})).toBeVisible();
+ expect(await screen.findByText('Question 1 of 6')).toBeVisible();expect(screen.getAllByRole('radio')).toHaveLength(4);
+ const noCheck=course.paths.flatMap(path=>path.modules).find(module=>module.id==='allow-users-reset-their-password')!;
+ fireEvent.change(screen.getByLabelText('Learning path'),{target:{value:course.paths[1].id}});fireEvent.change(screen.getByLabelText('Module'),{target:{value:noCheck.id}});
+ expect(screen.queryByRole('heading',{name:'Module assessment'})).not.toBeInTheDocument();
+ fireEvent.click(screen.getByRole('button',{name:'Module assessment · 6 questions'}));expect(await screen.findByRole('heading',{name:'Module assessment'})).toBeVisible();
+});
+
+it('keeps an assessment visible until a failed answer save is retried before changing modules',async()=>{
+ const repo=repository(),writes:Promise<void>[]=[];render(<CourseReader repository={repo} snapshot={await repo.getSnapshot()} onSaveQueued={write=>{writes.push(write);return write}}/>);
+ fireEvent.click(screen.getByRole('button',{name:'Module assessment · 6 questions'}));await screen.findByText('Question 1 of 6');await Promise.all(writes);
+ vi.spyOn(repo.db.workspace,'put').mockRejectedValueOnce(new Error('Quota exceeded'));
+ fireEvent.click(screen.getAllByRole('radio')[0]);await screen.findByRole('button',{name:'Retry saving'});
+ fireEvent.change(screen.getByLabelText('Module'),{target:{value:course.paths[0].modules[1].id}});
+ expect(screen.getByLabelText('Module')).toHaveValue(course.paths[0].modules[0].id);
+ expect(screen.getByRole('button',{name:'Retry saving'})).toBeVisible();
+ fireEvent.click(screen.getByRole('button',{name:'Retry saving'}));await waitFor(()=>expect(screen.queryByRole('button',{name:'Retry saving'})).not.toBeInTheDocument());
+ fireEvent.change(screen.getByLabelText('Module'),{target:{value:course.paths[0].modules[1].id}});expect(screen.getByLabelText('Module')).toHaveValue(course.paths[0].modules[1].id);
+});

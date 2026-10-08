@@ -49,3 +49,5 @@ Detailed coverage separates installed, approved and studied subskills. The home 
 The [twenty-improvement release record](docs/verification/2026-10-08-exam-alignment-release.md) records 173 unit tests, 54 browser checks, official source retrieval, independent review and live deployment evidence.
 
 The [hundred-improvement release](docs/verification/2026-10-08-next-100-release.md) records318unit checks,82passing browser checks,153official source rechecks, independent review and live deployment evidence. Human factual/physical-device acceptance and unattended CI prerequisites remain explicit.
+
+Learning modules also include six original Microsoft-source-backed assessment questions each, with explanations, saved/offline progress, scores and retry directly in Learn.

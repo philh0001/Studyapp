@@ -1,0 +1,1875 @@
+[
+  {
+    "moduleId": "intro-to-azure-cloud-shell",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:11.628390Z",
+    "questions": [
+      {
+        "id": "intro-to-azure-cloud-shell-check-01",
+        "prompt": "An administrator is away from their workstation and needs to inspect Azure resources from a browser. Which approach avoids installing Azure tools on the borrowed computer?",
+        "lessonIds": [
+          "intro-to-azure-cloud-shell--4-when-to-use-azure-cloud-shell"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Deploy a dedicated administration VM first.",
+            "explanation": "A VM supplies a custom environment, but Cloud Shell already provides the required browser administration without that deployment.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Open Azure Cloud Shell.",
+            "explanation": "Cloud Shell supplies an authenticated browser shell with Azure tools already installed.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Install Azure CLI on the borrowed computer.",
+            "explanation": "A local CLI can manage resources, but installation does not meet the requirement to avoid installing tools.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Create a new Azure subscription first.",
+            "explanation": "A new subscription is not needed to open Cloud Shell and inspect resources the account can already access.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-cloud-shell-check-02",
+        "prompt": "An account has permission to view a VM but not delete it. What happens to that account’s Azure resource permissions when Cloud Shell opens?",
+        "lessonIds": [
+          "intro-to-azure-cloud-shell--2-what-is-azure-cloud-shell"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "The account can delete the VM because the tools are Microsoft-managed.",
+            "explanation": "Microsoft managing the tools does not bypass the account’s resource authorization.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The account loses all existing permissions until a new role is assigned.",
+            "explanation": "Cloud Shell uses existing permissions; opening it does not remove the account’s granted access.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "The account keeps its existing resource permissions.",
+            "explanation": "Cloud Shell authenticates the signed-in account; it does not elevate its Azure resource permissions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "The account gains Owner access to its subscription.",
+            "explanation": "Opening a shell does not create an Owner role assignment or grant subscription-wide control.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-cloud-shell-check-03",
+        "prompt": "You want a diagnostic script to remain available after Cloud Shell closes and to use it next week from another device. Where should you save it?",
+        "lessonIds": [
+          "intro-to-azure-cloud-shell--3-how-azure-cloud-shell-works"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "In a temporary folder outside persistent storage.",
+            "explanation": "Files outside persistent storage can disappear when the temporary session ends.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Only in the terminal’s command history on screen.",
+            "explanation": "Displaying commands in the current terminal is not a way to persist the script file on the mounted share.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "In an ephemeral session without attaching storage.",
+            "explanation": "An ephemeral session does not provide storage that preserves these files for a later session.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "In the clouddrive folder of the mounted Azure Files share.",
+            "explanation": "The mounted share persists clouddrive files across temporary sessions and devices.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-cloud-shell-check-04",
+        "prompt": "A non-interactive maintenance script must keep running for an hour without user activity. Why is a temporary Cloud Shell session unsuitable?",
+        "lessonIds": [
+          "intro-to-azure-cloud-shell--4-when-to-use-azure-cloud-shell"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "It can time out after 20 minutes without interactive activity.",
+            "explanation": "Cloud Shell is intended for interactive use; inactivity can terminate the session and its running work.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Cloud Shell only supports PowerShell, not Bash.",
+            "explanation": "Cloud Shell supports both Bash and PowerShell; shell choice is not this workload’s problem.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Cloud Shell cannot authenticate an Azure account.",
+            "explanation": "Cloud Shell automatically authenticates the signed-in account, so lack of authentication is not the limitation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Every Cloud Shell command is limited to one minute.",
+            "explanation": "The documented concern is the inactivity timeout, not a universal one-minute command limit.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-cloud-shell-check-05",
+        "prompt": "A required administration tool needs sudo during installation. Which environment choice meets that requirement?",
+        "lessonIds": [
+          "intro-to-azure-cloud-shell--4-when-to-use-azure-cloud-shell"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Mount an Azure Files share to grant administrator privileges.",
+            "explanation": "Storage mounting enables file persistence, not host privilege elevation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Use a VM or container where you control the required privileges.",
+            "explanation": "A custom environment can provide administrator privileges that the unprivileged Cloud Shell account lacks.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Run sudo in the existing Cloud Shell session.",
+            "explanation": "Cloud Shell does not allow sudo or commands requiring elevated host permissions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Switch Cloud Shell from Bash to PowerShell to gain root.",
+            "explanation": "Changing shell does not elevate the user’s host permissions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-cloud-shell-check-06",
+        "prompt": "You need to edit deploy.ps1 directly in Cloud Shell. Which command opens that file in the built-in editor?",
+        "lessonIds": [
+          "intro-to-azure-cloud-shell--3-how-azure-cloud-shell-works"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Connect-AzAccount deploy.ps1",
+            "explanation": "Connect-AzAccount handles Azure sign-in, not opening a file in the Cloud Shell editor.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "kubectl deploy.ps1",
+            "explanation": "kubectl manages Kubernetes resources; it is not the Cloud Shell file-editor command.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "code deploy.ps1",
+            "explanation": "The current Cloud Shell editor supports code <filename> to open a file for editing.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "az login deploy.ps1",
+            "explanation": "az login signs in to Azure; it does not open a script in the editor.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+              "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "create-azure-resource-manager-template-vs-code",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:11.628390Z",
+    "questions": [
+      {
+        "id": "create-azure-resource-manager-template-vs-code-check-01",
+        "prompt": "One ARM template must deploy a storage account with different names in development and production. Which template feature should supply the name?",
+        "lessonIds": [
+          "create-azure-resource-manager-template-vs-code--4-add-flexibility-arm-template"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "A fixed name hardcoded in resources.",
+            "explanation": "A hardcoded name cannot vary by deployment without editing the template.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The contentVersion value.",
+            "explanation": "contentVersion tracks the template’s version; it is not a replacement for a resource-name parameter.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A parameter referenced in the resource name.",
+            "explanation": "Parameters accept environment-specific input, allowing the same resource definition to use different names.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "An output containing the account name.",
+            "explanation": "Outputs return deployment results; they do not supply the input used to name the resource.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "create-azure-resource-manager-template-vs-code-check-02",
+        "prompt": "An ARM template needs a password supplied at deployment time. Which parameter design follows the module’s guidance?",
+        "lessonIds": [
+          "create-azure-resource-manager-template-vs-code--4-add-flexibility-arm-template"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Use an ordinary string with the production password as its default.",
+            "explanation": "An ordinary string and hardcoded secret default do not follow the module’s secure-parameter guidance.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Put the password in a variable committed with the template.",
+            "explanation": "A variable containing the password still hardcodes the secret in template source.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Return the password as an ordinary output instead of accepting a parameter.",
+            "explanation": "An output is a deployment result, not a secure way to supply the password the resource needs.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Use secureString without a hardcoded password or secret default.",
+            "explanation": "secureString is the suitable type for a password, and avoiding embedded secrets keeps them out of template source.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "create-azure-resource-manager-template-vs-code-check-03",
+        "prompt": "A deployment should return a newly deployed storage account’s runtime endpoints. Which design fits the exercise?",
+        "lessonIds": [
+          "create-azure-resource-manager-template-vs-code--5-exercise-parameters-output"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Declare an output whose value uses reference(...).primaryEndpoints.",
+            "explanation": "The reference function retrieves runtime resource properties, and outputs return the endpoint object after deployment.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Use allowedValues to discover the runtime endpoints.",
+            "explanation": "allowedValues constrains parameter inputs; it does not query the deployed storage account.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Store the endpoint in contentVersion before deploying.",
+            "explanation": "contentVersion identifies the template version and cannot discover the resource’s runtime endpoint.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Declare a secureString parameter and expect Azure to populate it automatically.",
+            "explanation": "Parameters are deployment inputs; Azure does not use them as automatic return values for runtime endpoints.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "create-azure-resource-manager-template-vs-code-check-04",
+        "prompt": "You deploy an unchanged template twice to the same resource group using the same resource names. What is the expected effect of template idempotence?",
+        "lessonIds": [
+          "create-azure-resource-manager-template-vs-code--2-explore-template-structure"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "The template becomes read-only after its first deployment.",
+            "explanation": "Idempotence describes repeatable resource deployment, not locking the template file after first use.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure",
+              "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Existing unchanged resources are reused rather than duplicated.",
+            "explanation": "With the same identities and unchanged settings, repeating the deployment does not create duplicate resources.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure",
+              "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A second copy of every resource is created automatically.",
+            "explanation": "Repeating the deployment with the same resource names does not automatically invent new resource identities.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure",
+              "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "The second deployment must fail because the names already exist.",
+            "explanation": "ARM templates can redeploy and update existing resources; name reuse at the same scope is expected.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure",
+              "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "create-azure-resource-manager-template-vs-code-check-05",
+        "prompt": "The storageSKU parameter has allowedValues [\"Standard_LRS\", \"Standard_ZRS\"]. A deployment supplies \"Basic\". What should you expect?",
+        "lessonIds": [
+          "create-azure-resource-manager-template-vs-code--5-exercise-parameters-output"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure automatically adds Basic to the allowedValues list.",
+            "explanation": "Deployment does not rewrite the template’s allowed input values.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The deployment creates all three listed or supplied SKUs.",
+            "explanation": "The parameter selects one allowed value; it does not instruct ARM to create multiple accounts.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Parameter validation rejects the supplied value.",
+            "explanation": "Basic is outside the allowedValues list, so the supplied input fails the parameter constraint.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Azure silently substitutes Standard_LRS.",
+            "explanation": "A default applies when an input is omitted; it does not silently replace an explicitly invalid value.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "create-azure-resource-manager-template-vs-code-check-06",
+        "prompt": "You redeploy an existing resource in incremental mode and omit a property previously set to a non-default value. Which assumption should you avoid?",
+        "lessonIds": [
+          "create-azure-resource-manager-template-vs-code--4-add-flexibility-arm-template"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Assuming the same resource identity can be updated.",
+            "explanation": "Incremental deployments can update an existing resource using the same name and scope.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template",
+              "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Assuming the template describes the desired resource state.",
+            "explanation": "The resource definition should describe its final desired state, including required non-default properties.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template",
+              "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Assuming unrelated resources omitted from an incremental template are left in place.",
+            "explanation": "Incremental mode leaves resources absent from the template unchanged; that differs from properties omitted within a declared resource.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template",
+              "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Assuming the omitted property necessarily keeps its previous value.",
+            "explanation": "Incremental deployment reapplies the resource properties; omitted properties can reset to defaults, so declare all required non-default values.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template",
+              "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "understand-azure-active-directory",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:11.628390Z",
+    "questions": [
+      {
+        "id": "understand-azure-active-directory-check-01",
+        "prompt": "A company wants one identity directory for three Azure subscriptions. Which relationship is supported?",
+        "lessonIds": [
+          "understand-azure-active-directory--2-examine-azure-active-directory"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Each subscription must have a unique tenant.",
+            "explanation": "Azure does not require a different tenant for every subscription.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Each subscription must be associated with three tenants simultaneously.",
+            "explanation": "A subscription is associated with exactly one Entra tenant at a time.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "The subscriptions must be replaced by resource groups inside Entra ID.",
+            "explanation": "Resource groups are Azure resource containers, not substitutes for subscription-to-tenant associations.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "One Entra tenant can be associated with all three subscriptions.",
+            "explanation": "The same tenant can serve multiple subscriptions, while each subscription is associated with one tenant at a time.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "understand-azure-active-directory-check-02",
+        "prompt": "An application definition is used in two Entra tenants. Which object represents the application’s instance in each tenant?",
+        "lessonIds": [
+          "understand-azure-active-directory--2-examine-azure-active-directory"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "A service principal.",
+            "explanation": "A service principal is the tenant-specific representation of an application.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "An organizational unit.",
+            "explanation": "Entra ID does not use AD DS organizational units, and an OU would not represent an application instance.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "An Azure subscription.",
+            "explanation": "A subscription is a resource-management and billing boundary, not an application’s directory instance.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A Group Policy Object.",
+            "explanation": "Group Policy Objects manage AD DS settings; they do not represent Entra application instances.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "understand-azure-active-directory-check-03",
+        "prompt": "A legacy Azure workload needs domain join, LDAP and Kerberos. The team wants Microsoft to operate the domain controllers. Which service best matches?",
+        "lessonIds": [
+          "understand-azure-active-directory--6-examine-azure-domain-services"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure resource groups.",
+            "explanation": "Resource groups organize Azure resources; they do not provide domain authentication services.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Microsoft Entra Domain Services.",
+            "explanation": "The managed service provides traditional domain capabilities without the team deploying and maintaining domain controllers.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Microsoft Entra ID alone.",
+            "explanation": "Entra ID provides cloud identity protocols, not the traditional managed-domain LDAP and Kerberos interface required here.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "AD DS on self-managed Azure VMs.",
+            "explanation": "This can provide the protocols, but the team would operate those domain controllers itself.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "understand-azure-active-directory-check-04",
+        "prompt": "An administrator plans to organize Entra users into traditional organizational units and apply AD DS Group Policy to those units. What should they recognize?",
+        "lessonIds": [
+          "understand-azure-active-directory--3-compare-azure-active-directory-domain-services"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "An Entra ID P2 license adds traditional AD DS OUs.",
+            "explanation": "Premium identity capabilities do not turn Entra ID into an AD DS OU and Group Policy directory.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Running an AD DS VM automatically converts the Entra tenant into AD DS.",
+            "explanation": "An AD DS domain controller on a VM is a separate directory deployment, not a conversion of Entra ID.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Entra ID does not provide the traditional OU and Group Policy hierarchy.",
+            "explanation": "Entra users and groups have a flat directory structure; traditional AD DS OU-based Group Policy is not an Entra ID feature.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Entra ID creates an OU automatically for every resource group.",
+            "explanation": "Azure resource groups do not become Entra organizational units.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "understand-azure-active-directory-check-05",
+        "prompt": "A team needs policies responding to user or sign-in risk through Entra ID Protection. Which Entra ID edition discussed in this module adds that capability beyond P1?",
+        "lessonIds": [
+          "understand-azure-active-directory--5-compare-azure-premium-p1-p2-plans"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Entra ID Free.",
+            "explanation": "Free directory features do not include the P2 risk-based Identity Protection capability required here.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+              "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Entra ID P1 alone.",
+            "explanation": "P1 provides Conditional Access, but the module identifies risk-based Identity Protection as a P2 addition.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+              "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "No identity license is relevant if an Azure subscription exists.",
+            "explanation": "Having an Azure subscription does not grant every premium Entra identity feature.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+              "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Entra ID P2.",
+            "explanation": "P2 includes Identity Protection capabilities for risk-based user and sign-in protection.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+              "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "understand-azure-active-directory-check-06",
+        "prompt": "An App Service app should require authenticated accounts from the company’s Entra tenant. Which approach matches the module?",
+        "lessonIds": [
+          "understand-azure-active-directory--4-examine-azure-directory-service-cloud-apps"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Configure App Service Entra authentication with the company tenant and require authentication.",
+            "explanation": "App Service authentication can enforce sign-in using the configured tenant; requiring authentication protects access to the app.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps",
+              "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Leave anonymous access enabled and only add company branding.",
+            "explanation": "Branding changes appearance; it does not require an authenticated account from the tenant.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps",
+              "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Create a new Entra tenant for every visitor.",
+            "explanation": "A per-visitor tenant is not needed; the stated requirement is to use the company’s existing directory.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps",
+              "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Deploy an AD DS controller solely to enable web-based Entra sign-in.",
+            "explanation": "App Service can integrate directly with Entra authentication without deploying an AD DS domain controller.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps",
+              "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "create-configure-manage-identities",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:11.628390Z",
+    "questions": [
+      {
+        "id": "create-configure-manage-identities-check-01",
+        "prompt": "A security group should automatically include users whose Department attribute is \"Finance\", then remove them when that attribute changes. Which membership type fits?",
+        "lessonIds": [
+          "create-configure-manage-identities--5-groups"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Dynamic user membership.",
+            "explanation": "Dynamic user rules evaluate user attributes and update membership when the matching attributes change.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+              "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Assigned membership maintained manually.",
+            "explanation": "Assigned membership relies on manual additions and removals rather than attribute-based automatic updates.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+              "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Dynamic device membership.",
+            "explanation": "Dynamic device rules select devices, not users by their Department attribute.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+              "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A list of individual direct resource permissions without a group.",
+            "explanation": "Direct permissions do not create the required automatically maintained user group.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+              "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "create-configure-manage-identities-check-02",
+        "prompt": "A security group uses a dynamic device rule. What does Microsoft’s current licensing guidance require for the devices that become its members?",
+        "lessonIds": [
+          "create-configure-manage-identities--5-groups"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "An Intune for Education license assigned to every device.",
+            "explanation": "Device-based dynamic membership does not require licenses for the member devices.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+              "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "No member license is required for those devices.",
+            "explanation": "Microsoft states that devices in device-based dynamic membership groups do not require member licenses.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+              "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "One Entra ID P1 user license for each device.",
+            "explanation": "The unique-user licensing requirement for dynamic user groups does not impose a license on each device member.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+              "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "One Entra ID P2 license for each device.",
+            "explanation": "P2 is not a mandatory per-device membership license for this dynamic security group.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+              "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "create-configure-manage-identities-check-03",
+        "prompt": "Company Windows devices must stay joined to on-premises AD DS for machine authentication and Group Policy while also having an Entra device identity. Which state fits?",
+        "lessonIds": [
+          "create-configure-manage-identities--7-configure-manage-device-registration"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Microsoft Entra registered with only a local device account.",
+            "explanation": "Registration for personal-device access does not provide the required existing AD DS domain join.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Workgroup devices without an Entra identity.",
+            "explanation": "This state provides neither the requested on-premises domain join nor the Entra device identity.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Microsoft Entra hybrid joined.",
+            "explanation": "Hybrid joined devices retain the on-premises domain join and also have an Entra device identity.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Microsoft Entra joined only.",
+            "explanation": "Entra-only join does not retain the on-premises AD DS domain join required in this scenario.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "create-configure-manage-identities-check-04",
+        "prompt": "A test user was deleted from Entra ID ten days ago and has not been permanently deleted. How should you recover that account?",
+        "lessonIds": [
+          "create-configure-manage-identities--4-exercise-restore-remove-deleted-users"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Create a new account and assume it is the same directory object.",
+            "explanation": "A new account is a different object; the existing deleted account can still be restored.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Wait until day 31 for automatic restoration.",
+            "explanation": "After the retention window, permanent deletion begins rather than automatic restoration.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Permanently delete it first, then select Restore.",
+            "explanation": "Permanent deletion cannot be undone and would remove the available restore path.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Restore it from Deleted users.",
+            "explanation": "The account remains restorable within the 30-day retention window unless it was permanently deleted.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "create-configure-manage-identities-check-05",
+        "prompt": "Users currently have direct product licenses. You want to migrate them to equivalent group-based licenses without losing services. Which sequence is appropriate?",
+        "lessonIds": [
+          "create-configure-manage-identities--9-exercise-change-group-license-assignments"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Assign group licenses, verify successful equivalent licensing, then gradually remove direct assignments.",
+            "explanation": "Verifying the inherited licenses before removing direct ones avoids a gap in service access; the same product is consumed only once per user.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Remove every direct assignment before assigning group licenses.",
+            "explanation": "This can leave users temporarily unlicensed and disrupt their services or data.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Delete the user accounts, then recreate them in the licensing group.",
+            "explanation": "Licensing migration does not require deleting identities and would unnecessarily disrupt access.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Leave direct assignments forever and assume group departure revokes all licenses.",
+            "explanation": "Leaving a group removes inherited licensing, but retained direct assignments continue to license that user.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "create-configure-manage-identities-check-06",
+        "prompt": "A SaaS application exposes a SCIM endpoint. You want user creation and removal to follow the identity lifecycle automatically. Which integration fits?",
+        "lessonIds": [
+          "create-configure-manage-identities--12-explore-automatic-user-creation"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Use a deployment output to return the application’s account list.",
+            "explanation": "An ARM output returns deployment values; it does not provide ongoing SCIM provisioning and deprovisioning.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Connect the Entra provisioning service to the application’s SCIM endpoint.",
+            "explanation": "SCIM and the provisioning service automate user and group lifecycle changes through the target application’s endpoint.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Use an Azure RBAC Reader assignment as the provisioning connection.",
+            "explanation": "Azure RBAC controls access to Azure resources; assigning Reader does not implement SCIM account provisioning in the SaaS app.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Require administrators to create and remove every app account manually.",
+            "explanation": "Manual account management does not meet the requirement for automated lifecycle provisioning.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "describe-core-architectural-components-of-azure",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:11.628390Z",
+    "questions": [
+      {
+        "id": "describe-core-architectural-components-of-azure-check-01",
+        "prompt": "A workload should survive a datacenter failure while remaining in one Azure region. Which physical boundaries should you use for redundancy where supported?",
+        "lessonIds": [
+          "describe-core-architectural-components-of-azure--5-describe-azure-physical-infrastructure"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Different resource names within one datacenter only.",
+            "explanation": "Changing names provides no physical isolation from a datacenter failure.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Separate availability zones within that region.",
+            "explanation": "Zones are physically separate datacenter groups with independent power, cooling and networking within a region.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Separate resource groups in the same availability zone.",
+            "explanation": "Resource groups are logical management containers and do not provide separate datacenter failure boundaries.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Separate subscriptions with all VMs pinned to the same zone.",
+            "explanation": "Subscription boundaries do not separate those VMs from the same physical zone failure.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "describe-core-architectural-components-of-azure-check-02",
+        "prompt": "You want a supported service to replicate across availability zones automatically rather than pinning one resource to a single zone. Which deployment category should you choose?",
+        "lessonIds": [
+          "describe-core-architectural-components-of-azure--5-describe-azure-physical-infrastructure"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "A second resource group without changing service configuration.",
+            "explanation": "A resource-group boundary is not a service redundancy configuration.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A second billing subscription alone.",
+            "explanation": "A billing boundary does not enable automatic zone replication for the service.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Zone-redundant.",
+            "explanation": "A zone-redundant service spreads or replicates across zones through the platform, unlike a single-zone placement.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Zonal, pinned to one selected zone.",
+            "explanation": "A zonal resource is placed in the selected zone and does not by itself provide cross-zone redundancy.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "describe-core-architectural-components-of-azure-check-03",
+        "prompt": "A temporary lab’s VMs, network and storage share the same deletion date. What organization makes cleaning up that lab straightforward?",
+        "lessonIds": [
+          "describe-core-architectural-components-of-azure--6-describe-azure-management-infrastructure"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Mix the lab resources with production resources and delete that group.",
+            "explanation": "Group deletion affects its contained resources, so mixing production with disposable lab resources creates an unsuitable shared lifecycle.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Put every resource in several resource groups simultaneously.",
+            "explanation": "A resource-group-scoped resource belongs to one resource group at a time, not several.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Nest a lab resource group inside a production resource group.",
+            "explanation": "Azure resource groups cannot be nested.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Place the lab’s resources in a dedicated resource group and delete the group when finished.",
+            "explanation": "A shared resource-group lifecycle allows the contained lab resources to be deleted together when the lab ends.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "describe-core-architectural-components-of-azure-check-04",
+        "prompt": "A company wants development and production to have separate billing and access-management boundaries. Which structure is appropriate?",
+        "lessonIds": [
+          "describe-core-architectural-components-of-azure--6-describe-azure-management-infrastructure"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Use separate Azure subscriptions for the environments.",
+            "explanation": "Subscriptions provide billing and access-control boundaries and can separate lifecycle environments.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Use only different VM names inside one shared resource group.",
+            "explanation": "Resource names alone do not create separate subscription billing or access boundaries.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Use different availability zones as billing boundaries.",
+            "explanation": "Zones provide physical resilience within regions, not independent subscription billing boundaries.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Use one tag and assume it creates a new subscription.",
+            "explanation": "A tag can help organize cost reporting, but it does not create a separate subscription boundary.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "describe-core-architectural-components-of-azure-check-05",
+        "prompt": "Several subscriptions need the same inherited governance policy. Where should you organize them for a shared policy assignment?",
+        "lessonIds": [
+          "describe-core-architectural-components-of-azure--6-describe-azure-management-infrastructure"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Under a storage account.",
+            "explanation": "A storage account is a resource, not a parent container for subscriptions and policy inheritance.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Under a management group.",
+            "explanation": "Management groups sit above subscriptions and allow governance assignments to apply across the subscriptions beneath them.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Inside one resource group spanning the subscriptions.",
+            "explanation": "A resource group belongs to one subscription; it cannot contain other subscriptions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Inside a single availability zone.",
+            "explanation": "Availability zones are physical deployment boundaries, not governance containers for subscriptions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "describe-core-architectural-components-of-azure-check-06",
+        "prompt": "A deployment uses a region that has a paired region. The owner has not configured cross-region recovery for the service. Which statement is correct?",
+        "lessonIds": [
+          "describe-core-architectural-components-of-azure--5-describe-azure-physical-infrastructure"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Availability zones are the paired region.",
+            "explanation": "Zones are within one region; a paired region is a different regional boundary.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Creating a second resource group automatically replicates the data.",
+            "explanation": "Resource groups organize resources but do not configure service data replication.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Check the service’s replication and recovery requirements; pairing alone does not ensure automatic failover.",
+            "explanation": "The module explicitly warns that services may require customer-configured recovery and replication across regions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Every resource automatically fails over because the region is paired.",
+            "explanation": "A region pair does not give every resource automatic cross-region replication and failover.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "sovereignty-policy-initiatives",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:11.628390Z",
+    "questions": [
+      {
+        "id": "sovereignty-policy-initiatives-check-01",
+        "prompt": "A governance team wants to assign several tagging and location policies together and track one shared compliance goal. Which Azure Policy resource fits?",
+        "lessonIds": [
+          "sovereignty-policy-initiatives--azure-policy-resources"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "A policy exemption for every resource.",
+            "explanation": "Exemptions record exceptions to policies rather than bundling policies for enforcement and compliance tracking.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A remediation task without policy definitions.",
+            "explanation": "A remediation task acts on applicable policy assignments; it is not a container for defining the policy set.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "An initiative definition.",
+            "explanation": "An initiative groups policy definitions so they can be assigned and tracked together for a shared goal.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "One Azure RBAC role definition.",
+            "explanation": "An RBAC role lists access permissions; it does not group configuration-compliance policy definitions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sovereignty-policy-initiatives-check-02",
+        "prompt": "A team wants noncompliant resource requests recorded but allowed to proceed while it studies the impact. Which policy effect fits?",
+        "lessonIds": [
+          "sovereignty-policy-initiatives--azure-policy-definitions"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "deny",
+            "explanation": "deny blocks the noncompliant request, contrary to the requirement to allow it.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "disabled",
+            "explanation": "disabled prevents policy evaluation, so it does not provide the requested audit of noncompliance.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "modify",
+            "explanation": "modify changes supported request properties; the requirement is to observe rather than change them.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "audit",
+            "explanation": "audit records a warning for noncompliance without blocking the request.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sovereignty-policy-initiatives-check-03",
+        "prompt": "A deny policy allowing only Region A is assigned after a VM already exists in Region B. What does the policy do to that existing VM during a compliance scan?",
+        "lessonIds": [
+          "sovereignty-policy-initiatives--azure-policy-design-principles"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Flags it as noncompliant without deleting it.",
+            "explanation": "A deny policy evaluates existing resources for compliance but does not delete them merely because they violate the newly assigned rule.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Deletes it automatically.",
+            "explanation": "deny blocks relevant noncompliant requests; it is not an automatic resource-deletion remediation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Moves it automatically to Region A.",
+            "explanation": "A deny effect does not migrate existing resources to another region.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Marks it compliant permanently because it predates the policy.",
+            "explanation": "Resources already present are evaluated by compliance scans; creation before assignment does not automatically make them compliant.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sovereignty-policy-initiatives-check-04",
+        "prompt": "A deployIfNotExists remediation task must deploy a missing related resource. What authorization does the assignment need?",
+        "lessonIds": [
+          "sovereignty-policy-initiatives--azure-policy-resources"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "A stored human administrator password inside the policy rule.",
+            "explanation": "Azure Policy remediation uses a managed identity rather than requiring an embedded administrator password.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources",
+              "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A managed identity with the required Azure RBAC permissions.",
+            "explanation": "Policy remediation uses the assignment’s managed identity, which must be authorized for the deployment it performs.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources",
+              "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Only an identity with Reader access, even when the task must create resources.",
+            "explanation": "Reader can inspect resources but does not grant the required creation permissions for this deployment.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources",
+              "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "No identity or permissions because policy bypasses Azure authorization.",
+            "explanation": "Remediation does not bypass authorization; it needs a managed identity and appropriate permissions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources",
+              "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sovereignty-policy-initiatives-check-05",
+        "prompt": "A new deny assignment should evaluate compliance without blocking resource requests during a pilot. Which assignment setting matches?",
+        "lessonIds": [
+          "sovereignty-policy-initiatives--azure-policies-evaluation-resources"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Keep enforcementMode at Default for the deny effect.",
+            "explanation": "Default enforces the deny effect and can block the requests the pilot is intended to allow.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Start a remediation task and assume it disables deny enforcement.",
+            "explanation": "Remediation tasks repair applicable resources; they do not replace the assignment’s enforcementMode setting.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Set enforcementMode to DoNotEnforce.",
+            "explanation": "DoNotEnforce retains compliance evaluation while suppressing the policy effect during resource requests.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Set the policy effect to disabled.",
+            "explanation": "disabled prevents evaluation, so it cannot provide the desired pilot compliance results.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "sovereignty-policy-initiatives-check-06",
+        "prompt": "A resource meets a policy’s intent through a different approved control. Which policy exemption category describes that reason?",
+        "lessonIds": [
+          "sovereignty-policy-initiatives--azure-policy-resources"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Waiver.",
+            "explanation": "Waiver records accepted noncompliance rather than the intent being met through another control.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "An initiative.",
+            "explanation": "An initiative groups policy definitions; it is not an exemption category.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "An attestation for every unrelated policy.",
+            "explanation": "Attestations record manual-policy compliance; they are not the exemption category for this accepted alternative control.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Mitigated.",
+            "explanation": "Mitigated records that the policy’s intent is satisfied through another method.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "secure-azure-resources-with-rbac",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:11.628390Z",
+    "questions": [
+      {
+        "id": "secure-azure-resources-with-rbac-check-01",
+        "prompt": "A user needs to manage VMs only in the Lab resource group and must not grant access. Which assignment best follows the exercise and least privilege?",
+        "lessonIds": [
+          "secure-azure-resources-with-rbac--5-grant-access"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Owner at subscription scope.",
+            "explanation": "Owner includes access management, and subscription scope extends well beyond the requested Lab group.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Reader at the Lab resource-group scope.",
+            "explanation": "Reader can view resources but cannot perform the requested VM-management operations.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "User Access Administrator at subscription scope.",
+            "explanation": "This role is for access management and the scope is too broad for the VM-management requirement.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Virtual Machine Contributor at the Lab resource-group scope.",
+            "explanation": "This role and narrow scope allow VM management in the intended group without granting access-management authority.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "secure-azure-resources-with-rbac-check-02",
+        "prompt": "One custom role excludes an operation through NotActions, but another assigned role allows that same operation. With no deny assignment or other restriction, how are those grants combined?",
+        "lessonIds": [
+          "secure-azure-resources-with-rbac--2-rbac-overview"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "The other role can grant the operation.",
+            "explanation": "NotActions subtracts from one role’s Actions; it is not a deny that overrides permissions granted by a different role.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The first role’s NotActions blocks the operation across every role.",
+            "explanation": "NotActions is not a global deny; RBAC combines allowed permissions across assignments.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "The newest assignment always replaces every older assignment.",
+            "explanation": "RBAC role assignments are additive, not an automatic replacement based on creation time.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Neither role applies until their definitions are merged into one role.",
+            "explanation": "Separate assignments already combine their allowed permissions; a merged role definition is not required.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "secure-azure-resources-with-rbac-check-03",
+        "prompt": "A user’s Contributor assignment is inherited from the subscription. You want to remove that specific grant for the user. Which location must you address?",
+        "lessonIds": [
+          "secure-azure-resources-with-rbac--4-list-access"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Move the user between availability zones.",
+            "explanation": "Users and RBAC grants are directory/access constructs, not physical zone placements that can revoke this grant.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The subscription scope where the assignment was made.",
+            "explanation": "An inherited assignment originates at the parent scope; remove or change that assignment there to revoke its grant.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Delete an equivalent assignment from the resource group even though none exists there.",
+            "explanation": "Deleting a nonexistent local assignment cannot remove the actual parent-scope grant.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Rename the resource group.",
+            "explanation": "Resource groups cannot be renamed, and naming does not revoke inherited role assignments.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "secure-azure-resources-with-rbac-check-04",
+        "prompt": "You are granting an application access to one storage account. Which three elements make up the Azure RBAC role assignment?",
+        "lessonIds": [
+          "secure-azure-resources-with-rbac--2-rbac-overview"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Policy effect, policy rule and compliance percentage.",
+            "explanation": "Those concern Azure Policy compliance rather than assigning access to a principal.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Tenant branding, sign-in logo and helpdesk URL.",
+            "explanation": "Branding and helpdesk settings do not define an Azure resource access grant.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Security principal, role definition and scope.",
+            "explanation": "These identify who receives access, what operations are permitted and where the access applies.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Resource name, region and SKU.",
+            "explanation": "Those describe a resource configuration, not the who, what and where of an RBAC role assignment.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "secure-azure-resources-with-rbac-check-05",
+        "prompt": "An administrator needs to add an Azure role assignment at a resource-group scope. Which role discussed in the module provides access-management permissions there?",
+        "lessonIds": [
+          "secure-azure-resources-with-rbac--5-grant-access"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Reader.",
+            "explanation": "Reader provides resource viewing, not role-assignment write permissions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Contributor.",
+            "explanation": "Contributor manages resources but does not grant access by creating Azure role assignments.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Virtual Machine Contributor.",
+            "explanation": "VM management is distinct from managing Azure RBAC role assignments; this role does not grant that access-management authority.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "User Access Administrator.",
+            "explanation": "User Access Administrator manages user access to Azure resources, including role assignments at its authorized scope.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "secure-azure-resources-with-rbac-check-06",
+        "prompt": "You need to investigate who created or deleted Azure RBAC assignments last month. Which view and filter match the exercise?",
+        "lessonIds": [
+          "secure-azure-resources-with-rbac--6-view-activity-logs"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure Activity Log filtered by timespan and role-assignment operations.",
+            "explanation": "The Activity Log records Azure RBAC changes; the timespan and operation filters isolate the relevant events.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Only the current Role assignments tab, without historical events.",
+            "explanation": "The current assignments show existing grants but do not provide the complete history of creation and deletion events.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Only a VM’s CPU chart.",
+            "explanation": "VM performance metrics do not identify Azure role-assignment changes.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Only the storage account’s access keys page.",
+            "explanation": "Access keys are storage credentials, not the Activity Log history of Azure RBAC operations.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

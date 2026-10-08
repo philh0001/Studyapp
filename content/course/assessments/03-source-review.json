@@ -1,0 +1,337 @@
+{
+  "checkedAt": "2026-10-08T11:01:25.680413+00:00",
+  "reviewKind": "AI-assisted semantic source comparison",
+  "humanApproval": false,
+  "moduleIds": [
+    "intro-to-azure-application-gateway",
+    "intro-to-azure-network-watcher",
+    "configure-storage-accounts",
+    "configure-blob-storage",
+    "configure-storage-security",
+    "configure-azure-files-file-sync",
+    "intro-to-azure-virtual-machines"
+  ],
+  "questionsReviewed": 42,
+  "optionsReviewed": 168,
+  "findings": [],
+  "questions": [
+    {
+      "questionId": "intro-to-azure-application-gateway-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+      ],
+      "notes": "Compared each option with routing, session stickiness, probes and connection draining in the actual unit. The one-hostname scenario requires path-based routing, not multi-site routing."
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+      ],
+      "notes": "The source describes multi-site listeners and hostname-based rules. Distractors change listener scope, response timing or error output without meeting hostname selection."
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+      ],
+      "notes": "Checked TLS termination and re-encryption against the actual unit. Explicitly states backend HTTPS readiness so certificate provisioning is not an unstated prerequisite."
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+      ],
+      "notes": "Compared backend probes with routing and response features in the source; the question asks health eligibility rather than failover timing."
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+      ],
+      "notes": "Cookie acceptance and a healthy server are explicit. Actual unit and current feature docs support session affinity; no guarantee is made after server failure."
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+      ],
+      "notes": "Original threat-protection scenario grounded in the unit’s WAF section; does not rely on stale CRS-version defaults."
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+      ],
+      "notes": "Checked the 5-tuple, direction and rule-result description in actual units. VM/NIC and extension availability are explicit; no live application response is promised."
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+      ],
+      "notes": "Source explicitly returns next-hop type, IP and route table. DNS is already resolved so the question isolates routing selection."
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+      ],
+      "notes": "Actual units distinguish continuous Connection Monitor from point-in-time troubleshoot. Current product docs confirm extension requirement for Azure VM sources."
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+      ],
+      "notes": "Checked capture filters, extension and storage destinations against actual source. The extension prerequisite is explicit."
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+      ],
+      "notes": "Compared monitoring and diagnostic tool purposes in actual units. Original inherited-network scenario asks for visualization, not connectivity proof."
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher"
+      ],
+      "notes": "Actual unit lists diagnosis results, fault summary and recommended actions. Question does not claim all VPN faults are automatically corrected."
+    },
+    {
+      "questionId": "configure-storage-accounts-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+      ],
+      "notes": "Compared storage service access patterns in the actual unit. Original document-processing scenario avoids the unit’s thumbnail example."
+    },
+    {
+      "questionId": "configure-storage-accounts-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+      ],
+      "notes": "Actual account-kind table and current storage account overview support the service combination; premium performance is explicitly unnecessary."
+    },
+    {
+      "questionId": "configure-storage-accounts-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+      ],
+      "notes": "Explicitly assumes supported account type and region. Compared failure scope and geographic replication in actual unit; no zero-cost or universal availability claim."
+    },
+    {
+      "questionId": "configure-storage-accounts-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+      ],
+      "notes": "Actual unit separates GRS, RA-GRS and GZRS read behavior. Explicitly allows asynchronous lag and does not require primary-zone redundancy."
+    },
+    {
+      "questionId": "configure-storage-accounts-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/7-secure-storage-endpoints",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
+      ],
+      "notes": "Actual unit and current private-endpoint docs require separate public-endpoint controls. DNS is already correct, avoiding a hidden prerequisite."
+    },
+    {
+      "questionId": "configure-storage-accounts-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+      ],
+      "notes": "Checked the explicit no-direct-conversion rule in the actual unit and current account overview. Chosen Premium service compatibility is a stated prerequisite."
+    },
+    {
+      "questionId": "configure-blob-storage-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+      ],
+      "notes": "Compared actual blob-type descriptions. The scenario explicitly requires appending, not arbitrary updates."
+    },
+    {
+      "questionId": "configure-blob-storage-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/3-create-blob-containers"
+      ],
+      "notes": "Actual unit explicitly describes the account-level gate and Blob versus Container read/list behavior. No sensitive-data recommendation is made."
+    },
+    {
+      "questionId": "configure-blob-storage-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+      ],
+      "notes": "Checked GPv2 Cool 30-day billing and early-deletion behavior against current access-tier docs. Distinguishes a billing minimum from a deletion lock."
+    },
+    {
+      "questionId": "configure-blob-storage-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/5-add-blob-lifecycle-management-rules"
+      ],
+      "notes": "Compared lifecycle if-then actions and prefix scoping in actual source. Assumes eligible block blobs and supported lifecycle action as stated."
+    },
+    {
+      "questionId": "configure-blob-storage-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ],
+      "notes": "Cross-checked current object-replication prerequisites because the unit omits source change feed. Account support and disabled HNS are explicit."
+    },
+    {
+      "questionId": "configure-blob-storage-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+      ],
+      "notes": "Compared taught transfer tools and lifecycle role in actual unit. Network availability and command-line automation make AzCopy the unambiguous match."
+    },
+    {
+      "questionId": "configure-storage-security-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies",
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+      ],
+      "notes": "Actual unit recommends Microsoft Entra authorization with managed identities. Explicitly states workload support and requires data-access rather than management-only permissions."
+    },
+    {
+      "questionId": "configure-storage-security-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "notes": "Compared SAS restrictions and HTTPS guidance with all distractors in actual source. Does not claim SAS is tied to a named recipient or cannot be forwarded."
+    },
+    {
+      "questionId": "configure-storage-security-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "notes": "Actual source supports policy-based revocation for service SAS. Explicitly states the SAS is associated with the policy; does not generalize to account or user-delegation SAS."
+    },
+    {
+      "questionId": "configure-storage-security-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/4-identify-uri-sas-parameters"
+      ],
+      "notes": "Compared all four parameter meanings in actual unit. Assumes the SAS is generated validly; does not suggest editing a signed URL without regenerating its signature."
+    },
+    {
+      "questionId": "configure-storage-security-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/6-create-customer-managed-keys",
+        "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
+      ],
+      "notes": "Checked actual CMK unit and current Key Vault/managed identity prerequisites. Distinguishes storage authorization keys from encryption key access."
+    },
+    {
+      "questionId": "configure-storage-security-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+      ],
+      "notes": "Actual encryption unit explicitly describes independent service and infrastructure layers. Distractors address authorization or networking, not double encryption."
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/2-compare-files-to-blobs",
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+      ],
+      "notes": "Actual unit contrasts Azure Files and Blob interfaces. SMB is explicit, so object storage is not presented as interchangeable."
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/3-manage-file-shares"
+      ],
+      "notes": "Actual file-share unit identifies outbound 445 as a common blocker. Credentials and DNS are explicitly already correct; allowing 445 is not claimed to fix all mounts."
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/4-create-file-share-snapshots",
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+      ],
+      "notes": "Checked snapshot file recovery in actual unit and share-level-only soft delete in current docs. Explicit pre-overwrite snapshot makes recovery possible."
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+      ],
+      "notes": "Classic share type, pre-enabled protection and unexpired retention are explicit. Current docs support undeleting the entire share with contents/snapshots."
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+      ],
+      "notes": "Actual unit and current planning docs support SMB cloud endpoints and directly attached, non-system Windows Server NTFS endpoints. These prerequisites are explicit; NFS and Linux endpoint assumptions are excluded."
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+      ],
+      "notes": "Compared tiering, sync-group structure and share-recovery controls in actual unit/current planning docs. Preserves namespace and permits recalls rather than claiming tiered files are lost."
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+      ],
+      "notes": "Compared the source’s separate compute and storage billing. Explicit deallocation avoids confusing an OS shutdown with released compute."
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+      ],
+      "notes": "Actual unit states running resize restarts and deallocation enables sizes outside current cluster. Regional availability is explicit, not a capacity guarantee."
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+      ],
+      "notes": "Actual unit recommends separate data disks and warns against reliance on temporary storage. Does not claim persistent disks eliminate the need for backup."
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+      ],
+      "notes": "Actual unit supports JSON resource declarations and parameterized repeated deployment. Original test/production scenario does not copy assessment wording."
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+      ],
+      "notes": "Source describes zone separation, redundant instances and load balancing. Explicit multi-instance compatibility and supported region avoid hidden prerequisites."
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+      ],
+      "notes": "Compared backup retention/recovery against availability and scaling features in actual units. Does not imply successful backup alone proves recovery objectives."
+    }
+  ]
+}

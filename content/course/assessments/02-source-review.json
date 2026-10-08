@@ -1,0 +1,345 @@
+{
+  "checkedAt": "2026-10-08T11:00:35.300260Z",
+  "reviewKind": "AI-assisted semantic source comparison",
+  "humanApproval": false,
+  "moduleIds": [
+    "allow-users-reset-their-password",
+    "configure-virtual-networks",
+    "configure-network-security-groups",
+    "host-domain-azure-dns",
+    "configure-vnet-peering",
+    "control-network-traffic-flow-with-routes",
+    "intro-to-azure-load-balancer"
+  ],
+  "questionsReviewed": 42,
+  "optionsReviewed": 168,
+  "findings": [],
+  "questions": [
+    {
+      "questionId": "allow-users-reset-their-password-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset"
+      ],
+      "notes": "Compared pilot scoping with the implementation unit; scope is explicitly ordinary users to avoid administrator-policy exceptions."
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+      ],
+      "notes": "Compared user reset notifications against registration, branding and administrator notifications."
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+      ],
+      "notes": "Verified stronger administrator policy and the exercise requirement to use a non-admin account; question asks testing action rather than reproducing the Learn check."
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+      ],
+      "notes": "Verified current licensing and the writeback prerequisite; does not repeat obsolete Business Apps writeback licensing."
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
+      ],
+      "notes": "Compared current centralized-method policy with the audited lesson; explicitly states centralized policy to avoid legacy-transition ambiguity."
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
+      ],
+      "notes": "Verified branding scope in exercise and current company-branding documentation; licensing and role prerequisites are supplied."
+    },
+    {
+      "questionId": "configure-virtual-networks-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ],
+      "notes": "Calculated /27 size and verified Azure IPv4 first-four-plus-last reservations; not a copied assessment item."
+    },
+    {
+      "questionId": "configure-virtual-networks-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ],
+      "notes": "Checked each concrete CIDR containment and overlap against the subnet requirements."
+    },
+    {
+      "questionId": "configure-virtual-networks-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/5-plan-addressing",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ],
+      "notes": "Verified hybrid private-IP use and subnet allocation; VPN is already configured so the address alone is not claimed to create connectivity."
+    },
+    {
+      "questionId": "configure-virtual-networks-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/8-associate-private-ip-addresses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ],
+      "notes": "Verified static/private address selection and NIC scope; no guest-only static configuration is proposed."
+    },
+    {
+      "questionId": "configure-virtual-networks-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/6-create-public-ip-addressing",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ],
+      "notes": "Verified static allocation lifecycle in current public-IP product documentation; explicitly uses Standard rather than retired Basic dynamic behavior."
+    },
+    {
+      "questionId": "configure-virtual-networks-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Verified default inter-subnet routing and NVA routing requirement in the taught subnet unit."
+    },
+    {
+      "questionId": "configure-network-security-groups-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Compared independent subnet/NIC evaluation; explicitly excludes security-admin override behavior outside the scenario."
+    },
+    {
+      "questionId": "configure-network-security-groups-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/5-create-network-security-groups-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Verified range and first-match priority with original rule values; allow is explicitly narrower and must precede the deny."
+    },
+    {
+      "questionId": "configure-network-security-groups-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/6-implement-asgs",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Verified ASGs versus Microsoft service tags; scenario is membership maintenance, not an unsupported ASG routing feature."
+    },
+    {
+      "questionId": "configure-network-security-groups-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/3-determine-network-security-groups-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Verified default outbound filtering while explicitly separating permission from route/SNAT connectivity."
+    },
+    {
+      "questionId": "configure-network-security-groups-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules"
+      ],
+      "notes": "Verified logical IP flow testing and rule attribution in the effective-rules unit; no claim of end-to-end application validation."
+    },
+    {
+      "questionId": "configure-network-security-groups-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/2-implement-network-security-groups",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Verified one NSG per subnet and immutable default rules; alternative NIC filtering is not falsely rejected."
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+      ],
+      "notes": "Verified delegation responsibility and all-four-name-server requirement against the implementation unit."
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+      ],
+      "notes": "Verified A/CNAME/MX/SOA semantics and record-set cardinality in product documentation."
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/5-resolve-name-alias-record",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-alias",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+      ],
+      "notes": "Verified apex restriction and Standard-public-IP alias target; uses a supported resource explicitly."
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+      ],
+      "notes": "Verified per-VNet private-zone links; no claim that peering automatically links DNS zones."
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+      ],
+      "notes": "Compared TTL caching behavior; does not promise immediate propagation after changing the authoritative record."
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/4-exercise-create-dns-zone-a-record"
+      ],
+      "notes": "Verified the official exercise explicit-server nslookup approach and distinguished DNS testing from application testing."
+    },
+    {
+      "questionId": "configure-vnet-peering-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Verified regional/global distinction and backbone communication; limits to supported Azure public-cloud regions."
+    },
+    {
+      "questionId": "configure-vnet-peering-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Verified overlap constraint without claiming an unsupported workaround through DNS or global peering."
+    },
+    {
+      "questionId": "configure-vnet-peering-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/5-determine-service-chaining-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Verified nontransitivity and separate resource management; explicitly excludes additional forwarding and managed connectivity."
+    },
+    {
+      "questionId": "configure-vnet-peering-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/3-determine-gateway-transit-connectivity",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Verified direction of allow-transit/use-remote settings and no-own-gateway prerequisite; supported gateway supplied."
+    },
+    {
+      "questionId": "configure-vnet-peering-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/4-create"
+      ],
+      "notes": "Verified Initiated/Connected semantics against the create-peering teaching unit."
+    },
+    {
+      "questionId": "configure-vnet-peering-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Verified private-IP connectivity versus name-resolution boundaries; avoids treating peering as automatic DNS linkage."
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Verified longest-prefix selection using two UDRs, avoiding preferred-system-route and BGP exceptions."
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Verified equal-prefix UDR-before-BGP preference; explicitly on-premises and excludes service-endpoint behavior."
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Verified None next-hop semantics with route-match conditions supplied."
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Verified the two-layer forwarding configuration in the NVA exercise; does not assume routing alone enables the guest router."
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Verified asymmetric example routing and source-subnet association; not a recommendation for asymmetric stateful-firewall production routing."
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Verified table/subnet cardinality and association scope in NVA teaching and product routing documentation."
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer"
+      ],
+      "notes": "Verified internal frontend and hybrid-client use; hybrid network is supplied as existing."
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer"
+      ],
+      "notes": "Compared service selection using requirements that are explicitly taught: regional Layer 7 path routing and WAF."
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ],
+      "notes": "Verified HTTP 200 success and unhealthy-backend new-connection behavior; repeated failures avoid a single-probe threshold ambiguity."
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ],
+      "notes": "Verified two-/three-tuple affinity versus default five-tuple; stability and health conditions avoid an absolute persistence promise."
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ],
+      "notes": "Verified inbound NAT purpose in the Load Balancer components unit; does not claim NAT bypasses network security."
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ],
+      "notes": "Verified outbound SNAT versus inbound NAT, HA ports and health probes; explicitly requests configuration rather than assuming default outbound access."
+    }
+  ]
+}

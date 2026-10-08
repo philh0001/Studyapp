@@ -1,0 +1,1887 @@
+[
+  {
+    "moduleId": "configure-virtual-machine-availability",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:02:16.528353Z",
+    "questions": [
+      {
+        "id": "configure-virtual-machine-availability-check-01",
+        "prompt": "Two application VMs must not both restart in the same planned platform-maintenance batch. Which availability-set concept addresses this requirement?",
+        "lessonIds": [
+          "configure-virtual-machine-availability--4-review-update-fault-domains"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Different update domains",
+            "explanation": "Update domains group VMs that can restart together; spreading these VMs across them separates their planned-maintenance batches.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Only different fault domains",
+            "explanation": "Fault domains reduce shared power or network hardware exposure; update domains define planned-maintenance restart groups.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "The same update domain",
+            "explanation": "VMs in the same update domain can restart together, which conflicts with the requirement.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A larger VM size",
+            "explanation": "A larger size changes capacity, not the update-domain grouping that controls these maintenance batches.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-virtual-machine-availability-check-02",
+        "prompt": "An application has replicated VM instances and must withstand the loss of one datacenter within a supported region. Which placement best meets this goal?",
+        "lessonIds": [
+          "configure-virtual-machine-availability--5-review-availability-zones"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Place every instance in one availability zone",
+            "explanation": "One zone leaves the instances exposed to that zone's datacenter failure.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones",
+              "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Distribute instances across availability zones",
+            "explanation": "Zones are physically separate locations with independent power, cooling and networking; replicated instances in other zones can serve the workload.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones",
+              "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Increase the size of one VM",
+            "explanation": "Additional CPU or memory does not place another application instance in a separate physical zone.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones",
+              "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Use one availability set as the entire datacenter-failure solution",
+            "explanation": "Availability sets reduce shared hardware and maintenance exposure but are not the cross-datacenter placement provided by zones.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones",
+              "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-virtual-machine-availability-check-03",
+        "prompt": "A workload changes from two VM instances to five, while keeping each VM size unchanged. What type of scaling occurred?",
+        "lessonIds": [
+          "configure-virtual-machine-availability--6-compare-vertical-horizontal-scaling"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Vertical scale up",
+            "explanation": "Vertical scaling changes each VM's size, which remained unchanged here.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Horizontal scale in",
+            "explanation": "Scale in removes instances; this change added three.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Horizontal scale out",
+            "explanation": "Horizontal scaling changes instance count; adding instances is scale out.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Vertical scale down",
+            "explanation": "Scale down reduces VM size; it does not describe an increase in instance count.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-virtual-machine-availability-check-04",
+        "prompt": "A team needs a scale set whose VMs can use different images and sizes. Which orchestration mode should it choose when creating the set?",
+        "lessonIds": [
+          "configure-virtual-machine-availability--7-implement-scale-sets"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Uniform",
+            "explanation": "Uniform uses a shared base image and configuration, so it does not meet the requested mixed-configuration model.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+              "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "An availability set instead of an orchestration mode",
+            "explanation": "Availability sets provide placement protection; they are not a scale-set orchestration mode.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+              "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A deployment slot",
+            "explanation": "Deployment slots stage App Service releases; they do not define scale-set VM orchestration.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+              "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Flexible",
+            "explanation": "Flexible orchestration allows differing VM images, sizes and configurations within one scale set.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+              "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-virtual-machine-availability-check-05",
+        "prompt": "CPU load stays high during business hours and drops for hours overnight. Which autoscale design addresses both performance and unnecessary capacity?",
+        "lessonIds": [
+          "configure-virtual-machine-availability--9-implement-autoscale"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Scale out for sustained high load and scale in for sustained low load",
+            "explanation": "Paired rules add instances when demand requires them and remove unnecessary instances after demand falls.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Configure only scale-out rules",
+            "explanation": "This can add capacity under load but provides no corresponding rule to remove it overnight.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Scale in whenever CPU rises",
+            "explanation": "Removing instances during sustained high demand moves capacity in the wrong direction.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Use one fixed instance count and no autoscale",
+            "explanation": "Fixed capacity does not automatically respond to the stated sustained changes in demand.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-virtual-machine-availability-check-06",
+        "prompt": "A scale-set web application needs HTTP path routing and TLS termination at its traffic distributor. Which service matches the layer-seven requirement?",
+        "lessonIds": [
+          "configure-virtual-machine-availability--7-implement-scale-sets"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure Load Balancer alone",
+            "explanation": "Load Balancer distributes layer-four traffic; it does not provide the requested HTTP path routing and TLS termination.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Azure Application Gateway",
+            "explanation": "Application Gateway provides layer-seven routing and TLS termination for the stated web traffic.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "An availability set",
+            "explanation": "An availability set controls VM placement, not HTTP routing or TLS termination.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "An autoscale schedule",
+            "explanation": "A schedule changes instance capacity at planned times; it does not route requests or terminate TLS.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "configure-app-service-plans",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:02:16.528353Z",
+    "questions": [
+      {
+        "id": "configure-app-service-plans-check-01",
+        "prompt": "Two web apps share an App Service plan. A new resource-intensive app could exhaust its remaining capacity and needs independent scaling. What is the most appropriate plan design?",
+        "lessonIds": [
+          "configure-app-service-plans--2-implement-azure"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Add it to the existing plan without checking capacity",
+            "explanation": "Apps share plan resources, so unchecked additional demand can affect existing apps.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure",
+              "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Place the new app in a separate plan",
+            "explanation": "A separate plan provides a separate compute and scaling boundary rather than burdening the existing apps' shared capacity.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure",
+              "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Keep all three apps in the same plan and rely only on plan-level autoscale",
+            "explanation": "Plan-level autoscale changes shared plan capacity; it does not give the resource-intensive app its own independent compute and scaling boundary.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure",
+              "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Add the new app to the same plan because apps never compete for capacity",
+            "explanation": "Apps share plan compute resources, so the new app can affect the other apps when capacity is overloaded.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure",
+              "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-app-service-plans-check-02",
+        "prompt": "A developer uses the Free App Service tier and now needs multiple instances. Can the existing Free tier simply scale out?",
+        "lessonIds": [
+          "configure-app-service-plans--3-determine-plan-pricing"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Yes; all App Service tiers support additional instances",
+            "explanation": "The pricing lesson explicitly excludes scale out for Free and Shared.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+              "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Yes; adding another deployment slot increases Free-tier instances",
+            "explanation": "Slots are deployment environments on supported tiers, not a way to bypass the Free tier's scaling limit.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+              "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "No; choose a tier that supports scale out",
+            "explanation": "Free and Shared use shared compute with CPU quotas and cannot scale out.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+              "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "No; App Service never supports scale out",
+            "explanation": "Dedicated tiers support scale out within their tier limits; the restriction here is the Free tier.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+              "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-app-service-plans-check-03",
+        "prompt": "A web app needs more memory per worker, rather than additional workers of the same size. Which change addresses that requirement?",
+        "lessonIds": [
+          "configure-app-service-plans--4-scale-up-scale-out"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Scale out with the current worker size",
+            "explanation": "Scale out adds workers but does not increase the memory of each worker.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Add a scale-in rule",
+            "explanation": "Scale in removes workers; it does not increase per-worker memory.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Add more apps to the same worker size",
+            "explanation": "More apps sharing the same workers do not increase memory available per worker and can increase resource contention.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Scale up the App Service plan",
+            "explanation": "Scale up changes tier or instance size to obtain more per-instance CPU, memory or features.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-app-service-plans-check-04",
+        "prompt": "An App Service plan is scaled out from two workers to four. Its app uses Azure SQL Database. Which dependency assumption must the administrator avoid?",
+        "lessonIds": [
+          "configure-app-service-plans--4-scale-up-scale-out"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Assuming Azure SQL automatically gains capacity with the plan",
+            "explanation": "Plan scaling affects App Service compute; dependent databases and storage require their own capacity decisions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Expecting the plan to add App Service workers",
+            "explanation": "Adding App Service instances is exactly what scale out does.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Checking whether the selected tier supports four workers",
+            "explanation": "Tier limits constrain scale out, so this is a necessary capacity check.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Reviewing the other apps sharing the plan",
+            "explanation": "Plan scaling can affect shared apps, so reviewing them is appropriate.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-app-service-plans-check-05",
+        "prompt": "A Premium v3 app should add capacity every weekday before a predictable morning rush using a custom schedule. Which feature fits?",
+        "lessonIds": [
+          "configure-app-service-plans--5-plan-scaling"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Automatic scaling with a custom schedule rule",
+            "explanation": "App Service automatic scaling is HTTP-traffic-driven and does not use custom autoscale schedule rules.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+              "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Rule-based autoscale with a scheduled profile",
+            "explanation": "Autoscale supports schedule-based profiles and custom rules for predictable demand.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+              "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A manual fixed instance count with no schedule",
+            "explanation": "A fixed manual count cannot perform the requested recurring capacity change automatically.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+              "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Use only a CPU threshold and no scheduled profile",
+            "explanation": "A CPU rule reacts to measured demand; the stated goal is scheduled capacity before the known rush.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+              "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-app-service-plans-check-06",
+        "prompt": "An autoscale profile has minimum 2, maximum 8 and default 4 instances. Metrics become unavailable while 6 instances run. How does the fallback-to-default behavior apply?",
+        "lessonIds": [
+          "configure-app-service-plans--5-plan-scaling"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "It must immediately scale in to exactly 4",
+            "explanation": "The default is not an instruction to scale in when metrics are unavailable.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "It must immediately scale out to the maximum 8",
+            "explanation": "Maximum bounds capacity; it is not the missing-metrics fallback target.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "It does not scale in from 6 to the default 4",
+            "explanation": "Default fallback scales out only when current capacity is below the default; it does not reduce a higher current count to default.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "It must remove every instance",
+            "explanation": "The minimum and fallback behavior do not direct the service to zero instances here.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "configure-azure-app-services",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:02:16.528353Z",
+    "questions": [
+      {
+        "id": "configure-azure-app-services-check-01",
+        "prompt": "A supported App Service app runs a continuous WebJob. Which setting keeps the app loaded even when incoming traffic is idle?",
+        "lessonIds": [
+          "configure-azure-app-services--3-create-app-service"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Session affinity",
+            "explanation": "Session affinity sends a client to the same instance during its session; it does not keep an idle app loaded.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "HTTPS Only",
+            "explanation": "HTTPS Only redirects HTTP to HTTPS; it does not keep the app active for a continuous WebJob.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Always On",
+            "explanation": "Always On keeps the app loaded during idle periods and is required for continuous or CRON-triggered WebJobs.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A custom domain",
+            "explanation": "A custom domain changes the app's public name, not its idle-loading behavior.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-app-services-check-02",
+        "prompt": "A web app on a supported Standard plan needs to validate a release before replacing production. Which workflow matches the module?",
+        "lessonIds": [
+          "configure-azure-app-services--5-create-deployment-slots"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Deploy untested content directly to production first",
+            "explanation": "This replaces production before the requested preproduction validation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Swap the empty staging slot before deploying and testing the release",
+            "explanation": "The required workflow deploys and validates the release before exchanging content with production.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Treat the staging slot as an offline backup file",
+            "explanation": "A deployment slot is a live app with its own hostname, not a backup archive.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Deploy to a staging slot, validate it, then swap",
+            "explanation": "A live staging slot permits validation before its content and eligible configuration are exchanged with production.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-app-services-check-03",
+        "prompt": "Staging and production use different database connection strings. Each string must remain with its own slot after a content swap. What should you configure?",
+        "lessonIds": [
+          "configure-azure-app-services--6-add-deployment-slots"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Mark each connection string as a deployment-slot setting",
+            "explanation": "Slot-specific connection strings remain attached to their slots when app content swaps.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+              "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Leave both strings as ordinary swappable settings",
+            "explanation": "Eligible ordinary settings can move with content, which would violate the stated requirement.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+              "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Rename the slots without marking the connection strings",
+            "explanation": "Slot names alone do not make a connection string slot-specific.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+              "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Copy the production string into staging permanently",
+            "explanation": "That removes the required separation between staging and production databases.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+              "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-app-services-check-04",
+        "prompt": "An app has a public home page and protected account pages. Its own code handles authorization. Which built-in authentication behavior preserves access for anonymous home-page visitors?",
+        "lessonIds": [
+          "configure-azure-app-services--7-secure-app-service"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Require authentication for every request",
+            "explanation": "That also restricts unauthenticated requests to the public home page.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Allow anonymous requests and let app code authorize protected routes",
+            "explanation": "This permits unauthenticated traffic to reach app code, where the app can protect the appropriate routes.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Turn on HTTPS Only as the authorization policy",
+            "explanation": "HTTPS secures transport; it does not distinguish anonymous public routes from protected account routes.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Use session affinity instead of authorization",
+            "explanation": "Affinity selects an instance for a client session; it is not access control.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-app-services-check-05",
+        "prompt": "You control www.example.net and its DNS provider supports CNAME records. You want the mapping to follow the app hostname even if its underlying IP changes. Which record fits?",
+        "lessonIds": [
+          "configure-azure-app-services--8-create-custom-domain-names"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "An A record containing the current app IP",
+            "explanation": "An A record fixes the mapping to that address and needs updating if it changes.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A connection string containing the domain",
+            "explanation": "Connection strings configure application dependencies, not public DNS hostname mapping.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A CNAME to the App Service hostname",
+            "explanation": "CNAME maps one hostname to another, so it follows resolution of the target when the target IP changes.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A deployment-slot setting containing the domain",
+            "explanation": "A slot setting alone creates no DNS mapping; custom-domain validation and configuration are still required.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-app-services-check-06",
+        "prompt": "Requests became slow after an app began calling an external API. Which Application Insights data best tests whether that API is contributing to the delay?",
+        "lessonIds": [
+          "configure-azure-app-services--10-use-application-insights"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Only incoming request counts, ignoring dependency telemetry",
+            "explanation": "Request counts show overall traffic but do not isolate response times and failures of the external API calls.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Only the app's exception count, ignoring successful but slow calls",
+            "explanation": "Exceptions can reveal failures, but dependency timings are needed to investigate successful calls that are slow.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Only the configured runtime version",
+            "explanation": "The runtime version is configuration, not measured latency or failures of the external API.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Dependency response times and failure rates",
+            "explanation": "Dependency telemetry reveals latency and failures in calls to external services.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "configure-azure-container-instances",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:02:16.528353Z",
+    "questions": [
+      {
+        "id": "configure-azure-container-instances-check-01",
+        "prompt": "A team compares typical process-isolated containers with full virtual machines. Which operating-system distinction is accurate?",
+        "lessonIds": [
+          "configure-azure-container-instances--2-compare-containers-to-virtual-machines"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Every process-isolated container boots its own complete guest kernel",
+            "explanation": "That describes the full-VM model, not typical process-isolated containers.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Virtual machines cannot run different guest operating systems",
+            "explanation": "Hardware virtualization allows separate guest OS instances; VMs are not restricted to one shared guest kernel.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Container images contain no application runtime or libraries",
+            "explanation": "Images package application code and its runtime dependencies for consistent deployment.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Containers share a host kernel; each VM runs a guest OS and kernel",
+            "explanation": "Typical process-isolated containers virtualize an OS environment, while VMs virtualize hardware for a full guest operating system.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-container-instances-check-02",
+        "prompt": "A Linux web application and its logging sidecar must share a lifecycle and local network in Azure Container Instances. Which resource should contain them?",
+        "lessonIds": [
+          "configure-azure-container-instances--4-implement-container-groups"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "One multi-container group",
+            "explanation": "Containers in a group share lifecycle, resources, local networking and storage volumes; multi-container groups support Linux.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Two unrelated container groups",
+            "explanation": "Separate groups do not provide the same shared group lifecycle and local-network boundary.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "One Windows multi-container group",
+            "explanation": "ACI Windows groups support a single container; this Linux sidecar design uses a Linux multi-container group.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "An App Service deployment slot",
+            "explanation": "A slot stages an App Service release; it is not an ACI container group.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-container-instances-check-03",
+        "prompt": "An ACI workload needs persistent data through an Azure Files volume mount. Which container operating system supports that mount?",
+        "lessonIds": [
+          "configure-azure-container-instances--3-review"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Windows only",
+            "explanation": "ACI can run Windows containers, but the Azure Files mount feature is not supported for them.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Linux",
+            "explanation": "ACI Azure Files volume mounts are supported for Linux containers.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Both Windows and Linux with no platform restriction",
+            "explanation": "General ACI OS support does not mean every feature, including Azure Files mounts, supports both.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Neither; ACI cannot mount persistent storage",
+            "explanation": "Linux ACI groups can mount Azure Files, so persistent storage is supported within that platform restriction.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-container-instances-check-04",
+        "prompt": "A publicly exposed ACI container listens on TCP 8080. How should the deployment expose that port to external clients?",
+        "lessonIds": [
+          "configure-azure-container-instances--4-implement-container-groups"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Expose 8080 only on the container",
+            "explanation": "A container port alone does not expose it on the group's public IP address.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Expose 8080 only at group level while the container listens elsewhere",
+            "explanation": "The group-level port must correspond to a listening container port; ACI does not map it to an arbitrary different port.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Expose 8080 at both the group IP address and the container",
+            "explanation": "External access requires a group-level exposed port and a container listening on that port; ACI has no port mapping.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Map public 80 to container 8080 using ACI port mapping",
+            "explanation": "ACI containers share a port namespace and do not support this port-mapping mechanism.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-container-instances-check-05",
+        "prompt": "An existing ACI group needs a different CPU and memory allocation. Which lifecycle change is required for those resource changes?",
+        "lessonIds": [
+          "configure-azure-container-instances--3-review"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Change CPU and memory through an in-place group update",
+            "explanation": "These resource properties are excluded from supported in-place updates.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Restart the group without changing its deployment",
+            "explanation": "Restarting the existing allocation does not establish a new CPU or memory request.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Update only the container image to request a larger allocation",
+            "explanation": "Image changes are distinct from group CPU and memory resource allocation, which requires group recreation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Delete and recreate the group with the new allocation",
+            "explanation": "ACI does not support updating CPU or memory resource allocation in place; recreate the group and account for its connectivity changes.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+              "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-container-instances-check-06",
+        "prompt": "A team wants managed microservices with HTTP/event-driven scaling and traffic splitting, without direct Kubernetes API access. Which service best fits the described requirement?",
+        "lessonIds": [
+          "configure-azure-container-instances--5-review-docker-platform"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure Container Apps",
+            "explanation": "Container Apps supplies managed serverless microservices, scaling and traffic splitting while abstracting the underlying Kubernetes platform.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Azure Container Instances as the complete microservices orchestration layer",
+            "explanation": "ACI suits isolated containers but does not provide the described managed Container Apps microservices feature set.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Azure Kubernetes Service because direct Kubernetes access is required",
+            "explanation": "The scenario explicitly avoids direct Kubernetes API management; Container Apps better matches the desired abstraction.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "An availability set of VMs alone",
+            "explanation": "An availability set supplies VM placement protection, not managed container traffic splitting and event-driven scaling.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "intro-to-azure-backup",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:02:16.528353Z",
+    "questions": [
+      {
+        "id": "intro-to-azure-backup-check-01",
+        "prompt": "A business can tolerate 30 minutes of lost data and requires service restoration within 2 hours. Which recovery objectives describe those limits?",
+        "lessonIds": [
+          "intro-to-azure-backup--2-what-is-azure-backup"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "RPO 30 minutes; RTO 2 hours",
+            "explanation": "RPO expresses tolerable data loss in time; RTO expresses the target service-restoration time.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "RTO 30 minutes; RPO 2 hours",
+            "explanation": "This reverses the definitions of data-loss tolerance and restoration-time target.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "RPO 2 hours; RTO 2 hours",
+            "explanation": "The stated data-loss tolerance is 30 minutes, not 2 hours.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "RPO 30 minutes; RTO 30 minutes",
+            "explanation": "The restoration target is 2 hours; the 30-minute value describes data-loss tolerance.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-backup-check-02",
+        "prompt": "An administrator needs to back up supported files, folders and system state from an on-premises Windows server directly to Azure. Which agent matches this scope?",
+        "lessonIds": [
+          "intro-to-azure-backup--3-how-azure-backup-works"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure Monitor Agent",
+            "explanation": "Azure Monitor Agent collects monitoring telemetry; it is not the backup agent for this Windows data scope.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Microsoft Azure Recovery Services (MARS) agent",
+            "explanation": "MARS supports direct Azure backup of supported Windows files, folders and system state.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "The Azure VM backup extension as the on-premises agent",
+            "explanation": "The VM extension supports Azure VM backup; the stated machine is an on-premises Windows server.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Dependency Agent",
+            "explanation": "Dependency Agent concerns VM dependency monitoring, not backup of Windows files, folders or system state.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-backup-check-03",
+        "prompt": "After an initial full backup, how do subsequent incremental backups reduce the amount of protected data transferred?",
+        "lessonIds": [
+          "intro-to-azure-backup--3-how-azure-backup-works"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Always transfer every protected block again",
+            "explanation": "That describes repeated full data transfer rather than the incremental approach.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Transfer only blocks that have never changed",
+            "explanation": "Incremental backups transfer changed blocks, rather than selecting blocks precisely because they did not change.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Transfer blocks changed since the previous backup",
+            "explanation": "Incremental backups focus on changed data blocks after the initial full copy.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Stop transferring changes until a restore is requested",
+            "explanation": "Incremental backups capture changes during backup, not for the first time during restore.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-backup-check-04",
+        "prompt": "An administrator must control both when scheduled backups run and how long their recovery points are retained. Which configuration provides these controls?",
+        "lessonIds": [
+          "intro-to-azure-backup--3-how-azure-backup-works"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "A retention value without a backup schedule",
+            "explanation": "Retention determines how long points are kept; a policy also defines when scheduled backups run.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A backup schedule without retention settings",
+            "explanation": "Timing alone does not define how long recovery points are kept; the requirement needs both policy controls.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A recovery time objective alone",
+            "explanation": "RTO is a target for restoring service, not the configured backup schedule and retention policy.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A backup policy",
+            "explanation": "Backup policies define backup schedule and recovery-point retention for the protected workload.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-backup-check-05",
+        "prompt": "A supported workload has old recovery points kept mainly for long-term compliance and rarely accessed. Which backup storage tier is designed for that scenario?",
+        "lessonIds": [
+          "intro-to-azure-backup--3-how-azure-backup-works"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Archive tier, where the workload and recovery points are supported",
+            "explanation": "Archive storage targets infrequently accessed long-term recovery points; eligibility must be checked for the workload.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Snapshot tier as the universal long-term compliance tier",
+            "explanation": "Snapshot storage is near the source for recovery and is not the archive purpose described here.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Vault-standard because every recovery point is automatically archived",
+            "explanation": "Vault-standard stores an isolated online copy; it is not synonymous with the archive tier for supported long-term points.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A backup policy with no storage-tier decision",
+            "explanation": "Policies establish protection settings, but do not eliminate the need to choose a supported storage tier for the described long-term points.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-backup-check-06",
+        "prompt": "An auditor unexpectedly requests a recovery point retained longer than the usual scheduled-policy period. What does the module identify as an option?",
+        "lessonIds": [
+          "intro-to-azure-backup--4-when-to-use-azure-backup"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Assume every on-demand backup must use the scheduled retention unchanged",
+            "explanation": "The lesson explicitly allows custom on-demand retention.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Run an on-demand backup with its own supported retention setting",
+            "explanation": "On-demand backups can use specific retention settings independent of the scheduled-policy retention.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Disable scheduled backups to make existing points permanent",
+            "explanation": "Disabling a schedule does not establish the requested retention for a new recovery point.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Change only the VM size",
+            "explanation": "Compute capacity does not set backup retention.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "protect-virtual-machines-with-azure-backup",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:02:16.528353Z",
+    "questions": [
+      {
+        "id": "protect-virtual-machines-with-azure-backup-check-01",
+        "prompt": "A VM owner wants recovery points for an earlier state after accidental data corruption. Which service matches this primary requirement?",
+        "lessonIds": [
+          "protect-virtual-machines-with-azure-backup--2-azure-backup-features-scenarios"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure Site Recovery as a substitute for retained backup history",
+            "explanation": "Site Recovery replicates workloads and coordinates failover; it is not a substitute for the requested backup retention strategy.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Azure Backup",
+            "explanation": "Azure Backup retains recovery points for restoring an earlier data state after loss or corruption.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A VM availability set alone",
+            "explanation": "Availability sets reduce shared infrastructure failures but do not retain earlier versions of corrupted data.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Azure Monitor alerts alone",
+            "explanation": "Alerts can signal conditions but do not create the requested backup recovery points.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "protect-virtual-machines-with-azure-backup-check-02",
+        "prompt": "Where are an Azure VM's backup policy and recovery points managed in the protection workflow taught by this module?",
+        "lessonIds": [
+          "protect-virtual-machines-with-azure-backup--3-back-up-azure-virtual-machine"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "A Log Analytics workspace",
+            "explanation": "Log Analytics stores monitoring logs, not this VM backup policy and recovery-point management entity.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "An App Service deployment slot",
+            "explanation": "A deployment slot stages a web app; it does not manage Azure VM backup recovery points.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A Recovery Services vault",
+            "explanation": "Azure VM backup uses a Recovery Services vault to manage policies, recovery points and backup/restore operations.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "An availability set",
+            "explanation": "An availability set places VMs across failure domains and does not manage their backups.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "protect-virtual-machines-with-azure-backup-check-03",
+        "prompt": "A team needs application-consistent backups of a Linux VM's application. What does the module require to capture application state appropriately?",
+        "lessonIds": [
+          "protect-virtual-machines-with-azure-backup--3-back-up-azure-virtual-machine"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Assume every Linux disk snapshot is automatically application-consistent",
+            "explanation": "Filesystem or crash consistency is not the same as capturing application-consistent state.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+              "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Rely on Windows VSS writers running inside Linux",
+            "explanation": "The module describes VSS for Windows and pre/post scripting for Linux applications.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+              "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Disable all backup policies",
+            "explanation": "Disabling protection does not provide an application-consistent recovery point.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+              "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Suitable pre- and post-backup scripts for the application",
+            "explanation": "Linux application consistency requires application-appropriate pre/post scripts; it should not be assumed from a basic snapshot alone.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+              "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "protect-virtual-machines-with-azure-backup-check-04",
+        "prompt": "A protected VM has been deleted. An administrator wants to recover it from an available supported backup. Which statement about Replace existing is correct?",
+        "lessonIds": [
+          "protect-virtual-machines-with-azure-backup--5-restore-virtual-machine-data"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "It cannot replace a deleted VM; use a supported new-VM or disk-restore path",
+            "explanation": "Replace existing targets a VM that still exists. A deleted VM requires another supported restore option.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+              "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Replace existing automatically recreates any deleted VM",
+            "explanation": "That is not the purpose or supported target of Replace existing.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+              "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Every backup becomes unusable when the source VM is deleted",
+            "explanation": "A retained supported recovery point can be restored through appropriate new-VM or disk options.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+              "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Replace existing works once the deleted VM's old name is entered",
+            "explanation": "A name does not restore the existing target required by Replace existing; use a supported new-VM or disk-restore path.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+              "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "protect-virtual-machines-with-azure-backup-check-05",
+        "prompt": "An administrator wants recovered VM disks but needs to customize the new VM configuration rather than immediately recreate the original VM. Which restore option fits?",
+        "lessonIds": [
+          "protect-virtual-machines-with-azure-backup--5-restore-virtual-machine-data"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Replace existing on a production VM",
+            "explanation": "Replace existing updates an existing VM's disks, rather than providing the requested separate customized recovery path.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+              "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Restore disk",
+            "explanation": "Restore disk recovers disks and provides a template for customized VM creation; restored disks can also be attached where supported.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+              "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Create a new VM with no need to customize the recovered configuration",
+            "explanation": "Create a new VM is the more direct recreation path; Restore disk matches the stated need to customize deployment from recovered disks.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+              "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Use file recovery instead of recovering disks",
+            "explanation": "File recovery targets individual data items; the scenario asks for recovered VM disks for a customized deployment.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+              "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "protect-virtual-machines-with-azure-backup-check-06",
+        "prompt": "A backup item is deleted accidentally while soft delete is enabled. What protection does soft delete provide?",
+        "lessonIds": [
+          "protect-virtual-machines-with-azure-backup--2-azure-backup-features-scenarios"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "It permanently deletes all recovery points immediately",
+            "explanation": "Immediate permanent deletion is the opposite of the soft-delete protection.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "It guarantees no administrator can ever delete backup data",
+            "explanation": "Soft delete provides a retained recovery window, not an unlimited universal prohibition on deletion.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "It retains deleted backup data for a recovery window",
+            "explanation": "Soft delete preserves deleted backup data temporarily so it can be recovered within the configured protection period.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "It changes the backup schedule to run more often",
+            "explanation": "Soft delete retains deleted backup data; backup frequency is controlled separately by the backup policy.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "monitor-azure-vm-using-diagnostic-data",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:02:16.528353Z",
+    "questions": [
+      {
+        "id": "monitor-azure-vm-using-diagnostic-data-check-01",
+        "prompt": "A newly created VM has host CPU graphs, but its guest event logs are needed for an investigation. Which configuration addresses the missing guest telemetry?",
+        "lessonIds": [
+          "monitor-azure-vm-using-diagnostic-data--2-monitor-vm-health"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Wait for host metrics to become guest event logs automatically",
+            "explanation": "Automatic host metrics do not replace configured guest event-log collection.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Configure only host CPU metric charts",
+            "explanation": "Host CPU charts analyze host telemetry, not the requested guest event-log data source.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Azure Monitor Agent with a data collection rule for the required logs",
+            "explanation": "Host metrics are automatic; guest event-log collection requires an agent and an appropriate DCR selecting data and destinations.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Use only boot diagnostics for routine guest event collection",
+            "explanation": "Boot diagnostics provides startup screenshots/output; it does not replace a DCR for the requested guest event-log source.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "monitor-azure-vm-using-diagnostic-data-check-02",
+        "prompt": "A Linux VM fails during startup. The administrator needs its boot screenshot and serial output. Which monitoring feature should they inspect?",
+        "lessonIds": [
+          "monitor-azure-vm-using-diagnostic-data--3-exercise-create-virtual-machine"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Only a Metrics Explorer chart of Percentage CPU",
+            "explanation": "CPU metrics can show resource use but do not provide the requested boot screenshot and serial output.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Only the Activity log of Azure resource operations",
+            "explanation": "The Activity log records control-plane operations, rather than the guest boot screenshot and serial output.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Only the configured Syslog collection rule",
+            "explanation": "Guest Syslog helps event investigation when collected, but Boot diagnostics is the feature for the requested startup screenshot and boot output.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Boot diagnostics",
+            "explanation": "Boot diagnostics exposes screenshots and boot output for investigating startup failures.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "monitor-azure-vm-using-diagnostic-data-check-03",
+        "prompt": "An administrator wants a chart that reveals the highest Percentage CPU value in each displayed time interval, rather than the average. Which aggregation matches?",
+        "lessonIds": [
+          "monitor-azure-vm-using-diagnostic-data--4-view-host-metrics"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Maximum",
+            "explanation": "Maximum shows the highest sampled value in each aggregation interval, matching the request for peaks.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Average",
+            "explanation": "Average smooths values across the interval instead of selecting the highest one.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Minimum",
+            "explanation": "Minimum shows the lowest sampled value, not the peak.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Count",
+            "explanation": "Count represents the number of measurements, not the highest CPU percentage.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "monitor-azure-vm-using-diagnostic-data-check-04",
+        "prompt": "A team intentionally uses classic logs-based VM insights. Where are its predefined guest performance counters stored for the curated performance views?",
+        "lessonIds": [
+          "monitor-azure-vm-using-diagnostic-data--5-enable-vm-insights"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "An Azure Monitor workspace solely because OpenTelemetry is now the default",
+            "explanation": "Azure Monitor workspaces store the OpenTelemetry metrics path; the scenario explicitly uses the classic logs-based path.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A Log Analytics workspace",
+            "explanation": "Classic logs-based VM insights sends guest performance data to Log Analytics for its charts and workbooks.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A Recovery Services vault",
+            "explanation": "A recovery vault manages backups, not this VM insights guest-performance dataset.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "The VM Activity log",
+            "explanation": "The Activity log records Azure resource operations; it is not the store for classic VM insights guest performance counters.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance",
+              "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "monitor-azure-vm-using-diagnostic-data-check-05",
+        "prompt": "A Linux VM needs Syslog events in a Log Analytics workspace. What should an administrator select in an additional data collection rule?",
+        "lessonIds": [
+          "monitor-azure-vm-using-diagnostic-data--6-collect-log-data"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Only host Percentage CPU as the data source",
+            "explanation": "CPU metrics do not capture the requested Syslog event records.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Only the predefined guest performance-counter rule",
+            "explanation": "The performance rule is not a replacement for selecting the required guest event-log source.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Linux Syslog as the data source and the workspace as destination",
+            "explanation": "The rule selects Linux Syslog and sends those guest events to the chosen Log Analytics workspace.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Select Windows event logs for the Linux Syslog requirement",
+            "explanation": "Windows event logs are a different guest source; this Linux scenario specifically needs Syslog selected in its rule.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "monitor-azure-vm-using-diagnostic-data-check-06",
+        "prompt": "After Syslog ingestion, an administrator wants to filter the records by severity in the VM Logs page. Which tool or language is appropriate?",
+        "lessonIds": [
+          "monitor-azure-vm-using-diagnostic-data--6-collect-log-data"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "A Metrics Explorer chart alone",
+            "explanation": "Metrics Explorer plots numerical metric time series; the task asks to filter records already ingested into the Syslog log table.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Only the Azure Activity log",
+            "explanation": "The Activity log concerns Azure resource operations, not the guest Syslog records selected for this investigation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Only the Boot diagnostics screenshot",
+            "explanation": "A boot screenshot helps startup diagnosis but does not query ingested Syslog records by severity.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A Kusto Query Language query against the Syslog table",
+            "explanation": "KQL queries in Log Analytics can filter the collected Syslog records by relevant fields such as severity.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
