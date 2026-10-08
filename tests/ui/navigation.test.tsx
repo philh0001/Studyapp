@@ -2,7 +2,7 @@ import {fireEvent,render,screen,waitFor} from '@testing-library/react';import {a
 vi.mock('../../src/pwa/register',()=>({registerPwa:()=>({setSessionActive:vi.fn(),dispose:vi.fn(),applyPendingUpdate:vi.fn()})}));
 afterEach(async()=>{vi.restoreAllMocks();window.location.hash='';await new StudyDatabase().delete()});
 test('failed draft save prevents leaving by hash navigation until explicit retry saves answer',async()=>{
- window.location.hash='/home';const failed=vi.spyOn(SessionService.prototype,'saveDraftAnswer').mockRejectedValue(Error('Storage write failed'));
+ vi.spyOn(Math,'random').mockReturnValue(.999999);window.location.hash='/home';const failed=vi.spyOn(SessionService.prototype,'saveDraftAnswer').mockRejectedValue(Error('Storage write failed'));
  render(<App/>);fireEvent.click(await screen.findByRole('button',{name:'Explore draft questions →'}));
  const answers=await screen.findByRole('group',{name:'Answer choices'});fireEvent.click(answers.querySelector('input')!);await screen.findByText('Storage write failed');const active=window.location.hash;
  window.location.hash='/home';await waitFor(()=>expect(window.location.hash).toBe(active));expect(await screen.findByText(/last answer was not saved/)).toBeVisible();

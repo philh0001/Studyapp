@@ -1,0 +1,1148 @@
+{
+  "id": "az104-deeper-reserve-draft",
+  "version": 1,
+  "blueprintId": "az104-2026-04-17",
+  "checkedAt": "2026-10-08T01:45:55.843334Z",
+  "questions": [
+    {
+      "id": "az104-reserve-plus-01",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A partner engineer has an invited Guest account in a test tenant. The directory entry exists, but the engineer has never opened the invitation or redemption URL. The engineer needs to use the shared app with their own external identity.",
+      "prompt": "What is the next step for completing this invitation flow?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Have the engineer redeem the invitation, using the invitation email or a direct redemption link.",
+          "explanation": "The guest must redeem the invitation before accessing the shared resources.",
+          "referenceIds": [
+            "identity-guests"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Delete the Guest entry and create a local Member password for the engineer.",
+          "explanation": "Invitation redemption is the documented next step; replacing the identity does not complete the existing guest invitation flow.",
+          "referenceIds": [
+            "identity-guests"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Wait for the invitation to expire before inviting the same address.",
+          "explanation": "The documentation states that an invitation does not expire; waiting does not complete redemption.",
+          "referenceIds": [
+            "identity-guests"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Assume that the directory entry proves redemption has already completed.",
+          "explanation": "The entry is added on invitation; redemption remains a separate guest action.",
+          "referenceIds": [
+            "identity-guests"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The guest must redeem the invitation before accessing the shared resources. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "identity-guests"
+      ],
+      "references": [
+        {
+          "id": "identity-guests",
+          "title": "add users administrator",
+          "url": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:00.338Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-02",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "The Atlas team receives Contributor on resource group rg-atlas through a group assignment. A new storage account is created in rg-atlas. There are no deny assignments, locks or other role assignments. The team has no assignment on rg-beacon.",
+      "prompt": "Which management-access interpretation follows from these assignments?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The assignment grants management of every resource group in the subscription.",
+          "explanation": "The stated scope is one resource group, so a sibling resource group is outside it.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Contributor must be assigned again on each resource inside rg-atlas.",
+          "explanation": "The resource-group scope encompasses resources inside that group.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Assigning the role to a group never grants access to group members.",
+          "explanation": "Azure RBAC supports role assignments to groups, supplying permissions to their members.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "The group assignment applies within rg-atlas, including the new account; it does not grant access in rg-beacon.",
+          "explanation": "An assignment attaches a principal and role to a scope. The documented group resource-group example grants management in that group, not unrelated groups.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "summaryExplanation": "An assignment attaches a principal and role to a scope. The documented group resource-group example grants management in that group, not unrelated groups. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "identity-rbac"
+      ],
+      "references": [
+        {
+          "id": "identity-rbac",
+          "title": "overview",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:00.335Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-03",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A team creates a monthly budget for a sandbox subscription with an actual-cost email threshold at 80%. No action-group automation or separate shutdown workflow exists. The threshold is exceeded while a VM is running.",
+      "prompt": "What should the team expect from the budget itself?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The subscription is disabled until next month.",
+          "explanation": "A budget is a cost tracking and notification mechanism, not subscription disabling.",
+          "referenceIds": [
+            "identity-budgets"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Every resource write is denied until the budget resets.",
+          "explanation": "Threshold notifications do not impose a resource-write deny policy.",
+          "referenceIds": [
+            "identity-budgets"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A threshold notification; resource consumption continues.",
+          "explanation": "Budget notifications do not affect resources or stop consumption. Separate automation would be needed for a shutdown action.",
+          "referenceIds": [
+            "identity-budgets"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "The running VM is deallocated automatically at the threshold.",
+          "explanation": "The budget itself does not stop consumption or deallocate resources.",
+          "referenceIds": [
+            "identity-budgets"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "Budget notifications do not affect resources or stop consumption. Separate automation would be needed for a shutdown action. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "identity-budgets"
+      ],
+      "references": [
+        {
+          "id": "identity-budgets",
+          "title": "tutorial acm create budgets",
+          "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:00.703Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-04",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "storage-access",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A service SAS used by a temporary importer references a stored access policy on a test blob container. The importer is compromised. The team must revoke the policy-bound signature without rotating the account key.",
+      "prompt": "Which action is supported by the stored access policy mechanism?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Change only a resource tag on the container.",
+          "explanation": "Stored access policy permissions, expiry or removal govern revocation; resource tagging is not this SAS control.",
+          "referenceIds": [
+            "storage-plus-policy"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Revoke the signature by changing or removing the associated stored access policy.",
+          "explanation": "A stored access policy provides server-side control, including revoking signatures issued under it.",
+          "referenceIds": [
+            "storage-plus-policy"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Delete only the importer\u2019s local copy; its leaked signature remains usable elsewhere.",
+          "explanation": "Deleting a local copy does not revoke the service signature on the server; the policy provides that control.",
+          "referenceIds": [
+            "storage-plus-policy"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Create a second policy and leave the original policy unchanged.",
+          "explanation": "An unchanged original policy continues to govern its associated signatures; a separate policy does not revoke them.",
+          "referenceIds": [
+            "storage-plus-policy"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "A stored access policy provides server-side control, including revoking signatures issued under it. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "storage-plus-policy"
+      ],
+      "references": [
+        {
+          "id": "storage-plus-policy",
+          "title": "define stored access policy",
+          "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy",
+          "section": null,
+          "checkedAt": "2026-10-08T01:39:11.986951Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-05",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "storage-accounts",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A test workload needs synchronous copies across availability zones in its primary region. It explicitly does not require storage replication into another region. The chosen account and region support the relevant redundancy option.",
+      "prompt": "Which redundancy choice meets the stated requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ZRS",
+          "explanation": "ZRS synchronously replicates across three or more availability zones within the primary region.",
+          "referenceIds": [
+            "storage-plus-redundancy"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "LRS",
+          "explanation": "LRS keeps copies within one physical datacenter rather than providing the requested across-zone copies.",
+          "referenceIds": [
+            "storage-plus-redundancy"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "GRS because a secondary-region copy substitutes for primary-region zone redundancy.",
+          "explanation": "GRS uses primary-region LRS with secondary-region replication, rather than the requested primary-region ZRS protection.",
+          "referenceIds": [
+            "storage-plus-redundancy"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "RA-GRS solely because secondary-region reads guarantee synchronous primary-zone replication.",
+          "explanation": "Read access to a secondary region does not turn primary-region LRS into ZRS; the requirement is primary-region zone copies.",
+          "referenceIds": [
+            "storage-plus-redundancy"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "ZRS synchronously replicates across three or more availability zones within the primary region. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "storage-plus-redundancy"
+      ],
+      "references": [
+        {
+          "id": "storage-plus-redundancy",
+          "title": "storage redundancy",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:20.949142Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-06",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "blobs-files",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A report blob is already in Archive. A team writes a lifecycle rule and expects it to bring that blob back into an online tier for an urgent download. This is an ordinary eligible block blob, with no immutability policy.",
+      "prompt": "What limitation must be addressed?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Add another lifecycle rule because two rules enable archive rehydration.",
+          "explanation": "The restriction concerns the operation, not the number of rules.",
+          "referenceIds": [
+            "storage-plus-lifecycle"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Use a delete lifecycle action to turn the archived blob into a readable online copy.",
+          "explanation": "Deletion is not archive rehydration and does not satisfy retrieval of the live report.",
+          "referenceIds": [
+            "storage-plus-lifecycle"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Shorten the lifecycle age threshold to bypass the restriction.",
+          "explanation": "Changing a condition does not enable an unsupported lifecycle rehydration action.",
+          "referenceIds": [
+            "storage-plus-lifecycle"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Lifecycle management cannot rehydrate archived blobs; use a supported rehydration operation instead.",
+          "explanation": "The documented lifecycle limitations prohibit using lifecycle policies to rehydrate to an online tier.",
+          "referenceIds": [
+            "storage-plus-lifecycle"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "summaryExplanation": "The documented lifecycle limitations prohibit using lifecycle policies to rehydrate to an online tier. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "storage-plus-lifecycle"
+      ],
+      "references": [
+        {
+          "id": "storage-plus-lifecycle",
+          "title": "lifecycle management overview",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:22.542855Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-07",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "arm-bicep",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A Bicep file declares a DNS zone and another resource whose property reads zone.properties.nameServers. Both are deployed by the same file. A third unrelated resource has no references to either.",
+      "prompt": "How does Resource Manager determine the relevant deployment ordering?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Every resource in the file must explicitly depend on every other resource.",
+          "explanation": "Implicit dependencies already capture the relationship, and independent resources do not need a chain.",
+          "referenceIds": [
+            "compute-bicep-dependencies"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Reading the zone property creates no dependency because it is read-only.",
+          "explanation": "The documented example uses a read-only nameServers property to establish the implicit dependency.",
+          "referenceIds": [
+            "compute-bicep-dependencies"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The property reference creates an implicit dependency on the zone; unrelated resources can deploy in parallel.",
+          "explanation": "Bicep resource references create implicit dependencies and Resource Manager can parallelize independent resources.",
+          "referenceIds": [
+            "compute-bicep-dependencies"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "It deploys declarations strictly in their textual order.",
+          "explanation": "Deployment order is based on dependencies rather than source-file order.",
+          "referenceIds": [
+            "compute-bicep-dependencies"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "Bicep resource references create implicit dependencies and Resource Manager can parallelize independent resources. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "compute-bicep-dependencies"
+      ],
+      "references": [
+        {
+          "id": "compute-bicep-dependencies",
+          "title": "resource dependencies",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/resource-dependencies",
+          "section": null,
+          "checkedAt": "2026-10-08T01:40:19.386705Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-08",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "vms",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A stateful VM is running. An operator proposes resizing it during business hours because the desired size is available without deallocation on the current hardware cluster. No application failover has been planned.",
+      "prompt": "Which warning still applies even if deallocation is unnecessary?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The displayed requested size proves the VM runs that size after any failed resize.",
+          "explanation": "The VM model can display the requested size after failure while the VM continues on its previous size until allocation succeeds.",
+          "referenceIds": [
+            "compute-vm-resize"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Changing a running VM size causes a restart, so plan for application disruption.",
+          "explanation": "Resizing a running VM restarts it even when deallocation is not required.",
+          "referenceIds": [
+            "compute-vm-resize"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Size changes always complete without restarting if the cluster supports the target size.",
+          "explanation": "Cluster availability avoids one deallocation requirement, not the running-VM restart.",
+          "referenceIds": [
+            "compute-vm-resize"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "The OS and data disks are deleted as an ordinary part of resizing.",
+          "explanation": "The documentation states that deallocation does not affect OS and data disks; deleting disks is not the stated resize behavior.",
+          "referenceIds": [
+            "compute-vm-resize"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "Resizing a running VM restarts it even when deallocation is not required. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "compute-vm-resize"
+      ],
+      "references": [
+        {
+          "id": "compute-vm-resize",
+          "title": "resize vm",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:35.602299Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-09",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "containers",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "An approved Container App uses HTTP scaling. The team accepts idle capacity cost and requires at least one instance of its revision to remain running between requests. Its current minimum replica setting is zero.",
+      "prompt": "Which configuration directly expresses this requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Set the minimum replica count to one or higher.",
+          "explanation": "The scaling guidance says a minimum of one or higher keeps an instance of the revision running.",
+          "referenceIds": [
+            "compute-aca-scale"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Set only the maximum replica count to one and keep the minimum at zero.",
+          "explanation": "The maximum limits scale-out; it does not raise the zero-instance lower bound.",
+          "referenceIds": [
+            "compute-aca-scale"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Remove every scale rule while assuming the minimum of zero always keeps an instance running.",
+          "explanation": "A lower bound of zero does not express the requirement for an always-running instance.",
+          "referenceIds": [
+            "compute-aca-scale"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Set the minimum replicas to zero to guarantee an always-running instance.",
+          "explanation": "Zero is the opposite of the documented one-or-higher minimum for keeping an instance running.",
+          "referenceIds": [
+            "compute-aca-scale"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The scaling guidance says a minimum of one or higher keeps an instance of the revision running. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "compute-aca-scale"
+      ],
+      "references": [
+        {
+          "id": "compute-aca-scale",
+          "title": "scale app",
+          "url": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:36.970574Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-10",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "app-service",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "An App Service app has VNet integration and can call a private database. The team now requires clients inside the VNet to reach the app through inbound private access. The requirement is about inbound access, not outbound database calls.",
+      "prompt": "Which feature addresses the missing direction?",
+      "options": [
+        {
+          "id": "a",
+          "text": "VNet integration alone, because it makes the app reachable only from the VNet.",
+          "explanation": "VNet integration does not itself supply inbound private access.",
+          "referenceIds": [
+            "compute-app-vnet"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "A second outbound integration connection as the inbound listener.",
+          "explanation": "Outbound integration is not an inbound endpoint for clients.",
+          "referenceIds": [
+            "compute-app-vnet"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A deployment slot alone, because it changes the network direction of integration.",
+          "explanation": "A slot is not the documented inbound private access mechanism; this requirement is addressed by a private endpoint.",
+          "referenceIds": [
+            "compute-app-vnet"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "An App Service private endpoint.",
+          "explanation": "The VNet integration documentation directs inbound private access to private endpoints; integration itself handles outbound calls.",
+          "referenceIds": [
+            "compute-app-vnet"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "summaryExplanation": "The VNet integration documentation directs inbound private access to private endpoints; integration itself handles outbound calls. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "compute-app-vnet"
+      ],
+      "references": [
+        {
+          "id": "compute-app-vnet",
+          "title": "overview vnet integration",
+          "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:37.779231Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-11",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A subnet has a user-defined 0.0.0.0/0 route to a virtual appliance and a user-defined 10.42.8.0/24 route with next hop None. There are no other routes matching 10.42.8.19.",
+      "prompt": "Which route wins for that destination?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Both routes equally, using random selection for each packet.",
+          "explanation": "Azure selects a route using longest-prefix matching, not random selection between unequal prefixes.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The default route, because the broadest route has the highest precedence.",
+          "explanation": "The broadest default route is less specific than the matching /24 route.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The 10.42.8.0/24 route, because its matching prefix is longer.",
+          "explanation": "The longest-prefix match determines which route wins before considering equal-prefix route-type priority.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "The default route, because its next hop is a virtual appliance.",
+          "explanation": "Next-hop type does not override the longer matching destination prefix in this example.",
+          "referenceIds": [
+            "networking-plus-route"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The longest-prefix match determines which route wins before considering equal-prefix route-type priority. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "networking-plus-route"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-route",
+          "title": "virtual networks udr overview",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:21.610Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-12",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A single NSG has two inbound rules matching a new TCP connection: priority 220 allows source 10.7.1.4 to destination port 443; priority 310 denies the same traffic. There are no earlier matching rules and no other NSG on the path.",
+      "prompt": "How does this NSG evaluate the new connection?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only default rules apply because custom rules are below default-rule priority.",
+          "explanation": "Custom rule priorities precede Azure\u2019s lower-priority default rules.",
+          "referenceIds": [
+            "networking-plus-nsg"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The priority-220 allow matches first and rule processing stops.",
+          "explanation": "Lower numeric priorities are processed first; once a rule matches, later rules are not processed.",
+          "referenceIds": [
+            "networking-plus-nsg"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The priority-310 deny always overrides an allow regardless of order.",
+          "explanation": "Deny does not globally override an earlier matching allow in an NSG.",
+          "referenceIds": [
+            "networking-plus-nsg"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "The connection alternates between allow and deny because both rules match.",
+          "explanation": "Evaluation stops at the first matching rule rather than alternating actions.",
+          "referenceIds": [
+            "networking-plus-nsg"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "Lower numeric priorities are processed first; once a rule matches, later rules are not processed. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "networking-plus-nsg"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-nsg",
+          "title": "network security groups overview",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:21.631Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-13",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "dns-balancing",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A Standard Load Balancer backend is serving traffic. Its configured health probe now fails. Other backends stay healthy. The team asks specifically about new inbound connections to the unhealthy backend.",
+      "prompt": "What is the expected load balancer behavior?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It stops sending new connections to the unhealthy backend.",
+          "explanation": "The probe guidance says a failing probe removes that backend from receiving new connections; outbound connectivity is not affected.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "It keeps sending every new connection there until all backends fail.",
+          "explanation": "A single unhealthy backend stops receiving new connections without waiting for all backend probes to fail.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "It deletes the backend VM automatically.",
+          "explanation": "A probe controls load-balancer flow selection; it is not a VM deletion operation.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "It changes the public DNS name rather than backend flow selection.",
+          "explanation": "Probe failure affects which backend receives connections, not the configured DNS delegation.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The probe guidance says a failing probe removes that backend from receiving new connections; outbound connectivity is not affected. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "networking-plus-probe"
+      ],
+      "references": [
+        {
+          "id": "networking-plus-probe",
+          "title": "load balancer custom probe overview",
+          "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:21.430Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-14",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A resource-group maintenance window should silence notifications but keep alert evaluations and fired-alert records available. Existing alert rules and action groups must remain configured.",
+      "prompt": "Which approach matches this maintenance requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Disable the alert rules so alerts never fire during maintenance.",
+          "explanation": "Disabling the rules prevents alert firing, violating the requirement to keep evaluation and fired-alert records.",
+          "referenceIds": [
+            "monx-processing"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Delete all action groups and recreate them after maintenance.",
+          "explanation": "Scheduled suppression avoids deleting persistent action-group configuration.",
+          "referenceIds": [
+            "monx-processing"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Change the budget threshold as a substitute for alert suppression.",
+          "explanation": "The documented maintenance suppression mechanism is an alert processing rule, not a cost budget setting.",
+          "referenceIds": [
+            "monx-processing"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Use a scheduled alert processing rule that suppresses action groups for the relevant scope.",
+          "explanation": "Processing rules can suppress notifications on fired alerts during maintenance while keeping alert-rule evaluation.",
+          "referenceIds": [
+            "monx-processing"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "d"
+      ],
+      "summaryExplanation": "Processing rules can suppress notifications on fired alerts during maintenance while keeping alert-rule evaluation. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "monx-processing"
+      ],
+      "references": [
+        {
+          "id": "monx-processing",
+          "title": "alerts processing rules",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:45.619Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-reserve-plus-15",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A team plans a Site Recovery drill for one approved replicated test VM. Production networking must remain available and no real failover is intended. A dedicated nonproduction VNet exists in the target region.",
+      "prompt": "Which drill plan follows the documented guidance?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Select the production VNet because the documentation requires production addresses for drills.",
+          "explanation": "The tutorial recommends nonproduction networking so production addresses and network components remain available.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Leave the test VM permanently after verification without recording or cleaning the drill.",
+          "explanation": "The tutorial instructs recording observations and cleaning up test-failover resources after testing.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Run Test Failover into the nonproduction VNet, verify the drill, then use Cleanup test failover.",
+          "explanation": "The tutorial recommends a nonproduction network and provides cleanup that records observations and deletes drill VMs.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Run a production failover to verify isolation while keeping production unchanged.",
+          "explanation": "A production failover is not the requested test drill; the documented test-failover workflow is appropriate.",
+          "referenceIds": [
+            "monx-testfailover"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The tutorial recommends a nonproduction network and provides cleanup that records observations and deletes drill VMs. Evaluate the stated conditions rather than adding an unstated mechanism.",
+      "summaryReferenceIds": [
+        "monx-testfailover"
+      ],
+      "references": [
+        {
+          "id": "monx-testfailover",
+          "title": "azure to azure tutorial dr drill",
+          "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill",
+          "section": null,
+          "checkedAt": "2026-10-08T01:38:45.613Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Official retrieved text supports the rule used in this original scenario; the interpretation is AI-assisted draft and not human factual approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "deeper-reserve",
+        "original-scenario",
+        "ai-assisted-draft"
+      ],
+      "assessmentReserved": true
+    }
+  ]
+}

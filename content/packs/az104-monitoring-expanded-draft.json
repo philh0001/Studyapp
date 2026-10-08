@@ -1,6 +1,6 @@
 {
   "id": "az104-monitoring-expanded-draft",
-  "version": 1,
+  "version": 3,
   "blueprintId": "az104-2026-04-17",
   "checkedAt": "2026-10-08T01:41:29.732Z",
   "questions": [
@@ -514,7 +514,7 @@
     },
     {
       "id": "az104-monitoring-plus-08",
-      "revision": 1,
+      "revision": 2,
       "certificationId": "AZ-104",
       "blueprintId": "az104-2026-04-17",
       "domainId": "monitoring",
@@ -526,7 +526,7 @@
       "requiredSelections": 2,
       "difficulty": "foundation",
       "scenario": "A guest log stream contains noisy entries that should be filtered before storage.",
-      "prompt": "Choose TWO DCR capabilities relevant to this goal.",
+      "prompt": "Choose TWO DCR capabilities that define the filtering-and-delivery pipeline: removing noisy input and sending the retained data to its chosen destination.",
       "options": [
         {
           "id": "a",
@@ -741,7 +741,7 @@
     },
     {
       "id": "az104-monitoring-plus-11",
-      "revision": 1,
+      "revision": 2,
       "certificationId": "AZ-104",
       "blueprintId": "az104-2026-04-17",
       "domainId": "monitoring",
@@ -752,7 +752,7 @@
       "type": "single",
       "requiredSelections": 1,
       "difficulty": "foundation",
-      "scenario": "A responder needs the newest ten security records, with deterministic newest-first order.",
+      "scenario": "A responder needs the newest ten security records, ordered newest first. No particular order among records with equal timestamps is required.",
       "prompt": "Which expression fits?",
       "options": [
         {
@@ -811,7 +811,7 @@
     },
     {
       "id": "az104-monitoring-plus-12",
-      "revision": 1,
+      "revision": 2,
       "certificationId": "AZ-104",
       "blueprintId": "az104-2026-04-17",
       "domainId": "monitoring",
@@ -822,7 +822,7 @@
       "type": "multiple",
       "requiredSelections": 2,
       "difficulty": "advanced",
-      "scenario": "Perf contains minute-level values. The chart needs mean CounterValue for each hour.",
+      "scenario": "Perf has been filtered to one performance counter and instance, with comparable units in CounterValue across its minute-level samples. The chart needs mean CounterValue for each hour.",
       "prompt": "Which TWO query elements are required?",
       "options": [
         {

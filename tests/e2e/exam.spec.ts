@@ -11,6 +11,7 @@ test('approves five real drafts locally and keeps timed answers hidden until con
   const id=`az104-identity-0${i}`;await selector.selectOption(id);
   const approve=page.getByRole('button',{name:'Approve this revision',exact:true});
   await expect(approve).toBeDisabled();await expect(page.getByRole('heading',{name:'Microsoft Learn sources'})).toBeVisible();
+  for(const checkbox of await page.getByRole('group',{name:'Individual factual review checklist'}).getByRole('checkbox').all())await checkbox.check();
   await page.getByRole('checkbox',{name:/I opened the official Microsoft Learn sources and checked/}).check();
   await approve.click();await expect(selector.locator(`option[value="${id}"]`)).toHaveCount(0);
  }
@@ -39,10 +40,10 @@ test('approves five real drafts locally and keeps timed answers hidden until con
  await confirmation.getByRole('button',{name:'Confirm submission',exact:true}).click();
  await expect(page.getByRole('heading',{name:'Session complete'})).toBeVisible();
  await expect(page.getByRole('heading',{name:'Review your answers'})).toBeVisible();
- await expect(page.locator('details')).toHaveCount(5);
- await page.locator('details summary').first().click();
- await expect(page.locator('details').first()).toContainText('(your selection)');
- await expect(page.locator('details').first().getByRole('heading',{name:'Microsoft Learn sources'})).toBeVisible();
+ const reviewAnswers=page.locator('section').filter({has:page.getByRole('heading',{name:'Review your answers',exact:true})});await expect(reviewAnswers.locator('details')).toHaveCount(5);
+ await reviewAnswers.locator('details summary').first().click();
+ await expect(reviewAnswers.locator('details').first()).toContainText('(your selection)');
+ await expect(reviewAnswers.locator('details').first().getByRole('heading',{name:'Microsoft Learn sources'})).toBeVisible();
  await page.reload();await expect(page.getByRole('heading',{name:'Session complete'})).toBeVisible();
- await expect(page.locator('details')).toHaveCount(5);
+ await expect(reviewAnswers.locator('details')).toHaveCount(5);
 });

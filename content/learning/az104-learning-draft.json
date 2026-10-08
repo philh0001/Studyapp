@@ -1,0 +1,1379 @@
+{
+  "id": "az104-learning-draft",
+  "version": 1,
+  "provenance": "ai-assisted",
+  "status": "draft",
+  "review": null,
+  "notice": "AI-assisted draft teaching material. Official sources were retrieved; independent human factual review is still required. These are original study aids, not Microsoft exam items.",
+  "objectives": [
+    {
+      "id": "entra",
+      "domainId": "identity",
+      "title": "Manage Microsoft Entra users and groups",
+      "focus": "Guests and password reset",
+      "claims": [
+        {
+          "text": "A B2B invitation adds a Guest account; the guest must redeem the invitation before accessing shared resources.",
+          "referenceIds": [
+            "identity-guests"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.338Z"
+        },
+        {
+          "text": "Self-service password reset lets enabled, registered users reset or change passwords without a help desk reset.",
+          "referenceIds": [
+            "identity-sspr"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.910Z"
+        }
+      ]
+    },
+    {
+      "id": "rbac",
+      "domainId": "identity",
+      "title": "Manage access to Azure resources",
+      "focus": "Principal, role and scope",
+      "claims": [
+        {
+          "text": "An Azure role assignment combines a security principal, role definition and scope.",
+          "referenceIds": [
+            "identity-rbac"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.335Z"
+        },
+        {
+          "text": "Lower scopes inherit permissions from higher scopes; evaluate parent assignments before deciding access is absent.",
+          "referenceIds": [
+            "identity-scope"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.343Z"
+        }
+      ]
+    },
+    {
+      "id": "governance",
+      "domainId": "identity",
+      "title": "Manage Azure subscriptions and governance",
+      "focus": "Enforcement and cost awareness",
+      "claims": [
+        {
+          "text": "Azure Policy evaluates organizational standards and compliance; it can help remediate existing noncompliant resources.",
+          "referenceIds": [
+            "identity-policy"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.329Z"
+        },
+        {
+          "text": "Budget threshold notifications do not stop resource consumption.",
+          "referenceIds": [
+            "identity-budgets"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.703Z"
+        },
+        {
+          "text": "Resources do not automatically inherit tags from a resource group or subscription.",
+          "referenceIds": [
+            "identity-tags"
+          ],
+          "checkedAt": "2026-10-08T01:38:01.068Z"
+        }
+      ]
+    },
+    {
+      "id": "storage-access",
+      "domainId": "storage",
+      "title": "Configure access to storage",
+      "focus": "Bounded storage access",
+      "claims": [
+        {
+          "text": "A SAS delegates limited access with specific resources, permissions and validity; Microsoft recommends user delegation SAS where SAS is used.",
+          "referenceIds": [
+            "storage-plus-sas"
+          ],
+          "checkedAt": "2026-10-08T01:38:20.377399Z"
+        },
+        {
+          "text": "A stored access policy can change permissions or revoke a service-level SAS associated with that policy.",
+          "referenceIds": [
+            "storage-plus-policy"
+          ],
+          "checkedAt": "2026-10-08T01:39:11.986951Z"
+        }
+      ]
+    },
+    {
+      "id": "storage-accounts",
+      "domainId": "storage",
+      "title": "Configure and manage storage accounts",
+      "focus": "Redundancy and scope of protection",
+      "claims": [
+        {
+          "text": "ZRS synchronously copies data across three or more availability zones in the primary region.",
+          "referenceIds": [
+            "storage-plus-redundancy"
+          ],
+          "checkedAt": "2026-10-08T01:38:20.949142Z"
+        },
+        {
+          "text": "LRS copies data in one physical datacenter in the primary region; it does not provide a second-region copy.",
+          "referenceIds": [
+            "storage-plus-redundancy"
+          ],
+          "checkedAt": "2026-10-08T01:38:20.949142Z"
+        }
+      ]
+    },
+    {
+      "id": "blobs-files",
+      "domainId": "storage",
+      "title": "Configure Azure Files and Azure Blob Storage",
+      "focus": "Lifecycle and point-in-time data",
+      "claims": [
+        {
+          "text": "Lifecycle management cannot rehydrate an archived blob to an online tier.",
+          "referenceIds": [
+            "storage-plus-lifecycle"
+          ],
+          "checkedAt": "2026-10-08T01:38:22.542855Z"
+        },
+        {
+          "text": "An Azure Files share snapshot is a point-in-time, read-only copy; individual files can be retrieved from it.",
+          "referenceIds": [
+            "storage-plus-file-snapshots"
+          ],
+          "checkedAt": "2026-10-08T01:38:23.559660Z"
+        }
+      ]
+    },
+    {
+      "id": "arm-bicep",
+      "domainId": "compute",
+      "title": "Automate deployment of resources by using Azure Resource Manager (ARM) templates or Bicep files",
+      "focus": "Dependencies and change preview",
+      "claims": [
+        {
+          "text": "Referencing another deployed resource in a Bicep resource declaration creates an implicit dependency; independent resources can deploy in parallel.",
+          "referenceIds": [
+            "compute-bicep-dependencies"
+          ],
+          "checkedAt": "2026-10-08T01:40:19.386705Z"
+        },
+        {
+          "text": "Resource Manager what-if predicts deployment changes without changing existing resources.",
+          "referenceIds": [
+            "compute-bicep-whatif"
+          ],
+          "checkedAt": "2026-10-08T01:38:35.079497Z"
+        }
+      ]
+    },
+    {
+      "id": "vms",
+      "domainId": "compute",
+      "title": "Create and configure virtual machines",
+      "focus": "Disruption and host encryption",
+      "claims": [
+        {
+          "text": "Resizing a running VM causes a restart; deallocation may be needed if the requested size is unavailable on its current hardware cluster.",
+          "referenceIds": [
+            "compute-vm-resize"
+          ],
+          "checkedAt": "2026-10-08T01:38:35.602299Z"
+        },
+        {
+          "text": "Encryption at host can encrypt OS/data disk caches and temporary disks with platform-managed keys.",
+          "referenceIds": [
+            "compute-vm-host-encryption"
+          ],
+          "checkedAt": "2026-10-08T01:38:35.451855Z"
+        }
+      ]
+    },
+    {
+      "id": "containers",
+      "domainId": "compute",
+      "title": "Provision and manage containers in the Azure portal",
+      "focus": "Revision and replica choices",
+      "claims": [
+        {
+          "text": "Container Apps can run multiple revisions concurrently to support different app versions.",
+          "referenceIds": [
+            "compute-aca-revisions"
+          ],
+          "checkedAt": "2026-10-08T01:38:37.168599Z"
+        },
+        {
+          "text": "Setting minimum replicas to one or higher keeps a revision instance running; scale rules determine when replicas increase.",
+          "referenceIds": [
+            "compute-aca-scale"
+          ],
+          "checkedAt": "2026-10-08T01:38:36.970574Z"
+        }
+      ]
+    },
+    {
+      "id": "app-service",
+      "domainId": "compute",
+      "title": "Create and configure Azure App Service",
+      "focus": "Deployment and network direction",
+      "claims": [
+        {
+          "text": "Deployment slots are live apps with separate host names; supported tiers allow content and configuration to be swapped with production.",
+          "referenceIds": [
+            "compute-app-slots"
+          ],
+          "checkedAt": "2026-10-08T01:38:38.019045Z"
+        },
+        {
+          "text": "App Service VNet integration is for outbound calls into a virtual network; use private endpoints for inbound private access.",
+          "referenceIds": [
+            "compute-app-vnet"
+          ],
+          "checkedAt": "2026-10-08T01:38:37.779231Z"
+        }
+      ]
+    },
+    {
+      "id": "vnets",
+      "domainId": "networking",
+      "title": "Configure and manage virtual networks in Azure",
+      "focus": "Route selection",
+      "claims": [
+        {
+          "text": "Azure chooses the longest matching destination prefix; equal-prefix routes prefer user-defined routes over BGP and then system routes, subject to documented preferred system routes.",
+          "referenceIds": [
+            "networking-plus-route"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.610Z"
+        },
+        {
+          "text": "Virtual network peering connects networks over the Microsoft private backbone.",
+          "referenceIds": [
+            "networking-plus-peering"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.406Z"
+        }
+      ]
+    },
+    {
+      "id": "network-security",
+      "domainId": "networking",
+      "title": "Configure secure access to virtual networks",
+      "focus": "Evaluate the path",
+      "claims": [
+        {
+          "text": "NSG rules are processed by priority with lower numbers first; processing stops at the first matching rule.",
+          "referenceIds": [
+            "networking-plus-nsg"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.631Z"
+        },
+        {
+          "text": "A private endpoint is a network interface with a private IP address connecting privately to a supported service.",
+          "referenceIds": [
+            "networking-plus-privateEndpoint"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.556Z"
+        }
+      ]
+    },
+    {
+      "id": "dns-balancing",
+      "domainId": "networking",
+      "title": "Configure name resolution and load balancing",
+      "focus": "Authority and backend health",
+      "claims": [
+        {
+          "text": "Hosting an existing public domain in Azure DNS requires delegating it to the Azure zone name servers at the registrar.",
+          "referenceIds": [
+            "networking-plus-delegate"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.625Z"
+        },
+        {
+          "text": "A failed load balancer health probe stops new connections to that unhealthy backend; probe configuration and backend response must be checked.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.430Z"
+        }
+      ]
+    },
+    {
+      "id": "monitor",
+      "domainId": "monitoring",
+      "title": "Monitor resources in Azure",
+      "focus": "Collect, query and notify",
+      "claims": [
+        {
+          "text": "A resource diagnostic setting selects the resource logs or platform metrics to collect and the destinations to receive them.",
+          "referenceIds": [
+            "monx-diagnostic"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.406Z"
+        },
+        {
+          "text": "Alert processing rules can suppress action groups on fired alerts during a maintenance schedule.",
+          "referenceIds": [
+            "monx-processing"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.619Z"
+        },
+        {
+          "text": "Log Analytics supports queries written in Kusto Query Language to filter and analyze Azure Monitor Logs.",
+          "referenceIds": [
+            "monx-kql"
+          ],
+          "checkedAt": "2026-10-08T01:38:44.919Z"
+        }
+      ]
+    },
+    {
+      "id": "backup-recovery",
+      "domainId": "monitoring",
+      "title": "Implement backup and recovery",
+      "focus": "Restore and rehearse",
+      "claims": [
+        {
+          "text": "Azure Backup restore-disk can restore VM disks for a customized new VM or attachment to an existing VM.",
+          "referenceIds": [
+            "monx-restore"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.069Z"
+        },
+        {
+          "text": "A Site Recovery test failover should use a nonproduction network; clean up the test failover after the drill.",
+          "referenceIds": [
+            "monx-testfailover"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.613Z"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term": "B2B",
+      "expanded": "Business-to-business collaboration",
+      "claim": {
+        "text": "External users redeem an invitation to collaborate through a guest account.",
+        "referenceIds": [
+          "identity-guests"
+        ],
+        "checkedAt": "2026-10-08T01:38:00.338Z"
+      }
+    },
+    {
+      "term": "SSPR",
+      "expanded": "Self-service password reset",
+      "claim": {
+        "text": "Enabled users can reset their password without a help desk reset after meeting registration and authentication requirements.",
+        "referenceIds": [
+          "identity-sspr"
+        ],
+        "checkedAt": "2026-10-08T01:38:00.910Z"
+      }
+    },
+    {
+      "term": "RBAC",
+      "expanded": "Role-based access control",
+      "claim": {
+        "text": "Azure resource access is granted by assigning a role to a principal at a scope.",
+        "referenceIds": [
+          "identity-rbac"
+        ],
+        "checkedAt": "2026-10-08T01:38:00.335Z"
+      }
+    },
+    {
+      "term": "Scope",
+      "expanded": "Boundary of a role assignment",
+      "claim": {
+        "text": "An assignment at a parent scope supplies inherited permissions at lower scopes.",
+        "referenceIds": [
+          "identity-scope"
+        ],
+        "checkedAt": "2026-10-08T01:38:00.343Z"
+      }
+    },
+    {
+      "term": "SAS",
+      "expanded": "Shared access signature",
+      "claim": {
+        "text": "A signature delegates restricted storage access using permissions, resources and a validity period.",
+        "referenceIds": [
+          "storage-plus-sas"
+        ],
+        "checkedAt": "2026-10-08T01:38:20.377399Z"
+      }
+    },
+    {
+      "term": "LRS",
+      "expanded": "Locally redundant storage",
+      "claim": {
+        "text": "Data is replicated within a single physical datacenter in the primary region.",
+        "referenceIds": [
+          "storage-plus-redundancy"
+        ],
+        "checkedAt": "2026-10-08T01:38:20.949142Z"
+      }
+    },
+    {
+      "term": "ZRS",
+      "expanded": "Zone-redundant storage",
+      "claim": {
+        "text": "Data is synchronously replicated across three or more availability zones in the primary region.",
+        "referenceIds": [
+          "storage-plus-redundancy"
+        ],
+        "checkedAt": "2026-10-08T01:38:20.949142Z"
+      }
+    },
+    {
+      "term": "Snapshot",
+      "expanded": "Point-in-time file share copy",
+      "claim": {
+        "text": "An Azure Files share snapshot is read-only and supports retrieval of individual files.",
+        "referenceIds": [
+          "storage-plus-file-snapshots"
+        ],
+        "checkedAt": "2026-10-08T01:38:23.559660Z"
+      }
+    },
+    {
+      "term": "ARM",
+      "expanded": "Azure Resource Manager",
+      "claim": {
+        "text": "Resource Manager evaluates resource dependencies to determine deployment order.",
+        "referenceIds": [
+          "compute-bicep-dependencies"
+        ],
+        "checkedAt": "2026-10-08T01:40:19.386705Z"
+      }
+    },
+    {
+      "term": "What-if",
+      "expanded": "Deployment change preview",
+      "claim": {
+        "text": "The operation predicts changes from a Bicep deployment without modifying existing resources.",
+        "referenceIds": [
+          "compute-bicep-whatif"
+        ],
+        "checkedAt": "2026-10-08T01:38:35.079497Z"
+      }
+    },
+    {
+      "term": "Revision",
+      "expanded": "Container Apps app version",
+      "claim": {
+        "text": "Multiple revisions can run concurrently in Azure Container Apps.",
+        "referenceIds": [
+          "compute-aca-revisions"
+        ],
+        "checkedAt": "2026-10-08T01:38:37.168599Z"
+      }
+    },
+    {
+      "term": "Slot",
+      "expanded": "App Service deployment slot",
+      "claim": {
+        "text": "A deployment slot is a live app with its own hostname and can be swapped on supported plan tiers.",
+        "referenceIds": [
+          "compute-app-slots"
+        ],
+        "checkedAt": "2026-10-08T01:38:38.019045Z"
+      }
+    },
+    {
+      "term": "NSG",
+      "expanded": "Network security group",
+      "claim": {
+        "text": "NSG rules process matching traffic by priority, with lower numeric priorities first.",
+        "referenceIds": [
+          "networking-plus-nsg"
+        ],
+        "checkedAt": "2026-10-08T01:38:21.631Z"
+      }
+    },
+    {
+      "term": "UDR",
+      "expanded": "User-defined route",
+      "claim": {
+        "text": "At an equal prefix length, a UDR is preferred over BGP and system routes, subject to documented system-route exceptions.",
+        "referenceIds": [
+          "networking-plus-route"
+        ],
+        "checkedAt": "2026-10-08T01:38:21.610Z"
+      }
+    },
+    {
+      "term": "DNS",
+      "expanded": "Domain Name System",
+      "claim": {
+        "text": "An existing domain is delegated to Azure DNS by changing its name-server records at the registrar.",
+        "referenceIds": [
+          "networking-plus-delegate"
+        ],
+        "checkedAt": "2026-10-08T01:38:21.625Z"
+      }
+    },
+    {
+      "term": "KQL",
+      "expanded": "Kusto Query Language",
+      "claim": {
+        "text": "KQL is used to write queries that analyze Azure Monitor Logs in Log Analytics.",
+        "referenceIds": [
+          "monx-kql"
+        ],
+        "checkedAt": "2026-10-08T01:38:44.919Z"
+      }
+    },
+    {
+      "term": "Test failover",
+      "expanded": "Site Recovery rehearsal",
+      "claim": {
+        "text": "A test failover creates a drill VM from a recovery point in a selected network, preferably nonproduction.",
+        "referenceIds": [
+          "monx-testfailover"
+        ],
+        "checkedAt": "2026-10-08T01:38:45.613Z"
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "id": "comparison-1",
+      "objectiveId": "rbac",
+      "title": "RBAC and Policy",
+      "claims": [
+        {
+          "text": "RBAC grants principal permissions at a scope.",
+          "referenceIds": [
+            "identity-rbac"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.335Z"
+        },
+        {
+          "text": "Policy evaluates resource properties and compliance with standards.",
+          "referenceIds": [
+            "identity-policy"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.329Z"
+        }
+      ]
+    },
+    {
+      "id": "comparison-2",
+      "objectiveId": "governance",
+      "title": "Budget and enforcement",
+      "claims": [
+        {
+          "text": "A budget threshold generates notifications without stopping resource usage.",
+          "referenceIds": [
+            "identity-budgets"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.703Z"
+        },
+        {
+          "text": "Policy can enforce standards such as allowed deployment regions.",
+          "referenceIds": [
+            "identity-policy"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.329Z"
+        }
+      ]
+    },
+    {
+      "id": "comparison-3",
+      "objectiveId": "storage-access",
+      "title": "Ad hoc SAS and stored policy",
+      "claims": [
+        {
+          "text": "SAS bounds access by permissions and validity.",
+          "referenceIds": [
+            "storage-plus-sas"
+          ],
+          "checkedAt": "2026-10-08T01:38:20.377399Z"
+        },
+        {
+          "text": "A stored access policy provides server-side control and revocation for an associated service SAS.",
+          "referenceIds": [
+            "storage-plus-policy"
+          ],
+          "checkedAt": "2026-10-08T01:39:11.986951Z"
+        }
+      ]
+    },
+    {
+      "id": "comparison-4",
+      "objectiveId": "storage-accounts",
+      "title": "LRS and ZRS",
+      "claims": [
+        {
+          "text": "LRS replicates within one primary-region datacenter.",
+          "referenceIds": [
+            "storage-plus-redundancy"
+          ],
+          "checkedAt": "2026-10-08T01:38:20.949142Z"
+        },
+        {
+          "text": "ZRS replicates across availability zones within the primary region.",
+          "referenceIds": [
+            "storage-plus-redundancy"
+          ],
+          "checkedAt": "2026-10-08T01:38:20.949142Z"
+        }
+      ]
+    },
+    {
+      "id": "comparison-5",
+      "objectiveId": "blobs-files",
+      "title": "Lifecycle and rehydration",
+      "claims": [
+        {
+          "text": "Lifecycle rules can tier eligible block blobs but cannot rehydrate archived blobs.",
+          "referenceIds": [
+            "storage-plus-lifecycle"
+          ],
+          "checkedAt": "2026-10-08T01:38:22.542855Z"
+        },
+        {
+          "text": "An archived base blob can be rehydrated to hot, cool or cold by using Set Blob Tier; archived snapshots and previous versions require copying to a new online blob.",
+          "referenceIds": [
+            "storage-plus-rehydrate"
+          ],
+          "checkedAt": "2026-10-08T01:38:23.969128Z"
+        }
+      ]
+    },
+    {
+      "id": "comparison-6",
+      "objectiveId": "app-service",
+      "title": "Outbound integration and private inbound access",
+      "claims": [
+        {
+          "text": "VNet integration lets an App Service app make outbound calls to a virtual network.",
+          "referenceIds": [
+            "compute-app-vnet"
+          ],
+          "checkedAt": "2026-10-08T01:38:37.779231Z"
+        },
+        {
+          "text": "Inbound private access is provided with a private endpoint.",
+          "referenceIds": [
+            "compute-app-vnet"
+          ],
+          "checkedAt": "2026-10-08T01:38:37.779231Z"
+        }
+      ]
+    },
+    {
+      "id": "comparison-7",
+      "objectiveId": "vnets",
+      "title": "Prefix length and route type",
+      "claims": [
+        {
+          "text": "Longest matching prefix is evaluated before equal-prefix route-type preference.",
+          "referenceIds": [
+            "networking-plus-route"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.610Z"
+        },
+        {
+          "text": "Equal-prefix UDRs precede BGP routes and then system routes, with documented preferred system-route exceptions.",
+          "referenceIds": [
+            "networking-plus-route"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.610Z"
+        }
+      ]
+    },
+    {
+      "id": "comparison-8",
+      "objectiveId": "monitor",
+      "title": "Alert rule and processing rule",
+      "claims": [
+        {
+          "text": "Alert processing rules modify actions on fired alerts and can suppress action groups.",
+          "referenceIds": [
+            "monx-processing"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.619Z"
+        },
+        {
+          "text": "Disabling the alert rule prevents alerts from firing, rather than suppressing just their notifications.",
+          "referenceIds": [
+            "monx-processing"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.619Z"
+        }
+      ]
+    },
+    {
+      "id": "comparison-9",
+      "objectiveId": "backup-recovery",
+      "title": "Restore and disaster recovery drill",
+      "claims": [
+        {
+          "text": "A restore-disk operation recovers VM disks for customized VM creation or attachment.",
+          "referenceIds": [
+            "monx-restore"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.069Z"
+        },
+        {
+          "text": "A Site Recovery test failover rehearses recovery in a selected nonproduction network.",
+          "referenceIds": [
+            "monx-testfailover"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.613Z"
+        }
+      ]
+    }
+  ],
+  "walkthroughs": [
+    {
+      "id": "walkthrough-guest",
+      "objectiveId": "entra",
+      "title": "Rehearse a guest invitation",
+      "prerequisites": [
+        "An isolated test tenant, a permitted guest email and an administrator authorized to invite guests."
+      ],
+      "cost": "Tenant permissions and licensing depend on the scenario; use your own approved test tenant. Do not invite an unrelated person.",
+      "cleanup": "Remove the test guest and its test assignments after the exercise.",
+      "automaticallyDeploys": false,
+      "steps": [
+        {
+          "text": "Read the invitation prerequisites and inspect external collaboration settings before starting.",
+          "referenceIds": [
+            "identity-guests"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.338Z"
+        },
+        {
+          "text": "In a test tenant only, invite the permitted external user and inspect its Guest user type.",
+          "referenceIds": [
+            "identity-guests"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.338Z"
+        },
+        {
+          "text": "Have the permitted user redeem the invitation and document the distinction between creation and redemption.",
+          "referenceIds": [
+            "identity-guests"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.338Z"
+        }
+      ],
+      "objectiveIds": [
+        "entra"
+      ]
+    },
+    {
+      "id": "walkthrough-governance",
+      "objectiveId": "governance",
+      "title": "Inspect budgets, tag policy and an RBAC assignment",
+      "prerequisites": [
+        "Read access to Cost Management and an isolated resource group for any optional policy exercise.",
+        "For optional assignment practice, use a disposable test principal and resource group, with permission to create and remove the specific role assignment. First record any inherited access."
+      ],
+      "cost": "Start with read-only Cost Management, tag-policy and role-assignment inspection. Before any optional test resource work, check pricing; a budget notification does not stop consumption.",
+      "cleanup": "Remove only the exact temporary role assignment, budget, policy assignment and test tags you recorded creating. Removing a child assignment does not remove unrelated parent assignments; preserve organization governance.",
+      "automaticallyDeploys": false,
+      "steps": [
+        {
+          "text": "Read how actual and forecast budget thresholds generate notifications without stopping resources.",
+          "referenceIds": [
+            "identity-budgets"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.703Z"
+        },
+        {
+          "text": "Inspect a test resource group tag and a child resource to check that tags do not automatically inherit.",
+          "referenceIds": [
+            "identity-tags"
+          ],
+          "checkedAt": "2026-10-08T01:38:01.068Z"
+        },
+        {
+          "text": "Read a tag compliance policy definition and identify the standard it evaluates before any assignment.",
+          "referenceIds": [
+            "identity-policy"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.329Z"
+        },
+        {
+          "text": "For an existing test resource-group role assignment, record the security principal, role definition and scope. If authorized, use the official role-assignment workflow to assign the disposable principal a suitable test role at that group scope, then inspect the resulting assignment.",
+          "referenceIds": [
+            "identity-rbac"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.335Z"
+        },
+        {
+          "text": "Trace the principal's parent-scope assignments and inherited access before and after the optional test assignment. Explain why a resource-group assignment applies below that scope and not to a sibling group.",
+          "referenceIds": [
+            "identity-scope"
+          ],
+          "checkedAt": "2026-10-08T01:38:00.343Z"
+        }
+      ],
+      "objectiveIds": [
+        "governance",
+        "rbac"
+      ]
+    },
+    {
+      "id": "walkthrough-sas",
+      "objectiveId": "storage-access",
+      "title": "Design a revocable SAS exercise",
+      "prerequisites": [
+        "A test storage account and container, authorized data access and no sensitive files."
+      ],
+      "cost": "Storage capacity and transactions can cost money; document the access plan on paper if no approved test account exists.",
+      "cleanup": "Revoke the test policy or SAS, delete test data, and delete a storage account only if you created it solely for this exercise.",
+      "automaticallyDeploys": false,
+      "steps": [
+        {
+          "text": "List the exact resource, permissions, expiry and transport restriction before generating any SAS.",
+          "referenceIds": [
+            "storage-plus-sas"
+          ],
+          "checkedAt": "2026-10-08T01:38:20.377399Z"
+        },
+        {
+          "text": "Read the stored access policy procedure for a service SAS; identify how a policy changes its permissions and expiry.",
+          "referenceIds": [
+            "storage-plus-policy"
+          ],
+          "checkedAt": "2026-10-08T01:39:11.986951Z"
+        },
+        {
+          "text": "If practicing manually, revoke the test policy and verify the associated signature no longer provides the intended access.",
+          "referenceIds": [
+            "storage-plus-policy"
+          ],
+          "checkedAt": "2026-10-08T01:39:11.986951Z"
+        }
+      ],
+      "objectiveIds": [
+        "storage-access"
+      ]
+    },
+    {
+      "id": "walkthrough-snapshot",
+      "objectiveId": "blobs-files",
+      "title": "Compare file snapshot and blob lifecycle",
+      "prerequisites": [
+        "A permitted test Azure Files share or an offline diagram of a share and sample files."
+      ],
+      "cost": "Share capacity, snapshots and storage transactions may cost money. Use a diagram if resources are not already approved.",
+      "cleanup": "Delete only disposable snapshots and sample files; retained snapshots continue consuming storage.",
+      "automaticallyDeploys": false,
+      "steps": [
+        {
+          "text": "Read the snapshot capabilities and note that a share snapshot is read-only.",
+          "referenceIds": [
+            "storage-plus-file-snapshots"
+          ],
+          "checkedAt": "2026-10-08T01:38:23.559660Z"
+        },
+        {
+          "text": "Use a disposable file to rehearse selecting a snapshot and recovering an individual earlier version.",
+          "referenceIds": [
+            "storage-plus-file-snapshots"
+          ],
+          "checkedAt": "2026-10-08T01:38:23.559660Z"
+        },
+        {
+          "text": "Separately read lifecycle limitations and explain why a lifecycle rule is not an archive rehydration tool.",
+          "referenceIds": [
+            "storage-plus-lifecycle"
+          ],
+          "checkedAt": "2026-10-08T01:38:22.542855Z"
+        }
+      ],
+      "objectiveIds": [
+        "blobs-files"
+      ]
+    },
+    {
+      "id": "walkthrough-bicep",
+      "objectiveId": "arm-bicep",
+      "title": "Read dependencies and preview a Bicep change",
+      "prerequisites": [
+        "A local Bicep file; Azure CLI and an authorized test scope only for an optional what-if operation."
+      ],
+      "cost": "Reading a file creates no Azure resources. What-if predicts changes; a later actual deployment can create billable resources.",
+      "cleanup": "No resource cleanup for reading or what-if alone; remove local disposable files when finished.",
+      "automaticallyDeploys": false,
+      "steps": [
+        {
+          "text": "Read a Bicep example that references another resource and mark the implicit dependency.",
+          "referenceIds": [
+            "compute-bicep-dependencies"
+          ],
+          "checkedAt": "2026-10-08T01:40:19.386705Z"
+        },
+        {
+          "text": "Identify independent resources that Resource Manager can deploy in parallel.",
+          "referenceIds": [
+            "compute-bicep-dependencies"
+          ],
+          "checkedAt": "2026-10-08T01:40:19.386705Z"
+        },
+        {
+          "text": "Use the official what-if procedure in an approved test scope and inspect predicted changes without deploying.",
+          "referenceIds": [
+            "compute-bicep-whatif"
+          ],
+          "checkedAt": "2026-10-08T01:38:35.079497Z"
+        }
+      ],
+      "objectiveIds": [
+        "arm-bicep"
+      ]
+    },
+    {
+      "id": "walkthrough-vm",
+      "objectiveId": "vms",
+      "title": "Plan VM resizing, data disks and availability",
+      "prerequisites": [
+        "An approved disposable VM or its exported properties, target size information and a maintenance window.",
+        "For optional disk attachment, use an approved disposable Linux VM and existing managed data disk whose contents may be inspected safely. For availability planning, record region support and a design with at least two test VMs; do not modify production placement."
+      ],
+      "cost": "Check VM, retained-disk and network-resource pricing before any manual exercise. Availability planning can use a diagram instead of creating extra VMs; size changes and extra instances need explicit spending approval.",
+      "cleanup": "Remove only dedicated disposable VMs, disks and network resources you created. Record existing disks before attachment; never format a disk containing needed data or delete a shared disk. Remove a temporary attachment only after checking the guest mount and data use.",
+      "automaticallyDeploys": false,
+      "steps": [
+        {
+          "text": "Read the resize warnings and record that changing a running VM size restarts it.",
+          "referenceIds": [
+            "compute-vm-resize"
+          ],
+          "checkedAt": "2026-10-08T01:38:35.602299Z"
+        },
+        {
+          "text": "Check target-size availability and document when deallocation may be required.",
+          "referenceIds": [
+            "compute-vm-resize"
+          ],
+          "checkedAt": "2026-10-08T01:38:35.602299Z"
+        },
+        {
+          "text": "Before any manual resize, record dynamic IP and application disruption risks and inspect the actual allocation afterward.",
+          "referenceIds": [
+            "compute-vm-resize"
+          ],
+          "checkedAt": "2026-10-08T01:38:35.602299Z"
+        },
+        {
+          "text": "In an approved test Linux VM, open Settings > Disks and inspect Data disks. For an optional existing-disk attachment, select Attach existing disks, choose the recorded disposable managed disk and select Save; inspect the resulting VM disk configuration.",
+          "referenceIds": [
+            "compute-vm-attach"
+          ],
+          "checkedAt": "2026-10-08T01:38:35.797572Z"
+        },
+        {
+          "text": "On paper or in an existing test deployment, compare placing two or more VMs in an availability set: identify the assigned fault domains and update domains and explain which correlated failures this grouping reduces.",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "checkedAt": "2026-10-08T01:38:36.246173Z"
+        },
+        {
+          "text": "Compare that set design with replicated VMs across supported availability zones. Identify the physically separate zones and their independent power, network and cooling; record the region and application replication prerequisites before considering a deployment.",
+          "referenceIds": [
+            "compute-vm-zones"
+          ],
+          "checkedAt": "2026-10-08T01:38:36.074006Z"
+        }
+      ],
+      "objectiveIds": [
+        "vms"
+      ]
+    },
+    {
+      "id": "walkthrough-containers",
+      "objectiveId": "containers",
+      "title": "Compare Container Apps and App Service deployment/scaling",
+      "prerequisites": [
+        "An existing approved test Container App, or a copy of its revision and scaling configuration.",
+        "For App Service, use an approved existing test plan/app and an existing nonproduction slot, or exported configuration. Slot exercises require the permissions and plan tier described in the official slot guide; do not swap a production app."
+      ],
+      "cost": "Inspect current Container Apps replica and App Service plan pricing before any changes. Idle replicas and plan capacity require separate cost checks; use existing configurations and avoid a plan scale change or added capacity without spending approval.",
+      "cleanup": "Remove only disposable container revisions/apps and App Service slots/resources created for this exercise. Preserve any shared plan and other apps that use it. If a permitted isolated slot swap was practiced, verify the intended app version and restore the recorded test configuration.",
+      "automaticallyDeploys": false,
+      "steps": [
+        {
+          "text": "Read multiple-revision behavior and identify the currently active revisions in the test configuration.",
+          "referenceIds": [
+            "compute-aca-revisions"
+          ],
+          "checkedAt": "2026-10-08T01:38:37.168599Z"
+        },
+        {
+          "text": "Inspect minimum replicas and explain why setting one or higher keeps an instance running.",
+          "referenceIds": [
+            "compute-aca-scale"
+          ],
+          "checkedAt": "2026-10-08T01:38:36.970574Z"
+        },
+        {
+          "text": "Compare HTTP and event-driven scale rules and document which trigger applies to your test workload.",
+          "referenceIds": [
+            "compute-aca-scale"
+          ],
+          "checkedAt": "2026-10-08T01:38:36.970574Z"
+        },
+        {
+          "text": "Inspect the App Service plan and its apps/slots. With per-app scaling disabled, record that the apps share the plan VM instances and scale with the plan; identify the blast radius of a proposed plan scale change before making any change.",
+          "referenceIds": [
+            "compute-app-plans"
+          ],
+          "checkedAt": "2026-10-08T01:38:37.140573Z"
+        },
+        {
+          "text": "In an existing nonproduction App Service slot on a supported tier, inspect its separate hostname and validate the staged app. Read the swap procedure and document how a slot swap exchanges content/configuration with production; practice a swap only between approved isolated test slots.",
+          "referenceIds": [
+            "compute-app-slots"
+          ],
+          "checkedAt": "2026-10-08T01:38:38.019045Z"
+        }
+      ],
+      "objectiveIds": [
+        "containers",
+        "app-service"
+      ]
+    },
+    {
+      "id": "walkthrough-network",
+      "objectiveId": "network-security",
+      "title": "Trace routes, NSGs, private access, DNS and load-balancer health",
+      "prerequisites": [
+        "Read access to a test subnet, its route table and its NSG; do not change a production path.",
+        "For DNS planning, use a disposable domain you control or read-only zone information. For load-balancer inspection, use an approved existing test load balancer/backend. Registrar changes require control of the test domain; never change production delegation."
+      ],
+      "cost": "Reading configurations creates no new resources. Before optional DNS-zone, private-endpoint, load-balancer or backend work, check current pricing and dependencies. Prefer a paper delegation plan and an existing test backend when spending is not approved.",
+      "cleanup": "Remove only deliberately created temporary rules, endpoints, DNS zones or dedicated load-balancer/backend resources. If a disposable domain delegation was changed, restore the recorded original delegation when appropriate; never delete shared or production network resources.",
+      "automaticallyDeploys": false,
+      "steps": [
+        {
+          "text": "For a sample destination, list matching routes and choose the longest prefix before comparing equal-prefix route types.",
+          "referenceIds": [
+            "networking-plus-route"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.610Z"
+        },
+        {
+          "text": "Sort matching NSG rules by ascending numeric priority and identify the first match.",
+          "referenceIds": [
+            "networking-plus-nsg"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.631Z"
+        },
+        {
+          "text": "Read the private endpoint overview and locate the private network interface in an existing test configuration.",
+          "referenceIds": [
+            "networking-plus-privateEndpoint"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.556Z"
+        },
+        {
+          "text": "For a controlled test domain, inspect the Azure DNS zone and its resource records, retrieve its assigned name servers, and write the corresponding registrar delegation plan. If an authorized disposable-domain exercise is performed, follow the official delegation and verification steps.",
+          "referenceIds": [
+            "networking-plus-delegate"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.625Z"
+        },
+        {
+          "text": "In an existing test load balancer, inspect the health probe protocol, destination port and interval, plus the rule using it. Verify the backend responds to the configured probe and explain why a failed probe stops new inbound connections to that backend.",
+          "referenceIds": [
+            "networking-plus-probe"
+          ],
+          "checkedAt": "2026-10-08T01:38:21.430Z"
+        }
+      ],
+      "objectiveIds": [
+        "vnets",
+        "network-security",
+        "dns-balancing"
+      ]
+    },
+    {
+      "id": "walkthrough-logs",
+      "objectiveId": "monitor",
+      "title": "Query sample logs and rehearse maintenance alerts",
+      "prerequisites": [
+        "The Microsoft Learn log-query demo or an authorized Log Analytics workspace and sample data."
+      ],
+      "cost": "Prefer the existing demo. Workspace ingestion, retention and alerts can cost money in your own environment.",
+      "cleanup": "Remove temporary alert processing rules and diagnostic settings only if created solely for this exercise.",
+      "automaticallyDeploys": false,
+      "steps": [
+        {
+          "text": "Open the official log-query tutorial and use the demo environment when no test workspace is available.",
+          "referenceIds": [
+            "monx-kql"
+          ],
+          "checkedAt": "2026-10-08T01:38:44.919Z"
+        },
+        {
+          "text": "Read a resource diagnostic setting and identify selected data categories and destinations.",
+          "referenceIds": [
+            "monx-diagnostic"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.406Z"
+        },
+        {
+          "text": "Read the maintenance example and design a processing rule that suppresses action groups while keeping alert evaluation.",
+          "referenceIds": [
+            "monx-processing"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.619Z"
+        }
+      ],
+      "objectiveIds": [
+        "monitor"
+      ]
+    },
+    {
+      "id": "walkthrough-recovery",
+      "objectiveId": "backup-recovery",
+      "title": "Plan Azure Backup restore and a Site Recovery drill",
+      "prerequisites": [
+        "An existing approved replicated test VM, Recovery Services vault, permissions and a separate nonproduction network.",
+        "For optional Azure Backup restore, use an approved existing Recovery Services vault and test-VM recovery point, restore permissions, and a disposable target resource group. Confirm the documented region requirements; never choose Replace existing on a production VM for this exercise."
+      ],
+      "cost": "Backup restores and Site Recovery drills can create resource capacity that needs a pricing check. Plan on paper unless spending and the isolated restore/drill are explicitly authorized; record expected restored disks, test VMs and cleanup time.",
+      "cleanup": "Use Cleanup test failover after an authorized drill and record the results. Separately inspect any Azure Backup restored disks, generated template, target VM and staging artifacts; remove only disposable outputs that you created and no longer need. Preserve protected production backup data, vaults and shared dependencies.",
+      "automaticallyDeploys": false,
+      "steps": [
+        {
+          "text": "Read the Site Recovery drill prerequisites and select a nonproduction network for the test VM.",
+          "referenceIds": [
+            "monx-testfailover"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.613Z"
+        },
+        {
+          "text": "Compare available recovery points before manually running a test failover in the approved test environment.",
+          "referenceIds": [
+            "monx-testfailover"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.613Z"
+        },
+        {
+          "text": "Record verification notes, run Cleanup test failover, and confirm the drill resources were removed.",
+          "referenceIds": [
+            "monx-testfailover"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.613Z"
+        },
+        {
+          "text": "Inspect the Recovery Services vault region and the protected test data source. Read the vault prerequisite that the vault must be in the same region as the data source before planning protection or selecting an existing test setup.",
+          "referenceIds": [
+            "monx-vault"
+          ],
+          "checkedAt": "2026-10-08T01:38:44.878Z"
+        },
+        {
+          "text": "In an approved test-VM recovery point, compare Create a new VM, Restore disk and Replace existing. Plan an isolated Restore disk operation: it copies disks to the chosen resource group and generates a template for a customized VM. If manually authorized, run that restore, inspect the resulting disks/template, and record cleanup outputs without replacing a production VM.",
+          "referenceIds": [
+            "monx-restore"
+          ],
+          "checkedAt": "2026-10-08T01:38:45.069Z"
+        }
+      ],
+      "objectiveIds": [
+        "backup-recovery"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "id": "identity-policy",
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+      "checkedAt": "2026-10-08T01:38:00.329Z"
+    },
+    {
+      "id": "identity-rbac",
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+      "checkedAt": "2026-10-08T01:38:00.335Z"
+    },
+    {
+      "id": "identity-guests",
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator",
+      "checkedAt": "2026-10-08T01:38:00.338Z"
+    },
+    {
+      "id": "identity-scope",
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview",
+      "checkedAt": "2026-10-08T01:38:00.343Z"
+    },
+    {
+      "id": "identity-budgets",
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets",
+      "checkedAt": "2026-10-08T01:38:00.703Z"
+    },
+    {
+      "id": "identity-sspr",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+      "checkedAt": "2026-10-08T01:38:00.910Z"
+    },
+    {
+      "id": "identity-tags",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
+      "checkedAt": "2026-10-08T01:38:01.068Z"
+    },
+    {
+      "id": "storage-plus-sas",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+      "checkedAt": "2026-10-08T01:38:20.377399Z"
+    },
+    {
+      "id": "storage-plus-redundancy",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+      "checkedAt": "2026-10-08T01:38:20.949142Z"
+    },
+    {
+      "id": "storage-plus-lifecycle",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+      "checkedAt": "2026-10-08T01:38:22.542855Z"
+    },
+    {
+      "id": "storage-plus-file-snapshots",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files",
+      "checkedAt": "2026-10-08T01:38:23.559660Z"
+    },
+    {
+      "id": "storage-plus-policy",
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy",
+      "checkedAt": "2026-10-08T01:39:11.986951Z"
+    },
+    {
+      "id": "compute-aca-revisions",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/revisions",
+      "checkedAt": "2026-10-08T01:38:37.168599Z"
+    },
+    {
+      "id": "compute-aca-scale",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+      "checkedAt": "2026-10-08T01:38:36.970574Z"
+    },
+    {
+      "id": "compute-app-slots",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+      "checkedAt": "2026-10-08T01:38:38.019045Z"
+    },
+    {
+      "id": "compute-app-vnet",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration",
+      "checkedAt": "2026-10-08T01:38:37.779231Z"
+    },
+    {
+      "id": "compute-bicep-dependencies",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/resource-dependencies",
+      "checkedAt": "2026-10-08T01:40:19.386705Z"
+    },
+    {
+      "id": "compute-bicep-whatif",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if",
+      "checkedAt": "2026-10-08T01:38:35.079497Z"
+    },
+    {
+      "id": "compute-vm-host-encryption",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli",
+      "checkedAt": "2026-10-08T01:38:35.451855Z"
+    },
+    {
+      "id": "compute-vm-resize",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm",
+      "checkedAt": "2026-10-08T01:38:35.602299Z"
+    },
+    {
+      "id": "networking-plus-peering",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+      "checkedAt": "2026-10-08T01:38:21.406Z"
+    },
+    {
+      "id": "networking-plus-probe",
+      "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+      "checkedAt": "2026-10-08T01:38:21.430Z"
+    },
+    {
+      "id": "networking-plus-privateEndpoint",
+      "url": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+      "checkedAt": "2026-10-08T01:38:21.556Z"
+    },
+    {
+      "id": "networking-plus-route",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+      "checkedAt": "2026-10-08T01:38:21.610Z"
+    },
+    {
+      "id": "networking-plus-delegate",
+      "url": "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns",
+      "checkedAt": "2026-10-08T01:38:21.625Z"
+    },
+    {
+      "id": "networking-plus-nsg",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+      "checkedAt": "2026-10-08T01:38:21.631Z"
+    },
+    {
+      "id": "monx-kql",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+      "checkedAt": "2026-10-08T01:38:44.919Z"
+    },
+    {
+      "id": "monx-restore",
+      "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms",
+      "checkedAt": "2026-10-08T01:38:45.069Z"
+    },
+    {
+      "id": "monx-diagnostic",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings",
+      "checkedAt": "2026-10-08T01:38:45.406Z"
+    },
+    {
+      "id": "monx-testfailover",
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill",
+      "checkedAt": "2026-10-08T01:38:45.613Z"
+    },
+    {
+      "id": "monx-processing",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules",
+      "checkedAt": "2026-10-08T01:38:45.619Z"
+    },
+    {
+      "id": "storage-plus-rehydrate",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview",
+      "checkedAt": "2026-10-08T01:38:23.969128Z"
+    },
+    {
+      "id": "compute-app-plans",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+      "checkedAt": "2026-10-08T01:38:37.140573Z"
+    },
+    {
+      "id": "compute-vm-attach",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal",
+      "checkedAt": "2026-10-08T01:38:35.797572Z"
+    },
+    {
+      "id": "compute-vm-sets",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+      "checkedAt": "2026-10-08T01:38:36.246173Z"
+    },
+    {
+      "id": "compute-vm-zones",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability",
+      "checkedAt": "2026-10-08T01:38:36.074006Z"
+    },
+    {
+      "id": "monx-vault",
+      "url": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault",
+      "checkedAt": "2026-10-08T01:38:44.878Z"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "builtAt": "2026-10-08",
+  "javascript": [
+    {
+      "file": "assets/index-BiqJUsPc.js",
+      "bytes": 225930,
+      "gzipBytes": 60486
+    },
+    {
+      "file": "assets/question-bank-D7GKh21y.js",
+      "bytes": 899208,
+      "gzipBytes": 141628
+    },
+    {
+      "file": "assets/rolldown-runtime-hePW80VL.js",
+      "bytes": 716,
+      "gzipBytes": 430
+    },
+    {
+      "file": "assets/study-data-C_IF-FYG.js",
+      "bytes": 3128554,
+      "gzipBytes": 252990
+    },
+    {
+      "file": "assets/validators-CI8esFNU.js",
+      "bytes": 332851,
+      "gzipBytes": 21577
+    },
+    {
+      "file": "assets/vendor-BFrqGuZg.js",
+      "bytes": 320039,
+      "gzipBytes": 99768
+    },
+    {
+      "file": "sw.js",
+      "bytes": 1998,
+      "gzipBytes": 969
+    },
+    {
+      "file": "workbox-2fbc6a65.js",
+      "bytes": 15026,
+      "gzipBytes": 5185
+    }
+  ],
+  "totalJavaScriptBytes": 4924322,
+  "totalJavaScriptGzipBytes": 583033,
+  "note": "Imports remain eager. App code splitting does not establish a measured first-load speed gain."
+}

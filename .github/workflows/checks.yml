@@ -1,0 +1,90 @@
+name: Check and verify Studyapp
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      deploy:
+        description: Deploy this checked revision to the existing Studyapp Worker
+        type: boolean
+        default: false
+permissions:
+  contents: read
+concurrency:
+  group: studyapp-check-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Type, lint, unit, content and production checks
+        run: npm run check
+      - run: npx playwright install --with-deps chromium webkit
+      - name: Desktop and mobile browser suites
+        run: npm run test:e2e
+      - name: Validate safe rollback planner
+        run: node scripts/rollback-plan.mjs --output artifacts/rollback-plan.json
+      - name: Upload checked build and browser evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: checked-build-${{ github.sha }}
+          path: |
+            dist/
+            playwright-report/
+            test-results/
+            artifacts/rollback-plan.json
+          retention-days: 30
+  deploy:
+    if: github.event_name == 'workflow_dispatch' && inputs.deploy
+    needs: checks
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    environment: studyapp-production
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Require authenticated Cloudflare configuration
+        shell: bash
+        run: |
+          if [[ -z "$CLOUDFLARE_API_TOKEN" || -z "$CLOUDFLARE_ACCOUNT_ID" ]]; then
+            echo "Deployment blocked: configure authenticated Cloudflare token/account secrets for the existing Studyapp Worker. No credentials are fabricated."
+            exit 1
+          fi
+      - uses: actions/download-artifact@v4
+        with:
+          name: checked-build-${{ github.sha }}
+          path: checked-artifact
+      - name: Restore exactly the checked build
+        run: mv checked-artifact/dist dist
+      - name: Deploy existing Worker only
+        run: npx wrangler deploy --config production/web/wrangler.jsonc
+      - name: Record deployed version identity
+        run: |
+          mkdir -p artifacts
+          npx wrangler deployments list --config production/web/wrangler.jsonc --json > artifacts/cloudflare-deployments.json
+      - name: Verify actual deployment bytes and security headers
+        run: node scripts/verify-deployment.mjs --dist dist --output artifacts/deployment-verification.json
+      - name: Retain deployment verification for rollback review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: deployment-evidence-${{ github.sha }}
+          path: |
+            artifacts/
+            dist/
+          retention-days: 90

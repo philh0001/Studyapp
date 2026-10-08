@@ -1,4 +1,5 @@
 import {useEffect,useRef,useState} from 'react';
+import {isTimedSession} from '../../sessions/types';
 import type {Session,SessionAnswer} from '../../sessions/types';
 import type {StudyRepository} from '../../storage/repository';
 import type {SessionService} from '../../sessions/service';
@@ -7,6 +8,7 @@ export interface ExamProps{session:Session;repository:StudyRepository;service:Se
 export function Exam({session,repository,service,onChanged,onFinished,onDraftTracked}:ExamProps){
  const [current,setCurrent]=useState(session),[now,setNow]=useState(Date.now()),[busy,setBusy]=useState(false),[confirming,setConfirming]=useState(false),[error,setError]=useState(''),[finalError,setFinalError]=useState(false);
  const latest=useRef(current),queue=useRef(Promise.resolve()),draftFailure=useRef<Error|null>(null),finalising=useRef(false),retryRequired=useRef(false),finished=useRef(false),finishRef=useRef<()=>Promise<void>>(async()=>{});
+ const timed=isTimedSession(current),caseStudy=current.questionSnapshots.some(q=>q.caseStudy);
  const deadline=Date.parse(current.deadlineAt??''),expired=Number.isFinite(deadline)&&now>=deadline;
  function publish(next:Session){latest.current=next;setCurrent(next);return onChanged(next)}
  async function reload(){const next=await repository.db.sessions.get(session.id);if(!next)throw Error('Session not found.');await publish(next);return next}
@@ -21,8 +23,8 @@ export function Exam({session,repository,service,onChanged,onFinished,onDraftTra
  }catch(e){setError(e instanceof Error?e.message:'Could not save session.')}finally{setBusy(false)}}
  async function finish(){if(finalising.current||finished.current)return;finalising.current=true;retryRequired.current=false;setBusy(true);setError('');setFinalError(false);try{
   await Promise.resolve();await queue.current;
-  if(draftFailure.current&&Date.now()<deadline)throw draftFailure.current;
-  await service.finaliseTimedSession(session.id,new Date());await reload();setConfirming(false);await onFinished();finished.current=true;
+  if(draftFailure.current&&(!Number.isFinite(deadline)||Date.now()<deadline))throw draftFailure.current;
+  await service.finaliseAssessmentSession(session.id,new Date());await reload();setConfirming(false);await onFinished();finished.current=true;
  }catch(e){setError(e instanceof Error?e.message:'Final submission was not saved. Retry.');setFinalError(true);retryRequired.current=true}finally{finalising.current=false;setBusy(false)}}
  useEffect(()=>{finishRef.current=finish});
  useEffect(()=>{latest.current=session;setCurrent(session)},[session]);
@@ -32,10 +34,10 @@ export function Exam({session,repository,service,onChanged,onFinished,onDraftTra
   return()=>{clearInterval(timer);document.removeEventListener('visibilitychange',check);window.removeEventListener('focus',check)};
  },[session.id]);
  const question=current.questionSnapshots[current.currentIndex],remaining=Math.max(0,Math.ceil((deadline-now)/1000)),unanswered=current.questionSnapshots.filter(q=>(current.answers[q.id]?.selectedOptionIds.length??0)!==q.requiredSelections).length;
- return <><div className="page-title"><span className="eyebrow">Timed practice</span><h1>Focus on your reasoning.</h1><p>{current.questionSnapshots.length} original practice questions. Feedback appears after final submission.</p></div><section className="card"><div className="session-bar"><strong>Question {current.currentIndex+1} of {current.questionSnapshots.length}</strong><span role="timer" aria-label="Time remaining">{Number.isFinite(remaining)?`${Math.floor(remaining/60)}:${String(remaining%60).padStart(2,'0')}`:'No deadline'}</span></div>
+ return <><div className="page-title"><span className="eyebrow">{timed?'Timed practice':caseStudy?'Self-paced case study':'Self-paced assessment'}</span><h1>Focus on your reasoning.</h1><p>{current.questionSnapshots.length} original practice questions. Feedback appears after final submission.</p></div><section className="card"><div className="session-bar"><strong>Question {current.currentIndex+1} of {current.questionSnapshots.length}</strong>{timed?<span role="timer" aria-label="Time remaining">{Number.isFinite(remaining)?`${Math.floor(remaining/60)}:${String(remaining%60).padStart(2,'0')}`:'No deadline'}</span>:<span>No deadline · feedback at the end</span>}</div>
  {error&&<p className="notice error" role="alert">{error}</p>}
  {finalError&&<button className="primary" disabled={busy} onClick={()=>void finish()}>Retry final submission</button>}
- {current.status==='active'&&!expired&&question&&<fieldset disabled={busy} className="exam-controls"><legend className="sr-only">Timed answer and navigation</legend><QuestionView key={question.id} question={question} optionOrder={current.optionOrders[question.id]} initial={current.answers[question.id]} submitLabel="Save & next" onSaveQueued={onDraftTracked} onDraft={answer=>draft(question.id,answer)} onSubmit={async(ids,confidence,responseMs)=>{await draft(question.id,{selectedOptionIds:ids,confidence,responseMs});if(current.currentIndex+1<current.questionSnapshots.length)await move(current.currentIndex+1);else setConfirming(true)}}/>
+ {current.status==='active'&&!expired&&question&&<fieldset disabled={busy} className="exam-controls"><legend className="sr-only">Assessment answer and navigation</legend><QuestionView key={question.id} question={question} optionOrder={current.optionOrders[question.id]} initial={current.answers[question.id]} submitLabel="Save & next" onSaveQueued={onDraftTracked} onDraft={answer=>draft(question.id,answer)} onSubmit={async(ids,confidence,responseMs)=>{await draft(question.id,{selectedOptionIds:ids,confidence,responseMs});if(current.currentIndex+1<current.questionSnapshots.length)await move(current.currentIndex+1);else setConfirming(true)}}/>
  <div className="button-row"><button onClick={()=>void move(current.currentIndex,true)}>{current.flags.includes(question.id)?'Unflag question':'Flag question'}</button><button disabled={current.currentIndex===0} onClick={()=>void move(current.currentIndex-1)}>Previous question</button><button disabled={current.currentIndex===current.questionSnapshots.length-1} onClick={()=>void move(current.currentIndex+1)}>Skip to next question</button></div>
  <nav aria-label="Practice question navigation" className="button-row">{current.questionSnapshots.map((q,index)=><button key={q.id} aria-label={`Go to question ${index+1}`} aria-current={index===current.currentIndex?'step':undefined} onClick={()=>void move(index)}>{index+1}{current.flags.includes(q.id)?' ⚑':''}{current.answers[q.id]?.selectedOptionIds.length===q.requiredSelections?' ✓':''}</button>)}</nav>
  <button className="primary full" onClick={()=>{setError('');setConfirming(true)}}>Finish practice</button></fieldset>}

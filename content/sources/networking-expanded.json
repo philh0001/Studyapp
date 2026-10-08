@@ -182,5 +182,29 @@
     "result": "checked",
     "evidenceSummary": "Official Microsoft Learn page retrieved as HTML and text; original question claims checked against relevant page sections. Automated drafting is not human factual approval.",
     "contentHash": "7320553524934ab92d977546555855ea89b6ef54ca20ac507907a554546bdc91"
+  },
+  {
+    "referenceId": "netx-extra-cname",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+    "checkedAt": "2026-10-08T02:29:19.962Z",
+    "result": "checked",
+    "evidenceSummary": "CNAME is a Canonical Name record that's used to create an alias from one domain name to another domain name. If you had different domain names that all accessed the same website, you'd use CNAME.",
+    "contentHash": "d1f97fd56f36e3d304dd8cf4049a58c0dbaa07746517e6cd9ab15e8d50464075"
+  },
+  {
+    "referenceId": "netx-extra-records",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-operations-recordsets",
+    "checkedAt": "2026-10-08T02:29:20.122Z",
+    "result": "checked",
+    "evidenceSummary": "Create an AAAA record set with a single record New-AzDnsRecordSet -Name \"test-aaaa\" -RecordType AAAA -ZoneName \"contoso.com\" -ResourceGroupName \"MyResourceGroup\" -Ttl 3600 -DnsRecords (New-AzDnsRecordConfig -Ipv6Address \"2607:f8b0:4009:1803::1005\") Create an MX record set with a single record In this example, we use the record set name '@' to create an MX record at the zone apex (in this case, 'contoso.com'). New-AzDnsRecordSet -Name \"@\" -RecordType MX -ZoneName \"contoso.com\" -ResourceGroupName \"MyResourceGroup\" -Ttl 3600 -DnsRecords (New-AzDnsRecordConfig -Exchange \"mail.contoso.com\" -Preference 5)",
+    "contentHash": "a0d3d60dd174d64f5b4e8dd4ff5873bb40253fc26106299ef6a4bc52d5d80105"
+  },
+  {
+    "referenceId": "netx-extra-effective-routes",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem",
+    "checkedAt": "2026-10-08T02:29:19.935Z",
+    "result": "checked",
+    "evidenceSummary": "In this article, you learn how to diagnose routing problems by viewing the effective routes for a network interface in a virtual machine (VM). Azure automatically creates default routes for each virtual network subnet. You can override these default routes by defining custom routes in a route table and associating the table with a subnet. The effective routes for a network interface are a combination of Azure's default routes, custom routes you define, and any routes propagated from your on-premises network through an Azure VPN gateway using the border gateway protocol (BGP). In the network interface, expand Help . Select Effective routes . Select the desired network interface to view its effective routes. Each interface might belong to a different subnet, resulting in unique routes.",
+    "contentHash": "b3def46b0839b2351f7751aea5ff620bb758b3bd2d3f8d840703fc16c68447fb"
   }
 ]

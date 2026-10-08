@@ -1,6 +1,6 @@
 {
   "id": "az104-networking-expanded-draft",
-  "version": 1,
+  "version": 2,
   "blueprintId": "az104-2026-04-17",
   "checkedAt": "2026-10-08T01:42:23.144Z",
   "questions": [
@@ -155,7 +155,7 @@
     },
     {
       "id": "az104-networking-plus-03",
-      "revision": 1,
+      "revision": 2,
       "certificationId": "AZ-104",
       "blueprintId": "az104-2026-04-17",
       "domainId": "networking",
@@ -174,7 +174,8 @@
           "text": "CNAME.",
           "explanation": "A CNAME maps one name to another DNS name.",
           "referenceIds": [
-            "networking-plus-records"
+            "networking-plus-records",
+            "netx-extra-cname"
           ]
         },
         {
@@ -182,7 +183,8 @@
           "text": "A.",
           "explanation": "An A record maps a name to an IPv4 address rather than another name.",
           "referenceIds": [
-            "networking-plus-records"
+            "networking-plus-records",
+            "netx-extra-cname"
           ]
         },
         {
@@ -190,7 +192,8 @@
           "text": "MX.",
           "explanation": "An MX record identifies mail exchangers rather than a general host alias.",
           "referenceIds": [
-            "networking-plus-records"
+            "networking-plus-records",
+            "netx-extra-cname"
           ]
         }
       ],
@@ -199,7 +202,8 @@
       ],
       "summaryExplanation": "A CNAME maps one name to another DNS name.",
       "summaryReferenceIds": [
-        "networking-plus-records"
+        "networking-plus-records",
+        "netx-extra-cname"
       ],
       "references": [
         {
@@ -210,6 +214,17 @@
           "checkedAt": "2026-10-08T01:38:21.600Z",
           "documentUpdatedAt": "2026-09-14T17:12:00Z",
           "evidenceSummary": "Retrieved official page; section focus: Record types. A CNAME maps one name to another DNS name. An A record maps a name to an IPv4 address rather than another name. An MX record identifies mail exchangers rather than a general host alias.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        },
+        {
+          "id": "netx-extra-cname",
+          "title": "What is Azure DNS? - Training | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+          "section": "CNAME canonical-name definition",
+          "checkedAt": "2026-10-08T02:29:19.962Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "CNAME is a Canonical Name record that's used to create an alias from one domain name to another domain name. If you had different domain names that all accessed the same website, you'd use CNAME.",
           "microsoftOwnershipVerified": true,
           "fallbackReason": null
         }
@@ -1399,7 +1414,7 @@
     },
     {
       "id": "az104-networking-plus-19",
-      "revision": 1,
+      "revision": 2,
       "certificationId": "AZ-104",
       "blueprintId": "az104-2026-04-17",
       "domainId": "networking",
@@ -1418,7 +1433,8 @@
           "text": "AAAA.",
           "explanation": "An AAAA record publishes an IPv6 address.",
           "referenceIds": [
-            "networking-plus-records"
+            "networking-plus-records",
+            "netx-extra-records"
           ]
         },
         {
@@ -1426,7 +1442,8 @@
           "text": "MX.",
           "explanation": "An MX record publishes a mail exchanger and preference.",
           "referenceIds": [
-            "networking-plus-records"
+            "networking-plus-records",
+            "netx-extra-records"
           ]
         },
         {
@@ -1434,7 +1451,8 @@
           "text": "A.",
           "explanation": "An A record publishes an IPv4 address.",
           "referenceIds": [
-            "networking-plus-records"
+            "networking-plus-records",
+            "netx-extra-records"
           ]
         }
       ],
@@ -1445,7 +1463,8 @@
       ],
       "summaryExplanation": "An A record publishes an IPv4 address. An AAAA record publishes an IPv6 address. An MX record publishes a mail exchanger and preference.",
       "summaryReferenceIds": [
-        "networking-plus-records"
+        "networking-plus-records",
+        "netx-extra-records"
       ],
       "references": [
         {
@@ -1456,6 +1475,17 @@
           "checkedAt": "2026-10-08T01:38:21.600Z",
           "documentUpdatedAt": "2026-09-14T17:12:00Z",
           "evidenceSummary": "Retrieved official page; section focus: Record types. An A record publishes an IPv4 address. An AAAA record publishes an IPv6 address. An MX record publishes a mail exchanger and preference.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        },
+        {
+          "id": "netx-extra-records",
+          "title": "Manage DNS records in Azure DNS using Azure PowerShell | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/azure/dns/dns-operations-recordsets",
+          "section": "Create AAAA and MX record sets",
+          "checkedAt": "2026-10-08T02:29:20.122Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "Create an AAAA record set with a single record New-AzDnsRecordSet -Name \"test-aaaa\" -RecordType AAAA -ZoneName \"contoso.com\" -ResourceGroupName \"MyResourceGroup\" -Ttl 3600 -DnsRecords (New-AzDnsRecordConfig -Ipv6Address \"2607:f8b0:4009:1803::1005\") Create an MX record set with a single record In this example, we use the record set name '@' to create an MX record at the zone apex (in this case, 'contoso.com'). New-AzDnsRecordSet -Name \"@\" -RecordType MX -ZoneName \"contoso.com\" -ResourceGroupName \"MyResourceGroup\" -Ttl 3600 -DnsRecords (New-AzDnsRecordConfig -Exchange \"mail.contoso.com\" -Preference 5)",
           "microsoftOwnershipVerified": true,
           "fallbackReason": null
         }
@@ -2697,7 +2727,7 @@
     },
     {
       "id": "az104-networking-plus-36",
-      "revision": 1,
+      "revision": 2,
       "certificationId": "AZ-104",
       "blueprintId": "az104-2026-04-17",
       "domainId": "networking",
@@ -2716,7 +2746,8 @@
           "text": "Inspect the NIC effective routes.",
           "explanation": "Effective routes show the combined routes applied to a NIC.",
           "referenceIds": [
-            "networking-plus-route"
+            "networking-plus-route",
+            "netx-extra-effective-routes"
           ]
         },
         {
@@ -2724,7 +2755,8 @@
           "text": "Confirm the intended route table is associated with the source subnet.",
           "explanation": "An unassociated table does not apply its UDRs to this subnet.",
           "referenceIds": [
-            "networking-plus-route"
+            "networking-plus-route",
+            "netx-extra-effective-routes"
           ]
         },
         {
@@ -2750,7 +2782,8 @@
       ],
       "summaryExplanation": "Effective routes show the combined routes applied to a NIC. An unassociated table does not apply its UDRs to this subnet.",
       "summaryReferenceIds": [
-        "networking-plus-route"
+        "networking-plus-route",
+        "netx-extra-effective-routes"
       ],
       "references": [
         {
@@ -2761,6 +2794,17 @@
           "checkedAt": "2026-10-08T01:38:21.610Z",
           "documentUpdatedAt": "2026-09-16T11:51:00Z",
           "evidenceSummary": "Retrieved official page; section focus: Route tables. Effective routes show the combined routes applied to a NIC. An unassociated table does not apply its UDRs to this subnet. DNS TTL cannot change route selection precedence. NSG filtering priorities do not create or reveal UDR associations.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        },
+        {
+          "id": "netx-extra-effective-routes",
+          "title": "Diagnose an Azure virtual machine routing problem | Microsoft Learn",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem",
+          "section": "Diagnose routing problems; Help > Effective routes",
+          "checkedAt": "2026-10-08T02:29:19.935Z",
+          "documentUpdatedAt": null,
+          "evidenceSummary": "In this article, you learn how to diagnose routing problems by viewing the effective routes for a network interface in a virtual machine (VM). Azure automatically creates default routes for each virtual network subnet. You can override these default routes by defining custom routes in a route table and associating the table with a subnet. The effective routes for a network interface are a combination of Azure's default routes, custom routes you define, and any routes propagated from your on-premises network through an Azure VPN gateway using the border gateway protocol (BGP). In the network interface, expand Help . Select Effective routes . Select the desired network interface to view its effective routes. Each interface might belong to a different subnet, resulting in unique routes.",
           "microsoftOwnershipVerified": true,
           "fallbackReason": null
         }

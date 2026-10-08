@@ -8,13 +8,13 @@ const pack=()=>JSON.parse(readFileSync(path,'utf8')) as ContentPack;
 describe('compute expanded original draft bank',()=>{
  it('supplies the separate fifty-question compute pack',()=>expect(existsSync(path)).toBe(true));
  it('keeps unique new identities, draft provenance and all compute subskill coverage',()=>{
-  const p=pack();expect(p.id).toBe('az104-compute-expanded-draft');expect(p.version).toBe(1);expect(p.questions).toHaveLength(50);
+  const p=pack();expect(p.id).toBe('az104-compute-expanded-draft');expect(p.version).toBe(2);expect(p.questions).toHaveLength(50);
   expect(validatePack(p,blueprint).issues).toEqual([]);
   const covered=new Set(p.questions.flatMap(q=>q.subObjectiveIds??[]));
   for(const o of blueprint.domains.find(d=>d.id==='compute')!.objectives)for(let i=1;i<=o.subObjectives.length;i++)expect(covered.has(`${o.id}.${i}`),`${o.id}.${i}`).toBe(true);
   expect(new Set(p.questions.map(q=>q.scenario+q.prompt)).size).toBe(50);
   for(const [i,q] of p.questions.entries()){
-   expect(q.id).toBe(`az104-compute-plus-${String(i+1).padStart(2,'0')}`);expect(q.revision).toBe(1);expect(q.domainId).toBe('compute');
+   expect(q.id).toBe(`az104-compute-plus-${String(i+1).padStart(2,'0')}`);expect(q.revision).toBe([11,20,26,38].includes(i+1)?2:1);expect(q.domainId).toBe('compute');
    expect(q.status).toBe('draft');expect(q.provenance).toBe('ai-assisted');expect(q.review).toBeNull();
   }
  });

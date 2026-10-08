@@ -1,0 +1,339 @@
+{
+  "status": "ai-assisted-evidence",
+  "humanReviewed": false,
+  "sources": [
+    {
+      "id": "identity-policy",
+      "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+      "checkedAt": "2026-10-08T01:38:00.329Z",
+      "retrievedTextPath": "/tmp/studyapp-identity-sources/identity-policy.txt",
+      "retrievedTextSha256": "4b407aeb179304250fbdf072006f5e02f9ece082517c3d89c3880b986204020c",
+      "evidenceExcerpt": "his overview describes how Azure Policy helps to enforce organizational standards and to assess compliance at-scale. Through its compliance dashboard, it provides an aggregated view to evaluate the overall state of the environment, with the ability to drill down to the per-resource, per-policy granularity. It also helps to bring your resources to compliance through bulk remediation for existing resources and automatic remediation for new resources. Note For more information about remediation, see Remediate non-compliant resources with Azure Policy. Common use cases for Azure Policy include implementing governance for resource consis",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "identity-rbac",
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+      "checkedAt": "2026-10-08T01:38:00.335Z",
+      "retrievedTextPath": "/tmp/studyapp-identity-sources/identity-rbac.txt",
+      "retrievedTextSha256": "f2cb2d5e65d31b8da2930ada24b3bbc9350e30678862b4b3a4141455ca518170",
+      "evidenceExcerpt": "nd \u2013 it's how permissions are enforced. A role assignment consists of three elements: security principal, role definition, and scope. Security principal A security principal is an object that represents a user, group, service principal, or managed identity that is requesting access to Azure resources. You can assign a role to any of these security principals. Role definition A role definition is a collection of permissions. It's typically just called a role. A role definition lists the actions that can be performed, such as read, write, and delete. Roles can be high-level, like owner, or specific, like virtual machine reader. Azure ",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "identity-guests",
+      "url": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator",
+      "checkedAt": "2026-10-08T01:38:00.338Z",
+      "retrievedTextPath": "/tmp/studyapp-identity-sources/identity-guests.txt",
+      "retrievedTextSha256": "a0181222f1ed353bd366a1ea158a89338548b36a935c00a7d995baac45674117",
+      "evidenceExcerpt": "ft Entra ID, with a user type of Guest. The guest user must then redeem their invitation to access resources. An invitation of a user doesn't expire. After you add a guest user to the directory, you can either send the guest user a direct link to a shared app, or the guest user can select the redemption URL in the invitation email. For more information about the redemption process, see B2B collaboration invitation redemption. Important You should follow the steps in How-to: Add your organization's privacy info in Microsoft Entra ID to add the URL of your organization's privacy statement. As part of the first time invitation redempti",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "identity-scope",
+      "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview",
+      "checkedAt": "2026-10-08T01:38:00.343Z",
+      "retrievedTextPath": "/tmp/studyapp-identity-sources/identity-scope.txt",
+      "retrievedTextSha256": "0c57c7c7311d525c47703bca408f7c82dbf84ca3002ab10d30176685162beefa",
+      "evidenceExcerpt": "ermines how widely the role is applied. Lower levels inherit role permissions from higher levels. Management groups are a level of scope above subscriptions, but management groups support more complex hierarchies. The following diagram shows an example of a hierarchy of management groups and subscriptions that you can define. For more information about management groups, see What are Azure management groups? Scope format If you assign roles using the command line, you'll need to specify the scope. For command-line tools, scope is a potentially long string that identifies the exact scope of the role assignment. In the Azure portal, t",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "identity-budgets",
+      "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets",
+      "checkedAt": "2026-10-08T01:38:00.703Z",
+      "retrievedTextPath": "/tmp/studyapp-identity-sources/identity-budgets.txt",
+      "retrievedTextSha256": "a68b92812dbfadbf0746e4677377cdef23855ba9931730bc1237027f41848052",
+      "evidenceExcerpt": "hen the budget thresholds are exceeded. Resources aren't affected, and your consumption isn't stopped. You can use budgets to compare and track spending as you analyze costs. Cost and usage data is typically available within 8-24 hours and budgets are evaluated against these costs every 24 hours. Be sure to get familiar with Cost and usage data updates specifics. When a budget threshold is met, email notifications are normally sent within an hour of the evaluation. Budgets reset automatically at the end of a period (monthly, quarterly, or annually) for the same budget amount when you select an expiration date in the future. Because ",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "identity-sspr",
+      "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+      "checkedAt": "2026-10-08T01:38:00.910Z",
+      "retrievedTextPath": "/tmp/studyapp-identity-sources/identity-sspr.txt",
+      "retrievedTextSha256": "30dd404173b91f6aebae087d65f153beb2e00eba0f73a13cc422c667d5e85077",
+      "evidenceExcerpt": "ntra self-service password reset (SSPR) gives users the ability to change or reset their password, with no administrator or help desk involvement. If a user's account is locked or they forget their password, they can follow prompts to unblock themselves and get back to work. This ability reduces help desk calls and loss of productivity when a user can't sign in to their device or an application. We recommend this video on how to enable and configure SSPR in Microsoft Entra ID. Important This conceptual article explains to an administrator how self-service password reset works. If you're an end user already registered for self-servic",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "identity-tags",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
+      "checkedAt": "2026-10-08T01:38:01.068Z",
+      "retrievedTextPath": "/tmp/studyapp-identity-sources/identity-tags.txt",
+      "retrievedTextSha256": "09f8cd1d3b5ac038c3d5b957c1040769138c5a5bb2716ade37cc27f1d2f42adb",
+      "evidenceExcerpt": " Machine Contributor role. Inherit tags Resources don't inherit the tags you apply to a resource group or a subscription. To apply tags from a subscription or resource group to the resources, see Assign policy definitions for tag compliance. You can group costs for an Azure resource by using the cm-resource-parent tag. This tag lets you review tagged costs in Microsoft Cost Management without having to use filters. The key for this tag is cm-resource-parent and its value is the resource ID of the Azure resource you want to group costs by. For example, to group costs by an Azure Virtual Desktop host pool, provide the resource ID of t",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "storage-plus-sas",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+      "checkedAt": "2026-10-08T01:38:20.377399Z",
+      "retrievedTextPath": "/tmp/studyapp-storage-sources/sas.txt",
+      "retrievedTextSha256": "89b654f9a8761f215c62b7906ea141af714321bad744aea80d0e8af5c7d1fb8e",
+      "evidenceExcerpt": "recommends using a user delegation SAS. A user delegation SAS is secured with Microsoft Entra credentials instead of the account key, which provides superior security. For more information on authorization for data access, see Authorize access to data in Azure Storage . User delegation SAS A user delegation SAS is secured with Microsoft Entra credentials and also by the permissions specified for the SAS. A user delegation SAS is supported for Blob Storage (including Data Lake Storage and dfs endpoints), Queue Storage, Table Storage, or Azure Files. For more information about the user delegation SAS, see Create a user delegation SAS ",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "storage-plus-redundancy",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+      "checkedAt": "2026-10-08T01:38:20.949142Z",
+      "retrievedTextPath": "/tmp/studyapp-storage-sources/redundancy.txt",
+      "retrievedTextSha256": "f987898aed66e5376af5fd705317ae85a1344e1295ab630b1ff0a9e29d523c3a",
+      "evidenceExcerpt": "d in the primary region of your choice. Zone-redundant storage (ZRS) copies your data synchronously across three or more Azure availability zones in the primary region. For applications requiring high availability, Microsoft recommends using ZRS in the primary region, and also replicating to a secondary region. Note Microsoft recommends using ZRS in the primary region for Azure Data Lake Storage workloads. Locally redundant storage Locally redundant storage (LRS) replicates the data within your storage accounts to a single physical datacenter in the primary region of your choice. Although choosing an availability zone isn't supporte",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "storage-plus-lifecycle",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+      "checkedAt": "2026-10-08T01:38:22.542855Z",
+      "retrievedTextPath": "/tmp/studyapp-storage-sources/lifecycle.txt",
+      "retrievedTextSha256": "6d85e3e015b4cf1be6622251e1925e258bd5dc5ab0e0bdd76e36e9cc444823f1",
+      "evidenceExcerpt": "lobs and not for append and page blobs. Lifecycle management policies can't be used to rehydrate blobs to an online tier. A lifecycle management policy must be read or written in full. Partial updates aren't supported. Each rule can have up to 10 case-sensitive prefixes and up to 10 blob index tag conditions. A lifecycle management policy can't be used to change the tier of a blob that uses an encryption scope to the archive tier. The delete action of a lifecycle management policy won't work with any blob in an immutable container. With an immutable policy, objects can be created and read, but not modified or deleted. For more infor",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "storage-plus-file-snapshots",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files",
+      "checkedAt": "2026-10-08T01:38:23.559660Z",
+      "retrievedTextPath": "/tmp/studyapp-storage-sources/file-snapshots.txt",
+      "retrievedTextSha256": "005447b91bfdb33ebd4c813eca0063a3b99f948d683671b4a53a6797054ea85d",
+      "evidenceExcerpt": "Azure CLI . Share snapshot capabilities A share snapshot is a point-in-time, read-only copy of your data. Share snapshot capability is provided at the file share level. Retrieval is provided at the individual file level, to allow for restoring individual files. Share snapshots have the same redundancy as the Azure file share for which they were taken. If you select geo-redundant storage for your account, your share snapshot is also stored redundantly in the paired region. You can restore a complete file share by using SMB, NFS, REST API, the Azure portal, the client library, or PowerShell/CLI. You can view snapshots of a share by us",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "storage-plus-policy",
+      "url": "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy",
+      "checkedAt": "2026-10-08T01:39:11.986951Z",
+      "retrievedTextPath": "/tmp/studyapp-storage-sources/policy.txt",
+      "retrievedTextSha256": "7130408eee175286d7e0ebb631bcd20c4d447775370a27e82a18eb3590a5e408",
+      "evidenceExcerpt": "er of the policy that you're replacing. To revoke a stored access policy, you can delete it, rename it by changing the signed identifier, or change the expiry time to a value in the past. Changing the signed identifier breaks the associations between any existing signatures and the stored access policy. Changing the expiry time to a value in the past causes any associated signatures to expire. Deleting or modifying the stored access policy immediately affects all of the shared access signatures associated with it. To remove a single access policy, call the resource's Set ACL operation. Pass in the set of signed identifiers that you ",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "compute-aca-revisions",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/revisions",
+      "checkedAt": "2026-10-08T01:38:37.168599Z",
+      "retrievedTextPath": "/tmp/studyapp-compute-sources/aca-revisions.txt",
+      "retrievedTextSha256": "7fd8af058cdd3747ca1cad2681d9e925615c9fd97d6606ccc16a910c5fd739e6",
+      "evidenceExcerpt": "reshold manually . Multiple revisions : You can run multiple revisions concurrently. This feature is especially beneficial when you need to manage different versions of your app simultaneously. Lifecycle Each revision undergoes specific states, influenced by its status and availability. During its lifecycle, a container app goes through different provisioning, running, and an inactive status. Provisioning status When you create a new revision, the container app undergoes startup and readiness checks. During this phase, the provisioning status serves as a guide to track the container app's progress. Status Description Provisioning Th",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "compute-aca-scale",
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+      "checkedAt": "2026-10-08T01:38:36.970574Z",
+      "retrievedTextPath": "/tmp/studyapp-compute-sources/aca-scale.txt",
+      "retrievedTextSha256": "068a13c6982793152a766e9b9c069935692bd40087ad7d2bbb61ba546e427d09",
+      "evidenceExcerpt": "te. For more information, see Billing . If you want to ensure that an instance of your revision is always running, set the minimum number of replicas to 1 or higher. During platform upgrades or maintenance, you might temporarily see more replicas than expected. Container Apps ensures your production workload isn't affected by pre-warming new replicas before shifting traffic, similar to default Kubernetes behavior. The extra replicas are removed automatically once the operation completes. Scale rules Three categories of triggers determine how scaling occurs: HTTP : Based on the number of concurrent HTTP requests to your revision. TCP",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "compute-app-slots",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+      "checkedAt": "2026-10-08T01:38:38.019045Z",
+      "retrievedTextPath": "/tmp/studyapp-compute-sources/app-slots.txt",
+      "retrievedTextSha256": "5976c27de45a434a2ad0f829e62f3616c05307a83a79733b5ffe4fd2fd1ddfa9",
+      "evidenceExcerpt": "r Isolated tier of an App Service plan. Deployment slots are live apps with their own host names. App content and configuration elements can be swapped between two deployment slots, including the production slot. Deploying your application to a nonproduction slot has the following benefits: You can validate app changes before you swap the slot into production. You can make sure that all instances of the slot are warmed up before you swap it into production. This approach eliminates downtime when you deploy your app. The traffic redirection is seamless. No requests are dropped because of swap operations. You can automate this entire ",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "compute-app-vnet",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration",
+      "checkedAt": "2026-10-08T01:38:37.779231Z",
+      "retrievedTextPath": "/tmp/studyapp-compute-sources/app-vnet.txt",
+      "retrievedTextSha256": "225cf728330e0f5aed6abba293b242a856242f6e283322ff8c1da2c298b3bc18",
+      "evidenceExcerpt": "s from within an Azure virtual network. Virtual network integration is used only to make outbound calls from your app into your virtual network. Refer to private endpoint for inbound private access. The virtual network integration feature: Requires a Basic, Standard, Premium, Premium v2, Premium v3, Premium v4, or Elastic Premium App Service pricing tier. Supports TCP and UDP. Works with App Service apps, function apps, and Logic apps. There are some things that virtual network integration doesn't support, like: Mounting a drive. Windows Server Active Directory domain join. NetBIOS. Virtual network integration supports connecting to",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "compute-bicep-dependencies",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/resource-dependencies",
+      "checkedAt": "2026-10-08T01:40:19.386705Z",
+      "retrievedTextPath": "/tmp/studyapp-compute-sources/bicep-dependencies.txt",
+      "retrievedTextSha256": "22e64a38df7d20b3b347d3f384c724799c2a252b5866b7f489b8f7013a2ccf2d",
+      "evidenceExcerpt": "he same Bicep file. Implicit dependency An implicit dependency is created when one resource declaration references another resource in the same deployment. In the following example, otherResource gets a property from exampleDnsZone . The resource named otherResource is implicitly dependent on exampleDnsZone . resource exampleDnsZone 'Microsoft.Network/dnsZones@2023-07-01-preview' = { name: 'myZone' location: 'global' } resource otherResource 'Microsoft.Example/examples@2024-05-01' = { name: 'exampleResource' properties: { // get read-only DNS zone property nameServers: exampleDnsZone.properties.nameServers } } A nested resource also",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "compute-bicep-whatif",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if",
+      "checkedAt": "2026-10-08T01:38:35.079497Z",
+      "retrievedTextPath": "/tmp/studyapp-compute-sources/bicep-whatif.txt",
+      "retrievedTextSha256": "c6118ea59e04b8a001254c4ee090d85e069b116988a4e4441fc2cc6987f14da4",
+      "evidenceExcerpt": "ll change if you deploy the Bicep file. The what-if operation doesn't make any changes to existing resources. Instead, it predicts the changes if the specified Bicep file is deployed. Similar to what-if, the bicep snapshot command performs local-only testing by generating and comparing a normalized JSON representation of your infrastructure to catch unintended logic changes without requiring an Azure connection. For a comparison, see Comparison of snapshot versus what-if . You can use the what-if operation with Visual Studio Code , Azure PowerShell, Azure CLI, or REST API operations. What-if is supported for resource group, subscrip",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "compute-vm-host-encryption",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli",
+      "checkedAt": "2026-10-08T01:38:35.451855Z",
+      "retrievedTextPath": "/tmp/studyapp-compute-sources/vm-host-encryption.txt",
+      "retrievedTextSha256": "7300cc5a91f3730bacff45b035514647c44cd99a93fcdd6b0207080caec69b10",
+      "evidenceExcerpt": "a VM with encryption at host enabled to encrypt cache of OS/data disks and temp disks with platform-managed keys. rgName=yourRGName vmName=yourVMName location=eastus vmSize=Standard_DS2_v2 image=LinuxImageURN az vm create -g $rgName \\ -n $vmName \\ -l $location \\ --encryption-at-host \\ --image $image \\ --size $vmSize \\ --generate-ssh-keys \\ --data-disk-sizes-gb 128 128 \\ Update a VM to enable encryption at host rgName=yourRGName vmName=yourVMName az vm update -n $vmName \\ -g $rgName \\ --set securityProfile.encryptionAtHost=true Check the status of encryption at host for a VM rgName=yourRGName vmName=yourVMName az vm show -n $vmName \\",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "compute-vm-resize",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm",
+      "checkedAt": "2026-10-08T01:38:35.602299Z",
+      "retrievedTextPath": "/tmp/studyapp-compute-sources/vm-resize.txt",
+      "retrievedTextSha256": "d9f4a7ddd4b04c289f5e489d36b5b69108d47c69d157579425c1ecf0b1f3e1e1",
+      "evidenceExcerpt": "dware cluster currently hosting the VM. Even when deallocation isn\u2019t required, changing the size of a running VM will cause it to restart. For this reason, resizing a VM should be considered a disruptive operation, especially for stateful workloads. Warning If the virtual machine is currently running, changing its size will cause it to restart. Deallocating the VM also releases any dynamic IP addresses assigned to the VM. The OS and data disks are not affected. If a resize operation fails, the VM model will still display the requested size, but the VM will continue running on its previous size until the resize is successfully alloca",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "networking-plus-peering",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+      "checkedAt": "2026-10-08T01:38:21.406Z",
+      "retrievedTextPath": "/tmp/studyapp-networking-sources/peering.txt",
+      "retrievedTextSha256": "32fc437451bc7062b8187d74b952517d90bd9e0a3ebbd478e9c6d4219aea923d",
+      "evidenceExcerpt": "l networks while keeping all traffic on Microsoft's private backbone infrastructure, eliminating the need for public internet routing. What you learn in this article: How virtual network peering works and its key benefits Different types of peering (local and global) How to implement connectivity and service chaining Troubleshooting common peering issues Whether you're designing a hub-and-spoke topology or connecting networks across regions, this guide helps you understand the capabilities and limitations of virtual network peering. By using Azure Virtual Network Manager connectivity configurations , you can scale connectivity beyon",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "networking-plus-probe",
+      "url": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+      "checkedAt": "2026-10-08T01:38:21.430Z",
+      "retrievedTextPath": "/tmp/studyapp-networking-sources/probe.txt",
+      "retrievedTextSha256": "af5267b0244f72ebad3c32bb36f194d93ea5f8d1775c71490072eb1541cfe5f3",
+      "evidenceExcerpt": "rol to manage load or planned downtime. When a health probe fails, the load balancer stops sending new connections to the respective unhealthy instance. Outbound connectivity isn't affected, only inbound. Probe protocols Health probes support multiple protocols. The availability of a specific health probe protocol varies by Load Balancer SKU. Additionally, the behavior of the service varies by Load Balancer SKU as shown in this table: SKU Probe protocol Probe down behavior Standard TCP, HTTP, HTTPS All probes down, all TCP flows continue. Basic TCP, HTTP All probes down, all TCP flows expire. Probe properties Health probes have the ",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "networking-plus-privateEndpoint",
+      "url": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+      "checkedAt": "2026-10-08T01:38:21.556Z",
+      "retrievedTextPath": "/tmp/studyapp-networking-sources/privateEndpoint.txt",
+      "retrievedTextSha256": "0062db8693749261fbc406aeb4f0597b3a64251d98990d151bda9cd21a53ec7d",
+      "evidenceExcerpt": "ize this article for me In this article A private endpoint is a network interface that uses a private IP address from your virtual network. This network interface connects you privately and securely to a service that's powered by Azure Private Link. By enabling a private endpoint, you're bringing the service into your virtual network. The service could be an Azure service such as: Azure Storage Azure Cosmos DB Azure SQL Database Your own service, using Private Link service . Private endpoint properties A private endpoint specifies the following properties: Property Description Name A unique name within the resource group. Subnet The",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "networking-plus-route",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+      "checkedAt": "2026-10-08T01:38:21.610Z",
+      "retrievedTextPath": "/tmp/studyapp-networking-sources/route.txt",
+      "retrievedTextSha256": "70007aeab850fdc0a57b6c04cbd2a41e9783d5501350b516f6d70ce72cae23b3",
+      "evidenceExcerpt": "the destination IP address by using the longest prefix match algorithm. For example, a route table has two routes. One route specifies the 10.0.0.0/24 address prefix, and the other route specifies the 10.0.0.0/16 address prefix. Azure directs traffic destined for 10.0.0.5 to the next hop type specified in the route with the 10.0.0.0/24 address prefix. This process occurs because 10.0.0.0/24 is a longer prefix than 10.0.0.0/16, even though 10.0.0.5 falls within both address prefixes. Azure directs traffic destined for 10.0.1.5 to the next hop type specified in the route with the 10.0.0.0/16 address prefix. This process occurs because",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "networking-plus-delegate",
+      "url": "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns",
+      "checkedAt": "2026-10-08T01:38:21.625Z",
+      "retrievedTextPath": "/tmp/studyapp-networking-sources/delegate.txt",
+      "retrievedTextSha256": "1ea24ff917c029dadf0840d8e7e34d823e2aa9e278a5267295daa5979e993b9d",
+      "evidenceExcerpt": "of Azure nameservers for your DNS zone. Delegate the domain to Azure's nameservers at your registrar. For example: In this tutorial, you learn how to: Create a DNS zone. Retrieve a list of name servers. Delegate the domain. Verify the delegation is working. If you don\u2019t have an Azure subscription, create a free account before you begin. Prerequisites An Azure account with an active subscription. A domain name that you can host in Azure DNS. You must have full control of this domain. Full control includes the ability to set the name server (NS) records for the domain. Note In this tutorial, contoso.xyz is used as an example domain na",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "networking-plus-nsg",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+      "checkedAt": "2026-10-08T01:38:21.631Z",
+      "retrievedTextPath": "/tmp/studyapp-networking-sources/nsg.txt",
+      "retrievedTextSha256": "8e0cbf377c67c4b6ab44a507d560ebe99354fc84c86ef958091c6014d600d103",
+      "evidenceExcerpt": "Priority A number between 100 and 4096. Rules are processed in priority order, with lower numbers processed before higher numbers because lower numbers have higher priority. Once traffic matches a rule, processing stops. As a result, any rules that exist with lower priorities (higher numbers) that have the same attributes as rules with higher priorities aren't processed. Azure default security rules are given the lowest priority (highest number) to ensure your custom rules are always processed first. Source or destination You can specify Any, an individual IP address, a CIDR block (for example, 10.0.0.0/24), a service tag , or an ap",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "monx-kql",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+      "checkedAt": "2026-10-08T01:38:44.919Z",
+      "retrievedTextPath": "/tmp/studyapp-monitoring-sources/kql.txt",
+      "retrievedTextSha256": "622432dc9504b03661f28d79ebc9f6a6f650cca0fb844cd25f43c86e1d26b10d",
+      "evidenceExcerpt": "te and customize advanced queries using Kusto Query Language (KQL) . Simple mode provides a user-friendly interface where you select a table and apply filters to build queries. Use the Observability Agent to explore your log data using natural language instead of writing queries. For a more detailed comparison between KQL mode and Simple mode, see Overview of Log Analytics in Azure Monitor . If you're collecting data from at least one virtual machine, you can work through this exercise in your own environment. For other scenarios, use our demo environment , which includes plenty of sample data. Tutorial video Note This video shows a",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "monx-restore",
+      "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms",
+      "checkedAt": "2026-10-08T01:38:45.069Z",
+      "retrievedTextPath": "/tmp/studyapp-monitoring-sources/restore.txt",
+      "retrievedTextSha256": "1044bfa1069994dfc7ed70bb813271f6c9747d210adb2de8a585dc02ba0a3201",
+      "evidenceExcerpt": " disks in the specified resource group. Restore disk Restores a VM disk, which can then be used to create a new VM. Azure Backup provides a template to help you customize and create a VM. The restore job generates a template that you can download and use to specify custom VM settings, and create a VM. The disks are copied to the Resource Group you specify. Alternatively, you can attach the disk to an existing VM, or create a new VM using PowerShell. This option is useful if you want to customize the VM, add configuration settings that weren't there at the time of backup, or add settings that must be configured using the template or ",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "monx-diagnostic",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings",
+      "checkedAt": "2026-10-08T01:38:45.406Z",
+      "retrievedTextPath": "/tmp/studyapp-monitoring-sources/diagnostic.txt",
+      "retrievedTextSha256": "a7784d918608512761895edeb2a64640d3e84a3be284fcc7259475a39cff0115",
+      "evidenceExcerpt": "e activity log to various destinations. Create a separate diagnostic setting for each resource that you want to collect data from. Each setting defines the data from the resource to collect and the destinations to send that data to. This article describes the details of diagnostic settings, including how to create them and the destinations available for sending data. The following video walks through routing resource platform logs with diagnostic settings. The following changes were made to diagnostic settings since the video was recorded, but these topics are discussed in this article. Azure Monitor partners Category groups Warning",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "monx-testfailover",
+      "url": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill",
+      "checkedAt": "2026-10-08T01:38:45.613Z",
+      "retrievedTextPath": "/tmp/studyapp-monitoring-sources/testfailover.txt",
+      "retrievedTextSha256": "a24cc4843b7888d362fb0ad3c23f3f4544bee63cb616b678a4a8c3c53549e157",
+      "evidenceExcerpt": "an up resources In the Essentials page, select Cleanup test failover . In Test failover cleanup &gt; Notes , record and save any observations associated with the test failover. Select Testing is complete to delete VMs created during the test failover. Monitor cleanup progress in notifications. Next steps In this tutorial, you ran a disaster recovery drill to check that failover works as expected. Now you can try to run a production failover . Feedback Was this page helpful? Yes No No Need help with this topic? Want to try using Ask Learn to clarify or guide you through this topic? Ask Learn Ask Learn Suggest a fix? Additional resour",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "monx-processing",
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules",
+      "checkedAt": "2026-10-08T01:38:45.619Z",
+      "retrievedTextPath": "/tmp/studyapp-monitoring-sources/processing.txt",
+      "retrievedTextSha256": "2c76889392dc65ca49198486fb33648f690d766f676a07975ca0538bd345ff31",
+      "evidenceExcerpt": "red to change the usual alert behavior. You can use alert processing rules to add action groups or remove (suppress) action groups from your fired alerts. You can apply alert processing rules to different resource scopes, from a single resource, or to an entire subscription, as long as they are within the same subscription as the alert processing rule. You can also use them to apply various filters or have the rule work on a predefined schedule. Some common use cases for alert processing rules are described here. Suppress notifications during planned maintenance Many customers set up a planned maintenance time for their resources, e",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "storage-plus-rehydrate",
+      "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview",
+      "checkedAt": "2026-10-08T01:38:23.969128Z",
+      "retrievedTextPath": "/tmp/studyapp-storage-sources/rehydrate.txt",
+      "retrievedTextSha256": "baaef2ee7db589ebb65944758622dad9936981668035ba449adf9b43b05995e2",
+      "evidenceExcerpt": " the Set Blob Tier operation. Important You can't directly rehydrate archived snapshots or previous versions. To access data from an archived snapshot or previous version, you must copy it to a new blob in an online tier (hot, cool, or cold) by using the Copy Blob operation. Rehydrating a blob from the archive tier can take several hours to complete. Archive larger blobs for optimal rehydration performance. Rehydrating a large number of small blobs might require extra time due to the processing overhead on each blob. A maximum of 10 GiB per storage account can be rehydrated per hour with priority retrieval. To learn how to rehydrate",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "compute-app-plans",
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+      "checkedAt": "2026-10-08T01:38:37.140573Z",
+      "retrievedTextPath": "/tmp/studyapp-compute-sources/app-plans.txt",
+      "retrievedTextSha256": "b9210d9789fc0b03af2cd7e97b87e6e24658147b7e5d66fe1414f4ba886a5979",
+      "evidenceExcerpt": "ycles and memory on these VM instances. All apps in an App Service plan scale together, because they share the same underlying compute resources (VM instances). Scaling the plan \u2014 whether manually or through autoscale rules \u2014 affects all apps in the plan. When per-app scaling is enabled, you can limit each app or deployment slot to a subset of the plan's VM instances. Plan capacity and billing remain at the App Service plan level. The number of active replicas for an app or slot can change with plan capacity and can't exceed the number of VM instances in the plan. For more information on scaling out an app, see Get started with auto",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "compute-vm-attach",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal",
+      "checkedAt": "2026-10-08T01:38:35.797572Z",
+      "retrievedTextPath": "/tmp/studyapp-compute-sources/vm-attach.txt",
+      "retrievedTextSha256": "62d4e34ba5a124b774c566f5c23352eab2e4114467f94856ded1f2abefac873e",
+      "evidenceExcerpt": "d disk and update the VM configuration. Attach an existing managed data disk in the Azure portal Follow these steps: On the Disks pane, under Data disks , select Attach existing disks . Select the drop-down menu for Disk name and select a disk from the list of available managed disks. Select Save to attach the existing managed disk and update the VM configuration. Connect to the Linux VM to mount the new disk To partition, format, and mount your new disk so your Linux VM can use it, SSH into your VM. For more information, see How to use SSH with Linux on Azure . The following example connects to a VM with the public IP address of 10",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "compute-vm-sets",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+      "checkedAt": "2026-10-08T01:38:36.246173Z",
+      "retrievedTextPath": "/tmp/studyapp-compute-sources/vm-sets.txt",
+      "retrievedTextSha256": "87259ff6dccc83a436cd7b0f6656e4b1111495ae26af01fd727267d979aa1a6b",
+      "evidenceExcerpt": "y zones. How do availability sets work? The underlying Azure platform assigns an update domain and a fault domain to each virtual machine in your availability set. Each availability set can have up to 3 fault domains and 20 update domains. These settings can't be changed after the availability set is created. Update domains Update domains indicate groups of virtual machines and underlying physical hardware that can be restarted at the same time. If more than five VMs are configured in an availability set with five update domains, the sixth VM is placed in the same update domain as the first, the seventh with the second, and so on. T",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "compute-vm-zones",
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability",
+      "checkedAt": "2026-10-08T01:38:36.074006Z",
+      "retrievedTextPath": "/tmp/studyapp-compute-sources/vm-zones.txt",
+      "retrievedTextSha256": "c576a064db9b2c46445d61a564328f74107b390baa94344dcc74c6c0245e82f4",
+      "evidenceExcerpt": " the applications and data on your VMs. An Availability Zone is a physically separate zone, within an Azure region. There are three Availability Zones per supported Azure region. Each Availability Zone has a distinct power source, network, and cooling. By designing your solutions to use replicated VMs in zones, you can protect your apps and data from the loss of a data center. If one zone is compromised, then replicated apps and data are instantly available in another zone. Note Regional resources may or may not exist in an Availability zone, and there is no insight into what physical or logical zone a regional resource is in. A fai",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    },
+    {
+      "id": "monx-vault",
+      "url": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault",
+      "checkedAt": "2026-10-08T01:38:44.878Z",
+      "retrievedTextPath": "/tmp/studyapp-monitoring-sources/vault.txt",
+      "retrievedTextSha256": "ba235b6c048602db652519c1fb2361f03503a0443363c9331352cdba432590ca",
+      "evidenceExcerpt": " vault to help protect any data source, the vault must be in the same region as the data source. Important If you're not sure of the location of your data source, close the window. Go to the list of your resources in the portal. If you have data sources in multiple regions, create a Recovery Services vault for each region. Create the vault in the first location before you create a vault in another location. You don't need to specify storage accounts to store the backup data. The Recovery Services vault and Azure Backup handle that step automatically. After you provide the values, select Review + create . To finish creating the Recov",
+      "scope": "Excerpt actually read from retrieved official text; AI-assisted interpretation, not human approval."
+    }
+  ]
+}

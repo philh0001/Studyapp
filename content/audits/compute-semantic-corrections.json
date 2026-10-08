@@ -1,0 +1,714 @@
+{
+  "createdAt": "2026-10-08T02:29:52.659497Z",
+  "packId": "az104-compute-expanded-draft",
+  "beforePackVersion": 1,
+  "afterPackVersion": 2,
+  "corrections": [
+    {
+      "questionId": "az104-compute-plus-11",
+      "reason": "Make the unshown referenced-module validity assumption explicit.",
+      "actualSourceClaim": "The retained Bicep file-structure article states that deploying the parent Bicep file also deploys resources in the referenced module; the example passes module parameters through params.",
+      "sourceReferenceIds": [
+        "compute-bicep-files"
+      ],
+      "before": {
+        "id": "az104-compute-plus-11",
+        "revision": 1,
+        "certificationId": "AZ-104",
+        "blueprintId": "az104-2026-04-17",
+        "domainId": "compute",
+        "objectiveId": "arm-bicep",
+        "subObjectiveIds": [
+          "arm-bicep.1",
+          "arm-bicep.3"
+        ],
+        "type": "single",
+        "requiredSelections": 1,
+        "difficulty": "intermediate",
+        "scenario": "An engineer modifies a parent deployment file to reuse a separate web app definition. The proposed module declaration references the file that declares the web app.",
+        "prompt": "What happens when the parent Bicep file is deployed?",
+        "options": [
+          {
+            "id": "a",
+            "text": "The module only stores a comment about the web app",
+            "explanation": "A module declaration links reusable Bicep code; it is not merely descriptive text in the parent file.",
+            "referenceIds": [
+              "compute-bicep-files"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The resources defined in webApp.bicep are deployed as part of the module deployment",
+            "explanation": "The Bicep module documentation states that deploying the parent also deploys resources in the referenced module.",
+            "referenceIds": [
+              "compute-bicep-files"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "The module must be deployed manually because parent deployment always ignores it",
+            "explanation": "A valid module declaration participates in the deployment; it is not automatically excluded until a separate manual command is used.",
+            "referenceIds": [
+              "compute-bicep-files"
+            ]
+          }
+        ],
+        "correctOptionIds": [
+          "b"
+        ],
+        "summaryExplanation": "The Bicep module documentation states that deploying the parent also deploys resources in the referenced module.",
+        "summaryReferenceIds": [
+          "compute-bicep-files"
+        ],
+        "references": [
+          {
+            "id": "compute-bicep-files",
+            "title": "Bicep file structure and syntax - Azure Resource Manager | Microsoft Learn",
+            "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file",
+            "section": null,
+            "checkedAt": "2026-10-08T01:38:35.007324Z",
+            "documentUpdatedAt": "2026-07-13T22:21:00Z",
+            "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: e and type for child resources in Bicep . Modules Modules enable you to reuse code from a Bicep file in other Bicep files. In the module declaration, you link to the file to reuse. When you deploy the Bicep file, you also deploy the resources in the module. module webModule './webApp.bicep' = { name: 'webDeploy' params: { skuName: 'S1' location: location } } The symbolic name enables you to reference the module from somewhere else in the file. For example, you can get an output value from a m Scenario interpretation: The Bicep module documentation states that deploying the parent also deploys resources in the referenced module.",
+            "microsoftOwnershipVerified": true,
+            "fallbackReason": null
+          }
+        ],
+        "provenance": "ai-assisted",
+        "status": "draft",
+        "review": null,
+        "tags": [
+          "compute-expanded-draft",
+          "arm-bicep"
+        ],
+        "assessmentReserved": true,
+        "exhibits": [
+          {
+            "type": "code",
+            "title": "Referenced deployment module",
+            "text": "module web './webApp.bicep' = {\n  name: 'web-layer'\n}",
+            "language": "bicep"
+          }
+        ]
+      },
+      "after": {
+        "id": "az104-compute-plus-11",
+        "revision": 2,
+        "certificationId": "AZ-104",
+        "blueprintId": "az104-2026-04-17",
+        "domainId": "compute",
+        "objectiveId": "arm-bicep",
+        "subObjectiveIds": [
+          "arm-bicep.1",
+          "arm-bicep.3"
+        ],
+        "type": "single",
+        "requiredSelections": 1,
+        "difficulty": "intermediate",
+        "scenario": "An engineer modifies a parent deployment file to reuse a separate web app definition. The proposed module declaration references the file that declares the web app. The referenced webApp.bicep file exists, is valid, and has no required parameters omitted by this module declaration.",
+        "prompt": "What happens when the parent Bicep file is deployed?",
+        "options": [
+          {
+            "id": "a",
+            "text": "The module only stores a comment about the web app",
+            "explanation": "A module declaration links reusable Bicep code; it is not merely descriptive text in the parent file.",
+            "referenceIds": [
+              "compute-bicep-files"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The resources defined in webApp.bicep are deployed as part of the module deployment",
+            "explanation": "The Bicep module documentation states that deploying the parent also deploys resources in the referenced module.",
+            "referenceIds": [
+              "compute-bicep-files"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "The module must be deployed manually because parent deployment always ignores it",
+            "explanation": "A valid module declaration participates in the deployment; it is not automatically excluded until a separate manual command is used.",
+            "referenceIds": [
+              "compute-bicep-files"
+            ]
+          }
+        ],
+        "correctOptionIds": [
+          "b"
+        ],
+        "summaryExplanation": "The Bicep module documentation states that deploying the parent also deploys resources in the referenced module.",
+        "summaryReferenceIds": [
+          "compute-bicep-files"
+        ],
+        "references": [
+          {
+            "id": "compute-bicep-files",
+            "title": "Bicep file structure and syntax - Azure Resource Manager | Microsoft Learn",
+            "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file",
+            "section": null,
+            "checkedAt": "2026-10-08T01:38:35.007324Z",
+            "documentUpdatedAt": "2026-07-13T22:21:00Z",
+            "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: e and type for child resources in Bicep . Modules Modules enable you to reuse code from a Bicep file in other Bicep files. In the module declaration, you link to the file to reuse. When you deploy the Bicep file, you also deploy the resources in the module. module webModule './webApp.bicep' = { name: 'webDeploy' params: { skuName: 'S1' location: location } } The symbolic name enables you to reference the module from somewhere else in the file. For example, you can get an output value from a m Scenario interpretation: The Bicep module documentation states that deploying the parent also deploys resources in the referenced module.",
+            "microsoftOwnershipVerified": true,
+            "fallbackReason": null
+          }
+        ],
+        "provenance": "ai-assisted",
+        "status": "draft",
+        "review": null,
+        "tags": [
+          "compute-expanded-draft",
+          "arm-bicep"
+        ],
+        "assessmentReserved": true,
+        "exhibits": [
+          {
+            "type": "code",
+            "title": "Referenced deployment module",
+            "text": "module web './webApp.bicep' = {\n  name: 'web-layer'\n}",
+            "language": "bicep"
+          }
+        ]
+      }
+    },
+    {
+      "questionId": "az104-compute-plus-20",
+      "reason": "Clarify that the answer selects partitioning and mount identification rather than a complete disk-preparation runbook.",
+      "actualSourceClaim": "The retained Linux attach-disk article requires GPT for disks at least 2 TiB, shows mkfs filesystem creation, and recommends filesystem UUID for /etc/fstab.",
+      "sourceReferenceIds": [
+        "compute-vm-attach"
+      ],
+      "before": {
+        "id": "az104-compute-plus-20",
+        "revision": 1,
+        "certificationId": "AZ-104",
+        "blueprintId": "az104-2026-04-17",
+        "domainId": "compute",
+        "objectiveId": "vms",
+        "subObjectiveIds": [
+          "vms.5"
+        ],
+        "type": "single",
+        "requiredSelections": 1,
+        "difficulty": "intermediate",
+        "scenario": "A new, empty 3-TiB managed data disk is attached to a Linux VM. It must be partitioned and mounted persistently; the operator has verified the disk identity and confirmed there is no data to preserve.",
+        "prompt": "Which preparation meets the documented requirements?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Use GPT partitioning and identify the filesystem by UUID in /etc/fstab",
+            "explanation": "The Linux attach-disk guidance requires GPT for disks at least 2 TiB and recommends UUIDs rather than device names for persistent mount entries.",
+            "referenceIds": [
+              "compute-vm-attach"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Use only MBR partitioning and identify the mount permanently as /dev/sdc1",
+            "explanation": "The guidance requires GPT at this disk size and warns that device names can refer to another disk after detection-order changes.",
+            "referenceIds": [
+              "compute-vm-attach"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Skip filesystem preparation because attaching a new blank disk creates the filesystem automatically",
+            "explanation": "The attach-disk procedure still requires partitioning and formatting a new disk before mounting it in the guest.",
+            "referenceIds": [
+              "compute-vm-attach"
+            ]
+          }
+        ],
+        "correctOptionIds": [
+          "a"
+        ],
+        "summaryExplanation": "The Linux attach-disk guidance requires GPT for disks at least 2 TiB and recommends UUIDs rather than device names for persistent mount entries.",
+        "summaryReferenceIds": [
+          "compute-vm-attach"
+        ],
+        "references": [
+          {
+            "id": "compute-vm-attach",
+            "title": "Use the portal to attach a data disk to a Linux VM - Azure Virtual Machines | Microsoft Learn",
+            "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal",
+            "section": null,
+            "checkedAt": "2026-10-08T01:38:35.797572Z",
+            "documentUpdatedAt": "2026-09-22T22:04:00Z",
+            "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: of parted that's available for your distribution. If the disk size is 2 tebibytes (TiB) or larger, you must use GPT partitioning. If disk size is under 2 TiB, then you can use either MBR or GPT partitioning. SCSI NVMe The following example uses parted on /dev/sdc , which is where the first data disk typically is on most VMs. Replace sdc with the correct option for your disk. The example formats the partition by using the XFS file system. sudo parted /dev/sdc --script mklabel gpt mkpart xfspart xf |  the drive is automatically added after a reboot. Ensure that the UUID (Universally Unique Identifier) is used in /etc/fstab to refer to the drive rather than a device name, such as /dev/sdc1 or /dev/nvme0n2p1 . If the OS detects a disk error during boot, using the UUID avoids the incorrect disk being mounted to a given location. Remaining data disks would then be assigned those same device IDs. To find the UUID of the new drive, use the blkid utility. sudo blkid The following output i Scenario interpretation: The Linux attach-disk guidance requires GPT for disks at least 2 TiB and recommends UUIDs rather than device names for persistent mount entries.",
+            "microsoftOwnershipVerified": true,
+            "fallbackReason": null
+          }
+        ],
+        "provenance": "ai-assisted",
+        "status": "draft",
+        "review": null,
+        "tags": [
+          "compute-expanded-draft",
+          "vms"
+        ],
+        "assessmentReserved": false,
+        "exhibits": [
+          {
+            "type": "table",
+            "title": "New data disk",
+            "columns": [
+              "Property",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Disk capacity",
+                "3 TiB"
+              ],
+              [
+                "Existing files",
+                "None"
+              ],
+              [
+                "Guest OS",
+                "Linux"
+              ],
+              [
+                "Mount requirement",
+                "Persistent after reboot"
+              ]
+            ]
+          }
+        ]
+      },
+      "after": {
+        "id": "az104-compute-plus-20",
+        "revision": 2,
+        "certificationId": "AZ-104",
+        "blueprintId": "az104-2026-04-17",
+        "domainId": "compute",
+        "objectiveId": "vms",
+        "subObjectiveIds": [
+          "vms.5"
+        ],
+        "type": "single",
+        "requiredSelections": 1,
+        "difficulty": "intermediate",
+        "scenario": "A new, empty 3-TiB managed data disk is attached to a Linux VM. It must be partitioned and mounted persistently; the operator has verified the disk identity and confirmed there is no data to preserve.",
+        "prompt": "Which partitioning and persistent-mount identification choice meets the documented requirements? Filesystem formatting and mounting are still required before the disk is ready for use.",
+        "options": [
+          {
+            "id": "a",
+            "text": "Use GPT partitioning and identify the filesystem by UUID in /etc/fstab",
+            "explanation": "The Linux attach-disk guidance requires GPT for disks at least 2 TiB and recommends UUIDs rather than device names for persistent mount entries.",
+            "referenceIds": [
+              "compute-vm-attach"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Use only MBR partitioning and identify the mount permanently as /dev/sdc1",
+            "explanation": "The guidance requires GPT at this disk size and warns that device names can refer to another disk after detection-order changes.",
+            "referenceIds": [
+              "compute-vm-attach"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Skip filesystem preparation because attaching a new blank disk creates the filesystem automatically",
+            "explanation": "The attach-disk procedure still requires partitioning and formatting a new disk before mounting it in the guest.",
+            "referenceIds": [
+              "compute-vm-attach"
+            ]
+          }
+        ],
+        "correctOptionIds": [
+          "a"
+        ],
+        "summaryExplanation": "The Linux attach-disk guidance requires GPT for disks at least 2 TiB and recommends UUIDs rather than device names for persistent mount entries.",
+        "summaryReferenceIds": [
+          "compute-vm-attach"
+        ],
+        "references": [
+          {
+            "id": "compute-vm-attach",
+            "title": "Use the portal to attach a data disk to a Linux VM - Azure Virtual Machines | Microsoft Learn",
+            "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal",
+            "section": null,
+            "checkedAt": "2026-10-08T01:38:35.797572Z",
+            "documentUpdatedAt": "2026-09-22T22:04:00Z",
+            "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: of parted that's available for your distribution. If the disk size is 2 tebibytes (TiB) or larger, you must use GPT partitioning. If disk size is under 2 TiB, then you can use either MBR or GPT partitioning. SCSI NVMe The following example uses parted on /dev/sdc , which is where the first data disk typically is on most VMs. Replace sdc with the correct option for your disk. The example formats the partition by using the XFS file system. sudo parted /dev/sdc --script mklabel gpt mkpart xfspart xf |  the drive is automatically added after a reboot. Ensure that the UUID (Universally Unique Identifier) is used in /etc/fstab to refer to the drive rather than a device name, such as /dev/sdc1 or /dev/nvme0n2p1 . If the OS detects a disk error during boot, using the UUID avoids the incorrect disk being mounted to a given location. Remaining data disks would then be assigned those same device IDs. To find the UUID of the new drive, use the blkid utility. sudo blkid The following output i Scenario interpretation: The Linux attach-disk guidance requires GPT for disks at least 2 TiB and recommends UUIDs rather than device names for persistent mount entries.",
+            "microsoftOwnershipVerified": true,
+            "fallbackReason": null
+          }
+        ],
+        "provenance": "ai-assisted",
+        "status": "draft",
+        "review": null,
+        "tags": [
+          "compute-expanded-draft",
+          "vms"
+        ],
+        "assessmentReserved": false,
+        "exhibits": [
+          {
+            "type": "table",
+            "title": "New data disk",
+            "columns": [
+              "Property",
+              "Value"
+            ],
+            "rows": [
+              [
+                "Disk capacity",
+                "3 TiB"
+              ],
+              [
+                "Existing files",
+                "None"
+              ],
+              [
+                "Guest OS",
+                "Linux"
+              ],
+              [
+                "Mount requirement",
+                "Persistent after reboot"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "questionId": "az104-compute-plus-26",
+      "reason": "Supply the documented prerequisite for autoscale instance creation.",
+      "actualSourceClaim": "The retained VM scale-set autoscale overview supports schedule and metrics-threshold capacity changes and explicitly requires a virtual machine scaling profile defining the instances to add.",
+      "sourceReferenceIds": [
+        "compute-vmss-autoscale"
+      ],
+      "before": {
+        "id": "az104-compute-plus-26",
+        "revision": 1,
+        "certificationId": "AZ-104",
+        "blueprintId": "az104-2026-04-17",
+        "domainId": "compute",
+        "objectiveId": "vms",
+        "subObjectiveIds": [
+          "vms.7"
+        ],
+        "type": "multiple",
+        "requiredSelections": 2,
+        "difficulty": "intermediate",
+        "scenario": "A stateless application uses a VM scale set. It needs more VM instances during sustained high demand and a planned minimum capacity during business hours.",
+        "prompt": "Which TWO scale-set approaches are documented?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Use only the OS disk capacity as the number of VMs",
+            "explanation": "A disk capacity setting does not implement the documented scale-set capacity increase or schedule-based scaling.",
+            "referenceIds": [
+              "compute-vmss-autoscale"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Configure autoscale rules based on metrics thresholds",
+            "explanation": "The scale-set autoscale overview includes rules driven by metrics thresholds for increasing or decreasing instance capacity.",
+            "referenceIds": [
+              "compute-vmss-autoscale"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Configure scheduled scale-set capacity changes",
+            "explanation": "The same overview includes set schedules as a way to increase or decrease the scale-set capacity.",
+            "referenceIds": [
+              "compute-vmss-autoscale"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Change the fault-domain count to guarantee automatic VM creation at every CPU spike",
+            "explanation": "Fault-domain placement does not replace the documented autoscale rules or schedules used to control instance capacity.",
+            "referenceIds": [
+              "compute-vmss-autoscale"
+            ]
+          }
+        ],
+        "correctOptionIds": [
+          "b",
+          "c"
+        ],
+        "summaryExplanation": "The scale-set autoscale overview includes rules driven by metrics thresholds for increasing or decreasing instance capacity. The same overview includes set schedules as a way to increase or decrease the scale-set capacity.",
+        "summaryReferenceIds": [
+          "compute-vmss-autoscale"
+        ],
+        "references": [
+          {
+            "id": "compute-vmss-autoscale",
+            "title": "Overview of autoscale with Azure Virtual Machine Scale Sets - Azure Virtual Machine Scale Sets | Microsoft Learn",
+            "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview",
+            "section": null,
+            "checkedAt": "2026-10-08T01:38:36.405944Z",
+            "documentUpdatedAt": "2026-06-24T06:10:00Z",
+            "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: ually increasing or decreasing scale set capacity Based on a set schedule According to rules based on metrics thresholds Automatically based on usage patterns discovered by predictive artificial intelligence This automated and elastic behavior reduces the management overhead to monitor and optimize the performance of your application. This article provides an overview of which performance metrics are available and what actions autoscale can perform. Note Use of autoscaling requires that t Scenario interpretation: The scale-set autoscale overview includes rules driven by metrics thresholds for increasing or decreasing instance capacity. The same overview includes set schedules as a way to increase or decrease the scale-set capacity.",
+            "microsoftOwnershipVerified": true,
+            "fallbackReason": null
+          }
+        ],
+        "provenance": "ai-assisted",
+        "status": "draft",
+        "review": null,
+        "tags": [
+          "compute-expanded-draft",
+          "vms"
+        ],
+        "assessmentReserved": false
+      },
+      "after": {
+        "id": "az104-compute-plus-26",
+        "revision": 2,
+        "certificationId": "AZ-104",
+        "blueprintId": "az104-2026-04-17",
+        "domainId": "compute",
+        "objectiveId": "vms",
+        "subObjectiveIds": [
+          "vms.7"
+        ],
+        "type": "multiple",
+        "requiredSelections": 2,
+        "difficulty": "intermediate",
+        "scenario": "A stateless application uses a VM scale set. It needs more VM instances during sustained high demand and a planned minimum capacity during business hours. The existing valid scale set has a virtual machine scaling profile that defines the configuration of instances to add.",
+        "prompt": "Which TWO scale-set approaches are documented?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Use only the OS disk capacity as the number of VMs",
+            "explanation": "A disk capacity setting does not implement the documented scale-set capacity increase or schedule-based scaling.",
+            "referenceIds": [
+              "compute-vmss-autoscale"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Configure autoscale rules based on metrics thresholds",
+            "explanation": "The scale-set autoscale overview includes rules driven by metrics thresholds for increasing or decreasing instance capacity.",
+            "referenceIds": [
+              "compute-vmss-autoscale"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Configure scheduled scale-set capacity changes",
+            "explanation": "The same overview includes set schedules as a way to increase or decrease the scale-set capacity.",
+            "referenceIds": [
+              "compute-vmss-autoscale"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Change the fault-domain count to guarantee automatic VM creation at every CPU spike",
+            "explanation": "Fault-domain placement does not replace the documented autoscale rules or schedules used to control instance capacity.",
+            "referenceIds": [
+              "compute-vmss-autoscale"
+            ]
+          }
+        ],
+        "correctOptionIds": [
+          "b",
+          "c"
+        ],
+        "summaryExplanation": "The scale-set autoscale overview includes rules driven by metrics thresholds for increasing or decreasing instance capacity. The same overview includes set schedules as a way to increase or decrease the scale-set capacity.",
+        "summaryReferenceIds": [
+          "compute-vmss-autoscale"
+        ],
+        "references": [
+          {
+            "id": "compute-vmss-autoscale",
+            "title": "Overview of autoscale with Azure Virtual Machine Scale Sets - Azure Virtual Machine Scale Sets | Microsoft Learn",
+            "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview",
+            "section": null,
+            "checkedAt": "2026-10-08T01:38:36.405944Z",
+            "documentUpdatedAt": "2026-06-24T06:10:00Z",
+            "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: ually increasing or decreasing scale set capacity Based on a set schedule According to rules based on metrics thresholds Automatically based on usage patterns discovered by predictive artificial intelligence This automated and elastic behavior reduces the management overhead to monitor and optimize the performance of your application. This article provides an overview of which performance metrics are available and what actions autoscale can perform. Note Use of autoscaling requires that t Scenario interpretation: The scale-set autoscale overview includes rules driven by metrics thresholds for increasing or decreasing instance capacity. The same overview includes set schedules as a way to increase or decrease the scale-set capacity.",
+            "microsoftOwnershipVerified": true,
+            "fallbackReason": null
+          }
+        ],
+        "provenance": "ai-assisted",
+        "status": "draft",
+        "review": null,
+        "tags": [
+          "compute-expanded-draft",
+          "vms"
+        ],
+        "assessmentReserved": false
+      }
+    },
+    {
+      "questionId": "az104-compute-plus-38",
+      "reason": "Make the authorised HTTP rollout assumption explicit; this narrows the scenario rather than proving TCP cannot split traffic.",
+      "actualSourceClaim": "The retained Container Apps revisions article supports multiple active revisions and traffic splitting in multiple revision mode. Its traffic-splitting example explicitly presumes enabled ingress and says HTTP or TCP; the clarification selects HTTP and does not claim TCP is unsupported.",
+      "sourceReferenceIds": [
+        "compute-aca-revisions"
+      ],
+      "before": {
+        "id": "az104-compute-plus-38",
+        "revision": 1,
+        "certificationId": "AZ-104",
+        "blueprintId": "az104-2026-04-17",
+        "domainId": "compute",
+        "objectiveId": "containers",
+        "subObjectiveIds": [
+          "containers.3"
+        ],
+        "type": "multiple",
+        "requiredSelections": 2,
+        "difficulty": "advanced",
+        "scenario": "A team runs Container Apps in multiple revision mode during a gradual application update. It wants to send some traffic to a newer revision while retaining an older active revision.",
+        "prompt": "Which TWO concepts support this rollout?",
+        "options": [
+          {
+            "id": "a",
+            "text": "A revision is an immutable snapshot of a version of the container app",
+            "explanation": "The revision model represents an immutable version snapshot, allowing the operator to identify which app version each active revision runs.",
+            "referenceIds": [
+              "compute-aca-revisions"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Every new revision immediately destroys all existing revisions in multiple revision mode",
+            "explanation": "Multiple revision mode allows several revisions to remain active; creation does not itself require deleting every existing revision.",
+            "referenceIds": [
+              "compute-aca-revisions"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Multiple revision mode can split traffic between active revisions",
+            "explanation": "The revisions documentation describes traffic splitting across active revisions as a multiple-revision capability.",
+            "referenceIds": [
+              "compute-aca-revisions"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Replica count is a replacement for choosing which revision receives traffic",
+            "explanation": "Replicas scale within a revision, while traffic allocation determines which revision serves the request; these are separate controls.",
+            "referenceIds": [
+              "compute-aca-revisions"
+            ]
+          }
+        ],
+        "correctOptionIds": [
+          "a",
+          "c"
+        ],
+        "summaryExplanation": "The revision model represents an immutable version snapshot, allowing the operator to identify which app version each active revision runs. The revisions documentation describes traffic splitting across active revisions as a multiple-revision capability.",
+        "summaryReferenceIds": [
+          "compute-aca-revisions"
+        ],
+        "references": [
+          {
+            "id": "compute-aca-revisions",
+            "title": "Update and deploy changes in Azure Container Apps | Microsoft Learn",
+            "url": "https://learn.microsoft.com/en-us/azure/container-apps/revisions",
+            "section": null,
+            "checkedAt": "2026-10-08T01:38:37.168599Z",
+            "documentUpdatedAt": "2026-02-26T23:12:00Z",
+            "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: er app. Key characteristics of revisions include: Immutable : Once established, a revision remains unchangeable. Versioned : Revisions act as a record of the container app's versions, capturing its state at various stages. Automatically provisioned : When you deploy a container app for the first time, an initial revision is automatically created. Scoped changes : While revisions remain static, application-scope changes can affect all revisions, while revision-scope changes create a new revisio |  revisions, and simplified rollbacks. No Multiple You can have multiple active revisions, split traffic between revisions, and choose when to deprovision old revisions. This level of control is helpful for testing multiple versions of an app, blue-green testing, or taking full control of app updates. Refer to traffic splitting for more detail. No Labels For container apps with external HTTP traffic, labels direct traffic to specific revisions. A label provides a unique URL that you can use to route traf Scenario interpretation: The revision model represents an immutable version snapshot, allowing the operator to identify which app version each active revision runs. The revisions documentation describes traffic splitting across active revisions as a multiple-revision capability.",
+            "microsoftOwnershipVerified": true,
+            "fallbackReason": null
+          }
+        ],
+        "provenance": "ai-assisted",
+        "status": "draft",
+        "review": null,
+        "tags": [
+          "compute-expanded-draft",
+          "containers"
+        ],
+        "assessmentReserved": false
+      },
+      "after": {
+        "id": "az104-compute-plus-38",
+        "revision": 2,
+        "certificationId": "AZ-104",
+        "blueprintId": "az104-2026-04-17",
+        "domainId": "compute",
+        "objectiveId": "containers",
+        "subObjectiveIds": [
+          "containers.3"
+        ],
+        "type": "multiple",
+        "requiredSelections": 2,
+        "difficulty": "advanced",
+        "scenario": "A team runs Container Apps in multiple revision mode during a gradual application update. It wants to send some traffic to a newer revision while retaining an older active revision. HTTP ingress is enabled, and the rollout uses HTTP traffic splitting between active revisions.",
+        "prompt": "Which TWO concepts support this rollout?",
+        "options": [
+          {
+            "id": "a",
+            "text": "A revision is an immutable snapshot of a version of the container app",
+            "explanation": "The revision model represents an immutable version snapshot, allowing the operator to identify which app version each active revision runs.",
+            "referenceIds": [
+              "compute-aca-revisions"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Every new revision immediately destroys all existing revisions in multiple revision mode",
+            "explanation": "Multiple revision mode allows several revisions to remain active; creation does not itself require deleting every existing revision.",
+            "referenceIds": [
+              "compute-aca-revisions"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Multiple revision mode can split traffic between active revisions",
+            "explanation": "The revisions documentation describes traffic splitting across active revisions as a multiple-revision capability.",
+            "referenceIds": [
+              "compute-aca-revisions"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Replica count is a replacement for choosing which revision receives traffic",
+            "explanation": "Replicas scale within a revision, while traffic allocation determines which revision serves the request; these are separate controls.",
+            "referenceIds": [
+              "compute-aca-revisions"
+            ]
+          }
+        ],
+        "correctOptionIds": [
+          "a",
+          "c"
+        ],
+        "summaryExplanation": "The revision model represents an immutable version snapshot, allowing the operator to identify which app version each active revision runs. The revisions documentation describes traffic splitting across active revisions as a multiple-revision capability.",
+        "summaryReferenceIds": [
+          "compute-aca-revisions"
+        ],
+        "references": [
+          {
+            "id": "compute-aca-revisions",
+            "title": "Update and deploy changes in Azure Container Apps | Microsoft Learn",
+            "url": "https://learn.microsoft.com/en-us/azure/container-apps/revisions",
+            "section": null,
+            "checkedAt": "2026-10-08T01:38:37.168599Z",
+            "documentUpdatedAt": "2026-02-26T23:12:00Z",
+            "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: er app. Key characteristics of revisions include: Immutable : Once established, a revision remains unchangeable. Versioned : Revisions act as a record of the container app's versions, capturing its state at various stages. Automatically provisioned : When you deploy a container app for the first time, an initial revision is automatically created. Scoped changes : While revisions remain static, application-scope changes can affect all revisions, while revision-scope changes create a new revisio |  revisions, and simplified rollbacks. No Multiple You can have multiple active revisions, split traffic between revisions, and choose when to deprovision old revisions. This level of control is helpful for testing multiple versions of an app, blue-green testing, or taking full control of app updates. Refer to traffic splitting for more detail. No Labels For container apps with external HTTP traffic, labels direct traffic to specific revisions. A label provides a unique URL that you can use to route traf Scenario interpretation: The revision model represents an immutable version snapshot, allowing the operator to identify which app version each active revision runs. The revisions documentation describes traffic splitting across active revisions as a multiple-revision capability.",
+            "microsoftOwnershipVerified": true,
+            "fallbackReason": null
+          }
+        ],
+        "provenance": "ai-assisted",
+        "status": "draft",
+        "review": null,
+        "tags": [
+          "compute-expanded-draft",
+          "containers"
+        ],
+        "assessmentReserved": false
+      }
+    }
+  ],
+  "unchangedReview": {
+    "questionId": "az104-compute-plus-36",
+    "reason": "No change: the full matching answer is unique under each-policy-used-once; Never nonzero platform retry caveat retained."
+  }
+}

@@ -16,8 +16,8 @@
 
 ## Later
 
-- Flashcards and hands-on lab checklists with cost/cleanup guidance.
-- Audio review, with browser limitations checked on the actual phone.
+- Further human review and depth for the shipped flashcards and manual practical walkthroughs.
+- Actual-device acceptance of browser speech and offline installation.
 - Optional accounts and cross-device sync.
 - Greater depth and additional reviewed question packs; recheck official sources before each pack release and show freshness reminders.
 - Optional AI assistance with server-side credentials and content review.
@@ -26,3 +26,7 @@
 ## Outside first release
 
 Native app stores, payments, public sharing/community, social features, live Azure deployment, runtime AI, comprehensive pass-readiness prediction, and automatic syllabus updates.
+
+## Hundred-improvement programme
+
+Implemented across evidence/review, official-source maintenance, library organisation, cited learning/walkthroughs, analytics, self-paced assessments, reserve freshness, comfort and recovery. [Delivery ledger](docs/verification/2026-10-08-next-100-traceability.md) is in `docs/verification`. Human factual approval, nine exact-excerpt gaps, actual phone/VoiceOver checks and CI credential/default-branch activation remain explicit evidence or operational prerequisites.

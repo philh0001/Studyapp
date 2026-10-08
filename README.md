@@ -4,10 +4,13 @@ A personal, phone-first revision website for Microsoft AZ-104. Study at your own
 
 ## Current status
 
-The first application build is implemented on `feature/az104-revision`: phone-first learning, timed practice, spaced review, progress, notes/bookmarks, validated backups and offline installation. The public draft-preview website is live at [az104-revision-web.showtime-workers.workers.dev](https://az104-revision-web.showtime-workers.workers.dev). The expanded bank has 300 original drafts covering all 82 published subskills. It includes advanced scenarios, ordering/matching, exhibits, linked cases and draft timed practice. All content remains draft until explicit human source review.
+The first application build is implemented on `feature/az104-revision`: phone-first learning, timed practice, spaced review, progress, notes/bookmarks, validated backups and offline installation. The public draft-preview website is live at [az104-revision-web.showtime-workers.workers.dev](https://az104-revision-web.showtime-workers.workers.dev). The expanded bank has 315 original drafts covering all 82 published subskills. It includes advanced scenarios, ordering/matching, exhibits, linked cases and draft timed practice. All content remains draft until explicit human source review.
+
+The next100 programme adds a searchable library, personal folders/tags and presets, cited objective summaries and practical exercises, separately scheduled reviewed flashcards, detailed learning insights, self-paced cases, evidence/change dashboards, read-aloud controls, safer backups and complete offline-asset checks. See the [100-item delivery ledger](docs/verification/2026-10-08-next-100-traceability.md) and [source pipeline](docs/SOURCE_PIPELINE.md). Teaching material remains clearly labelled AI-assisted draft.
 
 ## Start here
 
+- [Authorised hundred-improvement plan](docs/superpowers/plans/2026-10-08-next-100.md).
 - [Approved twenty-improvement plan](docs/superpowers/plans/2026-10-08-exam-alignment-improvements.md).
 - [Implementation plan](docs/superpowers/plans/2026-10-08-az104-revision.md): 12 tasks, interfaces, tests, and release checkpoints.
 - [Product design](docs/superpowers/specs/2026-10-08-az104-revision-design.md): agreed scope and behaviour.

@@ -1,0 +1,6 @@
+.device-checklist label{display:flex;flex-direction:column;align-items:stretch;gap:.4rem;cursor:auto;}
+.device-checklist label>input,.device-checklist label>select,.device-checklist label>textarea{box-sizing:border-box;width:100%;min-height:48px;max-width:100%;font:inherit;}
+.device-checklist label>textarea{min-height:6rem;resize:vertical;}
+.device-checklist fieldset>div{border-top:1px solid var(--border,#ccc);padding:.6rem 0;overflow-wrap:anywhere;}
+.device-checklist p,.device-checklist small{overflow-wrap:anywhere;}
+.comfort-pause{position:sticky;top:.5rem;z-index:3;min-height:48px;}

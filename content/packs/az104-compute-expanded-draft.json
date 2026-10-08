@@ -1,8 +1,8 @@
 {
   "id": "az104-compute-expanded-draft",
-  "version": 1,
+  "version": 2,
   "blueprintId": "az104-2026-04-17",
-  "checkedAt": "2026-10-08T01:48:05.339260Z",
+  "checkedAt": "2026-10-08T02:29:52.659497Z",
   "questions": [
     {
       "id": "az104-compute-plus-01",
@@ -839,7 +839,7 @@
     },
     {
       "id": "az104-compute-plus-11",
-      "revision": 1,
+      "revision": 2,
       "certificationId": "AZ-104",
       "blueprintId": "az104-2026-04-17",
       "domainId": "compute",
@@ -851,7 +851,7 @@
       "type": "single",
       "requiredSelections": 1,
       "difficulty": "intermediate",
-      "scenario": "An engineer modifies a parent deployment file to reuse a separate web app definition. The proposed module declaration references the file that declares the web app.",
+      "scenario": "An engineer modifies a parent deployment file to reuse a separate web app definition. The proposed module declaration references the file that declares the web app. The referenced webApp.bicep file exists, is valid, and has no required parameters omitted by this module declaration.",
       "prompt": "What happens when the parent Bicep file is deployed?",
       "options": [
         {
@@ -1166,7 +1166,7 @@
           "section": null,
           "checkedAt": "2026-10-08T01:38:35.602299Z",
           "documentUpdatedAt": "2026-04-10T22:25:00Z",
-          "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: ore resizing. Deallocation may be required if the new size isn’t available on the hardware cluster currently hosting the VM. Even when deallocation isn’t required, changing the size of a running VM will cause it to restart. For this reason, resizing a VM should be considered a disruptive operation, especially for stateful workloads. Warning If the virtual machine is currently running, changing its size will cause it to restart. Deallocating the VM also releases any dynamic IP addresses ass Scenario interpretation: Deallocation can be required when the target size is unavailable on the current hardware cluster; the resize is a disruptive operation.",
+          "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: ore resizing. Deallocation may be required if the new size isn\u2019t available on the hardware cluster currently hosting the VM. Even when deallocation isn\u2019t required, changing the size of a running VM will cause it to restart. For this reason, resizing a VM should be considered a disruptive operation, especially for stateful workloads. Warning If the virtual machine is currently running, changing its size will cause it to restart. Deallocating the VM also releases any dynamic IP addresses ass Scenario interpretation: Deallocation can be required when the target size is unavailable on the current hardware cluster; the resize is a disruptive operation.",
           "microsoftOwnershipVerified": true,
           "fallbackReason": null
         }
@@ -1560,7 +1560,7 @@
     },
     {
       "id": "az104-compute-plus-20",
-      "revision": 1,
+      "revision": 2,
       "certificationId": "AZ-104",
       "blueprintId": "az104-2026-04-17",
       "domainId": "compute",
@@ -1572,7 +1572,7 @@
       "requiredSelections": 1,
       "difficulty": "intermediate",
       "scenario": "A new, empty 3-TiB managed data disk is attached to a Linux VM. It must be partitioned and mounted persistently; the operator has verified the disk identity and confirmed there is no data to preserve.",
-      "prompt": "Which preparation meets the documented requirements?",
+      "prompt": "Which partitioning and persistent-mount identification choice meets the documented requirements? Filesystem formatting and mounting are still required before the disk is ready for use.",
       "options": [
         {
           "id": "a",
@@ -2073,7 +2073,7 @@
     },
     {
       "id": "az104-compute-plus-26",
-      "revision": 1,
+      "revision": 2,
       "certificationId": "AZ-104",
       "blueprintId": "az104-2026-04-17",
       "domainId": "compute",
@@ -2084,7 +2084,7 @@
       "type": "multiple",
       "requiredSelections": 2,
       "difficulty": "intermediate",
-      "scenario": "A stateless application uses a VM scale set. It needs more VM instances during sustained high demand and a planned minimum capacity during business hours.",
+      "scenario": "A stateless application uses a VM scale set. It needs more VM instances during sustained high demand and a planned minimum capacity during business hours. The existing valid scale set has a virtual machine scaling profile that defines the configuration of instances to add.",
       "prompt": "Which TWO scale-set approaches are documented?",
       "options": [
         {
@@ -3044,7 +3044,7 @@
     },
     {
       "id": "az104-compute-plus-38",
-      "revision": 1,
+      "revision": 2,
       "certificationId": "AZ-104",
       "blueprintId": "az104-2026-04-17",
       "domainId": "compute",
@@ -3055,7 +3055,7 @@
       "type": "multiple",
       "requiredSelections": 2,
       "difficulty": "advanced",
-      "scenario": "A team runs Container Apps in multiple revision mode during a gradual application update. It wants to send some traffic to a newer revision while retaining an older active revision.",
+      "scenario": "A team runs Container Apps in multiple revision mode during a gradual application update. It wants to send some traffic to a newer revision while retaining an older active revision. HTTP ingress is enabled, and the rollout uses HTTP traffic splitting between active revisions.",
       "prompt": "Which TWO concepts support this rollout?",
       "options": [
         {
@@ -3182,7 +3182,7 @@
           "section": null,
           "checkedAt": "2026-10-08T01:38:37.140573Z",
           "documentUpdatedAt": "2026-08-31T22:26:00Z",
-          "evidenceSummary": "Actual retrieved Microsoft Learn excerpt:  use CPU cycles and memory on these VM instances. All apps in an App Service plan scale together, because they share the same underlying compute resources (VM instances). Scaling the plan — whether manually or through autoscale rules — affects all apps in the plan. When per-app scaling is enabled, you can limit each app or deployment slot to a subset of the plan's VM instances. Plan capacity and billing remain at the App Service plan level. The number of active replicas for an app or slot can change with plan c Scenario interpretation: The default plan model runs apps on shared plan instances; scaling the plan affects all apps when per-app scaling is disabled.",
+          "evidenceSummary": "Actual retrieved Microsoft Learn excerpt:  use CPU cycles and memory on these VM instances. All apps in an App Service plan scale together, because they share the same underlying compute resources (VM instances). Scaling the plan \u2014 whether manually or through autoscale rules \u2014 affects all apps in the plan. When per-app scaling is enabled, you can limit each app or deployment slot to a subset of the plan's VM instances. Plan capacity and billing remain at the App Service plan level. The number of active replicas for an app or slot can change with plan c Scenario interpretation: The default plan model runs apps on shared plan instances; scaling the plan affects all apps when per-app scaling is disabled.",
           "microsoftOwnershipVerified": true,
           "fallbackReason": null
         },

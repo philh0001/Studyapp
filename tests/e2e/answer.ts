@@ -1,7 +1,7 @@
-import type {Page} from '@playwright/test';
+import {expect,type Page} from '@playwright/test';
 /** Choose valid inputs, not necessarily correct answers; never reads the answer key. */
 export async function chooseAnswer(page:Page){
- const choices=page.getByRole('group',{name:'Answer choices'});
+ const choices=page.getByRole('group',{name:'Answer choices'});await expect(choices).toBeVisible();
  const order=choices.getByRole('button',{name:'Use this order',exact:true});
  if(await order.count()){await order.click();return}
  const matches=choices.getByRole('combobox');

@@ -3,11 +3,11 @@ import {bundledContent} from '../../src/app/bootstrap';
 import blueprint from '../../content/blueprints/az104-2026-04-17.json';
 const audits=Object.values(import.meta.glob('../../content/audits/*-starter-audit.json',{eager:true,import:'default'})) as {questions:{questionId:string;revision:number;subObjectiveIds:string[]}[]}[];
 const legacy=Object.fromEntries(audits.flatMap(a=>a.questions.map(q=>[`${q.questionId}@${q.revision}`,q.subObjectiveIds])));
-it('has a distinct 300-question bank with honest drafts and coverage of all official subskills',()=>{
+it('has a distinct 315-question bank with honest drafts and coverage of all official subskills',()=>{
  const {packs}=bundledContent(),questions=packs.flatMap(p=>p.questions);
- expect(questions).toHaveLength(300);
- expect(new Set(questions.map(q=>q.id)).size).toBe(300);
- expect(new Set(questions.map(q=>q.scenario+' '+q.prompt)).size).toBe(300);
+ expect(questions).toHaveLength(315);
+ expect(new Set(questions.map(q=>q.id)).size).toBe(315);
+ expect(new Set(questions.map(q=>q.scenario+' '+q.prompt)).size).toBe(315);
  expect(questions.every(q=>q.status==='draft'&&q.review===null)).toBe(true);
  const skills=new Set(questions.flatMap(q=>q.subObjectiveIds??legacy[`${q.id}@${q.revision}`]??[]));
  const official=blueprint.domains.flatMap(d=>d.objectives.flatMap(o=>o.subObjectives.map((_,index)=>`${o.id}.${index+1}`)));

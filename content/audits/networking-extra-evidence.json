@@ -1,0 +1,113 @@
+{
+  "schemaVersion": 1,
+  "method": "Read-only HTTPS retrieval of official Learn HTML using inherited environment proxy; exact quotations sliced from retained HTML-derived text. No question-pack or source-ledger mutations. Human review pending.",
+  "resolvedQuestionIds": [
+    "az104-networking-plus-03",
+    "az104-networking-plus-19",
+    "az104-networking-plus-36"
+  ],
+  "evidence": [
+    {
+      "claim": "CNAME maps an alias domain name to another domain name, rather than an IPv4 address or mail routing.",
+      "questionIds": [
+        "az104-networking-plus-03"
+      ],
+      "conclusion": "supported by retrieved official Microsoft Learn body",
+      "quote": "CNAME is a Canonical Name record that's used to create an alias from one domain name to another domain name. If you had different domain names that all accessed the same website, you'd use CNAME.",
+      "quoteSha256": "52574a744b70afc8c291b79c4af06b6a0f6e2b40fb4ef2f9d94878df9275de28",
+      "quoteStartOffset": 4291,
+      "quoteEndOffset": 4486,
+      "canonicalUrl": "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+      "checkedAt": "2026-10-08T02:29:19.962Z",
+      "htmlSha256": "d1f97fd56f36e3d304dd8cf4049a58c0dbaa07746517e6cd9ab15e8d50464075",
+      "textSha256": "e9060de1a16de76e0835824730c4fb44f0f4bc11b48a9936758e56e0f363a9e9",
+      "htmlPath": "/tmp/studyapp-next100-networking-evidence/dnsTypes.html",
+      "textPath": "/tmp/studyapp-next100-networking-evidence/dnsTypes.txt"
+    },
+    {
+      "claim": "AAAA represents an IPv6 host address; the Azure DNS record configuration accepts an IPv6 address.",
+      "questionIds": [
+        "az104-networking-plus-19"
+      ],
+      "conclusion": "supported by retrieved official Microsoft Learn body",
+      "quote": "Create an AAAA record set with a single record New-AzDnsRecordSet -Name \"test-aaaa\" -RecordType AAAA -ZoneName \"contoso.com\" -ResourceGroupName \"MyResourceGroup\" -Ttl 3600 -DnsRecords (New-AzDnsRecordConfig -Ipv6Address \"2607:f8b0:4009:1803::1005\")",
+      "quoteSha256": "318b386353e773ac69819d5f5f675a7d67f6c36c49e1f6d1a82d9d6d1aedd646",
+      "quoteStartOffset": 7746,
+      "quoteEndOffset": 7994,
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-operations-recordsets",
+      "checkedAt": "2026-10-08T02:29:20.122Z",
+      "htmlSha256": "a0d3d60dd174d64f5b4e8dd4ff5873bb40253fc26106299ef6a4bc52d5d80105",
+      "textSha256": "bf2f6ca9c33f3f29ec3de3f3044b33b9a0690ffcc05a89af4f4ec4db037fa809",
+      "htmlPath": "/tmp/studyapp-next100-networking-evidence/dnsPowerShell.html",
+      "textPath": "/tmp/studyapp-next100-networking-evidence/dnsPowerShell.txt"
+    },
+    {
+      "claim": "AAAA maps a named host to IPv6, independently corroborating the Azure DNS example.",
+      "questionIds": [
+        "az104-networking-plus-19"
+      ],
+      "conclusion": "supported by retrieved official Microsoft Learn body",
+      "quote": "AAAA resource record To create an IPv6 host (AAAA) record, select the relevant method and follow the steps. PowerShell GUI Here's how to create an IPv6 host (AAAA) using the Add-DnsServerResourceRecordAAAA PowerShell command. To add the AAAA resource record Host36 to map to IPv6 address 3ffe::1 , use the command: Add-DnsServerResourceRecordAAAA -Name \"Host36\" -ZoneName \"contoso.com\" -IPv6Address \"3ffe::1\" -TimeToLive 01:00:00",
+      "quoteSha256": "de5289d98fd3f34543905590373ad1696f33f14cbe8e00c4daf2e9637975b692",
+      "quoteStartOffset": 3549,
+      "quoteEndOffset": 3978,
+      "canonicalUrl": "https://learn.microsoft.com/en-us/windows-server/networking/dns/manage-resource-records",
+      "checkedAt": "2026-10-08T02:29:20.168Z",
+      "htmlSha256": "245368dd892597d219a32e29fd51d2ae9b322137c981ddc5b8ea0c449ba961a9",
+      "textSha256": "637e30660e829471d660de9d1d1774c6996cf508db5e0d806bf9c234eeb8df57",
+      "htmlPath": "/tmp/studyapp-next100-networking-evidence/windowsTypes.html",
+      "textPath": "/tmp/studyapp-next100-networking-evidence/windowsTypes.txt"
+    },
+    {
+      "claim": "MX publishes a mail exchange hostname and a preference value in an Azure DNS record.",
+      "questionIds": [
+        "az104-networking-plus-19"
+      ],
+      "conclusion": "supported by retrieved official Microsoft Learn body",
+      "quote": "Create an MX record set with a single record In this example, we use the record set name '@' to create an MX record at the zone apex (in this case, 'contoso.com'). New-AzDnsRecordSet -Name \"@\" -RecordType MX -ZoneName \"contoso.com\" -ResourceGroupName \"MyResourceGroup\" -Ttl 3600 -DnsRecords (New-AzDnsRecordConfig -Exchange \"mail.contoso.com\" -Preference 5)",
+      "quoteSha256": "d049d091d96b4e91cd7b6f8dc4cb447b4e91f9b27cca1609828086f93b336e70",
+      "quoteStartOffset": 8684,
+      "quoteEndOffset": 9041,
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-operations-recordsets",
+      "checkedAt": "2026-10-08T02:29:20.122Z",
+      "htmlSha256": "a0d3d60dd174d64f5b4e8dd4ff5873bb40253fc26106299ef6a4bc52d5d80105",
+      "textSha256": "bf2f6ca9c33f3f29ec3de3f3044b33b9a0690ffcc05a89af4f4ec4db037fa809",
+      "htmlPath": "/tmp/studyapp-next100-networking-evidence/dnsPowerShell.html",
+      "textPath": "/tmp/studyapp-next100-networking-evidence/dnsPowerShell.txt"
+    },
+    {
+      "claim": "A NIC effective-routes view combines default, custom and BGP-propagated routes and supports route diagnosis.",
+      "questionIds": [
+        "az104-networking-plus-36"
+      ],
+      "conclusion": "supported by retrieved official Microsoft Learn body",
+      "quote": "In this article, you learn how to diagnose routing problems by viewing the effective routes for a network interface in a virtual machine (VM). Azure automatically creates default routes for each virtual network subnet. You can override these default routes by defining custom routes in a route table and associating the table with a subnet. The effective routes for a network interface are a combination of Azure's default routes, custom routes you define, and any routes propagated from your on-premises network through an Azure VPN gateway using the border gateway protocol (BGP).",
+      "quoteSha256": "c369e59ac8f766067f3029c1202481e7a5458c4270cc018237a0f883bc8ddf9a",
+      "quoteStartOffset": 766,
+      "quoteEndOffset": 1348,
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem",
+      "checkedAt": "2026-10-08T02:29:19.935Z",
+      "htmlSha256": "b3def46b0839b2351f7751aea5ff620bb758b3bd2d3f8d840703fc16c68447fb",
+      "textSha256": "f72ec6890cece81227d51d99780965b3373f9390b97a80b4c7ecd14d99d47d6e",
+      "htmlPath": "/tmp/studyapp-next100-networking-evidence/effectiveRoutes.html",
+      "textPath": "/tmp/studyapp-next100-networking-evidence/effectiveRoutes.txt"
+    },
+    {
+      "claim": "The effective-routes inspection view is available on the NIC under Help > Effective routes.",
+      "questionIds": [
+        "az104-networking-plus-36"
+      ],
+      "conclusion": "supported by retrieved official Microsoft Learn body",
+      "quote": "In the network interface, expand Help . Select Effective routes . Select the desired network interface to view its effective routes. Each interface might belong to a different subnet, resulting in unique routes.",
+      "quoteSha256": "292a7f0c5250e868b1ff5534069b4548ad72133d4b47bd997a762b2e8a5f9e7c",
+      "quoteStartOffset": 2590,
+      "quoteEndOffset": 2801,
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem",
+      "checkedAt": "2026-10-08T02:29:19.935Z",
+      "htmlSha256": "b3def46b0839b2351f7751aea5ff620bb758b3bd2d3f8d840703fc16c68447fb",
+      "textSha256": "f72ec6890cece81227d51d99780965b3373f9390b97a80b4c7ecd14d99d47d6e",
+      "htmlPath": "/tmp/studyapp-next100-networking-evidence/effectiveRoutes.html",
+      "textPath": "/tmp/studyapp-next100-networking-evidence/effectiveRoutes.txt"
+    }
+  ]
+}

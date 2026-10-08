@@ -9,7 +9,7 @@ describe('monitoring expansion evidence and coverage',()=>{
  it('provides the fifty-question expansion',()=>expect(existsSync(path)).toBe(true));
  it('validates exact draft identities, every monitoring subskill, and all required formats',()=>{
   const pack=read();expect(validatePack(pack,blueprint).issues).toEqual([]);expect(pack.questions).toHaveLength(50);
-  expect(pack.id).toBe('az104-monitoring-expanded-draft');expect(pack.version).toBe(1);
+  expect(pack.id).toBe('az104-monitoring-expanded-draft');expect(pack.version).toBe(3);
   const covered=new Set(pack.questions.flatMap(q=>q.subObjectiveIds??[]));
   for(const objective of blueprint.domains.find(d=>d.id==='monitoring')!.objectives)for(let i=1;i<=objective.subObjectives.length;i++)expect(covered.has(`${objective.id}.${i}`)).toBe(true);
   for(const [i,q] of pack.questions.entries()){expect(q.id).toBe(`az104-monitoring-plus-${String(i+1).padStart(2,'0')}`);expect(q.domainId).toBe('monitoring');expect(q.status).toBe('draft');expect(q.review).toBeNull();expect(q.provenance).toBe('ai-assisted');expect(q.subObjectiveIds?.length).toBeGreaterThan(0)}

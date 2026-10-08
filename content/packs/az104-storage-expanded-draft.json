@@ -1,6 +1,6 @@
 {
   "id": "az104-storage-expanded-draft",
-  "version": 1,
+  "version": 2,
   "blueprintId": "az104-2026-04-17",
   "checkedAt": "2026-10-08T01:45:55.843334Z",
   "questions": [
@@ -3087,7 +3087,7 @@
     },
     {
       "id": "az104-storage-plus-36",
-      "revision": 1,
+      "revision": 2,
       "certificationId": "AZ-104",
       "blueprintId": "az104-2026-04-17",
       "domainId": "storage",
@@ -3173,11 +3173,11 @@
         },
         {
           "id": "p2",
-          "text": "Online infrequently accessed data retained at least 30 days."
+          "text": "Online tier optimized for infrequent access with a documented minimum retention duration of 30 days for explicitly tiered blobs."
         },
         {
           "id": "p3",
-          "text": "Online rarely accessed data retained at least 90 days."
+          "text": "Online tier optimized for rare access with fast retrieval and a documented minimum retention duration of 90 days for explicitly tiered blobs."
         },
         {
           "id": "p4",

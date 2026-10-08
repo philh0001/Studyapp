@@ -15,6 +15,6 @@ export async function restoreBackup(target:StudyRepository|StudyDatabase,input:B
  const backup=structuredClone(validated.backup);backup.contentTrust=[];
  for(const pack of backup.packs)for(const q of pack.questions){if(q.status!=='retired')q.status='draft';q.review=null;for(const reference of q.references)reference.microsoftOwnershipVerified=false}
  const db=database(target);
- await db.transaction('rw',db.tables,async()=>{for(const name of backupTables){const table=db.table(name);await table.clear();if(backup[name].length)await table.bulkAdd(backup[name])}});
+ await db.transaction('rw',db.tables,async()=>{for(const name of backupTables){const table=db.table(name);await table.clear();if(backup[name]?.length)await table.bulkAdd(backup[name]!)}});
 }
 export async function deletePersonalData(target:StudyRepository|StudyDatabase,confirmed:boolean):Promise<void>{if(!confirmed)return;const db=database(target);await db.transaction('rw',db.tables,async()=>{for(const table of db.tables)await table.clear()})}

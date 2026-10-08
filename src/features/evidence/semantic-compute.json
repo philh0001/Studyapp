@@ -1,0 +1,422 @@
+{
+  "az104-compute-plus-01": {
+    "conclusion": "The exhibit declares a valid default of 2 within allowed [2,4]; omission selects 2, not another permitted value, and does not require failure. All three explanations follow parameter resolution. Retained Microsoft Learn references: compute-bicep-parameters. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-02": {
+    "conclusion": "Both actual secrets are string/object inputs, the two types supported by @secure(). The integer-length and secret-name distractors do not protect those inputs. The no-output assumption avoids conflating secure parameters with secret output handling. Retained Microsoft Learn references: compute-bicep-parameters. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-03": {
+    "conclusion": "The exhibit explicitly targets resourceGroup and rg-scan exists; deployment group create accepts main.bicep at that scope. Subscription deployment has the wrong scope, while group create alone does not deploy template resources. Retained Microsoft Learn references: compute-bicep-cli. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-04": {
+    "conclusion": "Reader alone lacks VM write and deployments operations required by the documented what-if prerequisite. Owner-only and local-comparison explanations are correctly rejected; this is a permissions question, not a claim that all validation modes perform identical checks. Retained Microsoft Learn references: compute-bicep-whatif. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-05": {
+    "conclusion": "allowedValues supplies the two-value constraint and defaultValue supplies Standard_LRS on omission. secureString and renaming do neither; the supplied existing JSON makes these two separate changes necessary. Retained Microsoft Learn references: compute-arm-parameters. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-06": {
+    "conclusion": "The command uses a JSON parameters file first and a later inline override; sequential CLI resolution selects Standard_GRS. File-always-wins and concatenation explanations conflict with the retained precedence paragraph. This is not the single-use .bicepparam case. Retained Microsoft Learn references: compute-bicep-cli. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-07": {
+    "conclusion": "The specified expansion-limit cause makes Ignore incomplete analysis, whereas NoChange predicts unchanged properties for an existing declared resource. Neither status guarantees deployment success; the investigation answer preserves that distinction. Retained Microsoft Learn references: compute-bicep-whatif. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-08": {
+    "conclusion": "Current-state resource/resource-group export captures portal tag edits; deployment-history export retrieves original template inputs. The original parameter file cannot encode a later manual edit. All options maintain the current-state versus historical distinction. Retained Microsoft Learn references: compute-arm-export. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-09": {
+    "conclusion": "The required b,d,e,c,a order follows both the explicit organisational constraint and data dependencies: export current JSON, fix JSON, decompile, review Bicep, then what-if. Other workflows may fix Bicep instead, but the scenario explicitly excludes that alternative order. Retained Microsoft Learn references: compute-arm-export, compute-bicep-decompile, compute-bicep-whatif. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-10": {
+    "conclusion": "The decompiler caution denies guaranteed JSON-to-Bicep mapping and permits manual warning/error fixes; the export caution separately identifies missing properties/passwords. Those are two independent reasons to reject production-readiness assumptions. A conversion command confers no human approval. Retained Microsoft Learn references: compute-bicep-decompile, compute-arm-export. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-11": {
+    "conclusion": "The scenario now explicitly supplies an existing valid module file with no omitted required parameters. Deploying the valid parent deploys its referenced module resources; comment-only and ignored-module alternatives remain false. Retained Microsoft Learn references: compute-bicep-files. AI semantic review supports the clarified keyed answer; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:29:52.659497Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 2
+  },
+  "az104-compute-plus-12": {
+    "conclusion": "Prompt-to-option mapping c,d,a,b is correct: param accepts input, var encapsulates an expression, module reuses another deployment file, output returns a value. The one-use instruction and distinct purposes make the matching key unique. Retained Microsoft Learn references: compute-bicep-files. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-13": {
+    "conclusion": "The exhibit shows 94% memory use with 15% CPU and ample disk; memory-optimized sizing directly addresses RAM pressure. CPU-only downsizing and disk expansion do not add RAM. Availability and nonpartitionable-workload assumptions make vertical sizing coherent. Retained Microsoft Learn references: compute-vm-resize. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-14": {
+    "conclusion": "The target SKU exists regionally but not on the current hardware cluster, the documented reason deallocation may be required. Disk growth and tag changes do not release allocation. The answer correctly says may be necessary and acknowledges disruption. Retained Microsoft Learn references: compute-vm-resize. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-15": {
+    "conclusion": "Resize guidance explicitly says a running resize restarts and deallocation leaves OS/data disks unaffected; these support b,c. Disk destruction is false, and the displayed requested model size after failure is not proof of actual allocation. Managed-disk scope avoids temporary-disk confusion. Retained Microsoft Learn references: compute-vm-resize. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-16": {
+    "conclusion": "Premium SSD v2 limitations disallow OS use and host caching. A supported OS disk plus an eligible v2 data disk resolves the invalid specification; enabling caching or ignoring the restriction cannot do so. Retained Microsoft Learn references: compute-vm-disk-types. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-17": {
+    "conclusion": "Ultra Disk performance adjustment without VM restart and lack of caching are both explicit. Ultra cannot be the OS disk and does not support availability sets; the stated supported VM/zone configuration avoids turning these properties into a universal availability claim. Retained Microsoft Learn references: compute-vm-disk-types. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-18": {
+    "conclusion": "The host-encryption restriction includes VMs that currently or ever had ADE, so removal does not rehabilitate the first VM. The never-ADE VM still needs supported size and subscription feature prerequisites. ADE-first is the inverse of the compatibility rule. Retained Microsoft Learn references: compute-vm-host-encryption. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-19": {
+    "conclusion": "Both Key Vault and Managed HSM are documented key stores for managed-disk customer-managed keys. Resource tags and temporary disks are not supported substitutes. The question asks key-store choice, not the remaining disk-encryption-set permissions or regional requirements. Retained Microsoft Learn references: compute-vm-encryption. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-20": {
+    "conclusion": "The prompt now explicitly says formatting and mounting remain required. For the verified empty 3-TiB Linux disk, GPT plus UUID identification is the supported preparation choice; MBR/device-name and automatic-filesystem alternatives remain incorrect. Retained Microsoft Learn references: compute-vm-attach. AI semantic review supports the clarified keyed answer; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:29:52.659497Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 2
+  },
+  "az104-compute-plus-21": {
+    "conclusion": "The same-tenant, registered-provider scenario places dependencies together, permitting validation of a joint cross-subscription move. Moving VM alone or disks separately violates the retained dependency rule. The key includes validation and does not promise every VM configuration can move. Retained Microsoft Learn references: compute-vm-move. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-22": {
+    "conclusion": "Copper case facts supply replicated application/data and two newly placed instances; different zones are physically separate within one region with distinct power/network/cooling. Entire-region immunity and shared-fault-domain equivalence are false. The diagram coherently shows one VM per zone. Retained Microsoft Learn references: compute-vm-zones. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-23": {
+    "conclusion": "Copper requires temporary-disk and OS/data-cache encryption without guest encryption; encryption at host covers precisely those host-resident data and avoids guest CPU use. Managed-disk SSE alone does not cover temporary disks; an availability set supplies no encryption. No historical ADE and checked sizes support eligibility. Retained Microsoft Learn references: compute-vm-encryption. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-24": {
+    "conclusion": "The c,b,d,a sequence follows Prepare, Initiate, target validation at Commit move pending, then Commit. The case explicitly checks region/dependencies and mandates validation before completion; commitment is not source-resource deletion, which remains a separate choice. Retained Microsoft Learn references: compute-vm-region. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-25": {
+    "conclusion": "Flexible supplies standard Azure VM APIs and full VM/NIC/disk lifecycle control, fitting the individual-resource and mixed-supported-type requirements. Uniform uses VMSS VM APIs; an availability set is not a VMSS orchestration mode. Mixed-type support still depends on supported combinations. Retained Microsoft Learn references: compute-vmss-flex, compute-vm-sets. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-26": {
+    "conclusion": "The scenario now supplies a valid VM scaling profile for instance creation. Metric-threshold rules address sustained demand and scheduled capacity addresses business hours; disk capacity and fault-domain count remain unrelated to autoscale rules. Retained Microsoft Learn references: compute-vmss-autoscale. AI semantic review supports the clarified keyed answer; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:29:52.659497Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 2
+  },
+  "az104-compute-plus-27": {
+    "conclusion": "ACR is the Azure-managed image/artifact registry described by the storage-before-runtime scenario. ACI executes containers and availability sets place VMs; neither replaces registry storage. The explanations distinguish build artifact storage from execution. Retained Microsoft Learn references: compute-acr, compute-vm-sets. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-28": {
+    "conclusion": "The permission-mode table makes AcrPull the non-ABAC choice and Container Registry Repository Reader the ABAC choice. AcrPush adds unwanted push rights; blindly reusing AcrPull for the ABAC registry conflicts with the retained identity guide. The question requires pull, not repository catalog listing. Retained Microsoft Learn references: compute-acr-identity. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-29": {
+    "conclusion": "The Linux same-group diagram permits localhost:5000 independently of external port exposure. Publishing the port is unnecessary for the sidecar, and separate groups do not share localhost. All explanations respect the group-local network boundary. Retained Microsoft Learn references: compute-aci-groups. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-30": {
+    "conclusion": "The exhibited requests sum to 2 CPUs and 3 GB. Largest-only and first-only answers discard a member request; their explanations correctly reject those aggregation models. The explicit infrastructure-buffer exclusion makes this a requested allocation calculation rather than guaranteed usable capacity. Retained Microsoft Learn references: compute-aci-groups. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-31": {
+    "conclusion": "The group has two requested CPUs and A is allowed a two-CPU limit; idle B and available capacity allow A to consume up to that group-backed limit. A request is not necessarily a hard ceiling, and limits do not create eight CPUs or extra hosts. Retained Microsoft Learn references: compute-aci-groups. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-32": {
+    "conclusion": "Always is the default and OnFailure restarts on nonzero process failure, so successful finite tasks do not loop under OnFailure. Always does repeat successes; group IP permanence is explicitly denied. The two keyed statements jointly explain the comparison without requiring Never. Retained Microsoft Learn references: compute-aci-restart. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-33": {
+    "conclusion": "Independent custom scale rules use any-rule triggering, subject to limits and scale behavior; the scenario explicitly permits scale-out. AND and scaling-disabled distractors contradict the retained guide. This is eligibility to scale, not an instantaneous replica-count promise. Retained Microsoft Learn references: compute-aca-scale. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-34": {
+    "conclusion": "Editing a custom scale rule is revision-scope and creates a new immutable revision. Multiple revision mode does not imply deletion of prior revisions. The key and both rejected explanations align with the observed revision-list change. Retained Microsoft Learn references: compute-aca-scale. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-35": {
+    "conclusion": "Internal ingress restricts callers to the environment; external ingress and replica count do not enforce that scope. Crucially, the scenario excludes environment-level HTTP-route targeting, the documented exception that could expose an internal-ingress app. Retained Microsoft Learn references: compute-aca-ingress. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-36": {
+    "conclusion": "The b,c,a mapping is unique under the explicit each-policy-used-once rule: Always is default, OnFailure maps to the failing-process description, leaving the explicitly named Never policy for successful finite-task nonrestart. Both Never and OnFailure stop after code 0, but that overlap does not create a second complete one-use matching solution. The Never explanation correctly preserves possible platform retries after nonzero exits. Retained Microsoft Learn reference: compute-aci-restart. AI semantic review supports the matching key; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:29:52.659497Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-37": {
+    "conclusion": "The exhibit separates floor 1, ceiling 10, and HTTP concurrent-request threshold 20. HTTP-driven scale-out is bounded by maxReplicas=10; minimum does not forbid scaling and threshold is not a replica count. This concerns HTTP scaling rather than transient platform-maintenance replicas. Retained Microsoft Learn references: compute-aca-scale. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-38": {
+    "conclusion": "The scenario now explicitly enables HTTP ingress and HTTP traffic splitting in multiple revision mode. Immutable version snapshots and splitting traffic between active revisions support the rollout; old-revision destruction and replica-count-as-routing alternatives remain false. Retained Microsoft Learn references: compute-aca-revisions. AI semantic review supports the clarified keyed answer; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:29:52.659497Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 2
+  },
+  "az104-compute-plus-39": {
+    "conclusion": "The explicit disabled per-app scaling/automatic-scaling assumptions preserve the default shared dedicated-plan compute model: adding plan instances affects both apps. Separate-per-app VM ownership and automatic Azure SQL resizing are unsupported. Those caveats avoid overgeneralizing the plan rule. Retained Microsoft Learn references: compute-app-plans, compute-app-scale. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-40": {
+    "conclusion": "Scale up changes pricing tier to gain capacity/features; scale out changes instance count. The scenario explicitly holds instance count fixed, making scale up uniquely appropriate. DNS changes are unrelated to plan capacity. Retained Microsoft Learn references: compute-app-scale. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-41": {
+    "conclusion": "The Premium v3 plan needs CPU thresholds and a schedule, which are Azure autoscale signals. Traffic-driven automatic scaling does not define these rules; TLS binding is unrelated. Supported tier is given, and the answer identifies the correct plan-wide scaling mechanism. Retained Microsoft Learn references: compute-app-autoscale. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-42": {
+    "conclusion": "The retained comparison differentiates built-in automatic backups with no configuration from configured on-demand/scheduled custom backups in owner storage. Automatic backup download and linked-database assertions are false. Supported tier is expressly supplied, without naming an unsupported SKU. Retained Microsoft Learn references: compute-app-backup. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-43": {
+    "conclusion": "Seabrook Standard-tier same-region database calls require outbound VNet integration. An app private endpoint provides inbound access and TLS binding supplies no route. The case and diagram consistently separate inbound from outbound traffic and include a supported integration tier. Retained Microsoft Learn references: compute-app-vnet, compute-app-private. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-44": {
+    "conclusion": "Seabrook needs both inbound Private Link and removal of public exposure: private endpoint plus disabled public network access. Outbound integration alone and instance scaling do neither. Private DNS preparation and Standard-tier support are supplied, making the two changes coherent. Retained Microsoft Learn references: compute-app-private, compute-app-vnet. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-45": {
+    "conclusion": "Seabrook controls domain ownership, has a matching certificate, SNI-capable browsers and ready private routing; mapping the custom domain and binding its SNI certificate are required app steps. VNet integration is not domain verification, and unrelated certificates fail hostname validation. Retained Microsoft Learn references: compute-app-tls, compute-app-domain. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-46": {
+    "conclusion": "The root-domain exhibit excludes apex alias extensions. The documented ordinary-DNS mapping is an apex A record plus asuid TXT ownership verification; a root CNAME contradicts the tutorial and MX routes mail. The provider assumptions remove common apex-alias alternatives. Retained Microsoft Learn references: compute-app-domain. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-47": {
+    "conclusion": "Restore stops its target, so restoring to a supported deployment slot, validating, and swapping reduces direct production interruption. Direct production overwrite and settings-only cloning do not provide that protection; cloning does not restore application content. Retained Microsoft Learn references: compute-app-backup, compute-app-slots. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-48": {
+    "conclusion": "The 14-GB no-database exhibit exceeds the documented 10-GB custom-backup total cap. Automatic backups have 30 GB, and the up-to-4-GB linked-database allowance is optional rather than a required component. No exclusions are configured, removing partial-backup alternatives. Retained Microsoft Learn references: compute-app-backup. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-49": {
+    "conclusion": "A sticky deployment-slot connection string preserves production database configuration; custom domains are listed as unswapped. Unmarked connection strings are swappable, and TLS/custom-hostname exchange is false. The unchanged override-settings assumption supports the documented defaults. Retained Microsoft Learn references: compute-app-slots. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-plus-50": {
+    "conclusion": "The Standard tier supports IP-based TLS, and the scenario explicitly observes a new dedicated inbound IP. The existing A record must be remapped to that new IP; old-IP permanence and deleting the hostname contradict the documented TLS remapping procedure. Retained Microsoft Learn references: compute-app-tls. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-01": {
+    "conclusion": "Standard supports live deployment slots, but cloning settings leaves the new slot without content. This directly explains the missing files; unsupported-tier and configuration-record-only alternatives contradict the same slot guide. Retained Microsoft Learn references: slots. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-02": {
+    "conclusion": "Fault domains group shared power/network-switch infrastructure, matching the named risk. Update domains address coordinated maintenance restarts, while availability sets do not protect application-specific failures. The key correctly separates hardware grouping from application reliability. Retained Microsoft Learn references: availability. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-03": {
+    "conclusion": "The guide explicitly places VM six with VM one when five update domains are configured. The scenario fixes deployment order, so neither a new sixth domain nor VM two is consistent; VM seven would share with VM two. Retained Microsoft Learn references: availability. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-04": {
+    "conclusion": "Only one update domain restarts at a time and receives 30 minutes to recover before another is maintained. Availability-set application immunity and compulsory numerical restart ordering are both explicitly excluded by the retained guide. Retained Microsoft Learn references: availability. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-05": {
+    "conclusion": "Configured fault/update-domain counts cannot be changed after availability-set creation. The guide supports up to 20 update domains, so the no-update-domain distractor is false; the key identifies immutability of counts, not lack of domain support. Retained Microsoft Learn references: availability. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-06": {
+    "conclusion": "Among the deliberately restricted Free/Basic/Standard comparison, only Standard supports deployment slots. The retained guide lists Standard/Premium/Isolated, rejecting both Free and Basic. The limited candidate set makes the answer unique. Retained Microsoft Learn references: slots. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-07": {
+    "conclusion": "After the faulty swap the prior app resides in staging; repeating the swap immediately restores it. The no-subsequent-content-change assumption preserves the desired version. Settings cloning cannot retrieve old code and the swap does not delete the former production application. Retained Microsoft Learn references: slots. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-08": {
+    "conclusion": "The scale guide explicitly recommends minimum replicas 1 or higher to keep a replica running. Minimum zero allows scale-to-zero; maximum one with minimum zero only caps growth. This is a configured capacity floor, not an uptime SLA. Retained Microsoft Learn references: containers. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-09": {
+    "conclusion": "The retained any-rule trigger paragraph supports scaling when the first of either independent rule conditions is met. Additional rules do not disable scaling and all-rules simultaneity is unnecessary. Limits/behavior still govern actual replica changes. Retained Microsoft Learn references: containers. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-compute-10": {
+    "conclusion": "Adding or editing scaling rules creates a new revision, an immutable version snapshot. Replica instances are distinct from revisions and scaling rules are not always mutable outside revisions. The observed deployment history matches the documented revision-scope change. Retained Microsoft Learn references: containers. AI semantic review supports the keyed answer within these assumptions; human review remains pending and the question remains draft.",
+    "reviewedAt": "2026-10-08T02:28:24.742928Z",
+    "method": "AI semantic review of full scenario, prompt, every option and explanation, correct-answer structure, exhibits, matching/ordering constraints and shared case facts against retained official Microsoft Learn article text; no hash or lexical auto-pass.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  }
+}

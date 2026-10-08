@@ -3,7 +3,7 @@ test('ten locally approved questions preserve learning, bookmark and note throug
  await page.goto('/#/review/content');const selector=page.getByRole('combobox',{name:'Question',exact:true});
  // Mechanical approval in disposable browser storage tests the workflow, not factual human review.
  for(const domain of ['identity','storage'])for(let i=1;i<=5;i++){
-  const id=`az104-${domain}-0${i}`;await selector.selectOption(id);await page.getByRole('checkbox',{name:/I opened the official Microsoft Learn/}).check();await page.getByRole('button',{name:'Approve this revision',exact:true}).click();await expect(selector.locator(`option[value="${id}"]`)).toHaveCount(0);
+  const id=`az104-${domain}-0${i}`;await selector.selectOption(id);for(const checkbox of await page.getByRole('group',{name:'Individual factual review checklist'}).getByRole('checkbox').all())await checkbox.check();await page.getByRole('checkbox',{name:/I opened the official Microsoft Learn/}).check();await page.getByRole('button',{name:'Approve this revision',exact:true}).click();await expect(selector.locator(`option[value="${id}"]`)).toHaveCount(0);
  }
  await page.getByRole('link',{name:'Home',exact:true}).click();await page.getByRole('button',{name:'Start Quick 10 →'}).click();
  for(let n=0;n<10;n++){

@@ -1,7 +1,8 @@
+import {validateWorkspaceEntry} from '../storage/workspace';
 import {isOfficialSource} from '../content/validate';
 import {scoreAnswer,canSubmit} from '../study/scoring';
 import type {Attempt} from '../sessions/types';
-import {isTimedSession} from '../sessions/types';
+import {isTimedSession,isAssessmentSession} from '../sessions/types';
 import type {Question,ValidationIssue} from '../content/types';
 import {MAX_BACKUP_BYTES,MAX_EXPANDED_BACKUP_BYTES,backupTables,type BackupValidation} from './types';
 import {checkBackup as check} from '../content/generated/validators.js';
@@ -12,9 +13,9 @@ export function validateBackup(input:unknown,byteLength:number,compressed=false)
  if(!Number.isFinite(byteLength)||byteLength<0||byteLength>(compressed?MAX_EXPANDED_BACKUP_BYTES:MAX_BACKUP_BYTES)){issue('file',compressed?'Expanded backup must be at most 64 MiB.':'Backup must be at most 10 MiB (10,485,760 bytes).');return reject()}
  if(typeof input==='object'&&input!==null&&'schemaVersion' in input&&input.schemaVersion!==1){issue('schemaVersion','Unsupported backup version. Only schema version 1 is supported.');return reject()}
  if(!check(input)){for(const e of check.errors??[])issue(e.instancePath||'backup',e.message??'Invalid record');return reject()}
- const b=input;
+ const b=input;for(const [index,row] of (b.workspace??[]).entries()){try{validateWorkspaceEntry(row)}catch(error){issue(`workspace[${index}]`,error instanceof Error?error.message:'Invalid personal data')}}
  // Match every IndexedDB primary key; duplicates would otherwise silently overwrite records.
- for(const table of backupTables){const keys=new Set<string>();for(const [i,row] of b[table].entries()){const record=row as unknown as Record<string,unknown>;const key=table==='contentTrust'?JSON.stringify([record.questionId,record.revision]):String(record[table==='sourceChecks'?'referenceId':['reviews','bookmarks','notes','releasedHoldouts'].includes(table)?'questionId':'id']);if(keys.has(key))issue(`${table}[${i}]`,'Duplicate primary key');keys.add(key)}}
+ for(const table of backupTables){const keys=new Set<string>();for(const [i,row] of (b[table]??[]).entries()){const record=row as unknown as Record<string,unknown>;const key=table==='contentTrust'?JSON.stringify([record.questionId,record.revision]):String(record[table==='sourceChecks'?'referenceId':['reviews','bookmarks','notes','releasedHoldouts'].includes(table)?'questionId':'id']);if(keys.has(key))issue(`${table}[${i}]`,'Duplicate primary key');keys.add(key)}}
  const identities=new Set<string>(),questionIds=new Set<string>();
  const identityKey=(id:string,rev:number)=>JSON.stringify([id,rev]);
  const inspectQuestion=(question:Question,path:string)=>{
@@ -33,7 +34,7 @@ export function validateBackup(input:unknown,byteLength:number,compressed=false)
  for(const [i,s] of b.sessions.entries())for(const [j,question] of s.questionSnapshots.entries())inspectQuestion(question,`sessions[${i}].questionSnapshots[${j}]`);
  for(const [i,a] of b.attempts.entries())inspectQuestion(a.questionSnapshot,`attempts[${i}].questionSnapshot`);
  for(const [i,s] of b.sourceChecks.entries()){if(!isOfficialSource(s.canonicalUrl))issue(`sourceChecks[${i}].canonicalUrl`,'Use a canonical Microsoft Learn HTTPS source')}
- for(const table of ['contentTrust','reviews','bookmarks','notes'] as const)for(const [i,r] of b[table].entries())if(!identities.has(identityKey(r.questionId,r.revision)))issue(`${table}[${i}]`,'Dangling question revision');
+ for(const table of ['contentTrust','reviews','bookmarks','notes'] as const)for(const [i,r] of (b[table]??[]).entries())if(!identities.has(identityKey(r.questionId,r.revision)))issue(`${table}[${i}]`,'Dangling question revision');
  for(const [i,r] of b.releasedHoldouts.entries())if(!questionIds.has(r.questionId))issue(`releasedHoldouts[${i}]`,'Dangling question identity');
  const sessions=new Map(b.sessions.map(s=>[s.id,s]));const attempts=new Map(b.attempts.map(a=>[a.id,a]));
  const attemptsBySession=new Map<string,Attempt[]>(),attemptPairs=new Set<string>();
@@ -50,7 +51,7 @@ export function validateBackup(input:unknown,byteLength:number,compressed=false)
   if(s.flags.some(id=>!questions.has(id))||s.correctionWarnings.some(r=>!s.questionSnapshots.some(q=>q.id===r.questionId&&q.revision===r.revision)))issue(path,'Dangling session question reference');
   const sessionAttempts=attemptsBySession.get(s.id)??[];
   if((s.status==='submitted')!==(s.result!==undefined))issue(path+'.result','Submitted sessions require a result; active sessions cannot have one');
-  if(isTimedSession(s)&&s.status==='active'&&sessionAttempts.length)issue(path,'Active timed sessions cannot contain final attempts');
+  if(isAssessmentSession(s)&&s.status==='active'&&sessionAttempts.length)issue(path,'Active timed sessions cannot contain final attempts');
   if(s.status==='submitted'&&(sessionAttempts.length!==s.questionSnapshots.length||s.questionSnapshots.some(q=>!sessionAttempts.some(a=>a.questionId===q.id&&a.questionRevision===q.revision))))issue(path,'Submitted session must contain one attempt for every saved question');
   if(s.result){
    const r=s.result,domainIds=new Set(s.questionSnapshots.map(q=>q.domainId));
@@ -61,12 +62,12 @@ export function validateBackup(input:unknown,byteLength:number,compressed=false)
  for(const [i,a] of b.attempts.entries()){
   const s=sessions.get(a.sessionId),q=a.questionSnapshot;
   const saved=s?.questionSnapshots.find(sq=>sq.id===a.questionId&&sq.revision===a.questionRevision);
-  if(!s||!saved||canonical(saved)!==canonical(q)||q.id!==a.questionId||q.revision!==a.questionRevision||(s&&!isTimedSession(s)&&!canSubmit(q,a.selectedOptionIds))||a.selectedOptionIds.length>q.requiredSelections||a.selectedOptionIds.some(id=>!q.options.some(o=>o.id===id))||s.mode!==a.mode)issue(`attempts[${i}]`,'Dangling or inconsistent attempt reference');
+  if(!s||!saved||canonical(saved)!==canonical(q)||q.id!==a.questionId||q.revision!==a.questionRevision||(s&&!isAssessmentSession(s)&&!canSubmit(q,a.selectedOptionIds))||a.selectedOptionIds.length>q.requiredSelections||a.selectedOptionIds.some(id=>!q.options.some(o=>o.id===id))||s.mode!==a.mode)issue(`attempts[${i}]`,'Dangling or inconsistent attempt reference');
   if(a.correct!==scoreAnswer(q,a.selectedOptionIds))issue(`attempts[${i}].correct`,'Attempt score differs from its saved question');
   if(s){
-   if(Date.parse(a.submittedAt)<Date.parse(s.startedAt)||s.submittedAt&&Date.parse(a.submittedAt)>Date.parse(s.submittedAt)||isTimedSession(s)&&a.submittedAt!==s.submittedAt)issue(`attempts[${i}].submittedAt`,'Attempt submission date is inconsistent with its session');
+   if(Date.parse(a.submittedAt)<Date.parse(s.startedAt)||s.submittedAt&&Date.parse(a.submittedAt)>Date.parse(s.submittedAt)||isAssessmentSession(s)&&a.submittedAt!==s.submittedAt)issue(`attempts[${i}].submittedAt`,'Attempt submission date is inconsistent with its session');
    const answer=s.answers[a.questionId];
-   if(answer?(canonical(answer.selectedOptionIds)!==canonical(a.selectedOptionIds)||answer.confidence!==a.confidence||answer.responseMs!==a.responseMs):(!isTimedSession(s)||a.selectedOptionIds.length!==0||a.confidence!=='unknown'||a.responseMs!==0))issue(`attempts[${i}]`,'Attempt differs from its durable saved answer');
+   if(answer?(canonical(answer.selectedOptionIds)!==canonical(a.selectedOptionIds)||answer.confidence!==a.confidence||answer.responseMs!==a.responseMs):(!isAssessmentSession(s)||a.selectedOptionIds.length!==0||a.confidence!=='unknown'||a.responseMs!==0))issue(`attempts[${i}]`,'Attempt differs from its durable saved answer');
   }
  }
  return issues.length?reject():{valid:true,backup:b,issues};
