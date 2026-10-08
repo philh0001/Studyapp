@@ -12,7 +12,9 @@
     "test:e2e": "playwright test",
     "content:validate": "node --experimental-strip-types scripts/validate-content.mjs",
     "sources:check": "node scripts/check-sources.mjs",
-    "check": "npm run typecheck && npm run lint && npm test && npm run content:validate && npm run build"
+    "check": "npm run typecheck && npm run lint && npm test && npm run content:validate && npm run build",
+    "validators:generate": "node --experimental-strip-types scripts/generate-validators.mjs",
+    "prebuild": "npm run validators:generate"
   },
   "dependencies": {
     "ajv": "8.20.0",

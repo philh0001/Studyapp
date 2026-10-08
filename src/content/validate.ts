@@ -1,10 +1,6 @@
-import Ajv from 'ajv';
-import addFormats from 'ajv-formats';
-import schema from '../../content/schemas/question-pack.schema.json' with {type:'json'};
-import blueprintSchema from '../../content/schemas/blueprint.schema.json' with {type:'json'};
-import type { Blueprint,ContentPack,ValidationIssue } from './types';
-const ajv=new Ajv({allErrors:true}); addFormats(ajv);
-const check=ajv.compile<ContentPack>(schema); export const checkBlueprint=ajv.compile(blueprintSchema);
+import {checkPack as check,checkBlueprint} from './generated/validators.js';
+export {checkBlueprint};
+import type {Blueprint,ContentPack,ValidationIssue} from './types';
 export function isOfficialSource(url:string):boolean {try { const u=new URL(url);return u.protocol==='https:'&&u.hostname==='learn.microsoft.com'&&!u.username&&!u.password&&!u.port;}catch{return false}}
 export function validatePack(input:unknown,blueprint:Blueprint):{pack:ContentPack|null;issues:ValidationIssue[]} {
  if(!check(input))return {pack:null,issues:(check.errors??[]).map(e=>({path:e.instancePath.replace(/^\//,'').replaceAll('/','.')+(e.params.missingProperty?'.'+e.params.missingProperty:''),message:e.message??'Invalid field'}))};
