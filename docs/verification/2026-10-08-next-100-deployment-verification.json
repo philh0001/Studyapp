@@ -1,0 +1,106 @@
+{
+  "version": 1,
+  "kind": "deployment-verification",
+  "url": "https://az104-revision-web.showtime-workers.workers.dev",
+  "checkedAt": "2026-10-08T02:39:41.228Z",
+  "ok": true,
+  "files": [
+    {
+      "path": "/assets/index-BiqJUsPc.js",
+      "expectedHash": "550a495cbdf0c180f6ee3611f7905ba93387ffbca76a8b966ea122e0e8b358f9",
+      "actualHash": "550a495cbdf0c180f6ee3611f7905ba93387ffbca76a8b966ea122e0e8b358f9",
+      "matching": true
+    },
+    {
+      "path": "/assets/index-CfT07ut7.css",
+      "expectedHash": "6bf81992ee67ece67268fac7543796f2a349b922113868b8e4bc8c09376de14b",
+      "actualHash": "6bf81992ee67ece67268fac7543796f2a349b922113868b8e4bc8c09376de14b",
+      "matching": true
+    },
+    {
+      "path": "/assets/question-bank-D7GKh21y.js",
+      "expectedHash": "16081ab4f2ecb53788698a7d3dd95c1625c2573f21b7b9c24c5ccc4435c865c8",
+      "actualHash": "16081ab4f2ecb53788698a7d3dd95c1625c2573f21b7b9c24c5ccc4435c865c8",
+      "matching": true
+    },
+    {
+      "path": "/assets/rolldown-runtime-hePW80VL.js",
+      "expectedHash": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+      "actualHash": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+      "matching": true
+    },
+    {
+      "path": "/assets/study-data-C_IF-FYG.js",
+      "expectedHash": "d75987bd988ffc93f872839fa7eafe54300565e3d99194762d25a0bcd80e1499",
+      "actualHash": "d75987bd988ffc93f872839fa7eafe54300565e3d99194762d25a0bcd80e1499",
+      "matching": true
+    },
+    {
+      "path": "/assets/validators-CI8esFNU.js",
+      "expectedHash": "ea22014e08c436261d6ee88037d708e50afa0bbf0555db46d65b59bc26e777b6",
+      "actualHash": "ea22014e08c436261d6ee88037d708e50afa0bbf0555db46d65b59bc26e777b6",
+      "matching": true
+    },
+    {
+      "path": "/assets/vendor-BFrqGuZg.js",
+      "expectedHash": "8b3f4f31381d55b902a1b762a29cc45d062a8ee3ed2db88def13d9ee5cb859ff",
+      "actualHash": "8b3f4f31381d55b902a1b762a29cc45d062a8ee3ed2db88def13d9ee5cb859ff",
+      "matching": true
+    },
+    {
+      "path": "/icons/icon-192.png",
+      "expectedHash": "806da937d64bfb0c7809dcc2ea4e889f3d5764ef5c5249558705249a14a4f498",
+      "actualHash": "806da937d64bfb0c7809dcc2ea4e889f3d5764ef5c5249558705249a14a4f498",
+      "matching": true
+    },
+    {
+      "path": "/icons/icon-512.png",
+      "expectedHash": "2d1736e38bc857a7f44760c4df5ebd181eb0005b290a097f0fd4408c7c9edfcb",
+      "actualHash": "2d1736e38bc857a7f44760c4df5ebd181eb0005b290a097f0fd4408c7c9edfcb",
+      "matching": true
+    },
+    {
+      "path": "/icons/icon.svg",
+      "expectedHash": "754d5be67d3381a03ab164e5a1dd4de870553ff3640332b60320b68bee72b70d",
+      "actualHash": "754d5be67d3381a03ab164e5a1dd4de870553ff3640332b60320b68bee72b70d",
+      "matching": true
+    },
+    {
+      "path": "/icons/maskable-512.png",
+      "expectedHash": "2d1736e38bc857a7f44760c4df5ebd181eb0005b290a097f0fd4408c7c9edfcb",
+      "actualHash": "2d1736e38bc857a7f44760c4df5ebd181eb0005b290a097f0fd4408c7c9edfcb",
+      "matching": true
+    },
+    {
+      "path": "/",
+      "expectedHash": "e45db20320927b1643f65501fe8461c50dc431bce725fc08d04f6632a6c8036e",
+      "actualHash": "e45db20320927b1643f65501fe8461c50dc431bce725fc08d04f6632a6c8036e",
+      "matching": true
+    },
+    {
+      "path": "/manifest.webmanifest",
+      "expectedHash": "7a6373d0d5c65fa747fee7445cc16f62a5f238a0b186e2dbd30b2b2711b7eebd",
+      "actualHash": "7a6373d0d5c65fa747fee7445cc16f62a5f238a0b186e2dbd30b2b2711b7eebd",
+      "matching": true
+    },
+    {
+      "path": "/offline-assets.json",
+      "expectedHash": "49e10655fc9b31c9ed6e27ebe68c9db93ecca2e18251c37857938590d51fee15",
+      "actualHash": "49e10655fc9b31c9ed6e27ebe68c9db93ecca2e18251c37857938590d51fee15",
+      "matching": true
+    },
+    {
+      "path": "/sw.js",
+      "expectedHash": "fd6f5bd0cc57938e3f9167e63ccdac1f2278cd48dc2424769e9aa12d7e239913",
+      "actualHash": "fd6f5bd0cc57938e3f9167e63ccdac1f2278cd48dc2424769e9aa12d7e239913",
+      "matching": true
+    },
+    {
+      "path": "/workbox-2fbc6a65.js",
+      "expectedHash": "39c2e6ae44c3f29666f6a328b6523bf13a053a1d95c74af8ddea82b1045b0b6e",
+      "actualHash": "39c2e6ae44c3f29666f6a328b6523bf13a053a1d95c74af8ddea82b1045b0b6e",
+      "matching": true
+    }
+  ],
+  "errors": []
+}

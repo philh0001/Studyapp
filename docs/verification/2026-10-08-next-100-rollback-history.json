@@ -1,0 +1,12 @@
+[
+  {
+    "id": "b56e3daf-94cc-48dc-89a9-5bc843bf016e",
+    "verified": true,
+    "artifact": "2026-10-08-next-100-deployment-verification.json"
+  },
+  {
+    "id": "ecb6cdca-6645-4782-8585-dad573b80106",
+    "verified": false,
+    "note": "Earlier release was live-verified; exact prior build artifact is not retained in this release package. Do not equate API history with rollback artifact verification."
+  }
+]

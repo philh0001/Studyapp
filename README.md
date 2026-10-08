@@ -45,3 +45,5 @@ See [live deployment verification](docs/verification/2026-10-08-cloudflare-relea
 Detailed coverage separates installed, approved and studied subskills. The home page suggests a flexible study week without a fixed exam date. Source rechecks produce reviewable reports; see [source freshness](docs/SOURCE_FRESHNESS.md). Real-phone installation and screen-reader checks remain to be performed on the actual device; the Settings checklist records only checks you do yourself.
 
 The [twenty-improvement release record](docs/verification/2026-10-08-exam-alignment-release.md) records 173 unit tests, 54 browser checks, official source retrieval, independent review and live deployment evidence.
+
+The [hundred-improvement release](docs/verification/2026-10-08-next-100-release.md) records318unit checks,82passing browser checks,153official source rechecks, independent review and live deployment evidence. Human factual/physical-device acceptance and unattended CI prerequisites remain explicit.

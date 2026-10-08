@@ -1,0 +1,13 @@
+{
+  "url": "https://az104-revision-web.showtime-workers.workers.dev",
+  "status": 200,
+  "phoneRoutes": 10,
+  "subskills": 82,
+  "thumbControls": true,
+  "draftQuestions": 315,
+  "answerReload": true,
+  "offlineReload": true,
+  "serviceWorkerControlled": true,
+  "consoleErrors": 0,
+  "browser": "156.0.8078.4"
+}
