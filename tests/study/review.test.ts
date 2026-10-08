@@ -1,0 +1,7 @@
+import {it,expect} from 'vitest';import {scheduleReview} from '../../src/study/review';
+const now=new Date('2026-10-08T12:00:00Z');const outcome={questionId:'q1',revision:1,correct:true,confidence:'confident' as const,occurredAt:now.toISOString(),isDueAttempt:true};
+it('new confident correct schedules three days',()=>expect(scheduleReview(null,outcome,now)).toMatchObject({stage:1,dueAt:'2026-10-11T12:00:00.000Z'}));
+it('wrong-confident is a next-day misconception',()=>expect(scheduleReview(null,{...outcome,correct:false},now)).toMatchObject({stage:0,dueAt:'2026-10-09T12:00:00.000Z',misconception:true}));
+it('unsure guessed unknown and last-stage intervals',()=>{const previous={questionId:'q1',revision:1,stage:4 as const,dueAt:now.toISOString(),misconception:false};for(const confidence of ['unsure','guessed'] as const)expect(scheduleReview(previous,{...outcome,confidence},now)).toMatchObject({stage:4,dueAt:'2026-10-09T12:00:00.000Z'});for(const confidence of ['unknown','confident'] as const)expect(scheduleReview(previous,{...outcome,confidence},now).dueAt).toBe('2026-11-07T12:00:00.000Z')});
+it('manual early retry does not advance stage or postpone due time',()=>{const prev={questionId:'q1',revision:1,stage:1 as const,dueAt:'2026-10-11T12:00:00.000Z',misconception:false};expect(scheduleReview(prev,{...outcome,isDueAttempt:false},now)).toEqual(prev)});
+it('UTC next day spans DST predictably',()=>{const day=new Date('2026-10-24T12:00:00Z');expect(scheduleReview(null,{...outcome,correct:false},day).dueAt).toBe('2026-10-25T12:00:00.000Z')});
