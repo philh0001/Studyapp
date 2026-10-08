@@ -1,0 +1,2 @@
+import {it,expect} from 'vitest';import {StudyDatabase} from '../../src/storage/database';import {StudyRepository} from '../../src/storage/repository';
+it('default settings have no date and manual next',async()=>{const db=new StudyDatabase('settings-'+crypto.randomUUID());const repo=new StudyRepository(db);expect(await repo.getSettings()).toMatchObject({examDate:null,autoAdvance:false});await db.delete()});
