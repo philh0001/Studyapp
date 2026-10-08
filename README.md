@@ -4,7 +4,7 @@ A personal, phone-first revision website for Microsoft AZ-104. Study at your own
 
 ## Current status
 
-The first application build is implemented on `feature/az104-revision`: phone-first learning, timed practice, spaced review, progress, notes/bookmarks, validated backups and offline installation. No website has been deployed. The 50-question starter pack remains draft until explicit human source review.
+The first application build is implemented on `feature/az104-revision`: phone-first learning, timed practice, spaced review, progress, notes/bookmarks, validated backups and offline installation. The public draft-preview website is live at [az104-revision-web.showtime-workers.workers.dev](https://az104-revision-web.showtime-workers.workers.dev). The 50-question starter pack remains draft until explicit human source review.
 
 ## Start here
 
@@ -36,4 +36,4 @@ Start with **Explore draft questions** for unscored practice. In **Review → Co
 
 Settings contains local JSON export/restore and explicit data deletion. Restored content requires fresh local review; historical attempts are preserved. Source documents open online, while the installed app and question bank work offline. Updates wait until active sessions are finished.
 
-See [hosting preparation](production/web/README.md) and [release verification](docs/verification/2026-10-08-release-preparation.md). Production deployment and paid resources require separate release approval. Product work uses a feature branch and pull request.
+See [live deployment verification](docs/verification/2026-10-08-cloudflare-release.md), [hosting preparation](production/web/README.md) and [release verification](docs/verification/2026-10-08-release-preparation.md). Production deployment and paid resources require separate release approval. Product work uses a feature branch and pull request.

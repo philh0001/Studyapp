@@ -19,3 +19,5 @@ Current stage: first application build implemented on 8 October 2026, with paral
 Release constraints from the supplied plan: no production deployment or paid services without approval. Maintain documentation and verification evidence throughout work.
 
 Hosting preference confirmed: Cloudflare like Showtime, with a separate Static Assets Worker and initially a workers.dev URL. Production release approval remains the final publication gate; no custom domain, private Access layer or account backend has been requested.
+
+Public draft-preview release approved and deployed on 2026-10-08: https://az104-revision-web.showtime-workers.workers.dev. Verified live phone-sized navigation, durable answers and offline continuation with zero browser errors. Strict CSP compatibility was fixed through build-time standalone schema validators. See docs/verification/2026-10-08-cloudflare-release.md. Factual content approval and physical-device acceptance remain pending; PR #1 remains open.

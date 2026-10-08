@@ -25,3 +25,10 @@ The shipped bank is draft preview until the owner performs explicit source revie
 ## Hosting choice — 2026-10-08
 
 The owner selected Cloudflare hosting like Showtime. Showtime's production README and current Worker inventory were checked read-only: its public website is served by a Static Assets Worker. Studyapp will use the same website delivery approach through the separate `az104-revision-web` identity, initially at its returned `workers.dev` URL. No custom domain or paid resource is required. Study progress remains browser-local; bundled questions are publicly retrievable. Production publication of the verified draft-preview build remains subject to the separate release approval.
+
+
+## Published draft preview
+
+Live: https://az104-revision-web.showtime-workers.workers.dev
+
+Publication was approved and completed on 2026-10-08 via the connected Cloudflare direct static-assets API because local Wrangler had no account login. See [release evidence](../../docs/verification/2026-10-08-cloudflare-release.md). Do not run a later CLI deployment against an unauthenticated/temporary account. Build-time standalone validators keep the deployed strict CSP compatible with backup/content validation. Human content approval remains separate from hosting approval.
