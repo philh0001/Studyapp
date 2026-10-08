@@ -1,0 +1,3415 @@
+{
+  "id": "az104-starter-draft",
+  "version": 1,
+  "blueprintId": "az104-2026-04-17",
+  "checkedAt": "2026-10-08T00:48:19.965Z",
+  "questions": [
+    {
+      "id": "az104-identity-01",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A team must manage resources only inside the catalog resource group. Other subscription resources are outside its remit. Assume no other role assignments.",
+      "prompt": "At which scope should you assign the required Azure role?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Resource group",
+          "explanation": "A resource-group scope limits the role to resources in that resource group and its child resources.",
+          "referenceIds": [
+            "rbac"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Subscription",
+          "explanation": "Subscription scope includes the subscription resources, extending access beyond the stated resource group.",
+          "referenceIds": [
+            "rbac"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Management group",
+          "explanation": "Management-group scope is above subscription scope in the documented hierarchy, broader than this requirement.",
+          "referenceIds": [
+            "rbac"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "A resource-group scope limits the role to resources in that resource group and its child resources.",
+      "summaryReferenceIds": [
+        "rbac"
+      ],
+      "references": [
+        {
+          "id": "rbac",
+          "title": "What is Azure role-based access control (Azure RBAC)?",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+          "section": "Scope",
+          "checkedAt": "2026-10-08T00:48:12.071Z",
+          "documentUpdatedAt": "2024-03-12T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Scope. Claim evidence: A resource-group scope limits the role to resources in that resource group and its child resources. Subscription scope includes the subscription resources, extending access beyond the stated resource group. Management-group scope is above subscription scope in the documented hierarchy, broader than this requirement.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "rbac",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-02",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "Mira has Contributor at subscription scope and Reader at a child resource group. There are no deny assignments or role conditions.",
+      "prompt": "How do the overlapping assignments affect her access?",
+      "options": [
+        {
+          "id": "a",
+          "text": "She has only Reader permissions in the resource group.",
+          "explanation": "The documented example says the narrower Reader assignment has no impact on inherited Contributor permissions.",
+          "referenceIds": [
+            "rbac"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Neither assignment applies in the resource group.",
+          "explanation": "Both assignments apply; their permissions are combined rather than discarded.",
+          "referenceIds": [
+            "rbac"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "She retains Contributor permissions in the resource group.",
+          "explanation": "Azure RBAC is additive; a Reader assignment does not subtract the subscription-level Contributor permissions.",
+          "referenceIds": [
+            "rbac"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "Azure RBAC is additive; a Reader assignment does not subtract the subscription-level Contributor permissions.",
+      "summaryReferenceIds": [
+        "rbac"
+      ],
+      "references": [
+        {
+          "id": "rbac",
+          "title": "What is Azure role-based access control (Azure RBAC)?",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+          "section": "Multiple role assignments",
+          "checkedAt": "2026-10-08T00:48:12.071Z",
+          "documentUpdatedAt": "2024-03-12T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Multiple role assignments. Claim evidence: Azure RBAC is additive; a Reader assignment does not subtract the subscription-level Contributor permissions. The documented example says the narrower Reader assignment has no impact on inherited Contributor permissions. Both assignments apply; their permissions are combined rather than discarded.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "rbac",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-03",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An administrator documents a new role assignment for an automation identity. The identity and scope are already recorded.",
+      "prompt": "Which remaining element must the record identify?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only a resource tag",
+          "explanation": "Tags are not one of the three documented role-assignment elements; permissions come from the role definition.",
+          "referenceIds": [
+            "rbac"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Role definition",
+          "explanation": "A role assignment consists of a security principal, a role definition and a scope; the role definition supplies permissions.",
+          "referenceIds": [
+            "rbac"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Only the deployment region",
+          "explanation": "Region is not one of the three documented role-assignment elements; the missing element is the role definition.",
+          "referenceIds": [
+            "rbac"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "A role assignment consists of a security principal, a role definition and a scope; the role definition supplies permissions.",
+      "summaryReferenceIds": [
+        "rbac"
+      ],
+      "references": [
+        {
+          "id": "rbac",
+          "title": "What is Azure role-based access control (Azure RBAC)?",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+          "section": "How Azure RBAC works",
+          "checkedAt": "2026-10-08T00:48:12.071Z",
+          "documentUpdatedAt": "2024-03-12T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: How Azure RBAC works. Claim evidence: A role assignment consists of a security principal, a role definition and a scope; the role definition supplies permissions. Region is not one of the three documented role-assignment elements; the missing element is the role definition. Tags are not one of the three documented role-assignment elements; permissions come from the role definition.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "rbac",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-04",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A user belongs to the Writers group, which belongs to the Operations group. Operations has an Azure role assignment. No deny assignment or conditions apply.",
+      "prompt": "What does transitive group membership mean here?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The user receives permissions from the Operations assignment.",
+          "explanation": "The documentation explicitly describes nested group role assignments as transitive.",
+          "referenceIds": [
+            "rbac"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The user receives permissions only from a direct user assignment.",
+          "explanation": "Azure RBAC group membership includes transitive memberships, so direct user assignment is not required in this case.",
+          "referenceIds": [
+            "rbac"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The Operations assignment is ignored because Writers is nested.",
+          "explanation": "The documented nested-group example grants the user permissions from the parent group assignment.",
+          "referenceIds": [
+            "rbac"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The documentation explicitly describes nested group role assignments as transitive.",
+      "summaryReferenceIds": [
+        "rbac"
+      ],
+      "references": [
+        {
+          "id": "rbac",
+          "title": "What is Azure role-based access control (Azure RBAC)?",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+          "section": "Groups",
+          "checkedAt": "2026-10-08T00:48:12.071Z",
+          "documentUpdatedAt": "2024-03-12T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Groups. Claim evidence: The documentation explicitly describes nested group role assignments as transitive. Azure RBAC group membership includes transitive memberships, so direct user assignment is not required in this case. The documented nested-group example grants the user permissions from the parent group assignment.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "rbac",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-05",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "An application needs access to Azure resources. The team is choosing a security principal for its role assignment.",
+      "prompt": "Which TWO are documented security-principal types? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Service principal",
+          "explanation": "A service principal is one of the documented objects that can receive an Azure role assignment.",
+          "referenceIds": [
+            "rbac"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Managed identity",
+          "explanation": "A managed identity is explicitly listed as a security principal that can receive an Azure role.",
+          "referenceIds": [
+            "rbac"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Role definition",
+          "explanation": "A role definition is the permissions element of an assignment, not the security principal.",
+          "referenceIds": [
+            "rbac"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Resource-group scope",
+          "explanation": "Scope identifies the resource boundary of the assignment, not the identity requesting access.",
+          "referenceIds": [
+            "rbac"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "A service principal is one of the documented objects that can receive an Azure role assignment. A managed identity is explicitly listed as a security principal that can receive an Azure role.",
+      "summaryReferenceIds": [
+        "rbac"
+      ],
+      "references": [
+        {
+          "id": "rbac",
+          "title": "What is Azure role-based access control (Azure RBAC)?",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+          "section": "How Azure RBAC works",
+          "checkedAt": "2026-10-08T00:48:12.071Z",
+          "documentUpdatedAt": "2024-03-12T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: How Azure RBAC works. Claim evidence: A service principal is one of the documented objects that can receive an Azure role assignment. A managed identity is explicitly listed as a security principal that can receive an Azure role. A role definition is the permissions element of an assignment, not the security principal. Scope identifies the resource boundary of the assignment, not the identity requesting access.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "rbac",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-06",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A governance team wants to manage several related business rules as one assignable group.",
+      "prompt": "Which Azure Policy concept groups policy definitions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Compliance evaluation cycle",
+          "explanation": "The compliance cycle triggers evaluation; it does not group business rules into an assignable policySet.",
+          "referenceIds": [
+            "policy"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Policy initiative",
+          "explanation": "An initiative, also called a policySet, groups several policy definitions to simplify management.",
+          "referenceIds": [
+            "policy"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Individual policy definition",
+          "explanation": "A policy definition describes a business rule; an initiative groups several such definitions.",
+          "referenceIds": [
+            "policy"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "An initiative, also called a policySet, groups several policy definitions to simplify management.",
+      "summaryReferenceIds": [
+        "policy"
+      ],
+      "references": [
+        {
+          "id": "policy",
+          "title": "What is Azure Policy?",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+          "section": "Overview",
+          "checkedAt": "2026-10-08T00:48:12.699Z",
+          "documentUpdatedAt": "2026-07-08T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Overview. Claim evidence: An initiative, also called a policySet, groups several policy definitions to simplify management. A policy definition describes a business rule; an initiative groups several such definitions. The compliance cycle triggers evaluation; it does not group business rules into an assignable policySet.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "policy",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-07",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A user can create resources through Azure RBAC. A deny policy at the applicable scope prohibits the requested noncompliant resource configuration.",
+      "prompt": "What should the administrator expect?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The noncompliant create request is blocked.",
+          "explanation": "Microsoft states that Azure Policy can block a noncompliant create or update even when the individual has action permissions.",
+          "referenceIds": [
+            "policy"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "RBAC permissions override the deny policy.",
+          "explanation": "The documented combination evaluates both permissions and resource compliance; permission alone does not override policy.",
+          "referenceIds": [
+            "policy"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The request succeeds because policy applies only to existing resources.",
+          "explanation": "Policy evaluates new or updated resources, so it can block this create request.",
+          "referenceIds": [
+            "policy"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Microsoft states that Azure Policy can block a noncompliant create or update even when the individual has action permissions.",
+      "summaryReferenceIds": [
+        "policy"
+      ],
+      "references": [
+        {
+          "id": "policy",
+          "title": "What is Azure Policy?",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+          "section": "Azure Policy and Azure RBAC",
+          "checkedAt": "2026-10-08T00:48:12.699Z",
+          "documentUpdatedAt": "2026-07-08T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Azure Policy and Azure RBAC. Claim evidence: Microsoft states that Azure Policy can block a noncompliant create or update even when the individual has action permissions. The documented combination evaluates both permissions and resource compliance; permission alone does not override policy. Policy evaluates new or updated resources, so it can block this create request.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "policy",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-08",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A resource group has a CanNotDelete lock. Tomorrow a new resource is added to that group.",
+      "prompt": "How does lock inheritance apply?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only resources that existed when the lock was created inherit it.",
+          "explanation": "The documentation explicitly includes resources added after the parent lock is applied.",
+          "referenceIds": [
+            "locks"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The parent lock becomes ReadOnly on the new resource.",
+          "explanation": "Inheritance carries the same parent lock; CanNotDelete is not automatically converted to ReadOnly.",
+          "referenceIds": [
+            "locks"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The new resource inherits the parent lock.",
+          "explanation": "Resources within a locked parent scope inherit its lock, including resources added later.",
+          "referenceIds": [
+            "locks"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "Resources within a locked parent scope inherit its lock, including resources added later.",
+      "summaryReferenceIds": [
+        "locks"
+      ],
+      "references": [
+        {
+          "id": "locks",
+          "title": "Lock your Azure resources to protect your infrastructure",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+          "section": "Lock inheritance",
+          "checkedAt": "2026-10-08T00:48:13.311Z",
+          "documentUpdatedAt": "2025-02-06T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Lock inheritance. Claim evidence: Resources within a locked parent scope inherit its lock, including resources added later. The documentation explicitly includes resources added after the parent lock is applied. Inheritance carries the same parent lock; CanNotDelete is not automatically converted to ReadOnly.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "locks",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-09",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A storage account has a CanNotDelete lock. An authorized client deletes blob data by a data-plane operation.",
+      "prompt": "Does the management lock protect that blob data?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes; CanNotDelete converts data access to read-only.",
+          "explanation": "CanNotDelete allows resource modifications and does not change authorized data-plane access to read-only.",
+          "referenceIds": [
+            "locks"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "No; management locks apply to control-plane operations.",
+          "explanation": "The source explicitly says storage account locks do not protect blob data from data-plane deletion or modification.",
+          "referenceIds": [
+            "locks"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Yes; CanNotDelete blocks every data-plane delete.",
+          "explanation": "Locks only apply to control-plane operations; valid blob data-plane requests are outside this protection.",
+          "referenceIds": [
+            "locks"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The source explicitly says storage account locks do not protect blob data from data-plane deletion or modification.",
+      "summaryReferenceIds": [
+        "locks"
+      ],
+      "references": [
+        {
+          "id": "locks",
+          "title": "Lock your Azure resources to protect your infrastructure",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+          "section": "Understand scope of locks",
+          "checkedAt": "2026-10-08T00:48:13.311Z",
+          "documentUpdatedAt": "2025-02-06T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Understand scope of locks. Claim evidence: The source explicitly says storage account locks do not protect blob data from data-plane deletion or modification. Locks only apply to control-plane operations; valid blob data-plane requests are outside this protection. CanNotDelete allows resource modifications and does not change authorized data-plane access to read-only.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "locks",
+        "starter-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-identity-10",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "After an administrator adds a ReadOnly lock to a resource group, authorized staff cannot restart a VM in that group.",
+      "prompt": "Which documented behavior explains the failure?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The restart requires a control-plane POST request blocked by ReadOnly.",
+          "explanation": "The source specifically lists starting and restarting VMs in a ReadOnly-locked group as blocked POST operations.",
+          "referenceIds": [
+            "locks"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "ReadOnly behaves like CanNotDelete and permits the restart.",
+          "explanation": "ReadOnly blocks these POST requests, whereas CanNotDelete and ReadOnly have different restrictions.",
+          "referenceIds": [
+            "locks"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The group lock does not apply to the VM.",
+          "explanation": "Resources inherit parent-scope locks, so the group lock applies to this VM.",
+          "referenceIds": [
+            "locks"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The source specifically lists starting and restarting VMs in a ReadOnly-locked group as blocked POST operations.",
+      "summaryReferenceIds": [
+        "locks"
+      ],
+      "references": [
+        {
+          "id": "locks",
+          "title": "Lock your Azure resources to protect your infrastructure",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+          "section": "Considerations before applying your locks",
+          "checkedAt": "2026-10-08T00:48:13.311Z",
+          "documentUpdatedAt": "2025-02-06T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Considerations before applying your locks. Claim evidence: The source specifically lists starting and restarting VMs in a ReadOnly-locked group as blocked POST operations. ReadOnly blocks these POST requests, whereas CanNotDelete and ReadOnly have different restrictions. Resources inherit parent-scope locks, so the group lock applies to this VM.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "locks",
+        "starter-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-storage-01",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "storage-accounts",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A standard Blob Storage workload must replicate synchronously across availability zones in one supported region, without a secondary-region replica.",
+      "prompt": "Which redundancy option meets these stated requirements?",
+      "options": [
+        {
+          "id": "a",
+          "text": "ZRS",
+          "explanation": "ZRS synchronously copies data across three or more availability zones in the primary region without adding geo-replication.",
+          "referenceIds": [
+            "redundancy"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "LRS",
+          "explanation": "LRS keeps replication in a single physical datacenter in the primary region rather than spreading it across availability zones.",
+          "referenceIds": [
+            "redundancy"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "GZRS",
+          "explanation": "GZRS adds asynchronous replication to a secondary region as well as ZRS in the primary, beyond the stated single-region requirement.",
+          "referenceIds": [
+            "redundancy"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "ZRS synchronously copies data across three or more availability zones in the primary region without adding geo-replication.",
+      "summaryReferenceIds": [
+        "redundancy"
+      ],
+      "references": [
+        {
+          "id": "redundancy",
+          "title": "Azure Storage redundancy",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+          "section": "Redundancy in the primary region",
+          "checkedAt": "2026-10-08T00:48:13.885Z",
+          "documentUpdatedAt": "2026-08-11T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Redundancy in the primary region. Claim evidence: ZRS synchronously copies data across three or more availability zones in the primary region without adding geo-replication. LRS keeps replication in a single physical datacenter in the primary region rather than spreading it across availability zones. GZRS adds asynchronous replication to a secondary region as well as ZRS in the primary, beyond the stated single-region requirement.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "redundancy",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-storage-02",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "storage-accounts",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A Blob Storage application uses GRS. Its designers need to read the secondary replica before any failover.",
+      "prompt": "Which configuration change directly adds that capability?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Keep GRS unchanged.",
+          "explanation": "The GRS secondary is not directly accessible to users or applications before failover.",
+          "referenceIds": [
+            "redundancy"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Change to LRS.",
+          "explanation": "LRS replicates within the primary region and supplies no geo-replicated secondary to read.",
+          "referenceIds": [
+            "redundancy"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Use RA-GRS.",
+          "explanation": "RA-GRS enables read access to the secondary; ordinary GRS does not expose secondary reads until failover.",
+          "referenceIds": [
+            "redundancy"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "RA-GRS enables read access to the secondary; ordinary GRS does not expose secondary reads until failover.",
+      "summaryReferenceIds": [
+        "redundancy"
+      ],
+      "references": [
+        {
+          "id": "redundancy",
+          "title": "Azure Storage redundancy",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+          "section": "Read access to data in the secondary region",
+          "checkedAt": "2026-10-08T00:48:13.885Z",
+          "documentUpdatedAt": "2026-08-11T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Read access to data in the secondary region. Claim evidence: RA-GRS enables read access to the secondary; ordinary GRS does not expose secondary reads until failover. The GRS secondary is not directly accessible to users or applications before failover. LRS replicates within the primary region and supplies no geo-replicated secondary to read.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "redundancy",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-storage-03",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "storage-accounts",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A team claims that ordinary GRS makes the secondary-region replica identical to every just-committed primary write.",
+      "prompt": "Which replication detail should correct its disaster-recovery assumptions?",
+      "options": [
+        {
+          "id": "a",
+          "text": "GRS does not copy data to a secondary region.",
+          "explanation": "GRS explicitly copies data asynchronously to a secondary region, which is why replication lag matters.",
+          "referenceIds": [
+            "redundancy"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Primary-to-secondary replication is asynchronous.",
+          "explanation": "The source warns asynchronous geo-replication can leave the secondary behind and cause data loss if the primary cannot recover.",
+          "referenceIds": [
+            "redundancy"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Primary-to-secondary replication is synchronous.",
+          "explanation": "Synchronous replication is used within the primary and secondary locations; copying between regions is asynchronous.",
+          "referenceIds": [
+            "redundancy"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The source warns asynchronous geo-replication can leave the secondary behind and cause data loss if the primary cannot recover.",
+      "summaryReferenceIds": [
+        "redundancy"
+      ],
+      "references": [
+        {
+          "id": "redundancy",
+          "title": "Azure Storage redundancy",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+          "section": "Redundancy in a secondary region",
+          "checkedAt": "2026-10-08T00:48:13.885Z",
+          "documentUpdatedAt": "2026-08-11T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Redundancy in a secondary region. Claim evidence: The source warns asynchronous geo-replication can leave the secondary behind and cause data loss if the primary cannot recover. Synchronous replication is used within the primary and secondary locations; copying between regions is asynchronous. GRS explicitly copies data asynchronously to a secondary region, which is why replication lag matters.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "redundancy",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-storage-04",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "storage-accounts",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A supported storage account must combine primary-region zone redundancy with a geographically separate secondary replica. Read access to the secondary before failover is not required.",
+      "prompt": "Which option provides that combination?",
+      "options": [
+        {
+          "id": "a",
+          "text": "GZRS",
+          "explanation": "GZRS uses ZRS in the primary region and asynchronously copies data to a secondary region.",
+          "referenceIds": [
+            "redundancy"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "ZRS",
+          "explanation": "ZRS spreads data across primary-region zones but does not by itself create the secondary-region replica.",
+          "referenceIds": [
+            "redundancy"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "GRS",
+          "explanation": "GRS uses LRS in the primary location; it lacks the primary-region ZRS component required here.",
+          "referenceIds": [
+            "redundancy"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "GZRS uses ZRS in the primary region and asynchronously copies data to a secondary region.",
+      "summaryReferenceIds": [
+        "redundancy"
+      ],
+      "references": [
+        {
+          "id": "redundancy",
+          "title": "Azure Storage redundancy",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+          "section": "Redundancy in a secondary region",
+          "checkedAt": "2026-10-08T00:48:13.885Z",
+          "documentUpdatedAt": "2026-08-11T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Redundancy in a secondary region. Claim evidence: GZRS uses ZRS in the primary region and asynchronously copies data to a secondary region. ZRS spreads data across primary-region zones but does not by itself create the secondary-region replica. GRS uses LRS in the primary location; it lacks the primary-region ZRS component required here.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "redundancy",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-storage-05",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "storage-access",
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A service issues temporary Blob Storage access to partners using a SAS. The security team is comparing SAS authorization methods.",
+      "prompt": "Which TWO statements match the documented SAS types? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "User delegation SAS uses Microsoft Entra credentials.",
+          "explanation": "Microsoft describes user delegation SAS as secured with Microsoft Entra credentials rather than the storage account key.",
+          "referenceIds": [
+            "sas"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Service SAS is secured with the storage account key.",
+          "explanation": "A service SAS delegates access to a resource in one storage service and is secured with the account key.",
+          "referenceIds": [
+            "sas"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Account SAS is secured only by Microsoft Entra credentials.",
+          "explanation": "Account SAS is secured with the storage account key; the Entra-based option is user delegation SAS.",
+          "referenceIds": [
+            "sas"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Service SAS delegates across multiple storage services.",
+          "explanation": "A service SAS is restricted to one storage service; account SAS can delegate across one or more services.",
+          "referenceIds": [
+            "sas"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Microsoft describes user delegation SAS as secured with Microsoft Entra credentials rather than the storage account key. A service SAS delegates access to a resource in one storage service and is secured with the account key.",
+      "summaryReferenceIds": [
+        "sas"
+      ],
+      "references": [
+        {
+          "id": "sas",
+          "title": "Grant limited access to Azure Storage resources using shared access signatures (SAS)",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+          "section": "Types of shared access signatures",
+          "checkedAt": "2026-10-08T00:48:14.466Z",
+          "documentUpdatedAt": "2026-02-27T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Types of shared access signatures. Claim evidence: Microsoft describes user delegation SAS as secured with Microsoft Entra credentials rather than the storage account key. A service SAS delegates access to a resource in one storage service and is secured with the account key. Account SAS is secured with the storage account key; the Entra-based option is user delegation SAS. A service SAS is restricted to one storage service; account SAS can delegate across one or more services.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "sas",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-storage-06",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "storage-access",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A service SAS is associated with a stored access policy on a blob container.",
+      "prompt": "Which constraints can the SAS inherit from that policy?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only the start time, never expiry time",
+          "explanation": "Expiry time and permissions are explicitly included with start time in the policy constraints.",
+          "referenceIds": [
+            "sas"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Start time, expiry time and permissions",
+          "explanation": "The documentation identifies start time, expiry time and permissions as inherited constraints of a service SAS with a stored access policy.",
+          "referenceIds": [
+            "sas"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Only the expiry time, never permissions",
+          "explanation": "The listed inherited constraints include permissions as well as start and expiry times.",
+          "referenceIds": [
+            "sas"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The documentation identifies start time, expiry time and permissions as inherited constraints of a service SAS with a stored access policy.",
+      "summaryReferenceIds": [
+        "sas"
+      ],
+      "references": [
+        {
+          "id": "sas",
+          "title": "Grant limited access to Azure Storage resources using shared access signatures (SAS)",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+          "section": "Types of shared access signatures",
+          "checkedAt": "2026-10-08T00:48:14.466Z",
+          "documentUpdatedAt": "2026-02-27T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Types of shared access signatures. Claim evidence: The documentation identifies start time, expiry time and permissions as inherited constraints of a service SAS with a stored access policy. The listed inherited constraints include permissions as well as start and expiry times. Expiry time and permissions are explicitly included with start time in the policy constraints.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "sas",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-storage-07",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "storage-access",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A design proposes attaching a stored access policy to an account SAS to centrally manage its constraints.",
+      "prompt": "Which documented limitation requires changing that design?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Account SAS must be ad hoc and does not support stored access policies.",
+          "explanation": "Microsoft states that user delegation and account SAS must be ad hoc; stored access policies apply to service SAS.",
+          "referenceIds": [
+            "sas"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "All SAS types support stored access policies.",
+          "explanation": "The source explicitly excludes account SAS and user delegation SAS from stored access policy support.",
+          "referenceIds": [
+            "sas"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Only account SAS supports stored access policies.",
+          "explanation": "The supported combination is service SAS with a stored access policy, not account SAS.",
+          "referenceIds": [
+            "sas"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Microsoft states that user delegation and account SAS must be ad hoc; stored access policies apply to service SAS.",
+      "summaryReferenceIds": [
+        "sas"
+      ],
+      "references": [
+        {
+          "id": "sas",
+          "title": "Grant limited access to Azure Storage resources using shared access signatures (SAS)",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+          "section": "Types of shared access signatures",
+          "checkedAt": "2026-10-08T00:48:14.466Z",
+          "documentUpdatedAt": "2026-02-27T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Types of shared access signatures. Claim evidence: Microsoft states that user delegation and account SAS must be ad hoc; stored access policies apply to service SAS. The source explicitly excludes account SAS and user delegation SAS from stored access policy support. The supported combination is service SAS with a stored access policy, not account SAS.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "sas",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-storage-08",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "blobs-files",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A general-purpose v2 account holds rarely accessed block blobs retained for six months. They must remain online for immediate reading. Compare only Hot, Cold and Archive.",
+      "prompt": "Which tier is optimized for this stated usage?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Hot",
+          "explanation": "Hot is optimized for frequent access and has higher storage costs; this usage is rare access rather than active use.",
+          "referenceIds": [
+            "tiers"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Archive",
+          "explanation": "Archive is offline and requires rehydration before reading, so it does not meet immediate read access.",
+          "referenceIds": [
+            "tiers"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Cold",
+          "explanation": "Cold is an online tier for rarely accessed data requiring fast retrieval; the six-month retention exceeds its 90-day minimum.",
+          "referenceIds": [
+            "tiers"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "Cold is an online tier for rarely accessed data requiring fast retrieval; the six-month retention exceeds its 90-day minimum.",
+      "summaryReferenceIds": [
+        "tiers"
+      ],
+      "references": [
+        {
+          "id": "tiers",
+          "title": "Access tiers for blob data",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+          "section": "Online access tiers",
+          "checkedAt": "2026-10-08T00:48:15.091Z",
+          "documentUpdatedAt": "2026-06-15T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Online access tiers. Claim evidence: Cold is an online tier for rarely accessed data requiring fast retrieval; the six-month retention exceeds its 90-day minimum. Hot is optimized for frequent access and has higher storage costs; this usage is rare access rather than active use. Archive is offline and requires rehydration before reading, so it does not meet immediate read access.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "tiers",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-storage-09",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "blobs-files",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An application tries to download an archived block blob immediately. The archive data is still present.",
+      "prompt": "What must happen before its contents can be read?",
+      "options": [
+        {
+          "id": "a",
+          "text": "List its metadata to make its contents readable.",
+          "explanation": "Archived metadata can be read without rehydration, but that does not make the archived blob contents readable.",
+          "referenceIds": [
+            "tiers"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Rehydrate the blob to an online tier.",
+          "explanation": "Archived blob contents cannot be read or modified; the blob must be rehydrated to Hot, Cool or Cold for reading.",
+          "referenceIds": [
+            "tiers"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Read it directly because Archive is an online tier.",
+          "explanation": "Archive is explicitly offline, with retrieval latency on the order of hours rather than direct online reads.",
+          "referenceIds": [
+            "tiers"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "Archived blob contents cannot be read or modified; the blob must be rehydrated to Hot, Cool or Cold for reading.",
+      "summaryReferenceIds": [
+        "tiers"
+      ],
+      "references": [
+        {
+          "id": "tiers",
+          "title": "Access tiers for blob data",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+          "section": "Archive access tier",
+          "checkedAt": "2026-10-08T00:48:15.091Z",
+          "documentUpdatedAt": "2026-06-15T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Archive access tier. Claim evidence: Archived blob contents cannot be read or modified; the blob must be rehydrated to Hot, Cool or Cold for reading. Archive is explicitly offline, with retrieval latency on the order of hours rather than direct online reads. Archived metadata can be read without rehydration, but that does not make the archived blob contents readable.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "tiers",
+        "starter-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-storage-10",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "storage",
+      "objectiveId": "blobs-files",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A block blob explicitly placed in Cool in a general-purpose v2 account is permanently deleted after 21 days. Soft delete is disabled.",
+      "prompt": "How many remaining storage days underpin the documented prorated early-deletion fee?",
+      "options": [
+        {
+          "id": "a",
+          "text": "9 days",
+          "explanation": "The source gives this exact timing rule: a 30-day Cool minimum minus 21 elapsed days leaves 9 chargeable days.",
+          "referenceIds": [
+            "tiers"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "69 days",
+          "explanation": "A 90-day minimum belongs to Cold; the stated Cool tier minimum is 30 days.",
+          "referenceIds": [
+            "tiers"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "159 days",
+          "explanation": "A 180-day minimum belongs to Archive; the stated blob was in Cool, with a 30-day minimum.",
+          "referenceIds": [
+            "tiers"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The source gives this exact timing rule: a 30-day Cool minimum minus 21 elapsed days leaves 9 chargeable days.",
+      "summaryReferenceIds": [
+        "tiers"
+      ],
+      "references": [
+        {
+          "id": "tiers",
+          "title": "Access tiers for blob data",
+          "url": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+          "section": "Online access tiers",
+          "checkedAt": "2026-10-08T00:48:15.091Z",
+          "documentUpdatedAt": "2026-06-15T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Online access tiers. Claim evidence: The source gives this exact timing rule: a 30-day Cool minimum minus 21 elapsed days leaves 9 chargeable days. A 90-day minimum belongs to Cold; the stated Cool tier minimum is 30 days. A 180-day minimum belongs to Archive; the stated blob was in Cool, with a 30-day minimum.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "tiers",
+        "starter-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-compute-01",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "app-service",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A web app runs on a Standard App Service plan. A newly created staging slot cloned production configuration, but developers find no application files in it.",
+      "prompt": "Which documented behavior explains this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cloning slot settings does not clone app content.",
+          "explanation": "The source states that a new slot has no content even when settings are cloned; application content must be deployed to it.",
+          "referenceIds": [
+            "slots"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Standard plans cannot use deployment slots.",
+          "explanation": "Standard is one of the supported tiers for deployment slots, so tier support does not explain missing content.",
+          "referenceIds": [
+            "slots"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A deployment slot is only a configuration record, never a live app.",
+          "explanation": "Slots are live apps with their own host names, despite starting without application content.",
+          "referenceIds": [
+            "slots"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The source states that a new slot has no content even when settings are cloned; application content must be deployed to it.",
+      "summaryReferenceIds": [
+        "slots"
+      ],
+      "references": [
+        {
+          "id": "slots",
+          "title": "Set up staging environments in Azure App Service",
+          "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+          "section": "Add a slot",
+          "checkedAt": "2026-10-08T00:48:16.200Z",
+          "documentUpdatedAt": "2025-11-28T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Add a slot. Claim evidence: The source states that a new slot has no content even when settings are cloned; application content must be deployed to it. Standard is one of the supported tiers for deployment slots, so tier support does not explain missing content. Slots are live apps with their own host names, despite starting without application content.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "slots",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-compute-02",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "vms",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "Two VMs must be placed to reduce the risk of both losing the same physical power source or network switch.",
+      "prompt": "Which availability-set concept addresses that shared infrastructure risk?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Update domain",
+          "explanation": "Update domains identify groups that can restart together during maintenance; the named power and switch grouping is a fault domain.",
+          "referenceIds": [
+            "availability"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Application-specific failure protection",
+          "explanation": "Availability sets do not protect applications from operating-system or application-specific failures.",
+          "referenceIds": [
+            "availability"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Fault domain",
+          "explanation": "Fault domains group VMs sharing a common power source and network switch; distributing VMs reduces correlated hardware failures.",
+          "referenceIds": [
+            "availability"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "Fault domains group VMs sharing a common power source and network switch; distributing VMs reduces correlated hardware failures.",
+      "summaryReferenceIds": [
+        "availability"
+      ],
+      "references": [
+        {
+          "id": "availability",
+          "title": "Availability sets overview",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+          "section": "Fault domains",
+          "checkedAt": "2026-10-08T00:48:15.630Z",
+          "documentUpdatedAt": "2026-04-07T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Fault domains. Claim evidence: Fault domains group VMs sharing a common power source and network switch; distributing VMs reduces correlated hardware failures. Update domains identify groups that can restart together during maintenance; the named power and switch grouping is a fault domain. Availability sets do not protect applications from operating-system or application-specific failures.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "availability",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-compute-03",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "vms",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An availability set has five update domains and six VMs, assigned in deployment order.",
+      "prompt": "With which VM does the sixth VM share its update domain?",
+      "options": [
+        {
+          "id": "a",
+          "text": "No other VM, because it receives a sixth update domain",
+          "explanation": "The configured set has five domains; assignment wraps to the first rather than adding a sixth domain.",
+          "referenceIds": [
+            "availability"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The first VM",
+          "explanation": "The documentation states that with five update domains, the sixth VM is placed in the same update domain as the first.",
+          "referenceIds": [
+            "availability"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The second VM",
+          "explanation": "The seventh VM shares with the second in the documented sequence; the sixth shares with the first.",
+          "referenceIds": [
+            "availability"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The documentation states that with five update domains, the sixth VM is placed in the same update domain as the first.",
+      "summaryReferenceIds": [
+        "availability"
+      ],
+      "references": [
+        {
+          "id": "availability",
+          "title": "Availability sets overview",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+          "section": "Update domains",
+          "checkedAt": "2026-10-08T00:48:15.630Z",
+          "documentUpdatedAt": "2026-04-07T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Update domains. Claim evidence: The documentation states that with five update domains, the sixth VM is placed in the same update domain as the first. The seventh VM shares with the second in the documented sequence; the sixth shares with the first. The configured set has five domains; assignment wraps to the first rather than adding a sixth domain.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "availability",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-compute-04",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "vms",
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "foundation",
+      "scenario": "An administrator is planning maintenance expectations for VMs in an availability set.",
+      "prompt": "Which TWO statements are documented? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Availability sets prevent application-specific failures.",
+          "explanation": "The source explicitly excludes operating-system and application-specific failures from availability-set protection.",
+          "referenceIds": [
+            "availability"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Only one update domain restarts at a time during planned maintenance.",
+          "explanation": "The source says only one update domain is restarted at a time during planned maintenance.",
+          "referenceIds": [
+            "availability"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A restarted update domain gets 30 minutes to recover before maintenance of another.",
+          "explanation": "The documented recovery interval before maintenance starts on another update domain is 30 minutes.",
+          "referenceIds": [
+            "availability"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Update domains always restart in numerical order.",
+          "explanation": "The documentation warns the restart order might not proceed sequentially.",
+          "referenceIds": [
+            "availability"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "The source says only one update domain is restarted at a time during planned maintenance. The documented recovery interval before maintenance starts on another update domain is 30 minutes.",
+      "summaryReferenceIds": [
+        "availability"
+      ],
+      "references": [
+        {
+          "id": "availability",
+          "title": "Availability sets overview",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+          "section": "Update domains",
+          "checkedAt": "2026-10-08T00:48:15.630Z",
+          "documentUpdatedAt": "2026-04-07T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Update domains. Claim evidence: The source says only one update domain is restarted at a time during planned maintenance. The documented recovery interval before maintenance starts on another update domain is 30 minutes. The documentation warns the restart order might not proceed sequentially. The source explicitly excludes operating-system and application-specific failures from availability-set protection.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "availability",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-compute-05",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "vms",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A team creates an availability set and later wants to change its configured update-domain and fault-domain counts in place.",
+      "prompt": "What limitation should it account for?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Both counts can always be changed in place after creation.",
+          "explanation": "The source explicitly says these settings cannot be changed after creation.",
+          "referenceIds": [
+            "availability"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The set cannot have any update domains.",
+          "explanation": "The source supports up to 20 update domains; the limitation concerns changing their configured count.",
+          "referenceIds": [
+            "availability"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "These settings cannot change after the set is created.",
+          "explanation": "The documented update-domain and fault-domain settings cannot be changed after availability-set creation.",
+          "referenceIds": [
+            "availability"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The documented update-domain and fault-domain settings cannot be changed after availability-set creation.",
+      "summaryReferenceIds": [
+        "availability"
+      ],
+      "references": [
+        {
+          "id": "availability",
+          "title": "Availability sets overview",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+          "section": "How do availability sets work?",
+          "checkedAt": "2026-10-08T00:48:15.630Z",
+          "documentUpdatedAt": "2026-04-07T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: How do availability sets work?. Claim evidence: The documented update-domain and fault-domain settings cannot be changed after availability-set creation. The source explicitly says these settings cannot be changed after creation. The source supports up to 20 update domains; the limitation concerns changing their configured count.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "availability",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-compute-06",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "app-service",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A team selects an App Service tier before introducing staging slots. Compare only Free, Basic and Standard plans.",
+      "prompt": "Which listed tier supports deployment slots?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Basic",
+          "explanation": "Basic is not in the documented list; multiple deployment slots require Standard, Premium or Isolated.",
+          "referenceIds": [
+            "slots"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Standard",
+          "explanation": "Deployment slots are available on Standard, Premium and Isolated App Service plan tiers.",
+          "referenceIds": [
+            "slots"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Free",
+          "explanation": "Free is not in the documented list; the app must be upgraded to Standard, Premium or Isolated for multiple slots.",
+          "referenceIds": [
+            "slots"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "Deployment slots are available on Standard, Premium and Isolated App Service plan tiers.",
+      "summaryReferenceIds": [
+        "slots"
+      ],
+      "references": [
+        {
+          "id": "slots",
+          "title": "Set up staging environments in Azure App Service",
+          "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+          "section": "Set up staging environments in Azure App Service",
+          "checkedAt": "2026-10-08T00:48:16.200Z",
+          "documentUpdatedAt": "2025-11-28T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Set up staging environments in Azure App Service. Claim evidence: Deployment slots are available on Standard, Premium and Isolated App Service plan tiers. Free is not in the documented list; the app must be upgraded to Standard, Premium or Isolated for multiple slots. Basic is not in the documented list; multiple deployment slots require Standard, Premium or Isolated.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "slots",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-compute-07",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "app-service",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A staging-to-production swap introduced faulty app code. The old production application is now in staging. No additional content changes have occurred.",
+      "prompt": "Which documented operation can restore the previous production app?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Perform the same swap immediately.",
+          "explanation": "After a swap, staging holds the previous production app; Microsoft describes immediately swapping again to restore it.",
+          "referenceIds": [
+            "slots"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Clone production settings into a new slot and expect old code to appear.",
+          "explanation": "Cloning settings does not copy app content, so it does not restore the old production application.",
+          "referenceIds": [
+            "slots"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Expect the old production application to have been deleted by the swap.",
+          "explanation": "The source states the former production app moves into the source slot rather than being deleted.",
+          "referenceIds": [
+            "slots"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "After a swap, staging holds the previous production app; Microsoft describes immediately swapping again to restore it.",
+      "summaryReferenceIds": [
+        "slots"
+      ],
+      "references": [
+        {
+          "id": "slots",
+          "title": "Set up staging environments in Azure App Service",
+          "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+          "section": "Swap deployment slots",
+          "checkedAt": "2026-10-08T00:48:16.200Z",
+          "documentUpdatedAt": "2025-11-28T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Swap deployment slots. Claim evidence: After a swap, staging holds the previous production app; Microsoft describes immediately swapping again to restore it. Cloning settings does not copy app content, so it does not restore the old production application. The source states the former production app moves into the source slot rather than being deleted.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "slots",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-compute-08",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "containers",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A Container Apps service must keep at least one replica running even when demand is low.",
+      "prompt": "Which scaling limit should be configured?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Set minimum replicas to 0.",
+          "explanation": "A zero minimum allows scaling to zero, so it does not ensure an instance is always running.",
+          "referenceIds": [
+            "containers"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Set only maximum replicas to 1 while leaving minimum at 0.",
+          "explanation": "Maximum limits scale-out; with a zero minimum it does not ensure a running replica.",
+          "referenceIds": [
+            "containers"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Set the minimum replica count to at least 1.",
+          "explanation": "The source explicitly instructs setting minimum replicas to 1 or higher when an instance must always run.",
+          "referenceIds": [
+            "containers"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The source explicitly instructs setting minimum replicas to 1 or higher when an instance must always run.",
+      "summaryReferenceIds": [
+        "containers"
+      ],
+      "references": [
+        {
+          "id": "containers",
+          "title": "Set scaling rules in Azure Container Apps",
+          "url": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+          "section": "Scale definition",
+          "checkedAt": "2026-10-08T00:48:16.797Z",
+          "documentUpdatedAt": "2026-05-20T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Scale definition. Claim evidence: The source explicitly instructs setting minimum replicas to 1 or higher when an instance must always run. A zero minimum allows scaling to zero, so it does not ensure an instance is always running. Maximum limits scale-out; with a zero minimum it does not ensure a running replica.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "containers",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-compute-09",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "containers",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A container app has two independent scale rules. One rule reaches its trigger condition and the other does not.",
+      "prompt": "How are multiple scale rules combined?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Adding a second rule disables automatic scaling.",
+          "explanation": "Multiple scale rules are explicitly supported and initiate scaling when any condition is met.",
+          "referenceIds": [
+            "containers"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Scaling begins when the first condition of any rule is met.",
+          "explanation": "Microsoft states that with more than one rule the app begins scaling once the first condition of any rule is met.",
+          "referenceIds": [
+            "containers"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Every scale rule must meet its condition before scaling begins.",
+          "explanation": "The source uses any-rule behavior rather than requiring all conditions simultaneously.",
+          "referenceIds": [
+            "containers"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "Microsoft states that with more than one rule the app begins scaling once the first condition of any rule is met.",
+      "summaryReferenceIds": [
+        "containers"
+      ],
+      "references": [
+        {
+          "id": "containers",
+          "title": "Set scaling rules in Azure Container Apps",
+          "url": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+          "section": "Scale rules",
+          "checkedAt": "2026-10-08T00:48:16.797Z",
+          "documentUpdatedAt": "2026-05-20T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Scale rules. Claim evidence: Microsoft states that with more than one rule the app begins scaling once the first condition of any rule is met. The source uses any-rule behavior rather than requiring all conditions simultaneously. Multiple scale rules are explicitly supported and initiate scaling when any condition is met.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "containers",
+        "starter-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-compute-10",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "compute",
+      "objectiveId": "containers",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "An administrator edits a container app scaling rule. The deployment history now shows a new revision.",
+      "prompt": "Why is a new revision expected?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Adding or editing scaling rules creates a new revision.",
+          "explanation": "The source states scaling-rule changes create a revision, an immutable snapshot of the container app.",
+          "referenceIds": [
+            "containers"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Scaling rules are mutable changes that never create revisions.",
+          "explanation": "The documented behavior is the opposite: adding or editing a rule creates a new revision.",
+          "referenceIds": [
+            "containers"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Only the first replica of an app counts as a revision.",
+          "explanation": "Replicas are instances of a revision; a revision is the immutable app snapshot, not an individual replica.",
+          "referenceIds": [
+            "containers"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The source states scaling-rule changes create a revision, an immutable snapshot of the container app.",
+      "summaryReferenceIds": [
+        "containers"
+      ],
+      "references": [
+        {
+          "id": "containers",
+          "title": "Set scaling rules in Azure Container Apps",
+          "url": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+          "section": "Scale definition",
+          "checkedAt": "2026-10-08T00:48:16.797Z",
+          "documentUpdatedAt": "2026-05-20T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Scale definition. Claim evidence: The source states scaling-rule changes create a revision, an immutable snapshot of the container app. The documented behavior is the opposite: adding or editing a rule creates a new revision. Replicas are instances of a revision; a revision is the immutable app snapshot, not an individual replica.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "containers",
+        "starter-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-networking-01",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A new TCP connection matches an NSG deny rule at priority 200 and an allow rule at priority 300. Assume no overriding security admin rule and all other controls permit it.",
+      "prompt": "What does this NSG do?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Deny the connection.",
+          "explanation": "Lower numbers have higher priority; rule 200 matches first and stops processing before allow rule 300.",
+          "referenceIds": [
+            "nsg"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Allow the connection because 300 has higher priority.",
+          "explanation": "Higher numeric values have lower priority; the matching deny rule at 200 is processed first.",
+          "referenceIds": [
+            "nsg"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Combine the matching rules into an allow result.",
+          "explanation": "Processing stops at the first match rather than combining contradictory matching rules.",
+          "referenceIds": [
+            "nsg"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Lower numbers have higher priority; rule 200 matches first and stops processing before allow rule 300.",
+      "summaryReferenceIds": [
+        "nsg"
+      ],
+      "references": [
+        {
+          "id": "nsg",
+          "title": "Network security groups",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+          "section": "Security rules",
+          "checkedAt": "2026-10-08T00:48:17.887Z",
+          "documentUpdatedAt": "2025-07-15T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Security rules. Claim evidence: Lower numbers have higher priority; rule 200 matches first and stops processing before allow rule 300. Higher numeric values have lower priority; the matching deny rule at 200 is processed first. Processing stops at the first match rather than combining contradictory matching rules.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "nsg",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-02",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "An active SSH connection was established while an NSG allow rule permitted it. An administrator removes that rule, leaving new SSH connections denied.",
+      "prompt": "What does the documented stateful behavior predict?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The existing session is immediately terminated by rule removal.",
+          "explanation": "Flow records retain established connection state; removing an allow rule does not interrupt existing connections.",
+          "referenceIds": [
+            "nsg"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Both existing and new SSH sessions remain allowed indefinitely.",
+          "explanation": "The existing flow remains, but new connections are evaluated against updated rules and are blocked under these assumptions.",
+          "referenceIds": [
+            "nsg"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The existing session remains connected; a new session is blocked.",
+          "explanation": "NSG rule changes affect new connections; the source gives this established-SSH example explicitly.",
+          "referenceIds": [
+            "nsg"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "NSG rule changes affect new connections; the source gives this established-SSH example explicitly.",
+      "summaryReferenceIds": [
+        "nsg"
+      ],
+      "references": [
+        {
+          "id": "nsg",
+          "title": "Network security groups",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+          "section": "Security rules",
+          "checkedAt": "2026-10-08T00:48:17.887Z",
+          "documentUpdatedAt": "2025-07-15T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Security rules. Claim evidence: NSG rule changes affect new connections; the source gives this established-SSH example explicitly. Flow records retain established connection state; removing an allow rule does not interrupt existing connections. The existing flow remains, but new connections are evaluated against updated rules and are blocked under these assumptions.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "nsg",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-03",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An NSG permits a new outbound TCP connection on port 80. The team is considering a separate inbound rule for response traffic from that connection.",
+      "prompt": "Is a matching inbound response rule necessary for this NSG?",
+      "options": [
+        {
+          "id": "a",
+          "text": "No; NSGs never filter inbound connections.",
+          "explanation": "NSGs do filter inbound connections; the exception here is response traffic for an already allowed flow.",
+          "referenceIds": [
+            "nsg"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "No; the NSG is stateful and permits response traffic for the allowed flow.",
+          "explanation": "The source says an outbound port-80 allow does not need an inbound response rule because flow state is tracked.",
+          "referenceIds": [
+            "nsg"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Yes; every outbound connection needs a separate inbound response rule.",
+          "explanation": "This contradicts the documented stateful response handling for allowed outbound connections.",
+          "referenceIds": [
+            "nsg"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The source says an outbound port-80 allow does not need an inbound response rule because flow state is tracked.",
+      "summaryReferenceIds": [
+        "nsg"
+      ],
+      "references": [
+        {
+          "id": "nsg",
+          "title": "Network security groups",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+          "section": "Security rules",
+          "checkedAt": "2026-10-08T00:48:17.887Z",
+          "documentUpdatedAt": "2025-07-15T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Security rules. Claim evidence: The source says an outbound port-80 allow does not need an inbound response rule because flow state is tracked. This contradicts the documented stateful response handling for allowed outbound connections. NSGs do filter inbound connections; the exception here is response traffic for an already allowed flow.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "nsg",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-04",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "foundation",
+      "scenario": "An administrator wants to change the behavior supplied by an NSG default rule.",
+      "prompt": "Which TWO statements describe supported rule management? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Custom rules are always evaluated after default rules.",
+          "explanation": "Custom rules have higher priority than Azure defaults, which have the highest numeric priorities.",
+          "referenceIds": [
+            "nsg"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Default rules cannot be removed.",
+          "explanation": "The source explicitly says default security rules cannot be removed.",
+          "referenceIds": [
+            "nsg"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Higher-priority custom rules can override default behavior.",
+          "explanation": "Azure assigns defaults the lowest priorities so custom rules with lower numbers are processed first.",
+          "referenceIds": [
+            "nsg"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "You must delete the default rule to override it.",
+          "explanation": "Default rules cannot be removed; higher-priority custom rules are the documented override mechanism.",
+          "referenceIds": [
+            "nsg"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "The source explicitly says default security rules cannot be removed. Azure assigns defaults the lowest priorities so custom rules with lower numbers are processed first.",
+      "summaryReferenceIds": [
+        "nsg"
+      ],
+      "references": [
+        {
+          "id": "nsg",
+          "title": "Network security groups",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+          "section": "Default security rules",
+          "checkedAt": "2026-10-08T00:48:17.887Z",
+          "documentUpdatedAt": "2025-07-15T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Default security rules. Claim evidence: The source explicitly says default security rules cannot be removed. Azure assigns defaults the lowest priorities so custom rules with lower numbers are processed first. Default rules cannot be removed; higher-priority custom rules are the documented override mechanism. Custom rules have higher priority than Azure defaults, which have the highest numeric priorities.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "nsg",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-05",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "Two resource-manager virtual networks in the same region are peered. The team is documenting the VM-to-VM traffic path.",
+      "prompt": "Which path does peering use?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The public internet between the virtual networks.",
+          "explanation": "The peering overview explicitly keeps virtual-network traffic on the Microsoft backbone, outside public internet routing.",
+          "referenceIds": [
+            "peering"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "A required virtual-network gateway for all peering traffic.",
+          "explanation": "The documented direct peering traffic path does not traverse a gateway.",
+          "referenceIds": [
+            "peering"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The Microsoft backbone directly between the peered networks.",
+          "explanation": "Microsoft states that traffic between peered-network VMs routes through its backbone rather than a gateway or public internet.",
+          "referenceIds": [
+            "peering"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "Microsoft states that traffic between peered-network VMs routes through its backbone rather than a gateway or public internet.",
+      "summaryReferenceIds": [
+        "peering"
+      ],
+      "references": [
+        {
+          "id": "peering",
+          "title": "Azure Virtual Network peering",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+          "section": "Connectivity",
+          "checkedAt": "2026-10-08T00:48:17.333Z",
+          "documentUpdatedAt": "2026-09-16T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Connectivity. Claim evidence: Microsoft states that traffic between peered-network VMs routes through its backbone rather than a gateway or public internet. The peering overview explicitly keeps virtual-network traffic on the Microsoft backbone, outside public internet routing. The documented direct peering traffic path does not traverse a gateway.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "peering",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-06",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "An administrator expands the address space of a resource-manager virtual network that is already peered to another resource-manager network.",
+      "prompt": "What follow-up is required for peers to learn the address-space change?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Delete every workload because resizing always causes downtime.",
+          "explanation": "The source says peered address spaces can be resized without downtime on the currently peered address space.",
+          "referenceIds": [
+            "peering"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Synchronize the virtual-network peers.",
+          "explanation": "The source states peers must sync after the address space is resized and recommends syncing after every resize operation.",
+          "referenceIds": [
+            "peering"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Expect peers never to need synchronization.",
+          "explanation": "The documentation explicitly requires peer synchronization with the new address-space changes.",
+          "referenceIds": [
+            "peering"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The source states peers must sync after the address space is resized and recommends syncing after every resize operation.",
+      "summaryReferenceIds": [
+        "peering"
+      ],
+      "references": [
+        {
+          "id": "peering",
+          "title": "Azure Virtual Network peering",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+          "section": "Resize the address space of Azure virtual networks that are peered",
+          "checkedAt": "2026-10-08T00:48:17.333Z",
+          "documentUpdatedAt": "2026-09-16T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Resize the address space of Azure virtual networks that are peered. Claim evidence: The source states peers must sync after the address space is resized and recommends syncing after every resize operation. The documentation explicitly requires peer synchronization with the new address-space changes. The source says peered address spaces can be resized without downtime on the currently peered address space.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "peering",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-07",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "vnets",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A spoke virtual network is configured to use a gateway in a peered hub as its remote gateway.",
+      "prompt": "Which gateway constraint applies to that spoke?",
+      "options": [
+        {
+          "id": "a",
+          "text": "It cannot also have its own gateway.",
+          "explanation": "A virtual network using a remote gateway cannot have its own; the documented gateway must be local or remote.",
+          "referenceIds": [
+            "peering"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "It must have both its own gateway and a remote gateway.",
+          "explanation": "The source allows only one gateway choice, local or remote, rather than requiring both.",
+          "referenceIds": [
+            "peering"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Gateway transit is unavailable with global peering.",
+          "explanation": "The source explicitly states that both virtual-network peering and global peering support gateway transit.",
+          "referenceIds": [
+            "peering"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "A virtual network using a remote gateway cannot have its own; the documented gateway must be local or remote.",
+      "summaryReferenceIds": [
+        "peering"
+      ],
+      "references": [
+        {
+          "id": "peering",
+          "title": "Azure Virtual Network peering",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+          "section": "Gateways and on-premises connectivity",
+          "checkedAt": "2026-10-08T00:48:17.333Z",
+          "documentUpdatedAt": "2026-09-16T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Gateways and on-premises connectivity. Claim evidence: A virtual network using a remote gateway cannot have its own; the documented gateway must be local or remote. The source allows only one gateway choice, local or remote, rather than requiring both. The source explicitly states that both virtual-network peering and global peering support gateway transit.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "peering",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-08",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A private endpoint connection to a storage resource is Pending. The resource owner has not approved it.",
+      "prompt": "Can the endpoint be used to send traffic to the private-link resource?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Yes; Pending means approved and ready for use.",
+          "explanation": "Approved, not Pending, is the state documented as ready for use.",
+          "referenceIds": [
+            "private"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Yes; manual approval is never supported.",
+          "explanation": "The source supports automatic or manual approval, with Pending specifically awaiting manual owner approval.",
+          "referenceIds": [
+            "private"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "No; only an approved endpoint connection can send traffic.",
+          "explanation": "The source defines Pending as awaiting owner approval and says only endpoints in Approved state can send traffic.",
+          "referenceIds": [
+            "private"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The source defines Pending as awaiting owner approval and says only endpoints in Approved state can send traffic.",
+      "summaryReferenceIds": [
+        "private"
+      ],
+      "references": [
+        {
+          "id": "private",
+          "title": "What is a private endpoint?",
+          "url": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+          "section": "Private endpoint properties",
+          "checkedAt": "2026-10-08T00:48:18.496Z",
+          "documentUpdatedAt": "2026-08-11T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Private endpoint properties. Claim evidence: The source defines Pending as awaiting owner approval and says only endpoints in Approved state can send traffic. Approved, not Pending, is the state documented as ready for use. The source supports automatic or manual approval, with Pending specifically awaiting manual owner approval.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "private",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-networking-09",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An architect places a private endpoint in a virtual network and considers where the endpoint and target service must reside.",
+      "prompt": "Which location statement matches the documentation?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The target private-link resource must always be in the virtual network region.",
+          "explanation": "The source explicitly permits the private-link resource to be deployed in a different region.",
+          "referenceIds": [
+            "private"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The endpoint shares the virtual network region; the target resource may be in another region.",
+          "explanation": "The endpoint must be in the same region and subscription as the virtual network, while the private-link resource can be in a different region.",
+          "referenceIds": [
+            "private"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The endpoint may be in a different region from its virtual network.",
+          "explanation": "The source requires the private endpoint and virtual network to be in the same region and subscription.",
+          "referenceIds": [
+            "private"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The endpoint must be in the same region and subscription as the virtual network, while the private-link resource can be in a different region.",
+      "summaryReferenceIds": [
+        "private"
+      ],
+      "references": [
+        {
+          "id": "private",
+          "title": "What is a private endpoint?",
+          "url": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+          "section": "Private endpoint properties",
+          "checkedAt": "2026-10-08T00:48:18.496Z",
+          "documentUpdatedAt": "2026-08-11T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Private endpoint properties. Claim evidence: The endpoint must be in the same region and subscription as the virtual network, while the private-link resource can be in a different region. The source requires the private endpoint and virtual network to be in the same region and subscription. The source explicitly permits the private-link resource to be deployed in a different region.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "private",
+        "starter-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-networking-10",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "networking",
+      "objectiveId": "network-security",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A team wants NSG policy based on logical application groups of VMs, without manually maintaining explicit private IP lists.",
+      "prompt": "Which documented construct meets this requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Application security group",
+          "explanation": "Application security groups group VMs by application structure and let security policy be reused without maintaining explicit IP addresses.",
+          "referenceIds": [
+            "nsg"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Service tag",
+          "explanation": "A service tag represents prefixes for an Azure service; application security groups are the documented VM-grouping construct.",
+          "referenceIds": [
+            "nsg"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "An explicit individual IP in every rule",
+          "explanation": "Explicit IP rules require the manual address maintenance that application security groups help avoid.",
+          "referenceIds": [
+            "nsg"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Application security groups group VMs by application structure and let security policy be reused without maintaining explicit IP addresses.",
+      "summaryReferenceIds": [
+        "nsg"
+      ],
+      "references": [
+        {
+          "id": "nsg",
+          "title": "Network security groups",
+          "url": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+          "section": "Service tags and Application security groups",
+          "checkedAt": "2026-10-08T00:48:17.887Z",
+          "documentUpdatedAt": "2025-07-15T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Service tags and Application security groups. Claim evidence: Application security groups group VMs by application structure and let security policy be reused without maintaining explicit IP addresses. A service tag represents prefixes for an Azure service; application security groups are the documented VM-grouping construct. Explicit IP rules require the manual address maintenance that application security groups help avoid.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "nsg",
+        "starter-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-monitoring-01",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An operations team needs an alert to notify staff by email and invoke an automated workflow when its condition is met.",
+      "prompt": "Which alert component groups those notification and action choices?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Action group",
+          "explanation": "Action groups trigger notifications or automated workflows; the documented examples include email and Logic Apps.",
+          "referenceIds": [
+            "alerts"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "User response",
+          "explanation": "User response records New, Acknowledged or Closed; it does not group notification and automation choices.",
+          "referenceIds": [
+            "alerts"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Alert condition state",
+          "explanation": "Fired and Resolved describe the system-set condition state rather than the notification or automation configuration.",
+          "referenceIds": [
+            "alerts"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Action groups trigger notifications or automated workflows; the documented examples include email and Logic Apps.",
+      "summaryReferenceIds": [
+        "alerts"
+      ],
+      "references": [
+        {
+          "id": "alerts",
+          "title": "Overview of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+          "section": "Overview of Azure Monitor alerts",
+          "checkedAt": "2026-10-08T00:48:18.904Z",
+          "documentUpdatedAt": "2026-07-08T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Overview of Azure Monitor alerts. Claim evidence: Action groups trigger notifications or automated workflows; the documented examples include email and Logic Apps. User response records New, Acknowledged or Closed; it does not group notification and automation choices. Fired and Resolved describe the system-set condition state rather than the notification or automation configuration.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "alerts",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-02",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "An on-call engineer acknowledges an alert. The underlying monitored condition has not cleared.",
+      "prompt": "Which distinction correctly describes this action?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Acknowledged automatically makes the condition Resolved.",
+          "explanation": "Resolution depends on the underlying condition clearing, while the user response is independently set.",
+          "referenceIds": [
+            "alerts"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Acknowledged changes the alert rule condition threshold.",
+          "explanation": "Acknowledgement changes user response; alert rule configuration and condition thresholds are separate.",
+          "referenceIds": [
+            "alerts"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Acknowledged is a user response, separate from the system condition state.",
+          "explanation": "The user sets New, Acknowledged or Closed; the system sets Fired or Resolved from the underlying condition.",
+          "referenceIds": [
+            "alerts"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The user sets New, Acknowledged or Closed; the system sets Fired or Resolved from the underlying condition.",
+      "summaryReferenceIds": [
+        "alerts"
+      ],
+      "references": [
+        {
+          "id": "alerts",
+          "title": "Overview of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+          "section": "Overview of Azure Monitor alerts",
+          "checkedAt": "2026-10-08T00:48:18.904Z",
+          "documentUpdatedAt": "2026-07-08T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Overview of Azure Monitor alerts. Claim evidence: The user sets New, Acknowledged or Closed; the system sets Fired or Resolved from the underlying condition. Resolution depends on the underlying condition clearing, while the user response is independently set. Acknowledgement changes user response; alert rule configuration and condition thresholds are separate.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "alerts",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-03",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "During a planned maintenance window, a team wants scheduled suppression of action groups for matching triggered alerts.",
+      "prompt": "Which component is documented for that task?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A metric value alone",
+          "explanation": "A metric supplies a monitored signal; scheduled filtering and action-group suppression belong to alert processing rules.",
+          "referenceIds": [
+            "alerts"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Alert processing rule",
+          "explanation": "Alert processing rules can add or suppress action groups, filter alerts and operate on a predefined schedule.",
+          "referenceIds": [
+            "alerts"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "User response of Closed",
+          "explanation": "User response labels an alert; scheduled suppression of action groups is an alert-processing-rule capability.",
+          "referenceIds": [
+            "alerts"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "Alert processing rules can add or suppress action groups, filter alerts and operate on a predefined schedule.",
+      "summaryReferenceIds": [
+        "alerts"
+      ],
+      "references": [
+        {
+          "id": "alerts",
+          "title": "Overview of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+          "section": "Overview of Azure Monitor alerts",
+          "checkedAt": "2026-10-08T00:48:18.904Z",
+          "documentUpdatedAt": "2026-07-08T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Overview of Azure Monitor alerts. Claim evidence: Alert processing rules can add or suppress action groups, filter alerts and operate on a predefined schedule. User response labels an alert; scheduled suppression of action groups is an alert-processing-rule capability. A metric supplies a monitored signal; scheduled filtering and action-group suppression belong to alert processing rules.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "alerts",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-04",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "foundation",
+      "scenario": "An administrator is selecting alert types for metric thresholds and queries over workspace logs.",
+      "prompt": "Which TWO descriptions match the documentation? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Prometheus alerts use only the Kusto Query Language.",
+          "explanation": "The source states Prometheus alert rules use PromQL rather than KQL.",
+          "referenceIds": [
+            "alerts"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Metric alerts evaluate resource metrics at regular intervals.",
+          "explanation": "The alert overview describes metric alerts as periodically evaluating resource metrics and supporting multiple conditions.",
+          "referenceIds": [
+            "alerts"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Log search alerts use a Log Analytics query to evaluate logs at a predefined frequency.",
+          "explanation": "The documented log-search-alert signal comes from querying resource logs at a predefined frequency.",
+          "referenceIds": [
+            "alerts"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Activity log alerts are the type used to periodically run a workspace log query.",
+          "explanation": "Activity log alerts trigger on new matching activity-log events; log search alerts are the query-based type.",
+          "referenceIds": [
+            "alerts"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "The alert overview describes metric alerts as periodically evaluating resource metrics and supporting multiple conditions. The documented log-search-alert signal comes from querying resource logs at a predefined frequency.",
+      "summaryReferenceIds": [
+        "alerts"
+      ],
+      "references": [
+        {
+          "id": "alerts",
+          "title": "Overview of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+          "section": "Types of alerts",
+          "checkedAt": "2026-10-08T00:48:18.904Z",
+          "documentUpdatedAt": "2026-07-08T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Types of alerts. Claim evidence: The alert overview describes metric alerts as periodically evaluating resource metrics and supporting multiple conditions. The documented log-search-alert signal comes from querying resource logs at a predefined frequency. Activity log alerts trigger on new matching activity-log events; log search alerts are the query-based type. The source states Prometheus alert rules use PromQL rather than KQL.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "alerts",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-05",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An administrator will write and test an Azure Monitor Logs query interactively before using it in a log search alert.",
+      "prompt": "Which tool is the documented primary portal query editor?",
+      "options": [
+        {
+          "id": "a",
+          "text": "An Azure dashboard tile alone",
+          "explanation": "Dashboards can pin query results; Log Analytics is the documented primary interactive query-authoring tool.",
+          "referenceIds": [
+            "logs"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "An action group",
+          "explanation": "Action groups configure alert notifications and workflows; the Logs overview identifies Log Analytics as the query editor.",
+          "referenceIds": [
+            "logs",
+            "alerts"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Log Analytics",
+          "explanation": "Microsoft identifies Log Analytics as the primary portal tool to edit log queries and interactively analyze results before reuse.",
+          "referenceIds": [
+            "logs"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "Microsoft identifies Log Analytics as the primary portal tool to edit log queries and interactively analyze results before reuse.",
+      "summaryReferenceIds": [
+        "logs"
+      ],
+      "references": [
+        {
+          "id": "logs",
+          "title": "Log queries in Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+          "section": "Log queries in Azure Monitor",
+          "checkedAt": "2026-10-08T00:48:19.442Z",
+          "documentUpdatedAt": "2026-04-29T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Log queries in Azure Monitor. Claim evidence: Microsoft identifies Log Analytics as the primary portal tool to edit log queries and interactively analyze results before reuse. Dashboards can pin query results; Log Analytics is the documented primary interactive query-authoring tool. Action groups configure alert notifications and workflows; the Logs overview identifies Log Analytics as the query editor.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        },
+        {
+          "id": "alerts",
+          "title": "Overview of Azure Monitor alerts",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+          "section": "Overview of Azure Monitor alerts",
+          "checkedAt": "2026-10-08T00:48:18.904Z",
+          "documentUpdatedAt": "2026-07-08T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Overview of Azure Monitor alerts. Claim evidence: Action groups trigger notifications or automated workflows; the documented examples include email and Logic Apps. User response records New, Acknowledged or Closed; it does not group notification and automation choices. Fired and Resolved describe the system-set condition state rather than the notification or automation configuration.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "logs",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-06",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "monitor",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A developer assumes every Azure Data Explorer KQL feature is also available in Azure Monitor Logs.",
+      "prompt": "Which documented limitation should change that assumption?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Azure Monitor supports every Azure Data Explorer plugin.",
+          "explanation": "The unsupported list includes the Python plugin and sql_request plugin, so universal plugin support is incorrect.",
+          "referenceIds": [
+            "logs"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Some operators and functions differ or are not supported in Azure Monitor.",
+          "explanation": "Microsoft documents language differences and a list of unsupported features despite both products using KQL.",
+          "referenceIds": [
+            "logs"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Azure Monitor uses SQL instead of KQL.",
+          "explanation": "The source explicitly states Azure Monitor Logs uses Kusto Query Language, not SQL as its log-query language.",
+          "referenceIds": [
+            "logs"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "Microsoft documents language differences and a list of unsupported features despite both products using KQL.",
+      "summaryReferenceIds": [
+        "logs"
+      ],
+      "references": [
+        {
+          "id": "logs",
+          "title": "Log queries in Azure Monitor",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+          "section": "Language differences",
+          "checkedAt": "2026-10-08T00:48:19.442Z",
+          "documentUpdatedAt": "2026-04-29T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Language differences. Claim evidence: Microsoft documents language differences and a list of unsupported features despite both products using KQL. The source explicitly states Azure Monitor Logs uses Kusto Query Language, not SQL as its log-query language. The unsupported list includes the Python plugin and sql_request plugin, so universal plugin support is incorrect.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "logs",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-07",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A team configures Azure Backup for Azure VMs and needs to identify where managed recovery points are stored.",
+      "prompt": "Which vault is identified by the VM-backup overview?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Recovery Services vault",
+          "explanation": "The VM-backup source states backups are stored in a Recovery Services vault with built-in recovery-point management.",
+          "referenceIds": [
+            "backup"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Only the VM temporary disk",
+          "explanation": "The source places backups in a Recovery Services vault and explicitly excludes temporary storage in its VM backup sizing discussion.",
+          "referenceIds": [
+            "backup"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Only the VM in-memory cache",
+          "explanation": "VM backups are transferred to the Recovery Services vault; crash-consistent backups do not capture host read/write cache.",
+          "referenceIds": [
+            "backup"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The VM-backup source states backups are stored in a Recovery Services vault with built-in recovery-point management.",
+      "summaryReferenceIds": [
+        "backup"
+      ],
+      "references": [
+        {
+          "id": "backup",
+          "title": "An overview of Azure VM backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+          "section": "An overview of Azure VM backup",
+          "checkedAt": "2026-10-08T00:48:19.965Z",
+          "documentUpdatedAt": "2026-01-08T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: An overview of Azure VM backup. Claim evidence: The VM-backup source states backups are stored in a Recovery Services vault with built-in recovery-point management. The source places backups in a Recovery Services vault and explicitly excludes temporary storage in its VM backup sizing discussion. VM backups are transferred to the Recovery Services vault; crash-consistent backups do not capture host read/write cache.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "backup",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-08",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A protected VM has several disks and has already completed its initial backup.",
+      "prompt": "How does the source describe subsequent disk-data transfer?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Every subsequent backup always transfers all unchanged blocks again.",
+          "explanation": "The source describes delta transfer rather than transferring all unchanged disk data for every subsequent backup.",
+          "referenceIds": [
+            "backup"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Only one disk can be backed up per backup job.",
+          "explanation": "The source says VM disks are backed up in parallel and gives a four-disk example.",
+          "referenceIds": [
+            "backup"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Changed data blocks are identified and transferred; disks are backed up in parallel.",
+          "explanation": "Microsoft describes parallel disk backup and incremental transfer of changed blocks since the previous backup.",
+          "referenceIds": [
+            "backup"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "Microsoft describes parallel disk backup and incremental transfer of changed blocks since the previous backup.",
+      "summaryReferenceIds": [
+        "backup"
+      ],
+      "references": [
+        {
+          "id": "backup",
+          "title": "An overview of Azure VM backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+          "section": "Backup process",
+          "checkedAt": "2026-10-08T00:48:19.965Z",
+          "documentUpdatedAt": "2026-01-08T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Backup process. Claim evidence: Microsoft describes parallel disk backup and incremental transfer of changed blocks since the previous backup. The source describes delta transfer rather than transferring all unchanged disk data for every subsequent backup. The source says VM disks are backed up in parallel and gives a four-disk example.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "backup",
+        "starter-draft"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-monitoring-09",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A running Linux VM requires application-consistent recovery points from Azure VM Backup. The team has not configured application pre/post scripts.",
+      "prompt": "Which documented action is required for Linux application consistency?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Assume the default file-consistent Linux backup is already application-consistent.",
+          "explanation": "The source distinguishes default Linux file consistency from application consistency achieved with successful pre/post scripts.",
+          "referenceIds": [
+            "backup"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Configure and successfully run appropriate pre/post scripts.",
+          "explanation": "Linux application-consistent snapshots require custom pre/post scripts; the source makes the customer responsible for consistency when using them.",
+          "referenceIds": [
+            "backup"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Rely on Windows VSS writers on the Linux VM.",
+          "explanation": "The source describes VSS for Windows; Linux application consistency uses the pre/post script framework.",
+          "referenceIds": [
+            "backup"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "Linux application-consistent snapshots require custom pre/post scripts; the source makes the customer responsible for consistency when using them.",
+      "summaryReferenceIds": [
+        "backup"
+      ],
+      "references": [
+        {
+          "id": "backup",
+          "title": "An overview of Azure VM backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+          "section": "Snapshot creation",
+          "checkedAt": "2026-10-08T00:48:19.965Z",
+          "documentUpdatedAt": "2026-01-08T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Snapshot creation. Claim evidence: Linux application-consistent snapshots require custom pre/post scripts; the source makes the customer responsible for consistency when using them. The source describes VSS for Windows; Linux application consistency uses the pre/post script framework. The source distinguishes default Linux file consistency from application consistency achieved with successful pre/post scripts.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "backup",
+        "starter-draft"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-monitoring-10",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "monitoring",
+      "objectiveId": "backup-recovery",
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A VM uses the opt-in agentless crash-consistent backup policy. An application has pending writes in memory that have not reached disk.",
+      "prompt": "Which data should the team expect this snapshot to capture?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only data already on disk at the backup operation.",
+          "explanation": "Crash-consistent snapshots capture existing disk data; in-memory data and writes not transferred to disk are lost on recovery.",
+          "referenceIds": [
+            "backup"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "All pending in-memory writes as if the application completed them.",
+          "explanation": "The documented crash-consistent snapshot does not capture pending memory or host-cache writes.",
+          "referenceIds": [
+            "backup"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "An automatically application-consistent image without application coordination.",
+          "explanation": "The source distinguishes crash consistency from application-consistent snapshots using VSS or Linux pre/post scripts.",
+          "referenceIds": [
+            "backup"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Crash-consistent snapshots capture existing disk data; in-memory data and writes not transferred to disk are lost on recovery.",
+      "summaryReferenceIds": [
+        "backup"
+      ],
+      "references": [
+        {
+          "id": "backup",
+          "title": "An overview of Azure VM backup",
+          "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+          "section": "Snapshot consistency",
+          "checkedAt": "2026-10-08T00:48:19.965Z",
+          "documentUpdatedAt": "2026-01-08T00:00:00Z",
+          "evidenceSummary": "Retrieved Microsoft Learn section: Snapshot consistency. Claim evidence: Crash-consistent snapshots capture existing disk data; in-memory data and writes not transferred to disk are lost on recovery. The documented crash-consistent snapshot does not capture pending memory or host-cache writes. The source distinguishes crash consistency from application-consistent snapshots using VSS or Linux pre/post scripts.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "backup",
+        "starter-draft"
+      ],
+      "assessmentReserved": true
+    }
+  ]
+}
