@@ -13,7 +13,7 @@ Planning documentation is complete and available for review. Application code ha
 - [Project context](PROJECT_CONTEXT.md): decisions and current stage.
 - [Roadmap](ROADMAP.md): first release and future work.
 - [Plan verification](docs/verification/2026-10-08-plan-review.md): documentation checks actually performed.
-- [Original supplied proposal](docs/reference/az104-study-app-plan.md): historical reference; later design decisions take precedence, including cancellation of its exam date.
+- [Original supplied proposal](docs/reference/az104-study-app-plan.md): historical reference with the personal name removed; later design decisions take precedence, including cancellation of its exam date.
 
 ## Content accuracy
 

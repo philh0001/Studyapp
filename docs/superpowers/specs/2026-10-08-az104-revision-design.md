@@ -5,7 +5,7 @@ Status: accepted for implementation planning on 8 October 2026, including the of
 
 ## Purpose and agreed constraints
 
-Build a personal AZ-104 revision website for Philip, used mainly on a phone. The website and browser experience are primary, as with Showtime. Preparation is self-paced; the previously supplied 16 October exam date is cancelled. Start with no exam date and permit adding or clearing one later.
+Build a personal AZ-104 revision website, used mainly on a phone. The website and browser experience are primary, as with Showtime. Preparation is self-paced; the previously supplied 16 October exam date is cancelled. Start with no exam date and permit adding or clearing one later.
 
 Success means completing short sessions, understanding mistakes, returning to saved work, and seeing what still needs study. Support comfortable one-handed interaction, large controls, and generous reading space. No missed-day penalties or compulsory streaks.
 

@@ -16,7 +16,7 @@ The application should help users prepare through:
 - Offline-first study
 - Optional audio review
 
-The first user is Philip Hope.
+The app is initially for personal study.
 
 **Current certification target:** Microsoft AZ-104  
 **Exam date:** 16 October 2026  
@@ -359,7 +359,7 @@ The planner should consider:
 - Hands-on lab requirements
 - Missed study days
 
-## Initial settings for Philip
+## Initial personal settings
 
 ```text
 Certification: AZ-104
@@ -1097,7 +1097,7 @@ The strongest version of this product is:
 
 > A mobile-first AZ-104 PWA with original scenario questions, detailed option-by-option feedback, adaptive weak-area revision, confidence tracking, audio review, and a hands-on lab tracker linked to GitHub evidence.
 
-This should be useful for Philip’s immediate AZ-104 study while remaining flexible enough to become a broader certification-learning platform later.
+This should be useful for personal AZ-104 study while remaining flexible enough to become a broader certification-learning platform later.
 
 ---
 

@@ -1,6 +1,6 @@
 # Project context
 
-Personal AZ-104 study website for Philip, mainly used on a phone. Web-first access similar to Showtime. No current exam date: the earlier 16 October 2026 target was cancelled. Study at the user's pace.
+Personal AZ-104 study website, mainly used on a phone. Web-first access similar to Showtime. No current exam date: the earlier 16 October 2026 target was cancelled. Study at the user's pace.
 
 Design: [AZ-104 Revision](docs/superpowers/specs/2026-10-08-az104-revision-design.md).
 
