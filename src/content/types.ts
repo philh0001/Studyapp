@@ -1,0 +1,9 @@
+export interface Objective { id:string; title:string; subObjectives:string[] }
+export interface Blueprint { id:string; certificationId:string; effectiveDate:string; checkedAt:string; source:string; domains:{id:string;title:string;weight:number[];objectives:Objective[]}[] }
+export interface Reference { id:string; title:string; url:string; section:string|null; checkedAt:string; documentUpdatedAt:string|null; evidenceSummary:string; microsoftOwnershipVerified:boolean; fallbackReason:string|null }
+export interface Question { id:string;revision:number;certificationId:string;blueprintId:string;domainId:string;objectiveId:string;type:'single'|'multiple';requiredSelections:number;difficulty:'foundation'|'intermediate'|'advanced';scenario:string;prompt:string;options:{id:string;text:string;explanation:string;referenceIds:string[]}[];correctOptionIds:string[];summaryExplanation:string;summaryReferenceIds:string[];references:Reference[];provenance:'original'|'user-created'|'ai-assisted';status:'draft'|'reviewed'|'verified'|'retired';review:{reviewer:string;reviewedAt:string;method:string}|null;tags:string[];assessmentReserved:boolean }
+export interface ContentPack { id:string;version:number;blueprintId:string;checkedAt:string;questions:Question[] }
+export interface ValidationIssue { path:string;message:string }
+export interface QuestionIdentity { questionId:string;revision:number }
+export interface SourceCheck {referenceId:string;canonicalUrl:string;checkedAt:string;result:'checked'|'unavailable'|'changed';evidenceSummary:string;contentHash?:string}
+export interface ContentTrust extends QuestionIdentity {sourceCheckedAt:string;humanReviewedAt:string|null;reviewer:string|null;invalidatedAt:string|null}
