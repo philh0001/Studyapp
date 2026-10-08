@@ -1,3 +1,4 @@
+import starter from '../../content/packs/az104-starter-draft.json';import checks from '../../content/sources/microsoft-source-checks.json';import type {ContentPack,SourceCheck} from '../content/types';
 import {StudyDatabase} from '../storage/database';import {StudyRepository} from '../storage/repository';import {SessionService} from '../sessions/service';
 export interface AppServices{repository:StudyRepository;sessions:SessionService}
-export async function createAppServices():Promise<AppServices>{const repository=new StudyRepository(new StudyDatabase());await repository.db.open();return {repository,sessions:new SessionService(repository)}}
+export async function createAppServices():Promise<AppServices>{const repository=new StudyRepository(new StudyDatabase());await repository.db.open();const installed=await repository.db.packs.get(starter.id);if(!installed||installed.version<starter.version)await repository.installPack(starter as ContentPack,checks as SourceCheck[]);return {repository,sessions:new SessionService(repository)}}
