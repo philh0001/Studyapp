@@ -1,0 +1,19 @@
+{
+  "kind": "live-workpad-disclosure-smoke",
+  "checkedAt": "2026-10-08T11:30:17.554Z",
+  "url": "https://az104-revision-web.showtime-workers.workers.dev",
+  "browser": "156.0.8078.4",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "titleIsDisclosure": true,
+  "closedByDefault": true,
+  "foldHidesFields": true,
+  "foldPreservesAutosave": true,
+  "offlineReloadClosed": true,
+  "offlineSavedNoteRestored": true,
+  "noHorizontalOverflow": true,
+  "consoleErrors": 0,
+  "limitations": "Headless phone-sized browser check, not physical iPhone verification."
+}
