@@ -28,3 +28,5 @@ Select Learn or Timed practice, choose study filters and start immediately. Indi
 
 
 Module assessments use four bundled content packs separate from the installed practice question bank. The lazy course reader selects a six-question pack by module ID; ModuleAssessment owns normalized workspace state and serialized writes at module-check:<moduleId>, with a separate root write-tracker channel per module. Authoritative hydration reads current DB progress on remount; exact content identity invalidates obsolete answers. Scores derive from checked choices and stay separate from practice sessions. The reader blocks lesson/module changes while assessment progress is pending/failed. Existing workspace backup/restore and PWA caching apply.
+
+The workpad disclosure summary contains the Personal reasoning workpad heading itself; its inner labelled section retains mounted fields, so native collapse does not interrupt database loading or queued autosaves.

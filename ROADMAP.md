@@ -44,3 +44,5 @@ Select Learn or Timed practice, choose study filters and start immediately. Indi
 Select-and-go fix deployed and live-verified at the existing URL. 405 unit tests and 112 browser checks passed. See docs/verification/2026-10-08-select-and-go-release.md for release identity and preserved legacy history/source metadata.
 
 - Delivered: six original officially sourced questions per learning module, with immediate explanations, saved/offline progress and local module scores/retry; independent source review covered all 168 questions and 672 option explanations.
+
+- Delivered: Personal reasoning workpad title acts as the closed-by-default foldout toggle, with saved notes and autosaves preserved.

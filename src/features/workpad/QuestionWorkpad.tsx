@@ -40,9 +40,9 @@ function WorkpadEditor({repository,session,question,answered=false,onSaveQueued}
  function save(clear=false){if(!loaded)return;persist(clear?normaliseWorkpad(null,optionIds):pad,editVersion.current,clear)}
  const fields:(readonly [keyof Pick<Workpad,'approach'|'requirements'|'assumptions'|'confidenceReasoning'|'reflection'|'nextReading'>,string])[]=[['approach','My approach'],['requirements','Requirements I identified'],['assumptions','My assumptions'],['confidenceReasoning','My confidence reasoning'],...(reflectionAllowed?[['reflection','My post-answer reflection'] as const]:[]),['nextReading','My next-reading intention']];
  return <details className="card question-workpad">
-  <summary style={{minHeight:48,cursor:'pointer',paddingBlock:8}}>My reasoning and notes</summary>
+  <summary><h2 id={heading}>Personal reasoning workpad</h2></summary>
   <section aria-labelledby={heading}>
-  <h2 id={heading}>Personal reasoning workpad</h2><p>Personal reasoning only: these notes are not verified facts, content approval, scores or exam-readiness evidence. Eliminating an option here never changes your answer.</p>
+  <p>Personal reasoning only: these notes are not verified facts, content approval, scores or exam-readiness evidence. Eliminating an option here never changes your answer.</p>
   <p>Saved separately for this session, question and revision {question.revision}. Notes stay on this device and are included in your backup.</p>
   <p role={error?'alert':'status'} aria-live="polite">{message}</p>
   {loadFailed&&<button type="button" onClick={()=>{setLoadFailed(false);setMessage('Loading workpad…');setRetry(value=>value+1)}}>Retry loading workpad</button>}

@@ -41,3 +41,5 @@ Select Learn or Timed practice, choose study filters and start immediately. Indi
 Select-and-go fix deployed and live-verified at the existing URL. 405 unit tests and 112 browser checks passed. See docs/verification/2026-10-08-select-and-go-release.md for release identity and preserved legacy history/source metadata.
 
 Latest learning update: each of all 28 modules now has six original source-backed questions (168 total), explicit answer feedback, saved/offline module progress, score/retry and collapsed answer review. Assessments open in-app from the module check or the reader button, including modules lacking an official check. Author and independent semantic comparisons cover all 672 option explanations; final question hashes bind the shipped assessment content. Progress lives in module-check workspace records, separate from practice proficiency. Reader navigation preserves failed/pending assessment saves.
+
+Personal reasoning workpad now uses its own title as the native collapsible summary, closed by default like notes; fields stay mounted and saved/autosaved data is preserved.

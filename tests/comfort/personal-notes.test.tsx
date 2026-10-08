@@ -23,9 +23,9 @@ it('keeps personal notes collapsed while bookmark stays available and saved text
 it('collapses reasoning by default and retains queued autosaves when folded and reopened',async()=>{
  const {db,repository,q,session}=fixture();await db.workspace.put({id:workpadKey(session.id,q.id,q.revision),version:1,value:{approach:'Stored approach'},updatedAt:new Date().toISOString()});
  const tracked:Promise<void>[]=[];const ui=render(<QuestionWorkpad repository={repository} session={session} question={q} onSaveQueued={write=>{tracked.push(write)}}/>);
- const summary=screen.getByText('My reasoning and notes',{selector:'summary'}),details=summary.closest('details')!;expect(details).not.toHaveAttribute('open');
+ const summary=screen.getByText('Personal reasoning workpad').closest('summary');expect(summary).not.toBeNull();const details=summary!.closest('details')!;expect(details).not.toHaveAttribute('open');
  await waitFor(()=>expect(screen.getByLabelText('My approach')).toHaveValue('Stored approach'));expect(screen.getByLabelText('My approach')).not.toBeVisible();
- fireEvent.click(summary);expect(details).toHaveAttribute('open');fireEvent.change(screen.getByLabelText('My approach'),{target:{value:'New approach'}});expect(tracked).toHaveLength(1);fireEvent.click(summary);await Promise.all(tracked);
- expect((await db.workspace.get(workpadKey(session.id,q.id,q.revision)))?.value.approach).toBe('New approach');fireEvent.click(summary);expect(screen.getByLabelText('My approach')).toHaveValue('New approach');
- ui.unmount();render(<QuestionWorkpad repository={repository} session={session} question={q}/>);expect(screen.getByText('My reasoning and notes',{selector:'summary'}).closest('details')).not.toHaveAttribute('open');await waitFor(()=>expect(screen.getByLabelText('My approach')).toHaveValue('New approach'));
+ fireEvent.click(summary!);expect(details).toHaveAttribute('open');fireEvent.change(screen.getByLabelText('My approach'),{target:{value:'New approach'}});expect(tracked).toHaveLength(1);fireEvent.click(summary!);await Promise.all(tracked);
+ expect((await db.workspace.get(workpadKey(session.id,q.id,q.revision)))?.value.approach).toBe('New approach');fireEvent.click(summary!);expect(screen.getByLabelText('My approach')).toHaveValue('New approach');
+ ui.unmount();render(<QuestionWorkpad repository={repository} session={session} question={q}/>);expect(screen.getByText('Personal reasoning workpad').closest('details')).not.toHaveAttribute('open');await waitFor(()=>expect(screen.getByLabelText('My approach')).toHaveValue('New approach'));
 });
