@@ -38,3 +38,5 @@ Second-100 release completed and live-verified: 394 unit checks, 106 browser che
 ## Updated practice flow — owner instruction, 8 October 2026
 
 Select Learn or Timed practice, choose study filters and start immediately. Individual factual approval is optional and does not block installed questions from ordinary practice, revision queues or personal progress. Remove Draft preview as a setup choice; old preview sessions/history remain readable and keep their original unscored meaning. Old preview links/presets open normal practice. Preserve draft provenance and absent human review records truthfully, retain Microsoft Learn citations, and exclude retired/source-invalidated questions. Move advanced mix/reserve/source diagnostics under More options. This instruction supersedes the earlier approval-before-study design.
+
+Select-and-go fix deployed and live-verified at the existing URL. 405 unit tests and 112 browser checks passed. See docs/verification/2026-10-08-select-and-go-release.md for release identity and preserved legacy history/source metadata.
