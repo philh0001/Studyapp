@@ -4,8 +4,8 @@ import type {Session,SessionAnswer} from '../../sessions/types';
 import type {StudyRepository} from '../../storage/repository';
 import type {SessionService} from '../../sessions/service';
 import {QuestionView} from './Question';
-export interface ExamProps{session:Session;repository:StudyRepository;service:SessionService;onChanged:(session:Session)=>void|Promise<void>;onFinished:()=>Promise<void>;onDraftTracked?:(write:Promise<void>)=>Promise<void>}
-export function Exam({session,repository,service,onChanged,onFinished,onDraftTracked}:ExamProps){
+export interface ExamProps{session:Session;repository:StudyRepository;service:SessionService;onChanged:(session:Session)=>void|Promise<void>;onFinished:()=>Promise<void>;onDraftTracked?:(write:Promise<void>)=>Promise<void>;onBeforeNavigate?:()=>Promise<void>}
+export function Exam({session,repository,service,onChanged,onFinished,onDraftTracked,onBeforeNavigate}:ExamProps){
  const [current,setCurrent]=useState(session),[now,setNow]=useState(Date.now()),[busy,setBusy]=useState(false),[confirming,setConfirming]=useState(false),[error,setError]=useState(''),[finalError,setFinalError]=useState(false);
  const latest=useRef(current),queue=useRef(Promise.resolve()),draftFailure=useRef<Error|null>(null),finalising=useRef(false),retryRequired=useRef(false),finished=useRef(false),finishRef=useRef<()=>Promise<void>>(async()=>{});
  const timed=isTimedSession(current),caseStudy=current.questionSnapshots.some(q=>q.caseStudy);
@@ -19,11 +19,13 @@ export function Exam({session,repository,service,onChanged,onFinished,onDraftTra
  async function move(index:number,flag=false){setBusy(true);setError('');try{
   await Promise.resolve();await queue.current;if(draftFailure.current)throw draftFailure.current;
   if(Date.now()>=deadline){await finishRef.current();return}
+  await onBeforeNavigate?.();
   const next=await repository.db.transaction('rw',repository.db.sessions,async()=>{const saved=await repository.db.sessions.get(session.id);if(!saved||saved.status!=='active'||Date.now()>=Date.parse(saved.deadlineAt??''))throw Error('This session has finished.');if(flag){const id=saved.questionSnapshots[saved.currentIndex].id;saved.flags=saved.flags.includes(id)?saved.flags.filter(value=>value!==id):[...saved.flags,id]}else saved.currentIndex=Math.max(0,Math.min(index,saved.questionSnapshots.length-1));await repository.db.sessions.put(saved);return saved});await publish(next);
  }catch(e){setError(e instanceof Error?e.message:'Could not save session.')}finally{setBusy(false)}}
  async function finish(){if(finalising.current||finished.current)return;finalising.current=true;retryRequired.current=false;setBusy(true);setError('');setFinalError(false);try{
   await Promise.resolve();await queue.current;
   if(draftFailure.current&&(!Number.isFinite(deadline)||Date.now()<deadline))throw draftFailure.current;
+  if(!Number.isFinite(deadline)||Date.now()<deadline)await onBeforeNavigate?.();
   await service.finaliseAssessmentSession(session.id,new Date());await reload();setConfirming(false);await onFinished();finished.current=true;
  }catch(e){setError(e instanceof Error?e.message:'Final submission was not saved. Retry.');setFinalError(true);retryRequired.current=true}finally{finalising.current=false;setBusy(false)}}
  useEffect(()=>{finishRef.current=finish});

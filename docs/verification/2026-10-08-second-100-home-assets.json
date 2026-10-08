@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "kind": "static-home-route-javascript",
+  "measuredAt": "2026-10-08T05:00:51.682Z",
+  "method": "Built HTML entry/modulepreload plus recursively parsed static ES module imports. Excludes dynamic feature routes; service-worker offline installation still downloads all assets. Gzip is a local size estimate, not measured HTTP transfer or timing.",
+  "files": [
+    {
+      "file": "assets/index-DAe89zrD.js",
+      "bytes": 166200,
+      "gzipBytes": 47598
+    },
+    {
+      "file": "assets/question-bank-qA3mPXWy.js",
+      "bytes": 899567,
+      "gzipBytes": 143247
+    },
+    {
+      "file": "assets/rolldown-runtime-hePW80VL.js",
+      "bytes": 716,
+      "gzipBytes": 428
+    },
+    {
+      "file": "assets/trust-RP6GRrhI.js",
+      "bytes": 334,
+      "gzipBytes": 230
+    },
+    {
+      "file": "assets/validators-CI8esFNU.js",
+      "bytes": 332851,
+      "gzipBytes": 21971
+    },
+    {
+      "file": "assets/vendor-BFrqGuZg.js",
+      "bytes": 320039,
+      "gzipBytes": 100038
+    }
+  ],
+  "initialBytes": 1719707,
+  "initialGzipBytes": 313512,
+  "allJavaScriptFiles": 19,
+  "deferredFiles": [
+    "assets/Analytics-BYwMBjXN.js",
+    "assets/EvidenceHealth-BUx1oBCs.js",
+    "assets/EvidenceWorkbench-CSvdYI5z.js",
+    "assets/Explorer-DlKZtHNM.js",
+    "assets/Journey-qj_qWfwQ.js",
+    "assets/LearningCenter-DIbDKqMC.js",
+    "assets/Library-BtvAGNTh.js",
+    "assets/Maintenance-DGGvrXgG.js",
+    "assets/QuestionWorkpad-CWWnjTwK.js",
+    "assets/Reports-BZEFKU4p.js",
+    "assets/SourceDashboard-BaVDDGU0.js",
+    "assets/learning-data-DDLwAr-r.js",
+    "assets/study-data-CHXtLcZB.js"
+  ]
+}

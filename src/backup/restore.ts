@@ -2,6 +2,7 @@ import type {DatabaseSnapshot} from '../sessions/types';
 import {StudyRepository} from '../storage/repository';
 import type {StudyDatabase} from '../storage/database';
 import {backupTables,MAX_BACKUP_BYTES,type BackupV1,type RestoreConfirmation} from './types';
+import {recoveryState} from './inspection';
 import {validateBackup} from './validate';
 export function exportBackup(snapshot:DatabaseSnapshot):Blob{const blob=new Blob([JSON.stringify({...snapshot,schemaVersion:1,exportedAt:new Date().toISOString()})],{type:'application/json'});if(blob.size>MAX_BACKUP_BYTES)throw Error('This history needs a compressed backup. Use the app’s Export backup button.');return blob}
 function database(target:StudyRepository|StudyDatabase):StudyDatabase{return target instanceof StudyRepository?target.db:target}
@@ -15,6 +16,6 @@ export async function restoreBackup(target:StudyRepository|StudyDatabase,input:B
  const backup=structuredClone(validated.backup);backup.contentTrust=[];
  for(const pack of backup.packs)for(const q of pack.questions){if(q.status!=='retired')q.status='draft';q.review=null;for(const reference of q.references)reference.microsoftOwnershipVerified=false}
  const db=database(target);
- await db.transaction('rw',db.tables,async()=>{for(const name of backupTables){const table=db.table(name);await table.clear();if(backup[name]?.length)await table.bulkAdd(backup[name]!)}});
+ await db.transaction('rw',db.tables,async()=>{if(confirmation.expectedRecoveryState!==undefined){const current:Record<string,unknown>={};for(const name of backupTables)current[name]=await db.table(name).toArray();if(recoveryState(current as unknown as DatabaseSnapshot)!==confirmation.expectedRecoveryState)throw Error('Local data changed since the recovery download. Download a new recovery backup before replacement.')}for(const name of backupTables){const table=db.table(name);await table.clear();if(backup[name]?.length)await table.bulkAdd(backup[name]!)}});
 }
 export async function deletePersonalData(target:StudyRepository|StudyDatabase,confirmed:boolean):Promise<void>{if(!confirmed)return;const db=database(target);await db.transaction('rw',db.tables,async()=>{for(const table of db.tables)await table.clear()})}

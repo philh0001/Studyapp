@@ -1,0 +1,5 @@
+import {expect,it} from 'vitest';
+import {WriteTracker} from '../../src/app/write-tracker';
+it('a successful workpad save cannot hide a failed answer save',async()=>{const tracker=new WriteTracker();tracker.track(Promise.reject(Error('disk full')),'answer');tracker.track(Promise.resolve(),'workpad:q1');await tracker.settled();expect(tracker.failed).toBe(true);tracker.track(Promise.resolve(),'answer');await tracker.settled();expect(tracker.failed).toBe(false)});
+it('a submitted answer cannot hide a failed workpad',async()=>{const tracker=new WriteTracker();tracker.track(Promise.reject(Error('disk full')),'workpad:q1');await tracker.settled();tracker.saved('answer');expect(tracker.failed).toBe(true)});
+it('a late failure for superseded complete state cannot undo a newer saved retry',async()=>{const tracker=new WriteTracker();let reject!:(error:Error)=>void;tracker.track(new Promise<void>((_,fail)=>{reject=fail}),'workpad:q1');tracker.track(Promise.resolve(),'workpad:q1');reject(Error('older failure'));await tracker.settled();expect(tracker.failed).toBe(false);expect(tracker.pending.size).toBe(0)});

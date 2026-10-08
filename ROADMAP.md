@@ -30,3 +30,5 @@ Native app stores, payments, public sharing/community, social features, live Azu
 ## Hundred-improvement programme
 
 Implemented across evidence/review, official-source maintenance, library organisation, cited learning/walkthroughs, analytics, self-paced assessments, reserve freshness, comfort and recovery. [Delivery ledger](docs/verification/2026-10-08-next-100-traceability.md) is in `docs/verification`. Human factual approval, nine exact-excerpt gaps, actual phone/VoiceOver checks and CI credential/default-branch activation remain explicit evidence or operational prerequisites.
+
+- Second 100 (101–200): personal goals/weekly tasks/activity; cited reading and manual lab progress; session-specific autosaved workpads; honest filtered history exports; local diagnostics; exact quote integrity; deferred/offline tool routes. Delivery evidence: docs/verification/2026-10-08-second-100-traceability.md. Independent human factual review, physical phone/VoiceOver acceptance and configured authenticated CI deployment remain separate pending work.

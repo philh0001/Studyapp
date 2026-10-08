@@ -1,0 +1,13 @@
+# Second 100 Improvements Design
+
+The next batch adds tools around the existing 315-question draft bank, rather than multiplying unsupported questions. The app stays personal, local-first, phone-first, self-paced and hosted at the same Cloudflare workers.dev address.
+
+Six independent feature areas cover evidence health, personal planning, cited reading and manual practical exercises, reasoning workpads, historical reports and local diagnostics. Feature-owned workspace records are bounded plain JSON, normalised before use and included in existing schema-1 portable backups. No new database migration, accounts or runtime AI is required.
+
+Official quotation integrity is revision-specific and separate from semantic entailment and human approval. Original question wording and immutable earlier snapshots remain unchanged. Active-assessment questions are withheld by stable identity across revisions in new report/evidence/workpad surfaces. Supplied teaching stays visibly draft, including printed sheets. User-authored observations, goals and lab completion are personal assertions.
+
+Workpads autosave complete state serially. Application write tracking separates answer, preference and workpad channels; a success in one cannot hide a failure in another. Route changes and voluntary question moves wait for writes. An expired timed assessment still finalises at its absolute deadline; the workpad remains available for retry. Preference writes are serial and preserve newer edits against older storage observations. Backup replacement requires a fresh full-state recovery snapshot checked atomically inside the replacement transaction; controls are disabled during local data operations.
+
+Heavy tools load on demand through accessible Suspense fallbacks and a recoverable route boundary. Factual audit data and teaching data are separate deferred bundles. Every emitted lazy JS/CSS asset stays in the generated offline inventory and service-worker precache. Initial JavaScript sizes and actual browser Resource Timing observations are reported separately; neither establishes real-device speed or eliminates the complete offline-install download.
+
+The user explicitly authorises implementation and draft deployment without another approval request. Six disjoint agents build features, the coordinator integrates, and an independent fresh reviewer checks the resulting branch. Full local checks and actual Chromium/WebKit automation precede draft upload, followed by live byte/CSP verification and phone-sized smoke checks. Physical-phone/VoiceOver acceptance and independent human factual review remain outstanding until actually performed.

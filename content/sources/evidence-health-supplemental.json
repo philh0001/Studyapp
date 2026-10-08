@@ -1,0 +1,10 @@
+[
+  {
+    "referenceId": "gap-dns-ttl",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+    "checkedAt": "2026-10-08T04:39:32.343Z",
+    "contentHash": "2ed9315fdfc77bc5579d8d37074016a2812b0630b2ea358961ed1383b515bd79",
+    "result": "checked",
+    "evidenceSummary": "The time to live, or TTL, specifies how long clients cache each record before querying it again."
+  }
+]

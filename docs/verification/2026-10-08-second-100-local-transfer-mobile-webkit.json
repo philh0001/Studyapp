@@ -1,0 +1,47 @@
+{
+  "kind": "actual-browser-resource-transfer",
+  "origin": "http://127.0.0.1:4173",
+  "serviceWorkers": "blocked",
+  "browserProject": "mobile-webkit",
+  "checkedAt": "2026-10-08T05:03:17.195Z",
+  "files": [
+    {
+      "file": "/assets/index-DAe89zrD.js",
+      "encodedBodySize": 47640,
+      "decodedBodySize": 166200,
+      "transferSize": 47940
+    },
+    {
+      "file": "/assets/rolldown-runtime-hePW80VL.js",
+      "encodedBodySize": 716,
+      "decodedBodySize": 716,
+      "transferSize": 1016
+    },
+    {
+      "file": "/assets/trust-RP6GRrhI.js",
+      "encodedBodySize": 334,
+      "decodedBodySize": 334,
+      "transferSize": 634
+    },
+    {
+      "file": "/assets/validators-CI8esFNU.js",
+      "encodedBodySize": 21997,
+      "decodedBodySize": 332851,
+      "transferSize": 22297
+    },
+    {
+      "file": "/assets/vendor-BFrqGuZg.js",
+      "encodedBodySize": 100133,
+      "decodedBodySize": 320039,
+      "transferSize": 100433
+    },
+    {
+      "file": "/assets/question-bank-qA3mPXWy.js",
+      "encodedBodySize": 143368,
+      "decodedBodySize": 899567,
+      "transferSize": 143668
+    }
+  ],
+  "encodedJavaScriptBytes": 314188,
+  "note": "Actual cold local-preview browser Resource Timing observations. Excludes service-worker installation; no live speed claim."
+}

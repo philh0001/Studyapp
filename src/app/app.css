@@ -8,3 +8,5 @@
  html[data-thumb-controls="true"] .question-panel>button.primary{position:sticky;bottom:max(12px,env(safe-area-inset-bottom));z-index:5;box-shadow:0 3px 16px #0004;min-height:48px}
  .objective-row small{overflow-wrap:anywhere}
 }
+
+.settings-operation{border:0;padding:0;margin:0;min-width:0;width:100%}.settings-operation .settings>label{display:block;font-size:.8rem;margin:20px 0}

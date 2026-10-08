@@ -5,6 +5,12 @@
 import {readFileSync,readdirSync,existsSync,writeFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {resolve} from 'node:path';
+import {retainEvidenceBindings} from '../src/features/evidence-health/regenerate.mjs';
+const previousAudit=existsSync('content/audits/full-bank-review.json')?JSON.parse(readFileSync('content/audits/full-bank-review.json','utf8')):null;
+const sectionBaseline=JSON.parse(readFileSync('content/blueprints/history/official-sections-baseline.json','utf8'));
+const outputIndex=process.argv.indexOf('--output');
+const outputPath=outputIndex>=0?process.argv[outputIndex+1]:'content/audits/full-bank-review.json';
+if(!outputPath)throw Error('--output requires a path');
 const bank=readdirSync('content/packs').filter(f=>f.endsWith('.json')).sort().flatMap(f=>JSON.parse(readFileSync(`content/packs/${f}`,'utf8')).questions);
 const ledger=readdirSync('content/sources').filter(f=>f.endsWith('.json')).flatMap(f=>{const data=JSON.parse(readFileSync(`content/sources/${f}`,'utf8'));return Array.isArray(data)?data:data.entries??[]});
 const historicalRevisions=existsSync('content/audits/full-bank-review.json')?(JSON.parse(readFileSync('content/audits/full-bank-review.json','utf8')).historicalRevisions??[]):[];
@@ -63,5 +69,6 @@ const questions=bank.map(q=>{
  return {questionId:q.id,revision:q.revision,domainId:q.domainId,objectiveId:q.objectiveId,type:q.type,disposition:'needs-review',method:'AI-assisted; no human factual approval',proposedCorrections,semanticReview,optionAudits,assumptionAudit:{explicitScenarioQualifiers:assumptions,reviewRequired:'Check configuration, scope, licensing/SKU, regional availability and service limitations against the official sections.'},ambiguityAudit:{correctOptionIds:q.correctOptionIds,requiredSelections:q.requiredSelections,structuralAnswerValid:!invalidAnswer,alternativeAnswerCheck:'Open: check every distractor and competing answer under all stated conditions.'},sequenceAudit,matchingAudit,caseAudit,flags,uncertainties:['Human answer and explanation review outstanding.','Source excerpts and AI semantic judgments remain separate from human factual approval.',...(semanticReview?.uncertainties??[]),...(semanticReview?.optionConcerns??[]),...flags]};
 });
 const report={schemaVersion:1,auditedAt:new Date().toISOString(),auditMethod:'AI-assisted semantic review of every current question against retained official Microsoft Learn text, with separately labelled source-excerpt indexing and structural checks. Per-question conclusions, every option, assumptions, summary, alternative order/mapping and linked-case facts are recorded. Human factual approval remains outstanding.',humanReviewCompleted:false,sourceDocuments:sources.length,summary:{questions:bank.length,aiSemanticReviewed:questions.filter(q=>q.semanticReview).length,semanticConcerns:questions.filter(q=>q.semanticReview&&(q.semanticReview.uncertainties.length||q.semanticReview.optionConcerns.length)).length,options:questions.reduce((n,q)=>n+q.optionAudits.length,0),candidateEvidenceOptions:questions.reduce((n,q)=>n+q.optionAudits.filter(o=>o.evidence.length).length,0),evidenceGaps:questions.reduce((n,q)=>n+q.optionAudits.filter(o=>!o.evidence.length).length,0),ordering:questions.filter(q=>q.sequenceAudit).length,matching:questions.filter(q=>q.matchingAudit).length,caseQuestions:questions.filter(q=>q.caseAudit).length,humanApproved:0},historicalRevisions,questions};
-writeFileSync('content/audits/full-bank-review.json',JSON.stringify(report,null,2)+'\n');
+retainEvidenceBindings(report,previousAudit,bank,sectionBaseline);
+writeFileSync(outputPath,JSON.stringify(report,null,2)+'\n');
 console.log(JSON.stringify(report.summary));
