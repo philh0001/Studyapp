@@ -4,7 +4,7 @@ export const deviceChecks=[
  {id:'lock',title:'Lock and resume',text:'Lock the phone during a session; unlock and check answer, reading position and any original deadline.'},
  {id:'storage',title:'Storage persistence',text:'Close and reopen the app and check saved answers, notes and preferences.'},
  {id:'backup',title:'Backup and recovery',text:'Export to device files, inspect the file, download recovery, restore, and check personal history.'},
- {id:'cross-browser',title:'Cross-browser restore',text:'Transfer a backup to another browser and restore. Imported content must need fresh review.'},
+ {id:'cross-browser',title:'Cross-browser restore',text:'Transfer a backup to another browser and restore. Imported content must not invent human approval.'},
  {id:'accessibility',title:'Screen reader',text:'Use the actual phone screen reader (VoiceOver on iOS) for an entire session, explanations and backup controls.'},
  {id:'text',title:'Large text',text:'Increase app and system text size and verify content remains readable without clipping.'},
  {id:'layout',title:'Touch and layout',text:'Check portrait/landscape, enlarged controls, focus and ordering/matching without dragging.'},

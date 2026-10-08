@@ -5,3 +5,8 @@ export function classifyQuestion(q:Question,t:ContentTrust|null):'eligible'|'dra
  return 'eligible';
 }
 export function isSourceCheckDue(checkedAt:string,now:Date):boolean{return !Number.isFinite(Date.parse(checkedAt))||now.getTime()-Date.parse(checkedAt)>=30*86400000}
+
+/** Practice availability is independent of factual-review status. */
+export function isStudyAvailable(q:Question,t:ContentTrust|null):boolean{
+ const state=classifyQuestion(q,t);return state!=='retired'&&state!=='invalidated';
+}

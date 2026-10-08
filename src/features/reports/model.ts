@@ -1,5 +1,5 @@
 import type {Question} from '../../content/types';
-import {classifyQuestion} from '../../content/trust';
+import {classifyQuestion,isStudyAvailable} from '../../content/trust';
 import type {DatabaseSnapshot,SessionMode,SessionAnswer} from '../../sessions/types';
 import {canSubmit} from '../../study/scoring';
 import {isAssessmentSession} from '../../sessions/types';
@@ -20,7 +20,7 @@ export function deriveHistory(snapshot:DatabaseSnapshot, input:Partial<HistoryFi
  if(hidden.has(q.id)||(q.assessmentReserved&&!complete&&!snapshot.releasedHoldouts.some(r=>r.questionId===q.id))){withheld++;continue}
  if(complete&&answer){formats[q.type]++;if(Number.isFinite(answer.responseMs)&&answer.responseMs>0)responseMs+=answer.responseMs}
  const installed=current.filter(x=>x.id===q.id).sort((a,b)=>b.revision-a.revision)[0];const stale=!installed||installed.revision!==q.revision;const trust=snapshot.contentTrust.find(t=>t.questionId===q.id&&t.revision===q.revision)??null;
- details.push({question:q,answer,currentEligibleAttempt:complete&&!!attempt&&s.mode!=='draft-preview'&&attempt.mode!=='draft-preview'&&!stale&&!!installed&&classifyQuestion(installed,trust)==='eligible',correct:attempt?.correct??null,stale,eligibility:stale&&classifyQuestion(q,trust)==='eligible'?'invalidated':classifyQuestion(q,trust)});
+ details.push({question:q,answer,currentEligibleAttempt:complete&&!!attempt&&s.mode!=='draft-preview'&&attempt.mode!=='draft-preview'&&!stale&&!!installed&&isStudyAvailable(installed,trust),correct:attempt?.correct??null,stale,eligibility:stale&&classifyQuestion(q,trust)==='eligible'?'invalidated':classifyQuestion(q,trust)});
  }
  return [{id:s.id,mode:s.mode,status:s.status,startedAt:s.startedAt,submittedAt:s.submittedAt,answered,total:questions.length,withheld,responseMs,formats,details}];
  }).sort((a,b)=>b.startedAt.localeCompare(a.startedAt));

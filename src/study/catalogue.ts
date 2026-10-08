@@ -1,6 +1,6 @@
 import type {Question} from '../content/types';
 import {isAssessmentSession,type DatabaseSnapshot,type SessionMode} from '../sessions/types';
-import {classifyQuestion} from '../content/trust';
+import {classifyQuestion,isStudyAvailable} from '../content/trust';
 import {allocations,selectQuestions,type SelectionInput,type SelectionResult} from './selection';
 import {calculateProgress} from './progress';
 import {selectBalancedAssessment} from './assessment';
@@ -58,7 +58,7 @@ export function normalisePresets(value:unknown):SavedPresets{
   if(typeof p.useReserved!=='boolean'||typeof p.unseenOnly!=='boolean'||!Number.isInteger(p.count)||Number(p.count)<1||Number(p.count)>100)continue;
   if([p.weakPercent,p.duePercent].some(v=>typeof v!=='number'||!Number.isFinite(v)||v<0||v>100)||Number(p.weakPercent)+Number(p.duePercent)>100)continue;
   if(p.unseenRatio!==undefined&&(typeof p.unseenRatio!=='number'||!Number.isFinite(p.unseenRatio)||p.unseenRatio<0||p.unseenRatio>1))continue;
-  const preset:PracticePreset={id:(p.id as string).slice(0,160),name:(p.name as string).trim().slice(0,80),mode:p.mode as SessionMode,count:p.count as number,domain:(p.domain as string).slice(0,160),objective:(p.objective as string).slice(0,160),subskill:(p.subskill as string).slice(0,160),difficulty:p.difficulty as PracticePreset['difficulty'],useReserved:p.useReserved,unseenOnly:p.unseenOnly,weakPercent:p.weakPercent as number,duePercent:p.duePercent as number,unseenRatio:typeof p.unseenRatio==='number'?p.unseenRatio:4/7};
+  const preset:PracticePreset={id:(p.id as string).slice(0,160),name:(p.name as string).trim().slice(0,80),mode:p.mode==='draft-preview'?'learn':p.mode as SessionMode,count:p.count as number,domain:(p.domain as string).slice(0,160),objective:(p.objective as string).slice(0,160),subskill:(p.subskill as string).slice(0,160),difficulty:p.difficulty as PracticePreset['difficulty'],useReserved:p.useReserved,unseenOnly:p.unseenOnly,weakPercent:p.weakPercent as number,duePercent:p.duePercent as number,unseenRatio:typeof p.unseenRatio==='number'?p.unseenRatio:4/7};
   if(seen.has(preset.id))continue;seen.add(preset.id);presets.push(preset);
  }
  return {presets};
@@ -78,7 +78,7 @@ export function searchCatalogue(snapshot:DatabaseSnapshot,filters:CatalogueFilte
   if(filters.folder&&!org.questions[q.id]?.folders.includes(filters.folder)||filters.tag&&!org.questions[q.id]?.tags.includes(filters.tag))return false;
   const current=snapshot.attempts.filter(a=>a.questionId===q.id&&a.questionRevision===q.revision);
   if(filters.unanswered&&current.length)return false;
-  if(filters.incorrect){const scored=current.filter(a=>a.mode!=='draft-preview').sort((a,b)=>Date.parse(b.submittedAt)-Date.parse(a.submittedAt)),trust=snapshot.contentTrust.find(t=>t.questionId===q.id&&t.revision===q.revision)??null;if(!scored.length||scored[0].correct||classifyQuestion(q,trust)!=='eligible')return false;}
+  if(filters.incorrect){const scored=current.filter(a=>a.mode!=='draft-preview').sort((a,b)=>Date.parse(b.submittedAt)-Date.parse(a.submittedAt)),trust=snapshot.contentTrust.find(t=>t.questionId===q.id&&t.revision===q.revision)??null;if(!scored.length||scored[0].correct||!isStudyAvailable(q,trust))return false;}
   const protection=libraryQuestionProtection(snapshot,q);
   if(protection.reserved||protection.assessmentSessionId)return terms.every(term=>[q.id,q.domainId,q.objectiveId,q.type,q.difficulty,...questionSubskills(q)].join(' ').toLocaleLowerCase().includes(term));
   const text=[q.id,q.scenario,q.prompt,q.summaryExplanation,...q.options.flatMap(o=>[o.text,o.explanation]),...q.tags,...(org.questions[q.id]?.tags??[]),...snapshot.notes.filter(n=>n.questionId===q.id).map(n=>n.text),...(q.exhibits??[]).flatMap(e=>[e.title,e.text??'',...(e.columns??[]),...(e.rows??[]).flat()]),q.caseStudy?.overview??''].join(' ').toLocaleLowerCase();
@@ -103,20 +103,20 @@ export interface PracticePreflight extends SelectionResult {selectedCount:number
 export function explainSelection(input:PracticeSelectionInput):PracticePreflight{
  const excluded={retired:0,invalidated:0,unapproved:0,topic:0,difficulty:0,reserved:0,seen:0,linkedCases:0},all=currentQuestions(input.questions),available:Question[]=[];
  for(const q of all){if(input.excludeLinkedCases&&q.caseStudy){excluded.linkedCases++;continue;}const state=classifyQuestion(q,input.trust.find(t=>t.questionId===q.id&&t.revision===q.revision)??null);
-  if(state==='retired'){excluded.retired++;continue;}if(state==='invalidated'){excluded.invalidated++;continue;}if(input.mode!=='draft-preview'&&state!=='eligible'){excluded.unapproved++;continue;}
+  if(state==='retired'){excluded.retired++;continue;}if(state==='invalidated'){excluded.invalidated++;continue;}
   if(input.domainId&&q.domainId!==input.domainId||input.objectiveId&&q.objectiveId!==input.objectiveId||input.subskillId&&!questionSubskills(q).includes(input.subskillId)){excluded.topic++;continue;}
   if(input.difficulty&&q.difficulty!==input.difficulty){excluded.difficulty++;continue;}if(q.assessmentReserved&&!input.useReserved&&!input.releasedIds?.includes(q.id)){excluded.reserved++;continue;}if(input.unseenOnly&&input.attemptedIds.includes(q.id)){excluded.seen++;continue;}available.push(q);
  }
  const result=selectPracticeQuestions(input),counts=(questions:Question[])=>({single:questions.filter(q=>q.type==='single').length,multiple:questions.filter(q=>q.type==='multiple').length,ordering:questions.filter(q=>q.type==='ordering').length,matching:questions.filter(q=>q.type==='matching').length}),shortages=result.shortages.filter(s=>!s.startsWith('Only ')&&!s.startsWith('Limited '));
  if(input.mode==='timed'||input.timed){const domains=blueprint.domains.filter(d=>!input.domainId||d.id===input.domainId),totalWeight=domains.reduce((n,d)=>n+(d.weight[0]+d.weight[1])/2,0),quotas=allocations(input.requestedCount,domains.map(d=>(d.weight[0]+d.weight[1])/2/totalWeight));domains.forEach((domain,n)=>{const availableCount=available.filter(q=>q.domainId===domain.id).length;if(availableCount<quotas[n])shortages.push(`${domain.id}: planned ${quotas[n]}, available ${availableCount}; short by ${quotas[n]-availableCount}.`);});}
  if(available.length<input.requestedCount)shortages.push(`Requested ${input.requestedCount} questions; ${available.length} available with these settings (short by ${input.requestedCount-available.length}).`);
- const explanation=[`Only ${input.mode==='draft-preview'?'non-retired, non-invalidated questions; drafts are unscored':'current locally approved question revisions'} can be selected.`,`${available.length} unique questions match all settings.`,input.unseenOnly?'Unseen means no saved attempt at this revision, including draft preview. Seen questions never fill shortages.':'Repeat questions may fill the requested session.'];
+ const explanation=[`Only current, non-retired, non-quarantined questions can be selected. Content review is optional.`,`${available.length} unique questions match all settings.`,input.unseenOnly?'Unseen means no saved attempt at this revision, including draft preview. Seen questions never fill shortages.':'Repeat questions may fill the requested session.'];
  if(input.mode==='timed'||input.timed)explanation.push('Assessment practice uses requested blueprint domain quotas and rotates objectives within each domain; weak/due percentages apply to learning sessions.');else explanation.push(`Requested mix: ${result.allocations[0]} weak, ${result.allocations[1]} due, ${result.allocations[2]} unseen, ${result.allocations[3]} reinforcement. Overlapping or short pools are filled from other matching questions.`);
  if(input.excludeLinkedCases)explanation.push('Linked case members are excluded from standard practice; choose a whole case separately.');
  explanation.push('A reserved question is available only after explicit opt-in or an earlier release.');
  return {...result,shortages,availableCount:available.length,selectedCount:result.questions.length,formatCounts:counts(available),selectedFormatCounts:counts(result.questions),excluded,explanation};
 }
 export function preflightPractice(snapshot:DatabaseSnapshot,preset:PracticePreset,now=new Date(),options:{timed?:boolean}={}):PracticePreflight{
- const questions=catalogueQuestions(snapshot),eligible=questions.filter(q=>classifyQuestion(q,snapshot.contentTrust.find(t=>t.questionId===q.id&&t.revision===q.revision)??null)==='eligible'),progress=calculateProgress(snapshot.attempts,eligible,now),last=[...snapshot.sessions].sort((a,b)=>Date.parse(b.startedAt)-Date.parse(a.startedAt))[0];
+ const questions=catalogueQuestions(snapshot),eligible=questions.filter(q=>isStudyAvailable(q,snapshot.contentTrust.find(t=>t.questionId===q.id&&t.revision===q.revision)??null)),progress=calculateProgress(snapshot.attempts,eligible,now),last=[...snapshot.sessions].sort((a,b)=>Date.parse(b.startedAt)-Date.parse(a.startedAt))[0];
  return explainSelection({questions,trust:snapshot.contentTrust,reviewItems:snapshot.reviews,objectiveStats:Object.entries(progress.objectives).map(([objectiveId,s])=>({objectiveId,distinctAttempts:s.distinctAttempts,accuracy:s.accuracy??0,confidentWrongCount:s.confidentWrongCount})),previousSessionIds:last?.questionSnapshots.map(q=>q.id)??[],attemptedIds:[...new Set(snapshot.attempts.filter(a=>questions.some(q=>q.id===a.questionId&&q.revision===a.questionRevision)).map(a=>a.questionId))],requestedCount:preset.count,mode:preset.mode,useReserved:preset.useReserved,domainId:preset.domain||undefined,objectiveId:preset.objective||undefined,subskillId:preset.subskill||undefined,difficulty:preset.difficulty||undefined,unseenOnly:preset.unseenOnly,weakPercent:preset.weakPercent,duePercent:preset.duePercent,unseenRatio:preset.unseenRatio,timed:options.timed,excludeLinkedCases:true,releasedIds:snapshot.releasedHoldouts.map(q=>q.questionId),now,random:()=>.5});
 }

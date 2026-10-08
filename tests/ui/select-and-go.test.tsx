@@ -1,0 +1,6 @@
+import {expect,it,vi} from 'vitest';
+import {render,screen,fireEvent,waitFor} from '@testing-library/react';
+import {Practice} from '../../src/features/practice/Practice';
+import {blueprint} from '../fixtures';
+it('offers Learn and Timed only, with optional controls tucked away',async()=>{const start=vi.fn().mockResolvedValue(undefined);render(<Practice blueprint={blueprint} available={315} draftAvailable={315} onStart={start}/>);expect(screen.queryByRole('button',{name:/Draft preview/})).not.toBeInTheDocument();expect(screen.getByText('More options')).toBeInTheDocument();fireEvent.click(screen.getByRole('button',{name:'Start session →'}));await waitFor(()=>expect(start).toHaveBeenCalledWith('learn',10,'',30,false,expect.objectContaining({timed:false})))});
+it('old preview presets open as normal Learn instead of recreating a third mode',async()=>{const start=vi.fn().mockResolvedValue(undefined);render(<Practice blueprint={blueprint} available={315} draftAvailable={315} initialPreset={{id:'old',name:'Old',mode:'draft-preview',count:10,domain:'',objective:'',subskill:'',difficulty:'',useReserved:false,unseenOnly:false,weakPercent:40,duePercent:25}} onStart={start}/>);fireEvent.click(screen.getByRole('button',{name:'Start session →'}));await waitFor(()=>expect(start).toHaveBeenCalledWith('learn',10,'',30,false,expect.anything()))});

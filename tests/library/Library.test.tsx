@@ -30,16 +30,16 @@ it('searches personal notes and safely saves folders, tags and notes in local po
 
  db.close();await db.delete();
 });
-it('saves a reusable unseen-only draft configuration with reserve consent and preflight counts',async()=>{
+it('saves a reusable unseen-only learning configuration with reserve consent and preflight counts',async()=>{
  const db=new StudyDatabase('library-ui-'+crypto.randomUUID()),repository=new StudyRepository(db);await repository.installPack(pack([question()]),[]);
  render(<Library repository={repository} snapshot={await repository.getSnapshot()}/>);
  fireEvent.change(screen.getByLabelText('Configuration name'),{target:{value:'Fresh drafts'}});
- fireEvent.change(screen.getByLabelText('Practice mode'),{target:{value:'draft-preview'}});
+ fireEvent.change(screen.getByLabelText('Practice mode'),{target:{value:'learn'}});
  fireEvent.click(screen.getByLabelText('Unseen questions only'));
  expect(screen.getByText(/Requested 10 questions; 1 available/)).toBeInTheDocument();
  fireEvent.click(screen.getByRole('button',{name:'Save practice configuration'}));
  await waitFor(()=>expect(screen.getByRole('link',{name:'Use Fresh drafts'})).toHaveAttribute('href',expect.stringMatching(/^#\/practice\?preset=/)));
- const presets=normalisePresets(await readWorkspace(repository,'library:presets',{}));expect(presets.presets[0]).toMatchObject({name:'Fresh drafts',unseenOnly:true,mode:'draft-preview',useReserved:false});
+ const presets=normalisePresets(await readWorkspace(repository,'library:presets',{}));expect(presets.presets[0]).toMatchObject({name:'Fresh drafts',unseenOnly:true,mode:'learn',useReserved:false});
  fireEvent.click(screen.getByRole('button',{name:'Delete Fresh drafts'}));await waitFor(()=>expect(screen.queryByRole('link',{name:'Use Fresh drafts'})).not.toBeInTheDocument());
  expect(normalisePresets(await readWorkspace(repository,'library:presets',{})).presets).toEqual([]);db.close();await db.delete();
 });

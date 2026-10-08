@@ -1,9 +1,9 @@
 import blueprint from '../../content/blueprints/az104-2026-04-17.json';
 import type {ContentTrust,Question} from '../content/types';
-import {classifyQuestion} from '../content/trust';
+import {isStudyAvailable} from '../content/trust';
 import {allocations,type SelectionInput,type SelectionResult} from './selection';
 interface CaseOptions {trust:ContentTrust[];draft:boolean;useReserved:boolean;releasedIds?:string[]}
-function allowed(q:Question,options:CaseOptions):boolean{return (options.draft?q.status!=='retired'&&classifyQuestion(q,options.trust.find(t=>t.questionId===q.id&&t.revision===q.revision)??null)!=='invalidated':classifyQuestion(q,options.trust.find(t=>t.questionId===q.id&&t.revision===q.revision)??null)==='eligible')&&(!q.assessmentReserved||options.useReserved||!!options.releasedIds?.includes(q.id))}
+function allowed(q:Question,options:CaseOptions):boolean{return isStudyAvailable(q,options.trust.find(t=>t.questionId===q.id&&t.revision===q.revision)??null)&&(!q.assessmentReserved||options.useReserved||!!options.releasedIds?.includes(q.id))}
 export function selectCaseStudy(questions:Question[],groupId:string,options:CaseOptions):Question[]{const group=questions.filter(q=>q.caseStudy?.id===groupId);return group.length&&group.every(q=>allowed(q,options))?group:[]}
 export function selectBalancedAssessment(input:SelectionInput):SelectionResult{
  const candidates=[...new Map(input.questions.filter(q=>allowed(q,{trust:input.trust,draft:input.mode==='draft-preview',useReserved:input.useReserved,releasedIds:input.releasedIds})&&(!input.domainId||q.domainId===input.domainId)&&(!input.objectiveId||q.objectiveId===input.objectiveId)).map(q=>[q.id,q])).values()];

@@ -4,7 +4,7 @@ function input(count=12){const questions=Array.from({length:count},(_,i)=>questi
 it('no_duplicates_across_pools and stable selection',()=>{const result=selectQuestions(input());expect(result.questions).toHaveLength(10);expect(new Set(result.questions.map(q=>q.id)).size).toBe(10);expect(selectQuestions(input())).toEqual(result)});
 it('domain_filter_before_sampling',()=>expect(selectQuestions({...input(),domainId:'storage'}).availableCount).toBe(0));
 it('three_available_never_becomes_ten',()=>expect(selectQuestions({...input(3),useReserved:true}).questions).toHaveLength(3));
-it('draft_and_invalidated_are_excluded',()=>{const i=input();i.questions[0].status='draft';i.trust[1].invalidatedAt=now.toISOString() as any;expect(selectQuestions(i).questions.some(q=>['q0','q1'].includes(q.id))).toBe(false)});
+it('drafts_are_available_but_invalidated_are_excluded',()=>{const i=input();i.questions[0].status='draft';i.trust[1].invalidatedAt=now.toISOString() as any;const ids=selectQuestions(i).questions.map(q=>q.id);expect(ids).toContain('q0');expect(ids).not.toContain('q1')});
 it('holdout_needs_explicit_consent',()=>{expect(selectQuestions(input(3)).questions).toHaveLength(2);expect(selectQuestions({...input(3),useReserved:true}).releasesReservedIds).toEqual(['q2'])});
 it('previous_session_avoided_when_possible',()=>expect(selectQuestions({...input(20),previousSessionIds:['q0']}).questions.map(q=>q.id)).not.toContain('q0'));
 it('timed_weighted_sampling_shortfall_is_reported',()=>expect(selectQuestions({...input(),mode:'timed'}).shortages.length).toBeGreaterThan(0));

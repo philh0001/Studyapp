@@ -3,7 +3,7 @@ import {expect,test} from '@playwright/test';
 
 for(const width of [320,390,430])test(`no horizontal overflow at ${width}px and 1.4 text scale`,async({page})=>{
  await page.setViewportSize({width,height:844});await page.goto('/');
- await expect(page.getByRole('button',{name:'Explore draft questions →'})).toBeVisible();
+ await expect(page.getByRole('button',{name:'Start Quick 10 →'})).toBeVisible();
  await page.evaluate(()=>document.documentElement.style.setProperty('--text-scale','1.4'));
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
  await page.getByRole('link',{name:'Practice',exact:true}).click();
@@ -12,10 +12,10 @@ for(const width of [320,390,430])test(`no horizontal overflow at ${width}px and 
 });
 
 test('keyboard focus reaches skip link and answer inputs with visible focus',async({page})=>{
- await page.goto('/');await expect(page.getByRole('button',{name:'Explore draft questions →'})).toBeVisible();
+ await page.goto('/');await expect(page.getByRole('button',{name:'Start Quick 10 →'})).toBeVisible();
  await page.keyboard.press('Tab');await expect(page.getByRole('link',{name:'Skip to content'})).toBeFocused();
  await page.keyboard.press('Enter');
- const start=page.getByRole('button',{name:'Explore draft questions →'});
+ const start=page.getByRole('button',{name:'Start Quick 10 →'});
  for(let step=0;step<30&&!(await start.evaluate(node=>node===document.activeElement));step++)await page.keyboard.press('Tab');
  await expect(start).toBeFocused();await page.keyboard.press('Enter');
  const choices=page.getByRole('group',{name:'Answer choices'});await expect(choices).toBeVisible();
@@ -32,7 +32,7 @@ test('keyboard focus reaches skip link and answer inputs with visible focus',asy
 
 test('reduced-motion preference removes automatic animated movement',async({page})=>{
  await page.emulateMedia({reducedMotion:'reduce'});await page.goto('/');
- await expect(page.getByRole('button',{name:'Explore draft questions →'})).toBeVisible();
+ await expect(page.getByRole('button',{name:'Start Quick 10 →'})).toBeVisible();
  expect(await page.evaluate(()=>matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);
  const animated=await page.evaluate(()=>Array.from(document.querySelectorAll('*')).filter(node=>{const style=getComputedStyle(node);return style.animationName!=='none'&&style.animationDuration.split(',').some(duration=>parseFloat(duration)>0.001)}).length);
  expect(animated).toBe(0);
@@ -49,7 +49,7 @@ function contrastRatio(foreground:string,background:string):number {
 
 test('system dark and explicit dark keep hero, brand, source copy and primary text readable',async({page})=>{
  await page.emulateMedia({colorScheme:'dark'});await page.goto('/');
- await expect(page.getByRole('button',{name:'Explore draft questions →'})).toBeVisible();
+ await expect(page.getByRole('button',{name:'Start Quick 10 →'})).toBeVisible();
  for(const theme of ['system','dark','light']){
   await page.evaluate(value=>{document.documentElement.dataset.theme=value},theme);
   for(const selector of ['.hero-card h2','.hero-card p','.hero-footer','.brand-icon','.brand small','.source-card p']){

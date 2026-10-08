@@ -4,7 +4,7 @@ A personal, phone-first revision website for Microsoft AZ-104. Study at your own
 
 ## Current status
 
-The first application build is implemented on `feature/az104-revision`: phone-first learning, timed practice, spaced review, progress, notes/bookmarks, validated backups and offline installation. The public draft-preview website is live at [az104-revision-web.showtime-workers.workers.dev](https://az104-revision-web.showtime-workers.workers.dev). The expanded bank has 315 original drafts covering all 82 published subskills. It includes advanced scenarios, ordering/matching, exhibits, linked cases and draft timed practice. All content remains draft until explicit human source review.
+The first application build is implemented on `feature/az104-revision`: phone-first learning, timed practice, spaced review, progress, notes/bookmarks, validated backups and offline installation. The public draft-preview website is live at [az104-revision-web.showtime-workers.workers.dev](https://az104-revision-web.showtime-workers.workers.dev). The expanded bank has 315 original drafts covering all 82 published subskills. It includes advanced scenarios, ordering/matching, exhibits, linked cases and timed practice. Question provenance remains draft until explicit human source review; this status does not block practice.
 
 The next100 programme adds a searchable library, personal folders/tags and presets, cited objective summaries and practical exercises, separately scheduled reviewed flashcards, detailed learning insights, self-paced cases, evidence/change dashboards, read-aloud controls, safer backups and complete offline-asset checks. See the [100-item delivery ledger](docs/verification/2026-10-08-next-100-traceability.md) and [source pipeline](docs/SOURCE_PIPELINE.md). Teaching material remains clearly labelled AI-assisted draft.
 
@@ -21,7 +21,7 @@ The next100 programme adds a searchable library, personal folders/tags and prese
 
 ## Content accuracy
 
-All supplied question answers, explanations, and revision facts must be grounded in official Microsoft documentation, primarily [Microsoft Learn](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104). Every option explanation has supporting source references and check dates. Questions are original practice scenarios, not copied Microsoft assessments or actual exam questions. AI-assisted content requires explicit human review before normal study.
+All supplied question answers, explanations, and revision facts must be grounded in official Microsoft documentation, primarily [Microsoft Learn](https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104). Every option explanation has supporting source references and check dates. Questions are original practice scenarios, not copied Microsoft assessments or actual exam questions. Human factual review remains optional and is recorded separately from practice availability.
 
 ## Run locally
 
@@ -36,9 +36,9 @@ npm run dev
 
 For verification: `npm run check`. For browser checks: install the Playwright Chromium and WebKit browsers with their system dependencies, then `npm run test:e2e`. `npm run build` produces `dist/`; `npx vite preview --host 0.0.0.0` previews that installable build.
 
-Start with **Explore draft questions** for unscored practice. In **Review → Content review**, check each cited Microsoft Learn source and approve individual revisions to enable scored learning and timed practice. A source check is separate from technical approval. There is no bulk approval. Set an exam date only when you want one.
+Choose **Learn** or **Timed practice**, set your study filters and press **Start session**. Questions are immediately available and your answers count towards personal practice progress without an approval step. **More options** contains optional reserve/mix/source diagnostics. Microsoft Learn citations remain in feedback. Content review is an optional tool; it does not block study or imply human approval. Set an exam date only when you want one.
 
-Settings contains local JSON/gzip export/restore and explicit data deletion. Restored content requires fresh local review; historical attempts are preserved. Source documents open online, while the installed app and question bank work offline. Updates wait until active sessions are finished.
+Settings contains local JSON/gzip export/restore and explicit data deletion. Restored content retains truthful review metadata; historical attempts are preserved and normal practice does not require local approval. Source documents open online, while the installed app and question bank work offline. Updates wait until active sessions are finished.
 
 See [live deployment verification](docs/verification/2026-10-08-cloudflare-release.md), [hosting preparation](production/web/README.md) and [release verification](docs/verification/2026-10-08-release-preparation.md). The owner authorised the draft publication and this improvement deployment. Paid services and unrelated resources remain outside the approved scope. Product work uses a feature branch and pull request.
 

@@ -6,7 +6,7 @@ test('recovery captures edits made after inspection and stale copies cannot repl
 });
 
 test('exports personal settings and restores them only after downloading a recovery backup',async({page})=>{
- await page.goto('/');await expect(page.getByRole('button',{name:'Explore draft questions →'})).toBeVisible();
+ await page.goto('/');await expect(page.getByRole('button',{name:'Start Quick 10 →'})).toBeVisible();
  await page.getByRole('link',{name:'Settings',exact:true}).click();
  const examDate=page.getByLabel('Exam date'),appearance=page.getByLabel('Appearance');
  await examDate.fill('2027-03-19');await appearance.selectOption('dark');

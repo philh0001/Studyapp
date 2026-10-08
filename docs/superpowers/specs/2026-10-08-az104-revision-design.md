@@ -179,3 +179,7 @@ Write and review this design before implementation planning. Detailed implementa
 Retain PROJECT_CONTEXT.md, ROADMAP.md, architecture notes, and verification records. The user subsequently selected the separate remote repository `philh0001/Studyapp`; initialise its empty default branch with planning documentation and do not push product feature work directly to main. Hosting identity and final URL are selected at release preparation rather than invented here.
 
 Source checks completed: uploaded ZIP plan; Showtime README, AGENTS.md, production README, and frontend package metadata; Cloudflare account/Worker inventory; Microsoft AZ-104 study guide. No product code or hosted project has been created at the design stage.
+
+## Updated practice flow — owner instruction, 8 October 2026
+
+Select Learn or Timed practice, choose study filters and start immediately. Individual factual approval is optional and does not block installed questions from ordinary practice, revision queues or personal progress. Remove Draft preview as a setup choice; old preview sessions/history remain readable and keep their original unscored meaning. Old preview links/presets open normal practice. Preserve draft provenance and absent human review records truthfully, retain Microsoft Learn citations, and exclude retired/source-invalidated questions. Move advanced mix/reserve/source diagnostics under More options. This instruction supersedes the earlier approval-before-study design.

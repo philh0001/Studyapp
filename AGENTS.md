@@ -7,7 +7,7 @@ Read README.md, PROJECT_CONTEXT.md, ROADMAP.md, the product design, and the impl
 - Phone-first website for personal AZ-104 revision; no preset exam date.
 - All supplied learning facts and question explanations require official Microsoft evidence, primarily Microsoft Learn. Record per-option references and source-check dates.
 - Author original practice scenarios. Do not copy Microsoft assessments, paid banks, or exam dumps, or call practice questions actual Microsoft exam questions.
-- Keep AI-assisted questions draft until explicit human review. URL validation alone does not prove technical correctness.
+- Keep AI-assisted question review metadata truthful. Per the owner’s updated instruction, human approval is optional and must not block Learn, Timed practice, revision queues or progress. Retired and source-invalidated questions remain unavailable; URL validation alone does not prove technical correctness.
 - Keep question packs separate from application code. Preserve question snapshots and attempt history across content corrections.
 - No accounts/backend/runtime AI in the first release. Maintain local-first progress, offline use, and backup/restore.
 - Use large phone controls, readable layouts, semantic inputs, and manual advancement by default.

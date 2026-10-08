@@ -1,4 +1,4 @@
-import type {StudyRepository} from '../storage/repository';import type {Session,SessionAnswer,StartSessionInput,Attempt,SessionResult} from './types';import {AppError,isTimedSession,isAssessmentSession} from './types';import {scoreAnswer,canSubmit} from '../study/scoring';import {scheduleReview,type Confidence} from '../study/review';import {classifyQuestion} from '../content/trust';
+import type {StudyRepository} from '../storage/repository';import type {Session,SessionAnswer,StartSessionInput,Attempt,SessionResult} from './types';import {AppError,isTimedSession,isAssessmentSession} from './types';import {scoreAnswer,canSubmit} from '../study/scoring';import {scheduleReview,type Confidence} from '../study/review';import {isStudyAvailable} from '../content/trust';
 export class SessionService{
  repo:StudyRepository;clock:()=>Date;random:()=>number;
  constructor(repo:StudyRepository,clock=()=>new Date(),random=Math.random){this.repo=repo;this.clock=clock;this.random=random}
@@ -8,7 +8,7 @@ export class SessionService{
   if(timed&&(i.durationMinutes===null||!Number.isFinite(i.durationMinutes)||i.durationMinutes<1||i.durationMinutes>240))throw new AppError('duration','Choose a duration from 1 to 240 minutes');
   const now=this.clock();const s:Session={id:crypto.randomUUID(),mode:i.mode,questionSnapshots:structuredClone(i.selectedQuestions),optionOrders:{},answers:{},flags:[],currentIndex:0,startedAt:now.toISOString(),deadlineAt:timed?new Date(now.getTime()+i.durationMinutes!*60000).toISOString():null,status:'active',submittedAt:null,correctionWarnings:[],...(i.feedbackAtEnd?{feedbackAtEnd:true}:{})};
   await this.repo.db.transaction('rw',this.repo.db.sessions,this.repo.db.contentTrust,this.repo.db.releasedHoldouts,async()=>{
-   for(const q of i.selectedQuestions){const t=await this.repo.db.contentTrust.get([q.id,q.revision]);if(i.mode!=='draft-preview'&&classifyQuestion(q,t??null)!=='eligible')throw new AppError('unreviewed','This question needs content review');const ids=q.options.map(o=>o.id);for(let n=ids.length-1;n>0;n--){const j=Math.min(n,Math.floor(this.random()*(n+1)));[ids[n],ids[j]]=[ids[j],ids[n]]}s.optionOrders[q.id]=ids;}
+   for(const q of i.selectedQuestions){const t=await this.repo.db.contentTrust.get([q.id,q.revision]);if(!isStudyAvailable(q,t??null))throw new AppError('unavailable','This question is retired or quarantined because its source changed. Choose another question.');const ids=q.options.map(o=>o.id);for(let n=ids.length-1;n>0;n--){const j=Math.min(n,Math.floor(this.random()*(n+1)));[ids[n],ids[j]]=[ids[j],ids[n]]}s.optionOrders[q.id]=ids;}
    await this.repo.db.sessions.add(s);for(const questionId of i.releasesReservedIds)if(i.selectedQuestions.some(q=>q.id===questionId&&q.assessmentReserved)&&!await this.repo.db.releasedHoldouts.get(questionId))await this.repo.db.releasedHoldouts.add({questionId,releasedAt:now.toISOString(),sessionId:s.id});
   });return s;
  }
