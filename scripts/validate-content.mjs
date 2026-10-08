@@ -1,0 +1,4 @@
+import Ajv from 'ajv';import addFormats from 'ajv-formats';import {readFile,readdir} from 'node:fs/promises';
+const ajv=new Ajv({allErrors:true});addFormats(ajv);
+const load=async p=>JSON.parse(await readFile(p,'utf8'));
+for(const [directory,schema] of [['blueprints','blueprint'],['packs','question-pack']]){const check=ajv.compile(await load(`content/schemas/${schema}.schema.json`));for(const file of await readdir(`content/${directory}`)){if(!file.endsWith('.json'))continue;const data=await load(`content/${directory}/${file}`);if(!check(data))throw Error(file+': '+JSON.stringify(check.errors));if(directory==='packs'){const {validatePack}=await import('../src/content/validate.ts');const bp=await load(`content/blueprints/${data.blueprintId}.json`);const result=validatePack(data,bp);if(result.issues.length)throw Error(JSON.stringify(result.issues));}console.log('Validated '+file)}}

@@ -1,0 +1,130 @@
+[
+  {
+    "referenceId": "guide",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104",
+    "checkedAt": "2026-10-08T00:48:11.473Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "163afaf9c861f88a35e230224e6dec2c49efeb2a8918ec88cde664848c4796de"
+  },
+  {
+    "referenceId": "rbac",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+    "checkedAt": "2026-10-08T00:48:12.071Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "d0ad88e2a2c777bab3c1e53a39fe8d8e7b7ac039830d885fa2d84eaeed245750"
+  },
+  {
+    "referenceId": "policy",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+    "checkedAt": "2026-10-08T00:48:12.699Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "efdacea50fa8f9efbe1e92c1eafee99b0b2a175b7679819ca08995492e78298b"
+  },
+  {
+    "referenceId": "locks",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+    "checkedAt": "2026-10-08T00:48:13.311Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "dfdff6f551f4e5a36a411a257220a570205a4de02d57d3b80d9b16144777d6e4"
+  },
+  {
+    "referenceId": "redundancy",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+    "checkedAt": "2026-10-08T00:48:13.885Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44"
+  },
+  {
+    "referenceId": "sas",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+    "checkedAt": "2026-10-08T00:48:14.466Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667"
+  },
+  {
+    "referenceId": "tiers",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+    "checkedAt": "2026-10-08T00:48:15.091Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60"
+  },
+  {
+    "referenceId": "availability",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+    "checkedAt": "2026-10-08T00:48:15.630Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "ab64e18fa8645df872cbaa74b89d7115493a90005b3561f3b6b70edbf1d3bb45"
+  },
+  {
+    "referenceId": "slots",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+    "checkedAt": "2026-10-08T00:48:16.200Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "b9770d5cb696e9ed7b94d8ca891daf55feb7d9cf532381c62205d84484700916"
+  },
+  {
+    "referenceId": "containers",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+    "checkedAt": "2026-10-08T00:48:16.797Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "f7026c4f7c539104848e7b4d5e3834355080871cd8a39b366894c23f7c85d2e7"
+  },
+  {
+    "referenceId": "peering",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+    "checkedAt": "2026-10-08T00:48:17.333Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "6742103bde3e01b00d05d703b7ad56b9920c853538b7ede3b7d2314ab5d35952"
+  },
+  {
+    "referenceId": "nsg",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+    "checkedAt": "2026-10-08T00:48:17.887Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "b141eccde42ed5b61214c53cb494e39e4881d53626a2ccb8fb8885feb929a2e4"
+  },
+  {
+    "referenceId": "private",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+    "checkedAt": "2026-10-08T00:48:18.496Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "79325b0246194e2059b11065f8bb4bc5f728e91a1a981ef96dc6d81da74f1ce4"
+  },
+  {
+    "referenceId": "alerts",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+    "checkedAt": "2026-10-08T00:48:18.904Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde"
+  },
+  {
+    "referenceId": "logs",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+    "checkedAt": "2026-10-08T00:48:19.442Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "090721822b64e6e9eac0258ba0583f5530740965d3177ffea585e3b31ed540e2"
+  },
+  {
+    "referenceId": "backup",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+    "checkedAt": "2026-10-08T00:48:19.965Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn document retrieved; claim-level evidence is recorded on each draft question. Human review is still required.",
+    "contentHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e"
+  }
+]
