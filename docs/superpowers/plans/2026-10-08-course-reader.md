@@ -67,5 +67,5 @@
 
 - [x] Fresh independent review; fix important findings with regression tests.
 - [x] Run `npm run check` and full browser acceptance; record actual results.
-- [ ] Deploy to the existing authorised Worker, verify deployed hashes/CSP and live phone-sized course navigation.
-- [ ] Push feature branch/update PR #1; report concise feature benefits and truthful playback/device limitations.
+- [x] Deploy to the existing authorised Worker, verify deployed hashes/CSP and live phone-sized course navigation.
+- [x] Push feature branch/update PR #1; report concise feature benefits and truthful playback/device limitations.

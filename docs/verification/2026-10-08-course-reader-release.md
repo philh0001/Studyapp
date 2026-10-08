@@ -33,3 +33,15 @@ The official blueprint recheck found no differences: effective 17 April 2026, 82
 `npm run check` passed TypeScript, ESLint, all **452 tests across 91 files**, all seven question-pack validations and the production/PWA build. The actual audit-regeneration CLI separately retained 315 current semantic reviews, zero semantic concerns and zero exact-citation gaps. Complete browser results and live deployment checks follow below.
 
 The final production build passed the complete desktop Chromium, phone Chromium and phone WebKit acceptance suite: **121 passed, 2 intentional duplicate-engine skips**, 2.1 minutes. All course checks passed in each engine, including 320px phone navigation, offline reopening and large-text highlighting/control geometry.
+
+## Published build and live checks
+
+Product source: `f0e4f3988a72c8d395fd94f4e53b05dc03a85c12`.
+
+Public URL: https://az104-revision-web.showtime-workers.workers.dev/#/course
+
+Worker version: `114d7c5b-6ae4-40b8-ace9-71f10d391d1e`.
+
+Deployment: `57ec0a94-87be-4209-be0a-930f9fbbe878`, created `2026-10-08T10:48:40.238823Z`, 100% traffic. Previous version `4aa557e5-2638-4db2-8360-1690d9f5e2b3` remains available for rollback.
+
+All 41 public build files matched local SHA-256 hashes; strict script/default CSP and nosniff passed. The live phone-sized Chromium check confirmed active Learn navigation, all six paths/28 modules/231 unit choices in order, zero horizontal overflow, saved completion, controlled-service-worker offline reload, previous/next reading, passage/word highlighting with mocked speech boundaries, pause retention and stop clearing. Standard practice still starts directly and personal notes remain closed. No browser console/page errors. Results are retained in the companion deployment and live JSON records. Real audio and physical iPhone playback remain device-dependent and were not claimed as verified.
