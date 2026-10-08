@@ -36,7 +36,7 @@ it('records an actual per-question semantic review with every option separately 
  const report=JSON.parse(readFileSync('content/audits/full-bank-review.json','utf8'));
  expect(report.summary.aiSemanticReviewed).toBe(report.questions.length);
  for(const q of report.questions){expect(q.semanticReview.conclusion.length).toBeGreaterThan(50);expect(q.semanticReview.optionReviews.map((o:any)=>o.optionId)).toEqual(q.optionAudits.map((o:any)=>o.optionId));expect(q.semanticReview.humanApprovalGranted).toBe(false);}
- expect(report.questions.find((q:any)=>q.questionId==='az104-compute-plus-38').semanticReview.conclusion).toMatch(/HTTP/);expect(report.questions.find((q:any)=>q.questionId==='az104-monitoring-plus-08').semanticReview.uncertainties.join(' ')).toMatch(/Option d/);
+ expect(report.questions.find((q:any)=>q.questionId==='az104-compute-plus-38').semanticReview.conclusion).toMatch(/HTTP/);expect(report.questions.find((q:any)=>q.questionId==='az104-monitoring-plus-08').semanticReview.uncertainties).toEqual([]);expect(report.evidenceHealth.resolvedPriorSemanticConcerns).toBe(9);
 });
 it('closes DNS and routing section gaps with retrieved references on new draft revisions',()=>{
  const pack=JSON.parse(readFileSync('content/packs/az104-networking-expanded-draft.json','utf8'));

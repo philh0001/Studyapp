@@ -1,0 +1,15 @@
+# Concise AZ-104 course notes
+
+`az104-course.json` combines the six ordered authoring files in `paths/`. It contains original concise notes covering the actual course linked from [Microsoft Learn AZ-104T00](https://learn.microsoft.com/en-us/training/courses/az-104t00): 6 learning paths, 28 modules, 231 units and 847 points. Introductions/summaries are shortened; useful teaching, conditions and practical steps remain. Assessment units link to the official interactive check; no assessment question bank is reproduced.
+
+`source-evidence.json` records the course/path/module/unit order, official unit URLs, individual retrieval dates, successful HTTP status and SHA-256 hashes of retrieved source HTML. All 231 unit pages were retrieved on 8 October 2026. Raw source text is not bundled or redistributed. Notes are independently authored adaptations of factual teaching, with a direct original-unit link per lesson. No blanket licence is inferred for Microsoft Learn pages from another repository's licence.
+
+This is condensed course coverage, not a claim to reproduce every sentence, interactive experience, diagram or Azure exercise. Coverage of this course is also distinct from exhaustive coverage of every current AZ-104 exam objective. Every installed teaching point was compared with official sources in an AI-assisted semantic audit; this does not constitute human factual approval.
+
+Some retrieved lessons contain dated or inconsistent wording. Notes omit questionable assertions about legacy Automation Update Management, SSD v2 preview status, automatic region-pair failover, Entra Domain Services licence bundling, peering deletion requirements, DNSSEC availability, Table Storage/Cosmos features, File Sync system volumes, individual-file soft-delete recovery and several numeric/pricing limits. Use the original sources and current product documentation when an exact feature, limit or price matters.
+
+The pack is bundled in the lazy course reader and precached by the existing PWA. Course completion and listening preferences are personal workspace state, separate from practice scores and Microsoft Learn completion. Browser voices/offline speech depend on the device; no server speech service is configured.
+
+## Complete accuracy check — 8 October 2026
+
+All 847 points across 231 units were checked against the retrieved lessons and current official product documentation. The three records in `audits/` bind each final point by SHA-256 and identify its supporting sources. Sixty-seven points were corrected, including current authentication policy, IP allocation, storage and SAS support, container constraints, backup and monitoring changes. Supplementary official sources appear with the relevant lesson. Audit records explicitly report no human approval. Separately, all 315 practice questions and 1,050 options, plus 212 study-aid items, were checked; one question was qualified to default Provider what-if validation and 14 study-aid fields corrected. The official exam blueprint check found no change.

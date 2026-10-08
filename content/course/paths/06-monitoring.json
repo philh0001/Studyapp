@@ -1,0 +1,270 @@
+{
+  "id": "az-104-monitor-backup-resources",
+  "title": "AZ-104: Monitor and back up Azure resources",
+  "url": "https://learn.microsoft.com/en-us/training/paths/az-104-monitor-backup-resources/",
+  "modules": [
+    {
+      "id": "intro-to-azure-backup",
+      "title": "Introduction to Azure Backup",
+      "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/",
+      "lessons": [
+        {
+          "id": "intro-to-azure-backup--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Backup planning defines recovery requirements, backup frequency, retention and access controls for important data.",
+            "Azure Backup protects supported Azure workloads and selected on-premises data."
+          ]
+        },
+        {
+          "id": "intro-to-azure-backup--2-what-is-azure-backup",
+          "title": "What is Azure Backup?",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup",
+          "kind": "teaching",
+          "points": [
+            "Azure Backup manages backup storage and policies for supported workloads such as VMs, managed disks, file shares and databases.",
+            "Central management helps govern and monitor many protected resources.",
+            "Recovery time objective is the target time to restore service after an incident. Recovery point objective is the maximum tolerable data loss measured in time.",
+            "Use encryption, access controls and deletion protection to secure backups; choose policies that meet recovery and compliance needs."
+          ]
+        },
+        {
+          "id": "intro-to-azure-backup--3-how-azure-backup-works",
+          "title": "How Azure Backup works",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works",
+          "kind": "teaching",
+          "points": [
+            "Use the MARS agent for supported Windows files, folders and system state; DPM or Azure Backup Server can protect additional on-premises workloads.",
+            "Azure VM backup takes disk snapshots. Application- or filesystem-consistent backups use a VM extension; supported agentless backups are crash-consistent. Vaults manage recovery points and policies.",
+            "An initial full backup captures the protected data; later incremental backups transfer changed blocks. SQL database protection also supports differential and transaction-log backups.",
+            "Snapshot-tier recovery can be faster because data is near the source. Vault-standard stores an isolated copy; supported archive storage targets infrequently accessed long-term recovery points.",
+            "Choose locally, zone- or geo-redundant backup storage based on failure-protection requirements.",
+            "Backup policies define schedule and retention; enhanced VM policies support more frequent backups and selective disk protection.",
+            "Encryption, role-based access control and soft delete reduce exposure to unauthorized access and accidental deletion."
+          ]
+        },
+        {
+          "id": "intro-to-azure-backup--4-when-to-use-azure-backup",
+          "title": "When to use Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup",
+          "kind": "teaching",
+          "points": [
+            "Use Azure Backup for operational recovery from accidental deletion or corruption and for long-term compliance retention.",
+            "Choose whole-VM backup or workload-aware database backup according to what must be recovered. SQL protection supports full, differential and transaction-log backups.",
+            "Do not confuse backing up a workload across regions with restoring to a supported paired secondary region. Check the workload support matrix.",
+            "On-demand backups can use their own retention settings rather than the scheduled policy retention.",
+            "Monitor job status in vaults; reporting and workbooks help assess a wider backup estate."
+          ]
+        },
+        {
+          "id": "intro-to-azure-backup--5-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/5-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "intro-to-azure-backup--6-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/6-summary",
+          "kind": "summary",
+          "points": [
+            "Match workload support, schedule, retention and security to the required recovery time and acceptable data loss."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "protect-virtual-machines-with-azure-backup",
+      "title": "Protect your virtual machines by using Azure Backup",
+      "url": "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/",
+      "lessons": [
+        {
+          "id": "protect-virtual-machines-with-azure-backup--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Azure Backup protects VM data so that Windows and Linux workloads can be recovered after loss or corruption.",
+            "Optional practical exercises use your own Azure subscription."
+          ]
+        },
+        {
+          "id": "protect-virtual-machines-with-azure-backup--2-azure-backup-features-scenarios",
+          "title": "Azure Backup features and scenarios",
+          "url": "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios",
+          "kind": "teaching",
+          "points": [
+            "Azure Backup retains recovery points for returning to an earlier data state. Azure Site Recovery instead replicates workloads and coordinates failover.",
+            "Choose protection based on recovery time, acceptable data loss, application criticality and cost.",
+            "Azure VM backups are managed through a Recovery Services vault. Supported on-premises scenarios use MARS, Azure Backup Server or DPM.",
+            "Backup data is encrypted; role-based access control separates backup responsibilities. Customer-managed keys are available for supported configurations.",
+            "Soft delete preserves deleted backup data for recovery; enhanced soft delete can extend retention and enforce always-on protection.",
+            "Select LRS, GRS or ZRS to match the required storage failure protection."
+          ]
+        },
+        {
+          "id": "protect-virtual-machines-with-azure-backup--3-back-up-azure-virtual-machine",
+          "title": "Back up an Azure virtual machine by using Azure Backup",
+          "url": "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+          "kind": "teaching",
+          "points": [
+            "A Recovery Services vault manages VM recovery points, policies and access permissions.",
+            "Azure Backup takes disk snapshots on the policy schedule, then transfers changed blocks to vault storage.",
+            "Application-consistent snapshots use Windows VSS writers; Linux application consistency needs appropriate pre- and post-backup scripts.",
+            "File-system-consistent backups preserve filesystem integrity but applications may need cleanup. Crash-consistent backups omit pending memory and input/output state.",
+            "Policies set backup frequency and retention; enhanced policies support more frequent protection and selected data disks.",
+            "Snapshot recovery can be quicker than vault recovery; transfer to the vault can take time after the snapshot is created."
+          ]
+        },
+        {
+          "id": "protect-virtual-machines-with-azure-backup--4-exercise-back-up-azure-virtual-machine",
+          "title": "Exercise - Back up an Azure virtual machine",
+          "url": "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/4-exercise-back-up-azure-virtual-machine",
+          "kind": "exercise",
+          "points": [
+            "This optional exercise creates Windows and Linux VMs in your own subscription, then enables Azure Backup.",
+            "Create the lab resource group and virtual network, then deploy the two VMs using Cloud Shell.",
+            "Enable backup for the Linux VM through its Backup page, select a policy and run Backup now.",
+            "For the Windows VM, create a vault with az backup vault create and enable protection with az backup protection enable-for-vm.",
+            "Start an on-demand backup with az backup protection backup-now, then inspect backup jobs and last-backup status.",
+            "Review the current interactive instructions before running commands, and clean up only the lab resources you created afterward."
+          ]
+        },
+        {
+          "id": "protect-virtual-machines-with-azure-backup--5-restore-virtual-machine-data",
+          "title": "Restore virtual machine data",
+          "url": "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+          "kind": "teaching",
+          "points": [
+            "Create a new VM to recover into another VM, or restore disks when you need to customize the recovered deployment.",
+            "Replace existing restores disks into a VM that still exists, taking a snapshot of its current disks first. It cannot replace a deleted VM.",
+            "Cross-region restore targets a supported paired secondary region; it supports creating a VM or restoring disks rather than replacing existing disks.",
+            "Cross-subscription restore uses vault-tier points for supported managed VMs in the same tenant. Restore to a subscription other than the protected VM or vault subscription requires the vault setting; ADE- and customer-key-encrypted disks are unsupported.",
+            "Cross-zonal restore has vault-redundancy and VM-support requirements. Verify the support matrix before planning it.",
+            "File recovery can mount supported backup recovery points. For Azure Disk Encryption VMs, file-level recovery and replacing the existing VM are not supported; restore the VM and copy needed files."
+          ]
+        },
+        {
+          "id": "protect-virtual-machines-with-azure-backup--6-exercise-restore-virtual-machine-data",
+          "title": "Exercise - Restore Azure virtual machine data",
+          "url": "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/6-exercise-restore-virtual-machine-data",
+          "kind": "exercise",
+          "points": [
+            "This optional exercise restores a VM protected in the preceding backup exercise.",
+            "Create a staging storage account and stop the lab VM before performing the demonstrated disk-replacement restore.",
+            "Open the VM Backup page, select Restore VM and choose an available recovery point.",
+            "Choose Replace existing and the staging location, then start the restore.",
+            "Inspect the restore job status and subtasks in Backup Jobs to confirm completion."
+          ]
+        },
+        {
+          "id": "protect-virtual-machines-with-azure-backup--7-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/7-summary",
+          "kind": "summary",
+          "points": [
+            "Test backup and restore procedures rather than assuming a successful backup proves recovery will meet requirements.",
+            "After optional labs, remove only the lab resources you created to stop unnecessary charges."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "monitor-azure-vm-using-diagnostic-data",
+      "title": "Monitor your Azure virtual machines with Azure Monitor",
+      "url": "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/",
+      "lessons": [
+        {
+          "id": "monitor-azure-vm-using-diagnostic-data--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Monitor both the Azure VM host and its guest operating system, workloads and applications.",
+            "The practical steps require an Azure subscription with suitable permissions; this module specifies Contributor access."
+          ]
+        },
+        {
+          "id": "monitor-azure-vm-using-diagnostic-data--2-monitor-vm-health",
+          "title": "Monitoring for Azure VMs",
+          "url": "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+          "kind": "teaching",
+          "points": [
+            "Metrics are numerical measurements over time; logs are timestamped events and structured records. Azure Monitor provides tools for both.",
+            "Azure automatically collects VM host metrics and activity logs. Configure Azure Monitor Agent and data collection rules for guest performance counters and event logs.",
+            "Use host metrics to track availability, CPU, disks and networking. Recommended or custom alerts notify you when monitored conditions occur.",
+            "Boot diagnostics provides screenshots and boot output for troubleshooting startup problems.",
+            "A data collection rule specifies what guest data to collect and where to send it; Log Analytics workspaces store log data for querying.",
+            "The lesson uses classic logs-based VM insights: Azure Monitor Agent collects common guest performance data into Log Analytics for curated charts and workbooks. Current monitoring also offers OpenTelemetry metrics stored in an Azure Monitor workspace.",
+            "Create additional rules for guest event logs and query them with Kusto Query Language."
+          ]
+        },
+        {
+          "id": "monitor-azure-vm-using-diagnostic-data--3-exercise-create-virtual-machine",
+          "title": "Monitor VM host data",
+          "url": "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine",
+          "kind": "teaching",
+          "points": [
+            "Create the lab Linux VM with recommended alert rules enabled on the Monitoring tab, and configure alert notifications.",
+            "Enable boot diagnostics with managed storage. Avoid the deprecated Linux Diagnostics Agent option in this exercise.",
+            "After deployment, inspect the default availability, CPU, disk and network graphs on the VM overview. Guest metrics require further configuration.",
+            "View Activity log for resource operations and Boot diagnostics for startup screenshots and serial output."
+          ]
+        },
+        {
+          "id": "monitor-azure-vm-using-diagnostic-data--4-view-host-metrics",
+          "title": "Use Metrics Explorer to view detailed host metrics",
+          "url": "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics",
+          "kind": "teaching",
+          "points": [
+            "Open Metrics Explorer from the VM Metrics page or Azure Monitor. Choose the resource scope, namespace, metric and aggregation.",
+            "Aggregation options include count, average, minimum, maximum and sum; choose one that answers the investigation.",
+            "Add more than one metric to correlate trends, and select an appropriate time range and sampling granularity.",
+            "The example compares maximum Percentage CPU with average Inbound Flows over the last 30 minutes."
+          ]
+        },
+        {
+          "id": "monitor-azure-vm-using-diagnostic-data--5-enable-vm-insights",
+          "title": "Collect client performance counters by using VM insights",
+          "url": "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+          "kind": "teaching",
+          "points": [
+            "The lesson demonstrates classic logs-based VM insights with a data collection rule and Log Analytics workspace. Current portal onboarding uses Monitor and Configure, with OpenTelemetry metrics selected by default and a logs-based option.",
+            "For classic logs-based monitoring, Azure Monitor Agent collects a predefined set of guest performance counters. Allow time for agent installation and data ingestion.",
+            "Confirm the agent under Extensions and applications, then inspect guest performance data.",
+            "View classic logs-based counters in VM insights performance charts and workbooks. These counters go to Log Analytics; OpenTelemetry monitoring instead stores metrics in an Azure Monitor workspace.",
+            "VM insights Map and Dependency Agent are deprecated and retire on 30 June 2028. New portal onboarding ended on 30 September 2025; do not enable them for new deployments."
+          ]
+        },
+        {
+          "id": "monitor-azure-vm-using-diagnostic-data--6-collect-log-data",
+          "title": "Collect VM client event logs",
+          "url": "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data",
+          "kind": "teaching",
+          "points": [
+            "Create a data collection rule for guest event logs; the default VM insights rule does not collect every event source.",
+            "For the Linux example, associate the VM with a Linux rule and select Linux Syslog as the data source.",
+            "Send Syslog to a Log Analytics workspace. The lesson creates a data collection endpoint, but ordinary public-endpoint Syslog collection does not require one; Private Link does.",
+            "In the VM Logs page or Azure Monitor Logs, select the appropriate scope and run a KQL query against the Syslog table.",
+            "Filter by relevant fields such as severity to investigate events associated with a performance problem."
+          ]
+        },
+        {
+          "id": "monitor-azure-vm-using-diagnostic-data--7-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/7-summary",
+          "kind": "summary",
+          "points": [
+            "Use host metrics for platform health, VM insights for guest performance, and data collection rules plus Log Analytics for event investigation.",
+            "If you performed the optional lab, delete only its resources when finished to avoid ongoing charges."
+          ]
+        }
+      ]
+    }
+  ]
+}

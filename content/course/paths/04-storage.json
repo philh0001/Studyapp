@@ -1,0 +1,494 @@
+{
+  "id": "az-104-manage-storage",
+  "title": "AZ-104: Implement and manage storage in Azure",
+  "url": "https://learn.microsoft.com/en-us/training/paths/az-104-manage-storage/",
+  "modules": [
+    {
+      "id": "configure-storage-accounts",
+      "title": "Configure storage accounts",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/",
+      "lessons": [
+        {
+          "id": "configure-storage-accounts--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Choose storage services, performance and redundancy to fit your data and recovery requirements."
+          ]
+        },
+        {
+          "id": "configure-storage-accounts--2-implement-azure-storage",
+          "title": "Implement Azure Storage",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/2-implement-azure-storage",
+          "kind": "teaching",
+          "points": [
+            "Azure Storage provides managed services for objects, file shares, messages and nonrelational structured data.",
+            "Use managed disks for VM block storage, Blob Storage for unstructured objects and suitable data services for application records.",
+            "Redundancy protects against hardware or wider failures; encryption and access controls protect data access.",
+            "Access services through supported APIs, SDKs, CLI, PowerShell, the portal or Storage Explorer.",
+            "Blob SFTP requires hierarchical namespace. Blob NFSv3 also requires hierarchical namespace and lets Linux clients mount containers.",
+            "The portal can default to Microsoft Entra authorization instead of Shared Key authorization."
+          ]
+        },
+        {
+          "id": "configure-storage-accounts--3-explore-azure-storage-services",
+          "title": "Explore Azure Storage services",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services",
+          "kind": "teaching",
+          "points": [
+            "Blob Storage stores large volumes of unstructured objects such as images, media, backups and archived data.",
+            "Azure Files provides managed file shares using SMB or NFS for applications that expect shared files.",
+            "Queue Storage holds messages for asynchronous processing, decoupling work such as image uploads from thumbnail generation.",
+            "A queue message can be up to 64 KB; queues can hold large backlogs of messages.",
+            "Table Storage is a schemaless key-and-attribute store for structured, nonrelational data.",
+            "Choose the service by the access pattern and data model rather than treating objects, file shares, queues and tables as interchangeable."
+          ]
+        },
+        {
+          "id": "configure-storage-accounts--4-determine-storage-account-kinds",
+          "title": "Determine storage account types",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+          "kind": "teaching",
+          "points": [
+            "Standard general-purpose v2 supports blobs, Data Lake Storage, queues, tables and Azure Files, and is suitable for most general storage scenarios.",
+            "Premium block blob accounts target high transaction rates and consistent low object-storage latency.",
+            "Premium FileStorage accounts provide high-performance file shares; premium page blob accounts provide page blobs for suitable I/O-intensive workloads.",
+            "Account types have different service and redundancy support: premium options are more specialized than general-purpose v2.",
+            "You cannot directly convert a Standard account into Premium or the reverse; create the desired type and move applicable data.",
+            "Legacy general-purpose v1 and BlobStorage accounts can be upgraded to general-purpose v2 to gain current capabilities."
+          ]
+        },
+        {
+          "id": "configure-storage-accounts--5-determine-replication-strategies",
+          "title": "Determine replication strategies",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies",
+          "kind": "teaching",
+          "points": [
+            "LRS keeps replicas within one datacenter and has the lowest cost, but a datacenter-wide disaster can affect every replica.",
+            "ZRS synchronously copies data across three availability zones in one region, maintaining access through a zone failure where supported.",
+            "GRS keeps local replicas in the primary region and asynchronously copies them to a secondary region. The secondary is not normally a read endpoint before failover.",
+            "RA-GRS adds read access to the secondary region without waiting for failover.",
+            "GZRS combines zone replication in the primary region with geographic replication to a secondary region; RA-GZRS adds secondary read access.",
+            "Compare the failure scope you must survive, required secondary access, region availability and supported account type before choosing redundancy.",
+            "Asynchronous cross-region replication means the secondary copy may lag the primary."
+          ]
+        },
+        {
+          "id": "configure-storage-accounts--6-access-storage",
+          "title": "Access storage",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/6-access-storage",
+          "kind": "teaching",
+          "points": [
+            "A storage account has separate service endpoints such as account-name.blob.core.windows.net and account-name.file.core.windows.net.",
+            "A blob URL adds the container and blob path to the Blob service endpoint.",
+            "Map a custom subdomain to a blob or static-website endpoint with a DNS CNAME. Direct mapping supports HTTP; use Azure Front Door or a supported CDN configuration for HTTPS on the custom domain."
+          ]
+        },
+        {
+          "id": "configure-storage-accounts--7-secure-storage-endpoints",
+          "title": "Secure storage endpoints",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/7-secure-storage-endpoints",
+          "kind": "teaching",
+          "points": [
+            "Storage firewall and virtual-network rules can restrict network access to permitted subnets or public IP ranges.",
+            "A service endpoint retains the service public endpoint while identifying permitted virtual-network traffic.",
+            "A private endpoint gives one storage service a private IP in your virtual network. Configure DNS to resolve that endpoint and separately restrict public access if private-only connectivity is required.",
+            "Test permitted and denied network paths after configuration to confirm access matches the intended restrictions."
+          ]
+        },
+        {
+          "id": "configure-storage-accounts--8-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/8-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "configure-storage-accounts--9-summary-resources",
+          "title": "Summary and resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/9-summary-resources",
+          "kind": "summary",
+          "points": [
+            "Select the data service and account type first, then choose redundancy and secure network access for the workload.",
+            "Storage availability, performance, security and cost depend on the configuration rather than one universal account choice."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configure-blob-storage",
+      "title": "Configure Azure Blob Storage",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/",
+      "lessons": [
+        {
+          "id": "configure-blob-storage--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Blob Storage stores unstructured objects; access tiers and lifecycle rules help balance retrieval needs against storage cost."
+          ]
+        },
+        {
+          "id": "configure-blob-storage--2-implement",
+          "title": "Implement Azure Blob Storage",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/2-implement",
+          "kind": "teaching",
+          "points": [
+            "Blob Storage organizes text or binary objects inside containers within a storage account.",
+            "Use it for browser content, media streaming, distributed downloads, backup, archive and data analysis.",
+            "Plan container access, blob types, upload tools, access tiers, lifecycle rules and object replication as part of configuration."
+          ]
+        },
+        {
+          "id": "configure-blob-storage--3-create-blob-containers",
+          "title": "Create blob containers",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/3-create-blob-containers",
+          "kind": "teaching",
+          "points": [
+            "Every blob belongs to a container, so create a container before uploading its blobs.",
+            "Container names must be unique within the account, 3 to 63 characters long and use lowercase letters, numbers or hyphens. Start and end with a letter or number; consecutive hyphens are not allowed.",
+            "Private access blocks anonymous reads. Blob access allows anonymous blob reads; Container access additionally allows anonymous listing.",
+            "Anonymous container settings only work when account-level anonymous blob access is enabled. Keep it disabled unless you need public content."
+          ]
+        },
+        {
+          "id": "configure-blob-storage--4-create-blob-access-tiers",
+          "title": "Assign blob access tiers",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers",
+          "kind": "teaching",
+          "points": [
+            "Hot storage suits frequent access: storage costs are higher and access costs lower than cooler tiers.",
+            "Cool suits infrequent access and Cold less frequent access; both remain online. In general-purpose v2 accounts, their minimum billable storage durations are 30 and 90 days respectively.",
+            "Archive is offline for block blobs that can tolerate hours of retrieval latency, with a 180-day minimum billable duration. It supports LRS, GRS and RA-GRS, not zone-redundant account configurations.",
+            "Deleting, overwriting or moving data before the tier minimum can incur prorated early-deletion charges; the duration is a billing rule, not a deletion prohibition.",
+            "Rehydrate archived blobs to an online tier by copying to a new blob or changing the tier in place. Standard and high-priority retrieval have different latency and costs.",
+            "Choose a tier using total storage, access and retrieval requirements rather than storage price alone."
+          ]
+        },
+        {
+          "id": "configure-blob-storage--5-add-blob-lifecycle-management-rules",
+          "title": "Add blob lifecycle management rules",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/5-add-blob-lifecycle-management-rules",
+          "kind": "teaching",
+          "points": [
+            "Lifecycle management policies transition eligible blobs to cooler tiers or delete them when conditions are met.",
+            "Rules can apply to current versions, previous versions or snapshots, depending on the selected action.",
+            "Filter the affected data by container, name prefix or blob index tags rather than always acting on the entire account.",
+            "Configure an age or access-related condition and the resulting tier change or deletion action in an if-then rule.",
+            "Account and blob types determine which lifecycle features are supported; general-purpose v2 is recommended for new general-purpose deployments.",
+            "Consider minimum storage durations and retrieval needs before automatically moving data to colder storage."
+          ]
+        },
+        {
+          "id": "configure-blob-storage--6-determine-blob-object-replication",
+          "title": "Determine blob object replication",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication",
+          "kind": "teaching",
+          "points": [
+            "Object replication asynchronously copies selected block blobs between source and destination containers. It supports general-purpose v2 or premium block blob accounts without hierarchical namespace.",
+            "The replicated data includes blob content, metadata and versions; blob snapshots are not replicated.",
+            "Enable blob versioning on both accounts and change feed on the source account before configuring replication.",
+            "Policies identify source and destination accounts and contain rules selecting containers and blobs.",
+            "Source and destination blobs can use different online tiers. Moving either blob to Archive causes replication to fail; use replication for nearby reads or regional compute workloads."
+          ]
+        },
+        {
+          "id": "configure-blob-storage--7-upload-blobs",
+          "title": "Manage blobs",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs",
+          "kind": "teaching",
+          "points": [
+            "Block blobs are the usual choice for files, images and other text or binary objects.",
+            "Append blobs optimize adding blocks and fit logging workloads; page blobs suit frequent indexed or random read-write operations.",
+            "A blob type cannot be changed after creation.",
+            "Use the portal for a few uploads, selecting blob type, access tier and encryption options as needed.",
+            "Use Storage Explorer for graphical management, AzCopy for command-line transfers, or Data Box Disk when a large offline transfer is more practical than uploading over the network."
+          ]
+        },
+        {
+          "id": "configure-blob-storage--8-determine-storage-pricing",
+          "title": "Determine Blob Storage pricing",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/8-determine-storage-pricing",
+          "kind": "teaching",
+          "points": [
+            "Estimate costs with the Azure pricing calculator using data volume, operations, redundancy and transfer needs.",
+            "Cooler tiers reduce capacity cost but increase access and retrieval charges.",
+            "Transactions, outbound bandwidth and geo-replication transfers can contribute to the bill.",
+            "Tier changes can incur operation or data-access charges, so include migration and expected access patterns in the estimate."
+          ]
+        },
+        {
+          "id": "configure-blob-storage--9-simulation-blobs",
+          "title": "Exercise - Provide storage for the public website",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/9-simulation-blobs",
+          "kind": "exercise",
+          "points": [
+            "Create a highly available storage account and a container for website documents.",
+            "For this public-content scenario, explicitly configure anonymous access and enable soft delete and blob versioning for recovery.",
+            "Use the official exercise for deployment instructions; it requires an Azure subscription."
+          ]
+        },
+        {
+          "id": "configure-blob-storage--10-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/10-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "configure-blob-storage--11-summary-resources",
+          "title": "Summary and resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/11-summary-resources",
+          "kind": "summary",
+          "points": [
+            "Choose blob type, tier and lifecycle policy from how the data is used and how quickly it must be retrieved.",
+            "Use asynchronous object replication where regional data distribution is needed."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configure-storage-security",
+      "title": "Configure Azure Storage security",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/",
+      "lessons": [
+        {
+          "id": "configure-storage-security--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Combine identity, restricted access, transport protection and encryption to secure stored data."
+          ]
+        },
+        {
+          "id": "configure-storage-security--2-review-strategies",
+          "title": "Review Azure Storage security strategies",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies",
+          "kind": "teaching",
+          "points": [
+            "Storage service encryption encrypts data at rest with AES-256; encryption and decryption are transparent to applications.",
+            "Require secure transfer and avoid deprecated TLS versions for connections to the account.",
+            "Prefer Microsoft Entra authorization with managed identities and scoped data-access roles when supported.",
+            "Shared Key authorization uses an account key; disabling Shared Key helps enforce identity-based authorization where the workload supports it.",
+            "A shared access signature delegates limited permissions for a limited time without handing the client the account key.",
+            "Keep anonymous access disabled for sensitive data and use logs to investigate access and usage."
+          ]
+        },
+        {
+          "id": "configure-storage-security--3-create-shared-access-signatures",
+          "title": "Create shared access signatures",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+          "kind": "teaching",
+          "points": [
+            "A SAS delegates access to selected storage resources with defined permissions and validity times.",
+            "A user delegation SAS is signed with a key obtained using Microsoft Entra credentials. Current support includes Blob Storage, Data Lake Storage, queues, tables and Azure Files; service and account SAS are signed with an account key.",
+            "Stored access policies add server-side control for supported service SAS, including changing or revoking access without replacing an account key.",
+            "Distribute SAS URLs only over HTTPS, grant the minimum permissions and use short validity periods.",
+            "Account for clock skew: omit an immediate start time or allow an appropriate margin, and renew before expiry.",
+            "Validate data uploaded using a SAS before the application trusts or processes it.",
+            "For high-risk operations, a validating application service may provide more control than giving a client direct storage access."
+          ]
+        },
+        {
+          "id": "configure-storage-security--4-identify-uri-sas-parameters",
+          "title": "Identify URI and SAS parameters",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/4-identify-uri-sas-parameters",
+          "kind": "teaching",
+          "points": [
+            "A SAS URL consists of the storage resource URL followed by a signed query token.",
+            "The sv parameter identifies the storage service version; st and se specify start and expiry times in UTC.",
+            "The sp parameter lists permissions, and applicable resource or service parameters identify the permitted scope.",
+            "The sip parameter can restrict caller IP addresses; spr can restrict requests to HTTPS.",
+            "The sig parameter carries the signature that authenticates the token. Treat the complete SAS URL as a credential and avoid exposing it."
+          ]
+        },
+        {
+          "id": "configure-storage-security--5-determine-storage-service-encryption",
+          "title": "Determine Azure Storage encryption",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption",
+          "kind": "teaching",
+          "points": [
+            "Azure Storage automatically encrypts data before persistence and decrypts it for authorized reads; encryption at rest cannot be disabled.",
+            "Microsoft-managed keys are managed by Azure; customer-managed keys give you control over the encryption key lifecycle.",
+            "Infrastructure encryption provides a second encryption layer with a separate key and algorithm when enabled.",
+            "Account access keys authorize Shared Key requests and signed SAS tokens; they are distinct from the keys used for storage encryption.",
+            "Store access keys securely and plan rotation so applications update their credentials without losing access."
+          ]
+        },
+        {
+          "id": "configure-storage-security--6-create-customer-managed-keys",
+          "title": "Create customer-managed keys",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/6-create-customer-managed-keys",
+          "kind": "teaching",
+          "points": [
+            "Customer-managed encryption keys can be stored in a customer-owned Key Vault or Managed HSM.",
+            "You can generate a new key or use an existing key, and control its access, auditing, rotation and disabling.",
+            "Select the customer-managed vault and key or enter its URI. Enable vault soft delete and purge protection, and grant the storage managed identity the required key permissions.",
+            "Choose customer-managed keys when compliance or organizational policy requires control of the encryption key lifecycle."
+          ]
+        },
+        {
+          "id": "configure-storage-security--7-apply-best-practices",
+          "title": "Apply Azure Storage security best practices",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/7-apply-best-practices",
+          "kind": "teaching",
+          "points": [
+            "Storage Insights provides a consolidated view of storage performance, capacity and availability using metrics and logs.",
+            "Track latency, throughput, transaction counts and usage trends, and use alerts to investigate anomalies.",
+            "Microsoft Defender for Storage provides threat detection, including supported malware scanning and suspicious-activity detection capabilities.",
+            "Use operational monitoring and threat protection together; viewing metrics alone does not replace access controls or active threat detection."
+          ]
+        },
+        {
+          "id": "configure-storage-security--8-simulation-storage",
+          "title": "Exercise: Manage Azure Storage",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/8-simulation-storage",
+          "kind": "exercise",
+          "points": [
+            "Create a storage account, secure blob containers and configure file shares using the official lab instructions.",
+            "Check how the chosen authorization and network settings protect both blob and file access.",
+            "The hands-on lab requires an Azure subscription; reading the steps does not deploy anything."
+          ]
+        },
+        {
+          "id": "configure-storage-security--9-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/9-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "configure-storage-security--10-summary-resources",
+          "title": "Summary and resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/10-summary-resources",
+          "kind": "summary",
+          "points": [
+            "Apply least-privilege access and limited SAS credentials alongside encryption and secure transport.",
+            "Select customer-managed keys and monitoring according to your security and compliance requirements."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configure-azure-files-file-sync",
+      "title": "Configure Azure Files",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/",
+      "lessons": [
+        {
+          "id": "configure-azure-files-file-sync--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Azure Files provides managed file shares, while Azure File Sync adds local Windows Server caching for hybrid access."
+          ]
+        },
+        {
+          "id": "configure-azure-files-file-sync--2-compare-files-to-blobs",
+          "title": "Compare storage for file shares and blob data",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/2-compare-files-to-blobs",
+          "kind": "teaching",
+          "points": [
+            "Choose Azure Files when applications expect shared directories and file-system access over SMB or NFS.",
+            "Use file shares for lift-and-shift applications, common tools, configuration files and shared diagnostic data.",
+            "Choose Blob Storage for object-oriented access to large amounts of unstructured data using REST APIs and client libraries.",
+            "Azure File Sync can centralize files in Azure while preserving local file-server access and caching."
+          ]
+        },
+        {
+          "id": "configure-azure-files-file-sync--3-manage-file-shares",
+          "title": "Manage Azure file shares",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/3-manage-file-shares",
+          "kind": "teaching",
+          "points": [
+            "Choose either SMB or NFS for a file share; a single share does not serve both protocols.",
+            "For classic shares, general-purpose v2 accounts provide HDD pay-as-you-go storage. FileStorage accounts support SSD provisioned shares and, with StandardV2 SKUs, HDD provisioned v2 shares.",
+            "HDD pay-as-you-go access tiers are Transaction optimized, Hot and Cool, with different capacity and transaction pricing. Provisioned shares use a separate billing model.",
+            "SMB identity authentication supports AD DS, Microsoft Entra Domain Services or Microsoft Entra Kerberos. Configure both share-level access and Windows file/directory permissions.",
+            "Account keys provide broad access and should not be shared casually. A file SAS is for REST API access rather than mounting an SMB share.",
+            "SMB uses port 445; blocked outbound port 445 is a common cause of failed mounts from on-premises networks."
+          ]
+        },
+        {
+          "id": "configure-azure-files-file-sync--4-create-file-share-snapshots",
+          "title": "Create file share snapshots",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/4-create-file-share-snapshots",
+          "kind": "teaching",
+          "points": [
+            "A share snapshot is an incremental, read-only point-in-time copy of an Azure file share.",
+            "Take snapshots before risky changes or on a schedule to recover from accidental edits, deletion or application corruption.",
+            "Restore individual files, folders or a share from the appropriate snapshot.",
+            "A share can have up to 200 snapshots; they use the share redundancy settings and remain until deleted.",
+            "Deleting a share removes its snapshots too, so snapshots alone do not protect the entire share. With share soft delete enabled, undeleting the share restores its contents and snapshots during retention."
+          ]
+        },
+        {
+          "id": "configure-azure-files-file-sync--5-implement-file-sync",
+          "title": "Implement soft delete for Azure Files",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+          "kind": "teaching",
+          "points": [
+            "Enable soft delete at the storage account level to retain deleted classic file shares temporarily; this feature does not apply to standalone Microsoft.FileShares resources.",
+            "Choose a retention period from 1 to 365 days during which a deleted share can be recovered.",
+            "Soft delete protects share deletion; use snapshots or backup for point-in-time recovery of changed or deleted files within a share."
+          ]
+        },
+        {
+          "id": "configure-azure-files-file-sync--6-identify-components",
+          "title": "Use Azure Storage Explorer",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/6-identify-components",
+          "kind": "teaching",
+          "points": [
+            "Storage Explorer is a desktop tool for managing storage data across accounts and subscriptions on Windows, macOS and Linux.",
+            "Full access requires the appropriate management-plane and data-plane permissions; seeing an account does not automatically grant access to its data.",
+            "Connect through an Azure subscription, account credentials or a suitably scoped SAS, including selected services in another subscription.",
+            "An account has two access keys so clients can use one while you rotate the other; update dependent applications when credentials change.",
+            "Protect keys because they grant broad account access, and prefer appropriately scoped identity permissions where supported."
+          ]
+        },
+        {
+          "id": "configure-azure-files-file-sync--7-deploy-azure-file-sync",
+          "title": "Consider Azure File Sync",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+          "kind": "teaching",
+          "points": [
+            "Azure File Sync centralizes file shares in Azure Files while Windows Servers act as local caches.",
+            "A Storage Sync Service manages sync groups; each sync group contains one cloud endpoint and participating server endpoints.",
+            "The cloud endpoint is an SMB Azure file share; a server endpoint identifies a local NTFS path on a registered Windows Server. Azure File Sync does not support NFS Azure file shares.",
+            "Install the Azure File Sync agent on each participating server to perform synchronization.",
+            "Cloud tiering keeps frequently accessed data local and recalls other files from Azure as needed.",
+            "Use the design for branch-office caching, hybrid application access and recovery scenarios while retaining familiar local file protocols."
+          ]
+        },
+        {
+          "id": "configure-azure-files-file-sync--8-knowledge-check",
+          "title": "Knowledge check",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/8-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "configure-azure-files-file-sync--9-summary-resources",
+          "title": "Summary and resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/9-summary-resources",
+          "kind": "summary",
+          "points": [
+            "Use file shares for native shared-file workloads and File Sync for hybrid caching.",
+            "Combine snapshots, share soft delete and appropriate backup with scoped access to protect and recover files."
+          ]
+        }
+      ]
+    }
+  ]
+}

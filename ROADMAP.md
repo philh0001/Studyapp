@@ -1,5 +1,7 @@
 # Roadmap
 
+Course study addition: concise reading and browser listening covering all 28 currently linked AZ-104T00 modules, saved lesson/completion, module/course queues, speed/voice selection and spoken passage/word highlighting. Personal note editors stay collapsed by default. Official interactive exercises/checks remain linked. Physical iPhone voice quality, screen-lock behaviour and word-boundary availability still need actual-device acceptance; browser tests verify rendering/state, not real audio.
+
 ## Current
 
 - First mobile web build implemented: Learn/draft preview, timed practice, review queues, progress/coverage, notes/bookmarks, settings, backup/restore and offline PWA.

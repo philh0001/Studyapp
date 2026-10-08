@@ -1,0 +1,3707 @@
+{
+  "checkedAt": "2026-10-08T10:29:50.455Z",
+  "reviewKind": "AI-assisted official-source accuracy audit",
+  "humanApproval": false,
+  "questionsReviewed": 188,
+  "optionsReviewed": 624,
+  "reviewMethod": "Independent semantic reassessment of complete current question content and all option explanations against actual retained Microsoft Learn excerpts and additional full-page sections; prior semantic rationales retained only after reassessment. Fresh HTTP 200 official articles rechecked deny availability, alert responses, lifecycle access-time/Hot transitions and Full Control/Elevated Contributor ACL qualification. Hashes identify reviewed revisions and do not establish accuracy.",
+  "sourceLimitations": "Supported means the claims are consistent with consulted official text under the question assumptions. No live Azure resource operations, actual exam-bank comparison or human approval were performed.",
+  "questions": [
+    {
+      "questionId": "az104-reserve-plus-01",
+      "revision": 1,
+      "questionHash": "d713fa90530a82260d8e05dbb5e3ab273ea47304f805bb82ad2d53a0fcb28539",
+      "result": "supported",
+      "rationale": "Invitation creation and redemption are separate steps. The full official guest-invitation text states that invitations do not expire, eliminating the waiting-for-expiry distractor; redeeming the existing invitation completes the stated flow.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-reserve-plus-02",
+      "revision": 1,
+      "questionHash": "b9776fb7c7fcd226050cbc3fe7c8e6c4bd443411163d63b745d82e9f43f07a7f",
+      "result": "supported",
+      "rationale": "Group Contributor inherits down rg-atlas to its new account, not to sibling rg-beacon. Per-resource grants are unnecessary and group assignment is supported; no denies/locks/other grants are explicit.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview#scope",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-reserve-plus-03",
+      "revision": 1,
+      "questionHash": "60d388d5eef117dcc033badcfff7220f7f2107f348f68225c524f04083508e1c",
+      "result": "supported",
+      "rationale": "The 80-percent actual-cost budget notifies without stopping resources. No action automation is configured, so subscription disablement, write deny and VM deallocation cannot be inferred; notification evaluation is not promised real-time.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-reserve-plus-04",
+      "revision": 1,
+      "questionHash": "a17f9917c973937fb00555b20d2f422f7b1ba37d38776617100dda06bad340a5",
+      "result": "supported",
+      "rationale": "Associated policy change/removal supplies server-side SAS revocation without key rotation. Local deletion, tags and a second unrelated policy cannot revoke the leaked original; propagation delay remains relevant operationally.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-reserve-plus-05",
+      "revision": 1,
+      "questionHash": "a6a3e9d9b8f8c5e834f6bde5b7a863b25315b94c2958edf5e0f995dc0abcf511",
+      "result": "supported",
+      "rationale": "ZRS supplies the primary synchronous zone copies. LRS and GRS/RA-GRS primary LRS lack that zone requirement; secondary reads do not change primary replication, and supported region/account are explicit.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-reserve-plus-06",
+      "revision": 1,
+      "questionHash": "4d251cbb1f3c92474741c57ab84a58d8722fcd9a4c3881759ab8af1c4d33d81f",
+      "result": "supported",
+      "rationale": "Lifecycle cannot rehydrate Archive regardless of rule count/age. Delete does not create a readable live report; immutability is excluded, so the issue is unsupported tier direction rather than deletion-policy eligibility.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-reserve-plus-14",
+      "revision": 1,
+      "questionHash": "7154eaca36547275f2ef8bbe39dd56e407d625d70ae2c452b7f0c234ec0f2c57",
+      "result": "supported",
+      "rationale": "Scheduled processing suppression retains fired alerts and configured groups. Disabling rules would prevent evaluation, deleting groups is unnecessary, and budget settings are a separate concern.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-reserve-plus-15",
+      "revision": 1,
+      "questionHash": "143a0d520d2d5a51c6b844adf5961e418b6762fa0f00b85091c90c907007de60",
+      "result": "supported",
+      "rationale": "Test failover into nonproduction followed by verification/cleanup matches the drill requirement. Real failover would alter production, indefinite drill resources skip documented cleanup, and production network is not the recommended isolation choice.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-01",
+      "revision": 1,
+      "questionHash": "8e0ee28aadb6cbccdd0c33bfb7c887d0812009357d06ddd7e22e70f8c0a4e133",
+      "result": "supported",
+      "rationale": "User Administrator and Guest Inviter are the documented least-privileged task roles; PRA is for role assignment, not invitation alone. The P1 onboarding case does not grant unstated directory roles.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users#prerequisites"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-02",
+      "revision": 1,
+      "questionHash": "657d043660ebb207f4890c85614d02648704edff15e1c697bf6e3786eb4a5b08",
+      "result": "supported",
+      "rationale": "The synchronized department authority remains AD DS, so a cloud-only edit or recreating the user cannot satisfy the stated correction. Cloud-only users elsewhere in the case are distinct.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users#users-in-workforce-tenants",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-03",
+      "revision": 1,
+      "questionHash": "bfb8483172a33c7daefa516d62cbb419fe01036c1119797c0c369be7b66b0b7d",
+      "result": "supported",
+      "rationale": "Pat is a first-level member and Dev is nested; licensing differs from RBAC transitivity. Group processing/errors and sufficient product licences remain configuration prerequisites.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-04",
+      "revision": 1,
+      "questionHash": "4524275aaa1c6f1e4dc279a2b8d2971095073e64e2083ae6da24bd769f65730c",
+      "result": "supported",
+      "rationale": "The exhibited equality rule includes Research, excludes Finance and null. P1 coverage and completed processing are explicit; no manual-membership alternative applies.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-05",
+      "revision": 1,
+      "questionHash": "53fc7bdd2f02f2f5fdaf059b52c932bcb5adf389f4330fc26da40be972a61f3e",
+      "result": "supported",
+      "rationale": "Audit and restrict attribute writers because dynamic membership evaluates writable source values. Manual removals cannot permanently override a dynamic rule; the rule itself is not an attribute ACL.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-06",
+      "revision": 1,
+      "questionHash": "dfa9df2d9e1681e22ce2a154e51b28a7a3afc6932e8d1c05da338d38f149a550",
+      "result": "supported",
+      "rationale": "Add B, verify the asynchronously applied licence, then remove A. Removing A sooner risks service loss; the retained licensing source explicitly prescribes this order, not merely an example.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "dependencies-and-competing-orders"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-07",
+      "revision": 1,
+      "questionHash": "d937b8be618e1342fd0bd81a84442d55808b46b49a195346851f41f97d08bead",
+      "result": "supported",
+      "rationale": "With a two-method policy, one method is insufficient and missing registration leads to administrator contact. Enablement does not create authentication data; licence eligibility is assumed by the enabled premise.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-08",
+      "revision": 1,
+      "questionHash": "69b6ed704dcead4e19b4edca2ee1dc1c05b48a1c628ecdf84165936e91910f38",
+      "result": "supported",
+      "rationale": "The on-premises password location makes configured writeback necessary. Cloud methods alone and a separate replacement cloud password do not remove that authority boundary.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-09",
+      "revision": 1,
+      "questionHash": "faebb85c136f5ea62edb75719b634310074161bea6bad28e08af3d7a306d1025",
+      "result": "supported",
+      "rationale": "Resend the existing Pending acceptance invitation from the B2B tile; the full retained guest source explicitly says invitations do not expire. Creating the account does not complete redemption, and replacing it is unnecessary.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator#external-user-invitations",
+        "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-10",
+      "revision": 1,
+      "questionHash": "8df5781fe733033c1fc6bcf095d94434329bc5fbd2997dac1cf8f159acd4c998",
+      "result": "supported",
+      "rationale": "Account enabled is the sign-in gate; display name and mail nickname are descriptive fields. This prevents initial sign-in without deleting the user.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users#basics"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-11",
+      "revision": 1,
+      "questionHash": "009314088149a7b6a7e367dac3c55e882242ea59ff8502c1f995a27f53e59a78",
+      "result": "supported",
+      "rationale": "The role-assignable setting forces Assigned membership; PRA and P1 are explicit. Groups Administrator and dynamic membership do not satisfy the documented creation workflow.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups#create-a-basic-group-and-add-members"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-12",
+      "revision": 1,
+      "questionHash": "f5f6ec2749652e6ddb5977f3abbdc5933200e8e9cd516e9382dad018504ccb59",
+      "result": "supported",
+      "rationale": "The inventory counts 120 unique users, not 240 memberships or three groups. P1 entitlement is per unique user; qualifying alternative entitlements are outside the choices.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-13",
+      "revision": 1,
+      "questionHash": "aa301b4ace501016c0457896022c4b83a6ce91a3ad1c14213200a8ad2fb4f63e",
+      "result": "supported",
+      "rationale": "Microsoft 365 groups are user-only and dynamic rules cannot mix users with devices. Device ownership does not convert a user/device mixture into a supported group.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-14",
+      "revision": 1,
+      "questionHash": "17e1603498e64d5270b5edd01a9006bdb7fc7c2f22de250a2e4fa855670cf7c4",
+      "result": "supported",
+      "rationale": "Authentication source and privilege level are independent dimensions. Each of the four descriptions has a unique internal/external and member/guest intersection; no alternative pairing survives both dimensions.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users#users-in-workforce-tenants",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "every-match-prompt-and-competing-pairings"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-15",
+      "revision": 1,
+      "questionHash": "1bfd2be1a1239c716935d188de26a5d211f290b98cd4bbf1f37ac63f5c942813",
+      "result": "supported",
+      "rationale": "Tenant location is the fallback and explicit user location is recommended for multi-country licensing. Display names do not determine service eligibility, and service availability is not universal.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-16",
+      "revision": 1,
+      "questionHash": "6168b00fceab05a66d2e34018f34748b4d891b0518f326f519b92dc89ada3582",
+      "result": "supported",
+      "rationale": "Errors and issues on the product licensing page addresses assignment errors; group descriptions and welcome-email settings do not expose that state. Portal labels can change independently of licensing semantics.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-17",
+      "revision": 1,
+      "questionHash": "9158d85baa1bdc03df85a13c8adb25045a4e46b23aac3935c53e6e60dde8daeb",
+      "result": "supported",
+      "rationale": "Zero suppresses reconfirmation rather than disabling SSPR or making it occur at every sign-in. The exhibit separates registration requirements from reconfirmation.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks#reconfirm-authentication-information",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-18",
+      "revision": 1,
+      "questionHash": "509a18e9ad3bc9be2e2301b7fc3e1528f2cd31044016e06dc6b83fc6ba498e07",
+      "result": "supported",
+      "rationale": "Outbound 443 relay and local AD DS password-policy enforcement are distinct supported properties. Working writeback is an explicit premise; no inbound rule or complexity bypass is established.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-writeback#how-password-writeback-works",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-writeback"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-19",
+      "revision": 1,
+      "questionHash": "6eda0194b4cdee2b8324a8c6ac0a221ecc22a917e47b17c863f11d1180b3e091",
+      "result": "supported",
+      "rationale": "Resource-scoped Reader alone meets read-only and one-account boundaries. Group Contributor violates privilege and scope; subscription Reader violates scope.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview#scope-levels",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-20",
+      "revision": 1,
+      "questionHash": "b2415b1fac5c4c8e879d88061ad7add279fb90d6de7b01e9c29fc453853c7e56",
+      "result": "supported",
+      "rationale": "Contributor cannot assign RBAC roles whereas Owner can; Reader cannot assign roles either. Broad resource management and access delegation are not interchangeable capabilities.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-21",
+      "revision": 1,
+      "questionHash": "a437e1fca3bfb6787ac757201758a6d1e54a43e5f9d0e590b9802379f2a45aa1",
+      "result": "supported",
+      "rationale": "A matching deployment-stack deny blocks deletion despite Owner unless the principal is excluded. Freshly retrieved official text confirms customer-managed denies remain private preview and Azure manages generally available denies; a second deny would not cancel the first.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/deny-assignments"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-22",
+      "revision": 1,
+      "questionHash": "8e0b3c4e09ed92495df64e86c51db7bb7a5fcd69d710af13f45bbded53931763",
+      "result": "supported",
+      "rationale": "NotActions subtracts within Role A rather than denying across roles. The exhibited Role B independent grant restores write under the explicitly additive, no-deny premise.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview#how-azure-rbac-determines-if-a-user-has-access-to-a-resource",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-23",
+      "revision": 1,
+      "questionHash": "dacf8aa7f1b8c3e05523ff3a012bb03dfba54e58e8e7cea4b2a2ab087c79c5b8",
+      "result": "supported",
+      "rationale": "Management group, subscription, resource group, resource is a strict scope hierarchy. No alternative order fits broadest-to-specific wording; this is hierarchy ordering rather than deployment sequencing.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview#scope-levels",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "dependencies-and-competing-orders"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-24",
+      "revision": 1,
+      "questionHash": "be190a74286b7da4eb0ab94e354f1c342101fa0bfc4bc23ba667eadaf688e378",
+      "result": "supported",
+      "rationale": "The exhibited path ends at warehouse resource group, with neither subscription-only nor provider-resource scope. The explanation correctly uses path structure rather than resource naming.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-25",
+      "revision": 1,
+      "questionHash": "2e11023da7e594a44a97f2cc7afc57e6f199fe75783992bd849531139aa37de6",
+      "result": "supported",
+      "rationale": "Reader lacks writes, Contributor lacks role assignments, and Owner includes both. The requirement descriptions concern permissions, so Owner merely choosing not to write is not an alternative Reader pairing.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "every-match-prompt-and-competing-pairings"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-26",
+      "revision": 1,
+      "questionHash": "5b2e33895b53ecb1c136e0e9f4f416fe6bc7e82470b23e12cb5e799ff7ea8505",
+      "result": "supported",
+      "rationale": "Nested RBAC access and nontransitive group licensing are intentionally contrasted. Parent grants a role through Child but does not license Morgan through that nesting alone.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true#limitations-of-group-based-licensing-in-the-microsoft-365-admin-center"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-27",
+      "revision": 1,
+      "questionHash": "6044ea133cd0efcd37f7be41a9e830310ba992cdd29a8f334bc33e2a138a6c2f",
+      "result": "supported",
+      "rationale": "Resource-group permissions flow down, not up or sideways to a sibling. Shared subscription does not expand the north Reader assignment to south.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview#scope-levels"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-28",
+      "revision": 1,
+      "questionHash": "6b8aaf59ed2bb5f8e852103e5754a6b9255745c7f3666f7e2c8c1f77e827c401",
+      "result": "supported",
+      "rationale": "Contributor can read Policy objects but cannot create/update definitions or assignments. Read visibility does not imply every Policy operation, and visibility is not Owner-only.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-29",
+      "revision": 1,
+      "questionHash": "6f43b8cdb065181be5163266c842935f08776a15d3a3758257ac00a3890678ee",
+      "result": "supported",
+      "rationale": "Removing the direct grant leaves the independently applicable group grant. Continued access is not evidence that removed assignments persist permanently; propagation timing is not the tested premise.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-30",
+      "revision": 1,
+      "questionHash": "cc6c6af48acb40ca47a3435f1125171ab4e6f4ebe8e468a5dbbdadf7a75c900a",
+      "result": "supported",
+      "rationale": "Actions minus NotActions and DataActions minus NotDataActions describe distinct planes. Neither NotActions alone nor DataActions granting management operations matches the documented calculation.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-31",
+      "revision": 1,
+      "questionHash": "5f6f429a6a88cc4fa5d4e91ac449d023a6b0333cb3f72584a3580d7c09ca17a1",
+      "result": "supported",
+      "rationale": "The exhibit excludes Recovery, not Analyst. The role grant does not cancel the deny; the explicitly excluded principal avoids this particular deny only.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/deny-assignments",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/deny-assignments#deny-assignment-properties"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-32",
+      "revision": 1,
+      "questionHash": "3bc78109e57d7af7cf7dfc7a4aa6a3304785d3b6fbd579a07bee65bcf7e22682",
+      "result": "supported",
+      "rationale": "DoNotApplyToChildScopes true prevents the subscription deny inheriting to the resource group. It does not expand to other subscriptions, and no other denies or locks are assumed.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/deny-assignments"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-33",
+      "revision": 1,
+      "questionHash": "06a550c25871bffd8c8b707cc559062a8c5c59429f6a72c48f4ad6a5d3600206",
+      "result": "supported",
+      "rationale": "Provisioned managed identity still needs a scoped role assignment. Identity existence grants no permissions, and a resource-group name is a scope rather than a principal.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-34",
+      "revision": 1,
+      "questionHash": "d42853ee2254c1055dcd32bf64cf489c2a5b20ce2e8b5dfdf398cea8431c23a4",
+      "result": "supported",
+      "rationale": "A false applicable role-assignment condition blocks the action. The question presupposes a supported conditional action; it does not claim all Azure role operations support arbitrary conditions.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-35",
+      "revision": 1,
+      "questionHash": "28916439a55cf681596e0d9a6078e9b23ee70dd1745485b720c42cb88c3730f2",
+      "result": "supported",
+      "rationale": "SDK-created assignment identities need explicit roles; caller-based evaluation and identity-based remediation differ. The Juniper case states no unstated role grants and is consistent with that failure.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-36",
+      "revision": 1,
+      "questionHash": "6435403d51960be3bacfa80b10d064ef545ce13c85dbf22d57cfd7881e8b3f0e",
+      "result": "supported",
+      "rationale": "Changing roleDefinitionIds does not retroactively grant roles. Juniper needs a manual additional assignment, not a second identity; the case retains the existing identity and old grants.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
+        "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources#configure-the-managed-identity"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-37",
+      "revision": 1,
+      "questionHash": "a2c67741af11624295474f5c56dcbcf5690062242f590e97ba22e5557508c594",
+      "result": "supported",
+      "rationale": "After grants are present, a remediation task applies modify operations to existing resources using the assignment identity. A role list is not itself an assignment and wholesale recreation is unnecessary.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-38",
+      "revision": 1,
+      "questionHash": "4668f699a0547cd048d57591d904009f23323dcc4db5a77d92bb5999ae65d7ff",
+      "result": "supported",
+      "rationale": "Group tags do not automatically propagate without policy or explicit tagging. Tags are metadata, not RBAC grants; the absence of tag policy is decisive.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-39",
+      "revision": 1,
+      "questionHash": "98c65f4efdd979522841efc9d16f1e1a0d07f2f64d5939b588dcc27411b6ba8d",
+      "result": "supported",
+      "rationale": "Tag-name operations ignore case while values remain case-sensitive. The exhibit therefore permits equivalent operational keys with different Production values; displayed provider casing is not a guarantee of distinct keys.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-40",
+      "revision": 1,
+      "questionHash": "7c6d6cefc240a25e4d6ca0dd0bc67ae6743b981f89b997e1b2f7407ac7ebafdc",
+      "result": "supported",
+      "rationale": "One management group requires a common tenant. The restriction is tenant trust, not a one-subscription limit; cross-tenant governance needs a different design.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-41",
+      "revision": 1,
+      "questionHash": "1aa707d8b589c000be52a34bcefe8b0a56866d800bdbfb4f8570d73a39564e82",
+      "result": "supported",
+      "rationale": "Six depth levels exclude root and subscription. One-parent topology permits multiple descendants; the numerical distractors confuse topology and counting boundaries.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-42",
+      "revision": 1,
+      "questionHash": "99717ba3337fd868e0430fa485a1e3fdf74aa21449c23384380e94c6271b2e1e",
+      "result": "supported",
+      "rationale": "Owner at subscription scope combines full resource management with delegation. Reader and one-group Contributor fail; the question deliberately excludes billing ownership transfer.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/add-change-subscription-administrator",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-43",
+      "revision": 1,
+      "questionHash": "c0f93f3c6d13c61791b422f17544d322b3f2d26ef50773cfe5f4865cc9d678ee",
+      "result": "supported",
+      "rationale": "Budget thresholds notify rather than hard-stop consumption. The absence of automation is explicit, so stopping VMs or a real-time cap cannot be inferred.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-44",
+      "revision": 1,
+      "questionHash": "1c6059e10b0280349ed3d511ec9d34691250afe752e60f85ef618a6e79e1f08f",
+      "result": "supported",
+      "rationale": "The full retained budget article explicitly limits action groups to subscription/resource-group scopes. Resource-group support is distinct from broader budget-scope support, so management-group and all-scopes alternatives are false.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets#trigger-an-action-group"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-45",
+      "revision": 1,
+      "questionHash": "a48406105b4bf22ebf3e1e30803893c562754b7b6d1ae3ed98bade6b13d56bf4",
+      "result": "supported",
+      "rationale": "Resource locations can differ from resource-group metadata location. Shared lifecycle does not force regional co-location or relocate existing workloads.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-46",
+      "revision": 1,
+      "questionHash": "929314e816c73f343ee6e2de85fbbcc4460755874d3c587bd7e729eaa96a93d2",
+      "result": "supported",
+      "rationale": "ReadOnly management locks leave valid data-plane blob overwrites outside lock protection. The explicit valid data grant and no other restrictions prevent confusing key-listing POST restrictions with blob authorization.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-47",
+      "revision": 1,
+      "questionHash": "e9a41c2e0e067d2c8cf9b5a9e05f1ddd2c39a0cfa64dee64c21667185be91e02",
+      "result": "supported",
+      "rationale": "Operational excellence covers process/manageability/deployment practices. Cost and performance are distinct categories even when one recommendation might have multiple downstream benefits.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/advisor/advisor-overview#what-is-advisor"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-48",
+      "revision": 1,
+      "questionHash": "24370932079a067b5d6af9e52f0339540ad0fe1a50de0574d6c9de1d56218cfb",
+      "result": "supported",
+      "rationale": "Tags are plain text and unsuitable for secrets. They can appear in exports/reports/logs and are not encrypted secret storage; management groups are not a permitted tag target.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-49",
+      "revision": 1,
+      "questionHash": "bc0b513d73db45fe9b17015f9950ac0f2b7a30dcf6651810475927cd0a068274",
+      "result": "supported",
+      "rationale": "Without default-group customization, a new subscription defaults to the single root. Root cannot be moved/deleted; a second root and permanent hierarchy exclusion conflict with the source.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-plus-50",
+      "revision": 1,
+      "questionHash": "6ddd9ec5fd6206d65e0f2160cc2c16def8176791a7574978244f9c49ade13db5",
+      "result": "supported",
+      "rationale": "A management-group definition may be assigned below its definition scope with assignment parameters. Per-value copies are unnecessary and higher definition placement does not prohibit descendant assignment.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-01",
+      "revision": 1,
+      "questionHash": "b76bd9a1c7feb7f69c70c1f8951e9d3a530803f50920529995a9bafbb9a33ca8",
+      "result": "supported",
+      "rationale": "Max preserves the largest recorded sample in each interval; Average may hide peaks and Count measures sample number. This concerns captured samples, not detecting sub-sampling spikes.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-02",
+      "revision": 1,
+      "questionHash": "daa0be5a31e33a8868da003b30aac17443fa8353dff15d166e0b4df77dad808a",
+      "result": "supported",
+      "rationale": "Dimension splitting gives separate API series; aggregate-only and larger grain change different chart properties. Confirm the metric actually exposes the named API dimension, as the scenario states.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-03",
+      "revision": 1,
+      "questionHash": "4d52c478a1f331ba387f19d414d87486c5a1672a3d04df21fa57112e5cdb272d",
+      "result": "supported",
+      "rationale": "Hour grain aggregates a larger interval without changing the 24-hour range or creating measurements. Grain equal to range yields one aggregate, not many intervals.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-04",
+      "revision": 1,
+      "questionHash": "549c5d71137d0e3a94c719ad647aaedb8e30a30f39d32cdd0d2b3988009d03aa",
+      "result": "supported",
+      "rationale": "One diagnostic setting permits only one destination of each type; two settings serve two workspaces. Granted access and existing destinations are given; a chart does not route logs.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-05",
+      "revision": 1,
+      "questionHash": "19b9ef85ecb22cfd9cc282f95adc03a0b18664f1b8ed17c53b1e7ebd416bf319",
+      "result": "supported",
+      "rationale": "Regional diagnostics require same-region storage and trusted-service bypass when its firewall restricts VNet access. Destination must preexist; unrestricted region selection contradicts the regional premise.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-06",
+      "revision": 1,
+      "questionHash": "77a9a4e340cbf644b044355c38ade170dd2400dbd1ac8f5ae85a8627996562de",
+      "result": "supported",
+      "rationale": "Five diagnostic settings is the per-resource limit regardless of Log Analytics choice. Keeping all five prevents a direct sixth addition; routing needs redesign.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-07",
+      "revision": 1,
+      "questionHash": "66d8c3860d16e5e605fa515ebf5b69f1ee81fb6ad8523c33f1254ec5a317bed8",
+      "result": "supported",
+      "rationale": "Many VMs may share one associated DCR. Thirty resources is not the thirty-DCR-per-resource association limit; diagnostic settings alone do not collect the stated guest events and action groups do not define collection.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-08",
+      "revision": 2,
+      "questionHash": "fcc05fa20c8bd4fbb7db363ef90e9f8501da671b9d9f8381619e04dc77794f90",
+      "result": "supported",
+      "rationale": "DCR transformation removes unwanted incoming records and destination specifies where retained data goes. Backup recovery points are a separate service surface. Fresh official alert documentation explicitly makes acknowledgement a user response on an existing alert, establishing that it is unrelated to DCR pre-ingestion filtering.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview#what-are-azure-monitor-alerts",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-09",
+      "revision": 1,
+      "questionHash": "5448481fe36b1be392e21b4eded54c65f4169df4810fce4a3853272aa655414b",
+      "result": "supported",
+      "rationale": "Where EventID equals 4625 filters rows; project chooses columns and take 4625 limits rows. The explicit table exhibit supplies numeric EventID, avoiding type-assumption ambiguity.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries#filter-by-multiple-conditions",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-10",
+      "revision": 1,
+      "questionHash": "1f7b7fd0fe9152bdd00e117e013a322ef67845b17551203710da6fc9f5ca9720",
+      "result": "supported",
+      "rationale": "Summarize count by Computer groups and counts. Project does not aggregate and sort does not create counts; no counter arithmetic is needed.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries#aggregate-groups-of-rows",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-11",
+      "revision": 2,
+      "questionHash": "9e108faa6fbb83cda28fbd57b963be6c08be4c099a5cc1b3c1cedb608e2bc28a",
+      "result": "supported",
+      "rationale": "Revision2 requires newest-time sorting without a unique order for equal timestamps. Top 10 descending TimeGenerated fits that scope; take is unordered and project does not choose the newest ten. The earlier deterministic tie claim is retained in history.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-12",
+      "revision": 2,
+      "questionHash": "6528dc9fa07ddb6d0608df3accb9e52f98d744c641ed695e44ba94e74a016c72",
+      "result": "supported",
+      "rationale": "Revision2 explicitly filters Perf to one comparable counter/instance before hourly averaging. This addresses the retained tutorial warning that mixing different performance counters gives a meaningless result. Average and hourly bin remain the two required operators; projection-only and arbitrary take cannot produce the requested mean.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries#perform-mathematical-or-statistical-calculations",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries#group-unique-combinations-of-values-in-multiple-columns",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-13",
+      "revision": 1,
+      "questionHash": "a5ccc4b3da4ba99d25de5388f4ce095fb37aeca61b6d51e542cd3c7aa907939b",
+      "result": "supported",
+      "rationale": "Project selects exactly the requested two columns. Where and sort affect rows/order and retain other columns; each distractor fails the output shape.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries#filter-by-multiple-conditions"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-14",
+      "revision": 1,
+      "questionHash": "2f4ac7932d32b54bcc3c0fa398565274851e1fec8306d83dea0d95b5bd9a98e4",
+      "result": "supported",
+      "rationale": "CPU thresholds map to metric alerts and KQL results to log-search alerts. PromQL is distinct and user response is not a rule signal or threshold.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-15",
+      "revision": 1,
+      "questionHash": "551179523161b47d2ec6940ab189b892f4899d3d3d712cc5b03f4b44ed4dd279",
+      "result": "supported",
+      "rationale": "Scheduled alert processing suppression leaves alert rules active. Acknowledging a past alert and changing display grain do not suppress future notifications each Sunday.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-16",
+      "revision": 1,
+      "questionHash": "21f98cd2a1726fc308e35b3ac98755aaba02199f90bc636f44b60e9851587c89",
+      "result": "supported",
+      "rationale": "Closed user response leaves condition state independent. It does not alter metrics or future thresholds; configuration changes apply separately to future alerts.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-17",
+      "revision": 1,
+      "questionHash": "1f5318e554142935d123fda8fd5de59bd475f4d74822aa66f5df32d00f8e102d",
+      "result": "supported",
+      "rationale": "Default host metrics do not imply guest-event/log collection. Enhanced monitoring/AMA configuration is separate from backup; the scenario explicitly says it is absent.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-18",
+      "revision": 1,
+      "questionHash": "d2d9f348733083f2215c2d89e49f3dafd0803b3fed81f7b227975660579b39bf",
+      "result": "supported",
+      "rationale": "Storage insights provides cross-account performance/capacity/availability. Vault inventory and packet capture answer different operational questions and cannot replace its storage workbook.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-19",
+      "revision": 1,
+      "questionHash": "457699590e0586d4489a635ed318e580001bf67777a1f3c7e22d5933d8b12c06",
+      "result": "supported",
+      "rationale": "Saving customized workbook settings and pinning charts are supported. Monitoring thresholds do not rewrite blobs, and backup schedules do not replace metric collection.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-20",
+      "revision": 1,
+      "questionHash": "af6f9e32d807db5d2bfc948223069542429eee9e3e8fca5755c652e0038c99fa",
+      "result": "supported",
+      "rationale": "IP flow verify identifies packet allowance/deny and the matching rule. Next hop concerns routing and Backup reports concern protection; this question tests NSG filtering specifically.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-21",
+      "revision": 1,
+      "questionHash": "5cc1c416b1ce80114687429303c31169a3e838d3116f601de80f7d34556b1536",
+      "result": "supported",
+      "rationale": "Network Watcher Next hop returns routing type, IP and route table for a destination; IP flow verify instead diagnoses filtering. Fresh official alert text confirms user response is New, Acknowledged or Closed, rather than a route computation. All options and their explanations follow these distinct functions.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview#what-are-azure-monitor-alerts",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-22",
+      "revision": 1,
+      "questionHash": "70f6c2fefd364260d0f8d836953b9447e700da4a695ddc5a6ceb0174dd9b8558",
+      "result": "supported",
+      "rationale": "The exhibit produces3 times2 times2 equals12 source-destination-configuration combinations. Summing counts or taking only sources ignores dimensions of the Cartesian expansion.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-23",
+      "revision": 1,
+      "questionHash": "75eed050dc7ba1f6e52fcf3ec517d4895f713d8b5201a29f374a81644389de0f",
+      "result": "supported",
+      "rationale": "RTT and failed-check percentage are Connection monitor results. Backup retention and blob tier capacity measure different services; configured endpoint/agent prerequisites remain outside the signal-choice task.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-24",
+      "revision": 1,
+      "questionHash": "28d69d3f72a4d37271e571536f6b47ee7fd74de84d5b86e2188baf160801e980",
+      "result": "supported",
+      "rationale": "Recovery Services vaults colocate with protected data sources, requiring a regional vault for each source region. Replication target and a subscription-wide default do not override this placement.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-25",
+      "revision": 1,
+      "questionHash": "d89f849580986da6fe03d4a112c7d34b1ddcefca0b2dcd2446a55cb5790e96fa",
+      "result": "supported",
+      "rationale": "Change vault replication before backup configuration; after configuration its direct setting is disabled. Alerts and the first completed backup do not supply a later-change mechanism.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-26",
+      "revision": 1,
+      "questionHash": "ba339b523c51d47facd5e80a7c0c9f27f06321ae30e343bd42950ebd37ef5939",
+      "result": "supported",
+      "rationale": "Backup vault managed identity with roles grants disk-source access; human creator rights and names do not authorize that identity. Distinguish disk permissions from Key Vault access mechanisms, which can use a service application.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-vault-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-27",
+      "revision": 1,
+      "questionHash": "f172877d85ad5f090280420e26be21fea56e693c28030001a5dc6b2fb91b8205",
+      "result": "supported",
+      "rationale": "Enhanced policy supports four-hour Azure VM cadence. Retention-only changes do not schedule backups and Standard daily-only cadence does not meet multiple-per-day timing.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-28",
+      "revision": 1,
+      "questionHash": "450d8aeecfcdf9dadcfe649157bf3d7af75ef36165cd2593017f9e2faafaf67b",
+      "result": "supported",
+      "rationale": "Enhanced supports the stated SSDv2/Ultra offerings and up-to30-day snapshot retention. Unlimited retention and complete Standard parity are not supported; current disk/region exclusions still require checking.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-29",
+      "revision": 1,
+      "questionHash": "2dc40216b7bfa5c1f0186a25fdf698f0a2e84b902daa9bf58079a972c208335f",
+      "result": "supported",
+      "rationale": "Replace existing requires an existing VM, so it fails after deletion. Create VM and restore disks remain routes from available recovery points; the question asks which is unavailable, not which is best.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-30",
+      "revision": 1,
+      "questionHash": "be1ff93169d54de163685e82af9261da65da8c95767b125451c05de407c3c555",
+      "result": "supported",
+      "rationale": "Restore disks plus generated template supports customized new VM creation. Replacing disks on a current VM and simple portal creation do not satisfy the explicitly customized route.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms#use-templates-to-customize-a-restored-vm",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-31",
+      "revision": 1,
+      "questionHash": "ebd693a2f42a4d05abaffe5dc4f91fe361bc44073c194a56d9dbcdd361eb9edd",
+      "result": "supported",
+      "rationale": "Subsequent disk backup is incremental changed-block transfer. It neither always sends unchanged blocks nor protects only temporary storage.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-32",
+      "revision": 1,
+      "questionHash": "475670a3fc0c590c8d5a56485d5916183d514cbb5c855039b8e4210994efc7c3",
+      "result": "supported",
+      "rationale": "Configured supported Cross Region Restore offers Create VM and Restore disks, excluding Replace existing disks. A recovery point and current workload/disk prerequisites remain necessary.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-33",
+      "revision": 1,
+      "questionHash": "7cf09b2fecdd223de86f60b1ae9c03daa12af110c8e6506f2df08b5298dab138",
+      "result": "supported",
+      "rationale": "Site Recovery cache storage belongs in the source region. Target-only and VM temporary-disk alternatives confuse replication staging with destination or transient VM storage.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-replication"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-34",
+      "revision": 1,
+      "questionHash": "7ca46e79d6218328929dfdf66a654ed153009a1cd563807d5486ef7b0d89728f",
+      "result": "supported",
+      "rationale": "Replication policy defines retention and app-consistent snapshot frequency. Recipients and target VNet are separate settings; configuring frequency alone is not a blanket application-consistency guarantee.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-replication"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-35",
+      "revision": 1,
+      "questionHash": "ac0416ca5b258c4d3a07413a3b3487771ce4a7c3f3352a52c055ab3d30b73cf2",
+      "result": "supported",
+      "rationale": "Non-production target network avoids drill interference while a target VNet is still required. Always using live production risks the opposite effect; test failover is not actual production failover.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-36",
+      "revision": 1,
+      "questionHash": "dbe0523e6e82327c7cc49f1d81a9774727890117659941a2c2de3f412920f520",
+      "result": "supported",
+      "rationale": "Latest processed avoids new processing and supports low RTO; Latest processes pending data for lower RPO. App-consistent is a separate selection criterion, not a guarantee of both no processing and lowest RPO.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-37",
+      "revision": 1,
+      "questionHash": "1cbba12aebbac8962bd50c52be4d09a3da2521b10bd3c92ba7ac705639b859b0",
+      "result": "supported",
+      "rationale": "Commit deletes available Site Recovery points and fixes the selected point. It does not retain switching forever or change Azure Backup policies; product boundaries matter.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-38",
+      "revision": 1,
+      "questionHash": "643da45a42a1749458d280ee6a6b068de760a6a08e21bdcb99acf3392c2e9bae",
+      "result": "supported",
+      "rationale": "Reprotect requires committed failover and reverses secondary-to-primary replication after access/permissions checks. Test cleanup and chart grain are unrelated workflows.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-39",
+      "revision": 1,
+      "questionHash": "f8918d1e7ab0c0b5d87aafc17b3f506b14ac4a0a6364bd11ab2c8a13fa2593d4",
+      "result": "supported",
+      "rationale": "Vault diagnostics in Log Analytics feed Backup reports. VM-only diagnostics and metric charts without vault log data cannot supply the cross-vault protection records.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/configure-reports"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-40",
+      "revision": 1,
+      "questionHash": "e7b6382dc938d355c74863c879fc8719fad4a4cc500dbda799b4e9ecd87f1a50",
+      "result": "supported",
+      "rationale": "Custom Kusto log alerts with an action group add custom notification conditions. Workbook time ranges only affect views and authoring a query does not automatically create an alert.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-monitoring-use-azuremonitor"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-41",
+      "revision": 1,
+      "questionHash": "9be8dcf7f8889c01d349ecc15688351202eed4904d99b43030ce41ea48e5f208",
+      "result": "supported",
+      "rationale": "The four stages have data dependencies: table then time filter then count aggregation then count sort. Summarize removes TimeGenerated, so filtering afterward cannot preserve the stated query; sorting count before count exists is invalid.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries#aggregate-groups-of-rows"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits",
+        "dependencies-and-competing-orders"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-42",
+      "revision": 1,
+      "questionHash": "d06d78672a818cdc80232a81dce28dd44a151bfd377cb56bbc2005ab718d950e",
+      "result": "supported",
+      "rationale": "Failover creates the VM to validate, commit finalizes the point, and committed status precedes reprotection. Validation is a runbook milestone, while commit-to-reprotect is an explicit service prerequisite; alternatives violate those dependencies.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits",
+        "dependencies-and-competing-orders"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-43",
+      "revision": 1,
+      "questionHash": "2fc3c00ca6adb0c19f9edb850cd3e9adcc16f5d4fbd6d265ee6ec2773a01a09a",
+      "result": "supported",
+      "rationale": "Filtering-rule diagnosis, next-hop route diagnosis and packet contents map uniquely to the three supplied tools. Packet capture can aid investigation but does not directly return the named rule or selected route tool result.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits",
+        "every-match-prompt-and-competing-pairings"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-44",
+      "revision": 1,
+      "questionHash": "1ead498aafc72bcace0eb85319ae94b277de755fc299ffd787d71b3c72e951e8",
+      "result": "supported",
+      "rationale": "Where filters rows, project selects columns and summarize groups/counts. Each prompt asks a different output transformation, so column selection and row filtering cannot swap pairings.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits",
+        "every-match-prompt-and-competing-pairings"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-45",
+      "revision": 1,
+      "questionHash": "275564c4df28a310d7bd24fe7f727780a7fcd569324db1183576e9259910a56e",
+      "result": "supported",
+      "rationale": "Harbor has AMA installed but app02 lacks DCRA, so association is the missing collection relationship. Closing alerts and changing backup do not repair it; the case supplies workspace/agent prerequisites.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-46",
+      "revision": 1,
+      "questionHash": "e3a909731df040e67647acefcfb92c3d98769cd600f3feab155115e646d06d18",
+      "result": "supported",
+      "rationale": "Harbor needs the event/time filter before per-computer count. Take4625 is a row count, and projecting only time removes the Computer grouping key; case requirements and exhibit align.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries#aggregate-groups-of-rows"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-47",
+      "revision": 1,
+      "questionHash": "869951eaffd1193c52cd90d1c87edd1e6d36c13abf9b210783aeda2c389cc17e",
+      "result": "supported",
+      "rationale": "Scheduled processing suppression records fired alerts while preventing action-group notification. Deleting DCR sacrifices required telemetry and Closed affects only one prior alert.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-48",
+      "revision": 1,
+      "questionHash": "ae85a5b3be9e09c42ed4ad49c39a596b2eaab625845bf597c160f125338c687e",
+      "result": "supported",
+      "rationale": "Linden rehearsal uses its separate non-production network and Latest processed for low-impact/no-extra-processing recovery. Actual commit and disabled protection conflict with healthy protected drill prerequisites.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-49",
+      "revision": 1,
+      "questionHash": "8cc7a4ae2ad0e7f5f5ed2072b3623611f5c1deebd02618609894568685d79fb1",
+      "result": "supported",
+      "rationale": "During the actual Linden outage, validated VM commit fixes the point and deletes alternatives. It is not a drill and does not leave points selectable forever; rehearsal and response are separate case phases.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-plus-50",
+      "revision": 1,
+      "questionHash": "2ed4ead28285a9c950072738c82b00e13df2a1017e392d65c129039e5e89a216",
+      "result": "supported",
+      "rationale": "After committed West Europe failover and primary availability/permission, reprotect runs West Europe to North Europe. Original direction would not protect the currently running VM; the flow transfers initial data and deltas.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-identity-01",
+      "revision": 1,
+      "questionHash": "45d9e6d47c7bded8bffa7ff778263e9087657f816068f6f2d3f92512cf4bcc67",
+      "result": "supported",
+      "rationale": "Resource-group scope meets the exact boundary; subscription and management-group choices exceed it. Explicit absence of other grants makes the single answer defensible.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview#scope"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-02",
+      "revision": 1,
+      "questionHash": "53d8d1b0a80fb50a74122f93266aef1d0de91950b640d033196041cdd5beb23a",
+      "result": "supported",
+      "rationale": "Contributor inheritance remains additive with child Reader; neither removal nor narrowing follows from the second grant. Denies and conditions are explicitly excluded.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-03",
+      "revision": 1,
+      "questionHash": "0f5760376dee2f1aa23b29ae8b7ecb30f4f94ac570e18c0a68a2ab29b62c6419",
+      "result": "supported",
+      "rationale": "Principal and scope are given, leaving the role definition; tags and region cannot supply permissions. The three-element source definition supports every rejection.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-04",
+      "revision": 1,
+      "questionHash": "a99e4359d376b72224744599e7f31774c983985b9bed9c9c1e329960e3663474",
+      "result": "supported",
+      "rationale": "RBAC transitivity reaches the user through Operations; direct-only and ignored-nesting claims contradict the documented group example. This must not be generalized to licensing.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-05",
+      "revision": 1,
+      "questionHash": "9313c348b8e367e79334d6abb409812ee8a6b0d8b36fd9f0c09b795a094b1d7d",
+      "result": "supported",
+      "rationale": "Service principal and managed identity are principal types; a role definition and scope are distinct assignment elements. Two selected IDs match the two eligible types offered.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-06",
+      "revision": 1,
+      "questionHash": "192ae0d7fea671dce1cccea0e96ded10174602c4ff77d3f926aef8b043ce6f00",
+      "result": "supported",
+      "rationale": "Initiative/policySet groups definitions; neither an evaluation cycle nor an individual definition is the grouped construct. Terminology matches the Policy overview.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/governance/policy/overview#initiative-definition",
+        "https://learn.microsoft.com/en-us/azure/governance/policy/overview#policy-definition"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-07",
+      "revision": 1,
+      "questionHash": "8df5ad3c0a499069312d11e5b9aaf309179f3094a7df0fa2301d415e5e50dd2f",
+      "result": "supported",
+      "rationale": "Applicable deny policy blocks the noncompliant create despite RBAC permission; policy evaluates creation as well as existing resources. No RBAC override is supported.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/governance/policy/overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-08",
+      "revision": 1,
+      "questionHash": "716336add12a1698348d7032598a348df160baadbff20bd3074fdc5a5b6d5ad1",
+      "result": "supported",
+      "rationale": "Parent CanNotDelete inheritance covers later resources without converting to ReadOnly. The options distinguish creation time from inherited lock type.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-09",
+      "revision": 1,
+      "questionHash": "d346b527002ba6e9afff21f7b2bc52f43269ae2fac7518643af23e125d599d5a",
+      "result": "supported",
+      "rationale": "Data-plane blob deletion remains outside a management lock. Neither all-delete blocking nor read-only data permission follows from CanNotDelete.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources#understand-scope-of-locks"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-identity-10",
+      "revision": 1,
+      "questionHash": "157d201bc1cfa718975f643277b506b860400b8ab6c1bab4b69dc2f1bf478d21",
+      "result": "supported",
+      "rationale": "ReadOnly blocks VM restart control-plane POST; CanNotDelete has different semantics and the group lock inherits. The specific VM restart example supports the answer.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources#understand-scope-of-locks"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-01",
+      "revision": 1,
+      "questionHash": "3a6b5674ec673bb162a003051e81bbb4b3979f91f31719233b72f84299dce56f",
+      "result": "supported",
+      "rationale": "ZRS meets synchronous primary-zone-only redundancy; LRS lacks zones and GZRS adds the excluded secondary. Supported standard workload/region are explicit.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-02",
+      "revision": 1,
+      "questionHash": "5875ee3964189a47b2677a0dac8f081dce9d765d8900fb969112ebbe081caae7",
+      "result": "supported",
+      "rationale": "RA-GRS adds readable secondary while ordinary GRS does not; LRS has no secondary. Blob workload prevents confusing Azure Files support.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-03",
+      "revision": 1,
+      "questionHash": "034cf9c65121d6ad9b831fc0f5ca2789232d1de5ea0deced831bfcda558537e0",
+      "result": "supported",
+      "rationale": "GRS geo-replication is asynchronous despite synchronous local copies. The explanation correctly identifies potential lag rather than claiming no secondary exists.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-04",
+      "revision": 1,
+      "questionHash": "be6503110ba507372d6380045650d9ec31a3c78c7ff477b861e0a7b66d887f05",
+      "result": "supported",
+      "rationale": "GZRS combines primary zones and geo-copy; ZRS misses geo-copy and GRS misses primary zones. Secondary read access is not requested.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-05",
+      "revision": 1,
+      "questionHash": "a036d482ad1d7aebba90916dc0c836c28888ecf736ece38e18c849d1b9b4b3e1",
+      "result": "supported",
+      "rationale": "User delegation uses Entra credentials and service SAS uses an account key. Account SAS is also key-signed and service SAS does not span services.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-06",
+      "revision": 1,
+      "questionHash": "17c34c2d004173070aedbb5ce23a93b613bb7d8996af1c22b964522aad8e1088",
+      "result": "supported",
+      "rationale": "Stored access policy supplies start, expiry and permission constraints together. Both distractors incorrectly remove one of the documented constraints.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-07",
+      "revision": 1,
+      "questionHash": "ee5cd860b49d06cebbe69303f117e10c5cb0879b19c05e9b4bfe45cd52db76b1",
+      "result": "supported",
+      "rationale": "Account and user-delegation SAS cannot use stored access policies. Only service SAS supports that association; the alternatives reverse or overgeneralize support.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-08",
+      "revision": 1,
+      "questionHash": "68c78f04f4a1ad7d3a5b9a30dbdf2db1cc48c55e6e6d859ff4d17dd8b6045031",
+      "result": "supported",
+      "rationale": "Cold is optimized for rare online access with sufficiently long retention. Hot is valid storage but not optimized for the stated use; Archive fails immediate online reading.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-09",
+      "revision": 1,
+      "questionHash": "0c3074bfb07cc837272426f96aeeee421f4c16ad34ddbc9e873477b0a37c72ab",
+      "result": "supported",
+      "rationale": "Archive metadata is readable independently of contents; rehydration is required for content. Reading metadata neither promotes the tier nor makes Archive online.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-10",
+      "revision": 1,
+      "questionHash": "7439f672ff1432cbc5fae8cc668a861a6985bb483285af63fc2df79e713da330",
+      "result": "supported",
+      "rationale": "Cool explicit placement has 30-day minimum, so 30 minus 21 gives nine fee days. Cold/Archive durations produce the distractors; permanent deletion and disabled soft delete remove retention ambiguity.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-01",
+      "revision": 1,
+      "questionHash": "8c02e1eac4bdb8e6c027c2c289ab5e8dc749a0928f1d26835c08418ad0a61b64",
+      "result": "supported",
+      "rationale": "Action group groups email/workflow choices. User response labels an alert and condition state records the monitored condition, so neither distractor configures those actions.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-02",
+      "revision": 1,
+      "questionHash": "feced1faef082c4599d10a1029bf8f9a4483230787b23e9abea56d26227f3723",
+      "result": "supported",
+      "rationale": "Acknowledged is independent user response; it neither clears a continuing breach nor edits thresholds. Stateful condition resolution is driven by the signal.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-03",
+      "revision": 1,
+      "questionHash": "cd7060e46397312d57944f220b76a297f715e4bb6733526746fc282a0a0455ac",
+      "result": "supported",
+      "rationale": "Alert processing rule schedules action suppression. A metric value and closing one alert do not create a recurring processing rule.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-04",
+      "revision": 1,
+      "questionHash": "1c0ba5e53988e804a0c1e21fd4aa6e2217cf242832e82d14f70afd92f6b18134",
+      "result": "supported",
+      "rationale": "Metric and log-search alerts use periodic metric evaluation and KQL workspace queries respectively. Prometheus uses PromQL and activity alerts react to activity events rather than periodically querying Logs.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-05",
+      "revision": 1,
+      "questionHash": "70b3f6d8439d0ad6cc45c6b4618441d1ef8e5e726a5d02f68d050fa844fbf878",
+      "result": "supported",
+      "rationale": "Log Analytics is the portal query editor; dashboards display/pin results and action groups configure notifications. The answer distinguishes authoring from display and alert actions.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-06",
+      "revision": 1,
+      "questionHash": "d89c2652477185596ef39dda22f86f2fa86067ddc6952d061d0c9abf4799a840",
+      "result": "supported",
+      "rationale": "Shared KQL does not imply complete Azure Data Explorer feature parity. The retained unsupported-feature list refutes universal plugins and SQL-only language claims.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-07",
+      "revision": 1,
+      "questionHash": "fbb7ea9e66e6ca0103c9d8cec3700e717335569bacc5bad273ef5c4adb3c5023",
+      "result": "supported",
+      "rationale": "Azure VM backup recovery points live in a Recovery Services vault, not only temporary disks or memory. The backup source explicitly excludes host-cache data from crash-consistent capture.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-08",
+      "revision": 1,
+      "questionHash": "9037e6525658e904f9e947ca9fd196068d55af25e472d38c14d4f83eaaa71485",
+      "result": "supported",
+      "rationale": "After initial backup, changed blocks transfer and disks can back up in parallel. Always-full and one-disk-only alternatives contradict the described process.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-09",
+      "revision": 1,
+      "questionHash": "4721fa7f000b0f29574f4b5420b9988f45cb584cf8aa7a097e9ee3394de98cda",
+      "result": "supported",
+      "rationale": "Linux application consistency requires successful custom pre/post scripts rather than default file consistency or Windows VSS writers. Customer responsibility and script success must remain explicit.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-10",
+      "revision": 1,
+      "questionHash": "ecb8256d592c099c22f5e8c81922e4510594c24765d9197fa7860fa13cbcf4f3",
+      "result": "supported",
+      "rationale": "Crash-consistent capture includes disk data, not pending memory/cache writes. Agentless opt-in does not create application consistency without coordination.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-01",
+      "revision": 1,
+      "questionHash": "452169fc96f74eb1c322e71496485c53783caa7910b0575def4bf202f99b1764",
+      "result": "supported",
+      "rationale": "Subnet network admission and Blob data authorization are independently required. The exhibit has neither sufficient role nor completed identity grant; account keys are not mandatory for an allowed subnet.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-02",
+      "revision": 1,
+      "questionHash": "c99ed80851b7d157cc86f9cbb0a607cff6ceec49105913e3c6aa403589710ce7",
+      "result": "supported",
+      "rationale": "Same-region Azure services use private source addresses for storage, so repeatedly allowing the VM public IP does not fix admission. A service endpoint plus VNet rule is the offered valid alternative; Owner alone cannot bypass the firewall.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-limitations",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-03",
+      "revision": 1,
+      "questionHash": "4846148622de34c091137c23dae86f30a292169d023b102eca826ed744f26a48",
+      "result": "supported",
+      "rationale": "Private endpoint creation leaves public endpoint policy independent. Normal service hostname with private DNS remains correct; neither a second endpoint nor a privatelink URL disables public access.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-04",
+      "revision": 1,
+      "questionHash": "09c25ea070d67ac68003e5c8d401eb15f1c42744f9a30fbb8ed13cc4173ba4ec",
+      "result": "supported",
+      "rationale": "Storage.Global supplies any-region endpoint reach, replacing rather than coexisting with Storage on the subnet. Regional Storage scope must not be overgeneralized to all regions.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-05",
+      "revision": 1,
+      "questionHash": "81c75f7c3dbbbb74557c7605f69632ed11ea6e97da3ec57c4dc0fabf1548d1e3",
+      "result": "supported",
+      "rationale": "Disallowing Shared Key denies Blob account-key SAS while user delegation remains separate Entra authorization. A stored policy changes constraints, not the SAS signing identity.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-06",
+      "revision": 1,
+      "questionHash": "e94ccf6f96d59041313021c9ea13edd5f6e054a20d59f00a5a1514a45268bc64",
+      "result": "supported",
+      "rationale": "Deleting the associated policy revokes its service SAS without rotating shared keys used elsewhere. Container descriptive metadata and an unsupported account-SAS policy cannot provide targeted revocation.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-07",
+      "revision": 1,
+      "questionHash": "583e1bd92dd5f61219e5c89bfdde73a8f8fbf7194989022905eff72c81bb765b",
+      "result": "supported",
+      "rationale": "Six policies exceed the documented five-per-container limit and produce HTTP 400. Permission type and user-delegation SAS do not raise that count.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-08",
+      "revision": 1,
+      "questionHash": "c01c7e0b629c9a4979a4d8853c6148d6df0f5b1709b0a335e65483fd5786c59e",
+      "result": "supported",
+      "rationale": "Policy updates may propagate for up to 30 seconds with interim 403. The observed one-second failure is not proof of a permanently invalid policy; account SAS would lose the stated policy model.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-09",
+      "revision": 1,
+      "questionHash": "cb8dd41ce4a8c0e17a50fd496f73dfbe58d1361dcbe1053a631e730562154381",
+      "result": "supported",
+      "rationale": "Blob-only read permission plus HTTPS and short expiry fit least privilege. Delete and account-wide service permissions exceed the requirement; read does not require browse/list permission.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/create-service-sas",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-10",
+      "revision": 1,
+      "questionHash": "5ee4959785ed6f6be27b12bd8185ed5efa857da1405d3e37c48e9e8d443ca1ac",
+      "result": "supported",
+      "rationale": "Move clients to existing key2, regenerate unused key1, move to new key1, regenerate unused key2. Verification and which key clients currently use make dependencies strict; regenerating an in-use key is not an equivalent order.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "dependencies-and-competing-orders"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-11",
+      "revision": 1,
+      "questionHash": "36172a0468ee45e26b7399c7067b920a1daf72c5f515cd2c71d7ecb5392064d2",
+      "result": "supported",
+      "rationale": "Rotating key1 revokes key1-signed service/account SAS, including policy-linked service SAS. It does not rotate the Entra delegation key; signatures do not update themselves.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-12",
+      "revision": 1,
+      "questionHash": "a181017dd138830dfcba2e3ccdf5bbb26091a648f49ea077177f4e6c167df056",
+      "result": "supported",
+      "rationale": "Share-level and file/directory permissions follow Kerberos authentication. Authentication and management-page access do not grant ordinary SMB data access; default share permissions are excluded by the stated absence of grants.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-13",
+      "revision": 1,
+      "questionHash": "8e0506f78aff5899da04a803ef07e69ef9ff7b03f589513716faa8dbed272eab",
+      "result": "supported",
+      "rationale": "One account-wide identity source applies across its SMB shares. The NorthQuay proposal needs separate account configuration for simultaneous AD DS and Entra Kerberos sources, not a per-share switch.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-14",
+      "revision": 1,
+      "questionHash": "6fcc5f2790a43917419d2f6930322554183f18665153a452910754d5abbdff1d",
+      "result": "supported",
+      "rationale": "Official share-role definitions grant ACL modification to Elevated Contributor, unlike Contributor or Reader. Fresh file-permission documentation explicitly permits ACL configuration with existing Full Control ACL plus Elevated Contributor without SMB Admin or an account key; the supplied scenario satisfies that condition.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-15",
+      "revision": 1,
+      "questionHash": "cfb86bea9a032436e80ffa639f20e8b73be44bc84674bc026855d9dd7a6e97c8",
+      "result": "supported",
+      "rationale": "Share Reader bounds a file Modify ACL to read under the documented effective-permission matrix. A file ACL cannot override the narrower share grant; Reader does not add ACL administration.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-configure-file-level-permissions",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-16",
+      "revision": 1,
+      "questionHash": "5c07a6b05bd506ca159ed2bbb5ceb68439bd002d14b605642df274404ddc2497",
+      "result": "supported",
+      "rationale": "The old signed-IP SAS constraint remains independent of admitted subnet traffic. Same-region private addressing can violate that token condition; network rules do not remove it or require key rotation.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/create-service-sas"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-17",
+      "revision": 1,
+      "questionHash": "0febb839a8c694608c9eb5c76d7f4d2884694eb34d896895edb4b379295cd436",
+      "result": "supported",
+      "rationale": "Entra signature uniquely identifies user delegation, policy association identifies service SAS, and cross-service scope identifies account SAS. Each pairing is constrained by distinct signature/scope support, not just ability to read a blob.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "every-match-prompt-and-competing-pairings"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-18",
+      "revision": 1,
+      "questionHash": "e5b340008c3953a79e63c321d436092f7b851ca55c1e8e514829bb4a8cc72ccb",
+      "result": "supported",
+      "rationale": "Standard GPv2 supplies Blob, Files, Queue and Table; premium block-blob and file-share account types omit the combined services. The no-premium requirement and four-service list fix the choice.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-19",
+      "revision": 1,
+      "questionHash": "1078bbe4a0e6852fc2138983ec592e5986b34a39fecafb8a19f33d4af5ea1c91",
+      "result": "supported",
+      "rationale": "RA-GZRS combines primary zones, geo-copy and secondary reads. GZRS lacks the RA access and RA-GRS lacks primary ZRS; accepted lag prevents a synchronous-replication inference.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-20",
+      "revision": 1,
+      "questionHash": "025435cc5afecab8010d7bcaf0768134dd33d41e9621824a7c2500a0deaa522c",
+      "result": "supported",
+      "rationale": "RA does not remove asynchronous geo-lag. Primary reads serve the fresh-read requirement; secondary absence is neither rollback evidence nor a synchronous-commit guarantee.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-21",
+      "revision": 1,
+      "questionHash": "67b53baf987e163ca8887d154f6e2e455613ef36d10d575213724e4fa992211f",
+      "result": "supported",
+      "rationale": "Azure Files does not expose RA secondary SMB reads. Blob capabilities cannot be applied to every service and replica configuration does not convert file shares into containers.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-22",
+      "revision": 1,
+      "questionHash": "ac34f86e8f88009f843a7256f78cc02fab14a9668bd092d43281d119da47190d",
+      "result": "supported",
+      "rationale": "Source change feed and versioning at both ends are required. HNS conflicts with object replication and destination-only feed is insufficient; RivaMedia precreated containers do not satisfy missing features.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-23",
+      "revision": 1,
+      "questionHash": "c3024ca695904b75268b1f9df7583a3eb2b32cb75928094334162ae87f2a21ad",
+      "result": "supported",
+      "rationale": "The separate HNS analytics account is incompatible with object replication. Renaming a destination cannot change source architecture, and HNS does not auto-enable versioning or replication.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-24",
+      "revision": 1,
+      "questionHash": "11cb141f9637a0f3652640dcb8dad7ed41b1892d8e9e17d3faa69d7fb9eb624d",
+      "result": "supported",
+      "rationale": "An active destination replication rule prevents ordinary writes while reads remain possible. Deleting its rule/policy removes that restriction; retries and an SMB role do not fix a Blob replication conflict.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits",
+        "shared-case-facts"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-25",
+      "revision": 1,
+      "questionHash": "9fe9d0f2694664fc1ca624e2739431a14cc639558103b9256c1dc4cacf033840",
+      "result": "supported",
+      "rationale": "Rehydration alone does not restart object replication without a new data update. Archive interaction does not delete the policy or create a synchronous barrier across accounts.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-26",
+      "revision": 1,
+      "questionHash": "12a8a181e0815d7151faed1abdef861524b91f38d124fec6384f52ad1d2c819a",
+      "result": "supported",
+      "rationale": "CMK vault needs soft delete and purge protection; supported RSA key and separately configured permissions are given. Managed identity remains necessary and SAS is not an encryption key.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-27",
+      "revision": 1,
+      "questionHash": "d438664acfa4125de56a748a3b675d7498050049ab3fdf72fc5b6a00b91b66a2",
+      "result": "supported",
+      "rationale": "Pinned version v1 needs an account encryption reference update to v2. Shared access keys and client Blob URLs are unrelated to the pinned vault URI.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-28",
+      "revision": 1,
+      "questionHash": "5b50272d8b3c9a511e6efb9445d4d3f595f53d505cefdd6b719d1df4217c9a00",
+      "result": "supported",
+      "rationale": "Account-wide infrastructure encryption is creation-time only; a replacement account/migration is the offered path. Encryption scopes are explicitly excluded and base SSE cannot be disabled.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/infrastructure-encryption-enable",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-29",
+      "revision": 1,
+      "questionHash": "fdbe685942e139b1be032f2d31532a64929f1531c34c70a310f3fc69f63759ed",
+      "result": "supported",
+      "rationale": "Service SSE is transparent, enabled by default and not disableable. CMK changes key management rather than enabling otherwise-unencrypted storage; uploads need no default encryption rewrite.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-30",
+      "revision": 1,
+      "questionHash": "59a1edc7cdab9f1ae8d81fbdc80693276b4ba1bd8dacfd45805b94f6d2a306c7",
+      "result": "supported",
+      "rationale": "AzCopy account-to-account Blob transfer uses server-to-server APIs. The laptop coordinates rather than stages all bytes; SMB shares are neither necessary nor the Blob transport.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-copy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-31",
+      "revision": 1,
+      "questionHash": "af5b760b5c367e11b28fe14b3f1753f29fe0ee43c71d9ca83ef2086d6bb35f2d",
+      "result": "supported",
+      "rationale": "Blob Data Reader at source and Blob Data Contributor at destination satisfy minimum offered download/upload permissions. Management Reader and SMB roles do not grant Blob data rights; sign-in is not authorization.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-authorize-user-identity"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-32",
+      "revision": 1,
+      "questionHash": "61f48639d25a5273e08bd090f6210e823dfcfe84d2cedcdd4836abedc5191b6b",
+      "result": "supported",
+      "rationale": "Delete-destination prompt asks before removing destination-only objects. Timestamp comparison is a separate transfer decision; true deletes without asking, so it violates the stated requirement.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-synchronize"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-33",
+      "revision": 1,
+      "questionHash": "8f7c0e628925c03ad7c4ed8de11dedde3ecb14623720df5e5099cb75b0257d26",
+      "result": "supported",
+      "rationale": "Recovery object boundaries distinguish blob, container, file-in-live-share and deleted share. File snapshots and share soft delete are not interchangeable; each requirement has one matching feature among the supplied choices.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-container-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "every-match-prompt-and-competing-pairings"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-34",
+      "revision": 1,
+      "questionHash": "4722b36936d9d6c7cb8e0480ac6f0de193404c2f8f076f969a19db996b0ebc54",
+      "result": "supported",
+      "rationale": "Azure Files supports SMB and NFS on separate shares, including the supported premium/SSD configuration stated here; one share cannot expose both protocols. A Blob container is not an Azure Files NFS share. Current retained planning guidance supports the protocol and account distinctions.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-35",
+      "revision": 1,
+      "questionHash": "c7016c1f7e9b474750b9502be94ea8e2e1bfcab068fd3f6b4323d5ca37f54ccb",
+      "result": "supported",
+      "rationale": "Private default container level grants no anonymous access even with reachable public network. Container creation neither grants anonymous read nor anonymous write.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-36",
+      "revision": 2,
+      "questionHash": "0f32fda8e647efd2f3d45f95b6b64713918bc178309951bd454777e7b34b6ab2",
+      "result": "supported",
+      "rationale": "Revision2 replaces overlapping lower-bound retention wording with the tier-specific documented 30/90-day minima. Hot frequency and Archive offline requirements remain distinct; revision1 matching uncertainty is retained in history.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "every-match-prompt-and-competing-pairings"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-37",
+      "revision": 1,
+      "questionHash": "048b2fc67cb919c5128f7e27e96a3d05a06d3e9675c44816aa6a4255befeeb7e",
+      "result": "supported",
+      "rationale": "Explicit Cold duration is 90 days, leaving 55 after day 35 deletion. Cool and Archive numerical distractors use different tier minima; no retained soft-delete lifetime is assumed.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-38",
+      "revision": 1,
+      "questionHash": "e9ad504d940b8400419067e67875c4c62d677f232f43b332af64d8e0290d6cef",
+      "result": "supported",
+      "rationale": "Copy-based rehydration can preserve the archived source and avoid its source early-deletion fee. It is asynchronous and still incurs retrieval/destination charges; a request is not instant readability or source tier change.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-39",
+      "revision": 1,
+      "questionHash": "17cdbb67eb3d556a7877735a44303e81d677dcdfef523bd9e1447f9cf6eb395b",
+      "result": "supported",
+      "rationale": "Lifecycle prefix includes the container path and is case-sensitive. The shown Annual prefix fails both shape and case; cross-container wildcarding and insensitive matching are unsupported.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-40",
+      "revision": 1,
+      "questionHash": "8ce73d5611933873823cb36053395fa857129dad9d7efbbcf4daea6c01844602",
+      "result": "supported",
+      "rationale": "Fresh official lifecycle documentation requires access-time tracking for last-access conditions and permits eligible online Cool blobs to return to Hot when accessed. Missing tracking cannot count every read. Archive cannot be rehydrated by lifecycle rules, and is explicitly excluded from this scenario.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure#enable-access-time-tracking"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-41",
+      "revision": 1,
+      "questionHash": "94555b352cfd0e8f1041ab79d3a66ca08156513f74dc11fb1000be6e327df68e",
+      "result": "supported",
+      "rationale": "Policy processing can wait up to 24 hours and cannot rehydrate Archive. Neither synchronous save-time execution nor case-insensitive prefix changing makes Archive online.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-42",
+      "revision": 1,
+      "questionHash": "dd1f26a72cf94ad200d552562e82cd00c320acc4e57fe097011634da73f8f080",
+      "result": "supported",
+      "rationale": "Blob and container soft delete protect different object scopes within retention. Blob soft delete does not protect account deletion or implicitly enable indefinitely recoverable containers.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-container-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-43",
+      "revision": 1,
+      "questionHash": "4315ec955d6dc59f95290e6d7e69c111ef97723ff8d891bfb674a3f55765e371",
+      "result": "supported",
+      "rationale": "Undelete restores versions before choosing a restored version and copying it current. The word restored constrains identification after undelete; known version IDs can be inventoried earlier but that is not the listed identification step.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits",
+        "dependencies-and-competing-orders"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-44",
+      "revision": 1,
+      "questionHash": "7710c02407be99b439e5fc430df04987392303aaf900ed204043c6bccdab023e",
+      "result": "supported",
+      "rationale": "HNS excludes Blob versioning in the retrieved guidance. Data Owner permissions cannot remove a feature-support limit; uploads do not auto-enable unsupported versioning.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-45",
+      "revision": 1,
+      "questionHash": "21b20d234ad3be31f39a63446933a2e201accb051b04a52e5c092d1ca05b2a93",
+      "result": "supported",
+      "rationale": "At 200 share snapshots, delete old snapshots to create another. Labels do not bypass count and snapshots are read-only, not unlimited writable shares.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-46",
+      "revision": 1,
+      "questionHash": "9763f8aa0dca63b871db20939ac16037bcc5eba5dcb93f32e3cea45c545c0fe2",
+      "result": "supported",
+      "rationale": "A live share with one deleted file needs file recovery from a prior snapshot. Share undelete targets a deleted share, and editing the read-only snapshot cannot restore the file in place.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-47",
+      "revision": 1,
+      "questionHash": "050a0317382342ea325272d56e0ccdfe073cc268ce49a29e30a6b9dc94658633",
+      "result": "supported",
+      "rationale": "Prior versions are separate lifecycle targets and accumulate storage cost. Deleting old previous versions after a retention interval addresses that accumulation; container protection or current-blob tiering alone does not.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-container-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-48",
+      "revision": 1,
+      "questionHash": "6b5810289826001d6cfd6d424719ba01c100fab95a7b37025df59881e782db7f",
+      "result": "supported",
+      "rationale": "Archive is unavailable under ZRS/GZRS/RA-GZRS. Online-tier breadth does not imply Archive breadth, and assigning a tier cannot silently change account redundancy.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions",
+        "exhibits"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-49",
+      "revision": 1,
+      "questionHash": "7f6d8b99f63fcc68d228296825b005d65ab6c5228a0b6a84f674dd90e9842498",
+      "result": "supported",
+      "rationale": "New object replication rules ignore preexisting blobs by default; inspect copy scope. Azure Files snapshot limits and matching access-key values have no role in selecting historical block blobs.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    },
+    {
+      "questionId": "az104-storage-plus-50",
+      "revision": 1,
+      "questionHash": "00ffdbf0b00bdcbdde73e4f21ab90796a805c285d13dbe14620ed63c900a917c",
+      "result": "supported",
+      "rationale": "Management/control-plane visibility and data-plane firewall admission differ. Listing containers does not supply a bypass; authorized Storage Explorer data requests still need an allowed network origin.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-limitations"
+      ],
+      "findings": [],
+      "reviewedComponents": [
+        "scenario",
+        "prompt",
+        "every-option-and-explanation",
+        "answer-key",
+        "summary",
+        "assumptions"
+      ]
+    }
+  ]
+}

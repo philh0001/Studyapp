@@ -19,7 +19,8 @@ test('keyboard focus reaches skip link and answer inputs with visible focus',asy
  for(let step=0;step<30&&!(await start.evaluate(node=>node===document.activeElement));step++)await page.keyboard.press('Tab');
  await expect(start).toBeFocused();await page.keyboard.press('Enter');
  const choices=page.getByRole('group',{name:'Answer choices'});await expect(choices).toBeVisible();
- const control=choices.locator('input,select,button').first();
+ // Ordering questions deliberately disable the first row's Move up button.
+ const control=choices.locator('input:not(:disabled),select:not(:disabled),button:not(:disabled)').first();
  for(let step=0;step<30&&!(await control.evaluate(node=>node===document.activeElement));step++)await page.keyboard.press('Tab');
  await expect(control).toBeFocused();
  expect(await control.evaluate(node=>getComputedStyle(node).outlineStyle)).not.toBe('none');

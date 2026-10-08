@@ -1,8 +1,8 @@
 {
   "id": "az104-compute-expanded-draft",
-  "version": 2,
+  "version": 3,
   "blueprintId": "az104-2026-04-17",
-  "checkedAt": "2026-10-08T02:29:52.659497Z",
+  "checkedAt": "2026-10-08T10:30:51.649236+00:00",
   "questions": [
     {
       "id": "az104-compute-plus-01",
@@ -243,7 +243,7 @@
     },
     {
       "id": "az104-compute-plus-04",
-      "revision": 1,
+      "revision": 2,
       "certificationId": "AZ-104",
       "blueprintId": "az104-2026-04-17",
       "domainId": "compute",
@@ -254,7 +254,7 @@
       "type": "single",
       "requiredSelections": 1,
       "difficulty": "advanced",
-      "scenario": "An auditor has Reader on a resource group and asks to run what-if for a Bicep deployment that creates a VM. No other permission assignments apply.",
+      "scenario": "An auditor has Reader on a resource group and asks to run what-if for a Bicep deployment that creates a VM, using the default Provider validation level. No other permission assignments apply.",
       "prompt": "Why is read access alone insufficient?",
       "options": [
         {
@@ -275,8 +275,8 @@
         },
         {
           "id": "c",
-          "text": "What-if requires deployment permissions and write access to the resources being deployed",
-          "explanation": "The documented what-if permissions are the same as deployment permissions, including resource write operations and deployments operations.",
+          "text": "Default Provider what-if validation requires deployment permissions and write access to the resources being deployed",
+          "explanation": "With the default Provider validation level, what-if checks full deployment permissions, including resource write operations and deployment operations. ProviderNoRbac instead checks resource read permissions, so the validation mode matters.",
           "referenceIds": [
             "compute-bicep-whatif"
           ]
@@ -285,7 +285,7 @@
       "correctOptionIds": [
         "c"
       ],
-      "summaryExplanation": "The documented what-if permissions are the same as deployment permissions, including resource write operations and deployments operations.",
+      "summaryExplanation": "With the default Provider validation level, what-if checks full deployment permissions, including resource write operations and deployment operations. ProviderNoRbac instead checks resource read permissions, so the validation mode matters.",
       "summaryReferenceIds": [
         "compute-bicep-whatif"
       ],
@@ -297,7 +297,7 @@
           "section": null,
           "checkedAt": "2026-10-08T01:38:35.079497Z",
           "documentUpdatedAt": "2026-08-14T05:11:00Z",
-          "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: oyment stack changes with what-if . Prerequisites Required permissions To deploy a Bicep file or Azure Resource Manager (ARM) template, you need write access on the resources you're deploying and access to all operations on the Microsoft.Resources/deployments resource type. For example, to deploy a virtual machine, you need Microsoft.Compute/virtualMachines/write and Microsoft.Resources/deployments/* permissions. The what-if operation has the same permission requirements. Azure CLI ver Scenario interpretation: The documented what-if permissions are the same as deployment permissions, including resource write operations and deployments operations.",
+          "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: oyment stack changes with what-if . Prerequisites Required permissions To deploy a Bicep file or Azure Resource Manager (ARM) template, you need write access on the resources you're deploying and access to all operations on the Microsoft.Resources/deployments resource type. For example, to deploy a virtual machine, you need Microsoft.Compute/virtualMachines/write and Microsoft.Resources/deployments/* permissions. The what-if operation has the same permission requirements. Azure CLI ver Scenario interpretation: With the default Provider validation level, what-if checks full deployment permissions, including resource write operations and deployment operations. ProviderNoRbac instead checks resource read permissions, so the validation mode matters.",
           "microsoftOwnershipVerified": true,
           "fallbackReason": null
         }
@@ -1166,7 +1166,7 @@
           "section": null,
           "checkedAt": "2026-10-08T01:38:35.602299Z",
           "documentUpdatedAt": "2026-04-10T22:25:00Z",
-          "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: ore resizing. Deallocation may be required if the new size isn\u2019t available on the hardware cluster currently hosting the VM. Even when deallocation isn\u2019t required, changing the size of a running VM will cause it to restart. For this reason, resizing a VM should be considered a disruptive operation, especially for stateful workloads. Warning If the virtual machine is currently running, changing its size will cause it to restart. Deallocating the VM also releases any dynamic IP addresses ass Scenario interpretation: Deallocation can be required when the target size is unavailable on the current hardware cluster; the resize is a disruptive operation.",
+          "evidenceSummary": "Actual retrieved Microsoft Learn excerpt: ore resizing. Deallocation may be required if the new size isn’t available on the hardware cluster currently hosting the VM. Even when deallocation isn’t required, changing the size of a running VM will cause it to restart. For this reason, resizing a VM should be considered a disruptive operation, especially for stateful workloads. Warning If the virtual machine is currently running, changing its size will cause it to restart. Deallocating the VM also releases any dynamic IP addresses ass Scenario interpretation: Deallocation can be required when the target size is unavailable on the current hardware cluster; the resize is a disruptive operation.",
           "microsoftOwnershipVerified": true,
           "fallbackReason": null
         }
@@ -3182,7 +3182,7 @@
           "section": null,
           "checkedAt": "2026-10-08T01:38:37.140573Z",
           "documentUpdatedAt": "2026-08-31T22:26:00Z",
-          "evidenceSummary": "Actual retrieved Microsoft Learn excerpt:  use CPU cycles and memory on these VM instances. All apps in an App Service plan scale together, because they share the same underlying compute resources (VM instances). Scaling the plan \u2014 whether manually or through autoscale rules \u2014 affects all apps in the plan. When per-app scaling is enabled, you can limit each app or deployment slot to a subset of the plan's VM instances. Plan capacity and billing remain at the App Service plan level. The number of active replicas for an app or slot can change with plan c Scenario interpretation: The default plan model runs apps on shared plan instances; scaling the plan affects all apps when per-app scaling is disabled.",
+          "evidenceSummary": "Actual retrieved Microsoft Learn excerpt:  use CPU cycles and memory on these VM instances. All apps in an App Service plan scale together, because they share the same underlying compute resources (VM instances). Scaling the plan — whether manually or through autoscale rules — affects all apps in the plan. When per-app scaling is enabled, you can limit each app or deployment slot to a subset of the plan's VM instances. Plan capacity and billing remain at the App Service plan level. The number of active replicas for an app or slot can change with plan c Scenario interpretation: The default plan model runs apps on shared plan instances; scaling the plan affects all apps when per-app scaling is disabled.",
           "microsoftOwnershipVerified": true,
           "fallbackReason": null
         },

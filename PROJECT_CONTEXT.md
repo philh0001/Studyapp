@@ -1,5 +1,7 @@
 # Project context
 
+Latest authorised addition: a concise, in-app reader/listener for the complete currently linked Microsoft Learn AZ-104T00 syllabus, with introductory/promotional repetition removed. Retrieved all 231 actual units across six paths/28 modules, authored 847 concise points and kept original lesson links. Interactive Microsoft assessments remain on Learn. User additionally asked for closed-by-default personal note editors and Kindle-style spoken-text highlighting; passage highlighting works without word events, and compatible browser voices add individual-word highlighting. Saved reading/listening preferences join existing local workspace backup data. This is condensed syllabus coverage, not verbatim training redistribution or exhaustive human factual approval. All 847 course points, 315 questions/1,050 options and 212 study-aid items have now received AI-assisted semantic checks against official sources, correcting 67 course points, 14 study-aid fields and one qualified what-if question. Final point/question hashes and exact option bindings preserve review provenance; regeneration rejects changed content. See the course-reader plan and dated release verification for actual deployment/test evidence.
+
 Personal AZ-104 study website, mainly used on a phone. Web-first access similar to Showtime. No current exam date: the earlier 16 October 2026 target was cancelled. Study at the user's pace.
 
 Design: [AZ-104 Revision](docs/superpowers/specs/2026-10-08-az104-revision-design.md).

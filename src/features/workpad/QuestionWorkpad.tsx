@@ -39,7 +39,9 @@ function WorkpadEditor({repository,session,question,answered=false,onSaveQueued}
  function update(next:Workpad){const bounded=normaliseWorkpad(next,optionIds);editVersion.current++;setPad(bounded);persist(bounded,editVersion.current)}
  function save(clear=false){if(!loaded)return;persist(clear?normaliseWorkpad(null,optionIds):pad,editVersion.current,clear)}
  const fields:(readonly [keyof Pick<Workpad,'approach'|'requirements'|'assumptions'|'confidenceReasoning'|'reflection'|'nextReading'>,string])[]=[['approach','My approach'],['requirements','Requirements I identified'],['assumptions','My assumptions'],['confidenceReasoning','My confidence reasoning'],...(reflectionAllowed?[['reflection','My post-answer reflection'] as const]:[]),['nextReading','My next-reading intention']];
- return <section className="card question-workpad" aria-labelledby={heading}>
+ return <details className="card question-workpad">
+  <summary style={{minHeight:48,cursor:'pointer',paddingBlock:8}}>My reasoning and notes</summary>
+  <section aria-labelledby={heading}>
   <h2 id={heading}>Personal reasoning workpad</h2><p>Personal reasoning only: these notes are not verified facts, content approval, scores or exam-readiness evidence. Eliminating an option here never changes your answer.</p>
   <p>Saved separately for this session, question and revision {question.revision}. Notes stay on this device and are included in your backup.</p>
   <p role={error?'alert':'status'} aria-live="polite">{message}</p>
@@ -58,4 +60,5 @@ function WorkpadEditor({repository,session,question,answered=false,onSaveQueued}
    {confirming&&<div role="group" aria-label="Confirm clearing personal workpad"><p>Clear every personal note, eliminated option and checklist item for this question revision in this session? This cannot be undone.</p><div className="button-row"><button type="button" disabled={busy} onClick={()=>void save(true)}>Confirm clear workpad</button><button type="button" disabled={busy} onClick={()=>setConfirming(false)}>Cancel clear</button></div></div>}
   </>}
  </section>
+ </details>
 }

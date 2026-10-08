@@ -4,7 +4,7 @@
   "provenance": "ai-assisted",
   "status": "draft",
   "review": null,
-  "notice": "AI-assisted draft teaching material. Official sources were retrieved; independent human factual review is still required. These are original study aids, not Microsoft exam items.",
+  "notice": "AI-assisted draft teaching material, checked against official Microsoft documentation. Independent human review is optional and has not been recorded. These are original study aids, not Microsoft exam items.",
   "objectives": [
     {
       "id": "entra",
@@ -152,7 +152,7 @@
       "focus": "Dependencies and change preview",
       "claims": [
         {
-          "text": "Referencing another deployed resource in a Bicep resource declaration creates an implicit dependency; independent resources can deploy in parallel.",
+          "text": "Referencing another resource being deployed in the same Bicep deployment creates an implicit dependency; independent resources can deploy in parallel.",
           "referenceIds": [
             "compute-bicep-dependencies"
           ],
@@ -203,7 +203,7 @@
           "checkedAt": "2026-10-08T01:38:37.168599Z"
         },
         {
-          "text": "Setting minimum replicas to one or higher keeps a revision instance running; scale rules determine when replicas increase.",
+          "text": "For an active Container Apps revision, minimum replicas of one or higher target keeping an instance running; scale rules determine replica changes. Replica quantities are targets, not availability guarantees.",
           "referenceIds": [
             "compute-aca-scale"
           ],
@@ -218,7 +218,7 @@
       "focus": "Deployment and network direction",
       "claims": [
         {
-          "text": "Deployment slots are live apps with separate host names; supported tiers allow content and configuration to be swapped with production.",
+          "text": "Deployment slots are live apps with separate host names on Standard, Premium or Isolated plans. Content and swappable configuration can be exchanged between slots, including production; slot-specific settings remain with their slot.",
           "referenceIds": [
             "compute-app-slots"
           ],
@@ -827,10 +827,10 @@
       "objectiveId": "storage-access",
       "title": "Design a revocable SAS exercise",
       "prerequisites": [
-        "A test storage account and container, authorized data access and no sensitive files."
+        "A test storage account and container with no sensitive files. For policy-linked service SAS practice, you need permission to set the container access policy and authorized access to the account key; do not substitute a user delegation SAS or account SAS."
       ],
       "cost": "Storage capacity and transactions can cost money; document the access plan on paper if no approved test account exists.",
-      "cleanup": "Revoke the test policy or SAS, delete test data, and delete a storage account only if you created it solely for this exercise.",
+      "cleanup": "Revoke the test policy associated with the service SAS and verify denied access; deleting a SAS token does not revoke it. Delete only disposable test data and an account created solely for this exercise.",
       "automaticallyDeploys": false,
       "steps": [
         {
@@ -841,7 +841,7 @@
           "checkedAt": "2026-10-08T01:38:20.377399Z"
         },
         {
-          "text": "Read the stored access policy procedure for a service SAS; identify how a policy changes its permissions and expiry.",
+          "text": "Read the stored access policy procedure for a service SAS; identify how a policy changes permissions and expiry. Stored policies are unsupported for user delegation SAS and account SAS; do not duplicate a policy parameter in the SAS token. A new or changed policy can take up to 30 seconds to become active.",
           "referenceIds": [
             "storage-plus-policy"
           ],
@@ -901,14 +901,14 @@
       "objectiveId": "arm-bicep",
       "title": "Read dependencies and preview a Bicep change",
       "prerequisites": [
-        "A local Bicep file; Azure CLI and an authorized test scope only for an optional what-if operation."
+        "A local Bicep file. For optional what-if, use Azure CLI 2.14.0 or later and an authenticated, authorized test scope. Default Provider validation requires deployment-level permissions; CLI 2.76.0 or later offers ProviderNoRbac validation with resource read checks. Consult the current guide for scope and validation permissions."
       ],
       "cost": "Reading a file creates no Azure resources. What-if predicts changes; a later actual deployment can create billable resources.",
       "cleanup": "No resource cleanup for reading or what-if alone; remove local disposable files when finished.",
       "automaticallyDeploys": false,
       "steps": [
         {
-          "text": "Read a Bicep example that references another resource and mark the implicit dependency.",
+          "text": "Read a Bicep example that references another resource being deployed in the same deployment and mark the implicit dependency.",
           "referenceIds": [
             "compute-bicep-dependencies"
           ],
@@ -922,7 +922,7 @@
           "checkedAt": "2026-10-08T01:40:19.386705Z"
         },
         {
-          "text": "Use the official what-if procedure in an approved test scope and inspect predicted changes without deploying.",
+          "text": "Use a standalone what-if command from the official procedure in an approved test scope and inspect predicted changes without deploying. Review unresolved-expression and template-link limitations; do not use a deployment command with --confirm-with-what-if for this read-only exercise.",
           "referenceIds": [
             "compute-bicep-whatif"
           ],
@@ -942,7 +942,7 @@
         "For optional disk attachment, use an approved disposable Linux VM and existing managed data disk whose contents may be inspected safely. For availability planning, record region support and a design with at least two test VMs; do not modify production placement."
       ],
       "cost": "Check VM, retained-disk and network-resource pricing before any manual exercise. Availability planning can use a diagram instead of creating extra VMs; size changes and extra instances need explicit spending approval.",
-      "cleanup": "Remove only dedicated disposable VMs, disks and network resources you created. Record existing disks before attachment; never format a disk containing needed data or delete a shared disk. Remove a temporary attachment only after checking the guest mount and data use.",
+      "cleanup": "Remove only dedicated disposable VMs, disks and network resources you created. Record existing disks before attachment; never format a disk containing needed data or delete a shared disk. Remove a temporary attachment only after checking the guest mount and data use. Before detaching a Linux data disk, safely unmount it and remove any corresponding /etc/fstab entry; a stale required mount can prevent boot.",
       "automaticallyDeploys": false,
       "steps": [
         {
@@ -1001,7 +1001,7 @@
         "For App Service, use an approved existing test plan/app and an existing nonproduction slot, or exported configuration. Slot exercises require the permissions and plan tier described in the official slot guide; do not swap a production app."
       ],
       "cost": "Inspect current Container Apps replica and App Service plan pricing before any changes. Idle replicas and plan capacity require separate cost checks; use existing configurations and avoid a plan scale change or added capacity without spending approval.",
-      "cleanup": "Remove only disposable container revisions/apps and App Service slots/resources created for this exercise. Preserve any shared plan and other apps that use it. If a permitted isolated slot swap was practiced, verify the intended app version and restore the recorded test configuration.",
+      "cleanup": "Deactivate only disposable Container Apps revisions you created, or remove a disposable app when no longer needed. Remove only test App Service slots/resources you created; preserve shared plans and their other apps. After an isolated slot swap, verify the intended app version and restore the recorded test configuration.",
       "automaticallyDeploys": false,
       "steps": [
         {
@@ -1012,7 +1012,7 @@
           "checkedAt": "2026-10-08T01:38:37.168599Z"
         },
         {
-          "text": "Inspect minimum replicas and explain why setting one or higher keeps an instance running.",
+          "text": "Inspect an active revision's minimum replicas and explain why setting one or higher targets keeping an instance running. Record that replica quantities are targets, not an availability guarantee.",
           "referenceIds": [
             "compute-aca-scale"
           ],
@@ -1033,7 +1033,7 @@
           "checkedAt": "2026-10-08T01:38:37.140573Z"
         },
         {
-          "text": "In an existing nonproduction App Service slot on a supported tier, inspect its separate hostname and validate the staged app. Read the swap procedure and document how a slot swap exchanges content/configuration with production; practice a swap only between approved isolated test slots.",
+          "text": "In an existing nonproduction App Service slot on Standard, Premium or Isolated tier, inspect its separate hostname and validate the staged app. Read the swap procedure and identify content, swappable configuration and slot-specific settings; practice a swap only between approved isolated test slots.",
           "referenceIds": [
             "compute-app-slots"
           ],
@@ -1058,7 +1058,7 @@
       "automaticallyDeploys": false,
       "steps": [
         {
-          "text": "For a sample destination, list matching routes and choose the longest prefix before comparing equal-prefix route types.",
+          "text": "For a sample destination, inspect effective routes and compare longest-prefix matches and equal-prefix route types. Check the documented preferred system-route exceptions, including virtual-network, peering and service-endpoint routes, before deciding the selected route.",
           "referenceIds": [
             "networking-plus-route"
           ],
