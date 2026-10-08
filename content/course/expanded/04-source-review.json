@@ -1,0 +1,305 @@
+{
+  "checkedAt": "2026-10-08T11:48:45.325906Z",
+  "reviewKind": "AI-assisted semantic source comparison",
+  "humanApproval": false,
+  "findings": [],
+  "lessons": [
+    {
+      "lessonId": "configure-storage-accounts--2-implement-azure-storage",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/2-implement-azure-storage",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/secure-file-transfer-protocol-support",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/network-file-system-protocol-support",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access"
+      ],
+      "notes": "Reviewed service/interface distinctions, HNS prerequisites and authorization preference; did not repeat the source's relational-table misclassification. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-storage-accounts--3-explore-azure-storage-services",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview"
+      ],
+      "notes": "Reviewed the original service descriptions, queue limit and Files authorization caveat; Cosmos Table features are not attributed to plain Table Storage. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-storage-accounts--4-determine-storage-account-kinds",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/files/create-classic-file-share"
+      ],
+      "notes": "Compared current account types and Azure Files creation guidance; retained no unsupported direct Standard/Premium conversion or premium-only FileStorage rule. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-storage-accounts--5-determine-replication-strategies",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview"
+      ],
+      "notes": "Reviewed synchronous versus asynchronous copies, secondary-read qualification, failover distinction and recovery-versus-replication scope. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-storage-accounts--6-access-storage",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/6-access-storage",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access"
+      ],
+      "notes": "Compared complete endpoint/custom-domain unit and product mapping procedure; did not claim direct HTTPS binding through a CNAME. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-storage-accounts--7-secure-storage-endpoints",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/7-secure-storage-endpoints",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
+      ],
+      "notes": "Reviewed private endpoints, per-service scope, DNS and explicit public-access restriction; avoided development-only service-endpoint claim. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-blob-storage--2-implement",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/2-implement",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview"
+      ],
+      "notes": "Read full original object hierarchy/use-case unit and current replication/account prerequisites; original mixed-public/private scenario is explanatory. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-blob-storage--3-create-blob-containers",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/3-create-blob-containers",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access"
+      ],
+      "notes": "Reviewed container naming/access scope and current anonymous-access semantics; private is not described as owner-only access. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-blob-storage--4-create-blob-access-tiers",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview"
+      ],
+      "notes": "Reviewed current early-deletion billing, archive-supported redundancy and base-blob versus snapshot/version rehydration; avoided fixed-latency guarantees. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-blob-storage--5-add-blob-lifecycle-management-rules",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/5-add-blob-lifecycle-management-rules",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview"
+      ],
+      "notes": "Read full lifecycle source and current product limitations; original prefix example is illustrative, not a promised instant execution schedule. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-blob-storage--6-determine-blob-object-replication",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ],
+      "notes": "Compared current replication support, HNS/versioning/change-feed and Archive failure/retrigger conditions; did not copy the source's simplistic archive cost recommendation. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-blob-storage--7-upload-blobs",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+      ],
+      "notes": "Reviewed blob type immutability, transfer tools and portal choices; kept managed disks separate from generic page-blob upload. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-blob-storage--8-determine-storage-pricing",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/8-determine-storage-pricing",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ],
+      "notes": "Reviewed complete cost-source categories and current tier/versioning/replication pricing caveats; no numerical rates or universal transfer charge asserted. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-blob-storage--9-simulation-blobs",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/9-simulation-blobs",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview"
+      ],
+      "notes": "Compared the brief exercise scenario and current anonymous-access/recovery docs; expansion supplies original verification reasoning rather than invented lab commands. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-storage-security--2-review-strategies",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "notes": "Reviewed defense-in-depth and authorization strategy sources; did not conflate service encryption with Azure Disk Encryption or promise disabling Shared Key fits every client. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-storage-security--3-create-shared-access-signatures",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/create-user-delegation-sas",
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy"
+      ],
+      "notes": "Compared complete risks unit with current SAS/REST/policy docs; retained expanded service support, policy exclusions, clock skew and untracked-token caveat. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-storage-security--4-identify-uri-sas-parameters",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/4-identify-uri-sas-parameters",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/create-service-sas",
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy"
+      ],
+      "notes": "Compared parameter unit against actual SAS type schemas; avoided reproducing the source's mixed service/account example or inventing a working token. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-storage-security--5-determine-storage-service-encryption",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage",
+        "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "notes": "Reviewed encryption and key-management sources; account access keys are not CMKs and Key Vault encryption-key rotation is not asserted to rotate storage access keys automatically. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-storage-security--6-create-customer-managed-keys",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/6-create-customer-managed-keys",
+        "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption"
+      ],
+      "notes": "Compared current CMK identity, key protection, region/tenant support and access-revocation behavior; no unsupported same-region requirement added. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-storage-security--7-apply-best-practices",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/7-apply-best-practices",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview",
+        "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access"
+      ],
+      "notes": "Compared actual Storage Insights and Defender product content; monitoring is not described as authorization enforcement or guaranteed malware coverage. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-storage-security--8-simulation-storage",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/8-simulation-storage",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-configure-file-level-permissions",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files"
+      ],
+      "notes": "Compared brief full exercise and current Files identity/permission guidance; no fabricated command sequence or blanket SMB SAS support. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-azure-files-file-sync--2-compare-files-to-blobs",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/2-compare-files-to-blobs",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/secure-file-transfer-protocol-support",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/network-file-system-protocol-support",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+        "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+      ],
+      "notes": "Reviewed full Files/Blob comparison and current HNS/File Sync distinctions; avoided universal flat namespace, capacity and access-from-anywhere claims. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-azure-files-file-sync--3-manage-file-shares",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/3-manage-file-shares",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/files/understanding-billing",
+        "https://learn.microsoft.com/en-us/azure/storage/files/create-classic-file-share",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-configure-file-level-permissions",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "notes": "Reviewed current HDD provisioned v2/StandardV2, billing and SMB identity layers; no file-SAS mounting claim or all-sharing-protocol assertion. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-azure-files-file-sync--4-create-file-share-snapshots",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/4-create-file-share-snapshots",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+      ],
+      "notes": "Reviewed snapshot scope, incremental recovery, limit and share-deletion/soft-delete interaction; did not call snapshots an independent backup copy. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-azure-files-file-sync--5-implement-file-sync",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files"
+      ],
+      "notes": "Read full soft-delete unit and corrected current documentation; share-only scope, retention and standalone-resource exclusion are explicit. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-azure-files-file-sync--6-identify-components",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/6-identify-components",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage"
+      ],
+      "notes": "Compared full Storage Explorer unit and management/data-plane distinction; no recommendation for the obsolete Storage Emulator or universal credential permissions. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    },
+    {
+      "lessonId": "configure-azure-files-file-sync--7-deploy-azure-file-sync",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files"
+      ],
+      "notes": "Read current File Sync planning, NTFS/server/protocol compatibility, tiering and database-workload caveats; did not assert every server endpoint must avoid the system volume. New paragraphs compared semantically with the complete original unit text and the cited current product documentation. Worked examples are original applications of documented behavior; no Azure actions were executed."
+    }
+  ],
+  "sectionsReviewed": 81,
+  "wordsAdded": 6062
+}

@@ -1,0 +1,963 @@
+{
+  "checkedAt": "2026-10-08T11:55:12.804Z",
+  "reviewKind": "Independent AI-assisted semantic official-source comparison",
+  "humanApproval": false,
+  "findings": [],
+  "corrections": [
+    {
+      "lessonId": "configure-azure-app-services--9-backup-app-service",
+      "sectionTitle": "Protect external dependencies separately",
+      "before": "Automatic backups exclude linked databases. Custom backups support only specified linked database types, and linked-database backup support is scheduled to end on 31 March 2028. A database used by an application is not automatically protected merely because the web app has backups. Plan database recovery through a supported database backup mechanism where needed. Custom backups can use firewall-protected storage when the documented virtual-network configuration permits it; the old blanket claim that any storage firewall makes backups impossible is too broad.",
+      "after": "Automatic backups exclude linked databases. Existing custom backups that already include linked databases continue to protect them until 31 March 2028. New custom backup configurations stopped offering linked MySQL and PostgreSQL databases in November 2025, and linked Azure SQL and SQL Server databases in April 2026. Plan database recovery through the database service’s supported backup mechanism. Custom backups can use firewall-protected storage when the documented virtual-network configuration permits the app to reach its backup storage through that network.",
+      "reason": "Current App Service documentation distinguishes existing linked-database custom backups, which continue until 31 March 2028, from new configurations whose linked-database selections were already removed in November 2025 and April 2026.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "lessonId": "intro-to-azure-cloud-shell--2-what-is-azure-cloud-shell",
+      "sectionHashes": [
+        "a7ea9cd68aa135333677f4f132000525cb67d411a9af7751404e9891bc15dde3",
+        "dbda3d8a5295bfc9956e0f776015ce0775a84213012e98d5b127c2537b410e36",
+        "0bb962a4209d4e67e2f2b4eeb47622cdc8c50a401b00c8875e597f8c11034f0a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+      ],
+      "notes": "Checked Bash/PowerShell tool choice, unchanged user authorization, ephemeral sessions and mounted file persistence against the unit and current Cloud Shell documentation."
+    },
+    {
+      "lessonId": "intro-to-azure-cloud-shell--3-how-azure-cloud-shell-works",
+      "sectionHashes": [
+        "e379172d53bf9a9b074a77345418794765df1e2d243004a8021f7a42da60c2e3",
+        "85380e9eefe3d2f7dee8ab8bde81d19977f5f939acea676eb3173f7310956e30",
+        "3fbcc3f23b0337f6e8bb104449af825b4da8918ba5f54554f7502ad5608dfd8b"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/overview",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+      ],
+      "notes": "Checked temporary-session lifecycle, twenty-minute inactivity timeout, persistent files versus process state, editor usage and installed administration tools."
+    },
+    {
+      "lessonId": "intro-to-azure-cloud-shell--4-when-to-use-azure-cloud-shell",
+      "sectionHashes": [
+        "aa18c65e44ebe74bb947aab1df50b257c464441d65a0f564f63ef6cece36ef1c",
+        "8e54739a38872593435ecac5dfb6b348a6ad6f1c936ca5931ed952809e14a8cd",
+        "ccd9c9fdebc939600be5e79e9d1ba1f308a16b02d0ef35c79bad7ccd65b6072f"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/overview",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+      ],
+      "notes": "Checked interactive use cases, inactivity rather than execution-duration wording, unprivileged users without sudo, and the default twenty-concurrent-users tenant quota."
+    },
+    {
+      "lessonId": "create-azure-resource-manager-template-vs-code--2-explore-template-structure",
+      "sectionHashes": [
+        "8e329da531b8a3cda10e2882c6d3598af37acf347f5a8d8a0c74e17668562aaf",
+        "3bc574ebb2027922fbd1fd58b262ce1753bff01a962543016113021ea03991af",
+        "e7f4ac0f73753d1799119a3ad4fcbd8ced470adf0bb333930873be77733b2ce9"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ],
+      "notes": "Checked declarative resource identity, JSON template layers, resource API versions, parallel dependencies and current incremental-mode property reapplication caveats."
+    },
+    {
+      "lessonId": "create-azure-resource-manager-template-vs-code--3-exercise-create-and-deploy-template",
+      "sectionHashes": [
+        "1e4f8e3a677b29423c4a12cba00ad208e9bfc7084bb6232ae5e2b2f5c6d7e2a8",
+        "abd8dc2c0849dd0ffd20cefef46425281264129b58063496c92a722e573b7a51",
+        "c75e68a8cd8abf14c609069f8a5cdebb6b5c54244894f8c15a31e103f5c826e0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/3-exercise-create-and-deploy-template",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ],
+      "notes": "Checked empty incremental deployment behavior, subscription/resource-group scope, deployment-name distinction, exact Bash line continuation and az deployment group create syntax."
+    },
+    {
+      "lessonId": "create-azure-resource-manager-template-vs-code--4-add-flexibility-arm-template",
+      "sectionHashes": [
+        "492accfb39a4c9718cf0bf2a0ddc1ca49c355d85feee3a41a9f5de0a742e94bd",
+        "e164a1b7225549a6bef03cf2f055c3a4ddf509b96e01ed051cc4002e14549bb0",
+        "b054427de3db23508c75d6f21b6c59bb3334badacbef2ca09116a16825902737"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ],
+      "notes": "Checked parameter defaults and allowed values, secure input types, the 256-parameter limit, runtime outputs and incremental redeployment behavior."
+    },
+    {
+      "lessonId": "create-azure-resource-manager-template-vs-code--5-exercise-parameters-output",
+      "sectionHashes": [
+        "aab277ee5c364892edc45a2906a5fd85aa9ad7afb07a9e80f9b15fcb2028e29a",
+        "2617a8c9a63b8ba9d42e29ea23d24f6fa9c1e96d795f9017958fb631798ac12d",
+        "3f1ee2aabb413ec5f5c706d90f678652cf56510ef3aed036e9da659ab45cd1a5"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules"
+      ],
+      "notes": "Checked declaration-to-resource references, deliberate invalid-SKU example, corrected storage naming rules and the object-valued primaryEndpoints output fragment against actual source code."
+    },
+    {
+      "lessonId": "intro-to-azure-backup--2-what-is-azure-backup",
+      "sectionHashes": [
+        "56caeeb5a7514507b7a726af54a56edf561e32d5106dc78860b5e9dfef772499",
+        "9e0868e4eb2b941ef751b27a0f16ec4d6486584bb23e7d71c35b6228f13dccdb",
+        "1c47892e42ebce1d049f80e58e00e1793f94cf94044fb8625dd7de436d1c7b9f"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+      ],
+      "notes": "Checked workload-specific protection, RPO versus RTO, encryption/access/deletion protections and the original recovery-requirement scenario."
+    },
+    {
+      "lessonId": "intro-to-azure-backup--3-how-azure-backup-works",
+      "sectionHashes": [
+        "e22f15e5ef4f7fa9b3e7207879c21e7acec76bbff8a997d20ff22e11db9573fa",
+        "686bb3d0727e32b9b1c5c8aae33645e5dcae080f755ccd50865342fa7b44c30d",
+        "29b0baf1340d9354e54632d5bb2dbd8c5eebfe770366d0e9536da65f671deadc"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
+      ],
+      "notes": "Checked MARS/MABS/DPM workload distinctions, VM extension versus supported agentless consistency, vault types, snapshot/vault/archive tiers and incremental changed-block transfer."
+    },
+    {
+      "lessonId": "intro-to-azure-backup--4-when-to-use-azure-backup",
+      "sectionHashes": [
+        "17a00135160cffb9faa1e681ac31aff69cb8b896cafcb47ef696d5ba50e2bc88",
+        "a5e8bc76e5969dedba20383c2ca00d3dead9128494ad32696fc312a027f553af",
+        "f3c882fba4591fecc932eea310d2f14b777230bc98e31bb5262bdff61b76c942"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+      ],
+      "notes": "Checked VM versus SQL workload recovery, on-demand retention, workload-specific vault placement and policy assignment versus successful recovery-point creation."
+    },
+    {
+      "lessonId": "protect-virtual-machines-with-azure-backup--2-azure-backup-features-scenarios",
+      "sectionHashes": [
+        "7a92376f409d810a954d5f3098d29fd8708daa4206077b5fee1395ecb2d2715e",
+        "836c3123c400165bff472f5ccb134dbd414bd35201df28a38508bf6e5be5a578",
+        "abb23740b265076b3b4e7d81d69d1423b7444acc9ec3f7ef6dffbfae4adbafb2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+      ],
+      "notes": "Checked historical backup versus failover, vault policy/access controls, encryption/soft-delete roles and local/zone/geo-redundancy failure scopes."
+    },
+    {
+      "lessonId": "protect-virtual-machines-with-azure-backup--3-back-up-azure-virtual-machine",
+      "sectionHashes": [
+        "1763ac398fb2c6a77a6307fe37ce856291a44daaa87dacbd59bb60f5e7a61b55",
+        "3d594b7c4eaf0e2029862b09e6d634479da9e247a685144b1742f57c7fc5b565",
+        "6b4b9c450079d98bb7339d027f9ae00d30ea0a0dd8ab27bc26fa68410723310c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
+      ],
+      "notes": "Checked snapshot versus vault-transfer milestones, Windows VSS and Linux scripts, filesystem/crash consistency, Enhanced policy frequency and snapshot-retention capabilities. Maximum snapshot retention depends on selected frequency; the prose does not promise thirty days at a four-hour frequency."
+    },
+    {
+      "lessonId": "protect-virtual-machines-with-azure-backup--4-exercise-back-up-azure-virtual-machine",
+      "sectionHashes": [
+        "a6f795c52b213a8a5e83e2e89ef589ec28c48616da9d45be4a665aed240bb213",
+        "cf7d2986baba57983929a872c1af5616ff5a053897da5968c062687f6062c2b4",
+        "9baee06a380384e7694d155a154daf6d9ee46223e3849ac98733c4dc9354452f"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/4-exercise-back-up-azure-virtual-machine"
+      ],
+      "notes": "Checked the actual Windows/Linux lab workflow, existing policy requirement, ConfigureBackup versus Backup job outcomes and read-only az backup job list syntax."
+    },
+    {
+      "lessonId": "protect-virtual-machines-with-azure-backup--5-restore-virtual-machine-data",
+      "sectionHashes": [
+        "3c934e0ef9a417a3501f630fb965d14e0f283513f7cae5dafb2f8839a9ecc108",
+        "7f8ce36c1473395092b84c14288b5d0015267ca7ce5b986ff7e08d850f219b09",
+        "52d71a38f18b81d594fcfe6c4d51ff7b7e10a1e208c43312ea6a13d0daf0b86d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ],
+      "notes": "Checked new-VM/disk/replace restore choices, current cross-region/subscription/zonal conditions and the explicitly scoped Azure Disk Encryption file-recovery/replace restrictions."
+    },
+    {
+      "lessonId": "protect-virtual-machines-with-azure-backup--6-exercise-restore-virtual-machine-data",
+      "sectionHashes": [
+        "ee688805014d3319eb6b92012621a1242d5679753fadfa91e25fb433a60f9861",
+        "0dc7850c889a47e590d0a5e60b3f78efff95c38707a866d2c12769108edc760d",
+        "8149e1f69e798a3e08ea24067476aa97a7db6300a4c78952ea3d79e8d9e62296"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/6-exercise-restore-virtual-machine-data",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ],
+      "notes": "Checked that stopping applies to this disk-replacement lab rather than all restore types, historical-point selection, staging storage and restore-job/subtask verification."
+    },
+    {
+      "lessonId": "monitor-azure-vm-using-diagnostic-data--2-monitor-vm-health",
+      "sectionHashes": [
+        "bdfdec1f6b2cdf324f17a3d8fa1c6bfdbda5f860868ad841975facde7c87ea60",
+        "108698578aa662173f7a2e7ac97421872e9cdfbeb2bbcf411235bfbdd33dc726",
+        "413380f992f8a24e4d782460a76d6ee9f617db30993106e14bb8b838c87f30c7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+      ],
+      "notes": "Checked host/guest/application signal boundaries, boot diagnostics, DCR destinations and current OpenTelemetry Azure Monitor workspace versus classic Log Analytics paths."
+    },
+    {
+      "lessonId": "monitor-azure-vm-using-diagnostic-data--3-exercise-create-virtual-machine",
+      "sectionHashes": [
+        "b694148f7f36e011b4acfcc9b3a8b904e3a4e4818c2808b6f7873bf9460f0190",
+        "3b1d0eb15e9638ec43d40a1b2dc60b14fa67724767fa8f2f7e7a00f95d33071b",
+        "9f1167451c5b1fe0793f9a89d5bd29df9ae4078b22941792011058975982c810"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+      ],
+      "notes": "Checked recommended alerts/managed boot diagnostics, deprecated Linux Diagnostics Agent, host graphs/activity logs and the need for separately configured guest collection."
+    },
+    {
+      "lessonId": "monitor-azure-vm-using-diagnostic-data--4-view-host-metrics",
+      "sectionHashes": [
+        "5f9316c293b7f4a8f14ba463b6959a69ede2f6267bad050605ab2ae9c5c77d7c",
+        "7683fe20665036fa8aaf629d7af87b6e58287876e4191a8060a1227c04c0d11b",
+        "d29db3db4a2bca5ef9fb9a932d0eb7435914f1ff37ef1592011e3693d269aab8"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained"
+      ],
+      "notes": "Checked metric scope/namespace selection, Maximum/Average/Sum/Count/Minimum meanings, time range versus grain and the lab’s CPU/Inbound Flows comparison."
+    },
+    {
+      "lessonId": "monitor-azure-vm-using-diagnostic-data--5-enable-vm-insights",
+      "sectionHashes": [
+        "fd18fce022f3658f6c0ce72ed69976aa93666a152d5963a974bbd5c4cf636915",
+        "74c800993d4a33c2457ab65b8bcd0aee62f2b0f5abf3956b2e5d45ad1fbf5af6",
+        "ea55740e490dab312d6d1b8833455c6ddec16e81b2923a25c81176e00bf7c809"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/tutorial-enable-monitoring",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-maps"
+      ],
+      "notes": "Checked current default recommended OpenTelemetry onboarding, classic AMA/DCR/Log Analytics performance collection, metrics-only workbook exclusion and Map/Dependency Agent deprecation dates."
+    },
+    {
+      "lessonId": "monitor-azure-vm-using-diagnostic-data--6-collect-log-data",
+      "sectionHashes": [
+        "f20cd390fa48d9f6e0fa1b97ab61c0b3eccb6aa496fd34e117d0364e7f13ffb1",
+        "d1f105a21ba600d6063fd32d61a4b35a13cc5ce493b30a2af5a0237db1615869",
+        "cbf66806f05f2dbc2a50f0457151d561ddf1bc76ae4db01d6ed584f6495d7ccd"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection-syslog",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-endpoint-overview",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
+      ],
+      "notes": "Checked separate Syslog collection/filtering, DCR association, DCE Private Link/shared-DNS requirements and actual KQL table/time/filter/summarize/order syntax."
+    },
+    {
+      "lessonId": "intro-to-azure-virtual-machines--2-compile-a-checklist-for-creating-a-vm",
+      "sectionHashes": [
+        "8f5344aa6fc5956276ed746de154eafac38b41f776c1903db104bd350d2adf69",
+        "9d198de6826b4e1eccb950c655a45c3483469037db17ed5252ab72a325f911d5",
+        "314dcd5307361cea509b083ee3cdaa6bae59ab795f5dfc4c943ce9c8bc3025d7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
+      ],
+      "notes": "Checked VM network/disk dependencies, address planning, workload-specific family/region choices, persistent data, resize interruption and separate compute/storage charges."
+    },
+    {
+      "lessonId": "intro-to-azure-virtual-machines--3-create-a-vm",
+      "sectionHashes": [
+        "47084b8933080255592216c58f82001ad2b482ab00deb8d3751a16633c20e2b5",
+        "8bd7e04e24dcad0432bd0e249945919b21c3278850a2ef2cdf950874bf1c4c74",
+        "17dc1b849205e2342ef2e584142cf55263071693d4e8e94f1376c3077376ed90"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/3-create-a-vm"
+      ],
+      "notes": "Checked optional Linux portal lab prerequisites, SSH keys versus inbound rules, validation/deployment sequence and inspection/cleanup instructions."
+    },
+    {
+      "lessonId": "intro-to-azure-virtual-machines--4-describe-other-create-vm-options",
+      "sectionHashes": [
+        "191a672a1c52b15e91fad36c2ef5520bb1eaa7da5265e76d754b5a146286a303",
+        "c4b4d5e767f764d39267c6a1ec33a5012fdca102f314b5d6e937b5b40dbaed62",
+        "8e95dc955d201636c149e5d14befb7a70b8f75898594361ae452ef96358d8cda"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+      ],
+      "notes": "Checked ARM/Terraform/CLI/PowerShell/REST/SDK distinctions, the actual az vm create Ubuntu2204 example and its existing-resource-group prerequisites, extensions and daily auto-shutdown."
+    },
+    {
+      "lessonId": "intro-to-azure-virtual-machines--5-high-availability",
+      "sectionHashes": [
+        "654014593cb454579f371a8faaea58058e491de59abb500b8f73ef115613c7f7",
+        "5e2746723f864a163c548039d567f030c960e93b693a2b2f53472a2e06ee27b8",
+        "4146754efa08a6ae82935a45999a456e3e53d08624590938244a9cfef9e83eef"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability",
+        "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines"
+      ],
+      "notes": "Checked host healing versus continuous service, zone placement, separate capacity/traffic distribution roles and regional Site Recovery versus historical backup."
+    },
+    {
+      "lessonId": "intro-to-azure-virtual-machines--6-backup-services",
+      "sectionHashes": [
+        "c252e4cadc7ed0121bdbb4aa86a3493a0b776cc3712765fc985e67131fcd51c0",
+        "86d33a63c2f9c1b678812198a98f7f8cbc3dc7115460ea129c4060a989e32ae3",
+        "a791fdc0dc19dc39c798a07f1d500f4d109941ff16d7341c8e85f731366ab9d0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-overview",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-about-mars"
+      ],
+      "notes": "Checked current MARS/MABS/DPM source support, vault policy, agent-based/application versus agentless crash consistency and Linux pre/post scripts."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--2-plan-for-maintenance-downtime",
+      "sectionHashes": [
+        "367e7d3999191d9494914f16a97150a7272237279fac79d2cc2321dd20462aba",
+        "74c092918c7019d058c35a980c64ca56d85183f2337b5ed71a25e8b5ca903e5d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/2-plan-for-maintenance-downtime",
+        "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines"
+      ],
+      "notes": "Checked predictive live migration versus unexpected-host reboot, possible temporary-drive loss, and Azure host versus customer guest/application responsibility."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--3-setup-availability-sets",
+      "sectionHashes": [
+        "e72a5c555b513b4254daee6591fa62b2e81f820d9a5683931d20e1d9fcc32bc5",
+        "ce891a47133af4b6a45226518a9f2f80d36876c92cfcab9563c536d28078c975"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/3-setup-availability-sets",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ],
+      "notes": "Checked same-tier redundancy, distinct availability sets, creation-time assignment/recreation requirement, multiple instances, traffic distribution and software-failure limits."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--4-review-update-fault-domains",
+      "sectionHashes": [
+        "69f547de8950606479dbd30b4ba7f9af03af40ae73541b1b044ef87b8774c70f",
+        "bb5e790078a01428fc938844afc1781c610547718adc712aa4efbfb2e513bc6f"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ],
+      "notes": "Checked one-at-a-time update-domain maintenance, one-to-twenty/default-five immutable update-domain count, and region-dependent fault-domain counts."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--5-review-availability-zones",
+      "sectionHashes": [
+        "79b24ec931a4c827bc0999e7a54d42972d2082b2fd8c4cc457200d27393e54e1",
+        "4595607dff2918d489f908a67bf77bfb6daab615e3345a6211734fd836807c24"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones",
+        "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines"
+      ],
+      "notes": "Checked independent zone infrastructure, supported regions with at least three zones, zonal versus zone-redundant resources and limits of cross-zone regional protection."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--6-compare-vertical-horizontal-scaling",
+      "sectionHashes": [
+        "5fb519863babcc2aa6b28218f33695dc6e72d754dbc58edafe1f90289be6b947",
+        "7dbbe0590b95e443a14584c37bb959a48ee5bfd3d6a2dbe9e7bd9ff181499407"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+      ],
+      "notes": "Checked VM-size versus instance-count scaling, hardware/region limits, restart impact, distributed-worker example and durable state during reprovisioning/scale-in."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--7-implement-scale-sets",
+      "sectionHashes": [
+        "db3e636ff15728dc596ae80288d4892a493ec75e7cf2eaee61efa11782d1d295",
+        "0d1ad75608349c920b2e785c2ce01dd38a7f6b012206dbc2b3f13cc175e9bf1a",
+        "42ef7ddeece141566be59147c7ed9b2bd80ebb26e6bdc90208a69fb6dcdb221a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+      ],
+      "notes": "Checked standard-VM Flexible versus common-profile Uniform management, immutable orchestration choice, Flexible recommendation and Layer 4 versus Layer 7 traffic needs."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--8-create-scale-sets",
+      "sectionHashes": [
+        "67d7bb0b51ec59fec99da7164ef9309ab44611f2044163e6653b8913dde6315b",
+        "6dad48ff7c2eb3b153114ade4efb6e6d0cffa452df4cdd04b3d22282d4e15363"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/8-create-scale-sets",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-manage-fault-domains"
+      ],
+      "notes": "Checked image/architecture compatibility and mode-dependent regional/zonal maximum versus fixed fault-domain spreading; no universal fixed domain count is asserted."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--9-implement-autoscale",
+      "sectionHashes": [
+        "df4f828c41292ee55cd8e0d2f06083e6d1df8fa16bfa9a5bbad3e84bfc6c0223",
+        "54b72c44da0b3ce96c67e52ca0c302084fb1ec39fbf56188d634a601c43a4b2e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings"
+      ],
+      "notes": "Checked sustained-load windows, complementary scaling directions, scheduled profiles and minimum/maximum capacity limits."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--10-configure-autoscale",
+      "sectionHashes": [
+        "83015c0df61c320c2086b399e75ec32ae979075f4d509360d66cd7446d3f55cf",
+        "7fcc65cc6aac799a71fa34bf460d0e246d9f26ba9fe84d0484fd0ed01c1d48ec",
+        "7aea2e7d17f5c8be82b29e19236ae637d0addc29a82656064e4c3c9e3e105a37"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/10-configure-autoscale",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview"
+      ],
+      "notes": "Checked default fallback scales out only when below default, profile bounds, rule aggregation/windows, scale-in instance selection and notifications."
+    },
+    {
+      "lessonId": "configure-app-service-plans--2-implement-azure",
+      "sectionHashes": [
+        "20c8104600acf770696eb91e737c3e17a3ca5eca818eb496253baec52a467002",
+        "c810fb04ef1abd953b83c485dc84ee67756f171adcee377e194282ba6af2ec49"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ],
+      "notes": "Checked plan OS/region/size/count characteristics, shared app capacity and supported independent/per-app scaling exceptions against current hosting-plan documentation."
+    },
+    {
+      "lessonId": "configure-app-service-plans--3-determine-plan-pricing",
+      "sectionHashes": [
+        "2226e58a66485b01295e30a2c03c2f994cebf8b0ff9caa5006a6ad86b2d43a94",
+        "5d99686c2602e5b095f4f2e2f374839495e5b11bab525f2e566e490e2306e7c1",
+        "5f3e15a435be2bc0a5c5146128d8d811d91e0a1e8a69bd942b787a788d6ea890"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+      ],
+      "notes": "Checked shared/dedicated/isolated pricing categories and feature-driven tier choices; exact stale tier capacities and unsupported universal recommendations are avoided."
+    },
+    {
+      "lessonId": "configure-app-service-plans--4-scale-up-scale-out",
+      "sectionHashes": [
+        "92c2f28b783b9c37b42b7bc46754b9b5c2740bb46a0b5f105f9df66290078e81",
+        "79fc4d6f2efff4692509e0035e6ce488d39d865449b4229df2b9d8469da57b12",
+        "bc01259d906f19d05ce327fdce088a5b54cfe96b0abd41f35f94971d690a6e2c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ],
+      "notes": "Checked scale-up versus scale-out, pricing-tier availability, plan resource sharing and separately scaled database/storage dependencies."
+    },
+    {
+      "lessonId": "configure-app-service-plans--5-plan-scaling",
+      "sectionHashes": [
+        "990ddb440be577146651c42e2bcc64be384dde37af2b9f5d72f23039418503d6",
+        "4958d3291db1c5f89e477eb52741b3cd3c0d8aebec06cf9146c23602bc0991e0",
+        "96301b2f7e94fd4573472d021139d857c5d181e04e8eacface8467db9c691e63"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+      ],
+      "notes": "Checked rule-based autoscale versus supported Premium automatic HTTP scaling, safe fallback behavior, schedules and supported per-app bounds."
+    },
+    {
+      "lessonId": "configure-azure-app-services--2-implement",
+      "sectionHashes": [
+        "e072a045561bc45d9b933f5ea900b2efc9b110fba5034a98bf85b22bf462f3c8",
+        "5cef5b9db1fe09881817e5855bd8df5d581e4edb2d6026bdf032b385a37cefd8",
+        "7d865f14440333bccb39bc30407115eeaaeab4a8f4ead80752dcc2bbcd21ed35"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/2-implement",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization"
+      ],
+      "notes": "Checked supported App Service language/OS/container combinations, managed hosting responsibilities and separate deployment/security/scale concerns."
+    },
+    {
+      "lessonId": "configure-azure-app-services--3-create-app-service",
+      "sectionHashes": [
+        "e0473bc95cc896036cb88f70b086d4a0a324e9c134f4ec7032846d3a654e76bb",
+        "cf2ab1383fb2b19c8b9dca0587bf16e1a27aa3546453d105578884ded92bd9b5",
+        "02e552bac6019bb76609a0d2d42a0b35e7d64172130b29b7bf9a7dd5ec7da41a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service",
+        "https://learn.microsoft.com/en-us/azure/app-service/configure-common",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview"
+      ],
+      "notes": "Checked runtime/plan configuration, application settings as environment variables, Always On/WebJobs, HTTPS Only and session-affinity limits."
+    },
+    {
+      "lessonId": "configure-azure-app-services--4-explore-continuous-integration-deployment",
+      "sectionHashes": [
+        "1a74f72252b66dce263693318ec0252e951dc17f063e3c2da4b9ab761f2087ac",
+        "bcf2f52925cdbd7f0d41dcba71d1d51312c90a8f5374a3adfdd263b23df6c716",
+        "e0a82e4549426040e9489e50c584dd45f814d86c40b875c6556f4f6bf1777921"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/4-explore-continuous-integration-deployment",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-continuous-deployment",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+      ],
+      "notes": "Checked current Deployment Center repository/build options and CI/CD behavior, manual deployment distinction and versioned release validation."
+    },
+    {
+      "lessonId": "configure-azure-app-services--5-create-deployment-slots",
+      "sectionHashes": [
+        "af53954974d156e330351d3cb01fd69df9d087795124dad91b1584a5dff67b89",
+        "201c5994a505256887e9a1867af5f6e41e5c624708936882de48ba6b397a1f20",
+        "2cea390b4fc9414990a1d2cec7a7430ba1f1d5a8d61f29807e378d141a8aa3df"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ],
+      "notes": "Checked live slot hostnames/shared plan resources, Standard-or-higher availability, staged warmup/swap/rollback and Linux/container auto-swap restrictions."
+    },
+    {
+      "lessonId": "configure-azure-app-services--6-add-deployment-slots",
+      "sectionHashes": [
+        "048e4914904c97c5bb98143a9d6c1d81d89b1909bf1648005c2d78d24dd8681f",
+        "3e779fb91976f019d2c79616142ad44afffdb9a6318018df3cbe52128dcfff14",
+        "6feb425ff110107d018a9c223fb6524c84e227202297917fd94e7b77e3c73259"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+      ],
+      "notes": "Checked empty/cloned slot configuration, settings marked sticky, normally slot-specific domains/scaling/identity/network integration and current swap-table exceptions."
+    },
+    {
+      "lessonId": "configure-azure-app-services--7-secure-app-service",
+      "sectionHashes": [
+        "27ad8afaab605be5a643beadfa1c2c559fbff6a12586d7fae8319f79ce85af67",
+        "14a7d7796773203dc39aa5e75fe6ad294248aa7a950c260c0d08cee57482d952",
+        "ef65f0d8716c3f4f0b5aae1eb5b9c044ba82afb261aa534e8bf6436f8efd4d66"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization"
+      ],
+      "notes": "Checked separate authentication module/provider processing, anonymous versus rejection/redirect behavior and Windows-specific failed-request tracing."
+    },
+    {
+      "lessonId": "configure-azure-app-services--8-create-custom-domain-names",
+      "sectionHashes": [
+        "74042772750fd08b629d8f52c8d9251cd3613a8a65cb1333b9dab2322cb2ab7c",
+        "398af644ad7f7fd72f2a1eef0b79eac7c873a8dee0035fca12ff132adeb4f46c",
+        "9840070b117a102bad0bc6a23e41ada28625a68c14aaa4a0df1ebb2a526ebf26"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names",
+        "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain"
+      ],
+      "notes": "Checked A/CNAME mappings, root-domain workflow, TXT ownership verification/subdomain-takeover mitigation, separate TLS binding and managed-certificate eligibility."
+    },
+    {
+      "lessonId": "configure-azure-app-services--9-backup-app-service",
+      "sectionHashes": [
+        "7b3ed9a30aade88fc0e282c685e76b7443dcc96fd2a1e45ab0e1002832eee521",
+        "4db2ef5d4a77893c22dae18ab3efb2dc27a6599d7829f639764a6ff3f1dfa36e",
+        "500012edfbeebc7d670034c64d5ec9f6eec01001ef7e1ceaef90e820a5628ea1"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/9-backup-app-service",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
+      ],
+      "notes": "Checked automatic/custom and Basic production-slot support, storage/network behavior, partial restore semantics and corrected linked-database transition dates against current product documentation."
+    },
+    {
+      "lessonId": "configure-azure-app-services--10-use-application-insights",
+      "sectionHashes": [
+        "4e15f81e492db5c8d11d0ec51d1b38c043d7c420d1aa288cbbc5459b780d21ef",
+        "2582f135a1aac4ca9a712b32039ae31cc02b9a5b1ac816a056f8b3ba2ad1fd4b",
+        "29347bd6eea0a7f359da082a9db6200326f69bc053c86c3a16b62caceff90a1a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"
+      ],
+      "notes": "Checked instrumentation prerequisites, request/dependency/exception correlation, client telemetry requirements and supported custom events/metrics/host context."
+    },
+    {
+      "lessonId": "configure-azure-app-services--11-simulation-web-apps",
+      "sectionHashes": [
+        "3abd9067643a3fbbab159ab8d46ada8d1f68228b46ca55d36f01e81b8c3eb58c",
+        "390ed6f282d26dc680eceeeb93e156954a87f2d963c0ad967c2c156461b14322",
+        "19de5f79fcb8cc7a441574a7407cda7178c6c5f0a056bd554f4d02ac4c00111c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/11-simulation-web-apps",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ],
+      "notes": "Checked optional App Service lab prerequisites, runtime support rather than blindly copying source OS, slots/deployment/swap/database rollback limits and autoscale verification."
+    },
+    {
+      "lessonId": "configure-azure-container-instances--2-compare-containers-to-virtual-machines",
+      "sectionHashes": [
+        "256967cbbd93ec2541a3461bb9e5317ab3d966db4082bbceaf4d043995adf666",
+        "5fa3566ffa89698f5dd93841cf3990243e471ab5df72367c03d29609e9216359",
+        "a7c04b9b1cf0ae6434fa95a09a981906954064590b530b9ac2ef6b820effa155"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview",
+        "https://learn.microsoft.com/en-us/azure/container-apps/overview"
+      ],
+      "notes": "Checked typical process-isolated shared-kernel containers versus full-guest VMs, platform-isolation qualifications, image compatibility and orchestration/persistence choices."
+    },
+    {
+      "lessonId": "configure-azure-container-instances--3-review",
+      "sectionHashes": [
+        "8e04de719fbb2e3cc1d2bdb8378844ff45cb4419fcc64ada2ddbfea522720979",
+        "797e17de834e7fb270d06e8664f022eb1e86b2d34e539deb6732aae37855394d",
+        "498da6cb5f12f554ba39f25b9a39a32ff66304fe6ecc6a4bedf871e97bb95462"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ],
+      "notes": "Checked ACI isolated-workload suitability, delete/recreate resource changes, Linux-only multi-container/Azure Files features and public versus private-VNet endpoints."
+    },
+    {
+      "lessonId": "configure-azure-container-instances--4-implement-container-groups",
+      "sectionHashes": [
+        "2371a90a08a46a7df8bfc607c18632aa52557585adefc5497144a55164e13859",
+        "8749efbc16c345fc5d7f2c864a3948f8ce1f10e8a0befd2531bbde7826e46983",
+        "7f26c43a0ca4667fe828fefb23858bb4a4a0df2648104341fb5294db85f8c2fe"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ],
+      "notes": "Checked shared group host/lifecycle/resources/networking, Linux-only multi-container support, ARM/Bicep/YAML approaches and port exposure without port translation."
+    },
+    {
+      "lessonId": "configure-azure-container-instances--5-review-docker-platform",
+      "sectionHashes": [
+        "7d8084e919a55a7d4f0c5dde07c5a1ff666a335b06af73e9ccdc8e978126779d",
+        "9006f2ba43d4889c5ea28b19098d06850fddce0bb1e4ddf86841fe55fbf20b0b",
+        "e0ba8f09bbd90dbdc194954117e6182494a268285b47b145132af23e34f13c20"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform",
+        "https://learn.microsoft.com/en-us/azure/container-apps/overview",
+        "https://learn.microsoft.com/en-us/azure/container-apps/scale-app"
+      ],
+      "notes": "Checked Container Apps managed Kubernetes abstraction, jobs/service discovery/traffic splitting, supported event-driven scale-to-zero and absent-ingress/rule restart caveat; CPU/memory signals are not presented as zero-capable."
+    },
+    {
+      "lessonId": "configure-azure-container-instances--6-simulation-containers",
+      "sectionHashes": [
+        "5bf210817e0d378430b0300b0c4c59842533627b13a90773a24a1903be21c93e",
+        "8dcb9d88d448ee24a80c0c9ee9cfc9dfa2b2b10784e0600a41ef2c1adecf945a",
+        "e64bd02507a4fa6c04272f6afce915ae90793940143b7ffc397091d832cb4fb2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/6-simulation-containers",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update"
+      ],
+      "notes": "Checked optional image-based ACI lab prerequisites, image/resource/port distinctions, provisioning versus application response, private client reachability and persistence/cleanup."
+    }
+  ],
+  "lessonsReviewed": 53,
+  "sectionsReviewed": 151,
+  "paragraphsReviewed": 152,
+  "stepsReviewed": 27,
+  "codeExamplesReviewed": 5,
+  "sourceComparison": "Every added paragraph, step and code example was compared semantically with the actual official training-unit text and relevant current Microsoft product documentation. All 44 distinct final cited product-document URLs were fetched successfully; source text, not URL or hash presence, informed the review. Original examples and teaching explanations were checked for assessment-question copying and redundant prose.",
+  "currentProductSourceRetrievals": [
+    {
+      "i": 0,
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain",
+      "status": 200
+    },
+    {
+      "i": 1,
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/configure-common",
+      "status": 200
+    },
+    {
+      "i": 2,
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-continuous-deployment",
+      "status": 200
+    },
+    {
+      "i": 3,
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+      "status": 200
+    },
+    {
+      "i": 4,
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling",
+      "status": 200
+    },
+    {
+      "i": 5,
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/manage-backup",
+      "status": 200
+    },
+    {
+      "i": 6,
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up",
+      "status": 200
+    },
+    {
+      "i": 7,
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview",
+      "status": 200
+    },
+    {
+      "i": 8,
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization",
+      "status": 200
+    },
+    {
+      "i": 9,
+      "url": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+      "status": 200
+    },
+    {
+      "i": 10,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview",
+      "status": 200
+    },
+    {
+      "i": 11,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+      "status": 200
+    },
+    {
+      "i": 12,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings",
+      "status": 200
+    },
+    {
+      "i": 13,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-endpoint-overview",
+      "status": 200
+    },
+    {
+      "i": 14,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+      "status": 200
+    },
+    {
+      "i": 15,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained",
+      "status": 200
+    },
+    {
+      "i": 16,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection-syslog",
+      "status": 200
+    },
+    {
+      "i": 17,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest",
+      "status": 200
+    },
+    {
+      "i": 18,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+      "status": 200
+    },
+    {
+      "i": 19,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/tutorial-enable-monitoring",
+      "status": 200
+    },
+    {
+      "i": 20,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-maps",
+      "status": 200
+    },
+    {
+      "i": 21,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance",
+      "status": 200
+    },
+    {
+      "i": 22,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules",
+      "status": 200
+    },
+    {
+      "i": 23,
+      "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes",
+      "status": 200
+    },
+    {
+      "i": 24,
+      "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms",
+      "status": 200
+    },
+    {
+      "i": 25,
+      "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy",
+      "status": 200
+    },
+    {
+      "i": 26,
+      "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+      "status": 200
+    },
+    {
+      "i": 27,
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting",
+      "status": 200
+    },
+    {
+      "i": 28,
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+      "status": 200
+    },
+    {
+      "i": 29,
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-shell/overview",
+      "status": 200
+    },
+    {
+      "i": 30,
+      "url": "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor",
+      "status": 200
+    },
+    {
+      "i": 31,
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/overview",
+      "status": 200
+    },
+    {
+      "i": 32,
+      "url": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+      "status": 200
+    },
+    {
+      "i": 33,
+      "url": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups",
+      "status": 200
+    },
+    {
+      "i": 34,
+      "url": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview",
+      "status": 200
+    },
+    {
+      "i": 35,
+      "url": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update",
+      "status": 200
+    },
+    {
+      "i": 36,
+      "url": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files",
+      "status": 200
+    },
+    {
+      "i": 37,
+      "url": "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines",
+      "status": 200
+    },
+    {
+      "i": 38,
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-manage-fault-domains",
+      "status": 200
+    },
+    {
+      "i": 39,
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes",
+      "status": 200
+    },
+    {
+      "i": 40,
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+      "status": 200
+    },
+    {
+      "i": 41,
+      "url": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm",
+      "status": 200
+    },
+    {
+      "i": 42,
+      "url": "https://learn.microsoft.com/en-us/azure/backup/backup-overview",
+      "status": 200
+    },
+    {
+      "i": 43,
+      "url": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-about-mars",
+      "status": 200
+    }
+  ]
+}

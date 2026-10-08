@@ -1,0 +1,422 @@
+{
+  "az104-networking-plus-01": {
+    "conclusion": "Supported: a separates registrar purchase from Azure DNS authoritative hosting and API management (b/c); records.txt explicitly says Azure DNS cannot purchase domains.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-02": {
+    "conclusion": "Supported: a repairs the parent NS delegation shown in the exhibit; an A record named NS and a private-zone link cannot change public delegation. Direct Azure answers plus old recursive answers fit the stated diagnosis.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-03": {
+    "conclusion": "Answer a is technically appropriate below the apex: CNAME aliases a hostname, whereas A targets IPv4 and MX targets mail. The apex exclusion avoids the NS/SOA coexistence conflict documented in records.txt. The new revision adds exact actually retrieved Learn evidence for the previously missing definition/view; see networking-extra-evidence exact quotations and hashes.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 2
+  },
+  "az104-networking-plus-04": {
+    "conclusion": "Supported: a puts both IPv4 values in the same api A record set, exactly like the retained two-address example. Duplicate same-name/type sets and address-valued CNAMEs are unsuitable.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-05": {
+    "conclusion": "Supported: a describes TTL caching; neither cache erasure nor TCP idle timeout follows from authoritative TTL changes. Existing-cache retention is a reasonable consequence of the documented cache lifetime.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-06": {
+    "conclusion": "Supported: a/c correctly allow linked-zone lookup and manual-record resolution with autoregistration disabled. b incorrectly creates VM records; d confuses private links with public authority.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-07": {
+    "conclusion": "Supported: a applies the one-registration-zone-per-VNet limit to the exhibited second registration proposal. The inverse one-VNet-per-zone claim is explicitly false; resolution-only links do not register VMs.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-08": {
+    "conclusion": "Supported: a/b describe managed private hosting and optional autoregistration. c is independently contradicted by records.txt; d mistakes a linked private namespace for public delegation.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-09": {
+    "conclusion": "Supported: a directly meets the TCP Layer 4 single-frontend requirement. DNS records provide no health-probing distributor and NSGs only filter; no application-layer feature is demanded.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-10": {
+    "conclusion": "Supported: a uses an internal private frontend as required by both scenario and Meridian case. Public frontend b fails privacy and public DNS c supplies no balancing frontend.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-11": {
+    "conclusion": "Supported: a/b identify a frontend-443/backend-8443 rule and target pool; components.txt explicitly defines those mappings. NSG priority and MX are not LB components. Meridian facts do not conflict.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-12": {
+    "conclusion": "Supported: a removes the HTTP-503 backend from new-flow selection because HTTP probes require 200, regardless of successful TCP acceptance. Exhibit and /ready Meridian case agree; probes neither accept 503 as healthy nor rewrite it.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-13": {
+    "conclusion": "Supported: a recognizes TCP listener reachability is narrower than HTTP/application dependency health. b/c overstate what the configured TCP probe tests.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-14": {
+    "conclusion": "Supported: a/b investigate two independent filtering layers described in troubleshoot.txt; the deny-platform-probe exhibit makes NSG inspection especially relevant. TTL and removal of every backend cannot repair access.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-15": {
+    "conclusion": "Supported: a correctly names AzureLoadBalancer and 168.63.129.16 for IPv4 probes. The explicit IPv4 condition avoids the documented different IPv6 link-local source; frontend/workstation sources are false.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-16": {
+    "conclusion": "Supported: a/b distinguish new flows and surviving healthy backends. The source separately preserves established TCP connections; c falsely promises immediate universal reset and d invents automatic application repair.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-17": {
+    "conclusion": "Supported: a,b,c,d is the unique order of the listed dependency stages: zone creation supplies assigned NS names, then parent delegation, then recursive verification. Records can be populated at other points, but that omitted activity does not create an alternative order among these stages.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-18": {
+    "conclusion": "Supported: positional mapping tcp->a, http->b, https->c matches every matchPrompt and protocol explanation. HTTP/HTTPS require 200; HTTPS adds TLS. Retained probe text directly supports all three, with no interchangeable alternatives.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-19": {
+    "conclusion": "Technically correct positional mapping ipv4->a, ipv6->b, mail->c. All prompts match the options; records.txt directly defines A and mail-server MX but does not fully establish every explanation detail. The new revision adds exact actually retrieved Learn evidence for the previously missing definition/view; see networking-extra-evidence exact quotations and hashes.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 2
+  },
+  "az104-networking-plus-20": {
+    "conclusion": "Supported as grouped dependency stages: choose settings a, create components b, reference them in rule c, test d. Components can be created in varying internal order or one template, but the prompt groups those alternatives and requires references before rule use.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-21": {
+    "conclusion": "Supported: /29 has eight addresses and subnet.txt reserves five, yielding a=three. Eight counts reservations and six applies only a conventional two-address reservation.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-22": {
+    "conclusion": "Supported: a adds containing address space; 10.40.2.0/24 is outside the sole 10.40.0.0/24 VNet range. NSG/public-IP changes cannot alter subnet containment.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-23": {
+    "conclusion": "Supported: a identifies that 10.50.1.128/25 is inside 10.50.1.0/24, matching the exhibit. Multiple unequal-sized subnets are valid when nonoverlapping; neither distractor diagnoses this design.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-24": {
+    "conclusion": "Supported: a diagnoses overlap: 10.0.8.0/24 lies inside 10.0.0.0/16. managePeering.txt forbids overlapping spaces, not differing prefix lengths, and requires no shared public IP.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-25": {
+    "conclusion": "Supported: a follows explicitly nontransitive peerings. Exhibit removes gateway/appliance transit alternatives, so neither the chain itself nor public DNS supplies A-C connectivity.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-26": {
+    "conclusion": "Supported: a/b configure hub gateway transit and spoke remote-gateway use, consistent with a gateway-free spoke. c contradicts remote/local gateway exclusion; d incorrectly assumes implicit transit.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-27": {
+    "conclusion": "Supported: a synchronizes resized peerings and b preserves nonoverlap. The stale remote range fits the documented synchronization step; VM deletion and DNS links do not advertise peering ranges.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-28": {
+    "conclusion": "Supported: a=Static is explicit for Standard IPv4. Dynamic describes legacy Basic behavior, and private-subnet DHCP cannot allocate the public resource.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-29": {
+    "conclusion": "Supported for October 2026: a follows the explicit September 30, 2025 Basic public-IP retirement notice. The retained page also retains legacy Basic tables, but those do not override the retirement notice or imply Standard retirement.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-30": {
+    "conclusion": "Supported: a/b separate Standard public addressing from explicit NSG permission on the attached VM NIC. ip.txt gives this exact secure-by-default example; universal inbound permission and payload encryption are false.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-31": {
+    "conclusion": "Supported: a chooses 10.80.4.0/24 for exhibited 10.80.4.19 using longest prefix. /16 coverage is less specific and routing does not duplicate packets to both appliances.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-32": {
+    "conclusion": "Supported: a selects the UDR ahead of BGP for identical prefixes. Exhibit excludes the service-endpoint exception; b overstates BGP and NSG numeric priority has no routing role.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-33": {
+    "conclusion": "Supported: a/b supply subnet association and Virtual appliance/private-IP next hop as parts of the design, not a complete forwarding setup. DNS-zone association and ASG-name next hops are invalid.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-34": {
+    "conclusion": "Supported: a drops matching packets when None is selected; route.txt explicitly documents this. None supplies neither internet forwarding nor indefinite packet storage.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-35": {
+    "conclusion": "Supported: a names the documented VM-to-destination TCP diagnostic. Network Watcher Connection troubleshoot covers NSGs, routes and listeners; a resource tag or MX record provides no test.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-36": {
+    "conclusion": "a/b are technically relevant: NIC effective routes show applied routing and subnet association controls UDR application. TTL and NSG priority cannot diagnose route association. Retained route examples substantiate the association half directly. The new revision adds exact actually retrieved Learn evidence for the previously missing definition/view; see networking-extra-evidence exact quotations and hashes.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 2
+  },
+  "az104-networking-plus-37": {
+    "conclusion": "Supported: a/b state packet-field matching and TCP-443 permission, without claiming a complete HTTP deny configuration. c wrongly extends a 443 rule to 80; d invents certificate renewal by a packet filter.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-38": {
+    "conclusion": "Supported: a applies the same-VNet NIC membership requirement stated in asg.txt. An ASG may have multiple NICs and public IPs are not a membership requirement.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-39": {
+    "conclusion": "Supported: a denies the new inbound flow at the subnet NSG before NIC processing. Exhibit rules and absence of security-admin override eliminate exceptions; NIC allow and cross-NSG numeric merging do not override the deny.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-40": {
+    "conclusion": "Supported: a/b follow outbound NIC-then-subnet filtering; a NIC deny remains decisive. c excludes a real outbound filter layer and d incorrectly claims subnet policy deletes a separate NIC rule.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-41": {
+    "conclusion": "Supported: a identifies the aggregate NIC effective security rules view explicitly documented in effective.txt. DNS records and storage keys disclose no applicable packet-filtering policy.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-42": {
+    "conclusion": "Supported: a/b correctly require AzureBastionSubnet and /26-or-larger for a new dedicated Basic deployment. October 2026 and the Developer exclusion remove grandfathered /27 and Developer exceptions; AdminSubnet and /28 fail.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-43": {
+    "conclusion": "Supported: a requires Standard/Static, explicitly documented for public Bastion. Basic allocation and an occupied public IP are unsuitable; scenario excludes Developer and private-only exceptions.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-44": {
+    "conclusion": "Supported: a requires Standard or higher for custom VM connection ports, directly stated in bastion.txt. Basic and a DNS TTL change cannot enable this SKU-gated feature.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-45": {
+    "conclusion": "Supported: a/b describe subnet identity and Azure-backbone optimized routing. c incorrectly attributes a Private Link NIC to service endpoints; d mistakes network reachability for storage data authorization.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-46": {
+    "conclusion": "Supported: a adds service-side VNet rule plus restrictive policy after subnet endpoint enablement. Retained endpoint text treats these as separate steps; enabling the endpoint alone or adding MX does not restrict the account.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-47": {
+    "conclusion": "Supported: a rejects automatic on-premises inheritance of service-endpoint identity, as endpoint.txt explicitly excludes on-premises-origin traffic. VPN does not create a private NIC and CNAME cannot grant subnet identity.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-48": {
+    "conclusion": "Supported: a/b describe private subnet addressing and service-name DNS resolution for an approved endpoint. River case separates access permissions from network controls; client public IPs are unnecessary and a service endpoint is not the NIC-based model.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-49": {
+    "conclusion": "Supported: a obtains approval before Pending can carry service traffic, directly matching the retained state table and River case. TTL and NSG permissions cannot approve a Private Link request.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-plus-50": {
+    "conclusion": "Supported: a uses the Blob-specific privatelink.blob.core.windows.net zone, endpoint A record and client-VNet link. Approved/blob/Azure-DNS exhibit matches River facts; Files-only zone and MX cannot supply Blob private address resolution.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review of full scenario, prompt, all option texts/explanations, answer cardinality, matching/order fields and available exhibits/case facts against retained official Microsoft Learn article bodies in /tmp/studyapp-networking-sources; source summaries were not treated as independent evidence. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-01": {
+    "conclusion": "Supported: a denies at matching priority 200 before 300; lower numbers win and processing stops on first match. Explicit exclusion of security-admin overrides makes b/c unambiguous.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review against retained official Learn nsg.txt, peering.txt or privateEndpoint.txt corresponding to starter reference URL; read scenario, prompt, every option explanation and keyed answer. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-02": {
+    "conclusion": "Supported: c matches the retained established-SSH example: removing its allow leaves existing flow state intact but blocks new connections under the scenario. a ignores statefulness; b incorrectly allows new sessions indefinitely.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review against retained official Learn nsg.txt, peering.txt or privateEndpoint.txt corresponding to starter reference URL; read scenario, prompt, every option explanation and keyed answer. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-03": {
+    "conclusion": "Supported: b permits return traffic on an allowed outbound port-80 flow using tracked state, exactly the source example. a falsely says inbound is never filtered and c contradicts response state handling.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review against retained official Learn nsg.txt, peering.txt or privateEndpoint.txt corresponding to starter reference URL; read scenario, prompt, every option explanation and keyed answer. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-04": {
+    "conclusion": "Supported: b/c distinguish immutable default rules from higher-priority custom overrides. a reverses priority and d requires a deletion the source explicitly disallows.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review against retained official Learn nsg.txt, peering.txt or privateEndpoint.txt corresponding to starter reference URL; read scenario, prompt, every option explanation and keyed answer. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-05": {
+    "conclusion": "Supported: c matches direct same-region peering over the Microsoft backbone. Neither public internet nor a mandatory gateway carries this VM-to-VM peering path.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review against retained official Learn nsg.txt, peering.txt or privateEndpoint.txt corresponding to starter reference URL; read scenario, prompt, every option explanation and keyed answer. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-06": {
+    "conclusion": "Supported: b synchronizes peers after resizing, explicitly required by peering.txt. The source permits resizing without downtime on existing space, so workload deletion and no-sync are false.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review against retained official Learn nsg.txt, peering.txt or privateEndpoint.txt corresponding to starter reference URL; read scenario, prompt, every option explanation and keyed answer. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-07": {
+    "conclusion": "Supported: a applies local-versus-remote gateway exclusion. b incorrectly requires both and c contradicts explicit global-peering gateway-transit support.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review against retained official Learn nsg.txt, peering.txt or privateEndpoint.txt corresponding to starter reference URL; read scenario, prompt, every option explanation and keyed answer. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-08": {
+    "conclusion": "Supported: c rejects use of Pending connections until approval; the retained source supports manual and automatic approval but never treats Pending as Approved. Both distractor explanations fit the state model.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review against retained official Learn nsg.txt, peering.txt or privateEndpoint.txt corresponding to starter reference URL; read scenario, prompt, every option explanation and keyed answer. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-09": {
+    "conclusion": "Supported: b correctly requires endpoint/VNet co-region while permitting a target service in another region. The explanation additionally states the same-subscription requirement; a/c reverse real location constraints.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review against retained official Learn nsg.txt, peering.txt or privateEndpoint.txt corresponding to starter reference URL; read scenario, prompt, every option explanation and keyed answer. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  },
+  "az104-networking-10": {
+    "conclusion": "Supported: a groups application VMs without explicit IP maintenance, directly supported by nsg.txt. Service tags represent service prefixes and individual-IP rules retain the maintenance burden.",
+    "reviewedAt": "2026-10-08T02:28:12.080940Z",
+    "method": "AI semantic review against retained official Learn nsg.txt, peering.txt or privateEndpoint.txt corresponding to starter reference URL; read scenario, prompt, every option explanation and keyed answer. Human review pending.",
+    "uncertainties": [],
+    "reviewedRevision": 1
+  }
+}

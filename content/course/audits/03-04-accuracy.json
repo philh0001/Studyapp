@@ -1,0 +1,1601 @@
+{
+  "checkedAt": "2026-10-08T10:29:10.291754Z",
+  "reviewKind": "AI-assisted official-source audit",
+  "humanApproval": false,
+  "paths": [
+    "az-104-manage-virtual-networks",
+    "az-104-manage-storage"
+  ],
+  "pointsReviewed": 347,
+  "lessons": [
+    {
+      "id": "configure-virtual-networks--1-introduction",
+      "pointHashes": [
+        "c1a8d105c3c8670d22482fa53c6d895f4f758e993c6330352ecb22be05177ca5"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-networks--2-plan-virtual-networks",
+      "pointHashes": [
+        "df2250024829fb551686fb264afdc592d32603df63f19ef791a4aaebe250612a",
+        "14fcf60574ad84bc2d223fc206046b95ad631a3bd1133c0cffb9ce4637377468",
+        "4c6e775f41231a3070a7afee33b869125e38d2b4fff1bfb80d4f06a191bcaf30",
+        "887918ebfba88de0cc6e5b93929c555ca8fff64034c1dba18b7402c489c15ceb"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/2-plan-virtual-networks"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-networks--3-create-subnets",
+      "pointHashes": [
+        "39700779e5f3a04dc4381b3e54e41c0487d378ced13b19446aaa6db8d5e334c1",
+        "6d46e13cda5da339bdaddb67d66fc0a5414c09b980fb10a9a5cded9608077ed6",
+        "b5b6915eac76a2a9545ec8d1e9a63ed89f73ee76f8761f74374602229e258ca3",
+        "900d5a7a97bb3ff1558cf5690ff696fbfd9e279b2f4899c84a2cd6af81a32d58",
+        "39aa55e76d7d853b4793493987cd33760505ebcc065549f1ca86c0fcf869b6a6",
+        "6955234ec60a8dce5eff2fd3441331c12589b33d3d416d3fdc01a8f1ae4a82f0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 1,
+          "before": "Azure reserves the first four addresses and the final address in each subnet; allow for these when sizing the subnet.",
+          "after": "In each IPv4 subnet, Azure reserves the first four addresses and the final address; allow for these when sizing the subnet.",
+          "reason": "The five-address sizing rule is for IPv4 subnets."
+        }
+      ]
+    },
+    {
+      "id": "configure-virtual-networks--4-create-virtual-networks",
+      "pointHashes": [
+        "0fcf92392efd7f89c386e0d5c597a880f289fe10298e42c483680854ab2d3697",
+        "b5ca397386835d595aefcf443996b762605306f8530c83132a6348b20e4ec6c8",
+        "30fd3c8fbe087511115a0ef665d6bbd32425d5768e949e8b2db968fbcd7b8688"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/4-create-virtual-networks"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-networks--5-plan-addressing",
+      "pointHashes": [
+        "1b81d1f48616e6ab758ba1cac2791ffb422809f39dd1fd3bc84a2d93224ee17a",
+        "bf4a5b9e80b86d29311dd01c782d8e426ece0207c317839809ac1764736e3794",
+        "978d15a09959f953e5dd7be16472cbc1895d1f04086af9a0e0ba7780a4e5b832",
+        "bda00a991faee92924acca2a72530d3353d21dbdeadbde3bca3f2a7b8a8ede3c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/5-plan-addressing",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 3,
+          "before": "Use dynamic assignment when the resource does not require a fixed address.",
+          "after": "Use dynamic private-IP assignment when the resource does not require a fixed address; Standard public IPs use static allocation.",
+          "reason": "Avoid teaching dynamic public IPs as a current choice after Basic SKU retirement."
+        }
+      ]
+    },
+    {
+      "id": "configure-virtual-networks--6-create-public-ip-addressing",
+      "pointHashes": [
+        "27c57ccb1307449ef61767eaabf24c8d7386c2a65b45f3bfa238e5bb5c147fcf",
+        "d6c1d36dc7dba0fbfcb507f30e982c582b7cc4ac867c25dd5e3405e82bd9214f",
+        "e2cbb336b8162d3f3b246a1168efae531a160de1286d5f7ac7bb78c8ed4a0838"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/6-create-public-ip-addressing",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 0,
+          "before": "Select the public IP version, SKU, tier and assignment settings when creating the resource.",
+          "after": "For new public IPs, select a supported Standard SKU, IP version and tier; Standard public IP allocation is static. Basic public IPs retired on 30 September 2025.",
+          "reason": "Replace potentially selectable dynamic/Basic assignment with the current deployment rule."
+        }
+      ]
+    },
+    {
+      "id": "configure-virtual-networks--7-associate-public-ip-addresses",
+      "pointHashes": [
+        "8732ccef1e0a244d200cbadb2e463900f60485cb56d1bec7b05c5d48c97b7056",
+        "9f7e0a285a145bcb92d9acf1d7bea39523089138dd3caf0d8bedc703a52daefa",
+        "74e9d64c0651a8a59e50395700cb07187115f0f12be7ef1be9f7341094a0867c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/7-associate-public-ip-addresses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-networks--8-associate-private-ip-addresses",
+      "pointHashes": [
+        "0a76ca629d14a4954ce7371dab633ac272f098d5f686cd58b6a11629ecd55f9c",
+        "7885a600bbdfcae60c93592c0943c8f6740c6b933a294f7ba0be1b0106e370dd",
+        "588555c0058c650de1d788211ecf4235eb25832ff5becae5af5024358ee91c53",
+        "47eabec0b68ade002477dedcea89d79178635eec2d7e586f6ed68dab3753f33c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/8-associate-private-ip-addresses"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-networks--9-simulation-create-networks",
+      "pointHashes": [
+        "c4f7bdb13721264833d492fe8af3d94c9479f5d269bceac3179a5f76aac1e67c",
+        "c0c1cf424db108fe479df080862697ff887971a876e2f781d4c112a13c5bda95",
+        "1296c567ffd74fab4bdce672fa788ebcae5d5dbdd8accd8c26c947447e1bdd75"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/9-simulation-create-networks"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-networks--10-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/10-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-networks--11-summary-resources",
+      "pointHashes": [
+        "38939e112aa5974f13dbffd35fcd31d9c849a8c9f19bea00d9aef2645b3ff20b",
+        "5782479b746922bf8f0cbd3fd1b66cd92c7f326efbb916936c9ae7b2f7c14b29"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/11-summary-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-network-security-groups--1-introduction",
+      "pointHashes": [
+        "ff80c59245ff6ccd0b96f8136e07710f9ba19b51b0d21a50dc2a126595115410"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-network-security-groups--2-implement-network-security-groups",
+      "pointHashes": [
+        "1c4f948a62f77cc621c99d726f4672f6effb24b9e87ee21177e6300f6243348a",
+        "5259d97fbedc5aaff2d2ed1b3768ffd2af72fbfcaad7a0a6ffb2150d0b2fe058",
+        "d9bbdd41eee344c9aa03577c471bcc253132b906677debc6944c8155bce165fa",
+        "b8ce988b0649337d64684beb857f4c343cfad06d027cff89896743fce566e26d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/2-implement-network-security-groups"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-network-security-groups--3-determine-network-security-groups-rules",
+      "pointHashes": [
+        "84aeac3f572bea3a8366cd9b7e313f4236f22e1afe4aad475424be62d96d296c",
+        "fc20ee99b6ed1951aba37af12bc00b0717f3fba5364dc0803df98ea6db582b0d",
+        "4bc4cdca7e18418cec9d0726e730af176fd7d1a7ff926d883bf6c0833a8b0b5c",
+        "f15fd7031b756ad75a8f2170acfc82738ae6fdc4fe92d5f86b4964f97aa1a265",
+        "2ccdc294ddc795fecf3559a815833f97ac67a2fe4edc0f7c96952b83602a8efa"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/3-determine-network-security-groups-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 3,
+          "before": "Default inbound rules permit virtual-network and Azure load-balancer traffic, then deny other inbound traffic.",
+          "after": "Default inbound rules permit VirtualNetwork service-tag traffic and AzureLoadBalancer health probes, then deny other inbound traffic.",
+          "reason": "AzureLoadBalancer refers to probe traffic; load-balanced client traffic needs its own applicable allow rule."
+        }
+      ]
+    },
+    {
+      "id": "configure-network-security-groups--4-determine-network-security-groups-effective-rules",
+      "pointHashes": [
+        "4f8b03723c44fae793565a0fed26e34a532308271107424bc89db99039435628",
+        "71adbcfaac51fcfec2be67d0efbf9b02baa22373d25505a0f5da35cd6280a3c8",
+        "99f17c5c046ea661f8c735b54d09f0a2233849e933cabc8c6a160e2651395aa0",
+        "b4a7a06f80b74d697f3467af341f4d213d4570eefcd4edf7982c5848ac17247d",
+        "9b833ec85a1122e3358eb0f9d562bd1281dd198bd0aca9d1daf8012734560462"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-network-security-groups--5-create-network-security-groups-rules",
+      "pointHashes": [
+        "a3c08c1a0e7e7ec58a4157d1fa87148f95196fe45447256446b3ea7ec8af26fb",
+        "0403d3b599107aef3320464c3668283b8e00159ebbea8f6e58bafc0926138942",
+        "820ffebe0d8f66e3b43f412e0df55171715e061f93a31feba9102974f1a1d2b2",
+        "65c5a1eb493ad675514e2bcb4364d9a196a0a5834f0d33c39a7396c6c3d70d3b"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/5-create-network-security-groups-rules"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-network-security-groups--6-implement-asgs",
+      "pointHashes": [
+        "d4561c2bff3c726ab49230908e0350a8a8089e3d35878caf85b564f0092bf526",
+        "8a2667253c93f79f34d0243ab61eab9b67ca8c0638e893f400ef775c6dd0eeaa",
+        "17e1fc2bba97fc8ba77609f0075477ca06e485d5ad546c79d4b6320ecf4a22ac",
+        "40b4201b8bea1be47fc07c50b2763a566eaaa576f24f5b83e38d97f43583814c",
+        "76085e576e94c2d42ae84e6f13276398c00080ac50e6d3ef4c6cb9abcfdaa515"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/6-implement-asgs",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 3,
+          "before": "For example, permit web traffic to a web tier and permit only the required database traffic from that tier to the application tier.",
+          "after": "For example, allow web traffic to the web tier, allow database traffic from that tier to the application tier, and explicitly deny other database sources before the default VirtualNetwork allow rule.",
+          "reason": "An allow from one ASG alone does not exclude other sources because default NSG rules allow virtual-network traffic."
+        }
+      ]
+    },
+    {
+      "id": "configure-network-security-groups--7-simulation-create-network-groups",
+      "pointHashes": [
+        "c6ae02bf9ecd019fb14fb363b6da053052dd7df830bf47503e85f1e43022dc59",
+        "7b4fc2ddab29eaace49419f9ed148c403164f52cbbbe6261d13fdbcf15c80ce8",
+        "f21c6e94c4eb08087ea1670fab1fad0e9848f37c92aea007fe2b28fc62b6c1b4"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/7-simulation-create-network-groups"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-network-security-groups--8-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/8-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-network-security-groups--9-summary-resources",
+      "pointHashes": [
+        "fe76cfe85d9acabb1f4902ba98323cc7d02faba98f3a121dd14c825bc8d290a8",
+        "9c1056f8b78ab6c89fec8387756c530f6542cbfb286238fb4bfe7cdf26609de0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/9-summary-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "host-domain-azure-dns--1-introduction",
+      "pointHashes": [
+        "0583692581807ce55cc234078b734ad728c79e22fd60a7bb35455f574f9e679a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "host-domain-azure-dns--2-what-is-azure-dns",
+      "pointHashes": [
+        "94d78a6f0e345d0d9686c7f0b5cf59990dc6f11423de020b6708c3e967783076",
+        "1af9696ef96ceb7ffdd06638ce523b7f416e6d48e67f13398c0c25aa746ea348",
+        "0fd31fc18542f5bb6236cf07aa1954d1aa774b7bd1483ee2a0cbf8ec553f759c",
+        "18501794ac7d09fa2a426dea637f90d2b534724da38e408851b6d8ae84612e21",
+        "df8dbd5db0c47ba4d2d06281147dd89d6c0b9ac2e2a217212cd7b39255205179",
+        "4369496aceee8bf2d0aad62c824242cff217872dbab9df42a75aa4f0bfc71039",
+        "eb53585528ed90c7f077f44093e4a06230447300dabdfe27c24b4368ffa8d4c7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-alias"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "host-domain-azure-dns--3-configure-azure-dns-host-domain",
+      "pointHashes": [
+        "9ac9e57c1ff89d74072221705ef19b89ff9b7dcadfbffad57c62d6d0f7179f2b",
+        "fec96da21e6dd741cdc07b2186f2e4d67a389ab2a771d31fc3f2c426752d8279",
+        "0f18e1988c5cefd407aee85d98343fcafe090b6be7d5a5888e99408de9fb5a90",
+        "cc965e6c065a1927124986db9a49955bd3055f3999e476d0dafcde28fae82520",
+        "eb26d3082b60f4cc23b8f9b74374bde0a299390ab1bfe29c6f0c373a58f4f7b7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "host-domain-azure-dns--4-exercise-create-dns-zone-a-record",
+      "pointHashes": [
+        "072c365f72fa8bab4ca6b1ffabeae313eaabe36875e4a0614881b44d5462ffbc",
+        "ccdfff381050ddd814acfcc824c7f5b892b77516ba14c234d998c63e82e64138",
+        "973fee652cd4b004278de60ed4117a62ece664747a925e73076e556804c70510"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/4-exercise-create-dns-zone-a-record"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "host-domain-azure-dns--5-resolve-name-alias-record",
+      "pointHashes": [
+        "a691a48dc899ffebec9757b435e10106f214819b717c357220a253027328330d",
+        "987734d4d6a3c351a89bc654420a96a7554e811b7ae8768a6368a722262133b6",
+        "dede5de41b433f39146dd6923078b7cf7cba668b5249af474a091f9c3d4dff41",
+        "8f91f1e42b3edc06c871f998b5625c3bc2bd1f45ae930b62f3fdc2c511ff7977"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/5-resolve-name-alias-record",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-alias"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "host-domain-azure-dns--6-exercise-create-alias-records",
+      "pointHashes": [
+        "6e9b415710b2f2bf2c70101ce6dfc3acf2e216e6590d7a11b634994e1c367698",
+        "4bd5ba1b5a135de8c9ba1b1e89abe6f196f227cf5b859c0b3981b25981fbd414",
+        "1dc7718a2112b5f56081754b16b085af6e959537b3dff1ea3327148521d99ca7",
+        "adb394ffe00809d054b79bca3625617ba5cedc15409f2eadab0f60bb73dcbac0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/6-exercise-create-alias-records"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "host-domain-azure-dns--7-summary",
+      "pointHashes": [
+        "22c2a2faa19d17c2727e403f9ac151f873654fc687e1717bf7871ccc6f0fc012",
+        "db71e6576edcc1136a2d7c2c8162d8feb70f2831361070d23b43c8b434ebe3cb"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/7-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-vnet-peering--1-introduction",
+      "pointHashes": [
+        "799b3ae7cc2df1bacc1c93b5159e82a0efd345133de8d7d3977d8cf37556bde1"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-vnet-peering--2-determine-uses",
+      "pointHashes": [
+        "0947ab33f1e885b6775ef6712b6a88989e07670c23e30a7a70c86ea8718bd270",
+        "f34bcdb09858bf06309fe7a9cf0f0f60496d893159ea17bb7d60b4ad673f3d45",
+        "f64533c73d75d9d543cd7d945ddc4570f8d3ea11f9cd1ab29a65329ed20dbc33",
+        "52a605d9cf9f03be11e8841656861639bdf738c44e728b56a4fc88d16607ed5b",
+        "0fa97a2fb5fed16ac076cb1bb2953087470fde3fa7cca8a9bc43889d83c7cfd7",
+        "bca51f97888d04beae0cb82d165c1dc25b917651cd56f392347e467c284ba9c6"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-vnet-peering--3-determine-gateway-transit-connectivity",
+      "pointHashes": [
+        "4859c45cedddc86e4bd00231c301c6c054d92837a5f2fde8910aad3c5d828477",
+        "3d6863a93653bf42fe7f4c4256ce2be903c2141af62e524bd98e1bab977e4b6b",
+        "bfbb6b1015d163eed09e67256c2e9fbae9c7423757f6db05e7291a83fd027477",
+        "366851024c28b2eb0d25fc35a483d548cc90f2dd9f8628983066f53b30ab64d9",
+        "004dd32d2aef24061a439718b25ddecdb645edf32337f371f15af187225ba573",
+        "e693226e92c24ad49f1a560cffd71132a58e5dbcd05b680da20988e852c8aaaf"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/3-determine-gateway-transit-connectivity",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 1,
+          "before": "Configure the hub to allow gateway transit and configure the spoke to use the remote gateway.",
+          "after": "Configure the hub to allow gateway transit and the spoke to use the remote gateway. A spoke using a remote gateway cannot also have its own gateway.",
+          "reason": "Add the prerequisite that prevents invalid gateway-transit configuration."
+        }
+      ]
+    },
+    {
+      "id": "configure-vnet-peering--4-create",
+      "pointHashes": [
+        "b281c347bf761c361f82f605d12ac401fcca02a395db8c2f0951e12b4e5b9db6",
+        "46839a98e505e187bc1f99cfb0ce7fcfa25d577b9385ef301f0d8dbdd3a6778f",
+        "920e7e96ceed08109e2c8fecc00288db6a6bced61ad21fa55773e2172e034eb8"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/4-create"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-vnet-peering--5-determine-service-chaining-uses",
+      "pointHashes": [
+        "2196eb2f59146efa88025ebe6170cf7d0a667389b0e6f9cf6e55a18f2bbd304f",
+        "e84b120e3737ec6e8a3476ce537d85c4e8ffa0f5a960296ea02a3c1ddefa316c",
+        "61c8bec5fa89550969e8a5e49de666c1b31ff7b12552acc84254eba6c73bfe13",
+        "5a42b610214ab85fdacd9ceed780ef55e74759bf1f35d9b82d6190f64f05be71"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/5-determine-service-chaining-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 2,
+          "before": "Use user-defined routes to send traffic to an appliance or gateway in a peered network for service chaining.",
+          "after": "Use user-defined routes to send traffic to an NVA or VPN gateway in a peered network for service chaining; an ExpressRoute gateway cannot be a UDR next hop.",
+          "reason": "The gateway next-hop capability is for VPN gateways, not all gateway types."
+        }
+      ]
+    },
+    {
+      "id": "configure-vnet-peering--6-simulation-peering",
+      "pointHashes": [
+        "f8b17fe193262af0e74783d8cdc8a827425772e69ce0a2b026f05b7b6152d234",
+        "4ce3113b98b4353221dc04839b03399b0f4fb3e0879f3705e09f43fa6de3d6b5",
+        "cda0fb4f1bf329fff77d9da3391d026859f05bf359247487f56455cad815aeb7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/6-simulation-peering"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-vnet-peering--7-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/7-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-vnet-peering--8-summary-resources",
+      "pointHashes": [
+        "52534dc3fdbab05b8c9e22057df9ff029fc9ae932c77f490270426eda4f0b52c",
+        "3ecf22cb56d1f79490ce66779d45a04ee5f6ee97fb51e12e25868c84e51aff01"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/8-summary-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "control-network-traffic-flow-with-routes--1-introduction",
+      "pointHashes": [
+        "4ff42f6b7be957fe703214423896bc3cad5c1c92a46cdf7da58353da7b17b615"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "control-network-traffic-flow-with-routes--2-azure-virtual-network-route",
+      "pointHashes": [
+        "b80c66a0e7c07416f35626cba47365564e081ac1de264f4326584ca1b7cb1c78",
+        "c231098e901782647e39ffba7bb9bcd8453d028f43462b19b00d679af4ab7d20",
+        "ba2ac94b8db80c0bb4de46346b6ed8a65e37888e801e8e87746fb1d7ada95a57",
+        "1d9e39b9377683226f7dfac92389676794c1079cf6cc5312acc88bde694aab99",
+        "72e5fa7a69ebc75c02b614b26d40042499116d0d216b919358ea478d38997e8b",
+        "f54f31225af55158bb379946984851e4be0252dae210ba0480098ea584e465da",
+        "12bfbf3ed945d5ea62792b2a7fe98f61e599094ab47d4960637daa33f08b0027"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 5,
+          "before": "Azure first chooses the longest matching address prefix. For equal prefixes, the general preference is user-defined routes, then BGP routes, then system routes.",
+          "after": "Azure normally chooses the longest matching prefix, then prefers UDR, BGP and system routes for equal prefixes. Preferred system routes for VNets, peering and service endpoints override BGP; service-endpoint routes cannot be overridden by UDRs.",
+          "reason": "Documented preferred-system-route exceptions matter when troubleshooting BGP and service endpoints."
+        }
+      ]
+    },
+    {
+      "id": "control-network-traffic-flow-with-routes--3-exercise-create-custom-routes",
+      "pointHashes": [
+        "1cc6da1d0259af6166cbf32ac553d9a3ebedc8f463e009d9bb7ba763397c4dea",
+        "abb6c43f79c9f528f7f8180ad4096fcce951cb24a95c24cc4c49cda333f2d27e",
+        "5da5fab9e5d67c883dc7347e11e9ee0eee0f206052cd30a480ab64b3550e55bc"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/3-exercise-create-custom-routes"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "control-network-traffic-flow-with-routes--4-network-virtual-appliances",
+      "pointHashes": [
+        "416750078262ee734a9df049e6c6cd4d195081562d95033676d05536f29e82e0",
+        "fe9ca5e7f40576a93a3412fbccb93e0333ba09d8713ab486a06a3b99c9bebfbc",
+        "6cc3d1015fb66b7dd708ef011741f46a36e76c70f0ff6c264f963bb0bffa87fb",
+        "4b9ca5ed0073e0bd1d20f39b86bd4c134827584139e1dacc2299ece9bc1a3962",
+        "65f27e587b20c733c663fa1e5303b6182a287badc248c026f7d6648f291c0d31"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "control-network-traffic-flow-with-routes--5-exercise-create-nva-vm",
+      "pointHashes": [
+        "32a1eb5438277b341aa3e38de2b26b1e2272c7cf0e723e454f836adc5aed6547",
+        "66bc0813c09f5084751bde254530fba7680fc561cd05c8828693144944dc7591",
+        "296b34b0071f5848b7055232a05e8d9b226361ff7440c9793990db0b5b9915c2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "control-network-traffic-flow-with-routes--6-exercise-route-traffic-through-nva",
+      "pointHashes": [
+        "93af2709673ab91f32e811e0d64e7f2ef03081ac45c2a35f0561a89ecc53f2b7",
+        "8819794765e3950cba2c5d2d1fa15c008aceb22c8d895794ddd1468271d6354a",
+        "9ea03e388978c001a5d9374291f2b152c24372351e7583e64f2ffac85e698b22",
+        "c64aa8a308e894a016406a415ef4ad94cccb51010f5ae87678847eeecb6acac7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "control-network-traffic-flow-with-routes--7-summary",
+      "pointHashes": [
+        "31c5b4a1e8822bd4214d1f2d87f7beac697843627ab343c5906ec0564f6340de",
+        "771b49000cf9aae4c6f3a483605635c6b5dde0eabce19d26ab6dba577fb5e54d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/7-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-load-balancer--1-introduction",
+      "pointHashes": [
+        "9151e4b3871d29a89dd291315aba49efb8af01b3f953bcaf599341ff0c09ad6f"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-load-balancer--2-what-is-azure-load-balancer",
+      "pointHashes": [
+        "1acf7a9aa54490656d0fce816fc3f06fc033510fac054138a91ba5995cd966d4",
+        "76ccf93cd727eaa439cdd7b672a616d610be09938596b97026e83ca5998fa6fe",
+        "d87f8259edf22762bd759ca94d48c985835aa19fa11426c20dca2fd3cdf9a72c",
+        "ee9aaf4b6f9f748bb2bce5eeeb4fce2d0601249c05ada6cb815c4d1138769e37"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-load-balancer--3-how-azure-load-balancer-works",
+      "pointHashes": [
+        "47af479c02aa414d193a1fd926e6064cb6e2ae023019f526a3077d3422c2d82d",
+        "400c919af427b7fad6028abe230fcdfababd82a362f2160cce0a36e4722f6e45",
+        "291514ebc31a0b20a26f8fe0d141be26a7659d726a496b704849268d82883d67",
+        "728ea554510fcd91cc54375d96df8320e96cdc61f616ead5963db423fb58af73",
+        "b4a93689196838d102c423c48cba11b0e211051bc0f197dd0be158fde8b29d06",
+        "5561c111638f89f563750d9169d9c365e42087155dc089c4f8f109ba669ca214",
+        "ccd1452f5a7779350eb220a1eedd07e047decf5ddff2f3e833c8855d009c03cf"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-load-balancer--4-when-to-use-azure-load-balancer",
+      "pointHashes": [
+        "ce43613603269bb5653d178f9454601a2867c3c42fcfff209964d0b8d8bbb81c",
+        "97afc7e7ea30d1c6c78c6b0ee296c3c12752a59521813c16e4f090c6c022b26b",
+        "67087053ef264cb288876c072edc61fbddffd0b1705d82fadb1f98aa1738bde2",
+        "e6cc753b433fac1a3995a503163c9c13196abf36dde6441043469f6ce13adc35"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-load-balancer--5-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/5-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-load-balancer--6-summary",
+      "pointHashes": [
+        "6389d5bcd90e52871aa41a14055606c00e269c5f3d39a932699345484c802183",
+        "d57d9a6846927ed133f8529c01d3910157d3a42ecbea28855a631e3d89d6bc4e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/6-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-application-gateway--1-introduction",
+      "pointHashes": [
+        "d115b25cdcd2c3105e691fffd1c33291116962ad5c4bfffcf08334d8d6ca6a35"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-application-gateway--2-what-is-azure-application-gateway",
+      "pointHashes": [
+        "5f87ad510cd69e4a7c08f190381bc9691a3d52e2e2e0f21fce3b55e93034591d",
+        "b74f3ddc0095a18441569dd5fd033d15bd1b9476f5dd04babe701497d22e88b3",
+        "283b53b78aecb7e6a21dc5a3a0139e424b9af12905a3c132adeb44100d20df91",
+        "adf7be28107c4ed5106726e608d83002cd4c4fc7c547ec77b39b5b5d223366f7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 3,
+          "before": "Autoscaling adjusts capacity to traffic, and connection draining supports graceful removal of back-end servers.",
+          "after": "Standard_v2 and WAF_v2 support autoscaling as traffic changes; connection draining supports graceful removal of back-end servers.",
+          "reason": "Autoscaling is a v2 SKU capability rather than a capability of every SKU."
+        }
+      ]
+    },
+    {
+      "id": "intro-to-azure-application-gateway--3-how-azure-application-gateway-works",
+      "pointHashes": [
+        "ed33f0c8ac6fbbc67bbd54c7e25b7436d9bfc6318a05639a7d5b24df78077f91",
+        "aedec5a661f092b55f432bf3e449e9bdde1d91a199a8b98f14fe18c6db532b6c",
+        "11b08008691ac3e763e78fb8009820ec6b64999785e466e6317b6752114b0d26",
+        "2591859a794aacdb0d80d71050917a852a931904afe39560691aa9511e423107",
+        "11325d9f4154ab5d764856ae86347c4d8c366363d995103a72fce9ce8a8e60c2",
+        "efbfd52fb18b0f2f659273967ca13c04efe933c808beae091e27134eec6f7987",
+        "99c92cf3aa2ce9e504ffde30b44ae26fcab5cf9bfb1441e29b73474465c7563e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/configuration-listeners",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 6,
+          "before": "Additional features include redirects, header rewrites, custom error pages, autoscaling and support for WebSocket and HTTP/2 traffic.",
+          "after": "Additional features include redirects, header rewrites, custom error pages, v2 autoscaling and WebSocket support. HTTP/2 is supported on client-to-gateway connections; back-end HTTP connections use HTTP/1.1.",
+          "reason": "Clarify frontend-only HTTP/2 and the SKU condition on autoscaling."
+        }
+      ]
+    },
+    {
+      "id": "intro-to-azure-application-gateway--4-when-to-use-azure-application-gateway",
+      "pointHashes": [
+        "9cb3b536c9a0db875e27905b69a8ce225c5a82db9fbdc96fd32f59d62a5ff057",
+        "5e82a92cc2f8f73490f09c5e69e3d40b2699fd6dcba136764a1cbf266715c3ff",
+        "048230fcf4e0757de5e5cf077d5e4f7094dd3d6de6e5874953fab9d4c15cad05",
+        "6b6a88a346622b43bb5765ff566fa2a8812c5e36aa5f8ba5dd8c4d101badcc98"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/4-when-to-use-azure-application-gateway"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-application-gateway--5-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/5-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-application-gateway--6-summary",
+      "pointHashes": [
+        "7353d73371f6b61f155ff0eb440c7103f7d953ecb6e05a4cdbff10cf4490fd52",
+        "5d0792196b4f6e7a45581478ea58789786a7924ed4a785125af0e5196cc2da21"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/6-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-network-watcher--1-introduction",
+      "pointHashes": [
+        "14184847bfa79a1e63039fcdfa3a2170ada120f77fa659d6ca28151534fffbb7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-network-watcher--2-what-is-azure-network-watcher",
+      "pointHashes": [
+        "c0563eb7fe9b6b5c8a2c4b96e578044e06341a42b9f86f78261fbdb6cd89b98c",
+        "c91a7e6c120a01fddf3bab96d3bd2a4822b6f41b80ff1a808e5ae5f67ec67bf9",
+        "581d424619c0deec43aa046a658266108865ee4a6dca7065bc5f4cfbe505e58c",
+        "c0ddfa94aeccee0451468fab9c3333203a1a815c139b868fc5fb8b6227c7504a",
+        "22a379595fc2b7e09beae0da2ce60fe6d6f8f35beb79baeec3700b3d8466dcdf",
+        "92e3c763f38e6fee387eb96cf788f0cbfd575ecfbc339e1b729ed90022b267b7",
+        "4aa4b4f24abccc62af83e27a5951025369dbf4dde66037498e6d8fb99891700c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/nsg-flow-logs-overview",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 5,
+          "before": "Flow logs record IP traffic in storage, and Traffic analytics visualizes the resulting traffic data.",
+          "after": "Virtual network flow logs record IP traffic in storage, and Traffic analytics visualizes it. New NSG flow logs cannot be created; existing NSG flow logs retire on 30 September 2027.",
+          "reason": "Include the current flow-log migration and retirement condition."
+        }
+      ]
+    },
+    {
+      "id": "intro-to-azure-network-watcher--3-how-azure-network-watcher-works",
+      "pointHashes": [
+        "bdaab55ed0635c8ea0d4ff3fef2bc766dc2a343bc8a0c33dfdad0b2d9c269b6f",
+        "910b0267e8efb210573d1191ca32de651adc26a30b2f4f5e05cb5623fa13ef95",
+        "c26eb1caad037a761ddb2c24c2788ee1abf0417af70abf1c21de1772ed870c79",
+        "d136be119c4d762413623618ff08748e12455dbe7d3ecc19acb6f5b1854759c3",
+        "b6639d7eec4d60325f7434f4c5f8fd1283d3532f172864f40b9e20a2b8e4879f",
+        "f32d3305efa753d30cf7e70ca14fde347f648747227113163dadcff67b6e7a24",
+        "50167877171496af417f2792b9c9d0845a91b4b123538b4519fedc6f987a8ebc"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 0,
+          "before": "Network Watcher is enabled automatically when a virtual network is created in a region; open it through the portal search.",
+          "after": "Creating or updating a virtual network normally enables Network Watcher in that subscription and region. If automatic enablement was previously disabled, enable it manually; open the tool through portal search.",
+          "reason": "Automatic enablement has an explicit opt-out exception and also occurs on VNet updates."
+        },
+        {
+          "pointIndex": 2,
+          "before": "Connection Monitor probes endpoints at intervals and requires the appropriate monitoring agent on monitored hosts.",
+          "after": "Connection Monitor probes endpoints at intervals. Azure VM sources need the Network Watcher extension; on-premises sources need Azure Arc and Azure Monitor Agent.",
+          "reason": "Replace unspecified host agents with current supported source-agent requirements."
+        }
+      ]
+    },
+    {
+      "id": "intro-to-azure-network-watcher--4-when-to-use-azure-network-watcher",
+      "pointHashes": [
+        "a73a8be6fcb398f880e2037764c084d3ea1a9e22e6282a2525c50477078940f3",
+        "fe17b677a152f437b176326faa12ed97c52b3cf1c9d4e0d2e374a0e3046893c6",
+        "a4c45425f4d55f1f3b7bfae19a8f6c1cde5f831f986fac7cd11d94aea616afbe",
+        "84c5b6a12c38b59a7d3cb88289baaf3991c0deebe11f1b17a483909843efe1f7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-network-watcher--5-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/5-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-network-watcher--6-summary",
+      "pointHashes": [
+        "522e7823a6e069839972fb8ab99f47aa96939c4531762553de902757eca906c6"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/6-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-accounts--1-introduction",
+      "pointHashes": [
+        "55009019dc88eabb6883e767bfd57bc18831f420215b56ce14c56e29f56b1f9c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-accounts--2-implement-azure-storage",
+      "pointHashes": [
+        "417492124fa634d1f175efb71e72deee6606b1655d15837e7f96903f1129cca1",
+        "92cd77f20918c46995a6ce0b6bf03b7ac3b0158f61e228d7c2d1bf4143e0ede4",
+        "f8dfe50881ef65cb1f442ca887204602814f3c8d76d98883d1d485ab32d0aee7",
+        "fec2da2c1c40d6cb6618fcdae5c000002fcf9d2180cbe7c118a7db4cdfcf8dbe",
+        "95162e604da97faa52a9b81877695eff94048228b11e6705e1ef8080c3ce571c",
+        "b4fd681712c39d9b0ac1ab227259ba6eef7b9b85a4215e25b14d00f3c38d4408"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/2-implement-azure-storage",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/secure-file-transfer-protocol-support",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/network-file-system-protocol-support"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 4,
+          "before": "Blob SFTP requires hierarchical namespace; Blob NFSv3 provides a Linux-friendly mounting option.",
+          "after": "Blob SFTP requires hierarchical namespace. Blob NFSv3 also requires hierarchical namespace and lets Linux clients mount containers.",
+          "reason": "State the hierarchical-namespace prerequisite for both protocols."
+        }
+      ]
+    },
+    {
+      "id": "configure-storage-accounts--3-explore-azure-storage-services",
+      "pointHashes": [
+        "c837e964063ed6d2d5b451fcd7155b1a756ee0b69b18c4aa2b3bdaf5c58b43ef",
+        "a5d737046ed4a5f45b46de698de1cdc80b02653a3ed05e8bc1afc9116dbc956b",
+        "2b28c5b7e4af1965ce287dd6fe3a21f777f0163215476b0804b039099aa20132",
+        "6b01e5ee72d1578f25981f0a519b66f79fda726ae1ea0444ce0c1f0560bf8428",
+        "109b08b9ecebfcf647a55c0fb7e6bc01c54dbfa05800a1895b0e1088439144ac",
+        "1d9115eed5a8e52242d6aaa2642c07ccc8ea420d67874b5ecce48a734e4d9bf1"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-accounts--4-determine-storage-account-kinds",
+      "pointHashes": [
+        "2014d987b922fecd8b5e1983c71adb3834385bb9044ed13aba30a1bb7747d18f",
+        "a8ae0733f061b3ee5091136cda491ae45c46b79e310cb34df3447d225cc61006",
+        "13cc6eca9b243ac91d29221075d2cf8f25dc559efeab9dc8b21956984aef906d",
+        "6b3fbe747272558e9f407a965d5d3ba08cd575df1397034c4b940b9db6125c74",
+        "bb354b02b52eb0ed437414f45794b1d74dfedfddea4e50211e8f45bec995f471",
+        "15875eb344605e12cbeaf527cf8e38ce8f747bafa527da9d27f2aef9c54a8ce9"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-accounts--5-determine-replication-strategies",
+      "pointHashes": [
+        "6791e444173b17ad971295564e6e4e0081b0f6025bb7e8d31d98349e44d49281",
+        "380cc4ceda94808cf6c7aa46f426ecbc11361211dfc74f13fdd57f0837487888",
+        "fc2fb072eb120807eb65b7e3a27434bc296b07d82c8e779d3bf7dfb66d87e260",
+        "4b969d23138cb42c1505a7a2097a684ba7272867ef0ee78e20a3d83e66b41aec",
+        "d9775716174fff93740017c9a8345e21a500642efda48dc8d8e49a7499dc7fe5",
+        "63b775a64c2b8063d602d261286e017e2c9e6325b367c1fe739b4b79faf36544",
+        "9c737d492752807cf56859f51b94c1af73a631fa07eaf90de6a196f10fc1a50d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-accounts--6-access-storage",
+      "pointHashes": [
+        "1d2645f586c15eb8cd43b3907df22c42b476d04a9c3053dbb47917026351974d",
+        "91359f9e325583ea53d1cd108d1bad9eb72cbbc2cb59921388930ff2090b427e",
+        "1413683868d518de7b94da02b084f349d5ee76af17af4ef01b9ab98246b1f343"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/6-access-storage",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 2,
+          "before": "You can map a custom subdomain to a storage blob or web endpoint using a DNS CNAME record.",
+          "after": "Map a custom subdomain to a blob or static-website endpoint with a DNS CNAME. Direct mapping supports HTTP; use Azure Front Door or a supported CDN configuration for HTTPS on the custom domain.",
+          "reason": "A CNAME alone does not provide an HTTPS certificate for the custom storage domain."
+        }
+      ]
+    },
+    {
+      "id": "configure-storage-accounts--7-secure-storage-endpoints",
+      "pointHashes": [
+        "de869f1c221accf6fe0201e9317522dca1d2786ea5927c5a8c8f8fcaa7226efb",
+        "574ecfdec1b50e2f16fc9061798a88048ee813b4cf8ceb629ddb8fdb56159d94",
+        "3089db9b157b0dde1f361434eccc7316666a9de091327a4ba8807ecd1b1b2a1a",
+        "c9c00ac056d72f06a9faa906dc525a3f677887bc1a2ab76ba4fad7c0fbc31148"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/7-secure-storage-endpoints",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 2,
+          "before": "A private endpoint assigns a private IP from your virtual network to access the storage service over the Microsoft backbone.",
+          "after": "A private endpoint gives one storage service a private IP in your virtual network. Configure DNS to resolve that endpoint and separately restrict public access if private-only connectivity is required.",
+          "reason": "Private endpoints are per service and do not automatically block the public endpoint."
+        }
+      ]
+    },
+    {
+      "id": "configure-storage-accounts--8-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/8-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-accounts--9-summary-resources",
+      "pointHashes": [
+        "a932621031ec8505af3446c6a133ad074aa3ba35e64dd998457b1b4229d3a27f",
+        "aead85eab458192f12f1aae9bd79161f91d8091b30728fd24aa2aef6290f2b1e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/9-summary-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-blob-storage--1-introduction",
+      "pointHashes": [
+        "e9647bd06a5f8f4830ce4da9d7145d3891fbced036685468900830630b713a6d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-blob-storage--2-implement",
+      "pointHashes": [
+        "689980b7566c62043c2e36d08eb76702db2c9f6c245aeb4d68e247513d049e14",
+        "d3fa1a34951e11fefe2131229a0e5d86ac03c8dd16f82d9405ccb8ac8eedd741",
+        "c9769bcb61b45a24408595408ed301dd8b7c8acf741a38b51ed80e1d1f75b74a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/2-implement"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-blob-storage--3-create-blob-containers",
+      "pointHashes": [
+        "ab3ca6deb246346a144dbdaeeabbf43616e18596f4e70df7609be0d549828def",
+        "d6af3f13f0f09dd51d8707ebea7f3c3c7eaada883838b1d2e6ed0b63003faf4a",
+        "89c48f0d8c1b2275f8d38c0106adcf5944e440795c02f48f41ff2bf261f657d3",
+        "042414ff4c9ea119e8124848a6be31ea981ec8bebe4116f913e20563179e080b"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/3-create-blob-containers",
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 1,
+          "before": "Container names must be unique within the account, use lowercase letters, numbers and hyphens, and be 3 to 63 characters long.",
+          "after": "Container names must be unique within the account, 3 to 63 characters long and use lowercase letters, numbers or hyphens. Start and end with a letter or number; consecutive hyphens are not allowed.",
+          "reason": "Complete the naming rules so the note cannot suggest invalid names."
+        }
+      ]
+    },
+    {
+      "id": "configure-blob-storage--4-create-blob-access-tiers",
+      "pointHashes": [
+        "7d81cc133c44b5b1f5718eaadb643c6b1d14f5ef9ca2e98a4385c1c6067497f8",
+        "9424f246eb3f0da01896acdc91731d7d6a63cd13dc803f7c5836176aa5eb6b64",
+        "95ca762e1871d025016f01e339e37ad0ba92f0a110ce9acef16a2bbb93b02a72",
+        "dbde5eff1d74bf0f00b0fb8fcec8f573d198ed76e94932321303fbfa2446d865",
+        "ca71c682ac935e618018e4b9b45beb72dc1adce85a917d1f0c9e10d3d46e9308",
+        "a06217944df1da654cb36e3e9896ea18bc8019d81b8c12fdd8be1eade6c04a2f"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 1,
+          "before": "Cool suits infrequent access with a 30-day minimum duration; Cold suits less frequent access with a 90-day minimum. Both remain online.",
+          "after": "Cool suits infrequent access and Cold less frequent access; both remain online. In general-purpose v2 accounts, their minimum billable storage durations are 30 and 90 days respectively.",
+          "reason": "These are billable-duration conditions, not an enforced retention lock; legacy BlobStorage accounts have no Cool/Cold minimum."
+        },
+        {
+          "pointIndex": 2,
+          "before": "Archive is offline and suited to rarely retrieved data that can tolerate hours of retrieval latency; its minimum duration is 180 days.",
+          "after": "Archive is offline for block blobs that can tolerate hours of retrieval latency, with a 180-day minimum billable duration. It supports LRS, GRS and RA-GRS, not zone-redundant account configurations.",
+          "reason": "Specify eligible blob type and redundancy combinations to avoid invalid archive designs."
+        },
+        {
+          "pointIndex": 3,
+          "before": "Deleting or moving data before the tier minimum can incur early-deletion charges.",
+          "after": "Deleting, overwriting or moving data before the tier minimum can incur prorated early-deletion charges; the duration is a billing rule, not a deletion prohibition.",
+          "reason": "Overwrites also trigger early-deletion billing and minimum duration must not imply immutability."
+        }
+      ]
+    },
+    {
+      "id": "configure-blob-storage--5-add-blob-lifecycle-management-rules",
+      "pointHashes": [
+        "bb0eb9f8a7b7e8538f878833ae5c323a9ba7122662a4b9c954338bd018a1fec1",
+        "2c7f0ff3cfdc55a7a09ad46e81557a3357130c0536af9bb5c8517ded90d6d9e4",
+        "586994d270bbc37b9d0d86f2302a330594d89a2532e1286c899c385654610034",
+        "9bdb9085d4eb33aa22c7d46bbd2c6cf921614b85f6afbab9841d62ff4f5fc4c7",
+        "c758a77ff2a867cce9be1ddde40eaba2da58af79295d7765cd89204c67cb5621",
+        "b47a32155b24ab39608b847932043738ebbe4c59df07e380a5af70c473c47b59"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/5-add-blob-lifecycle-management-rules",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-blob-storage--6-determine-blob-object-replication",
+      "pointHashes": [
+        "d6799533481675faa1cd83bfc40c18e0016daa9286e7319611a747fb81943c9e",
+        "770caf66267d129297628dbc919383d8e30fa11f9094d014f399c222e00d31c7",
+        "a362a383ffd4fc02ccbc76b24eacb584e64af79e41b01cb31173b970048ce607",
+        "082f027a0f3b91c4061947ec536350aec80603675d7f2a147a92afbb647f1233",
+        "d0883658503e83351036650a33296b2ac023b8622b6141faffdaa80863961604"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 0,
+          "before": "Object replication asynchronously copies selected blobs between source and destination containers according to a replication policy.",
+          "after": "Object replication asynchronously copies selected block blobs between source and destination containers. It supports general-purpose v2 or premium block blob accounts without hierarchical namespace.",
+          "reason": "Append/page blobs and hierarchical-namespace accounts are unsupported."
+        },
+        {
+          "pointIndex": 2,
+          "before": "Enable blob versioning on both accounts before configuring replication.",
+          "after": "Enable blob versioning on both accounts and change feed on the source account before configuring replication.",
+          "reason": "Source change feed is required in addition to versioning."
+        },
+        {
+          "pointIndex": 4,
+          "before": "Supported online tiers can differ between source and destination. Use replication to bring reads nearer users or share data with regional compute workloads.",
+          "after": "Source and destination blobs can use different online tiers. Moving either blob to Archive causes replication to fail; use replication for nearby reads or regional compute workloads.",
+          "reason": "State the Archive incompatibility rather than leaving tier support unspecified."
+        }
+      ]
+    },
+    {
+      "id": "configure-blob-storage--7-upload-blobs",
+      "pointHashes": [
+        "a0c537a9ceb1a42aa23f2bfaf95ab1a4af070fd7666c63dfbb5e739757b87876",
+        "91e3fb74fa5a083444212c0f235a0b5d714506229cf18c5d04219c44397da1e5",
+        "452d7f5ce34abea2d94cfc99dab2a11cd62d174c0df1d39062499aad124083f5",
+        "61f347bad8d21ac0f232b4d922c16732029735586f1d80ef62c3028121362b86",
+        "e7aeb1cebadf52f1d869d5ec0613ed998f3466dd8f11b7bdfd0882192ac804e5"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-blob-storage--8-determine-storage-pricing",
+      "pointHashes": [
+        "e8413cc88d3f52da4fb6700e78b297aa2125021ef823e8e8d16035db81812305",
+        "b8155deceb760119d6ab5bde67cfc4e4d6c235c400e8da03a1c2b6d29e70a509",
+        "5424179278e41d87e6ed5470bb305526c6f0c639c61094b8a29b7ae7b1c56512",
+        "1d3736568aecd8a0e196c5356d0c8e14cc277764ed1d488a71c5004968f8dc77"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/8-determine-storage-pricing"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-blob-storage--9-simulation-blobs",
+      "pointHashes": [
+        "eb050274dacc55712716b057407730807c93f0879aad9a84b40671a36266288a",
+        "82e1912492f2c98eb95b4596fdfac0e41c791c2f0297737a4119f56149aa37c7",
+        "8d4d0ff5eae6e1e25226412c3522191a7d95b85d324a53bcfcfb3dea52502844"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/9-simulation-blobs"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-blob-storage--10-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/10-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-blob-storage--11-summary-resources",
+      "pointHashes": [
+        "7669df5dc7f943f0a323657b2a913d459cf249726005ae1852a917e839677094",
+        "e37369f71d3465dc19327573689e9eea35417685a27d9728b110239b5d4e5cf6"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/11-summary-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-security--1-introduction",
+      "pointHashes": [
+        "9b1d90717626737ffcf5fff389f8ddd9ea3de0731a10b90b15caa71d2e0dc49f"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-security--2-review-strategies",
+      "pointHashes": [
+        "2b8e528c471781ba66991c05b9e2741061f376e473ae5b47f7998d1927397a41",
+        "923c18d01c2943e27c629280a9c50cd78ecc55570f1847a6b20561e641589753",
+        "7c06bce32248be7afeaef1af271a7dba56a84f096c6268a15dede35d69e1dc51",
+        "ebc76608ca094b76ebec08b96674404291cf3548e9dd70fb2f8cb7d9de432a47",
+        "61aae7a1d173d2567fcdfba352731eaf990f4861b4da1dc0e1fde6247550403e",
+        "7f0e786ab7c665151ff1c71b33dc8d64815bb5533212cdcef7e26857e7344629"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-security--3-create-shared-access-signatures",
+      "pointHashes": [
+        "60051f3ba9b69735bc18aca8099a392e5b393ee770fe9fa3759a0d5d38c26910",
+        "b79bbd49188931e9f18f947af73798ab5823dfe25bd5e75a6e57fb2e65464894",
+        "f6976e340cae8fa9647c522f181f79872a21bf2ef361ea4ddb59c57dd818ea75",
+        "ac577b442bf68decb90c826c7b29c156df5df2a44ba8b667ac934a26d015c1b1",
+        "18e183aec9cc20514186d0f6c858fa4e0b74faec313a5004cf0b36f9a5749e71",
+        "e9f5a9352d9533e5b2fff166f06d096f2917e1a12a14b588b0619f0508b6be11",
+        "09688082246e4bdf64efbe35055e4d2644e533d37a1dd37344d4d49863f63e47"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/create-user-delegation-sas"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 1,
+          "before": "A user delegation SAS uses Microsoft Entra credentials for Blob Storage and Data Lake Storage; service and account SAS offer different scopes.",
+          "after": "A user delegation SAS is signed with a key obtained using Microsoft Entra credentials. Current support includes Blob Storage, Data Lake Storage, queues, tables and Azure Files; service and account SAS are signed with an account key.",
+          "reason": "Current product and REST documentation extend user delegation SAS beyond the training unit's older Blob-only list."
+        }
+      ]
+    },
+    {
+      "id": "configure-storage-security--4-identify-uri-sas-parameters",
+      "pointHashes": [
+        "c67b6bfd32c77b56d936de7978f9c3f3668660bea3aa5e06f2187983e44f4f03",
+        "31ad513413eb16414475958075bd64d982f7bfd84d7c87b52a41989a1156e8d2",
+        "e6485dd05ba5707137315ddac715729f360cf58117357aed136c01c139a759a9",
+        "db4c3a59b1eaefb6f9511ba64e2935c3015c4a0849932982ecb1749a5dedceb5",
+        "a2a142179a0b22c5195091e313edfb181474131117d27e7da076fe84b8e4683e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/4-identify-uri-sas-parameters",
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/create-user-delegation-sas"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-security--5-determine-storage-service-encryption",
+      "pointHashes": [
+        "a00c6156077bfd8021b91203ecd968094fda866409d49ec888ab27e08a703687",
+        "03c562e27a66f9cacec67eaf6f81317467aac5390b893be6bdc3de746efbc5d2",
+        "d0bbf41bc983cd7bf0ca17d16885879a0530a486e46fd6983e54a63aaf6705c2",
+        "5cee4bc28db9370e0e22e7991f433f4e2706bd0873250a33cb61c39c90ad9c3c",
+        "82c6efdcd08d95a11fb99a997b46a9df9c97b6f46464712a2ce9de66e5d1fc3d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-security--6-create-customer-managed-keys",
+      "pointHashes": [
+        "7e4089ab06e463015c8993f798bc4e5412ed2abd514b0dd9c2d28b006ede6e04",
+        "2d1928ed0dcb4ea401b4b084ec07010b584c356829d68ae8cc3f4a3767a089ce",
+        "ae09b960497c61755bef70fb421b3f4c004b7697cc0e7f4cfc44e15a3dcd9110",
+        "bcc1b0f9f2ad9ea56e1875f33aaf679b47c530e9d05f612a1bf453fb5a67a1b5"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/6-create-customer-managed-keys",
+        "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 2,
+          "before": "Configure storage encryption to use a customer-managed key by selecting the vault and key or supplying the key URI.",
+          "after": "Select the customer-managed vault and key or enter its URI. Enable vault soft delete and purge protection, and grant the storage managed identity the required key permissions.",
+          "reason": "Selecting a key alone is insufficient without key-store protection and managed-identity permissions."
+        }
+      ]
+    },
+    {
+      "id": "configure-storage-security--7-apply-best-practices",
+      "pointHashes": [
+        "cb1b62e8a5cb6520bb7983985061feb21c495ea80ad5c06063f549bc979bffe9",
+        "5c04d1ffa05c4fc8574d6ce1383198ecee992246cfeca26f6967e1f124d01891",
+        "578054a5c50d0f045c54c5fd0c81fd76ab7b0b21637eaf5d39426c73272197c7",
+        "496523ebfb0cc0c0a0a227532bf9c1b24af68b467e0a841229f014d0cf6ca830"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/7-apply-best-practices"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-security--8-simulation-storage",
+      "pointHashes": [
+        "21544cbabd14a722fc267e8243c32dd87ef9d879769e1d9fd50fc65a34be7d5a",
+        "0b79ffc3bec191de9b439050aac069f146995d12040544b5cc07ff2be3a1e357",
+        "a32a7b007dbe209300274961e69d80012264a279bea268c83632cbfb6a526047"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/8-simulation-storage"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-security--9-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/9-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-storage-security--10-summary-resources",
+      "pointHashes": [
+        "f2dde339b41a07689ab09bca7177956a1c9a0f6090b984cec700edae6acd8811",
+        "13cfaf1c69116c0dea3d639c4afaa16367c45a74fdfd97ffb9f4bfd8ebd3d086"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/10-summary-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-files-file-sync--1-introduction",
+      "pointHashes": [
+        "8b08b6cd599fb8651f76933a2b04d98dada452fa37a066cf9c52925e2ddfeb73"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-files-file-sync--2-compare-files-to-blobs",
+      "pointHashes": [
+        "638a60b74d47997b70eab55cf65bdd8be72acfe9f3dc38daa7a21c06c303503f",
+        "920d34d2341239490d586bb8787bd29477640c760913d3c46bbb3be33ba1c638",
+        "3e98b1eeea3492c2d7958e897226a04eea8b2163fab100caf32b914d92dac6de",
+        "2b423b67677ee147d35db5b13bb5a9d455f1cbc1175a6800b125b2b6c4dba06a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/2-compare-files-to-blobs"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-files-file-sync--3-manage-file-shares",
+      "pointHashes": [
+        "69b9618dc945d6e2179e2b3bbd5bbcea545e953f99ed966ba15e3251ca4ec4ae",
+        "583bc9d95fd9ab4ccec0edd66da5171cdd36219378e5b423cf57c4f8ad2a62f8",
+        "15bdfbdc5493da8034061513a86c0c7715b1b7fa60802fbaa5015ce12e021d3e",
+        "f58732c420ec4776810ded705e2b5453381e5edc575dc615a4d38f26f580f0cf",
+        "22b9bcd62fe50bae4477b46f4f88199e3f59c106b3466f4f54765939f03e4694",
+        "d8b2bbe39b6b46596bb8ad1fff7adff3a1127883d955cdd0a2c2a16cd908e814"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/3-manage-file-shares",
+        "https://learn.microsoft.com/en-us/azure/storage/files/understanding-billing",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 1,
+          "before": "Standard shares use general-purpose v2 storage accounts; premium FileStorage shares provide SSD-backed low-latency performance.",
+          "after": "For classic shares, general-purpose v2 accounts provide HDD pay-as-you-go storage. FileStorage accounts support SSD provisioned shares and, with StandardV2 SKUs, HDD provisioned v2 shares.",
+          "reason": "Current Azure Files also supports HDD provisioned v2 shares in FileStorage; not every standard share uses GPv2."
+        },
+        {
+          "pointIndex": 2,
+          "before": "Standard access tiers include Transaction optimized, Hot and Cool, with different pricing for capacity and access.",
+          "after": "HDD pay-as-you-go access tiers are Transaction optimized, Hot and Cool, with different capacity and transaction pricing. Provisioned shares use a separate billing model.",
+          "reason": "Scope the three access tiers to pay-as-you-go instead of all standard/HDD shares."
+        },
+        {
+          "pointIndex": 3,
+          "before": "SMB identity-based authentication supports AD DS, Microsoft Entra Domain Services or Microsoft Entra Kerberos with appropriate share access roles.",
+          "after": "SMB identity authentication supports AD DS, Microsoft Entra Domain Services or Microsoft Entra Kerberos. Configure both share-level access and Windows file/directory permissions.",
+          "reason": "Share access alone does not replace directory and file ACL enforcement."
+        }
+      ]
+    },
+    {
+      "id": "configure-azure-files-file-sync--4-create-file-share-snapshots",
+      "pointHashes": [
+        "e226c6500924ab081f2979c3a7c0201886fcb6d95af75311ae48e851bc0adc23",
+        "d66c3f9cb6aea0a1bd78ce052e1bc18eb14e3ab7c97a50ee49a449e58d90228e",
+        "5f1fc8238dcf438de51aca9e14b3d4b67cb0703559004ac91d79d88cc77104fe",
+        "866af54a5dffcb9383ac728a63ca153803b67befc566d9b7c2ea225e88b0cdeb",
+        "abf61f98c9aa237e46d1a58dfd40105d3501a9da60aab95c1c5464580a3daf51"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/4-create-file-share-snapshots",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 4,
+          "before": "Deleting the share also deletes its snapshots, so snapshots do not replace protection against deleting the entire share.",
+          "after": "Deleting a share removes its snapshots too, so snapshots alone do not protect the entire share. With share soft delete enabled, undeleting the share restores its contents and snapshots during retention.",
+          "reason": "Account for soft-delete recovery; snapshot loss is not necessarily permanent."
+        }
+      ]
+    },
+    {
+      "id": "configure-azure-files-file-sync--5-implement-file-sync",
+      "pointHashes": [
+        "d37eb086508dced834d786e3121699a737778486c46068ca130cfe69e7d692f8",
+        "f60b33ee68aff2b09f537391936db783b81d57e7fd4c5b1af0b22612a4b03132",
+        "91ee16cc4b15b4a27767cbe4ea34df9dfada3e2dbad38c7d07ed02eebbeb9d25"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 0,
+          "before": "Enable file-share soft delete at the storage account level to retain deleted shares temporarily.",
+          "after": "Enable soft delete at the storage account level to retain deleted classic file shares temporarily; this feature does not apply to standalone Microsoft.FileShares resources.",
+          "reason": "Scope this storage-account feature to classic shares under the current two management models."
+        }
+      ]
+    },
+    {
+      "id": "configure-azure-files-file-sync--6-identify-components",
+      "pointHashes": [
+        "6311b86b5bf09003c19f58f4647d998ffe439bac9902625ece4ac6f7840a8b81",
+        "f3060cd0e0c4f4eadaeff3466ed1b0e96ef7f7e3f66a839d83aa5453f278c5fc",
+        "2932dd815f04bacf989e5d3c735c3173286dac4cd1344fc4a34f671c24433420",
+        "3d9b216b3c1712ff39a1c62f5924db72c84852e8944c46af8e1033fc4c5839de",
+        "7736a838d7cf98b7f979f449277f64eaf00ac521af8c360cf436584895d086a0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/6-identify-components"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-files-file-sync--7-deploy-azure-file-sync",
+      "pointHashes": [
+        "8b62f5bfd335aa049f824e8f552bca804943505f89770b8b142655d6d678458b",
+        "6441e8aa024b9ebe78ee713857cf4abecbdc2cc3ba413c643295b53b22fded2e",
+        "bb46b92501ff5d189ca3d494b8dffeb523ed4b17a379b01fb3f895df984587b2",
+        "202faf7a71b98537274dbceace004c675fb0fbe38b699d1dc562d941de173654",
+        "f9331c0f5a37b11395ab35cb0b48bb6b60470c5e588ecb29da2f84642f36a8c4",
+        "9195f59d55ff0c1d5d1a58b0138501adaa22b13623d36ec025f34e111c90d524"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "pointIndex": 2,
+          "before": "The cloud endpoint is an Azure file share, and a server endpoint identifies a local NTFS path on a registered Windows Server.",
+          "after": "The cloud endpoint is an SMB Azure file share; a server endpoint identifies a local NTFS path on a registered Windows Server. Azure File Sync does not support NFS Azure file shares.",
+          "reason": "Clarify that Azure File Sync cloud endpoints require SMB, while local server protocols are a separate choice."
+        }
+      ]
+    },
+    {
+      "id": "configure-azure-files-file-sync--8-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/8-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-files-file-sync--9-summary-resources",
+      "pointHashes": [
+        "44917dffd3e26d8f164ed4f9caf62b01fe141af03a1d5aca25bd67cad2f83f14",
+        "dadb3866262164cfd915ea0c90302a60cbfbb02f69e7c50a326505ea013b56d1"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/9-summary-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    }
+  ],
+  "findings": []
+}

@@ -1,0 +1,294 @@
+{
+  "id": "identity-starter-audit",
+  "auditedAt": "2026-10-08T01:38:01.386Z",
+  "blueprintId": "az104-2026-04-17",
+  "humanReviewed": false,
+  "method": "AI-assisted comparison of original scenario, answer and each alternative with freshly retrieved official sections; no source-URL-only approval.",
+  "questions": [
+    {
+      "questionId": "az104-identity-01",
+      "revision": 1,
+      "subObjectiveIds": [
+        "rbac.2"
+      ],
+      "result": "supported-with-stated-conditions",
+      "referenceIds": [
+        "identity-rbac"
+      ],
+      "sourceCheckedAt": "2026-10-08T01:38:00.335Z",
+      "sections": [
+        "Scope"
+      ],
+      "sourceExcerpt": "Scope\nScope is the set of resources that the access applies to. When you assign a role, you can further limit the actions allowed by defining a scope. This is helpful if you want to make someone a Website Contributor, but only for one resource group.\nIn Azure, you can specify a scope at four levels: management group, subscription, resource group, or resource. Scopes are structured in a parent-child relationship. You can assign roles at any of these levels of scope.\nFor more information about scope, see Understand scope.\nRole assignments\nA role assignment is the process of attaching a role definition to a user, group, service principal, or managed identity at a particular scope for the purpose of granting access. Access is granted by creating a role assignment, and access is revoked by removing a role assignment.\nThe following diagram shows an example of a role assignment. In this example, the Marketing group has been assigned the Contributor role for the pharma-sales resource group. This means that users in the Marketing group can create or manage any Azure resource in the pharma-sales resource group. Marketing users don't have access to resources outside the pharma-sales resource group, unless they're part of another role assignment.\nYou can assign roles using the Azure portal, Azure CLI, Azure PowerShell, Azure SDKs, or REST APIs.\nFor more information, see Steps to assign an Azure role.\nGroups\nRole assignments are transitive for groups, which means that if a user is a member of a group and that group is a member of another group that has a role assignment, the user has the permissions in the role assignment.\nMultiple role assignments\nSo what happens if you have multiple overlapping role assignments? Azure RBAC is an additive model, so your effective permissions are th",
+      "evidence": [
+        "A resource-group scope limits the role to resources in that resource group and its child resources.",
+        "Subscription scope includes the subscription resources, extending access beyond the stated resource group.",
+        "Management-group scope is above subscription scope in the documented hierarchy, broader than this requirement."
+      ],
+      "findings": [
+        "No evidenced factual defect found in the stated scenario and cited section. This automated claim audit is not human review."
+      ],
+      "conditions": [
+        "Retain the original scope, absence-of-other-grants/denies, and control-plane/data-plane assumptions where stated."
+      ],
+      "humanReviewed": false
+    },
+    {
+      "questionId": "az104-identity-02",
+      "revision": 1,
+      "subObjectiveIds": [
+        "rbac.3"
+      ],
+      "result": "supported-with-stated-conditions",
+      "referenceIds": [
+        "identity-rbac"
+      ],
+      "sourceCheckedAt": "2026-10-08T01:38:00.335Z",
+      "sections": [
+        "Multiple role assignments"
+      ],
+      "sourceExcerpt": "Multiple role assignments\nSo what happens if you have multiple overlapping role assignments? Azure RBAC is an additive model, so your effective permissions are the sum of your role assignments. Consider the following example where a user is granted the Contributor role at the subscription scope and the Reader role on a resource group. The sum of the Contributor permissions and the Reader permissions is effectively the Contributor role for the subscription. Therefore, in this case, the Reader role assignment has no impact.\nHow Azure RBAC determines if a user has access to a resource\nThe following are the high-level steps that Azure RBAC uses to determine if you have access to a resource. These steps apply to Azure Resource Manager or data plane services integrated with Azure RBAC. This is helpful to understand if you're trying to troubleshoot an access issue.\nA user (or service principal) acquires a token for Azure Resource Manager.\nThe token includes the user's group memberships (including transitive group memberships).\nThe user makes a REST API call to Azure Resource Manager with the token attached.\nAzure Resource Manager retrieves all the role assignments and deny assignments that apply to the resource upon which the action is being taken.\nIf a deny assignment applies, access is blocked. Otherwise, evaluation continues.\nAzure Resource Manager narrows the role assignments that apply to this user or their group and determines what roles the user has for this resource.\nAzure Resource Manager determines if the action in the API call is included in the roles the user has for this resource. If the roles include Actions that have a wildcard (*), the effective permissions are computed by subtracting the NotActions from the allowed Actions. Similarly, the same subtraction is d",
+      "evidence": [
+        "Azure RBAC is additive; a Reader assignment does not subtract the subscription-level Contributor permissions.",
+        "The documented example says the narrower Reader assignment has no impact on inherited Contributor permissions.",
+        "Both assignments apply; their permissions are combined rather than discarded."
+      ],
+      "findings": [
+        "No evidenced factual defect found in the stated scenario and cited section. This automated claim audit is not human review."
+      ],
+      "conditions": [
+        "Retain the original scope, absence-of-other-grants/denies, and control-plane/data-plane assumptions where stated."
+      ],
+      "humanReviewed": false
+    },
+    {
+      "questionId": "az104-identity-03",
+      "revision": 1,
+      "subObjectiveIds": [
+        "rbac.1"
+      ],
+      "result": "supported-with-stated-conditions",
+      "referenceIds": [
+        "identity-rbac"
+      ],
+      "sourceCheckedAt": "2026-10-08T01:38:00.335Z",
+      "sections": [
+        "How Azure RBAC works"
+      ],
+      "sourceExcerpt": "How Azure RBAC works\nThe way you control access to resources using Azure RBAC is to assign Azure roles. This is a key concept to understand \u2013 it's how permissions are enforced. A role assignment consists of three elements: security principal, role definition, and scope.\nSecurity principal\nA security principal is an object that represents a user, group, service principal, or managed identity that is requesting access to Azure resources. You can assign a role to any of these security principals.\nRole definition\nA role definition is a collection of permissions. It's typically just called a role. A role definition lists the actions that can be performed, such as read, write, and delete. Roles can be high-level, like owner, or specific, like virtual machine reader.\nAzure includes several built-in roles that you can use. For example, the Virtual Machine Contributor role allows a user to create and manage virtual machines. If the built-in roles don't meet the specific needs of your organization, you can create your own Azure custom roles.\nThis video provides a quick overview of built-in roles and custom roles.\nAzure has data actions that enable you to grant access to data within an object. For example, if a user has read data access to a storage account, then they can read the blobs or messages within that storage account.\nFor more information, see Understand Azure role definitions.\nScope\nScope is the set of resources that the access applies to. When you assign a role, you can further limit the actions allowed by defining a scope. This is helpful if you want to make someone a Website Contributor, but only for one resource group.\nIn Azure, you can specify a scope at four levels: management group, subscription, resource group, or resource. Scopes are structured in a parent-child",
+      "evidence": [
+        "A role assignment consists of a security principal, a role definition and a scope; the role definition supplies permissions.",
+        "Tags are not one of the three documented role-assignment elements; permissions come from the role definition.",
+        "Region is not one of the three documented role-assignment elements; the missing element is the role definition."
+      ],
+      "findings": [
+        "No evidenced factual defect found in the stated scenario and cited section. This automated claim audit is not human review."
+      ],
+      "conditions": [
+        "Retain the original scope, absence-of-other-grants/denies, and control-plane/data-plane assumptions where stated."
+      ],
+      "humanReviewed": false
+    },
+    {
+      "questionId": "az104-identity-04",
+      "revision": 1,
+      "subObjectiveIds": [
+        "rbac.3"
+      ],
+      "result": "supported-with-stated-conditions",
+      "referenceIds": [
+        "identity-rbac"
+      ],
+      "sourceCheckedAt": "2026-10-08T01:38:00.335Z",
+      "sections": [
+        "Groups"
+      ],
+      "sourceExcerpt": "Groups\nRole assignments are transitive for groups, which means that if a user is a member of a group and that group is a member of another group that has a role assignment, the user has the permissions in the role assignment.\nMultiple role assignments\nSo what happens if you have multiple overlapping role assignments? Azure RBAC is an additive model, so your effective permissions are the sum of your role assignments. Consider the following example where a user is granted the Contributor role at the subscription scope and the Reader role on a resource group. The sum of the Contributor permissions and the Reader permissions is effectively the Contributor role for the subscription. Therefore, in this case, the Reader role assignment has no impact.\nHow Azure RBAC determines if a user has access to a resource\nThe following are the high-level steps that Azure RBAC uses to determine if you have access to a resource. These steps apply to Azure Resource Manager or data plane services integrated with Azure RBAC. This is helpful to understand if you're trying to troubleshoot an access issue.\nA user (or service principal) acquires a token for Azure Resource Manager.\nThe token includes the user's group memberships (including transitive group memberships).\nThe user makes a REST API call to Azure Resource Manager with the token attached.\nAzure Resource Manager retrieves all the role assignments and deny assignments that apply to the resource upon which the action is being taken.\nIf a deny assignment applies, access is blocked. Otherwise, evaluation continues.\nAzure Resource Manager narrows the role assignments that apply to this user or their group and determines what roles the user has for this resource.\nAzure Resource Manager determines if the action in the API call is included in th",
+      "evidence": [
+        "The documentation explicitly describes nested group role assignments as transitive.",
+        "Azure RBAC group membership includes transitive memberships, so direct user assignment is not required in this case.",
+        "The documented nested-group example grants the user permissions from the parent group assignment."
+      ],
+      "findings": [
+        "No evidenced factual defect found in the stated scenario and cited section. This automated claim audit is not human review."
+      ],
+      "conditions": [
+        "Retain the original scope, absence-of-other-grants/denies, and control-plane/data-plane assumptions where stated."
+      ],
+      "humanReviewed": false
+    },
+    {
+      "questionId": "az104-identity-05",
+      "revision": 1,
+      "subObjectiveIds": [
+        "rbac.1"
+      ],
+      "result": "supported-with-stated-conditions",
+      "referenceIds": [
+        "identity-rbac"
+      ],
+      "sourceCheckedAt": "2026-10-08T01:38:00.335Z",
+      "sections": [
+        "Security principal"
+      ],
+      "sourceExcerpt": "Security principal\nA security principal is an object that represents a user, group, service principal, or managed identity that is requesting access to Azure resources. You can assign a role to any of these security principals.\nRole definition\nA role definition is a collection of permissions. It's typically just called a role. A role definition lists the actions that can be performed, such as read, write, and delete. Roles can be high-level, like owner, or specific, like virtual machine reader.\nAzure includes several built-in roles that you can use. For example, the Virtual Machine Contributor role allows a user to create and manage virtual machines. If the built-in roles don't meet the specific needs of your organization, you can create your own Azure custom roles.\nThis video provides a quick overview of built-in roles and custom roles.\nAzure has data actions that enable you to grant access to data within an object. For example, if a user has read data access to a storage account, then they can read the blobs or messages within that storage account.\nFor more information, see Understand Azure role definitions.\nScope\nScope is the set of resources that the access applies to. When you assign a role, you can further limit the actions allowed by defining a scope. This is helpful if you want to make someone a Website Contributor, but only for one resource group.\nIn Azure, you can specify a scope at four levels: management group, subscription, resource group, or resource. Scopes are structured in a parent-child relationship. You can assign roles at any of these levels of scope.\nFor more information about scope, see Understand scope.\nRole assignments\nA role assignment is the process of attaching a role definition to a user, group, service principal, or managed identity at a par",
+      "evidence": [
+        "A service principal is one of the documented objects that can receive an Azure role assignment. A managed identity is explicitly listed as a security principal that can receive an Azure role.",
+        "A role definition is the permissions element of an assignment, not the security principal.",
+        "Scope identifies the resource boundary of the assignment, not the identity requesting access."
+      ],
+      "findings": [
+        "No evidenced factual defect found in the stated scenario and cited section. This automated claim audit is not human review."
+      ],
+      "conditions": [
+        "Retain the original scope, absence-of-other-grants/denies, and control-plane/data-plane assumptions where stated."
+      ],
+      "humanReviewed": false
+    },
+    {
+      "questionId": "az104-identity-06",
+      "revision": 1,
+      "subObjectiveIds": [
+        "governance.1"
+      ],
+      "result": "supported-with-stated-conditions",
+      "referenceIds": [
+        "identity-policy"
+      ],
+      "sourceCheckedAt": "2026-10-08T01:38:00.329Z",
+      "sections": [
+        "Overview"
+      ],
+      "sourceExcerpt": "Overview\nAzure Policy evaluates resources and actions in Azure by comparing the properties of those resources to business rules. These business rules, described in JSON format, are known as policy definitions. To simplify management, several business rules can be grouped together to form a policy initiative, also referred to as a policySet.\nAfter your business rules are formed, the policy definition or initiative is assigned to any scope of resources that Azure supports. For example, management groups, subscriptions, resource groups, or individual resources. The assignment applies to all resources within the Resource Manager scope of that assignment. Subscopes can be excluded, if necessary. For more information, see Scope in Azure Policy.\nAzure Policy uses a JSON format to form the logic the evaluation uses to determine whether a resource is compliant or not. Definitions include metadata and the policy rule. The defined rule can use functions, parameters, logical operators, conditions, and property aliases to match exactly the scenario you want. The policy rule determines which resources in the scope of the assignment get evaluated.\nUnderstand evaluation outcomes\nResources are evaluated at specific times during the resource lifecycle, the policy assignment lifecycle, and for regular ongoing compliance evaluation. The following are the times or events that cause a resource to be evaluated:\nA resource is created or updated in a scope with a policy assignment.\nA scope gets a new assignment of a policy or initiative.\nA policy or initiative already assigned to a scope is updated.\nThe standard compliance evaluation cycle that occurs once every 24 hours.\nFor detailed information about when and how policy evaluation happens, see Evaluation triggers.\nControl the response to an e",
+      "evidence": [
+        "An initiative, also called a policySet, groups several policy definitions to simplify management.",
+        "The compliance cycle triggers evaluation; it does not group business rules into an assignable policySet.",
+        "A policy definition describes a business rule; an initiative groups several such definitions."
+      ],
+      "findings": [
+        "No evidenced factual defect found in the stated scenario and cited section. This automated claim audit is not human review."
+      ],
+      "conditions": [
+        "Retain the original scope, absence-of-other-grants/denies, and control-plane/data-plane assumptions where stated."
+      ],
+      "humanReviewed": false
+    },
+    {
+      "questionId": "az104-identity-07",
+      "revision": 1,
+      "subObjectiveIds": [
+        "governance.1"
+      ],
+      "result": "supported-with-stated-conditions",
+      "referenceIds": [
+        "identity-policy"
+      ],
+      "sourceCheckedAt": "2026-10-08T01:38:00.329Z",
+      "sections": [
+        "Azure Policy and Azure RBAC"
+      ],
+      "sourceExcerpt": "Azure Policy and Azure RBAC\nThere are a few key differences between Azure Policy and Azure role-based access control (Azure RBAC). Azure Policy evaluates state by examining properties on resources that are represented in Resource Manager and properties of some Resource Providers. Azure Policy ensures that resource state is compliant to your business rules without concern for who made the change or who has permission to make a change. Azure Policy through DenyAction effect can also block certain actions on resources. Some Azure Policy resources, such as policy definitions, initiative definitions, and assignments, are visible to all users. This design enables transparency to all users and services for what policy rules are set in their environment.\nAzure RBAC focuses on managing user actions at different scopes. If control of an action is required based on user information, then Azure RBAC is the correct tool to use. Even if an individual has access to perform an action, if the result is a non-compliant resource, Azure Policy still blocks the create or update.\nThe combination of Azure RBAC and Azure Policy provides full scope control in Azure.\nAzure RBAC permissions in Azure Policy\nAzure Policy has several permissions, known as operations, in two Resource Providers:\nMicrosoft.Authorization\nMicrosoft.PolicyInsights\nMany built-in roles grant permission to Azure Policy resources. The Resource Policy Contributor role includes most Azure Policy operations. Owner has full rights. Both Contributor and Reader have access to all read Azure Policy operations.\nContributor might trigger resource remediation, but can't create or update definitions and assignments. User Access Administrator is necessary to grant the managed identity on deployIfNotExists or modify assignments necessary ",
+      "evidence": [
+        "Microsoft states that Azure Policy can block a noncompliant create or update even when the individual has action permissions.",
+        "The documented combination evaluates both permissions and resource compliance; permission alone does not override policy.",
+        "Policy evaluates new or updated resources, so it can block this create request."
+      ],
+      "findings": [
+        "No evidenced factual defect found in the stated scenario and cited section. This automated claim audit is not human review."
+      ],
+      "conditions": [
+        "Retain the original scope, absence-of-other-grants/denies, and control-plane/data-plane assumptions where stated."
+      ],
+      "humanReviewed": false
+    },
+    {
+      "questionId": "az104-identity-08",
+      "revision": 1,
+      "subObjectiveIds": [
+        "governance.2"
+      ],
+      "result": "supported-with-stated-conditions",
+      "referenceIds": [
+        "identity-locks"
+      ],
+      "sourceCheckedAt": "2026-10-08T01:38:00.700Z",
+      "sections": [
+        "Lock inheritance"
+      ],
+      "sourceExcerpt": "Lock inheritance\nWhen you apply a lock at a parent scope, all resources within that scope inherit the same lock. Even resources you add later inherit the same parent lock. The most restrictive lock in the inheritance chain takes precedence.\nExtension resources inherit locks from the resource to which they're applied. For example, Microsoft.Insights/diagnosticSettings is an extension resource type. If you apply a diagnostic setting to a storage blob and lock the storage account, you can't delete the diagnostic setting. This inheritance makes sense because the full resource ID of the diagnostic setting is:\n/subscriptions/{sub-id}/resourceGroups/{rg-name}/providers/Microsoft.Storage/storageAccounts/{storage-name}/blobServices/default/providers/microsoft.insights/diagnosticSettings/{setting-name}\"\nThe resource ID of the locked resource must match the following format:\n/subscriptions/{sub-id}/resourceGroups/{rg-name}/providers/Microsoft.Storage/storageAccounts/{storage-name}\nIf you have a Delete lock on a resource and attempt to delete its resource group, the feature blocks the whole delete operation. Even if the resource group or other resources in the resource group are unlocked, the deletion doesn't happen. A partial deletion isn't possible.\nWhen you cancel an Azure subscription:\nA resource lock doesn't block the subscription cancellation.\nAzure preserves your resources by deactivating them instead of immediately deleting them.\nAzure only deletes your resources permanently after a waiting period.\nUnderstand scope of locks\nNote\nLocks only apply to control plane Azure operations and not to data plane operations.\nAzure control plane operations go to https://management.azure.com. Azure data plane operations go to your service instance, such as https://myaccount.blob.core.wind",
+      "evidence": [
+        "Resources within a locked parent scope inherit its lock, including resources added later.",
+        "The documentation explicitly includes resources added after the parent lock is applied.",
+        "Inheritance carries the same parent lock; CanNotDelete is not automatically converted to ReadOnly."
+      ],
+      "findings": [
+        "No evidenced factual defect found in the stated scenario and cited section. This automated claim audit is not human review."
+      ],
+      "conditions": [
+        "Retain the original scope, absence-of-other-grants/denies, and control-plane/data-plane assumptions where stated."
+      ],
+      "humanReviewed": false
+    },
+    {
+      "questionId": "az104-identity-09",
+      "revision": 1,
+      "subObjectiveIds": [
+        "governance.2"
+      ],
+      "result": "supported-with-stated-conditions",
+      "referenceIds": [
+        "identity-locks"
+      ],
+      "sourceCheckedAt": "2026-10-08T01:38:00.700Z",
+      "sections": [
+        "Understand scope of locks"
+      ],
+      "sourceExcerpt": "Understand scope of locks\nNote\nLocks only apply to control plane Azure operations and not to data plane operations.\nAzure control plane operations go to https://management.azure.com. Azure data plane operations go to your service instance, such as https://myaccount.blob.core.windows.net/. See Azure control plane and data plane for more information. To discover which operations use the control plane URL, see the Azure REST API.\nThe distinction means locks protect a resource from changes, but they don't restrict how a resource performs its functions. For example, a ReadOnly lock on an SQL Database logical server protects it from deletions or modifications. It allows you to create, update, or delete data in the server database. Data plane operations allow data transactions. These requests don't go to https://management.azure.com.\nConsiderations before applying your locks\nApplying locks can lead to unexpected results. Some operations that don't seem to modify a resource require blocked actions. Locks prevent the POST method from sending data to the Azure Resource Manager API. Some common examples of blocked operations are:\nA read-only lock on a storage account prevents users from listing the account keys. A POST request handles the Azure Storage List Keys operation to protect access to the account keys. The account keys provide complete access to data in the storage account. When a read-only lock is configured for a storage account, users who don't have the account keys need to use Microsoft Entra credentials to access blob or queue data. A read-only lock also prevents the assignment of Azure RBAC roles that are scoped to the storage account or to a data container (blob container or queue).\nA read-only lock on a storage account protects RBAC assignments scoped for a storage",
+      "evidence": [
+        "The source explicitly says storage account locks do not protect blob data from data-plane deletion or modification.",
+        "CanNotDelete allows resource modifications and does not change authorized data-plane access to read-only.",
+        "Locks only apply to control-plane operations; valid blob data-plane requests are outside this protection."
+      ],
+      "findings": [
+        "No evidenced factual defect found in the stated scenario and cited section. This automated claim audit is not human review."
+      ],
+      "conditions": [
+        "Retain the original scope, absence-of-other-grants/denies, and control-plane/data-plane assumptions where stated."
+      ],
+      "humanReviewed": false
+    },
+    {
+      "questionId": "az104-identity-10",
+      "revision": 1,
+      "subObjectiveIds": [
+        "governance.2"
+      ],
+      "result": "supported-with-stated-conditions",
+      "referenceIds": [
+        "identity-locks"
+      ],
+      "sourceCheckedAt": "2026-10-08T01:38:00.700Z",
+      "sections": [
+        "Considerations before applying your locks"
+      ],
+      "sourceExcerpt": "Considerations before applying your locks\nApplying locks can lead to unexpected results. Some operations that don't seem to modify a resource require blocked actions. Locks prevent the POST method from sending data to the Azure Resource Manager API. Some common examples of blocked operations are:\nA read-only lock on a storage account prevents users from listing the account keys. A POST request handles the Azure Storage List Keys operation to protect access to the account keys. The account keys provide complete access to data in the storage account. When a read-only lock is configured for a storage account, users who don't have the account keys need to use Microsoft Entra credentials to access blob or queue data. A read-only lock also prevents the assignment of Azure RBAC roles that are scoped to the storage account or to a data container (blob container or queue).\nA read-only lock on a storage account protects RBAC assignments scoped for a storage account or a data container (blob container or queue).\nA read-only lock on a storage account prevents the creation of a blob container.\nA read-only lock on a storage account prevents the creation of a blob container. However, create operations on a storage account can be done through both the control plane and data plane. Read-only locks only block control plane create requests, but a user can still perform a valid create operation on the resource through the data plane.\nA read-only lock or cannot-delete lock on a storage account doesn't protect its data from being deleted or modified. It also doesn't protect the data in a blob, queue, table, or file.\nThe Storage Account API exposes data plane and control plane operations. If a request uses data plane operations, the lock on the storage account doesn't protect blob, queue, tab",
+      "evidence": [
+        "The source specifically lists starting and restarting VMs in a ReadOnly-locked group as blocked POST operations.",
+        "ReadOnly blocks these POST requests, whereas CanNotDelete and ReadOnly have different restrictions.",
+        "Resources inherit parent-scope locks, so the group lock applies to this VM."
+      ],
+      "findings": [
+        "No evidenced factual defect found in the stated scenario and cited section. This automated claim audit is not human review."
+      ],
+      "conditions": [
+        "Retain the original scope, absence-of-other-grants/denies, and control-plane/data-plane assumptions where stated."
+      ],
+      "humanReviewed": false
+    }
+  ],
+  "gaps": [
+    "All fifteen identity subskills now have proposed drafts, but examples are a sample rather than exhaustive coverage.",
+    "No live Entra/Azure configuration or real-tenant testing was performed.",
+    "Policy identity-context capabilities and SSPR administrator defaults require separate review and are not expanded into unsupported claims."
+  ]
+}

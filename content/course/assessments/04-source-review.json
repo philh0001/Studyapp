@@ -1,0 +1,331 @@
+{
+  "checkedAt": "2026-10-08T11:02:16.528353Z",
+  "reviewKind": "AI-assisted semantic source comparison",
+  "humanApproval": false,
+  "moduleIds": [
+    "configure-virtual-machine-availability",
+    "configure-app-service-plans",
+    "configure-azure-app-services",
+    "configure-azure-container-instances",
+    "intro-to-azure-backup",
+    "protect-virtual-machines-with-azure-backup",
+    "monitor-azure-vm-using-diagnostic-data"
+  ],
+  "questionsReviewed": 42,
+  "optionsReviewed": 168,
+  "findings": [],
+  "questions": [
+    {
+      "questionId": "configure-virtual-machine-availability-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains"
+      ],
+      "notes": "Read update/fault domain definitions and one-update-domain-at-a-time maintenance rule. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ],
+      "notes": "Compared zone physical isolation with availability-set protection and vertical scaling. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling"
+      ],
+      "notes": "Read vertical/horizontal and scale-in/out distinctions. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+      ],
+      "notes": "Read the corrected orchestration distinction and creation-time selection. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale"
+      ],
+      "notes": "Read sustained-demand scale-out/scale-in examples; no invented thresholds or guarantees. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets"
+      ],
+      "notes": "Read scale-set Load Balancer versus Application Gateway distinction. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-app-service-plans-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ],
+      "notes": "Read multiple-app capacity risks and separate-plan guidance. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-app-service-plans-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ],
+      "notes": "Read shared-compute limitations and dedicated-tier scaling. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-app-service-plans-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+      ],
+      "notes": "Read scale-up versus scale-out definitions. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-app-service-plans-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+      ],
+      "notes": "Read explicit warning that plan scaling does not scale other Azure dependencies. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-app-service-plans-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+      ],
+      "notes": "Compared scheduled autoscale with distinct HTTP-driven automatic scaling. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-app-service-plans-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings"
+      ],
+      "notes": "Read current autoscale default-capacity semantics, avoiding the outdated blanket default-reset claim. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-azure-app-services-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service"
+      ],
+      "notes": "Read app-configuration Always On versus affinity and HTTPS settings. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-azure-app-services-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots"
+      ],
+      "notes": "Read supported tiers, live-slot behavior and staging-before-swap procedure. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-azure-app-services-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+      ],
+      "notes": "Read slot-specific settings and swap behavior. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-azure-app-services-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service"
+      ],
+      "notes": "Read anonymous-versus-authenticated-request handling and public-page caution. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-azure-app-services-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names"
+      ],
+      "notes": "Read A/CNAME semantics and custom-domain validation; prompt explicitly uses a supported subdomain. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-azure-app-services-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights"
+      ],
+      "notes": "Read Application Insights request/dependency diagnostic capabilities. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines"
+      ],
+      "notes": "Compared lesson container/VM model with scoped process-isolation language; avoided blanket claims about all isolation modes. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ],
+      "notes": "Read container-group sharing and Linux-only multi-container support. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files"
+      ],
+      "notes": "Read current Azure Files volume-mount limitations, qualifying the broader training overview. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ],
+      "notes": "Read group/container external-port requirements and explicit no-port-mapping restriction. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update"
+      ],
+      "notes": "Read resource-allocation update exclusions; scenario explicitly changes CPU/memory, not a supported mutable property. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform"
+      ],
+      "notes": "Read Container Apps/ACI/AKS selection guidance; requirement distinguishes an appropriate managed service rather than asserting AKS cannot host microservices. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+      ],
+      "notes": "Read explicit RTO/RPO definitions and applied original values without claiming a backup frequency guarantees them. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+      ],
+      "notes": "Read MARS on-premises support and VM-extension distinction. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+      ],
+      "notes": "Read initial full/incremental changed-block sequence. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+      ],
+      "notes": "Read backup-policy schedule/retention responsibilities; no unsupported numeric schedule asserted. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+      ],
+      "notes": "Read snapshot/vault-standard/archive distinction and explicit supported-workload qualification. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+      ],
+      "notes": "Read planned versus unexpected retention and independent on-demand settings; check workload support rather than guarantee an arbitrary period. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+      ],
+      "notes": "Read recovery-point backup versus replication/failover distinction. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine"
+      ],
+      "notes": "Read Recovery Services vault management role; avoids generalizing to all Backup workloads or vault types. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+      ],
+      "notes": "Read Windows VSS/Linux script distinctions and current VM-backup consistency guidance. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ],
+      "notes": "Read current restore-option target constraints; prompt assumes retained available recovery point. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ],
+      "notes": "Read Restore disk outputs versus Replace existing and new-VM behavior. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+      ],
+      "notes": "Read standard/enhanced soft-delete preservation behavior; no fixed retention period or automatic failover promise. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+      ],
+      "notes": "Read automatic host metrics versus configured guest data and DCR role. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine"
+      ],
+      "notes": "Read boot diagnostics with managed storage and startup troubleshooting. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics"
+      ],
+      "notes": "Read Metrics Explorer aggregation options and lesson maximum CPU example. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+      ],
+      "notes": "Compared current classic logs-based versus OpenTelemetry monitoring destinations; avoids teaching obsolete portal defaults. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+      ],
+      "notes": "Read additional Linux DCR/Syslog source, association and Log Analytics destination; did not assert that a DCE is always required. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+      ],
+      "notes": "Read official Syslog/KQL query workflow and severity investigation. Compared the scenario and all four option explanations with actual official teaching/source text; one answer meets the stated requirement. Original wording, not copied from Microsoft assessments. Distractors were reviewed after refinement to emphasize concepts taught in these modules."
+    }
+  ]
+}

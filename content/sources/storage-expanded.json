@@ -1,0 +1,266 @@
+[
+  {
+    "referenceId": "storage-plus-firewall",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+    "checkedAt": "2026-10-08T01:38:19.311191Z",
+    "result": "checked",
+    "evidenceSummary": "Network rules restrict access through the public endpoint to allowed sources but do not grant data authorization. Microsoft.Storage and Microsoft.Storage.Global endpoints are alternatives for a subnet; enabling an endpoint changes the source traffic to private Azure addresses.",
+    "contentHash": "9b590e56a19268836ef39ed5911c3399c5262e5f41afcd47a0e7991cd0bb47b2"
+  },
+  {
+    "referenceId": "storage-plus-sas",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+    "checkedAt": "2026-10-08T01:38:20.377399Z",
+    "result": "checked",
+    "evidenceSummary": "User delegation SAS uses Microsoft Entra authorization; service SAS and account SAS are signed with a storage account key. Stored access policies apply to service SAS, not account or user delegation SAS. Limit SAS permissions, resources, expiry and HTTPS access to the actual delegation needed.",
+    "contentHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667"
+  },
+  {
+    "referenceId": "storage-plus-keys",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage",
+    "checkedAt": "2026-10-08T01:38:20.223276Z",
+    "result": "checked",
+    "evidenceSummary": "Azure creates two 512-bit access keys. To rotate safely, move clients to the alternate key, regenerate the unused key, update clients to the regenerated key, then regenerate the other key. Regeneration revokes service and account SAS signed with that key, unlike Entra-secured user delegation SAS.",
+    "contentHash": "c6c5b0c204771df0afc468878e249c6079c300365d1b09b98063054cf218f4bd"
+  },
+  {
+    "referenceId": "storage-plus-file-identity",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
+    "checkedAt": "2026-10-08T01:38:19.824056Z",
+    "result": "checked",
+    "evidenceSummary": "Azure Files identity-based SMB authentication supports AD DS, Microsoft Entra Domain Services and Microsoft Entra Kerberos, with only one identity source per storage account. Kerberos authentication, share-level permissions, file/directory permissions and network connectivity are distinct requirements.",
+    "contentHash": "012bb02c3abe6d0cad7c239814b62ea541f270cb58de0804d7475f8aef9c4d33"
+  },
+  {
+    "referenceId": "storage-plus-file-share-permissions",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions",
+    "checkedAt": "2026-10-08T01:38:20.329755Z",
+    "result": "checked",
+    "evidenceSummary": "Storage File Data SMB Share Reader allows reads; Contributor allows read/write/delete; Elevated Contributor also allows ACL modification. Scope assignments to the intended share and also configure file and directory permissions, rather than treating successful authentication as authorization.",
+    "contentHash": "ef728a9f2667415e68fd853b491ffb636d70d34d8c941364f87aa284f8b73895"
+  },
+  {
+    "referenceId": "storage-plus-file-ntfs",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-configure-file-level-permissions",
+    "checkedAt": "2026-10-08T01:38:21.371687Z",
+    "result": "checked",
+    "evidenceSummary": "Both share-level Azure RBAC and file/directory Windows ACLs are enforced for identity-based SMB access. The most restrictive effective permission applies: share Reader with a file Modify ACL still permits only reading. ACL administration requires the relevant role and file-level permission.",
+    "contentHash": "ec52acaf006cee31d3f5959253373edf3cded41cdb82b47fe679f5858737b652"
+  },
+  {
+    "referenceId": "storage-plus-redundancy",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+    "checkedAt": "2026-10-08T01:38:20.949142Z",
+    "result": "checked",
+    "evidenceSummary": "ZRS synchronously replicates within primary-region zones. GRS uses LRS in the primary and asynchronous secondary-region replication; GZRS adds primary ZRS. RA variants enable secondary reads for supported services, with replication lag. Azure Files has no secondary read access, and Archive is unsupported with ZRS, GZRS and RA-GZRS.",
+    "contentHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44"
+  },
+  {
+    "referenceId": "storage-plus-object-replication",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview",
+    "checkedAt": "2026-10-08T01:38:20.891975Z",
+    "result": "checked",
+    "evidenceSummary": "Object replication asynchronously copies block blobs. Change feed must be enabled at the source and versioning at both accounts; HNS accounts are unsupported. Destination-container writes are blocked while a rule applies, but reads/deletes are allowed. Existing blobs are excluded by default; archive/rehydration does not automatically trigger replication.",
+    "contentHash": "7a89668e6d3c7a34aa13d66a584cad0eaaed22e6f2e0584b91705279eee59b24"
+  },
+  {
+    "referenceId": "storage-plus-encryption",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption",
+    "checkedAt": "2026-10-08T01:38:20.912122Z",
+    "result": "checked",
+    "evidenceSummary": "Azure Storage transparently encrypts all storage accounts and resources at rest with 256-bit AES; service-level encryption cannot be disabled. Microsoft-managed keys are the default, and supported customer-managed key configurations can control key management without an application-side rewrite.",
+    "contentHash": "0d7f2a0620420d90dc27c2ab88ab52faa6def788229fa9d009b329d1e8954762"
+  },
+  {
+    "referenceId": "storage-plus-cmk",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview",
+    "checkedAt": "2026-10-08T01:38:21.941429Z",
+    "result": "checked",
+    "evidenceSummary": "Customer-managed keys require a supported RSA or RSA-HSM key in Key Vault or Managed HSM with soft delete and purge protection. The storage managed identity needs key access. With an explicitly pinned key version, rotate the key and manually update the storage encryption configuration to the new version.",
+    "contentHash": "a9247cc00f3eb0bba6018b492dafad893424c866502c36398b0647d4aec5608d"
+  },
+  {
+    "referenceId": "storage-plus-azcopy",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10",
+    "checkedAt": "2026-10-08T01:38:22.025772Z",
+    "result": "checked",
+    "evidenceSummary": "AzCopy v10 is a command-line data transfer utility. Commands require supported authorization and reachable storage endpoints; copying and synchronizing are separate operations. Supplying credentials does not remove network firewall or private-endpoint reachability requirements.",
+    "contentHash": "d7df02ce1fd7542a18dd3c83579c12ef4c39723f9798750e0152e3eec5c4774d"
+  },
+  {
+    "referenceId": "storage-plus-azcopy-entra",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-authorize-user-identity",
+    "checkedAt": "2026-10-08T01:38:22.333162Z",
+    "result": "checked",
+    "evidenceSummary": "For Blob download, assign Storage Blob Data Reader or a suitable stronger data role; for upload, Storage Blob Data Contributor or Owner. Generic resource-management roles do not by themselves authorize blob-data upload. Supported Entra authentication must be paired with actual data permissions.",
+    "contentHash": "4d0e681eec59ca6901aeee24aed6c20e79d3820ed829b7e34e1f2d9b25bcbd35"
+  },
+  {
+    "referenceId": "storage-plus-azcopy-copy",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-copy",
+    "checkedAt": "2026-10-08T01:38:22.484969Z",
+    "result": "checked",
+    "evidenceSummary": "AzCopy v10 copy supports blob/directories/containers and uses server-to-server APIs for storage-account transfers, so payload data moves between storage servers. Use --recursive for nested directories and provide authorization and network connectivity appropriate to both endpoints.",
+    "contentHash": "c96aedfb4e8332805f5aeecee3c194d9cfe6d72265e2cddee5c20e80d26849aa"
+  },
+  {
+    "referenceId": "storage-plus-azcopy-sync",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-synchronize",
+    "checkedAt": "2026-10-08T01:38:22.494792Z",
+    "result": "checked",
+    "evidenceSummary": "AzCopy sync compares names and last-modified timestamps by default, with optional hash comparison. --delete-destination=true deletes destination-only items without prompting; prompt asks before deletion. If deletion is not intended, choose flags deliberately and consider copy instead of mirroring.",
+    "contentHash": "29514889ec1b07616588252df7fa864a88c1ae5623e92bdfc4a918b85117ecd1"
+  },
+  {
+    "referenceId": "storage-plus-lifecycle",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+    "checkedAt": "2026-10-08T01:38:22.542855Z",
+    "result": "checked",
+    "evidenceSummary": "Lifecycle rules filter by container/name prefixes or blob index tags and operate on current blobs, previous versions or snapshots. Prefix matching is case-sensitive; last-access conditions require access-time tracking. Policy changes can take up to 24 hours to begin processing, and lifecycle policies cannot rehydrate archived blobs.",
+    "contentHash": "fc66a2789f362b21730ec133bf8fa4845404b8a0c0b4c5f7680c32344d274d72"
+  },
+  {
+    "referenceId": "storage-plus-lifecycle-policy",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure",
+    "checkedAt": "2026-10-08T01:38:22.855530Z",
+    "result": "checked",
+    "evidenceSummary": "Lifecycle policy conditions and actions target explicit objects such as base blobs, snapshots and previous versions. Last-access policies require access-time tracking, with online access-driven return-to-Hot where configured. Rules can combine blob-type and prefix filters and must be evaluated against the actual policy JSON.",
+    "contentHash": "9f9f9b1d3ac647834d4fb5e210aaf46d2d0a38422f1a2e7335038e6682d570fe"
+  },
+  {
+    "referenceId": "storage-plus-blob-delete",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview",
+    "checkedAt": "2026-10-08T01:38:23.130279Z",
+    "result": "checked",
+    "evidenceSummary": "Blob soft delete protects deleted blobs and supported snapshots/versions during a configured 1-365-day retention period. It does not protect container or storage-account deletion; container soft delete is a separate feature. Recovery must occur within the retention interval.",
+    "contentHash": "2fbc6a832df1fb6f659abca09d252c2d40d3b8292122ae7166d5131f4acdd61c"
+  },
+  {
+    "referenceId": "storage-plus-container-delete",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-container-overview",
+    "checkedAt": "2026-10-08T01:38:23.072974Z",
+    "result": "checked",
+    "evidenceSummary": "Container soft delete restores a deleted container and its contents within a configured retention interval. A container can only be restored to its original name; a newly created container with that name must first be removed or renamed. Blob protection alone does not cover whole-container deletion.",
+    "contentHash": "a3e94e65ce6488af84d80395e6277abcd685bfd5cc21ddf01d7369d09961a95e"
+  },
+  {
+    "referenceId": "storage-plus-versioning",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+    "checkedAt": "2026-10-08T01:38:23.104761Z",
+    "result": "checked",
+    "evidenceSummary": "Blob versioning automatically records versions on write in supported flat-namespace accounts and adds storage costs. HNS accounts are unsupported. Undelete restores soft-deleted versions without selecting a current version; copy the desired restored previous version to promote its content to current.",
+    "contentHash": "f1573941a1f246bdbbf91cf33a5d2216aded05ed3d1d3c498a5798f00f6d5a0c"
+  },
+  {
+    "referenceId": "storage-plus-tiers",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+    "checkedAt": "2026-10-08T01:38:23.372096Z",
+    "result": "checked",
+    "evidenceSummary": "Hot, Cool and Cold are online tiers; Archive is offline and requires rehydration. Explicit Cool, Cold and Archive placements have 30-, 90- and 180-day minimum durations respectively, with prorated early-deletion charges. Archive is unavailable for ZRS/GZRS/RA-GZRS accounts.",
+    "contentHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60"
+  },
+  {
+    "referenceId": "storage-plus-file-snapshots",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files",
+    "checkedAt": "2026-10-08T01:38:23.559660Z",
+    "result": "checked",
+    "evidenceSummary": "Share snapshots are read-only point-in-time share copies, permit individual-file recovery and retain the share redundancy setting. Snapshots are incremental, but retained snapshots independently support restoration. A share supports at most 200 snapshots; remove older snapshots before creating further ones.",
+    "contentHash": "cdea54a08f2a961a7d94c8f0bc5b6076975fc4feff218e42a0e01070fb5c33c0"
+  },
+  {
+    "referenceId": "storage-plus-file-delete",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion",
+    "checkedAt": "2026-10-08T01:38:24.272420Z",
+    "result": "checked",
+    "evidenceSummary": "Soft delete for classic Microsoft.Storage file shares protects whole-share deletion for a retention period and restores the share including snapshots. It does not restore individual files removed from a still-existing share; recover such files from snapshots or an appropriate backup.",
+    "contentHash": "149dc8aefe75b33609015d4404868a1e198e5b34b498ea8535ba0f96bd9c983e"
+  },
+  {
+    "referenceId": "storage-plus-file-planning",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+    "checkedAt": "2026-10-08T01:38:23.822685Z",
+    "result": "checked",
+    "evidenceSummary": "Classic Azure file shares within storage accounts can use SMB or NFS, but an individual share does not expose both protocols. SSD/premium shares target high performance and low latency; HDD/standard shares target general-purpose cost. Select supported account/performance/protocol and network requirements together.",
+    "contentHash": "056078e25a8e8e2872920d43a2c98eb17df956ba80853142edc5a6c5a32e791e"
+  },
+  {
+    "referenceId": "storage-plus-rehydrate",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview",
+    "checkedAt": "2026-10-08T01:38:23.969128Z",
+    "result": "checked",
+    "evidenceSummary": "Archived blob content is unavailable until rehydration to an online tier. Set Blob Tier rehydrates the original, whereas copying to an online destination can keep the archived original. Rehydration takes time; early-deletion billing and lifecycle rules must be considered separately.",
+    "contentHash": "54b96ba2630f6c7439c90cec7aae18ddb157e57791cc231efdc25bf8c587667e"
+  },
+  {
+    "referenceId": "storage-plus-containers",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal",
+    "checkedAt": "2026-10-08T01:38:24.095271Z",
+    "result": "checked",
+    "evidenceSummary": "A blob container groups blobs within an account. The portal defaults the container anonymous access level to Private (no anonymous access); public access must be intentionally enabled at both relevant account and container settings, rather than being a consequence of container creation.",
+    "contentHash": "811c202ccffd0e62c0416ed17914f7025a73ebcd4f7f54815ecce9924a7e9886"
+  },
+  {
+    "referenceId": "storage-plus-policy",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy",
+    "checkedAt": "2026-10-08T01:39:11.986951Z",
+    "result": "checked",
+    "evidenceSummary": "A container, table, queue or file share supports at most five stored access policies. A service SAS can inherit start time, expiry and permissions, and policy modification or deletion can revoke its access. Updates may take up to 30 seconds, during which associated SAS requests can return 403.",
+    "contentHash": "143f260dbbfddf0817a2a164ba4a48c9fb2dc8750b77d7adfc1fe97537040861"
+  },
+  {
+    "referenceId": "storage-plus-infrastructure-encryption",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/infrastructure-encryption-enable",
+    "checkedAt": "2026-10-08T01:39:12.521215Z",
+    "result": "checked",
+    "evidenceSummary": "Infrastructure encryption adds an independently keyed encryption layer below service encryption. Account-wide infrastructure encryption must be selected when the storage account is created and cannot later be toggled on for that existing account. Infrastructure-level keys are Microsoft-managed.",
+    "contentHash": "b2b7bff91a84aa23031e56bc4d37939d1f0dc5fd30ec998e6ee8aba2890a0e71"
+  },
+  {
+    "referenceId": "storage-plus-private",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints",
+    "checkedAt": "2026-10-08T01:39:13.023545Z",
+    "result": "checked",
+    "evidenceSummary": "A private endpoint connects to a specific storage service subresource. Creating it does not automatically block the public endpoint; separately configure the storage firewall. Clients retain the normal storage hostname and DNS maps it to the private endpoint.",
+    "contentHash": "7ff58c139826b42bc249433201386cce4c5f677ff81037c75b10b1723be10c76"
+  },
+  {
+    "referenceId": "storage-plus-firewall-limitations",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-limitations",
+    "checkedAt": "2026-10-08T01:39:13.512497Z",
+    "result": "checked",
+    "evidenceSummary": "Storage firewalls restrict data-plane operations, not control-plane operations. IP network rules cannot restrict Azure services in the same region by public outbound IP because those services use private Azure addresses; trusted-boundary restrictions still apply to data tools.",
+    "contentHash": "dd0ba3819d0ec7d10e54a094dfbfb4f90e18c4c4c15216b43fa8392fc0db9b24"
+  },
+  {
+    "referenceId": "storage-plus-shared-key",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent",
+    "checkedAt": "2026-10-08T01:39:14.016757Z",
+    "result": "checked",
+    "evidenceSummary": "When Shared Key authorization is disallowed, Blob Storage service SAS and account SAS signed with account keys are denied; a user delegation SAS uses Microsoft Entra authorization and is permitted subject to its own permissions and network controls.",
+    "contentHash": "e1471ea14b57c932c33ad7a6df80ab88fa8a98339a2343aa90ae281ab3750de8"
+  },
+  {
+    "referenceId": "storage-plus-account-create",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create",
+    "checkedAt": "2026-10-08T01:39:14.422928Z",
+    "result": "checked",
+    "evidenceSummary": "General-purpose v2 accounts support the Blob, File, Queue and Table services. Account type, performance and redundancy choices constrain supported features; premium file-share workloads use appropriate FileStorage accounts rather than a block-blob-only account.",
+    "contentHash": "12dfe6eb12da9bd420a6d8e890decaeb6d0dd32a6ac938116d28b5f56a8c2798"
+  },
+  {
+    "referenceId": "storage-plus-service-sas",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/rest/api/storageservices/create-service-sas",
+    "checkedAt": "2026-10-08T01:45:55.291263Z",
+    "result": "checked",
+    "evidenceSummary": "The SAS signedIp field restricts the public source IP, and same-region Azure clients should not include their public outbound IP because requests use private Azure addresses. The signedProtocol field can require HTTPS-only access; its default is HTTPS and HTTP.",
+    "contentHash": "e613fba101012cfe82aac83312e2c20960558c1b3b303563cf1010243d4a8bf5"
+  },
+  {
+    "referenceId": "storage-plus-blob-rbac",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access",
+    "checkedAt": "2026-10-08T01:45:55.843334Z",
+    "result": "checked",
+    "evidenceSummary": "Blob data roles grant read or write data operations at a chosen storage scope. Management access is separate: the portal requires an Azure Resource Manager Reader role in addition to a Blob data role for Entra-based browsing, illustrating that management Reader does not itself grant Blob data access.",
+    "contentHash": "431e5afc7e789f090dc5c3b67d6e8e128ea567e989d6bd3212c3566729215c20"
+  }
+]

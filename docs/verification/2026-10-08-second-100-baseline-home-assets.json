@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "kind": "static-home-route-javascript",
+  "measuredAt": "2026-10-08T04:47:50.291Z",
+  "method": "Built HTML entry/modulepreload plus recursively parsed static ES module imports. Excludes dynamic feature routes; service-worker offline installation still downloads all assets. Gzip is a local size estimate, not measured HTTP transfer or timing.",
+  "files": [
+    {
+      "file": "assets/index-BiqJUsPc.js",
+      "bytes": 225930,
+      "gzipBytes": 60664
+    },
+    {
+      "file": "assets/question-bank-D7GKh21y.js",
+      "bytes": 899208,
+      "gzipBytes": 143133
+    },
+    {
+      "file": "assets/rolldown-runtime-hePW80VL.js",
+      "bytes": 716,
+      "gzipBytes": 428
+    },
+    {
+      "file": "assets/study-data-C_IF-FYG.js",
+      "bytes": 3128554,
+      "gzipBytes": 254661
+    },
+    {
+      "file": "assets/validators-CI8esFNU.js",
+      "bytes": 332851,
+      "gzipBytes": 21971
+    },
+    {
+      "file": "assets/vendor-BFrqGuZg.js",
+      "bytes": 320039,
+      "gzipBytes": 100038
+    }
+  ],
+  "initialBytes": 4907298,
+  "initialGzipBytes": 580895,
+  "allJavaScriptFiles": 6,
+  "deferredFiles": []
+}

@@ -1,0 +1,1031 @@
+{
+  "checkedAt": "2026-10-08T10:28:49.636441Z",
+  "reviewKind": "AI-assisted official-source audit",
+  "humanApproval": false,
+  "paths": [
+    "az-104-administrator-prerequisites",
+    "az-104-manage-identities-governance"
+  ],
+  "pointsReviewed": 249,
+  "lessons": [
+    {
+      "id": "intro-to-azure-cloud-shell--1-introduction",
+      "pointHashes": [
+        "31f4514abe5c4e2e639a55edd79a5a59bcd5399fc026d94ae8080f8a3137994e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-cloud-shell--2-what-is-azure-cloud-shell",
+      "pointHashes": [
+        "da955354f861768b91cd5d79735e3f1254563e4c913bbc4c93f4d058e5529f1f",
+        "9c982261a146227e79cb4967791aa2d46b07df8e87f1a02bffbbfe96edd61564",
+        "8cd3902405f8e7a21c43c8be7ce4d1e6520979c9f19c24203159ee3e1004d408",
+        "1032e8e5061845b02e347eb6db45392ebf3208d7818e51ea25f9554cc5594ce2",
+        "bf2ded8e907151e3ea83b9cb45897d98dd9f73dec079e97e5c5362b8d55667a8"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-cloud-shell--3-how-azure-cloud-shell-works",
+      "pointHashes": [
+        "c5e136daf39deaf7487f6b8e7920d4c8bb84520e9d63f4e6d847ecaccbd07acc",
+        "71d884330c9c162e7d838de9dbc54eee88c27abb881d499364c1569f6cf606fd",
+        "7aad1b7207229b4d9129542b4d6c89c67399947e7a1e2bc90e06f45c681dd2ed",
+        "6a921ed2a2d9f2e6200102fe42f3c9af25c44873278a2a5b683625b82dc37188",
+        "5d1998c865d5c390be772ee33cbb67529f685cca98175bacb91ba03c22f6a62f",
+        "a57045198c14f2d0511301c5431e98aa9d707016aca653f9363e66445d60021c",
+        "1aaa03e176172bcbcb2f14c6ad9a6debcd41647b3d75881365c1b6c08f57a762"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/overview",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Open the built-in editor to change a file. The source notes that the code command requires Classic mode.",
+          "after": "Open the built-in editor from the toolbar or run code <filename> to edit a file.",
+          "reason": "Current editor documentation supports code directly and no longer specifies the training unit’s Classic-mode restriction."
+        }
+      ]
+    },
+    {
+      "id": "intro-to-azure-cloud-shell--4-when-to-use-azure-cloud-shell",
+      "pointHashes": [
+        "fdc4634b4f4c250a838d946da71f1cefdb719f8570420b2f7a5edafa0b0aa61f",
+        "7073749d7f32fbb67aeca62f9c4587880ff4cb29adeff974ea67b5cde5dfe9cf",
+        "1f2ff0441572ccaaa7e8103ea6f4f491d8a42017d4d7cf78490f55d139beaad9",
+        "8c2968ef95fd560958abf501fd5fa2e8fc18a441c9f5ba143166de2aebaad2ad",
+        "f7d91bec8b8dfdfaee87438808d1ca82baca3fb6a4d3a05e75ae9eb04524001a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Cloud Shell is not intended for concurrent independent sessions across subscriptions or tenants.",
+          "after": "Cloud Shell has a default limit of 20 concurrent users per tenant; request a quota increase for larger training sessions.",
+          "reason": "Replace an unqualified concurrency limitation from training with the current documented tenant quota."
+        }
+      ]
+    },
+    {
+      "id": "intro-to-azure-cloud-shell--5-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/5-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-cloud-shell--6-summary",
+      "pointHashes": [
+        "970ce6a8af86a98149aaf7697eebe71a693cbcbd6341d49d68491102c131e907"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/6-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-azure-resource-manager-template-vs-code--1-introduction",
+      "pointHashes": [
+        "7d7162add56ef1cbe1d6ac56f2abe49498872c10964ded6174e0b7ebed868fff",
+        "f542f0b18abdd143fbd4f2acf19b91682a77a0906c015bcde6c1be494c940b53"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-azure-resource-manager-template-vs-code--2-explore-template-structure",
+      "pointHashes": [
+        "60e766a38f24b5bdb7d8682439245ae8ea62146f7a3383fab20697f5cb7b654c",
+        "ab35f3535efb5af2bc0a4053d7e239cb146084625a584b1b633c22e7211d8151",
+        "0dd206563c1a9fdbde69f461c7235e95b63bc075537a825ba8df8000cb2ab72b",
+        "facea58bdc54eaca921586e100ab79ec14591be8e0a8ea3d2f9b9d0bff38c8bb",
+        "81a16138c65381c102fdff6e8332045fa540a9c63e2e8876cb307b3a82d5e053",
+        "dc59e09bb2c58e122da295d81abf45cbaa7c5e21188ead95de673eef9e625171",
+        "e0168de33183e6a0bc39ac42c09a5673197cb577b331f03a5143ddd1abb1a1d7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-azure-resource-manager-template-vs-code--3-exercise-create-and-deploy-template",
+      "pointHashes": [
+        "595c04c843ff61e2b2e634cc61b25c781bf3897a5652fef8a5233d43dcf0a258",
+        "1fc45105878eeda8f4ef54ad987b09fd3afaf518ef6cb60e071a233c03f87b8c",
+        "47e810006985ee81548c757e484bdd2418549c55aae58e4c4bfa6223909fe44a",
+        "a4df270e5e2cecfd5f794caf8cefbdbda59d9fe300f186b8316fbbd4c2700455",
+        "c9e9e519f167f7ccf2c6d6205b3c58de544e456e8dd883372168e51cf2f947b4"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/3-exercise-create-and-deploy-template",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Deploy the empty template and inspect its successful deployment record; it creates no resources until resources are declared.",
+          "after": "Deploy the empty template in the default incremental mode and inspect its successful deployment record; it creates no resources.",
+          "reason": "An empty complete-mode deployment can delete existing resources; identify the exercise’s default incremental mode."
+        }
+      ]
+    },
+    {
+      "id": "create-azure-resource-manager-template-vs-code--4-add-flexibility-arm-template",
+      "pointHashes": [
+        "2607b00bb3de9a1e70af65c98f6ef10a09f7c1f5cca24f7f68b9b188beeb1e92",
+        "e390f3cc4d4e0c71be572f97aa9ea91c259dde5632fa79c55462d6795c4e6f0c",
+        "75ea6d450f5727001c8542e15f2716c4cb441cddab90d6bef314a49973cc6e6a",
+        "0c76d1f2c63ab9e3783bad00588a8d81268757080a6ebb4df8bbdcaa9121f77d",
+        "aad9a49f7c331e747e1f51c197a09f8e5a6879ae71d0b6192aa4dacc005c4cf2",
+        "df0571760f5cbb233bc73d1af00c483fb326d2e3223f780769052ac490a07348",
+        "ed2f64152951fb60378b8c3e91054c3935ded7dd129de991f1256c9cd98dc396"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Redeploying after a parameter or template change applies the required resource updates rather than duplicating unchanged resources.",
+          "after": "Redeploying with the same resource names and scopes updates existing resources. In incremental mode, specify all non-default properties because omitted properties can reset to defaults.",
+          "reason": "Clarify resource identity and the important distinction between incremental resource deployment and property merging."
+        }
+      ]
+    },
+    {
+      "id": "create-azure-resource-manager-template-vs-code--5-exercise-parameters-output",
+      "pointHashes": [
+        "f73667178860ffe642c080dfee25213626791d6e5e7a6b102ff7b99f253f34bf",
+        "9b7b75059cd3344c717acc391855127b1a71e97e0535a7e46201c59b4165e2f5",
+        "e7d2767e8ee568ff2a944c19b0ce8b7a374dc2f88ba5716d6ac500ab9a9431f2",
+        "86d67d8c4e4af1f422fd062e64ac17c454669b6974c8d15d5a21b2e96d62c0e0",
+        "54e46b451465f24fc9692418faed7919e9269d64791f0a49c199fd2e51eea727"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-azure-resource-manager-template-vs-code--6-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/6-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-azure-resource-manager-template-vs-code--7-summary",
+      "pointHashes": [
+        "57022265e2b2af191e153dbf27e8fae52aa6ec7a5a2976c3f10f2d6280fb3693"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/7-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "understand-azure-active-directory--1-introduction",
+      "pointHashes": [
+        "a69899bbed9da6f8a54ed1361c170d4eef2c09eceb7f7cf9e6ae228666a8180c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "understand-azure-active-directory--2-examine-azure-active-directory",
+      "pointHashes": [
+        "5d4c8cbb1f640d0515846d043e593fc6554126932fdac0a3aaf6114d0511abc5",
+        "c22aade6ccf91331d39e071c1eba2f90c434d5641abbe5f47709001a47415f3e",
+        "72fea671319d252ce684946f047347358875e9e5f21e55052703fba3583591d8",
+        "7a69d51253eb8a7788cc7c1e8d942df4d76be5b71db238fa0718498b8e79846a",
+        "3b4321bd390bce1bac998a7e15f0ab657b120b2cba585863db2e54c8c06eb701",
+        "013588774c49bcc16b8b60cbad7d7c0899b2c3f09fe2e88338f39ea53d90c26b",
+        "98b30c73714ae5ed97c7ac40f5d77ee657295b777f4aec70f74531b5e9dea78c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "understand-azure-active-directory--3-compare-azure-active-directory-domain-services",
+      "pointHashes": [
+        "129042e5ded75378714476b0ea9b5ce501fb32b4fc754011d6209d327783ae98",
+        "b889e0ed823e82efc9a27124be6251357a251cfbb93dc8a3397583635d149ae1",
+        "248fbbeec52b5b24f322286d054be5a1bf58e336715dbd74249f9d9ca7caa50f",
+        "f2e5fc5c745d9cd85371d935b161618a38fa693273e484b33c643dc20a22dc41",
+        "c1b6dd234b4ef206da644a47d86a3c9844ab4af749966ce201daa557028c3db9",
+        "1c19deeda4cf3e6b609850805eea6f2b924a982d4a71af0b8324edf7740e28df"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "understand-azure-active-directory--4-examine-azure-directory-service-cloud-apps",
+      "pointHashes": [
+        "32dc51947ba3b0ea87e22d047c5e94594ecf7601ab368243809e825be7aa6987",
+        "f077f91048ddb7f01ad15aa64941c10539314aa065709d28e630a93dac9687dd",
+        "8847203723f58bd635cc30499c6e4feda1dd915d8df6a97011a0292d78eae3b9",
+        "60f3e966a02e3a0d19bd3d9ec8206e7fadeed7b024bed9a05a8c096f96f1c825"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps",
+        "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "understand-azure-active-directory--5-compare-azure-premium-p1-p2-plans",
+      "pointHashes": [
+        "b6da03ffee4442d037c57ccab5db54b5f59d1d93f6d552142a36bd88673059c5",
+        "9fabde8753c971b7733aa1c6487895450dbecd6b890929b785cab4945812bcb2",
+        "aab7b6be0c113ae56caf0b4fd40403cb3d7eb117ac768e4d9b05c83e852892fc",
+        "755af1bfd2031d39314286a19b915976c7897c1eee0d2fcdd32c4bab7e82128d",
+        "a18cf8d8df84d0ef3f621e6db56271fe92540c0eb5a0d5830d0a345ac4270292"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "understand-azure-active-directory--6-examine-azure-domain-services",
+      "pointHashes": [
+        "003705380d5a53259d306d69a88cf86d73e26311d54f03a2a3f80b444a3c0b9f",
+        "49e8b0a1a4f57a15723d9c1d3e9702ff78cce37949a29f40b68c4ae4ec1e02ae",
+        "f415c24e3d6b6de72a5e6aef6f8442de0a5a92d240c39f2ab9b73fc21c9323d9",
+        "c2ae36cc041b63dfd626dbe99e04d081351076aa98e5e483cc20c3d11889e5ab",
+        "191d74b4f26cec890f3891b8ff88d8ca48240793ff6402396579f008f3db068a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "understand-azure-active-directory--7-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/7-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "understand-azure-active-directory--8-summary",
+      "pointHashes": [
+        "9da8db44695a34d4ec194e849ec760e5ab030e251bed635c4619aa4a5f869b70"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/8-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-configure-manage-identities--1-introduction",
+      "pointHashes": [
+        "0288acd66cb1c091d7298acae005277f52c9f803f78cbfe693df3494a6f21458"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-configure-manage-identities--2-users",
+      "pointHashes": [
+        "3d9534b8e1746236f14a2b6e995f2958ee0110e679b444b9374d6e0213918ba0",
+        "6407f10eee94805a637c28186ba04927fe52256205ab3b0bd9a271020f1b2531",
+        "4b641381cf16afb8cf0001d1d2df6a2837c233ff402d5999f0991e232c7b8f3a",
+        "65ef0eaf2c48ee266aaaec370428f2a126a117be299093536328d48ab6b00733",
+        "b93458d3c77a3ded3ac4571bea71b82a8882c98f1064e8cc0cf3642769628dc1"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/2-users",
+        "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/what-is-cloud-sync"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "The source recommends Entra Cloud Sync for most synchronization scenarios and reserves Connect Sync for more complex requirements.",
+          "after": "Cloud Sync uses lightweight agents with cloud-managed synchronization; choose Cloud Sync or Connect Sync after comparing the capabilities your deployment requires.",
+          "reason": "Current Cloud Sync product documentation includes device synchronization; avoid treating the training unit’s broad product recommendation as a fixed capability boundary."
+        }
+      ]
+    },
+    {
+      "id": "create-configure-manage-identities--3-exercise-assign-licenses-users",
+      "pointHashes": [
+        "87cc86517c6835a8be613ed48560126783720566c47dce0a6b0ae8338fc0bc3d",
+        "4ead2749cb72b805cba10dc5cec0cd5cfcd83c9edec3d77231be004c0acc31f5",
+        "96c149f39ff0a269f2732e8893fff77e7853e809ffab5837c84ca1ac8155a2c3",
+        "41982f8f265453404bc393e362a45d01341bb6af81b05d046eb5f70328aa04b4"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/3-exercise-assign-licenses-users"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-configure-manage-identities--4-exercise-restore-remove-deleted-users",
+      "pointHashes": [
+        "622ee671ecd2d7cab6db4811af17ee0c023023f36ffd9b7e2780b9d0574ae231",
+        "b95d572afb5c6ab2cc439f059869aa2a4e70ba598dfd3e274eae73b8d62e3eef",
+        "23f633d6ed2e7edc000271e7620c90dfc7fe6693681f47f772d2fd8114a05b1e",
+        "7eddeb54f70c1c4b27bede01ffaa5434cec6761e01923863132502ea6edd559e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-configure-manage-identities--5-groups",
+      "pointHashes": [
+        "e1a5fa9358f83374ef519b36f3bdd655ed4561b8e7a94b93a6049544ae2c7778",
+        "cee35b38dbdf3048b320ad5183ba1b6d27da6658275433d7c2f72d13852be464",
+        "711c6cbbd0c1a9f95de8332e5de2987df58d9af58ff545da1bbd39d5f5f3b135",
+        "166900fee78cc103f665430454952102834e691df002fb7cb9a7b094edd2a489",
+        "5dac7f47706852714a107b56f42ef5a1e8bfcdb74dd8df7886e2620a3107c26b",
+        "46a6a0a7b4c9d443568705daf57a7a786a5ae15db8eaa031a4af881f54dcaabe"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Dynamic membership requires the appropriate license; the source identifies Entra ID P1 and Intune for Education for applicable device rules.",
+          "after": "Dynamic user groups require enough Entra ID P1 or Intune for Education licenses for every unique user member; dynamic device group members need no license.",
+          "reason": "The training note incorrectly implies a device-membership license requirement and mislimits Intune for Education."
+        }
+      ]
+    },
+    {
+      "id": "create-configure-manage-identities--6-exercise-add-groups-azure-active-directory",
+      "pointHashes": [
+        "ca60a6fc1d87ec1ce26babd41bd487579e8649b098629eafa72911edbc2c410e",
+        "c8f5695eca761180519c882b115981d819a3653fd19d0a992c0ebd32b2787ce1",
+        "0400fc8a14a95a54caa23ee2d4e6454ce480ab02c1920a4a06af44eddd1c5637"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/6-exercise-add-groups-azure-active-directory"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-configure-manage-identities--7-configure-manage-device-registration",
+      "pointHashes": [
+        "e03f7c2fbf2305503b0da9a2ad468de6118ea4b6d76de39af7c29de416fc6cea",
+        "23656af1f53be20a8b60e1d75b6a5c788b5501e550ebcaf08bfef802e97a4efa",
+        "1b8bf928e0b42c3ebf1bf0530a9dedc2a4d295fec35a17bafd65be02b37490ce",
+        "38ef6b9f5a60ab0985eb463adb697d43654ab370960533ba0f7436d0b8b59524",
+        "a050aa1a84d75158152f18da7738badc796f4bb7a3206536c413e8699c7bccb0",
+        "e93fd56ef3d257e94d5b22fabd42e182705dc30d6dd198ef413748ab3c493c63",
+        "a92af1205f1ce0be218c52caba8db3c9368af2510c6746e5f89f47025bb97529"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration",
+        "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-device-writeback",
+        "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "The source recommends Cloud Kerberos Trust for new hybrid scenarios requiring on-premises single sign-on rather than device writeback.",
+          "after": "Windows Hello for Business cloud Kerberos trust enables on-premises authentication from Entra joined or hybrid joined devices after Microsoft Entra Kerberos and the required policies are configured.",
+          "reason": "Scope cloud Kerberos trust to Windows Hello for Business; current device-writeback documentation still describes distinct certificate-trust and AD FS scenarios."
+        }
+      ]
+    },
+    {
+      "id": "create-configure-manage-identities--8-manage-licenses",
+      "pointHashes": [
+        "9e21d9560bff2e604ade01fdf4df8bb4d2c63c9d31a7b29fad2af8ee6a089843",
+        "b0d5f50a861638882ca7395d723ee77e5de1caae0ba2369319d484e8765be7e4",
+        "a0626fc18c00d3ec53017890cb184d2779bbd094275a596744bb4afd6244069e",
+        "542c555e38efd4c666286b4ddde06bc3b3cf7af9b78c1c2ff30071d8327fcfaf",
+        "d35ca4fb9bb025906c6198c5ef605c7a9972b332101f4ba4722ac3ad4e8be548",
+        "4fb2fc2c4e75b5501badca9379b9eb6a81228fdc70b40f282f2589be2aae0950",
+        "2d7182cf85d4c230f2c5481cdadad7a04a2eea2ed420c70b1ce0a3f82dc8dccd"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/8-manage-licenses"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-configure-manage-identities--9-exercise-change-group-license-assignments",
+      "pointHashes": [
+        "031673b4c9333edc20cb1b4cfda3334247266413086905b1f136338d4f32c49b",
+        "83dc2f5622a75b8725d280065b98e14d658a6371f6cd23ae685691c074ca0e38",
+        "25767d6b148705e1a3c8121d30d62061f9f6e27b75115b61ece7ef4bad9ac997",
+        "07b151ed4a1b396f76ce5273c51ea534d07a628d75d24c44044c0250acd6efe5",
+        "5eb782f77a920d09f6a08c539d271aed710cec61bc8e2e7a88f87f92e206aceb",
+        "2b37b678bede9152d4b91d96959d9efd8d14a762555bf49949629b6653bdaedb",
+        "35b86c1443f907ff740c9d3e7dcf7d376724df9e7d3555c1555fe9bc0a23f9a4"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-configure-manage-identities--10-exercise-change-user-license-assignments",
+      "pointHashes": [
+        "0a2a9ff7659e5851694275b89d6d2abd6d9755bc258dc848b31b9bfd62976997",
+        "e1825663da36977d4f24926a5da2c355dac9a046b48aa8bc9effaf840620a401",
+        "a2dd9883a09e7885d797db9fabd0c75773c7d8142411b28cb3118850e3dcabee"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/10-exercise-change-user-license-assignments"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-configure-manage-identities--11-create-custom-security-attributes",
+      "pointHashes": [
+        "7d7b32b5d6b11c8d8fe01fdfd089c8d24f8e39973da588935b2263e23de4e752",
+        "6125bf2c4e07665980b6d8dd97f619bf8aff4a230c76f1b52bd8183d57364be0",
+        "9efa655f03091c345f6702f07774905ed608851c2005f314535646db9d7ce040",
+        "c706d3831ce4eab5feeb67bd1fb7f6876efd6ba21ef90dddd263e074517605dd",
+        "883df6c20043fa5a1e051247de7b422a8e26156cc9f4213ec9c0c78af784c6e5"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/11-create-custom-security-attributes",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Supported attribute types include Boolean, integer and string, with single or multiple values and predefined or free-form choices.",
+          "after": "Attribute types are Boolean, integer and string. Integer and string attributes can allow multiple values or predefined choices; Boolean attributes are single-valued.",
+          "reason": "Product documentation excludes Boolean attributes from multiple values and predefined-value lists."
+        }
+      ]
+    },
+    {
+      "id": "create-configure-manage-identities--12-explore-automatic-user-creation",
+      "pointHashes": [
+        "8fd8fa6781272d6beadd5a7e189296e0884bf4e31fccd493eed696cfa2caa1c3",
+        "e30b0f65d71b63820bd9c412d5058d5e5b241ffcfb6408110876c92105497bc1",
+        "34473857e386845b14d49cb38e2ee2bc1b82d51c9f6fc7874b62614a6fc36dde",
+        "282a15e07907e1b86ea2d101df18ccf995544da4ad5a871fa9e798b0019d98ed",
+        "46946a3f31b7582f8da184cbccfea7fc860046f147d0a7f05b51b2ac0111b48c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-configure-manage-identities--13-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/13-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "create-configure-manage-identities--14-summary-resources",
+      "pointHashes": [
+        "dde6035019c8e6b47823cf8d992f3db0391b711d0ece26d716102c2178608ecf"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/14-summary-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "describe-core-architectural-components-of-azure--1-introduction",
+      "pointHashes": [
+        "00e73b83bf1944ce9486fc363dbba954a97ef9196909c2ca7873a423806c1dd4"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "describe-core-architectural-components-of-azure--2-what-microsoft-azure",
+      "pointHashes": [
+        "f007258e646c1da445ac2d12caffcaa7504f1c76574cb369e1ed6b3b28f507e3",
+        "c96756fdc9a286be6e689aeda5356efd874ec44f33f054e959993ce7b58a3751",
+        "028e0d2834af3f00d4c1a109945796aae67bd4814b53e5e2ee8c1817541c8dd4"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/2-what-microsoft-azure"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "describe-core-architectural-components-of-azure--3-get-started-azure-accounts",
+      "pointHashes": [
+        "0b2a8d20281fae7a67a47e999284a487a115d03927cd6b88d94ae1e4f47812fd",
+        "3805b21077fc56e4418e7ea8c6559baf71c86d6f664820a5a6f75f36c1957e76",
+        "2bf67ed266857ca86f8da6aeeb6903232b5f34fb7aab56ed75995e8de6ae2790",
+        "96557eb5695a1d85cbcf17402c803867bcd252f0fbeffe3e79b1e692eaeb2c21"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/3-get-started-azure-accounts"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "describe-core-architectural-components-of-azure--5-describe-azure-physical-infrastructure",
+      "pointHashes": [
+        "31418c016247662712b3270c8cbbcfc4b1de1c72db91545d61c82b8d29d226af",
+        "fcc3d95aa594c68de903ad457df2553d3ee983bd8fce9bb07e0efdb62ac46514",
+        "ce68930dee6dbfd82929b58a1256be2d283a764fa8f47e9063fb9825518e20d8",
+        "bfe98fcebcf4c6c499f7c6e054ebe92bab3e31b0d158bab62e22d0301f9b4098",
+        "4a3b3e2d610e187489515249262d3d775a0b3f356bd269a92845e615306e2d60",
+        "888ba4eec1207555da2509cb01ba943e039327099c3536833cb3b9845b2bcd08",
+        "049bd10358f55085716f26793c12359a13dd0e052714cb85b93855188cc8394d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "describe-core-architectural-components-of-azure--6-describe-azure-management-infrastructure",
+      "pointHashes": [
+        "31ec4cc6ad023d6b52a27090fa781d2a15abd4e96e5a589e616c32606501f8ce",
+        "1254d739263946786524d40da4357464a2061f1ec01d8807fe50ad5d788733d4",
+        "3ac926574a6132262d419964f55c5bc882fbe95a196a1a5366061caff9c3ce6f",
+        "25d5dfe03d9887984ad2f11e53d962993b02789b4e0b742967a72c6753d226b3",
+        "04c6e99419666d048ce31030921121a0dc220c94804682e2d0f61ef43da38a8b",
+        "cb35be00df07b84d91268b5f2397f21b7b2e86b19c853d82450cc118d007988e",
+        "dd0b52ebdd99d1bd8e20750a751d6f64aea4142f502300fc2b3c984d40b4bdc1"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "A resource group contains resources; a resource belongs to one group at a time. Groups cannot be nested or renamed.",
+          "after": "A resource group contains resource-group-scoped resources; each belongs to one group at a time. Some resources, such as policy definitions, exist at subscription or management-group scope. Groups cannot be nested or renamed.",
+          "reason": "The training’s blanket resource-group membership statement overlooks subscription- and management-group-scoped resource types."
+        },
+        {
+          "before": "Settings assigned at parent scopes are inherited by child scopes, including subscriptions and their resources.",
+          "after": "Azure RBAC assignments and Azure Policy assignments at parent scopes apply to child scopes, including subscriptions and their resources.",
+          "reason": "Settings do not universally inherit: use the precise access and policy constructs taught in this unit."
+        }
+      ]
+    },
+    {
+      "id": "describe-core-architectural-components-of-azure--8-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/8-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "describe-core-architectural-components-of-azure--9-summary",
+      "pointHashes": [
+        "94dc8cf4d11d91ba4c502ea2632214a5e088bd414fd8c2a525298ec7118c1b96"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/9-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "sovereignty-policy-initiatives--overview",
+      "pointHashes": [
+        "018d9af05b7cc4cd3c2c3600a6aa118479392566918d5711a9d46023f5643439",
+        "6308a94ee094b51f1e7bc2c58c96861120c3503cea6cf9ccf1a6278d034db566"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/overview"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "sovereignty-policy-initiatives--cloud-adoption-framework",
+      "pointHashes": [
+        "0a0c1ee0483366bf5d6182fc4d2cbce6aabe9ee97a88c6c6e71a73a4acaa6720",
+        "e04ffd81a2676b0716fd0e989d1e314c95a1d1fa0e0b602ee14871cd8ff2bc39",
+        "10d22d1d9d5da564824f5a586099f347180400f91c5c4321a2f310aeabec0d42",
+        "896e41e52c0d3763a95ae74325b0c68f4a77b51c48af74ff243f5e3e6440bc6b",
+        "d7b0c22f88373c4913af4e34597faa57554ebbc37e49d54b72dff366b4f1b57a",
+        "48dda8fda2bb9e3da9ec30a2f83dcfa08c67c6709c1554b703275bfd328ae55b"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/cloud-adoption-framework"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Governance disciplines include cost management, security baseline, resource consistency, identity baseline and deployment acceleration.",
+          "after": "Governance policies cover regulatory compliance, security, operations, costs, data and resource management.",
+          "reason": "Use the current governance areas described in the same unit instead of presenting the older five-discipline model as the only current model."
+        }
+      ]
+    },
+    {
+      "id": "sovereignty-policy-initiatives--azure-policy-design-principles",
+      "pointHashes": [
+        "351c962cfdb75c9a416867fdb7c3a971421ba23622af423463e9b1ed5b5df916",
+        "2bfc7128c35443225a2b0e1a8bf5878503b647e02de0ef66eb9d1ca0ac7bab0c",
+        "742964521d7312e7754d16079224ef1f0bfa3e3495a6f15b5e13472e5db6a236",
+        "84a3fceb6ca190afff08b1faeb29fcb5a60bf6f5ac03827b6fc1e03b91a81e81",
+        "1e9413b9dfd6cb85e9c9088da16c90792da68c2863cd41c434c7c1c3dfbff388",
+        "8cf93bb9cb1291a0f7e088e6d7d8f375813c7d41252883c80d72bb8f27b9876c",
+        "6a19c7d4edea960ff021919366a744ec9bca1a5fdad8b950e8ff75862c57c9c8"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "sovereignty-policy-initiatives--azure-policy-resources",
+      "pointHashes": [
+        "32d17e36d4362349e0825a08299ddb04c57494afae1b1d91b7095224fe57bcd4",
+        "2d8ea06934fa5cc5c57d628aa5c1676138e15bf4611ae8d03eca58b31a630eda",
+        "b563b9aaf8a926d9d862f98abcbfeedd2d9cf735e7d0a4bd012feeb3fe450b48",
+        "a02df888e0c95467bdb911fe0f4d03b07b91ad99bf1c148506b1b50f99227464",
+        "0b39a045492325397ded455230ce9eba6ebb1e5d747fbceb2e4e044cf0fbe654",
+        "7f7d07cfc62898f87d05634bcfc81179eb6bc88068e028b5f12fb698c5229f12",
+        "d7b120661aa0a927d69dacd4208acbecf3cfba501c0272a12db5dde23b1b77f1"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources",
+        "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "A deployIfNotExists assignment can use a managed identity for remediation; choose the required identity and permissions deliberately.",
+          "after": "Remediation for deployIfNotExists or modify requires a managed identity on the assignment with the necessary Azure RBAC permissions.",
+          "reason": "A managed identity is required for remediation, rather than an optional feature of deployIfNotExists."
+        }
+      ]
+    },
+    {
+      "id": "sovereignty-policy-initiatives--azure-policy-definitions",
+      "pointHashes": [
+        "559e8f3e2bfd7a229b5ee4ba2ea64822f1b9aac4d4435bc9a08a07cadc5734e0",
+        "687c077368f27d7603236ea292b49e54f27fa8206c9ae2906cd3fad9314fc07f",
+        "e572077d0e256126fd927d4d2b9a09bc40f59ae49df8fa390f7b4967ea7cc85f",
+        "fbc5aff4f4a72ffd5c6125c1f691ccc3fb6d641b4b0995739a288579b25de957",
+        "99b670bcbcdfbaf51dc2fc44460dda6554efe55de2a44417c9588a1ffab70b04",
+        "92867f9a17a78986e57425dc19cabbb76175d77ca4ee3dcc5b9aed4f76862ff1",
+        "00a3a5956ec18af1ef8c8790a7f617db49d2384b11e7952f039785e83327eae9"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "sovereignty-policy-initiatives--azure-policies-evaluation-resources",
+      "pointHashes": [
+        "ce86394fba130feb2d148b559a2599f18cf5f9abb0634d66e84a390fc7ca6f68",
+        "e4b592a510abe6421fe59a747a77d9fee97691447f7ac524aed5ce7eef9cba31",
+        "2ab3ba536d2b623b64256241684996163d26975cc44cbf90f52ad2e417fb1111",
+        "4a45dcdbfb54a1b586438530deca3d7d527709fe09d22c23f33e4089739a45a3",
+        "878a374d3e15d047edec859d90cf444e38fa139a7da0cb9259081d08fc20f8e3",
+        "c1da06162a0cc56070ca84867fd27a02aaff1b7167f417fc0522d56831469ae4",
+        "48a7ab5e0becae62c577238409319c3d7e474a1efff0e2678c8dcad19233d67e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "sovereignty-policy-initiatives--check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "sovereignty-policy-initiatives--summary",
+      "pointHashes": [
+        "9087a8429545085412bf1d111cc7f5d35bd9dae0a053626654e4171737b879e7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "secure-azure-resources-with-rbac--1-introduction",
+      "pointHashes": [
+        "441f4d0b23edc0d329548cd85d86832f2f43822bb7e15edd339282b3fe3a57f0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "secure-azure-resources-with-rbac--2-rbac-overview",
+      "pointHashes": [
+        "f37cca8590625768f5ec297019ee9f2f82bdf6ee68e352ad92ae6da0b8f8b294",
+        "8d731bf45299c2633fd7d1d0c5757b6e0931fd1740f9f8c51277ba6c7dd18f7d",
+        "84fde49374cc149b55629ca5fac4959f3566cdad4209e6a1316af18678c846af",
+        "7c5725a8a0b091deee4a3ca19d0d384fe7dba382405213f874e4bb1b06c68659",
+        "fe2d61db68bf393b7aceab112ed52b972907f6daf9842001947809668f2c79bf",
+        "2c4eab0bc8bc97bdd462516a5c29bcbb9e96de42bfaaa545db55618e6a8d92f9",
+        "0d78858c407626f713481a3be12c3c7d667f0be80d4b97e76d13b78c7f33b7bc"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "secure-azure-resources-with-rbac--3-knowledge-check-rbac-overview",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/3-knowledge-check-rbac-overview"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "secure-azure-resources-with-rbac--4-list-access",
+      "pointHashes": [
+        "7d81b5f636bcbaac6343857c03b3029f6fcdca9f83709839402632636c026f55",
+        "a9833abf98dd9e8974f52d2c17332260d3e41a987c8882f57c1de349f68e3aa2",
+        "d2a15089f6fa5c0496e29899abfebd412bc6f434d0546ce4596c4de3255793c4",
+        "5488a0009cf55bc18c95ba17b4d9f251964a95a9ff3166e07196449751ae58f2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "secure-azure-resources-with-rbac--5-grant-access",
+      "pointHashes": [
+        "3cd00785ad2bc57d412a879b511405bba35b8ebb0d9c321949132bd21e865a83",
+        "4b90fa76733bf7b953b9c508fdcd78ebefee95b8ceaa5de0d21a5ff5b4db2ac8",
+        "531cd37a34949b4d6e78c8febfb04569708cccea9864442bb66b3c005126e5ff",
+        "29e4c9bff2cc0e9bab3bc92e2bf7da8200fa36a82c5fd92fc6ec6bcbbf91727f",
+        "bc5b631290501fd6beb3d1a76e08d7bbe4712571b6524f670ddf650e8c70b777"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "secure-azure-resources-with-rbac--6-view-activity-logs",
+      "pointHashes": [
+        "29284449aaae4bd9e1d44b69bb248c33ef09bcdc8360b421e2ca2e6197d8902c",
+        "dd27b17004fc22c4a43c1ef07df07ec3bfb5e714ec61028eab1389ca64a41b5a",
+        "613f944043628bcf0352145aff931a03e2b4fb59580ec4e7455531d1a1e242a0",
+        "e2f780fad40922ee1349e8202fe0d4756392514fbd558020eb981c2d9a0e2f60"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "secure-azure-resources-with-rbac--7-knowledge-check-rbac",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/7-knowledge-check-rbac"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "secure-azure-resources-with-rbac--8-summary",
+      "pointHashes": [
+        "c063e094402e3151f0434ae3dc98e5ab9883b9829fce9bfe10935f6531912a8d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/8-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "allow-users-reset-their-password--1-introduction",
+      "pointHashes": [
+        "280ccca84b7a50f085c0cfeb0b9b8ec9e20b574b629ae40e1fe42450d1debfdd"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "allow-users-reset-their-password--2-self-service-password-reset",
+      "pointHashes": [
+        "f5faaecaae63577728cd0b363a59161a1544cea45100d29ff877c92eb2016c38",
+        "6a0928b7f6719a42cf42550f0dfe4a0b556b28859424cc6575418d5e61792724",
+        "2fe46cd754ef11b000276c6f104bc2ed7c3e9b19793a174f9ee5f7027202c6e8",
+        "df69d0570c645619d4190085dd25ae6ef0f02917590dd94641aa69f5d074618e",
+        "5339ff423491bc093e15fafa39ed4d6c7cedcd5f6d6cac5dcad5b963b7a1b5cf",
+        "de04197a6dbdc345976b31c99dc388d750570e84e5fd46ecda5de18652908c70",
+        "03716e9d17d995c2b638d75fe8d13c607204f8e96888e8f40e2264bec4ae96cd"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "The reset process identifies the user, verifies identity using configured methods, accepts a new password and sends a notification.",
+          "after": "The reset process identifies the user, verifies identity using configured methods, accepts a new password and can send configured notifications.",
+          "reason": "User reset notifications are configurable, not unconditional."
+        },
+        {
+          "before": "Configure notifications so users can notice an unexpected reset and administrators can be alerted to other administrator resets.",
+          "after": "Enable user notifications to reveal unexpected resets, and enable administrator notifications so Global Administrators are alerted when another administrator resets a password.",
+          "reason": "Current documentation identifies Global Administrators as recipients, rather than every administrator role."
+        },
+        {
+          "before": "Check the required licenses for your users and deployment. Hybrid password writeback needs supported licensing and synchronization configuration.",
+          "after": "Cloud-only password reset requires an eligible Microsoft 365 or Entra premium license. On-premises password writeback requires Entra ID P1/P2 or Microsoft 365 Business Premium plus supported synchronization configuration.",
+          "reason": "Replace a vague licensing reminder with verified requirements; Business Standard alone does not permit writeback."
+        }
+      ]
+    },
+    {
+      "id": "allow-users-reset-their-password--3-implement-azure-ad-self-service-password-reset",
+      "pointHashes": [
+        "17feb2eb840bbef12e141251830e526050186cfe6f0dddb1f3577377282f9614",
+        "d36d061731b058b187c98d3388613efc4cb9160c80184d1e14736227a5d664c5",
+        "20f650b7c563fe3f0bd2c5282d9a698b257ab156323423b3a05f501b56c50442",
+        "82ccbb2de2823bb692b99c581ff04fdd1386c8f164373951e00015ea0e72675d",
+        "1934ff294eafd5bad9d19abff8c2389bfa7a978b52f89fffb454ed223ddc9815",
+        "251b98765ae4893a390387da0723beea4ff43e2521da03e887163c8e5217b5b6"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-methods-manage"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Configure the required number of authentication methods and the allowed methods.",
+          "after": "Set the required number of methods in Password reset. Manage allowed methods in the Authentication methods policy; security questions remain in the SSPR policy.",
+          "reason": "Legacy MFA and SSPR method controls were deprecated from September 30, 2025; use the current policy while retaining the security-question exception."
+        }
+      ]
+    },
+    {
+      "id": "allow-users-reset-their-password--4-exercise-set-up-self-service-password-reset",
+      "pointHashes": [
+        "7bffde61da4c89688e87e8cad6ac17068bbfca9eb56a28e783fb1230e56a3149",
+        "f6a426b24d337d94d2668cc52f1f5b146edaa0fb30cef3d653489f3246a3704f",
+        "bd9d6aaa4b2be44931a438074662843e79daee51ce6b3abb4eac3873db962f0e",
+        "0ccf9df185ca1a5117a9d5b564830d382d8f28df07139d206ce9fdd846605b60",
+        "e64b29e69b4f5349e03e7b038f72edf07d86fcba66ba8b0dfeb575b60053b110",
+        "c811bc8432acac0b7b0312913f951d3234d60befe6bfdd135c3099a2825956b4"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-methods-manage"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Review authentication methods, registration and notifications, and configure the helpdesk contact.",
+          "after": "Review the required method count, registration and notifications in Password reset, enable Email OTP for the pilot users in the Authentication methods policy, and configure the helpdesk contact.",
+          "reason": "Update the exercise’s legacy Email method configuration to the current authentication policy."
+        }
+      ]
+    },
+    {
+      "id": "allow-users-reset-their-password--5-exercise-customize-directory-branding",
+      "pointHashes": [
+        "e2844a95266d9d939b24c42f71ac6ebab3b82ef68f1b1836f22f80edbeb08849",
+        "d035b8b40d164ef41b6ca7e6db7253c2dee6e8ccf2557ffe1d2c77b06ee72206",
+        "4d9d586b8b8ccfa891de4606db95fcb556aa0993437f5b5332fce13ff6d2df9b",
+        "53556f6fbd3d770be21b9c29740daa7c035c4dfc79cd8b58d71b6d4b7db40d16"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Prepare the background and logo image files according to the official exercise’s format and size requirements.",
+          "after": "Use an eligible licensed tenant and an Organizational Branding Administrator, then prepare background and logo files to the current branding image requirements.",
+          "reason": "Include required licensing/role and use current image requirements rather than relying on old exercise sizing."
+        }
+      ]
+    },
+    {
+      "id": "allow-users-reset-their-password--6-summary",
+      "pointHashes": [
+        "c6c019223eaaca6e43c8c2b90a62270977016f7580423d35a5e198347cc32a94",
+        "078a533c20543f679fdd2fef7d6796e4e85607eeef12c8131e65532aa41957c7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/6-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    }
+  ],
+  "findings": []
+}

@@ -1,0 +1,572 @@
+{
+  "checkedAt": "2026-10-08T11:47:51.320Z",
+  "reviewKind": "Independent AI-assisted semantic official-source comparison",
+  "humanApproval": false,
+  "findings": [],
+  "corrections": [
+    {
+      "lessonId": "configure-network-security-groups--2-implement-network-security-groups",
+      "sectionTitle": "Understand the combined result",
+      "issue": "Unqualified two-scope NSG rule omitted terminating Azure Virtual Network Manager security admin actions.",
+      "correction": "Qualified the rule for traffic reaching NSG evaluation and described admin Deny/Always allow versus ordinary Allow.",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ]
+    },
+    {
+      "lessonId": "configure-network-security-groups--4-determine-network-security-groups-effective-rules",
+      "sectionTitle": "Evaluate every applicable scope",
+      "issue": "Unqualified two-scope NSG rule omitted terminating Azure Virtual Network Manager security admin actions.",
+      "correction": "Qualified the rule for traffic reaching NSG evaluation and described admin Deny/Always allow versus ordinary Allow.",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ]
+    },
+    {
+      "lessonId": "configure-network-security-groups--7-simulation-create-network-groups",
+      "sectionTitle": "Configure and check the associations",
+      "issue": "Unqualified two-scope NSG rule omitted terminating Azure Virtual Network Manager security admin actions.",
+      "correction": "Qualified the rule for traffic reaching NSG evaluation and described admin Deny/Always allow versus ordinary Allow.",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "lessonId": "configure-virtual-networks--2-plan-virtual-networks",
+      "sectionHashes": [
+        "f7a186d60087164221c1864e64f9bd60bd311c22f883169a264fb3f89e871716",
+        "fb3852d0b16a3c9ba850ccfba2714536fd6652f20b3e87772bd9501bc09de5cc",
+        "03a0a99b4d987b002c2930da298a373736e7f42a8180c16717de2d69a5741aae"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/2-plan-virtual-networks",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Compared all new paragraphs and steps with the exact teaching/exercise unit and current VNet/public-IP documentation. Checked nonoverlap, CIDR usable-address arithmetic, association owners, Standard static lifecycle and supported resource/zone qualifiers. Original example address ranges are internally valid; security permission is kept separate from address allocation and routing."
+    },
+    {
+      "lessonId": "configure-virtual-networks--3-create-subnets",
+      "sectionHashes": [
+        "b36caa3e921df270ea69ad49102a2e4ae03b61c5bf440899d1b1bff7a25ab8be",
+        "6004b5a9a93f2901409d54153ad91620353bef2c705db9ca3ff4950ddc90065b",
+        "ced3ed341f6351045f87fffefee197ca1c769b9e3e07f9eeb092f8bac3170826"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Compared all new paragraphs and steps with the exact teaching/exercise unit and current VNet/public-IP documentation. Checked nonoverlap, CIDR usable-address arithmetic, association owners, Standard static lifecycle and supported resource/zone qualifiers. Original example address ranges are internally valid; security permission is kept separate from address allocation and routing."
+    },
+    {
+      "lessonId": "configure-virtual-networks--4-create-virtual-networks",
+      "sectionHashes": [
+        "03dccaf0e2f89f6d6b8048505575ee0501cee6d735652fe43d3345dad3cd36d8",
+        "42c13f95c3a34a56654eb2b26809132e6c0d495121e69d58e9e3b3b1bcd0d98a",
+        "50ab0df52e39f60169ea491e25a61980b97213b54824f22a14a52422fe2ec72e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/4-create-virtual-networks",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ],
+      "notes": "Compared all new paragraphs and steps with the exact teaching/exercise unit and current VNet/public-IP documentation. Checked nonoverlap, CIDR usable-address arithmetic, association owners, Standard static lifecycle and supported resource/zone qualifiers. Original example address ranges are internally valid; security permission is kept separate from address allocation and routing."
+    },
+    {
+      "lessonId": "configure-virtual-networks--5-plan-addressing",
+      "sectionHashes": [
+        "8f53268d6b6ba6357d4a7c392129abfce898ef30954dd043fab5b2be6573de5f",
+        "a745cd0de300dfa8527f3efefdb66887403558d0157a78046b69d135bac2382d",
+        "6ed18e31826844ebc4e365d39878d2e1f7228aaf8de8a9e649d22d3d441bf1bb"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/5-plan-addressing",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ],
+      "notes": "Compared all new paragraphs and steps with the exact teaching/exercise unit and current VNet/public-IP documentation. Checked nonoverlap, CIDR usable-address arithmetic, association owners, Standard static lifecycle and supported resource/zone qualifiers. Original example address ranges are internally valid; security permission is kept separate from address allocation and routing."
+    },
+    {
+      "lessonId": "configure-virtual-networks--6-create-public-ip-addressing",
+      "sectionHashes": [
+        "15baf7cbde3fabcbb7dbac73c41190624768af8dc6f7bd7327c2774957dbbabd",
+        "97fcdaf1e9100ff8c3840be9ee29a6a89427a864447893be6982df44e9f954f5",
+        "3f7b2c023c950f5da4cf2b528537cd684c3ad2b109880794da88987e829e2bf2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/6-create-public-ip-addressing",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ],
+      "notes": "Compared all new paragraphs and steps with the exact teaching/exercise unit and current VNet/public-IP documentation. Checked nonoverlap, CIDR usable-address arithmetic, association owners, Standard static lifecycle and supported resource/zone qualifiers. Original example address ranges are internally valid; security permission is kept separate from address allocation and routing."
+    },
+    {
+      "lessonId": "configure-virtual-networks--7-associate-public-ip-addresses",
+      "sectionHashes": [
+        "a810c3cb245b9344665a9fa550960a16d965ab56acda1cf8601c60b2d95f4422",
+        "7fd676393bb623c22794043b26fbba648e73add44e7d9a88536613c317c652a7",
+        "77468ae6691b14e4175c5eb0e7e61effe2bff646f6fb4a09fa6eba439450c660"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/7-associate-public-ip-addresses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Compared all new paragraphs and steps with the exact teaching/exercise unit and current VNet/public-IP documentation. Checked nonoverlap, CIDR usable-address arithmetic, association owners, Standard static lifecycle and supported resource/zone qualifiers. Original example address ranges are internally valid; security permission is kept separate from address allocation and routing."
+    },
+    {
+      "lessonId": "configure-virtual-networks--8-associate-private-ip-addresses",
+      "sectionHashes": [
+        "a500454c102033f6f8d9079bb9127fc3656d71809ab57aa9691cdc916c4b6603",
+        "a95b34c7043426504556bec4af84c59725b2bfa432f1af785ee65fc42a15815a",
+        "dfd007b15132c25d6f6660a9aa50af443a66733837d730dfba52029dc379c634"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/8-associate-private-ip-addresses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Compared all new paragraphs and steps with the exact teaching/exercise unit and current VNet/public-IP documentation. Checked nonoverlap, CIDR usable-address arithmetic, association owners, Standard static lifecycle and supported resource/zone qualifiers. Original example address ranges are internally valid; security permission is kept separate from address allocation and routing."
+    },
+    {
+      "lessonId": "configure-virtual-networks--9-simulation-create-networks",
+      "sectionHashes": [
+        "774f8a3a5adf78c417b3192f707e45b2179cde2f0ca38b13833cdcf15605e370",
+        "2311058acc5694a0491d4692677df7ded13e8fb58aa9a1042cacf2a7014a50b1",
+        "c1a9ea747fa887474742b0fb9174c978b0322c66c5f7764eb54454dcd9fb5f86"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/9-simulation-create-networks",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Compared all new paragraphs and steps with the exact teaching/exercise unit and current VNet/public-IP documentation. Checked nonoverlap, CIDR usable-address arithmetic, association owners, Standard static lifecycle and supported resource/zone qualifiers. Original example address ranges are internally valid; security permission is kept separate from address allocation and routing."
+    },
+    {
+      "lessonId": "configure-network-security-groups--2-implement-network-security-groups",
+      "sectionHashes": [
+        "3933a25cdddaf675ff3e5cbad68bd873576e01b083706b370aed9394c932ae33",
+        "659d2d52ac8d956a65103b1363d719cb0c8f9cba98c30de4e1360a5e6ba9bb50",
+        "91ecd33cedaade21a5acbd327f670b933062f952eae39a3e2523ed31a3992bf3"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/2-implement-network-security-groups",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current NSG/ASG documentation. Checked independent scope ordering, local priorities, default rules, augmented selectors, stateful existing flows, same-subnet filtering, ASG VNet restrictions and admin-rule evaluation. Three repeated two-scope statements were qualified for traffic that reaches NSG evaluation; no unresolved factual finding."
+    },
+    {
+      "lessonId": "configure-network-security-groups--3-determine-network-security-groups-rules",
+      "sectionHashes": [
+        "e29c16eeaa1c5350c80caebe8d6c8a3e031d3ef79f8d76ee1e0e2077af168678",
+        "5b5cbb920e55ed5608be3947cc092f10b91beace0aa70a046bf414d3aa967629",
+        "23f9a9ab8670dbe4dd5f3e1e0614d030bec744903a5b9fd70449166ab74cf8a1"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/3-determine-network-security-groups-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current NSG/ASG documentation. Checked independent scope ordering, local priorities, default rules, augmented selectors, stateful existing flows, same-subnet filtering, ASG VNet restrictions and admin-rule evaluation. Three repeated two-scope statements were qualified for traffic that reaches NSG evaluation; no unresolved factual finding."
+    },
+    {
+      "lessonId": "configure-network-security-groups--4-determine-network-security-groups-effective-rules",
+      "sectionHashes": [
+        "9db68781035be13da16533fca63de6d4269416567f5f643b1710af26c10066d6",
+        "93ad0c84e71cc6d4e73ce728f53607905d1bcc695b3e732e766f5d868d95c4e1",
+        "2e21e9f507d0e3a1154093ade574bf1063488c10afda591a2ab17119577fe7c9"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current NSG/ASG documentation. Checked independent scope ordering, local priorities, default rules, augmented selectors, stateful existing flows, same-subnet filtering, ASG VNet restrictions and admin-rule evaluation. Three repeated two-scope statements were qualified for traffic that reaches NSG evaluation; no unresolved factual finding."
+    },
+    {
+      "lessonId": "configure-network-security-groups--5-create-network-security-groups-rules",
+      "sectionHashes": [
+        "2a34bd7df3d6adeaa511e0ea72eb315221819fa6a2282500a9b773a51b414709",
+        "fb37fc430ceaabb49ebd91715b7055fa9d377dd9e757fd0265548e2457651f08",
+        "c38517e706e66e4dd0586170112f44005a2ee0bbad0df314d86cb147cd8a29d6"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/5-create-network-security-groups-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current NSG/ASG documentation. Checked independent scope ordering, local priorities, default rules, augmented selectors, stateful existing flows, same-subnet filtering, ASG VNet restrictions and admin-rule evaluation. Three repeated two-scope statements were qualified for traffic that reaches NSG evaluation; no unresolved factual finding."
+    },
+    {
+      "lessonId": "configure-network-security-groups--6-implement-asgs",
+      "sectionHashes": [
+        "0dfae28c40dad6ee01efb407d4368547158f0cd26b821e0bea85b0b6ab0722ae",
+        "751b55232b29072cf2d5994a19f53ef95eacad9c5571b981e6a41665cb8095d7",
+        "132e2177efe4b0197000cc728a97ba6b53dcecc3f218ac3872d8d2463795b439"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/6-implement-asgs",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current NSG/ASG documentation. Checked independent scope ordering, local priorities, default rules, augmented selectors, stateful existing flows, same-subnet filtering, ASG VNet restrictions and admin-rule evaluation. Three repeated two-scope statements were qualified for traffic that reaches NSG evaluation; no unresolved factual finding."
+    },
+    {
+      "lessonId": "configure-network-security-groups--7-simulation-create-network-groups",
+      "sectionHashes": [
+        "ba710b599d106e1fca5911303d1c05c9c5d523b124fb60ef67c399c0696bf7c1",
+        "59cd444df49b3be690d83f3afef1099eb553371509e1a0f97643dd34365c0641",
+        "38105f6e94998fb64dee4d9a07f85fb6f7b9898ea168a93849058f3f9bff9ead"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/7-simulation-create-network-groups",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current NSG/ASG documentation. Checked independent scope ordering, local priorities, default rules, augmented selectors, stateful existing flows, same-subnet filtering, ASG VNet restrictions and admin-rule evaluation. Three repeated two-scope statements were qualified for traffic that reaches NSG evaluation; no unresolved factual finding."
+    },
+    {
+      "lessonId": "host-domain-azure-dns--2-what-is-azure-dns",
+      "sectionHashes": [
+        "502d0c4cacfe703b7e0261eb7bd7810f244d6bf820481ac229699886e71516c9",
+        "2867f723d471707be1596e9f7dfe02e6af6ac76c62de872363cc81c37e592fa3",
+        "fd758d2606490b64107ac3ea04a19436cb8a82b1808bb9fc338776e02c962676"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+        "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-alias"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current DNS records, private-zone, delegation and alias documentation. Checked apex CNAME restrictions, four-name-server delegation, authoritative-server testing without registration, per-VNet links, supported alias targets and deletion-to-empty lifecycle. Application response and DNS verification remain distinct."
+    },
+    {
+      "lessonId": "host-domain-azure-dns--3-configure-azure-dns-host-domain",
+      "sectionHashes": [
+        "8885c76fd51a609bd6d2c34a6ae864b1214ec13dec675fd68d242434fff03ada",
+        "9f554f91562a52686bd0efc2f211d1c88cb1f99c1d59fe05fbf80d6902cfcef5",
+        "673aa04a543aca030d3423edb2c5f19b62d8b062106ad17e4aed71c3ea6743fd"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-domain-delegation",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+        "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current DNS records, private-zone, delegation and alias documentation. Checked apex CNAME restrictions, four-name-server delegation, authoritative-server testing without registration, per-VNet links, supported alias targets and deletion-to-empty lifecycle. Application response and DNS verification remain distinct."
+    },
+    {
+      "lessonId": "host-domain-azure-dns--4-exercise-create-dns-zone-a-record",
+      "sectionHashes": [
+        "26546cfc57119740a40f5ceb06fa0b6ff6ee466207d5f2f0022b3ce69d01c9e7",
+        "37584640d90517e8e8a418eee826d8a8ca9f9302477e0c8fa52d5ea7bf6b18e6",
+        "c3c700473fa21bcc81f98939d5830b1bb774ad41080989df5f74e2315e929efc"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/4-exercise-create-dns-zone-a-record",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-domain-delegation"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current DNS records, private-zone, delegation and alias documentation. Checked apex CNAME restrictions, four-name-server delegation, authoritative-server testing without registration, per-VNet links, supported alias targets and deletion-to-empty lifecycle. Application response and DNS verification remain distinct."
+    },
+    {
+      "lessonId": "host-domain-azure-dns--5-resolve-name-alias-record",
+      "sectionHashes": [
+        "3f55a6b71d7c985b2268151c644f3b6605032e6a97b492b9e32717c3b7625e4a",
+        "49eab0234e006d9f0d567c1820500fa5b6198390ca0f606c92d5b036ae96d8c4",
+        "5335e892373882250e556033f806fd7c0a37c5bca92f0d706836da492706b209"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/5-resolve-name-alias-record",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-alias"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current DNS records, private-zone, delegation and alias documentation. Checked apex CNAME restrictions, four-name-server delegation, authoritative-server testing without registration, per-VNet links, supported alias targets and deletion-to-empty lifecycle. Application response and DNS verification remain distinct."
+    },
+    {
+      "lessonId": "host-domain-azure-dns--6-exercise-create-alias-records",
+      "sectionHashes": [
+        "1ff9df162d1b1c38bd78858d291711c50841936aa36916c73a25bf1c30b2b832",
+        "ef372972fb196b0cf74aff99f35260d0654cf3fae9a5c6d3e233ecb1adea1eaf",
+        "1b0020485c2862fee0d59df121e92edf3ad6c059eff0d5d29c82f16720c39dc2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/6-exercise-create-alias-records",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-alias",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-domain-delegation",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current DNS records, private-zone, delegation and alias documentation. Checked apex CNAME restrictions, four-name-server delegation, authoritative-server testing without registration, per-VNet links, supported alias targets and deletion-to-empty lifecycle. Application response and DNS verification remain distinct."
+    },
+    {
+      "lessonId": "configure-vnet-peering--2-determine-uses",
+      "sectionHashes": [
+        "f83f22acec29c655f7d9125498050e5b056b291a9d83437cf47781976425d547",
+        "893526906242013d6390486c9339c34b9feff6f137507c0be1a08098ded37d42",
+        "c29f742394c6a50eb333d825e740a7d713e7aa2845f88f4cfe703378d059fca4"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current peering/transit documentation. Checked nontransitivity, independent DNS, reciprocal status, address-space sync, permissions, Basic VPN gateway transit exclusion, remote gateway prerequisites, forwarded traffic and the ExpressRoute UDR-next-hop exclusion."
+    },
+    {
+      "lessonId": "configure-vnet-peering--3-determine-gateway-transit-connectivity",
+      "sectionHashes": [
+        "ab61123b9d746227e7210a99f6877740bab7d1122e97dfe59d0d0b6e4ae0c4f7",
+        "49b165ce9e05a83b74d588fa8173824572e67b8dab02bbe37c6554de3a554510",
+        "b9b44fd54e6b4cb3c086e3c9bba877bbd2e321dd3f7e53e1e62e8705bc1a3abf"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/3-determine-gateway-transit-connectivity",
+        "https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-peering-gateway-transit",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current peering/transit documentation. Checked nontransitivity, independent DNS, reciprocal status, address-space sync, permissions, Basic VPN gateway transit exclusion, remote gateway prerequisites, forwarded traffic and the ExpressRoute UDR-next-hop exclusion."
+    },
+    {
+      "lessonId": "configure-vnet-peering--4-create",
+      "sectionHashes": [
+        "8908e2a60390c59e7eb28110902ff34f012d632c1b7857031def5343a3826bfb",
+        "922283add2a49e9e896dca1815940e3ed75d1db259baa1ae7827e4bb33ae4b24",
+        "ba1bf0d4a911ff614ec0fa4e17a1c2c907ae41f463b63253798332139960e108"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/4-create",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "https://learn.microsoft.com/en-us/azure/vpn-gateway/vpn-gateway-peering-gateway-transit",
+        "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current peering/transit documentation. Checked nontransitivity, independent DNS, reciprocal status, address-space sync, permissions, Basic VPN gateway transit exclusion, remote gateway prerequisites, forwarded traffic and the ExpressRoute UDR-next-hop exclusion."
+    },
+    {
+      "lessonId": "configure-vnet-peering--5-determine-service-chaining-uses",
+      "sectionHashes": [
+        "4ad7ce4279f7fa6c6507a5f8c07c2ed8a7f85062a67eefb2e01daf77415b3137",
+        "ebba15b5c09c6d0317cc0a0366688417737948f28baa4a34b26ae75987aaa516",
+        "e166794d81a7f137dc30ffed69386725d8e8889c19306efd4df336e074cdb23a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/5-determine-service-chaining-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current peering/transit documentation. Checked nontransitivity, independent DNS, reciprocal status, address-space sync, permissions, Basic VPN gateway transit exclusion, remote gateway prerequisites, forwarded traffic and the ExpressRoute UDR-next-hop exclusion."
+    },
+    {
+      "lessonId": "configure-vnet-peering--6-simulation-peering",
+      "sectionHashes": [
+        "8c3fa32aa0c2ab1bde23ee4ef046361bf33037131544686b255befcf5262230c",
+        "2a257750f6ab51d2f67fccad495b7b9a5cf4c2dd5298e542c04f87d309b8664d",
+        "7466c63ac5db0782073391de17e48f796ed06d904eae8bc83a4d27817349e3a3"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/6-simulation-peering",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with the exact unit and current peering/transit documentation. Checked nontransitivity, independent DNS, reciprocal status, address-space sync, permissions, Basic VPN gateway transit exclusion, remote gateway prerequisites, forwarded traffic and the ExpressRoute UDR-next-hop exclusion."
+    },
+    {
+      "lessonId": "control-network-traffic-flow-with-routes--2-azure-virtual-network-route",
+      "sectionHashes": [
+        "8053fbdaec3e60191b0c93276bea2de89a0eeb80cb9cd870965ec6b9bbeed60b",
+        "9dfd74807dfccef64bd292b28f41b7349e4e44597f6aaaa6dc13a12a76d7fb34",
+        "c0de55cb3afc956003ea8b46799519b7d76b524188cf00b4689a041c513caa96"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem"
+      ],
+      "notes": "Compared all paragraphs and steps with exact route/NVA exercise units and current routing documentation. Checked longest prefix plus preferred-system exceptions, subnet associations, destination versus next-hop values, Azure NIC and guest forwarding, provisioning versus cloud-init completion, asymmetrical lab return path, filtering and supported appliance HA design. Original example CIDRs and IPs are valid."
+    },
+    {
+      "lessonId": "control-network-traffic-flow-with-routes--3-exercise-create-custom-routes",
+      "sectionHashes": [
+        "aaa56017c3064e818b6cd7cc3e65317b57b766a35124e0a64be408667e5e97a4",
+        "fd454aa423a54ae7aab2ceedcf6bcf883bd92f87ec576ac485a0acde71902e1d",
+        "47131168551444f9925017a7afa9ba0561452fcf94ba64d370846db53c325ad5"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/3-exercise-create-custom-routes",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with exact route/NVA exercise units and current routing documentation. Checked longest prefix plus preferred-system exceptions, subnet associations, destination versus next-hop values, Azure NIC and guest forwarding, provisioning versus cloud-init completion, asymmetrical lab return path, filtering and supported appliance HA design. Original example CIDRs and IPs are valid."
+    },
+    {
+      "lessonId": "control-network-traffic-flow-with-routes--4-network-virtual-appliances",
+      "sectionHashes": [
+        "50b0f3e18210dac92d927b25481e81cc1ae5aa99933c4f3981453623e188144c",
+        "cc9b1a94460e6bff5e734cbef82e3e17eb350198be546a0ad13d1669837d28ee",
+        "b6bfb7acf50c2994498415abb27234a29599760b91fbee7de97b0b29cd2208f7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/components"
+      ],
+      "notes": "Compared all paragraphs and steps with exact route/NVA exercise units and current routing documentation. Checked longest prefix plus preferred-system exceptions, subnet associations, destination versus next-hop values, Azure NIC and guest forwarding, provisioning versus cloud-init completion, asymmetrical lab return path, filtering and supported appliance HA design. Original example CIDRs and IPs are valid."
+    },
+    {
+      "lessonId": "control-network-traffic-flow-with-routes--5-exercise-create-nva-vm",
+      "sectionHashes": [
+        "0303cbbd8fb85565a470ff7614e4cc75e5959b899590356ca9770f562cb8505b",
+        "c059a770acd0340fea09848e097f228de3384afc8ec282c69e58c00fa55adbca",
+        "1b567732c8996b5b1946ec142711d6a6df61693c0652b51e0ba6255f3c5c5412"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with exact route/NVA exercise units and current routing documentation. Checked longest prefix plus preferred-system exceptions, subnet associations, destination versus next-hop values, Azure NIC and guest forwarding, provisioning versus cloud-init completion, asymmetrical lab return path, filtering and supported appliance HA design. Original example CIDRs and IPs are valid."
+    },
+    {
+      "lessonId": "control-network-traffic-flow-with-routes--6-exercise-route-traffic-through-nva",
+      "sectionHashes": [
+        "aa5294c22f0f99517c559b30fa02b7d5216fc2f487ab20515f028acca5fc777c",
+        "270eb987db57c1268ba488c49bebf42317dd5cf417fc0eb2f2908f9b38fac832",
+        "cef2471a34de26d8cf5cb84e492c1dc8a9e09716c0a247096904b102390e72d6"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem"
+      ],
+      "notes": "Compared all paragraphs and steps with exact route/NVA exercise units and current routing documentation. Checked longest prefix plus preferred-system exceptions, subnet associations, destination versus next-hop values, Azure NIC and guest forwarding, provisioning versus cloud-init completion, asymmetrical lab return path, filtering and supported appliance HA design. Original example CIDRs and IPs are valid."
+    },
+    {
+      "lessonId": "intro-to-azure-load-balancer--2-what-is-azure-load-balancer",
+      "sectionHashes": [
+        "5206019ab77c78ba8e49cfb908abff92dc964945fcabfd974743a905b3ef747e",
+        "02b839629e5f808b33058d2ce4baf6f4d5780c7b0edc17321414cf4f42945dad",
+        "ec833a016d2dda59718ae493668d10d6e52bc7d001ec2ed68d614062b6a9d1ff"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with exact units and retained current overview/components/probe documentation. Checked Layer 4 five-tuple flows, new-flow probe exclusion, TCP listener versus HTTP 200 readiness, private/public exposure, NSG permission, affinity, NAT/SNAT and internal Standard HA ports. Service comparisons describe requirements without a universal selection claim."
+    },
+    {
+      "lessonId": "intro-to-azure-load-balancer--3-how-azure-load-balancer-works",
+      "sectionHashes": [
+        "61f04dc61a5ecd503a7e4b00654b158c2a6a0c80aebe858b532a6ea802603841",
+        "4eb0d9a27000ceb37814673ceba3ed9a0ae959546d0d34edca91e76883d9dcdc",
+        "adeacaefa5827b05ba326b3608cb7c3208cb6a902819d64794131874b6732306"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/components",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+      ],
+      "notes": "Compared all paragraphs and steps with exact units and retained current overview/components/probe documentation. Checked Layer 4 five-tuple flows, new-flow probe exclusion, TCP listener versus HTTP 200 readiness, private/public exposure, NSG permission, affinity, NAT/SNAT and internal Standard HA ports. Service comparisons describe requirements without a universal selection claim."
+    },
+    {
+      "lessonId": "intro-to-azure-load-balancer--4-when-to-use-azure-load-balancer",
+      "sectionHashes": [
+        "8eb92053e8cc9d3a84e8344bcb714ceea2b0677fbfc8b14f191444aa43583011",
+        "d8698f07453bded693968579ef0a109ee073a5fe8813d8dc09158469c25d3396",
+        "f5272cdd553e3e6b499df8e62892a753e8dade0f20721295d0a07c229db658f4"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with exact units and retained current overview/components/probe documentation. Checked Layer 4 five-tuple flows, new-flow probe exclusion, TCP listener versus HTTP 200 readiness, private/public exposure, NSG permission, affinity, NAT/SNAT and internal Standard HA ports. Service comparisons describe requirements without a universal selection claim."
+    },
+    {
+      "lessonId": "intro-to-azure-application-gateway--2-what-is-azure-application-gateway",
+      "sectionHashes": [
+        "0c30e915ada1388dbaf96e9ad5b7b221d5507ea9401e6e5a1c3994b1aaf53d41",
+        "e7c0740f19913d496cf0549d155066f05cd97bae6c856c75c1223ad13c772e95",
+        "90d0037ffb776cbdc6e35584a4e15e051737d2334858a2acfc936a9fa4f69ed8"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+      ],
+      "notes": "Compared all paragraphs and steps with exact units and current feature/listener documentation. Checked host/path routing and priorities, backend reachability, default 200–399 probe range versus Load Balancer HTTP 200, independent TLS legs, client-only HTTPS HTTP/2 with HTTP/1.1 backends, v2 autoscale, draining and session-state limits."
+    },
+    {
+      "lessonId": "intro-to-azure-application-gateway--3-how-azure-application-gateway-works",
+      "sectionHashes": [
+        "d5fd7c99cf540fb539b5435e1dd701466250683cd3345b2ffa50160c8b312995",
+        "bff7d35a704e6ac8bee3060ac865554ddd2411f2f1da94f766f2ed9422321865",
+        "999a0fd79541529f7ef9872a12af298fe0efaf8155ecf2e21901bd995db30ba2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/configuration-listeners",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with exact units and current feature/listener documentation. Checked host/path routing and priorities, backend reachability, default 200–399 probe range versus Load Balancer HTTP 200, independent TLS legs, client-only HTTPS HTTP/2 with HTTP/1.1 backends, v2 autoscale, draining and session-state limits."
+    },
+    {
+      "lessonId": "intro-to-azure-application-gateway--4-when-to-use-azure-application-gateway",
+      "sectionHashes": [
+        "049d7b03b6bf1618a45fe2048c0b34437e7ee7b91b2478c80393e1da9a18685f",
+        "deb673228ff377adea5ed2fb1232d7fbf731bff6c0a1d703ec91d3fe2841ad22",
+        "35379f97eeae4973b41c0dd13c5841d886fda3540577f8c75bcadea7f5add510"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/4-when-to-use-azure-application-gateway",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with exact units and current feature/listener documentation. Checked host/path routing and priorities, backend reachability, default 200–399 probe range versus Load Balancer HTTP 200, independent TLS legs, client-only HTTPS HTTP/2 with HTTP/1.1 backends, v2 autoscale, draining and session-state limits."
+    },
+    {
+      "lessonId": "intro-to-azure-network-watcher--2-what-is-azure-network-watcher",
+      "sectionHashes": [
+        "67d61dcc7a926a75e52cdb077d051ee58677bebf19dfb14ada305f0b0ddba806",
+        "11936f9f849551cf795087ea068a3b86050c05981eb7c585a0dc024a0c50f7a9",
+        "f2fd55593f8412b30cb19dcdc4c8581c65988ae7530e3ab9205cfe00618a929b"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/nsg-flow-logs-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with exact units and current overview, Connection Monitor and flow-log documentation. Checked diagnostic tool inputs and scope, filtering-versus-connectivity distinction, automatic enablement opt-out, Azure extension versus on-premises Arc/AMA sources, destination agent distinction and NSG flow-log retirement. Examples are relevant diagnostic reasoning, not fabricated test results."
+    },
+    {
+      "lessonId": "intro-to-azure-network-watcher--3-how-azure-network-watcher-works",
+      "sectionHashes": [
+        "4943c5e9813be153d5dc9b14a503574594adb51e497569f7d731dc7bc176c97c",
+        "d62ffa8a2f1950199420ed689959a1683efabfe29307af54eb2d43f86eca4ab3",
+        "182d8d640660d24bd2b1f5f0825f8713cd633ec3ec658ee505c0bae99d09deb0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with exact units and current overview, Connection Monitor and flow-log documentation. Checked diagnostic tool inputs and scope, filtering-versus-connectivity distinction, automatic enablement opt-out, Azure extension versus on-premises Arc/AMA sources, destination agent distinction and NSG flow-log retirement. Examples are relevant diagnostic reasoning, not fabricated test results."
+    },
+    {
+      "lessonId": "intro-to-azure-network-watcher--4-when-to-use-azure-network-watcher",
+      "sectionHashes": [
+        "ac51557f11ae44719f3ef07fb3be88a3ebd0eb9a69bf3baae5f05f8811942d38",
+        "b7c770995880eebebd4b2eeada4fc0d6f59fb61517f261872dacc2f030f8a416",
+        "3451337ff2ef3d45e0298bf1a72a6e3c031b5a73b7479e8d2b8f4912f99c9b81"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+      ],
+      "notes": "Compared all paragraphs and steps with exact units and current overview, Connection Monitor and flow-log documentation. Checked diagnostic tool inputs and scope, filtering-versus-connectivity distinction, automatic enablement opt-out, Azure extension versus on-premises Arc/AMA sources, destination agent distinction and NSG flow-log retirement. Examples are relevant diagnostic reasoning, not fabricated test results."
+    }
+  ]
+}

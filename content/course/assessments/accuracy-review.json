@@ -1,0 +1,1780 @@
+{
+  "checkedAt": "2026-10-08T11:04:24.509411Z",
+  "reviewKind": "Exact-content bindings for independent AI-assisted official-source semantic review",
+  "humanApproval": false,
+  "reviewRecord": "content/course/assessments/independent-review.json",
+  "questionsReviewed": 168,
+  "optionsReviewed": 672,
+  "findings": [],
+  "questions": [
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-01",
+      "moduleId": "intro-to-azure-cloud-shell",
+      "revision": 1,
+      "questionHash": "61c41e88bf3d722fa675f480c4dc39ec5c405d11b582f077af0149b84542e146",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-02",
+      "moduleId": "intro-to-azure-cloud-shell",
+      "revision": 1,
+      "questionHash": "c86b469f06acfdca4c278a84d82f2d08ab6e55a67bd5606d16c3098a64c506cd",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-03",
+      "moduleId": "intro-to-azure-cloud-shell",
+      "revision": 1,
+      "questionHash": "1ea0bdf14deacc86b2396428323fdc86126f9ada3724fd2dd44837621ce963ef",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-04",
+      "moduleId": "intro-to-azure-cloud-shell",
+      "revision": 1,
+      "questionHash": "62f700d6d11fb11893a92a73f940ed6f4659514046bb742b778e8173bca3f15b",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-05",
+      "moduleId": "intro-to-azure-cloud-shell",
+      "revision": 1,
+      "questionHash": "dc949f479ec018bf1a1f0d0a07c51e651a385f4aaf15e8649f5a52d02250dada",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-06",
+      "moduleId": "intro-to-azure-cloud-shell",
+      "revision": 1,
+      "questionHash": "1a35b0fd7094cb934b7e5272ba14fd1056c41776f7c853f219f299faab956f92",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+      ]
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-01",
+      "moduleId": "create-azure-resource-manager-template-vs-code",
+      "revision": 1,
+      "questionHash": "eb53b4420aab58daf63ce73b8decb5e845078fbf4481c1045e385bb2636a646c",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+      ]
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-02",
+      "moduleId": "create-azure-resource-manager-template-vs-code",
+      "revision": 1,
+      "questionHash": "f9676ad87df49af6b2ce4f0672b4c3873d71e6867722dfdc5e7aa1c2d56cf74c",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+      ]
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-03",
+      "moduleId": "create-azure-resource-manager-template-vs-code",
+      "revision": 1,
+      "questionHash": "581dd2d27847dee0613cf9d71283b110483741eed384ec697dc94f19cd0e7cee",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+      ]
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-04",
+      "moduleId": "create-azure-resource-manager-template-vs-code",
+      "revision": 1,
+      "questionHash": "55ff814198fe22cb935ad207d018e0b8479b3d981afc4ed556af590938052356",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ]
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-05",
+      "moduleId": "create-azure-resource-manager-template-vs-code",
+      "revision": 1,
+      "questionHash": "878d978ed6f285d358b4dd32453facf20b9a00f6d70973661cff2f62b28579b9",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+      ]
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-06",
+      "moduleId": "create-azure-resource-manager-template-vs-code",
+      "revision": 1,
+      "questionHash": "449e4fe8fa356e0a091a00927a758dc031d19799a5f30cb948323cb0e5fc5393",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ]
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-01",
+      "moduleId": "understand-azure-active-directory",
+      "revision": 1,
+      "questionHash": "eb40144583e98eea7ff541fdb6727a9aa203fb599ed1ade379ee93f6d618cd5b",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+      ]
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-02",
+      "moduleId": "understand-azure-active-directory",
+      "revision": 1,
+      "questionHash": "8fe85ba596f0548f07df11e63ec832b74ccc9e6e14062744744cfc0d0bae1551",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+      ]
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-03",
+      "moduleId": "understand-azure-active-directory",
+      "revision": 1,
+      "questionHash": "6975a3fd3fe4431af8139c8447ae49893d85e3f9a2831a8538772930cf23a516",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services"
+      ]
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-04",
+      "moduleId": "understand-azure-active-directory",
+      "revision": 1,
+      "questionHash": "81aa925e2be733db25e3b0675d69152b3b6326017ab2fefdffa5feb861f2a3e8",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services"
+      ]
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-05",
+      "moduleId": "understand-azure-active-directory",
+      "revision": 1,
+      "questionHash": "aaced9eda3293972bde9e799ce5e021a9a9f015954162177107dfdc8a4ec9f01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ]
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-06",
+      "moduleId": "understand-azure-active-directory",
+      "revision": 1,
+      "questionHash": "ead221522a51339500896c9042cbcc7ea49603b34546339b2ff97ed17f16a536",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps",
+        "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad"
+      ]
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-01",
+      "moduleId": "create-configure-manage-identities",
+      "revision": 1,
+      "questionHash": "495d3b7c457ffa00fbe8ae26efad99ec539896df2eb8e61e81ac171fb46ceb09",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ]
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-02",
+      "moduleId": "create-configure-manage-identities",
+      "revision": 1,
+      "questionHash": "4a56ad9ac91dba559a3070d60efcbe65d44a6d557d47fc0cb00c933504c2999c",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ]
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-03",
+      "moduleId": "create-configure-manage-identities",
+      "revision": 1,
+      "questionHash": "56673b4406f287678f090e1b452d3a311bf8c1a95234c1178d194c640017c08a",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration"
+      ]
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-04",
+      "moduleId": "create-configure-manage-identities",
+      "revision": 1,
+      "questionHash": "718f4847fed2e821cd56899ca5e0ba9d88092c88ca33738e3e6c5cc3974a8999",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users"
+      ]
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-05",
+      "moduleId": "create-configure-manage-identities",
+      "revision": 1,
+      "questionHash": "c13353b3909d86e11cab7b794b0d5dce6cae2002d62a21a3f94ec6161f3b877d",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments"
+      ]
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-06",
+      "moduleId": "create-configure-manage-identities",
+      "revision": 1,
+      "questionHash": "ad4d74229570c25eecc66553700020b4d0df623163473d66b8ea2ec8a65e9984",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation"
+      ]
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-01",
+      "moduleId": "describe-core-architectural-components-of-azure",
+      "revision": 1,
+      "questionHash": "f75a6e99ae20a8732140d7509148f2b50e791f75943a62c582b947d66b82e9c9",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+      ]
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-02",
+      "moduleId": "describe-core-architectural-components-of-azure",
+      "revision": 1,
+      "questionHash": "d3b3b76914b05b5f6bf120e45fc21b1541ebd040222789e276529babb0df527d",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+      ]
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-03",
+      "moduleId": "describe-core-architectural-components-of-azure",
+      "revision": 1,
+      "questionHash": "6e08c844fcdbdcad00e8a833e9c83db34276b394302bc3fe6805345226c2f2f9",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+      ]
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-04",
+      "moduleId": "describe-core-architectural-components-of-azure",
+      "revision": 1,
+      "questionHash": "1a90027a546417f6de1532cd7edcaba69a6f3daf2bdd0589a739b5ac9af9f13f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+      ]
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-05",
+      "moduleId": "describe-core-architectural-components-of-azure",
+      "revision": 1,
+      "questionHash": "d6462b1e2fcee464bdfd8e7db90378d6502b88b43f27084d4fcb136c8f230b79",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+      ]
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-06",
+      "moduleId": "describe-core-architectural-components-of-azure",
+      "revision": 1,
+      "questionHash": "a44e797e0754f2fbcbac6704843b93fe6ee97bcd31b236da4f479f4464179333",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+      ]
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-01",
+      "moduleId": "sovereignty-policy-initiatives",
+      "revision": 1,
+      "questionHash": "0c6dc1643c83991940008b4b0a4541f5ec91ca6a1f116ba7a279d906546a7380",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+      ]
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-02",
+      "moduleId": "sovereignty-policy-initiatives",
+      "revision": 1,
+      "questionHash": "505b654653ec7aca6ba0fe448f45e65935a95510a60cf48e83d1811f597ca5a4",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions"
+      ]
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-03",
+      "moduleId": "sovereignty-policy-initiatives",
+      "revision": 1,
+      "questionHash": "cf1f08c6b32a51ccf73a701993950756fae9c88a454447787589ab261c2c64d9",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles"
+      ]
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-04",
+      "moduleId": "sovereignty-policy-initiatives",
+      "revision": 1,
+      "questionHash": "69b20142cb545c88f9c1d25828a46e55ea99b40ee3b19264b1bae265827f92ca",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources",
+        "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+      ]
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-05",
+      "moduleId": "sovereignty-policy-initiatives",
+      "revision": 1,
+      "questionHash": "50fbba70d200baa5acd4d7264e55b2ecac59341f1a4a497aebebe399a627d5ff",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources"
+      ]
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-06",
+      "moduleId": "sovereignty-policy-initiatives",
+      "revision": 1,
+      "questionHash": "4c41ab5a104519313daa2eaa77572fd214c81d8177b2552914dfc448cf87c525",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+      ]
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-01",
+      "moduleId": "secure-azure-resources-with-rbac",
+      "revision": 1,
+      "questionHash": "53651a07d11e14712519a49fcf024061ee3dcd09d7dc38dd6477b40744af1ae3",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+      ]
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-02",
+      "moduleId": "secure-azure-resources-with-rbac",
+      "revision": 1,
+      "questionHash": "589fe19603519bf00824521d01c20523ac653233aef67227083aaa7b7fe5c1a5",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+      ]
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-03",
+      "moduleId": "secure-azure-resources-with-rbac",
+      "revision": 1,
+      "questionHash": "79d14d973027ad67644a05db2f2fcb349dcf5c8b26fe895e15e61633b1cea29f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access"
+      ]
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-04",
+      "moduleId": "secure-azure-resources-with-rbac",
+      "revision": 1,
+      "questionHash": "e7a77692459e237bb892662bce5225adf023d0ff63cc81fed5fbe5d93de71317",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+      ]
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-05",
+      "moduleId": "secure-azure-resources-with-rbac",
+      "revision": 1,
+      "questionHash": "99cd0a0e4738f41fb04483eccc29c5ed19b8eec48fc5219d4f89eaefed5afb62",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+      ]
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-06",
+      "moduleId": "secure-azure-resources-with-rbac",
+      "revision": 1,
+      "questionHash": "35bb86658d11dbd7e99b9b0e4a969c935bdcf9928d38e699fbe416793eb43e84",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs"
+      ]
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-01",
+      "moduleId": "allow-users-reset-their-password",
+      "revision": 1,
+      "questionHash": "6ba7b7e0f7848dd2f385adffdb49df721b6c468971bea5061ea91480338fce28",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset"
+      ]
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-02",
+      "moduleId": "allow-users-reset-their-password",
+      "revision": 1,
+      "questionHash": "4556e6d4140398655921cf029168724a340e422b0a96cdde39a29d7435165d44",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+      ]
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-03",
+      "moduleId": "allow-users-reset-their-password",
+      "revision": 1,
+      "questionHash": "d1dc3aa78f2ddad65766d75b316822cb424153d41546fde30eeac33a15358470",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+      ]
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-04",
+      "moduleId": "allow-users-reset-their-password",
+      "revision": 1,
+      "questionHash": "ac1b92cef2f11ffce6cf386f613235818912f12ac3b5dd94e69c4d873f50b316",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+      ]
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-05",
+      "moduleId": "allow-users-reset-their-password",
+      "revision": 1,
+      "questionHash": "7902d2eb3ba53a67b7d84c26e1dadbe8cb0742d11d0b8c640b50423ce615939f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
+      ]
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-06",
+      "moduleId": "allow-users-reset-their-password",
+      "revision": 1,
+      "questionHash": "eabdb94cfb9f5a6b23e5f478248c215f5b510d1218dc657d4cb67331d24bee57",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
+      ]
+    },
+    {
+      "questionId": "configure-virtual-networks-check-01",
+      "moduleId": "configure-virtual-networks",
+      "revision": 1,
+      "questionHash": "6e84426d4fbbf4a1f910b66c08218ae8b78827a7b333d337555c4f0b1cbe57c7",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ]
+    },
+    {
+      "questionId": "configure-virtual-networks-check-02",
+      "moduleId": "configure-virtual-networks",
+      "revision": 1,
+      "questionHash": "b1c685ed787e1ae3074b4a1db93a67eb2ce918ed45151c7530cda37d01f4336c",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ]
+    },
+    {
+      "questionId": "configure-virtual-networks-check-03",
+      "moduleId": "configure-virtual-networks",
+      "revision": 1,
+      "questionHash": "c31565cc4236dc7860529346773e8d33cf8bd0529c3e28bb138d8c9cbebd5ba5",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/5-plan-addressing",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ]
+    },
+    {
+      "questionId": "configure-virtual-networks-check-04",
+      "moduleId": "configure-virtual-networks",
+      "revision": 1,
+      "questionHash": "86295bb47e230a4d2f7a27d2a1b406931aff2afdb9001d2055efae076369bdb3",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/8-associate-private-ip-addresses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ]
+    },
+    {
+      "questionId": "configure-virtual-networks-check-05",
+      "moduleId": "configure-virtual-networks",
+      "revision": 1,
+      "questionHash": "9dab7b22f6d293f81523995e10ca0744412a118ab01fc604adef60427f6097a9",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/6-create-public-ip-addressing",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ]
+    },
+    {
+      "questionId": "configure-virtual-networks-check-06",
+      "moduleId": "configure-virtual-networks",
+      "revision": 1,
+      "questionHash": "e81c6de725dc72e3b7cbcf2699c4a474b8772978509e762d79236b3acc5bb30a",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ]
+    },
+    {
+      "questionId": "configure-network-security-groups-check-01",
+      "moduleId": "configure-network-security-groups",
+      "revision": 1,
+      "questionHash": "a496ac65be85e86cd904d897cef745fe72e1231faf8ec9acfb4eb5a64653ed6f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ]
+    },
+    {
+      "questionId": "configure-network-security-groups-check-02",
+      "moduleId": "configure-network-security-groups",
+      "revision": 1,
+      "questionHash": "110e77d66c53a88b5e0945157fcef938e9ee1d2c77bf603181b145ed6d07d695",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/5-create-network-security-groups-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ]
+    },
+    {
+      "questionId": "configure-network-security-groups-check-03",
+      "moduleId": "configure-network-security-groups",
+      "revision": 1,
+      "questionHash": "f068cf1f7930b5c390463bded447c9b416728259141d6ac7acdfe96a94f352d4",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/6-implement-asgs",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ]
+    },
+    {
+      "questionId": "configure-network-security-groups-check-04",
+      "moduleId": "configure-network-security-groups",
+      "revision": 1,
+      "questionHash": "6d63ee2c2114c3073d3bd3d0a6e61226aebfdcd54153ae904840fe90102524c7",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/3-determine-network-security-groups-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ]
+    },
+    {
+      "questionId": "configure-network-security-groups-check-05",
+      "moduleId": "configure-network-security-groups",
+      "revision": 1,
+      "questionHash": "fd8e75514afb12a21c8e77a0ad6ebcca04b667272b9f9094a7f67aafb6e7676e",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules"
+      ]
+    },
+    {
+      "questionId": "configure-network-security-groups-check-06",
+      "moduleId": "configure-network-security-groups",
+      "revision": 1,
+      "questionHash": "2796b1b5a671dadd3de35777d81b7d0c97d1195e1541fe4d49fd2cd71c07e8eb",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/2-implement-network-security-groups",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ]
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-01",
+      "moduleId": "host-domain-azure-dns",
+      "revision": 1,
+      "questionHash": "9b1c31830b279ce9e43771249dbb580d68b11f66b9a2f4713bfe9179dbbdf0d2",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+      ]
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-02",
+      "moduleId": "host-domain-azure-dns",
+      "revision": 1,
+      "questionHash": "fa0747d9fd03deb9e3cbc66164ceaff54280ff4d7edb1807015d55dee444c2eb",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+      ]
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-03",
+      "moduleId": "host-domain-azure-dns",
+      "revision": 1,
+      "questionHash": "68504e37368481f4e0288df745008419c60390544c638a09b537871df0bd4060",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/5-resolve-name-alias-record",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-alias",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+      ]
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-04",
+      "moduleId": "host-domain-azure-dns",
+      "revision": 1,
+      "questionHash": "9504ba3cc4ba83a86df48b0c56f1c3f9517133d2726b0e3184d327a156021a8f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+      ]
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-05",
+      "moduleId": "host-domain-azure-dns",
+      "revision": 1,
+      "questionHash": "4dea901f4b057eaa14703cb06e02a9e7766c1f24c7195ed8ac99d0bc36fe1778",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+      ]
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-06",
+      "moduleId": "host-domain-azure-dns",
+      "revision": 1,
+      "questionHash": "9eaedb55207e7b067fc333b841d7d46135e98f6fc0917ba5e9d331bffc06dffb",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/4-exercise-create-dns-zone-a-record"
+      ]
+    },
+    {
+      "questionId": "configure-vnet-peering-check-01",
+      "moduleId": "configure-vnet-peering",
+      "revision": 1,
+      "questionHash": "6a895458843ef492df11b08fcd68364e8900dcbd52029c9383a273b358017596",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ]
+    },
+    {
+      "questionId": "configure-vnet-peering-check-02",
+      "moduleId": "configure-vnet-peering",
+      "revision": 1,
+      "questionHash": "5c99b8b1b78d800c7a958c7bf22be6340754f0c32746df0494db06d30c587a3f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ]
+    },
+    {
+      "questionId": "configure-vnet-peering-check-03",
+      "moduleId": "configure-vnet-peering",
+      "revision": 1,
+      "questionHash": "27a2606679aad9640c8753d319004627e729564d288515ca3a1871393410255f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/5-determine-service-chaining-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ]
+    },
+    {
+      "questionId": "configure-vnet-peering-check-04",
+      "moduleId": "configure-vnet-peering",
+      "revision": 1,
+      "questionHash": "c719aca1a4af1f35b4abbc45e267003d880330301abb7361684712d101c2de3b",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/3-determine-gateway-transit-connectivity",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ]
+    },
+    {
+      "questionId": "configure-vnet-peering-check-05",
+      "moduleId": "configure-vnet-peering",
+      "revision": 1,
+      "questionHash": "05b73844aee46647d343278e3e2cf3ca258d28de1bd1e27144f2fe03c999bc4f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/4-create"
+      ]
+    },
+    {
+      "questionId": "configure-vnet-peering-check-06",
+      "moduleId": "configure-vnet-peering",
+      "revision": 1,
+      "questionHash": "723d081d3987eb94cc721cbaf357de8d729e1be011adbca786c031695dbb7349",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ]
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-01",
+      "moduleId": "control-network-traffic-flow-with-routes",
+      "revision": 1,
+      "questionHash": "0a9f9b2a4f1968db70bd85cf22bd685f2ab7b6614af800fa48152751c98ca80f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ]
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-02",
+      "moduleId": "control-network-traffic-flow-with-routes",
+      "revision": 1,
+      "questionHash": "bc2f6b7c1309c2b498f43a61d055345cbc8fd8f5184633a52bb3672d5581f911",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ]
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-03",
+      "moduleId": "control-network-traffic-flow-with-routes",
+      "revision": 1,
+      "questionHash": "b7a28049869c4cd8d3344c41c880b6641b72f6297127c1b578273af37303b75c",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ]
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-04",
+      "moduleId": "control-network-traffic-flow-with-routes",
+      "revision": 1,
+      "questionHash": "c987bac42100e266431f06fc6a50276829e40962606893fccf6459e1cd6729b4",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ]
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-05",
+      "moduleId": "control-network-traffic-flow-with-routes",
+      "revision": 1,
+      "questionHash": "0318e9ce83000f5ec50959daa2ee6c6f3b2b787364312380b78c1b81132c01c9",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ]
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-06",
+      "moduleId": "control-network-traffic-flow-with-routes",
+      "revision": 1,
+      "questionHash": "1ef301cfa4ce54117e6ee6037cdbb3921f12edde71497594db699cec4892f1c0",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-01",
+      "moduleId": "intro-to-azure-load-balancer",
+      "revision": 1,
+      "questionHash": "7498f4d22291de9e9d11da85daf398b118682d7eaac99ab2e07c2ec4937f9624",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-02",
+      "moduleId": "intro-to-azure-load-balancer",
+      "revision": 1,
+      "questionHash": "b77f53d299d1b3325dd020b0121ea57aacefbb425f64b6acdd965c51dcd888a0",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-03",
+      "moduleId": "intro-to-azure-load-balancer",
+      "revision": 1,
+      "questionHash": "003a5415dce1318cdbde3a6c3ceb0b530ac2f340c00362f4c9640de36b32e5cf",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-04",
+      "moduleId": "intro-to-azure-load-balancer",
+      "revision": 1,
+      "questionHash": "f0557599585b98cf956b0beac853f2d8a7789ef458daeee67e3dd9c425ac4809",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-05",
+      "moduleId": "intro-to-azure-load-balancer",
+      "revision": 1,
+      "questionHash": "5c6542baeee51f2cca0ab2c2dcb033b2dfd9308b28c23cb1962858f1f147852f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-06",
+      "moduleId": "intro-to-azure-load-balancer",
+      "revision": 1,
+      "questionHash": "1a7193182d111bfb1f20e8dddd22dcd9ec98ca0cf43d70c3725e58c5b2bbd2d8",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-01",
+      "moduleId": "intro-to-azure-application-gateway",
+      "revision": 1,
+      "questionHash": "262f5129585ccc2239ea71b26ae4f4a5c243d18837f45829504a9b8e592b96b4",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-02",
+      "moduleId": "intro-to-azure-application-gateway",
+      "revision": 1,
+      "questionHash": "83d4dcdcb1114e00647c14db25ca0c8042815ceb9ca1220bfc0cd3a4861dfa36",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-03",
+      "moduleId": "intro-to-azure-application-gateway",
+      "revision": 1,
+      "questionHash": "2ef9a5d8367a946eec4ef0b1edc03d0cf41d2161ac73f3c28ef28c8f9419ab84",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-04",
+      "moduleId": "intro-to-azure-application-gateway",
+      "revision": 1,
+      "questionHash": "4e1d2da5b190bc5452e4b84c18b57b5792270f6cc36adb0bd045a050f2970f82",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-05",
+      "moduleId": "intro-to-azure-application-gateway",
+      "revision": 1,
+      "questionHash": "948fcbbfe6de2e6f15f4a33bd97d8f9fc150c18cc093f972d9efc4b139646f4d",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-06",
+      "moduleId": "intro-to-azure-application-gateway",
+      "revision": 1,
+      "questionHash": "bdd1b734655f7997d5e2caa4c8c8570cf23e94d938367ad44363ea5eef97c160",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-01",
+      "moduleId": "intro-to-azure-network-watcher",
+      "revision": 1,
+      "questionHash": "b890f34a3926d80d9e7b02c3eb494562b832195414e99964727cad1a8b975a3d",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-02",
+      "moduleId": "intro-to-azure-network-watcher",
+      "revision": 1,
+      "questionHash": "f9420fa196a4ae18d691323316e6aeb98e8470762ebb8e57cb0b6aa8450acc6c",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-03",
+      "moduleId": "intro-to-azure-network-watcher",
+      "revision": 1,
+      "questionHash": "60ba7d11a921c053beb2187a0cb6394bebf75585ef9a1083e12304a5202174cc",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-04",
+      "moduleId": "intro-to-azure-network-watcher",
+      "revision": 1,
+      "questionHash": "28add7651671fb93fcc91fb92f5bd91b8ef18ef82d6910320728bcba7e0e1877",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-05",
+      "moduleId": "intro-to-azure-network-watcher",
+      "revision": 1,
+      "questionHash": "5bc7205cc3b21874620dc615ddbb091c5b82e2905b28f8623bf8286da53561e1",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-06",
+      "moduleId": "intro-to-azure-network-watcher",
+      "revision": 1,
+      "questionHash": "cdc1ad8bd7834123a84a8ae5f8f9f6aa031561d8b4bd127e1b63b1a379bedf0e",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher"
+      ]
+    },
+    {
+      "questionId": "configure-storage-accounts-check-01",
+      "moduleId": "configure-storage-accounts",
+      "revision": 1,
+      "questionHash": "18c0bc19332f881205a3b02d7876f36cc8d8a8caf19db4b8b1bf50490b7c33da",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+      ]
+    },
+    {
+      "questionId": "configure-storage-accounts-check-02",
+      "moduleId": "configure-storage-accounts",
+      "revision": 1,
+      "questionHash": "fd94f1bccbf76dbc6fffa760056109003e23cd589ed4a857e571ee073ac9da29",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+      ]
+    },
+    {
+      "questionId": "configure-storage-accounts-check-03",
+      "moduleId": "configure-storage-accounts",
+      "revision": 1,
+      "questionHash": "cb1a220c519bf60fea9115e1cb8687b7ca9777a2e87b5733f4ffb43b71cd1abf",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+      ]
+    },
+    {
+      "questionId": "configure-storage-accounts-check-04",
+      "moduleId": "configure-storage-accounts",
+      "revision": 1,
+      "questionHash": "d0d59237824c5aea2c71898e577ba2108418bfe07f4ad97112ea6af67c77dba4",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+      ]
+    },
+    {
+      "questionId": "configure-storage-accounts-check-05",
+      "moduleId": "configure-storage-accounts",
+      "revision": 1,
+      "questionHash": "8c5d15174041511d66573bdef486c697f67b071ed7ba58af410c4e45fcf42b04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/7-secure-storage-endpoints",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
+      ]
+    },
+    {
+      "questionId": "configure-storage-accounts-check-06",
+      "moduleId": "configure-storage-accounts",
+      "revision": 1,
+      "questionHash": "460e4531dd6fdc4cd68459df69730fe0a51bea817dd8ac7a63d0420a96865412",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+      ]
+    },
+    {
+      "questionId": "configure-blob-storage-check-01",
+      "moduleId": "configure-blob-storage",
+      "revision": 1,
+      "questionHash": "f21a2e3fbf1df20c93ae4e73572774dcf7fc107b611ac20fbc0062232c10ab3d",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+      ]
+    },
+    {
+      "questionId": "configure-blob-storage-check-02",
+      "moduleId": "configure-blob-storage",
+      "revision": 1,
+      "questionHash": "09ab178d015b2307151ad2ae54d729091a183205dba7483b92a169fcb3050df0",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/3-create-blob-containers"
+      ]
+    },
+    {
+      "questionId": "configure-blob-storage-check-03",
+      "moduleId": "configure-blob-storage",
+      "revision": 1,
+      "questionHash": "2edc5887f6fc198b80d98a7ee4736f74f57c8e40c9b7c080cd199a1ccb511bb7",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+      ]
+    },
+    {
+      "questionId": "configure-blob-storage-check-04",
+      "moduleId": "configure-blob-storage",
+      "revision": 1,
+      "questionHash": "4c8c96576de26c2545e4068eef7b0a917b8dfc1baef7f3c72f388b842d8d89ed",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/5-add-blob-lifecycle-management-rules"
+      ]
+    },
+    {
+      "questionId": "configure-blob-storage-check-05",
+      "moduleId": "configure-blob-storage",
+      "revision": 1,
+      "questionHash": "a14eae4639c68beb32cb0e6725971af89e6871bae459ca5246d339f39288b566",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ]
+    },
+    {
+      "questionId": "configure-blob-storage-check-06",
+      "moduleId": "configure-blob-storage",
+      "revision": 1,
+      "questionHash": "087995dfb9bc7f323c0d41f61ca35c90c9af6260f344ddf80ff192a149a3fc30",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+      ]
+    },
+    {
+      "questionId": "configure-storage-security-check-01",
+      "moduleId": "configure-storage-security",
+      "revision": 1,
+      "questionHash": "26a90fe13e940681bb1a78db9e9ee6aaac678cec6ee63874eb618d56d391df1b",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies",
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+      ]
+    },
+    {
+      "questionId": "configure-storage-security-check-02",
+      "moduleId": "configure-storage-security",
+      "revision": 1,
+      "questionHash": "8c7fa010713cee718a9f937a76997945cc77670c38612568bed771a0a0094fcb",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ]
+    },
+    {
+      "questionId": "configure-storage-security-check-03",
+      "moduleId": "configure-storage-security",
+      "revision": 1,
+      "questionHash": "26f3318f9c13d2f354332e6a871d3a2c6436b340cfc47751ce9816f352a55424",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ]
+    },
+    {
+      "questionId": "configure-storage-security-check-04",
+      "moduleId": "configure-storage-security",
+      "revision": 1,
+      "questionHash": "fdc3ce973cee5bacc61cd2cb70c78db8f3c353d125755959c1466b04b1988018",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/4-identify-uri-sas-parameters"
+      ]
+    },
+    {
+      "questionId": "configure-storage-security-check-05",
+      "moduleId": "configure-storage-security",
+      "revision": 1,
+      "questionHash": "359fabc0afef96fdde0743fc733b6d86ce3b1bc49cdcfe0bd6b4cc7591b155fd",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/6-create-customer-managed-keys",
+        "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
+      ]
+    },
+    {
+      "questionId": "configure-storage-security-check-06",
+      "moduleId": "configure-storage-security",
+      "revision": 1,
+      "questionHash": "64ebacc0ce8c34b04eb2c35628bbb7a1b04b35aca18e1e17862e1193479ff801",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+      ]
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-01",
+      "moduleId": "configure-azure-files-file-sync",
+      "revision": 1,
+      "questionHash": "4ac3395e9b7d067710dec4436597bbdb3d64736652fcba56c8aacd18fcc0a22f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/2-compare-files-to-blobs",
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+      ]
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-02",
+      "moduleId": "configure-azure-files-file-sync",
+      "revision": 1,
+      "questionHash": "72bcf7ca91e879c3b353324d283aa1a2e05a1398f43b8f72b74fc3820ee30a69",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/3-manage-file-shares"
+      ]
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-03",
+      "moduleId": "configure-azure-files-file-sync",
+      "revision": 1,
+      "questionHash": "04e7eefbc502857cf889baad87ac8627a2bb5ede8536adbb7b3bc48704636e00",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/4-create-file-share-snapshots",
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+      ]
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-04",
+      "moduleId": "configure-azure-files-file-sync",
+      "revision": 1,
+      "questionHash": "8436690bbda9279a406885ea952aa92cf9a92e47d52732ef911a169c54fc0364",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+      ]
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-05",
+      "moduleId": "configure-azure-files-file-sync",
+      "revision": 1,
+      "questionHash": "58eb778389c7bd1c24a1d2585712535dc0592654cbcc92490b504d9afdb6454d",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+      ]
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-06",
+      "moduleId": "configure-azure-files-file-sync",
+      "revision": 1,
+      "questionHash": "d9190a70c83818d2c795b3751659497c8da16edfd1a1c276584eebb98b65a674",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-01",
+      "moduleId": "intro-to-azure-virtual-machines",
+      "revision": 1,
+      "questionHash": "1a1b054536f6782dc2b3964201d366f9d2dc8a60720e4ec6d307fb152c15a6ca",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-02",
+      "moduleId": "intro-to-azure-virtual-machines",
+      "revision": 1,
+      "questionHash": "7a99069644786579ac201f3a1b9c755f207775fadf0ccae19d3d363961912041",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-03",
+      "moduleId": "intro-to-azure-virtual-machines",
+      "revision": 1,
+      "questionHash": "95d2679f903b747cb78b60a6856b453828c9a2d258df53c5269ad49e3e57b757",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-04",
+      "moduleId": "intro-to-azure-virtual-machines",
+      "revision": 1,
+      "questionHash": "ee084726661699c2d2a995f0e7a2e37ffb1b720e006f37b5c8f449c1eb246f9f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-05",
+      "moduleId": "intro-to-azure-virtual-machines",
+      "revision": 1,
+      "questionHash": "f38cf5a3bcb1a5d4cd99ece3d24bc7f0ef96359a7b253d3d4de67c5511019dbe",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-06",
+      "moduleId": "intro-to-azure-virtual-machines",
+      "revision": 1,
+      "questionHash": "49855cc7f7fe7c0ed622e76b34432421627a10958b19508612a2f4e4de7827fa",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+      ]
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-01",
+      "moduleId": "configure-virtual-machine-availability",
+      "revision": 1,
+      "questionHash": "e7eb37b0372987562b747f2006bc65f96a7042d7e48f671fee208633eb109859",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains"
+      ]
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-02",
+      "moduleId": "configure-virtual-machine-availability",
+      "revision": 1,
+      "questionHash": "6cb80b2d372c8bb58d68a8db2cb735776a277b9d79e857142fe62a05beb1df49",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ]
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-03",
+      "moduleId": "configure-virtual-machine-availability",
+      "revision": 1,
+      "questionHash": "6e530de480df8c09043fc32232d8eb15dbc14148c73501b04b9ab13413e75802",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling"
+      ]
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-04",
+      "moduleId": "configure-virtual-machine-availability",
+      "revision": 1,
+      "questionHash": "ca63649ac7b89210b0d60b4ec183912f893f54688dad2e71ae3ab74702310d1f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+      ]
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-05",
+      "moduleId": "configure-virtual-machine-availability",
+      "revision": 1,
+      "questionHash": "8daf67cc61d347a15683e103ce36ea8be98322bb9b2b1f579025794bac9ec64e",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale"
+      ]
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-06",
+      "moduleId": "configure-virtual-machine-availability",
+      "revision": 1,
+      "questionHash": "65cbe9a483d61e8438df49b844ecd84f21a1095e551c43bc602c54a0e75db66b",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets"
+      ]
+    },
+    {
+      "questionId": "configure-app-service-plans-check-01",
+      "moduleId": "configure-app-service-plans",
+      "revision": 1,
+      "questionHash": "3898f4ad39aa6a3eb5f963796444629ec158450c805d5290eb3c2fdd0a9bae09",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ]
+    },
+    {
+      "questionId": "configure-app-service-plans-check-02",
+      "moduleId": "configure-app-service-plans",
+      "revision": 1,
+      "questionHash": "7b86190943d01a38478bda544a736a1562f81263bc720b32b1fce9dc90ce47d2",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ]
+    },
+    {
+      "questionId": "configure-app-service-plans-check-03",
+      "moduleId": "configure-app-service-plans",
+      "revision": 1,
+      "questionHash": "30249a07d7d52a3e66a7bc18666be600c0850c8a829df1cd4848ae12c0a555ef",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+      ]
+    },
+    {
+      "questionId": "configure-app-service-plans-check-04",
+      "moduleId": "configure-app-service-plans",
+      "revision": 1,
+      "questionHash": "7327bdfe1372ee98df944ec94814cb4c2ccf11b971f6fd11833582f19422e43f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+      ]
+    },
+    {
+      "questionId": "configure-app-service-plans-check-05",
+      "moduleId": "configure-app-service-plans",
+      "revision": 1,
+      "questionHash": "efd409c4a9c826937e545d8aa80d09afa29b9e861aace4d745e517d120964903",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+      ]
+    },
+    {
+      "questionId": "configure-app-service-plans-check-06",
+      "moduleId": "configure-app-service-plans",
+      "revision": 1,
+      "questionHash": "6a69960703b166ff437f9a221383e163a24ae0fa03e98f7a58c945efd8847cc5",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings"
+      ]
+    },
+    {
+      "questionId": "configure-azure-app-services-check-01",
+      "moduleId": "configure-azure-app-services",
+      "revision": 1,
+      "questionHash": "fdba82aa2c64f50f704a7cf92b6c825f1fac70e09849641fea838bb92b48dc42",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service"
+      ]
+    },
+    {
+      "questionId": "configure-azure-app-services-check-02",
+      "moduleId": "configure-azure-app-services",
+      "revision": 1,
+      "questionHash": "28930a0133b43f1ff2a6e7885202e0a13e0974c36b760791b26b7cb9cea24c5b",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots"
+      ]
+    },
+    {
+      "questionId": "configure-azure-app-services-check-03",
+      "moduleId": "configure-azure-app-services",
+      "revision": 1,
+      "questionHash": "54c356e291508e06803aeac7cb6245b28862a0e6117b73051ee4a4c10b3eb8da",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+      ]
+    },
+    {
+      "questionId": "configure-azure-app-services-check-04",
+      "moduleId": "configure-azure-app-services",
+      "revision": 1,
+      "questionHash": "c70a9f31008b3497f3311a9cb1b9ada7429a27ab299c4856487e4752171559b8",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service"
+      ]
+    },
+    {
+      "questionId": "configure-azure-app-services-check-05",
+      "moduleId": "configure-azure-app-services",
+      "revision": 1,
+      "questionHash": "b7241bda4fc0a3cea082ee20865398cac4d912c670036ab21154859c8dcefc89",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names"
+      ]
+    },
+    {
+      "questionId": "configure-azure-app-services-check-06",
+      "moduleId": "configure-azure-app-services",
+      "revision": 1,
+      "questionHash": "dc46ebc17e0c1bab3ba59e30dce731ae9c80364b8279f20737fef82229739bd5",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights"
+      ]
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-01",
+      "moduleId": "configure-azure-container-instances",
+      "revision": 1,
+      "questionHash": "223b9b6f22a4a629bb93a15cee41c5185b5b2b4760627baf5c1679cfd3f5f650",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines"
+      ]
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-02",
+      "moduleId": "configure-azure-container-instances",
+      "revision": 1,
+      "questionHash": "dea747bf8135422242991a92b300d0170997ba87c1efe0f0e0dd3c304a220e0b",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ]
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-03",
+      "moduleId": "configure-azure-container-instances",
+      "revision": 1,
+      "questionHash": "d2168b2216b87c3f18f5b565c80abd55b5bc20b67d72c517236882deae46a1cb",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files"
+      ]
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-04",
+      "moduleId": "configure-azure-container-instances",
+      "revision": 1,
+      "questionHash": "2766fa3f67af4f8dde95e3c6445f2816bec543a75b3abdfe11859aa0b443091a",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ]
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-05",
+      "moduleId": "configure-azure-container-instances",
+      "revision": 1,
+      "questionHash": "8362aa603a9fdd717a018558dd5a51c92b4d689955fe69370e0c3ad5e581dce8",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update"
+      ]
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-06",
+      "moduleId": "configure-azure-container-instances",
+      "revision": 1,
+      "questionHash": "bc8c58c787e6e31d2759b8809cdde710727e59ab1589fbbace4c069f1656bf1e",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-01",
+      "moduleId": "intro-to-azure-backup",
+      "revision": 1,
+      "questionHash": "b01fd033b6d1d625e3cdaa55c33a1f1bed450f42f59db52833def4e6a1bf581f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-02",
+      "moduleId": "intro-to-azure-backup",
+      "revision": 1,
+      "questionHash": "017eedeb91cc32eea7e17662cbe70000c9619705f588f70eefc2f9fb82dcd16a",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-03",
+      "moduleId": "intro-to-azure-backup",
+      "revision": 1,
+      "questionHash": "63d7b547e7475914319f4692d7e2d473c59b5a93a836464371690414c88ef16b",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-04",
+      "moduleId": "intro-to-azure-backup",
+      "revision": 1,
+      "questionHash": "ffaa42308a7bc8b058d4a01124570cd68251e79543f5def877c423a3588efcac",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-05",
+      "moduleId": "intro-to-azure-backup",
+      "revision": 1,
+      "questionHash": "cbf00fc845f646a6ece50644f5885f507b860241284c0237e5e92940588a23a6",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+      ]
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-06",
+      "moduleId": "intro-to-azure-backup",
+      "revision": 1,
+      "questionHash": "1253b8b99a357d943db1f60f166ad248f4d97488bddb087beada6322767f1627",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+      ]
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-01",
+      "moduleId": "protect-virtual-machines-with-azure-backup",
+      "revision": 1,
+      "questionHash": "6d666cfb0ca3ab81164ed7dec2d1d6f56417345cd8f3ea4e5f6d3b15f480da47",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+      ]
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-02",
+      "moduleId": "protect-virtual-machines-with-azure-backup",
+      "revision": 1,
+      "questionHash": "2204ce55d8d984056f07b407afe19e49c48964bc00a03c29459162be58e0c676",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine"
+      ]
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-03",
+      "moduleId": "protect-virtual-machines-with-azure-backup",
+      "revision": 1,
+      "questionHash": "71fb4bc4a564c0f5763c97aa52b9b500885eb844eef2a9609518ca857bdc0f1d",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+      ]
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-04",
+      "moduleId": "protect-virtual-machines-with-azure-backup",
+      "revision": 1,
+      "questionHash": "31e3bf880975775f217e2a9e035e898980ca1e0a9f78e56f8a415eaef36d4db7",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ]
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-05",
+      "moduleId": "protect-virtual-machines-with-azure-backup",
+      "revision": 1,
+      "questionHash": "72292532f6e3ea0770b34bde2ad4b0fd50e0874cd1fdf92b8b99cd6cb789a30a",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ]
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-06",
+      "moduleId": "protect-virtual-machines-with-azure-backup",
+      "revision": 1,
+      "questionHash": "efb528fbfa3f789f771bbb10fbb51878e4e8ca3d911480a610cab47894b225c2",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+      ]
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-01",
+      "moduleId": "monitor-azure-vm-using-diagnostic-data",
+      "revision": 1,
+      "questionHash": "cb59f662730d200403a61905d900d130f05ec40ff0cd3df986275d95236f5a18",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+      ]
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-02",
+      "moduleId": "monitor-azure-vm-using-diagnostic-data",
+      "revision": 1,
+      "questionHash": "97ff46f850f7215fbc5eeb6a8589c996edae9a277d205894e40ebeb33f5a6e8f",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine"
+      ]
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-03",
+      "moduleId": "monitor-azure-vm-using-diagnostic-data",
+      "revision": 1,
+      "questionHash": "f9a9eb03e30a15a392b6bdee9e18fae50cfa80fd4c73fcbffbd8b36d0c809beb",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics"
+      ]
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-04",
+      "moduleId": "monitor-azure-vm-using-diagnostic-data",
+      "revision": 1,
+      "questionHash": "394028a0b9e4e498c984f42277cb4497b6fc2b40bf551ea42bfccaaaac751589",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+      ]
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-05",
+      "moduleId": "monitor-azure-vm-using-diagnostic-data",
+      "revision": 1,
+      "questionHash": "28f57ee77b07781194b6accb37ccb698edf02e8e5f7f0474a9e4ee97db5dfc91",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+      ]
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-06",
+      "moduleId": "monitor-azure-vm-using-diagnostic-data",
+      "revision": 1,
+      "questionHash": "5461a52bf1bbee2a5c33bf704042bbaf2ff0b71430132e825724304baad5dbfd",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1433 @@
+{
+  "checkedAt": "2026-10-08T10:30:51.649236+00:00",
+  "reviewKind": "AI-assisted official-source accuracy audit",
+  "humanApproval": false,
+  "questionsReviewed": 127,
+  "optionsReviewed": 426,
+  "questions": [
+    {
+      "questionId": "az104-compute-01",
+      "revision": 1,
+      "questionHash": "ed4a9fbd6d79e2efed943969e4959d45d62e6fc65da99e4d3965f9c2e620b920",
+      "result": "supported",
+      "rationale": "Cloned slot settings leave content absent; Standard supports live staging slots.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-02",
+      "revision": 1,
+      "questionHash": "a464f19255df905a774d30f086be34a1990f05b50b0ac3648cf56a4ce80612cd",
+      "result": "supported",
+      "rationale": "Fault domains address shared power and switches; update domains concern maintenance.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-03",
+      "revision": 1,
+      "questionHash": "c828ddd01151ff3a768209c579aa3ebeb64cea321ceadf6c112bfe97d033bf86",
+      "result": "supported",
+      "rationale": "The sixth VM wraps to the first of five update domains; the seventh wraps to the second.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-04",
+      "revision": 1,
+      "questionHash": "60d34dfadfb51113ee361e4530453d8e23cef63051465cd571a2ac6bd0f914e4",
+      "result": "supported",
+      "rationale": "Only one update domain restarts at once, with 30-minute recovery; numerical order and application-failure protection are not promised.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-05",
+      "revision": 1,
+      "questionHash": "08f2bdb323ee5c3f4f15488d87638564b54cee5d703979ae33376d5633d081dd",
+      "result": "supported",
+      "rationale": "Availability-set fault/update domain counts cannot change after creation; up to 20 update domains are supported.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-06",
+      "revision": 1,
+      "questionHash": "46c0e6b0833536b1ca8e0f1fc25a2df78adc67fe4adfdc7eca414907c17b74ae",
+      "result": "supported",
+      "rationale": "Of Free, Basic and Standard, only Standard supports multiple deployment slots.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-07",
+      "revision": 1,
+      "questionHash": "cfe574be7fff51f5aeebce3dd108db57caac0c9c6acea46206deb50d3f733667",
+      "result": "supported",
+      "rationale": "Swapping the same unchanged pair back restores the old production app now held in staging; cloning settings cannot restore code.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-08",
+      "revision": 1,
+      "questionHash": "b16a50eedf2e00689a35dfbeb02eaaf29d84c297ac04c54ca4f320095d993179",
+      "result": "supported",
+      "rationale": "A minimum of one or more expresses an always-running replica floor; maximum alone cannot prevent zero replicas.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-apps/scale-app"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-09",
+      "revision": 1,
+      "questionHash": "36d06f16410711f05cc4f3bff28c83f18fe188365c664b6d2b60f7618fe806cd",
+      "result": "supported",
+      "rationale": "Independent scaling triggers use any-rule conditions rather than requiring every rule simultaneously.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-apps/scale-app"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-10",
+      "revision": 1,
+      "questionHash": "9b9409b73fba0a61c6c229d6a8fbd09642560f319f4ca32c2edd5b51504f07d3",
+      "result": "supported",
+      "rationale": "Scale-rule edits create immutable revisions; replicas are instances of revisions.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-apps/scale-app"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-01",
+      "revision": 1,
+      "questionHash": "7083c37bdae67144bbd11d1fcba565a674d4baeabf6644802b430772168f4bd1",
+      "result": "supported",
+      "rationale": "Priority 200 denies before priority 300 and stops processing under the stated absence of security admin overrides.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-02",
+      "revision": 1,
+      "questionHash": "2715bf8a8ccebec0c61fef8a57e247b334aaef7be51902ed48e3e042dd2ef4ce",
+      "result": "supported",
+      "rationale": "Established SSH retains flow state after allow removal, while new connections use updated denial rules.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-03",
+      "revision": 1,
+      "questionHash": "7c3b4d76609231212758d53d372f1e52b8b73c395752cc65e6d360c84c26f2d1",
+      "result": "supported",
+      "rationale": "Allowed outbound flows receive stateful response handling without a separate inbound response rule; inbound filtering still exists.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-04",
+      "revision": 1,
+      "questionHash": "3fbf6f5b57c1a051a30250e0910beb6666a0251eb30f6eb4455d255a9c9c4bc9",
+      "result": "supported",
+      "rationale": "Default NSG rules remain undeletable and are overridden through higher-priority custom rules.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-05",
+      "revision": 1,
+      "questionHash": "1842d2e00a33cc21b76c4c2506929c86547101e0dcd05fca9e7377a805d8dc3c",
+      "result": "supported",
+      "rationale": "Direct peering traffic uses Microsoft's backbone without requiring internet transit or a gateway.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-06",
+      "revision": 1,
+      "questionHash": "810141e2f11722a213a4f0edec1770404f56720d38b6f10bb7f9c4ad72fb4b7d",
+      "result": "supported",
+      "rationale": "Peering address-space changes require synchronization, rather than workload deletion or assumed automatic propagation.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-07",
+      "revision": 1,
+      "questionHash": "e2758541a2a715928cfaf10ddf130e28a53041768c426e35241c8e06d8ab3211",
+      "result": "supported",
+      "rationale": "Remote-gateway use excludes a local gateway; both regional and global peering support transit.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-08",
+      "revision": 1,
+      "questionHash": "34a424ea73555470be564d4ab62df281bf31333d291f03fca8088f24d0739e47",
+      "result": "supported",
+      "rationale": "Pending private endpoints await owner approval; only Approved connections carry service traffic.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-09",
+      "revision": 1,
+      "questionHash": "c6d45b21588538539b5d5233b5a34171a14f59641304bcef400b3d4eb08175e8",
+      "result": "supported",
+      "rationale": "Private endpoint and VNet share subscription/region; the target resource may reside elsewhere.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-10",
+      "revision": 1,
+      "questionHash": "16b736b0d9a3f23d026fc9d3d7897e272adef6f1b54eab669f9f24dfd6d1510c",
+      "result": "supported",
+      "rationale": "ASGs group VM networking by application without explicit-address upkeep; service tags identify Azure service prefixes.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-01",
+      "revision": 1,
+      "questionHash": "c1b41362e64ffc8a058bdb254ba8374b59e78dfeb05518927b6d933b6f74e367",
+      "result": "supported",
+      "rationale": "DNS hosting/API management do not purchase domain ownership; registration remains a registrar responsibility.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-02",
+      "revision": 1,
+      "questionHash": "0f70498f5be47a4ad474a53ecf4b7ac3bde438942401f57c420c04020d00a005",
+      "result": "supported",
+      "rationale": "The parent NS delegation must use this zone's assigned Azure servers; private links and an A record named NS do not delegate publicly.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-03",
+      "revision": 2,
+      "questionHash": "170e2fa717dfe5acccd52c7124a89be36269f5b89704ecdeeeb1be88210c3268",
+      "result": "supported",
+      "rationale": "A below-apex CNAME maps a DNS name to another name; A maps IPv4 and MX identifies mail exchange.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-04",
+      "revision": 1,
+      "questionHash": "f7469cf4c601d0ba678dd460af62fa3115d3d5f6de9273b8e6266c780d62aea7",
+      "result": "supported",
+      "rationale": "Two api IPv4 values belong to one A record set; duplicate name/type record sets and IP-valued CNAMEs are invalid.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-05",
+      "revision": 1,
+      "questionHash": "209e573b469299120fced32504bd52dac21f11c9c57aa11b9a50e01d19d1a403",
+      "result": "supported",
+      "rationale": "TTL determines cache lifetime; changing authoritative TTL does not purge previously cached answers or alter TCP timeouts.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-06",
+      "revision": 1,
+      "questionHash": "011a1023ff0a40cdbb0ee905879d8e8ef2f204c1c51415035d4094186f300c47",
+      "result": "supported",
+      "rationale": "Resolution-only private-zone links permit manual and autoregistered record lookup but do not automatically register new VM records.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-07",
+      "revision": 1,
+      "questionHash": "398611a2d84aa3daf76007a4bf4c9f3127db7ffda0be4517c2db9e1d54b81aa3",
+      "result": "supported",
+      "rationale": "A VNet has one autoregistration zone but may have multiple resolution zones; a zone may have multiple registering VNets.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-08",
+      "revision": 1,
+      "questionHash": "aa0a96754dd9c41ad2c9c2df9688fab1738c85e920303500cee0307b74cf3eeb",
+      "result": "supported",
+      "rationale": "Private DNS supplies managed internal names and optional VM autoregistration, without public registrar service or internet delegation.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-09",
+      "revision": 1,
+      "questionHash": "36b1050b65393cdd3e06f331d8c434e17c194527783922e6cb83e438b7c80cd7",
+      "result": "supported",
+      "rationale": "A Layer-4 TCP workload behind one frontend fits Load Balancer; NSGs filter and DNS record sets do not supply backend probes.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-10",
+      "revision": 1,
+      "questionHash": "c5585a4be5d19528b92be3940a4f09fe2bc9db75301848f3dd1de4e3d194db86",
+      "result": "supported",
+      "rationale": "Internal Load Balancer uses a private frontend, consistent with the case's private TCP API; public frontend/DNS-only designs fail this requirement.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-11",
+      "revision": 1,
+      "questionHash": "4cfe7cc6b300baacbc2aff5546231cd01b3feb3e5a3161fc3530f38c0088d8b3",
+      "result": "supported",
+      "rationale": "A backend pool identifies VM targets and a rule maps frontend 443 to backend 8443; NSG priority and MX records are unrelated.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/load-balancer/components"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-12",
+      "revision": 1,
+      "questionHash": "89674cba3f07edd4e640d3c1317cadf982de1061e0d27dcb7df100616bff1727",
+      "result": "supported",
+      "rationale": "An HTTP probe treats 503 as unhealthy and excludes that backend from new flows; the case and exhibit are consistent.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-13",
+      "revision": 1,
+      "questionHash": "c506bfac657953a2f2ffcd194b2f9d9b03f357e25c2c67c1549cd53cce5029f6",
+      "result": "supported",
+      "rationale": "A TCP handshake checks listener reachability rather than HTTP response semantics or every dependency.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-14",
+      "revision": 1,
+      "questionHash": "afced00499ae5b8ecfdcff59cd91b3752e936f6b969073316360f5b667489b23",
+      "result": "supported",
+      "rationale": "NSG and guest-firewall probe-port/source permissions can independently block the listener; DNS TTL and deleting backends do not repair filtering.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/troubleshoot/azure/load-balancer/load-balancer-troubleshoot-health-probe-status"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-15",
+      "revision": 1,
+      "questionHash": "5b8f2752ead155c1557d45f790af2d512ac7122c42fdac2a7426a5fd514272fc",
+      "result": "supported",
+      "rationale": "IPv4 platform probes originate from 168.63.129.16, identified by AzureLoadBalancer, rather than frontend or workstation IP.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-16",
+      "revision": 1,
+      "questionHash": "73aa694d4a018ffcfaa9b975d61f432c678bc312027939fdd0bf907ba1faf97d",
+      "result": "supported",
+      "rationale": "One failed probe excludes its backend from new connections while healthy backends remain eligible; probes do not guarantee resets or repair apps.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-17",
+      "revision": 1,
+      "questionHash": "e52bf44881826f538e9a3c0b0b78a9d8055cd8d844a3977938e88722652edbef",
+      "result": "supported",
+      "rationale": "Zone creation precedes obtaining its assigned servers, parent delegation, and cache-aware recursive verification; the ordered key reflects dependencies.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-18",
+      "revision": 1,
+      "questionHash": "5531c7eb6e853ec8f1dd197cab3a9065c77a9bfd7a9636e03b59a834ecd305f4",
+      "result": "supported",
+      "rationale": "TCP establishes a connection; HTTP requires 200 without TLS; HTTPS adds TLS and still requires 200. Match prompts and ordered answer mapping agree.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-19",
+      "revision": 2,
+      "questionHash": "d1ba173470b441d7f406ce67171da393cd0abb5ad3556d3f9267e614ebeca2cb",
+      "result": "supported",
+      "rationale": "A, AAAA and MX map respectively to IPv4, IPv6 and mail-exchanger preference; all match prompts agree with the ordered key.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-operations-recordsets"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-20",
+      "revision": 1,
+      "questionHash": "5ce7169509ab97ebf580bd568396163dcc89aa77b60952930315388567b7b463",
+      "result": "supported",
+      "rationale": "Chosen addressing/probe values precede component creation, then the referencing load-balancing rule, then end-to-end verification.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/load-balancer/components",
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-21",
+      "revision": 1,
+      "questionHash": "e8f4375811be1233f1db14046067ff07ffd42c5728aed0616bdd1979adc6d15e",
+      "result": "supported",
+      "rationale": "A /29 has eight IPv4 addresses and Azure reserves five, leaving exactly three usable addresses.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-22",
+      "revision": 1,
+      "questionHash": "a347674d1aa1eb32d53902e0fcd4ceda525cc3b411bb5b8d534773548b82190c",
+      "result": "supported",
+      "rationale": "10.40.2.0/24 falls outside the sole 10.40.0.0/24 VNet range; additional containing address space is needed, not NSG/public-IP changes.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-23",
+      "revision": 1,
+      "questionHash": "c17888c4ee47c4e01807a9066f31112d302a0bd62379c2bf211aa05e21d93d21",
+      "result": "supported",
+      "rationale": "10.50.1.128/25 lies inside 10.50.1.0/24; overlap violates subnet requirements, while multiple subnets and unequal lengths are allowed.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-24",
+      "revision": 1,
+      "questionHash": "061e85c70dd1945613c95dc0af2046f492fd3b8b4c199d06e86d64e25d62d9d9",
+      "result": "supported",
+      "rationale": "10.0.8.0/24 overlaps 10.0.0.0/16 and prevents peering; unequal prefix lengths themselves are valid.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-25",
+      "revision": 1,
+      "questionHash": "1756bb33d42f21ccebc094f82169be0afb727ae736e04d76208b025575ee786f",
+      "result": "supported",
+      "rationale": "The diagram's A-B-C peerings provide no transitive A-C path under the explicit absence of gateways and forwarding.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-26",
+      "revision": 1,
+      "questionHash": "97a1bc132ccde9d8c6eee08f201cc7b19a9332d2964ed3cda8d451ab7590a66c",
+      "result": "supported",
+      "rationale": "Hub allow-gateway-transit and spoke use-remote-gateways settings supply explicit transit; a spoke cannot retain its own gateway.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-27",
+      "revision": 1,
+      "questionHash": "cf4318c2180f4e1c53519b98a11512167724721e628d7ce86a8183d6874e9536",
+      "result": "supported",
+      "rationale": "New peered ranges require synchronization and nonoverlap checking; private DNS links or VM deletion do not advertise ranges.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-28",
+      "revision": 1,
+      "questionHash": "34abefbd5f9e7e81934d5b5176514df3ed2750f13588199b4542ea824603b0f1",
+      "result": "supported",
+      "rationale": "Standard public IPv4 allocation is static; Basic dynamic behavior and private DHCP are unrelated.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-29",
+      "revision": 1,
+      "questionHash": "47b1663e2384f0866782e00b3cba7cb598282a32f28e38c6e7a7c64d8b4bec81",
+      "result": "supported",
+      "rationale": "Current Microsoft public-IP documentation records Basic retirement on September 30, 2025; Standard remains supported in October 2026.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-30",
+      "revision": 1,
+      "questionHash": "b0c6ba64f149d2f075daabc03e26406643700d88dfc74134e87d69f0ed1a828d",
+      "result": "supported",
+      "rationale": "Standard VM public-IP inbound access requires an applicable permitting NSG; address assignment supplies neither universal allowance nor payload encryption.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-31",
+      "revision": 1,
+      "questionHash": "1b02d2baf2a7b1923fc310a682cc0b9868ba7c5da88878da6af16831d0ee6d4e",
+      "result": "supported",
+      "rationale": "For 10.80.4.19, /24 is the longest matching prefix and selects appliance-B; no packet duplication follows.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-32",
+      "revision": 1,
+      "questionHash": "b93a5c1e5df6dfed894882d36eda9eac028a1fcf7e42704ff7f9a95cbbaf4ba8",
+      "result": "supported",
+      "rationale": "For identical valid prefixes, UDR outranks BGP under the expressly excluded special service-endpoint case; NSG numbers do not choose routes.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-33",
+      "revision": 1,
+      "questionHash": "98df5281973915de8199742edb9a3b027d85c023630319d4cb6a81d4fd0a87ef",
+      "result": "supported",
+      "rationale": "The workload subnet needs its route-table association and Virtual appliance next hop with the appliance private IP; DNS/ASG objects are not next hops.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-34",
+      "revision": 1,
+      "questionHash": "7c1464480a0cb7c21207174dd44acce6dd838d53d5d788979c331243c39b63ad",
+      "result": "supported",
+      "rationale": "A selected None next hop drops packets, rather than queuing them or routing to the internet.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-35",
+      "revision": 1,
+      "questionHash": "95ebb36e0f4135080398f3bf7857f2e2188db5253a4a94fae76bfa5d7f7ed97a",
+      "result": "supported",
+      "rationale": "Connection troubleshoot diagnoses reachability from a VM to a specific endpoint; tags and MX records cannot test TCP connectivity.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-36",
+      "revision": 2,
+      "questionHash": "3c769a9fcdbcaebb45deb107be3833a7b3aba31d629aa04f2fbf89c5714697e4",
+      "result": "supported",
+      "rationale": "Effective NIC routes expose combined routing and the source subnet association determines whether UDRs apply; DNS/NSG priorities cannot change either.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-37",
+      "revision": 1,
+      "questionHash": "050007a5a675b1afb7dd2c1f94211cf7875f321cec5c0ff097ff2e256b306681",
+      "result": "supported",
+      "rationale": "NSG packet attributes and matching TCP 443 allow rules govern the stated HTTPS access; they neither admit TCP 80 nor renew certificates.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-38",
+      "revision": 1,
+      "questionHash": "62b10b31e1f192f6e019a32e3b71798e01bac207ec6daa049a0c318b3aecd2de",
+      "result": "supported",
+      "rationale": "All ASG member NICs must inhabit one VNet; multiple eligible NICs and private-only VMs are supported.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-39",
+      "revision": 1,
+      "questionHash": "8c660cbf837c072bdb1d0dd76a3c1b888a37d7e93bf54684cfb5b1d429e60053",
+      "result": "supported",
+      "rationale": "Both inbound subnet and NIC NSGs must permit the flow; the shown subnet deny wins regardless of the NIC allow.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-40",
+      "revision": 1,
+      "questionHash": "2d38af53a31882f0c264fe7fb6fad627555c183c9c97393a79554924ced9aca4",
+      "result": "supported",
+      "rationale": "Outbound NIC denial blocks before the subnet allow; separate NSGs do not delete or globally override one another.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-41",
+      "revision": 1,
+      "questionHash": "8c9908a5b947639a8ca931e35328ff79fd0880fcaa70c4b673477b2eb57f9e3f",
+      "result": "supported",
+      "rationale": "Effective security rules aggregate applicable subnet/NIC filtering; DNS and storage keys contain no such rule view.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-42",
+      "revision": 1,
+      "questionHash": "4e5492c71ab425e4c4b84154845bd852632424e1f2357b7224a7840170f77ee3",
+      "result": "supported",
+      "rationale": "New dedicated Basic Bastion requires AzureBastionSubnet and /26 or larger; the scenario excludes Developer and historical /27 exceptions.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-43",
+      "revision": 1,
+      "questionHash": "6046711d9493016d3e3cd3ee2bd7e2d2bcb1e574882e2a314fc04174e99a2545",
+      "result": "supported",
+      "rationale": "Public Basic Bastion requires an unused Standard static public IP, distinct from Developer and Premium private-only modes.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-44",
+      "revision": 1,
+      "questionHash": "b7f901c344c5159c22c9d4d2af8d74376297545b5e715da0b2b59a7ab59d4858",
+      "result": "supported",
+      "rationale": "Custom Bastion ports require Standard or higher; Basic and DNS TTL cannot enable that capability.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-45",
+      "revision": 1,
+      "questionHash": "12f9492546c6b985fc278546b994118e8753def1ef725735ca1dcd25ee21ff8e",
+      "result": "supported",
+      "rationale": "Service endpoints extend subnet identity and route service traffic over the backbone; they neither create a private-endpoint NIC nor grant data permissions.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-46",
+      "revision": 1,
+      "questionHash": "6255d2bda5359fe40e1537baeed043a86fb75ffa88d15722b2064c9d45ec62ac",
+      "result": "supported",
+      "rationale": "Subnet endpoint enablement must be paired with resource-side VNet restriction policy; enabling it alone leaves broad storage access unchanged.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-47",
+      "revision": 1,
+      "questionHash": "0117cfb70ee085d6eac216d11ea38878c157202f482d975f14c7627dc55ee9f6",
+      "result": "supported",
+      "rationale": "On-premises VPN clients do not inherit service-endpoint subnet identity; DNS aliases and endpoint NIC assumptions cannot grant it.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-48",
+      "revision": 1,
+      "questionHash": "aae9407d5fc18b404ffa58f540d16668fbaad70e3978976ee124c4c01ac49ade",
+      "result": "supported",
+      "rationale": "Approved private endpoints use subnet private IPs and correct service-name DNS; neither client public IPs nor service-endpoint identity replaces that model.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-49",
+      "revision": 1,
+      "questionHash": "c8459b2b4871897652e5156d821c9a11f2bd0d2d2938cbd71f5fc28906500cd1",
+      "result": "supported",
+      "rationale": "Pending storage connections need resource-owner approval; TTL and NSG changes cannot approve them, consistent with the shared case.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-networking-plus-50",
+      "revision": 1,
+      "questionHash": "f414dabff5ecce051308102dff801f50ee719dec87e95a6cf54c4321cd7c4934",
+      "result": "supported",
+      "rationale": "Blob requires the privatelink.blob.core.windows.net endpoint record and client-VNet link; Files and MX records cannot resolve its private hostname.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-reserve-plus-07",
+      "revision": 1,
+      "questionHash": "00638aa0dfb4e34565e2dd22517426eadbe710a9bd8fcc92a138e08434e2a997",
+      "result": "supported",
+      "rationale": "The read-only nameServers resource-property reference creates an implicit Bicep dependency; independent resources can deploy in parallel.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/resource-dependencies"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-reserve-plus-08",
+      "revision": 1,
+      "questionHash": "2fcf84064640d5cd2f8d177bbaebfa14822191662e8f5fd6e7b4102da3f409ab",
+      "result": "supported",
+      "rationale": "Even cluster-supported running-VM resizing restarts the VM; failed requested-size display is not proof of successful allocation and disks are retained.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-reserve-plus-09",
+      "revision": 1,
+      "questionHash": "1161c66c85c21060262ce9a7ea7f7e8baf888eda1012b3670f5ba6e800c1a862",
+      "result": "supported",
+      "rationale": "An HTTP revision's minimum of one or higher retains idle capacity; maximum-only and zero minimum do not express the requirement.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-apps/scale-app"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-reserve-plus-10",
+      "revision": 1,
+      "questionHash": "bc6be649de289e491b2d41da44a3d1246691c7532ab19b2343eb2ba034223137",
+      "result": "supported",
+      "rationale": "App Service private endpoints handle the missing inbound direction; existing VNet integration supplies only outbound database access.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-reserve-plus-11",
+      "revision": 1,
+      "questionHash": "3e88c5971a5d05abbc16f9da33a11f43ca73b72f75d22f28e3ad9335f4ac90b8",
+      "result": "supported",
+      "rationale": "10.42.8.19 selects the more specific /24 None route over /0 appliance route; prefix length precedes equal-prefix type precedence.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-reserve-plus-12",
+      "revision": 1,
+      "questionHash": "524710b6fdd22b6fe051415825dc8679ee33dc0fe47a31a3baab40329229b720",
+      "result": "supported",
+      "rationale": "Within one NSG, priority 220 allow matches first and ends processing before 310 deny; later denial does not globally override it.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-reserve-plus-13",
+      "revision": 1,
+      "questionHash": "05c5beb85734030077fa8897f5ca12268029ebd28427465c7c3da178b9d35235",
+      "result": "supported",
+      "rationale": "A failing Standard Load Balancer backend stops receiving new flows while other healthy backends serve; no deletion or DNS delegation occurs.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-01",
+      "revision": 1,
+      "questionHash": "beeeebbb734dc4a285f673aba8a0b2db1c63f389da90b31c44cdc1485708212d",
+      "result": "supported",
+      "rationale": "The exhibit's valid default 2 is selected when omitted; allowed value 4 is a constraint, not a default selection.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameters"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-02",
+      "revision": 1,
+      "questionHash": "622d3d7bb85e1784229d114e507af04133ea3c403a4ce05d494e919376222c9e",
+      "result": "supported",
+      "rationale": "Secure decorators protect string and object parameter values; integer length and secret-prefixed naming cannot secure the credential.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameters"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-03",
+      "revision": 1,
+      "questionHash": "394e23c5943d432e0a3e85295df228f3051adc1d1c22b134d8b913a4baf2837f",
+      "result": "supported",
+      "rationale": "The resourceGroup-scoped exhibit is deployed with az deployment group create to rg-scan; subscription deployment and group creation serve different purposes.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-04",
+      "revision": 2,
+      "questionHash": "e7d5d5702737653d3b905397b4b252ceb4b9e0aadd4386df3b507a816febc1bd",
+      "result": "corrected",
+      "rationale": "The scenario now explicitly specifies default Provider validation. Its keyed permissions and every explanation are consistent with that mode; the corrected explanation distinguishes ProviderNoRbac resource-read checks. Reader also lacks deployment operations under the stated no-other-assignments assumption.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if"
+      ],
+      "reviewedPreviousRevision": 1,
+      "resolvedFindings": [
+        {
+          "claim": "What-if requires deployment permissions and write access to the resources being deployed (without specifying validation mode).",
+          "rationale": "Current official docs support default Provider validation and ProviderNoRbac, which checks only resource read permissions; Template skips provider permission checks. The default question should identify its mode so the explanation remains accurate. Reader insufficiency for deployment operations remains distinct from resource-write checks.",
+          "replacementProposal": {
+            "scenario": "An auditor has Reader on a resource group and asks to run what-if for a Bicep deployment that creates a VM, using the default Provider validation level. No other permission assignments apply.",
+            "options.c.text": "Default Provider what-if validation requires deployment permissions and write access to the resources being deployed",
+            "options.c.explanation": "With the default Provider validation level, what-if checks full deployment permissions, including resource write operations and deployment operations. ProviderNoRbac instead checks resource read permissions, so the validation mode matters.",
+            "summaryExplanation": "With the default Provider validation level, what-if checks full deployment permissions, including resource write operations and deployment operations. ProviderNoRbac instead checks resource read permissions, so the validation mode matters."
+          }
+        }
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-05",
+      "revision": 1,
+      "questionHash": "872b68e6abc7bfb80735b33bf67639a7b40d49df488489d317ecac386597355a",
+      "result": "supported",
+      "rationale": "ARM allowedValues restricts SKU choices and defaultValue supplies omitted Standard_LRS; secureString and renaming do not implement that contract.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/parameters"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-06",
+      "revision": 1,
+      "questionHash": "6cfb9489637917f64233f29249db345f8e6bd43f051d8f92df73f7ec20d2372f",
+      "result": "supported",
+      "rationale": "CLI sequential evaluation means the later inline Standard_GRS overrides earlier file Standard_LRS; no concatenation occurs.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-07",
+      "revision": 1,
+      "questionHash": "f1abaca219950754783a3793976cf7cbc03bac7f3f3f3868dde2f4c5bdb35e60",
+      "result": "supported",
+      "rationale": "NoChange predicts unchanged redeployed properties, whereas Ignore after expansion limits indicates omitted analysis requiring investigation.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-08",
+      "revision": 1,
+      "questionHash": "46180b1b9a2402fc46e2d89a59d590b24ad17d81d4ef36e36a71f69a9a481b27",
+      "result": "supported",
+      "rationale": "Current-resource export captures later portal tags; historical template and original parameter inputs cannot include subsequent manual edits.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-09",
+      "revision": 1,
+      "questionHash": "528eddcc9662c74e37c0fb459636454099b7f9333bed2d8c7722e760e67c856f",
+      "result": "supported",
+      "rationale": "The scenario expressly mandates export, JSON correction, decompile, generated-Bicep review, then what-if; source cautions support each stage.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-10",
+      "revision": 1,
+      "questionHash": "17f6398ead0ae6554ac7bea83a97357074f3d97d6439fcfed631b50b0ae69680",
+      "result": "supported",
+      "rationale": "Decompilation lacks guaranteed perfect mapping and exported schemas/password omissions require review; format conversion cannot confer approval.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-11",
+      "revision": 2,
+      "questionHash": "c0f851c9ee0326720c269ddb34e972d38ca36c9ac65ab209277375111ddd59fa",
+      "result": "supported",
+      "rationale": "The valid parameter-complete module exhibit causes webApp.bicep resources to deploy with the parent; modules are neither comments nor ignored declarations.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-12",
+      "revision": 1,
+      "questionHash": "f4c206972ef03eb84d073c4371fef8e47a49ab2b9327b20e63587fe6f2768b37",
+      "result": "supported",
+      "rationale": "Parameter, variable, module and output purposes match c,d,a,b respectively; all four explanations agree with Bicep declaration semantics.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-13",
+      "revision": 1,
+      "questionHash": "b7b2ee106f620fea5f504f3b017da2cfbf348335360cc5b402ba6e67d8c0b56e",
+      "result": "supported",
+      "rationale": "Measured memory pressure calls for adequate memory-optimized RAM; low CPU alone and disk enlargement do not solve that bottleneck.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-14",
+      "revision": 1,
+      "questionHash": "efbec46018baa6c8fc279627082bedfdf38f1ba2b9102705e5ab32605b2d86c4",
+      "result": "supported",
+      "rationale": "Unavailable current-cluster target size can require deallocation and service interruption; disk capacity and tags cannot release compute placement.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-15",
+      "revision": 1,
+      "questionHash": "e8bbd33b6f04ae0d8ce95caf710ce9e123692e2cd28217304853babd49d1be89",
+      "result": "supported",
+      "rationale": "Running resize restarts; managed OS/data disks survive deallocation; requested-size model display after failure does not prove allocation.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-16",
+      "revision": 1,
+      "questionHash": "b5bd06a7a5f2ed8d287f2d3d8b1a1711bacdd95b5d5cf5f86ca109fa34229cba",
+      "result": "supported",
+      "rationale": "Premium SSD v2 cannot be an OS disk and lacks host caching; select an eligible OS type and reserve v2 for supported data workloads.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-17",
+      "revision": 1,
+      "questionHash": "afb773561fbc3cfd240cd7bbf8aa8f30dc36858bcf0408e28e33aa9d573877cb",
+      "result": "supported",
+      "rationale": "Ultra Disk supports performance changes without VM restart and lacks caching; it supports neither OS-disk use nor availability sets.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-18",
+      "revision": 1,
+      "questionHash": "ab3f87e18429fcc07aff88291b39872123cdee4a1b7cdc6f6cd15a73604bb54b",
+      "result": "supported",
+      "rationale": "Historical ADE use excludes encryption at host; never-ADE VMs still require supported sizes and subscription prerequisites.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-19",
+      "revision": 1,
+      "questionHash": "110b5e8b7fc57622e8357a46c80da07d1dad1a9be5462e779b313bb4e37fa042",
+      "result": "supported",
+      "rationale": "Managed-disk customer-managed keys are stored in Key Vault or Managed HSM, not tags or temporary guest disks.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-20",
+      "revision": 2,
+      "questionHash": "741dbd3925ce1f2132c98234447b2041dd01a3c35e91749d8bb657ccbdb97820",
+      "result": "supported",
+      "rationale": "A new 3-TiB Linux disk requires GPT and UUID-based persistent mounting; filesystem formatting remains necessary and fixed device IDs are unreliable.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-21",
+      "revision": 1,
+      "questionHash": "760ae54e4625114c7cd5962e8761054d1a99432ed82071ae7a46fbf54f39a1f1",
+      "result": "supported",
+      "rationale": "Same-tenant cross-subscription moves require the VM and dependent disks/NIC/VNet together after validation; split-resource proposals violate dependency rules.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-22",
+      "revision": 1,
+      "questionHash": "ed2489f32bb1c34cb16e4524dd0ceb31161bb6f55f3ef2f42691936cc641d62d",
+      "result": "supported",
+      "rationale": "Zones are physically separate within a supported region with independent power/network/cooling; replicated case VMs mitigate datacenter loss, not every regional disaster.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-23",
+      "revision": 1,
+      "questionHash": "a5ac739355131ddddd3bb93b782135a4140e320118ca09e4f0d5ae226a2b7e12",
+      "result": "supported",
+      "rationale": "Encryption at host covers temporary disks and OS/data caches without guest encryption/VM CPU consumption; placement and managed-disk SSE alone do not express that coverage.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-24",
+      "revision": 1,
+      "questionHash": "68a2746c590d240d9cf215137877dfdd7c87347f68215f9f99b534e3d13da10b",
+      "result": "supported",
+      "rationale": "Prepared Resource Mover resources enter Initiate move pending, then Commit move pending; the case explicitly validates before commit/discard decision.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/resource-mover/tutorial-move-region-virtual-machines"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-25",
+      "revision": 1,
+      "questionHash": "195416fdc51211cd189faa4f423ab0e204fb4e62039417535a6a55e752d344a8",
+      "result": "supported",
+      "rationale": "Flexible orchestration manages standard VMs with individual VM/NIC/disk APIs and supported mixed types; Uniform VMSS APIs and availability sets differ.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-26",
+      "revision": 2,
+      "questionHash": "9c3e7bbf72f87b9901928bef9a27f534f73d0b88499c8272bdab9cab61debe3c",
+      "result": "supported",
+      "rationale": "A valid scaling profile supports metric-threshold and schedule autoscale; disk capacity and fault-domain count do not create instances on demand.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-27",
+      "revision": 1,
+      "questionHash": "9c178af38e8b7f47ffe5fe456dab038aad0fbec0f76f18d7bead3e7678e38670",
+      "result": "supported",
+      "rationale": "Container Registry stores images/artifacts; ACI runs containers and availability sets address VM placement.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-28",
+      "revision": 1,
+      "questionHash": "9fa970878337bed36f33de96aa34bea7aa5312e037408fd37790f415ad67f792",
+      "result": "supported",
+      "rationale": "Non-ABAC pull-only uses AcrPull; ABAC repositories use Repository Reader. AcrPush grants extra push permission and ABAC changes role applicability.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication-managed-identity"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-29",
+      "revision": 1,
+      "questionHash": "66fcabd569045e8f1f2ffb354b71b3383cbca62ee4193926cfcbdb8fe67a9bad",
+      "result": "supported",
+      "rationale": "Linux containers in one ACI group share localhost ports even when not externally exposed; separate groups do not share that namespace.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-30",
+      "revision": 1,
+      "questionHash": "cf8f797601104ca37dae200edd35fe54626503bbe6efdf7b1fff13d4e3c441c9",
+      "result": "supported",
+      "rationale": "ACI sums both requests: 1.5+0.5 CPUs and 2+1 GB produce 2 CPUs/3 GB, with overhead expressly excluded.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-31",
+      "revision": 1,
+      "questionHash": "51febf2115ab10489f8bb8a21d7e20b506218f368ee6f4c21027edfef6613577",
+      "result": "supported",
+      "rationale": "The configured two-CPU limit permits borrowing available group CPU beyond the one-CPU request; limits do not create extra hosts or capacity.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-32",
+      "revision": 1,
+      "questionHash": "6060043fc34c94b08e0411e3b74eb79c08944fa1c0bb18f2ecb1a4f4b5071f9c",
+      "result": "supported",
+      "rationale": "ACI defaults to Always and OnFailure retries nonzero failures; successful finite jobs stop under OnFailure, and group IP can change on restart.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-restart-policy"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-33",
+      "revision": 1,
+      "questionHash": "61ef1de6e0f5d19b2d52831cce58f7c7b9c17c9a4aef011258deb1325f6366f8",
+      "result": "supported",
+      "rationale": "Either custom-scale trigger may initiate scaling subject to replica limits; all-rule AND and disabling scaling are unsupported.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-apps/scale-app"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-34",
+      "revision": 1,
+      "questionHash": "6fef6b7742d8e9e08a4dbd82a74c451cb0adff7c7150c1e8ffa15b527f53677f",
+      "result": "supported",
+      "rationale": "Editing scale rules creates a new revision; multiple-revision mode does not imply deleting prior revisions.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-apps/scale-app"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-35",
+      "revision": 1,
+      "questionHash": "1d2e1d1f678bc545de01d8003b63467f7e7ea41fe3cbf323c88500d163f134aa",
+      "result": "supported",
+      "rationale": "Internal app ingress scopes direct access to the same environment, with the scenario explicitly excluding environment-level route exceptions; replica count does not isolate ingress.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-apps/ingress-overview"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-36",
+      "revision": 1,
+      "questionHash": "85ba67f87a08545d9195a8aeee9fe4b8c8b4903235bd60099dba08b5bd8fec59",
+      "result": "supported",
+      "rationale": "Always defaults to restarts, Never prevents successful-exit restart with nonzero platform-retry caveat, and OnFailure retries failures; b,c,a mapping agrees.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-restart-policy"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-37",
+      "revision": 1,
+      "questionHash": "59a780792c53d2285755284ecc92bf1b78b5fea00ce7a063134aa54cf172cc2e",
+      "result": "supported",
+      "rationale": "HTTP scale-out is bounded by maxReplicas 10; minReplicas is a floor and concurrentRequests 20 is a request threshold, not replica quantity.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-apps/scale-app"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-38",
+      "revision": 2,
+      "questionHash": "a6397f1b1cd650424cd76be1fb14189beacc932b7d564e44ef6d3818ac3da766",
+      "result": "supported",
+      "rationale": "HTTP ingress and multiple revision mode support immutable revision identification and traffic splitting between active revisions; replica counts and deletion claims differ.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/container-apps/revisions"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-39",
+      "revision": 1,
+      "questionHash": "0543b7da798e838203c5ec90716f23f28a63343fe6b3b394748e824bee6a98c5",
+      "result": "supported",
+      "rationale": "With per-app and automatic app scaling explicitly excluded, apps share plan VMs and scale together; SQL dependencies scale separately.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-40",
+      "revision": 1,
+      "questionHash": "e3f67ea4fccf83f9c73c1b58e8b83499d314c43881e0ef07cab58e65bb61999c",
+      "result": "supported",
+      "rationale": "Changing the pricing tier is scale up; adding VM instances is scale out and DNS cannot alter plan capacity.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-41",
+      "revision": 1,
+      "questionHash": "2fee62a8c3af0b0c2e2a4db85254872ef38bf39137185cbf69d3b23ddff356c3",
+      "result": "supported",
+      "rationale": "CPU thresholds and business-hours schedules require Azure autoscale; App Service automatic scaling instead follows HTTP traffic.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-42",
+      "revision": 1,
+      "questionHash": "b9c15df45dc4bc36311b5ff8c5109b5d686efba10528a3d4b715b78f7aa9c87e",
+      "result": "supported",
+      "rationale": "Supported automatic backups require no initial configuration and are not downloadable; configured custom backups support on-demand/scheduled downloadable storage blobs; automatic backups omit linked databases.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-43",
+      "revision": 1,
+      "questionHash": "28ee09f5bcb050cfa8e581f14e04ca326bfa3cdb9d736259ebdb70fcdc9ac51c",
+      "result": "supported",
+      "rationale": "Seabrook's same-region private-database outbound calls require VNet integration; app private endpoints and TLS bindings address different requirements.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-private-endpoint"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-44",
+      "revision": 1,
+      "questionHash": "e4d6eb3acfecd9610cc0dbb92e8d57c88cbce731dda4a20dd190aba2f5e54c2b",
+      "result": "supported",
+      "rationale": "The Standard app supports private endpoints, and disabling public network access removes coexisting public exposure; outbound integration and instance count do not isolate inbound access.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-private-endpoint",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-45",
+      "revision": 1,
+      "questionHash": "a5cbd82af21edeba041a0c64f896a40fafa6f745aca3d6a8e6df6757e9ce9f29",
+      "result": "supported",
+      "rationale": "The SNI-capable private portal requires documented custom-hostname mapping/ownership verification and matching-certificate SNI binding; networking alone and unrelated certificates cannot satisfy HTTPS.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-bindings",
+        "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-46",
+      "revision": 1,
+      "questionHash": "8a51bc023c5bf70c348e92e0e8b794cc53c1ef7905b995d330d6a9bfdfc854fd",
+      "result": "supported",
+      "rationale": "With ordinary apex DNS, an A record plus documented asuid TXT verification meets mapping guidance; apex CNAME and MX do not.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-47",
+      "revision": 1,
+      "questionHash": "93daf32a93adeb0f635d0b679808c026f3cc250608b4f717d7df719eb812ff9e",
+      "result": "supported",
+      "rationale": "Restore stops the target, so restoring to a slot, validating, then swapping minimizes production interruption; cloning configuration does not restore content.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-backup",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-48",
+      "revision": 1,
+      "questionHash": "32874f5f1f48c01d3bea64eec0bb54ba5abf3aca49634951fd0402eb851023d7",
+      "result": "supported",
+      "rationale": "The 14-GB custom request exceeds the 10-GB total; the 4-GB database allowance is optional and automatic's 30-GB limit does not apply.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-49",
+      "revision": 1,
+      "questionHash": "47fcc29745d35c561c05f98250bd7a1201fa9947ee2a18db62584f40ca065ab7",
+      "result": "supported",
+      "rationale": "Slot-marked connection strings stick to production and custom domains do not swap; unchanged override settings preserve documented non-swapped TLS/domain behavior.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+      ],
+      "findings": []
+    },
+    {
+      "questionId": "az104-compute-plus-50",
+      "revision": 1,
+      "questionHash": "38c364bb2104d140678cb85462f9a0942af550929b9388bb6bcac3618c7229e6",
+      "result": "supported",
+      "rationale": "A Standard IP-based TLS binding creates a dedicated IP requiring the existing A record to be remapped; retaining shared IP or deleting hostname contradicts the documented procedure.",
+      "evidenceUrls": [
+        "https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-bindings"
+      ],
+      "findings": []
+    }
+  ]
+}

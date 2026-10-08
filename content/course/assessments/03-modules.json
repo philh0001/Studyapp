@@ -1,0 +1,1919 @@
+[
+  {
+    "moduleId": "intro-to-azure-application-gateway",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:01:25.680413+00:00",
+    "questions": [
+      {
+        "id": "intro-to-azure-application-gateway-check-01",
+        "prompt": "A regional web application uses one hostname. Requests to /invoices/* must reach one server pool and /help/* another. Which configuration selects the pool from the URL path?",
+        "lessonIds": [
+          "intro-to-azure-application-gateway--3-how-azure-application-gateway-works"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Cookie-based session affinity",
+            "explanation": "Affinity keeps a user session on a backend; it does not select different pools from URL paths.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+              "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A path-based routing rule",
+            "explanation": "Path-based routing maps URL path patterns to backend pools, matching the two paths in this scenario.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+              "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A backend health probe",
+            "explanation": "Probes decide which backends are healthy; they do not choose pools according to the requested path.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+              "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Connection draining",
+            "explanation": "Draining supports graceful backend removal; it does not route invoice and help requests to different pools.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+              "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-application-gateway-check-02",
+        "prompt": "Two internal web applications share an Application Gateway frontend IP. One uses staff.example.com and the other uses partners.example.com. They must reach separate pools based on the hostname. What should you configure?",
+        "lessonIds": [
+          "intro-to-azure-application-gateway--3-how-azure-application-gateway-works"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "One basic listener with no hostname matching",
+            "explanation": "A basic listener without hostname matching does not distinguish the two application hostnames.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A longer backend request timeout",
+            "explanation": "A timeout controls how long the gateway waits for a backend response; it does not select a site by hostname.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A custom error page for each backend",
+            "explanation": "Error pages change failure responses, not the rules that select an application from its hostname.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Multi-site listeners and corresponding routing rules",
+            "explanation": "Multi-site listeners match hostnames, and their routing rules send each site to its intended backend pool.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-application-gateway-check-03",
+        "prompt": "An HTTPS listener already decrypts client requests at Application Gateway. Security policy also requires encryption from the gateway to the backend servers. The backend servers have valid HTTPS certificates. What additional setting meets the requirement?",
+        "lessonIds": [
+          "intro-to-azure-application-gateway--3-how-azure-application-gateway-works"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Use HTTPS in the backend HTTP settings",
+            "explanation": "HTTPS backend settings make the gateway establish an encrypted backend connection after frontend TLS termination.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Use HTTP in the backend HTTP settings",
+            "explanation": "HTTP sends the backend leg without TLS, even though the client-to-gateway connection is encrypted.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Enable cookie-based affinity while keeping backend HTTP",
+            "explanation": "Affinity changes backend selection for sessions; it does not encrypt the HTTP backend leg.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Extend the request timeout while keeping backend HTTP",
+            "explanation": "A longer timeout allows more response time but adds no encryption to the backend leg.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-application-gateway-check-04",
+        "prompt": "A backend server no longer responds successfully. Application Gateway must stop sending new requests to it while continuing to use healthy servers. Which feature supplies the health decision?",
+        "lessonIds": [
+          "intro-to-azure-application-gateway--3-how-azure-application-gateway-works"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Multi-site hostname matching",
+            "explanation": "Hostname matching chooses a site; it does not establish whether that site’s backend servers are responding.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "HTTP header rewrites",
+            "explanation": "Rewrites modify request or response headers; they do not perform backend availability checks.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Backend health probes",
+            "explanation": "Probes test backend health so unhealthy servers are excluded from request distribution.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A custom error page",
+            "explanation": "An error page changes what a client sees after an error; it does not test and exclude a failed backend.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-application-gateway-check-05",
+        "prompt": "A web app stores a signed-in user’s session on its backend server. The client accepts cookies, and the server remains healthy. Which Application Gateway setting keeps that user’s later requests on the same backend?",
+        "lessonIds": [
+          "intro-to-azure-application-gateway--2-what-is-azure-application-gateway",
+          "intro-to-azure-application-gateway--3-how-azure-application-gateway-works"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "A path-based rule alone",
+            "explanation": "A path-based rule chooses a pool from the URL; it does not bind a user’s session to a member of that pool.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+              "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Cookie-based session affinity",
+            "explanation": "Gateway-managed affinity cookies direct later requests in the session to the same backend, matching locally stored session state.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+              "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A larger autoscale maximum",
+            "explanation": "Autoscaling changes gateway capacity; it does not preserve an individual user’s backend selection.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+              "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A longer health-probe interval",
+            "explanation": "Probe timing controls health checks, not session-to-server affinity.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+              "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-application-gateway-check-06",
+        "prompt": "An Application Gateway deployment needs to inspect incoming web requests for SQL injection and cross-site scripting attempts before they reach the application. Which feature addresses that requirement?",
+        "lessonIds": [
+          "intro-to-azure-application-gateway--3-how-azure-application-gateway-works"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "A web application firewall policy",
+            "explanation": "WAF inspects web requests using attack-detection rules that address threats such as SQL injection and cross-site scripting.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Connection draining",
+            "explanation": "Draining helps remove backend instances gracefully; it does not inspect requests for web attack patterns.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Backend health probes",
+            "explanation": "Health probes check endpoint availability, not malicious content in users’ requests.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Cookie-based session affinity",
+            "explanation": "Affinity preserves backend selection for sessions; it does not detect injection or scripting attacks.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "intro-to-azure-network-watcher",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:01:25.680413+00:00",
+    "questions": [
+      {
+        "id": "intro-to-azure-network-watcher-check-01",
+        "prompt": "A running Azure VM has a Network Watcher extension and a specified NIC. An administrator wants to know whether an inbound TCP packet with known source and destination IPs and ports is denied by an NSG, and which rule decides it. Which tool fits?",
+        "lessonIds": [
+          "intro-to-azure-network-watcher--2-what-is-azure-network-watcher",
+          "intro-to-azure-network-watcher--3-how-azure-network-watcher-works"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Next hop",
+            "explanation": "Next hop reports routing decisions; it does not identify the NSG rule allowing or denying this packet.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Topology",
+            "explanation": "Topology displays resource relationships; it does not evaluate the specified packet against security rules.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "IP flow verify",
+            "explanation": "IP flow verify evaluates the packet’s addresses, ports, protocol and direction and identifies the security rule that allows or denies it.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "VPN troubleshoot",
+            "explanation": "VPN troubleshoot diagnoses gateways and VPN connections rather than this VM-level NSG decision.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-network-watcher-check-02",
+        "prompt": "An Azure VM can resolve a destination address, but traffic may be routed through the wrong virtual appliance. You know the source VM, NIC and destination IP. Which Network Watcher tool shows the selected next-hop type and address?",
+        "lessonIds": [
+          "intro-to-azure-network-watcher--3-how-azure-network-watcher-works"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Next hop",
+            "explanation": "Next hop uses effective NIC routes to identify the destination’s next-hop type and IP, exposing an incorrect appliance route.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Effective security rules",
+            "explanation": "Effective security rules combines subnet and NIC NSG rules; it does not report the chosen route or appliance address.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Topology",
+            "explanation": "Topology shows network relationships, but not the effective next-hop decision for the supplied destination.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Packet capture alone",
+            "explanation": "A capture records packets for analysis; Next hop directly answers which route and next hop Azure selects.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-network-watcher-check-03",
+        "prompt": "Two Azure VMs already have the Network Watcher extension. You need connectivity and latency measurements every few minutes throughout a day, not just one test. Which tool should you configure?",
+        "lessonIds": [
+          "intro-to-azure-network-watcher--2-what-is-azure-network-watcher",
+          "intro-to-azure-network-watcher--3-how-azure-network-watcher-works"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Connection troubleshoot",
+            "explanation": "Connection troubleshoot runs a point-in-time test; it does not provide the requested ongoing scheduled measurements.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+              "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "IP flow verify",
+            "explanation": "IP flow verify evaluates security-rule decisions for packet parameters, not latency trends over a day.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+              "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "VPN troubleshoot",
+            "explanation": "VPN troubleshoot diagnoses VPN gateways and connections; the requested measurements are between these VM endpoints.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+              "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Connection Monitor",
+            "explanation": "Connection Monitor repeatedly probes configured endpoints and tracks connectivity and latency over time.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+              "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-network-watcher-check-04",
+        "prompt": "A VM has the Network Watcher extension. You need a filtered record of TCP traffic on one application port for detailed packet analysis, saved to disk or blob storage. Which tool meets this requirement?",
+        "lessonIds": [
+          "intro-to-azure-network-watcher--3-how-azure-network-watcher-works"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Topology",
+            "explanation": "Topology provides resource relationships, not packet contents or a saved packet-capture file.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Packet capture",
+            "explanation": "Packet capture records VM traffic, supports packet-parameter filters, and saves the capture to disk or blob storage.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "IP flow verify",
+            "explanation": "IP flow verify reports a security-rule decision for a hypothetical packet; it does not record a stream of packets.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Next hop",
+            "explanation": "Next hop identifies routes and destinations, not traffic contents for detailed packet analysis.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-network-watcher-check-05",
+        "prompt": "An administrator inherits a VNet and needs an interactive view of its VMs, NICs, subnets and related network resources before investigating an outage. Which Network Watcher tool is intended for this first step?",
+        "lessonIds": [
+          "intro-to-azure-network-watcher--2-what-is-azure-network-watcher",
+          "intro-to-azure-network-watcher--3-how-azure-network-watcher-works"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Topology",
+            "explanation": "Topology visualizes network resources and their relationships, making it suitable for understanding the inherited layout.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Connection Monitor",
+            "explanation": "Connection Monitor tracks connectivity and latency between endpoints; it is not the resource-relationship visualization requested.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "IP flow verify",
+            "explanation": "IP flow verify checks a specified packet against security rules, which requires a more specific filtering question.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "VPN troubleshoot",
+            "explanation": "VPN troubleshoot diagnoses gateway and connection health rather than presenting the VNet’s resource relationships.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-network-watcher-check-06",
+        "prompt": "A site-to-site VPN connection has stopped working. You need a diagnosis of the Azure virtual network gateway and its connection, including recommended corrective actions. Which tool should you run?",
+        "lessonIds": [
+          "intro-to-azure-network-watcher--3-how-azure-network-watcher-works",
+          "intro-to-azure-network-watcher--4-when-to-use-azure-network-watcher"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Packet capture only",
+            "explanation": "A capture can provide traffic evidence, but it does not supply the requested gateway health diagnosis and recommended actions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Effective security rules",
+            "explanation": "Effective security rules exposes applicable NSG rules, not a diagnosis of the VPN gateway and its connection.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "VPN troubleshoot",
+            "explanation": "VPN troubleshoot evaluates gateway and connection health and returns fault details and recommended actions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Topology only",
+            "explanation": "Topology can show gateway relationships, but it does not run the requested health diagnosis.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "configure-storage-accounts",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:01:25.680413+00:00",
+    "questions": [
+      {
+        "id": "configure-storage-accounts-check-01",
+        "prompt": "A document-submission service must acknowledge uploads quickly and process them later. It needs to store small work messages until workers retrieve them. Which Azure Storage service is designed for this role?",
+        "lessonIds": [
+          "configure-storage-accounts--3-explore-azure-storage-services"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure Files",
+            "explanation": "Files provides shared file-system storage; it is not the message-queue abstraction needed to hand off asynchronous work.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Queue Storage",
+            "explanation": "Queue Storage stores messages for asynchronous processing, separating the upload request from later worker activity.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Blob Storage",
+            "explanation": "Blob Storage holds unstructured objects; it does not provide the message-queue abstraction needed for this asynchronous handoff.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Table Storage",
+            "explanation": "Table Storage holds nonrelational entities, not the message-queue behavior required by this handoff.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-storage-accounts-check-02",
+        "prompt": "A new application needs Blob Storage, Queue Storage and Table Storage in one standard storage account. It has no premium-performance requirement. Which account kind supports that combination?",
+        "lessonIds": [
+          "configure-storage-accounts--4-determine-storage-account-kinds"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Premium FileStorage",
+            "explanation": "Premium FileStorage specializes in file shares and does not provide the requested blob, queue and table combination.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Premium block blob",
+            "explanation": "Premium block blob accounts specialize in object storage and do not include Queue Storage and Table Storage.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Premium page blob",
+            "explanation": "Premium page blob accounts specialize in page blobs, not the requested mix of general storage services.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Standard general-purpose v2",
+            "explanation": "General-purpose v2 supports blobs, queues and tables, matching the application’s standard storage requirements.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-storage-accounts-check-03",
+        "prompt": "An account type and region support ZRS. Policy requires data to stay in one region while remaining available through the loss of an availability zone. Which redundancy option meets both requirements?",
+        "lessonIds": [
+          "configure-storage-accounts--5-determine-replication-strategies"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "ZRS",
+            "explanation": "ZRS synchronously replicates across three availability zones in one region, providing the requested zone resilience without geographic replication.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "LRS",
+            "explanation": "LRS keeps replicas within a single datacenter and does not provide the requested protection from an entire zone failure.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "GRS",
+            "explanation": "GRS replicates to a secondary region, violating the stated requirement to keep all copies in one region.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "RA-GRS",
+            "explanation": "RA-GRS also replicates to another region; its secondary read access does not satisfy the one-region policy.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-storage-accounts-check-04",
+        "prompt": "An application accepts that secondary-region data may lag behind the primary. It needs to read that secondary copy without waiting for failover, and does not require primary-region zone redundancy. Which option provides read-access geo-redundancy?",
+        "lessonIds": [
+          "configure-storage-accounts--5-determine-replication-strategies"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "LRS",
+            "explanation": "LRS has no secondary-region replica, so it cannot supply the requested secondary reads.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "GRS",
+            "explanation": "GRS copies data to a secondary region, but does not expose that copy for normal reads before failover.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "RA-GRS",
+            "explanation": "RA-GRS adds a readable secondary endpoint to asynchronous geo-replication, matching the permitted replication lag.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "GZRS without read access",
+            "explanation": "GZRS adds primary zone redundancy and geographic replication, but without its read-access variant it does not provide normal secondary reads before failover.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-storage-accounts-check-05",
+        "prompt": "A Blob private endpoint is configured and VNet clients resolve the Blob hostname to its private IP. The storage account’s public endpoint still permits all networks. To enforce private-only network access, what must you also do?",
+        "lessonIds": [
+          "configure-storage-accounts--7-secure-storage-endpoints"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Create another private endpoint and leave public access unrestricted",
+            "explanation": "An additional private endpoint does not disable the separately permitted public endpoint.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/7-secure-storage-endpoints",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Disable public network access to the storage account",
+            "explanation": "Creating a private endpoint does not automatically block public access. Disabling public network access closes that separate network path.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/7-secure-storage-endpoints",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Enable a service endpoint but keep all public networks allowed",
+            "explanation": "A service endpoint uses the service’s public endpoint; it does not override an allow-all public network configuration.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/7-secure-storage-endpoints",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Change only the Blob container name",
+            "explanation": "A container name affects the resource path, not whether clients can reach the storage account over its public endpoint.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/7-secure-storage-endpoints",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-storage-accounts-check-06",
+        "prompt": "A workload currently uses a Standard storage account, but testing shows it needs a Premium account kind supported by its chosen service. What migration approach is supported?",
+        "lessonIds": [
+          "configure-storage-accounts--4-determine-storage-account-kinds"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Create the required Premium account and move the applicable data",
+            "explanation": "Standard and Premium account kinds cannot be converted directly; deploy the required kind and migrate supported data.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Change the existing account’s redundancy to convert it to Premium",
+            "explanation": "Redundancy changes replication behavior; it does not convert a Standard account into a Premium account.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Change the existing account’s name to convert it to Premium",
+            "explanation": "Naming does not change the account’s performance category or kind.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Disable encryption to unlock an in-place Premium conversion",
+            "explanation": "Encryption settings do not enable Standard-to-Premium conversion; storage encryption at rest is not such a migration switch.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "configure-blob-storage",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:01:25.680413+00:00",
+    "questions": [
+      {
+        "id": "configure-blob-storage-check-01",
+        "prompt": "An application adds new records to a text log throughout the day rather than updating arbitrary positions in the file. Which blob type is optimized for this pattern?",
+        "lessonIds": [
+          "configure-blob-storage--7-upload-blobs"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Page blob",
+            "explanation": "Page blobs suit indexed or random read/write operations, rather than the append-only log pattern described.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A block blob",
+            "explanation": "Block blobs are the usual choice for general files and binary objects; append blobs are specifically optimized for adding log records.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Append blob",
+            "explanation": "Append blobs optimize adding blocks to the end, making them suitable for growing logs.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "An Archive access tier",
+            "explanation": "Archive is an offline storage tier, not a blob type or append operation model.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-blob-storage-check-02",
+        "prompt": "A team sets a container to Blob anonymous access, but anonymous downloads still fail. The account has Allow Blob anonymous access disabled. What explains this result?",
+        "lessonIds": [
+          "configure-blob-storage--3-create-blob-containers"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "The account setting overrides the container’s anonymous-access level",
+            "explanation": "Blob and Container anonymous levels are effective only when account-level anonymous access is allowed.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/3-create-blob-containers"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Blob access permits listing but never permits reading a blob",
+            "explanation": "Blob access permits anonymous blob reads when the account allows them; listing is the additional Container-level permission.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/3-create-blob-containers"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A container must use uppercase characters to permit anonymous reads",
+            "explanation": "Container names use lowercase naming rules; uppercase names do not enable public access.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/3-create-blob-containers"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "The blob must be changed to an append blob",
+            "explanation": "Anonymous access is controlled by account and container authorization settings, not by changing the blob type.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/3-create-blob-containers"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-blob-storage-check-03",
+        "prompt": "A block blob in a general-purpose v2 account was moved to Cool 10 days ago. It is no longer needed. What is the consequence of deleting it now?",
+        "lessonIds": [
+          "configure-blob-storage--4-create-blob-access-tiers"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Deletion is blocked until day 30",
+            "explanation": "The minimum duration is a billing rule, not a prohibition on deleting the blob.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers",
+              "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "No early-deletion charge can apply because the blob is online",
+            "explanation": "Cool remains online, but its minimum billable storage duration still applies.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers",
+              "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "The blob must be rehydrated before it can be deleted",
+            "explanation": "Rehydration applies to accessing archived content; a Cool blob is already online and can be deleted.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers",
+              "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Deletion is allowed, but a prorated early-deletion charge can apply",
+            "explanation": "Cool blobs in general-purpose v2 have a 30-day minimum billable duration, so deletion after 10 days can incur the remaining-duration charge.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers",
+              "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-blob-storage-check-04",
+        "prompt": "Only block blobs under reports/temporary/ should move to a cooler tier after they reach the selected age. Other blobs must stay unchanged. How should a supported lifecycle rule be scoped?",
+        "lessonIds": [
+          "configure-blob-storage--5-add-blob-lifecycle-management-rules"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Apply the rule to the entire account without a filter",
+            "explanation": "An unfiltered account-wide rule can affect unrelated blobs, violating the requested scope.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/5-add-blob-lifecycle-management-rules"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Filter by the relevant container/name prefix and set an age-based tier action",
+            "explanation": "Lifecycle filters select the intended blobs, while the age condition and tier action define when and how they transition.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/5-add-blob-lifecycle-management-rules"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Change the container’s anonymous access level",
+            "explanation": "Anonymous access controls reads and listing; it does not define an age-based tier transition.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/5-add-blob-lifecycle-management-rules"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Create a SAS token with a longer expiry",
+            "explanation": "A SAS controls delegated access, not automatic tier changes by blob age or prefix.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/5-add-blob-lifecycle-management-rules"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-blob-storage-check-05",
+        "prompt": "Two supported accounts without hierarchical namespace will replicate selected block blobs asynchronously. Which feature configuration is required before adding the replication policy?",
+        "lessonIds": [
+          "configure-blob-storage--6-determine-blob-object-replication"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Versioning on both accounts and change feed on the source",
+            "explanation": "Object replication requires blob versioning in source and destination accounts plus change feed in the source.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication",
+              "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Versioning only on the destination, with change feed disabled",
+            "explanation": "The source also needs versioning and change feed so replication can track versions and changes.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication",
+              "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Share snapshots on both accounts instead of blob versioning",
+            "explanation": "Share snapshots protect Azure file shares and do not satisfy the blob object-replication prerequisites.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication",
+              "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Anonymous access on both containers",
+            "explanation": "Object replication does not require anonymous public access; that setting does not supply versioning or change tracking.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication",
+              "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-blob-storage-check-06",
+        "prompt": "An administrator needs a scriptable command-line tool to copy many files into Blob Storage over an available network connection. Which taught tool is intended for this transfer?",
+        "lessonIds": [
+          "configure-blob-storage--7-upload-blobs"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure Data Box Disk",
+            "explanation": "Data Box Disk is intended for offline data transfer using shipped storage devices, not this command-line network copy.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The portal upload dialog",
+            "explanation": "The portal is a graphical option for a few uploads, rather than the requested scriptable command-line transfer.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "AzCopy",
+            "explanation": "AzCopy is the command-line tool for transferring data to and from Blob Storage and between storage locations.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A blob lifecycle policy",
+            "explanation": "Lifecycle policies transition or delete eligible stored blobs; they do not upload the administrator’s local files.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "configure-storage-security",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:01:25.680413+00:00",
+    "questions": [
+      {
+        "id": "configure-storage-security-check-01",
+        "prompt": "An Azure workload supports Microsoft Entra authorization to Blob Storage. It needs scoped data access without storing an account key in application configuration. Which approach best matches the taught security guidance?",
+        "lessonIds": [
+          "configure-storage-security--2-review-strategies",
+          "configure-storage-security--5-determine-storage-service-encryption"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Store an account key in each application instance",
+            "explanation": "Account keys authorize broad Shared Key access and introduce a stored secret, contrary to the requested approach.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies",
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Use a managed identity with an appropriate scoped data-access role",
+            "explanation": "A managed identity enables Microsoft Entra authorization without application-held account keys, and a scoped role limits data access.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies",
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Enable anonymous container access",
+            "explanation": "Anonymous access removes identity-based protection and does not grant scoped access to the authenticated workload.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies",
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Disable storage encryption at rest",
+            "explanation": "Encryption is not an authorization mechanism and cannot be disabled to grant scoped identity access.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies",
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-storage-security-check-02",
+        "prompt": "An external reviewer needs to download one confidential blob during a short review window. Direct SAS access is acceptable. Which grant follows least privilege?",
+        "lessonIds": [
+          "configure-storage-security--3-create-shared-access-signatures"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Give the reviewer an account key",
+            "explanation": "An account key grants broad account access and does not enforce the one-blob, short-duration requirement.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Create an account-wide SAS with read, write and delete permissions",
+            "explanation": "That scope and those permissions exceed the download-only requirement.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Enable anonymous access to the whole container",
+            "explanation": "Anonymous access exposes data without the requested limited review window and recipient credential.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Provide a short-lived, read-only SAS scoped to that blob over HTTPS",
+            "explanation": "The SAS can restrict resource, permissions and validity time, while HTTPS protects the credential in transit.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-storage-security-check-03",
+        "prompt": "A container uses a service SAS associated with a stored access policy. You must revoke the access controlled by that policy without rotating the storage account key. Which action is supported?",
+        "lessonIds": [
+          "configure-storage-security--3-create-shared-access-signatures"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Revoke or change the associated stored access policy",
+            "explanation": "A stored access policy supplies server-side control for a service SAS, allowing its governed access to be changed or revoked without key rotation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Change the account’s replication setting",
+            "explanation": "Replication affects data durability and placement, not the SAS permissions governed by the stored access policy.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Disable the application’s session-affinity setting",
+            "explanation": "Session affinity is an application-routing feature and does not revoke a storage service SAS.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Remove the expiry parameter from an already issued SAS URL",
+            "explanation": "Editing an issued signed token is not a supported revocation mechanism and does not invalidate the original credential.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+              "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-storage-security-check-04",
+        "prompt": "A valid SAS URL must allow HTTPS requests only. Which SAS query parameter expresses the permitted protocol?",
+        "lessonIds": [
+          "configure-storage-security--4-identify-uri-sas-parameters"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "sp",
+            "explanation": "sp specifies permissions such as read or write; it does not restrict the transport protocol.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/4-identify-uri-sas-parameters"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "se",
+            "explanation": "se specifies the expiry time in UTC; it does not require HTTPS.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/4-identify-uri-sas-parameters"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "spr",
+            "explanation": "spr specifies allowed protocols; restricting it to https requires HTTPS requests.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/4-identify-uri-sas-parameters"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "sig",
+            "explanation": "sig is the token signature, not the field that selects permitted protocols.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/4-identify-uri-sas-parameters"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-storage-security-check-05",
+        "prompt": "A storage account will use a customer-managed encryption key in Azure Key Vault. Which preparation is required for the key vault and storage identity?",
+        "lessonIds": [
+          "configure-storage-security--6-create-customer-managed-keys"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Disable vault soft delete and use anonymous key access",
+            "explanation": "Customer-managed storage encryption requires vault protections and authorized key access, not unprotected anonymous access.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/6-create-customer-managed-keys",
+              "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Enable vault soft delete and purge protection, and grant the storage managed identity required key permissions",
+            "explanation": "These vault protections and managed-identity permissions meet the prerequisites for Azure Storage to use the customer-managed key.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/6-create-customer-managed-keys",
+              "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Only publish the key URI; no identity permissions are needed",
+            "explanation": "Knowing the key URI does not authorize Azure Storage to perform required key operations.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/6-create-customer-managed-keys",
+              "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Give the storage account key to Key Vault and skip purge protection",
+            "explanation": "A storage access key is not the encryption key permission mechanism, and purge protection is still required.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/6-create-customer-managed-keys",
+              "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-storage-security-check-06",
+        "prompt": "A compliance requirement calls for two independent encryption layers for stored data. Standard storage service encryption is already active. Which feature adds the second layer described in the lesson?",
+        "lessonIds": [
+          "configure-storage-security--5-determine-storage-service-encryption"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Infrastructure encryption",
+            "explanation": "Infrastructure encryption adds a second layer using a separate key and algorithm in addition to storage service encryption.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A read-only SAS",
+            "explanation": "A SAS limits delegated access; it does not add a second at-rest encryption layer.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A private endpoint",
+            "explanation": "A private endpoint changes network connectivity, not the number of at-rest encryption layers.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Account access-key rotation alone",
+            "explanation": "Rotating Shared Key credentials changes authorization secrets; it does not add infrastructure encryption.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "configure-azure-files-file-sync",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:01:25.680413+00:00",
+    "questions": [
+      {
+        "id": "configure-azure-files-file-sync-check-01",
+        "prompt": "A legacy application expects shared directories and native file-system access over SMB. You want managed shared storage without maintaining a file-server VM. Which service matches that access pattern?",
+        "lessonIds": [
+          "configure-azure-files-file-sync--2-compare-files-to-blobs"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Blob Storage accessed only through object APIs",
+            "explanation": "Blob object APIs do not supply the native SMB shared-directory interface the unchanged application expects.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/2-compare-files-to-blobs",
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Queue Storage",
+            "explanation": "Queues store messages for asynchronous processing, not an SMB directory tree.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/2-compare-files-to-blobs",
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Table Storage",
+            "explanation": "Tables hold nonrelational entities and do not provide SMB shared files.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/2-compare-files-to-blobs",
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Azure Files with an SMB share",
+            "explanation": "Azure Files provides managed SMB file shares, fitting applications that already expect shared-file access.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/2-compare-files-to-blobs",
+              "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-files-file-sync-check-02",
+        "prompt": "A client has correct credentials and resolves an Azure SMB file share endpoint successfully. Its on-premises firewall blocks outbound TCP 445. What network change addresses this demonstrated mount blocker?",
+        "lessonIds": [
+          "configure-azure-files-file-sync--3-manage-file-shares"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Permit only outbound UDP 53",
+            "explanation": "DNS resolution already works; allowing DNS traffic does not allow the blocked SMB TCP connection.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/3-manage-file-shares"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Permit the required outbound TCP 445 connection",
+            "explanation": "SMB uses TCP 445, so permitting that required connection addresses the specified firewall block.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/3-manage-file-shares"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Permit only outbound TCP 22",
+            "explanation": "Port 22 is used for SSH, not the Azure Files SMB mount in this scenario.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/3-manage-file-shares"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Permit only outbound TCP 3389",
+            "explanation": "Port 3389 is used for Remote Desktop, not SMB file-share traffic.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/3-manage-file-shares"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-files-file-sync-check-03",
+        "prompt": "A user overwrites a file with incorrect content, but the Azure file share still exists. A snapshot was taken before the overwrite. Which recovery feature restores the previous file content?",
+        "lessonIds": [
+          "configure-azure-files-file-sync--4-create-file-share-snapshots",
+          "configure-azure-files-file-sync--5-implement-file-sync"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Recover the file from the earlier share snapshot",
+            "explanation": "The snapshot preserves the earlier point-in-time file state and can be used to restore an individual file.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/4-create-file-share-snapshots",
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Undelete the share using share soft delete",
+            "explanation": "Share soft delete protects deleted shares; this share has not been deleted and it does not reverse a file overwrite.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/4-create-file-share-snapshots",
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Regenerate the storage account access keys",
+            "explanation": "Key rotation changes credentials, not the overwritten file’s contents.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/4-create-file-share-snapshots",
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Change the share’s access tier",
+            "explanation": "An access-tier change affects pricing and storage behavior; it does not restore the file’s earlier state.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/4-create-file-share-snapshots",
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-files-file-sync-check-04",
+        "prompt": "A classic Azure file share is deleted after share soft delete was enabled. The retention period has not expired. Which action recovers the share and its contents?",
+        "lessonIds": [
+          "configure-azure-files-file-sync--5-implement-file-sync"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Create an empty share with a different name",
+            "explanation": "A new empty share does not restore the deleted share’s saved contents.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Reset the account’s access keys",
+            "explanation": "Changing credentials does not recover deleted share data.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Undelete the soft-deleted share within its retention period",
+            "explanation": "Share soft delete retains the deleted share, including its contents and snapshots, so it can be undeleted during retention.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Switch the deleted share to a different access tier",
+            "explanation": "A tier change is not the recovery operation for a soft-deleted share.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-files-file-sync-check-05",
+        "prompt": "You plan Azure File Sync between a registered Windows Server and an Azure file share. The server uses a directly attached, non-system NTFS data volume. Which endpoint pair is supported by the taught design?",
+        "lessonIds": [
+          "configure-azure-files-file-sync--7-deploy-azure-file-sync"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "An NFS Azure file share and a local NTFS path",
+            "explanation": "Azure File Sync does not support NFS Azure file shares, even when the server path uses NTFS.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "An SMB Azure file share and a local path on that NTFS data volume",
+            "explanation": "The cloud endpoint is an SMB share and the server endpoint is a path on a supported NTFS data volume of the registered Windows Server.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A Blob container and a local NTFS path",
+            "explanation": "A Blob container is not the Azure Files cloud endpoint required by Azure File Sync.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "An SMB Azure file share and a Linux-only cache server",
+            "explanation": "The taught server-endpoint design requires Windows Server with the File Sync agent, not a Linux-only cache server.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-azure-files-file-sync-check-06",
+        "prompt": "A branch Windows Server uses Azure File Sync. Local capacity is limited, but users must retain the familiar file namespace and access older files when needed. Which feature keeps frequently used data local and recalls other data from Azure?",
+        "lessonIds": [
+          "configure-azure-files-file-sync--7-deploy-azure-file-sync"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Share-level soft delete",
+            "explanation": "Soft delete retains deleted shares; it does not manage the branch server’s local cache or recall older files.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Creating a second cloud endpoint in the same sync group",
+            "explanation": "A sync group has one cloud endpoint; adding a second is not the supported cache-management mechanism.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Storage account access-key rotation",
+            "explanation": "Rotation updates credentials and does not decide which files remain cached locally.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Cloud tiering",
+            "explanation": "Cloud tiering retains frequently accessed files locally and recalls tiered content from Azure when users access it.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+              "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "intro-to-azure-virtual-machines",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:01:25.680413+00:00",
+    "questions": [
+      {
+        "id": "intro-to-azure-virtual-machines-check-01",
+        "prompt": "A nonproduction VM is stopped and deallocated for the weekend. Its managed disks are retained. Which cost statement is correct?",
+        "lessonIds": [
+          "intro-to-azure-virtual-machines--2-compile-a-checklist-for-creating-a-vm"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "VM compute charges stop, but retained disk storage can still be charged",
+            "explanation": "Deallocation releases compute allocation, while retained disks remain stored and continue to incur applicable storage charges.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Both compute and retained disk storage automatically become free",
+            "explanation": "Deallocation stops VM compute billing, not the independent charge for retained storage.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Compute charges continue exactly as while the VM was running",
+            "explanation": "Deallocation releases the allocated compute, so running compute charges stop.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Managed disks are automatically deleted during deallocation",
+            "explanation": "Deallocation does not delete the retained disks; deletion is a separate resource-management action.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-virtual-machines-check-02",
+        "prompt": "A running VM needs a different size. That size is available in the region but not on its current hardware cluster. What operational plan is supported?",
+        "lessonIds": [
+          "intro-to-azure-virtual-machines--2-compile-a-checklist-for-creating-a-vm"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Change its display name to make the new size available",
+            "explanation": "Naming does not move a VM to hardware that supports the requested size.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Resize with a guarantee of no restart or interruption",
+            "explanation": "Resizing a running VM can restart it; the unavailable current-cluster size prevents that guarantee.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Stop and deallocate it, then select the regional size and plan the restart",
+            "explanation": "Deallocation releases the current cluster placement, allowing selection of another available regional size; the operation requires interruption planning.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Change its backup retention to unlock the hardware size",
+            "explanation": "Backup retention controls recovery-point lifetime, not which compute sizes a cluster supports.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-virtual-machines-check-03",
+        "prompt": "A VM uses a temporary disk as well as persistent managed data disks. Where should durable application data be placed so it does not depend on temporary storage surviving host events?",
+        "lessonIds": [
+          "intro-to-azure-virtual-machines--2-compile-a-checklist-for-creating-a-vm"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Only on the temporary disk",
+            "explanation": "Temporary storage is not the durable location for application data that must survive host or VM lifecycle events.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Only in the VM’s memory",
+            "explanation": "Memory is volatile and cannot preserve durable data across shutdowns or host failures.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "On the temporary disk after increasing VM size",
+            "explanation": "A larger VM size does not turn temporary storage into durable storage.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "On persistent data disks, with an appropriate backup plan",
+            "explanation": "Separate persistent data disks provide durable storage; backups add recovery protection for loss or corruption.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-virtual-machines-check-04",
+        "prompt": "A team must deploy the same VM infrastructure into test and production with different names and settings. It wants a declarative, repeatable deployment rather than repeated portal clicks. Which taught approach fits?",
+        "lessonIds": [
+          "intro-to-azure-virtual-machines--4-describe-other-create-vm-options"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Create each VM manually and keep screenshots as the deployment definition",
+            "explanation": "Manual portal steps do not provide the requested executable declarative infrastructure definition.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Use a parameterized ARM template",
+            "explanation": "ARM templates declare resources in JSON and parameters let the same definition deploy environments with different names and settings.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Enable auto-shutdown and treat the schedule as the deployment definition",
+            "explanation": "Auto-shutdown schedules power operations; it does not declare and deploy the infrastructure.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Use a backup-retention policy as the deployment definition",
+            "explanation": "Backup policies define protection schedules and retention, not the infrastructure resources for both environments.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-virtual-machines-check-05",
+        "prompt": "A region supports availability zones. A web application can run on multiple VMs. Which design reduces exposure to a single datacenter failure while distributing requests to working instances?",
+        "lessonIds": [
+          "intro-to-azure-virtual-machines--5-high-availability"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Put every instance in one zone and rely only on a larger VM size",
+            "explanation": "A larger size does not remove shared exposure to the single zone’s datacenter infrastructure.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Use one VM and a load balancer with no other application instances",
+            "explanation": "A load balancer cannot supply application redundancy when the only backend instance fails.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Run redundant application instances across zones and load balance healthy instances",
+            "explanation": "Separate zones reduce shared datacenter exposure, and a load balancer distributes requests among working redundant instances.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Keep one VM and shorten its auto-shutdown schedule",
+            "explanation": "Auto-shutdown reduces running time; it does not add datacenter resilience or redundant application instances.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-virtual-machines-check-06",
+        "prompt": "An administrator must retain scheduled recovery points for an Azure VM and recover an earlier state after accidental data loss. Which service and configuration directly address that requirement?",
+        "lessonIds": [
+          "intro-to-azure-virtual-machines--6-backup-services",
+          "intro-to-azure-virtual-machines--5-high-availability"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure Backup with a Recovery Services vault and a backup policy",
+            "explanation": "Azure Backup retains recovery points, while the vault and policy manage backup schedule and retention for later recovery.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Only an Azure Load Balancer",
+            "explanation": "Load balancing distributes traffic; it does not retain historical VM recovery points.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Only a VM scale set autoscale schedule",
+            "explanation": "Autoscale changes capacity; it does not define backup recovery-point retention.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Only availability-zone placement",
+            "explanation": "Zones reduce infrastructure failure exposure; they do not preserve the earlier VM state needed after accidental data loss.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,275 @@
+{
+  "checkedAt": "2026-10-08T11:47:15.740578Z",
+  "reviewKind": "AI-assisted semantic source comparison",
+  "humanApproval": false,
+  "findings": [],
+  "lessons": [
+    {
+      "lessonId": "understand-azure-active-directory--2-examine-azure-active-directory",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed directory boundary and resource boundary, applications and organizational names. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "understand-azure-active-directory--3-compare-azure-active-directory-domain-services",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed choose by the application’s expectations, modern identity and device management. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "understand-azure-active-directory--4-examine-azure-directory-service-cloud-apps",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps",
+        "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed one directory across integrated services, configure sign-in and authorization deliberately. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "understand-azure-active-directory--5-compare-azure-premium-p1-p2-plans",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed translate a requirement into a feature, risk protection and privileged activation. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "understand-azure-active-directory--6-examine-azure-domain-services",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services",
+        "https://learn.microsoft.com/en-us/entra/identity/domain-services/overview",
+        "https://learn.microsoft.com/en-us/entra/identity/domain-services/synchronization"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed managed domain services for legacy workloads, understand the synchronization direction. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--2-users",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/2-users",
+        "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/what-is-cloud-sync"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed identify where an account is maintained, plan identity lifecycle and synchronization. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--3-exercise-assign-licenses-users",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/3-exercise-assign-licenses-users",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed prepare identities before assigning products, trace the inherited license to the user. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--4-exercise-restore-remove-deleted-users",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed deletion has a recovery window, check recovery using a test identity. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--5-groups",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed match the group to its purpose, keep rules and entitlements aligned. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--6-exercise-add-groups-azure-active-directory",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/6-exercise-add-groups-azure-active-directory"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed define the collaboration boundary, verify the object and its membership. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--7-configure-manage-device-registration",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration",
+        "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust",
+        "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-device-writeback"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed registration and join solve different problems, combine identity, compliance and authentication. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--8-manage-licenses",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/8-manage-licenses",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed separate the product from its service plans, understand effective licenses and background processing. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--9-exercise-change-group-license-assignments",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed diagnose the error before changing assignments, migrate without creating a license gap. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--10-exercise-change-user-license-assignments",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/10-exercise-change-user-license-assignments",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed prepare the individual assignment, inspect the user’s resulting state. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--11-create-custom-security-attributes",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/11-create-custom-security-attributes",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-manage"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed design attributes with useful types, separate definition from assignment permissions. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--12-explore-automatic-user-creation",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed connect provisioning to the employee lifecycle, handle sources without a native scim endpoint. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "describe-core-architectural-components-of-azure--2-what-microsoft-azure",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/2-what-microsoft-azure"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed choose how much infrastructure to operate, relate capacity to actual demand. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "describe-core-architectural-components-of-azure--3-get-started-azure-accounts",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/3-get-started-azure-accounts"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed accounts and subscriptions have different roles, understand a free offer before using it. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "describe-core-architectural-components-of-azure--5-describe-azure-physical-infrastructure",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed pick the region and the resilience boundary, plan beyond one region deliberately. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "describe-core-architectural-components-of-azure--6-describe-azure-management-infrastructure",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed group resources by lifecycle and ownership, scale governance above a single subscription. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "sovereignty-policy-initiatives--cloud-adoption-framework",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/cloud-adoption-framework"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed turn risks into operating rules, use automation alongside ongoing review. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "sovereignty-policy-initiatives--azure-policy-design-principles",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed understand where a request is evaluated, design for new and existing resources. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "sovereignty-policy-initiatives--azure-policy-resources",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources",
+        "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed definition, initiative and assignment, exceptions, evidence and remediation. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "sovereignty-policy-initiatives--azure-policy-definitions",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions",
+        "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics"
+      ],
+      "notes": "Compared every paragraph with the actual unit text and current policy-definition documentation. Reviewed conditions, logical operators, parameterization, effects, cumulative restrictions and mode applicability. Used current all/indexed behavior rather than the training table that describes the two modes identically. Scenarios are original applications of documented rules."
+    },
+    {
+      "lessonId": "sovereignty-policy-initiatives--azure-policies-evaluation-resources",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed interpret compliance as an evaluated state, roll out enforcement in stages. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "secure-azure-resources-with-rbac--2-rbac-overview",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed combine who, what and where, evaluate the combined grants. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "secure-azure-resources-with-rbac--4-list-access",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed start with the effective scope, inspect roles before changing them. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "secure-azure-resources-with-rbac--5-grant-access",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed choose the narrowest useful grant, review the assignment and its removal. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "secure-azure-resources-with-rbac--6-view-activity-logs",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed use history to explain a change, inspect details before exporting a report. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "allow-users-reset-their-password--2-self-service-password-reset",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed reset requires proof of identity, plan notifications and hybrid writeback. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "allow-users-reset-their-password--3-implement-azure-ad-self-service-password-reset",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-methods-manage"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed use a pilot with representative users, configure methods in the current policy. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "allow-users-reset-their-password--4-exercise-set-up-self-service-password-reset",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-methods-manage",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed build an isolated pilot configuration, verify registration and then recovery. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    },
+    {
+      "lessonId": "allow-users-reset-their-password--5-exercise-customize-directory-branding",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
+      ],
+      "notes": "Compared all new paragraphs with the actual official unit text and the cited current product documentation. Reviewed prepare the branding and permissions, test the experience seen by the user. Scenarios are original applications of documented concepts; no assessment material or resource operations are included."
+    }
+  ],
+  "sectionsReviewed": 67,
+  "wordsAdded": 6525
+}

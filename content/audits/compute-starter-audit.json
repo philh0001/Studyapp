@@ -1,0 +1,626 @@
+{
+  "domainId": "compute",
+  "checkedAt": "2026-10-08T01:48:05.339260Z",
+  "scope": "Automated claim-level evidence audit of original draft revisions; not human factual approval.",
+  "questions": [
+    {
+      "questionId": "az104-compute-01",
+      "revision": 1,
+      "result": "supported",
+      "summary": "Cloning an existing slot configuration does not copy application content into the new slot. The retrieved documentation also confirms that slots are live apps and the specified Standard plan supports slots.",
+      "subObjectiveIds": [
+        "app-service.8"
+      ],
+      "referenceIds": [
+        "compute-app-slots"
+      ],
+      "evidence": [
+        {
+          "referenceId": "compute-app-slots",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+          "checkedAt": "2026-10-08T01:38:38.019045Z",
+          "excerpt": "ame> For more information, see New-AzWebAppSlot . The new deployment slot has no content, even if you clone the settings from a different slot. For example, you can publish to this slot with Git . You can deploy to the slot from a different repository branch or a different repository. The article Get a publish profile from Azure App Service can provide the required information for deploying to the slot. Visual Studio can import the profile to deploy contents to the slot. The slot's URL has the format ht"
+        }
+      ],
+      "caveats": [],
+      "optionChecks": [
+        {
+          "optionId": "a",
+          "isSelectedAnswer": true,
+          "claim": "The source states that a new slot has no content even when settings are cloned; application content must be deployed to it.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-app-slots"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "b",
+          "isSelectedAnswer": false,
+          "claim": "Standard is one of the supported tiers for deployment slots, so tier support does not explain missing content.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-app-slots"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "c",
+          "isSelectedAnswer": false,
+          "claim": "Slots are live apps with their own host names, despite starting without application content.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-app-slots"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-compute-02",
+      "revision": 1,
+      "result": "supported",
+      "summary": "The correct option names fault domains, which group VMs that share a common power source and network switch. Update domains instead describe groups that can restart during planned maintenance.",
+      "subObjectiveIds": [
+        "vms.6"
+      ],
+      "referenceIds": [
+        "compute-vm-sets"
+      ],
+      "evidence": [
+        {
+          "referenceId": "compute-vm-sets",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+          "checkedAt": "2026-10-08T01:38:36.246173Z",
+          "excerpt": "tarts on a different update domain. Fault domains Fault domains define the group of virtual machines that share a common power source and network switch. By default, the virtual machines configured within your availability set are separated across up to three fault domains. Placing your virtual machines into an availability set doesn't protect your application from operating system or application-specific failures. But it does limit the impact of potential physical hardware failures, network out"
+        }
+      ],
+      "caveats": [
+        "Availability sets reduce shared infrastructure exposure but are not an unconditional promise that every VM uses a distinct fault domain. The page documents a shared-fault-domain deployment sequence. The original question asks for the concept and does not make that promise."
+      ],
+      "optionChecks": [
+        {
+          "optionId": "a",
+          "isSelectedAnswer": false,
+          "claim": "Update domains identify groups that can restart together during maintenance; the named power and switch grouping is a fault domain.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "b",
+          "isSelectedAnswer": false,
+          "claim": "Availability sets do not protect applications from operating-system or application-specific failures.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "c",
+          "isSelectedAnswer": true,
+          "claim": "Fault domains group VMs sharing a common power source and network switch; distributing VMs reduces correlated hardware failures.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-compute-03",
+      "revision": 1,
+      "result": "supported",
+      "summary": "For the explicitly stated five update domains and six VMs, the document says that the sixth VM is placed in the same update domain as the first. The original answer and stated configuration match this documented example.",
+      "subObjectiveIds": [
+        "vms.6"
+      ],
+      "referenceIds": [
+        "compute-vm-sets"
+      ],
+      "evidence": [
+        {
+          "referenceId": "compute-vm-sets",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+          "checkedAt": "2026-10-08T01:38:36.246173Z",
+          "excerpt": " in an availability set with five update domains, the sixth VM is placed in the same update domain as the first, the seventh with the second, and so on. The order of update domains being restarted might not proceed sequentially during planned maintenance, but only one update domain is restarted at a time. A restarted update domain has 30 minutes to recover before maintenance starts on a different update domain. Fault domains Fault domains define the group of virtual machines that share a"
+        }
+      ],
+      "caveats": [],
+      "optionChecks": [
+        {
+          "optionId": "a",
+          "isSelectedAnswer": false,
+          "claim": "The configured set has five domains; assignment wraps to the first rather than adding a sixth domain.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "b",
+          "isSelectedAnswer": true,
+          "claim": "The documentation states that with five update domains, the sixth VM is placed in the same update domain as the first.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "c",
+          "isSelectedAnswer": false,
+          "claim": "The seventh VM shares with the second in the documented sequence; the sixth shares with the first.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-compute-04",
+      "revision": 1,
+      "result": "supported",
+      "summary": "The page states that only one update domain restarts at a time during planned maintenance and that a restarted domain has 30 minutes to recover before another domain is maintained. The two selected statements match; numerical restart order is not guaranteed.",
+      "subObjectiveIds": [
+        "vms.6"
+      ],
+      "referenceIds": [
+        "compute-vm-sets"
+      ],
+      "evidence": [
+        {
+          "referenceId": "compute-vm-sets",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+          "checkedAt": "2026-10-08T01:38:36.246173Z",
+          "excerpt": "ceed sequentially during planned maintenance, but only one update domain is restarted at a time. A restarted update domain has 30 minutes to recover before maintenance starts on a different update domain. Fault domains Fault domains define the group of virtual machines that share a common power source and network switch. By default, the virtual machines configured within your availability set are separated across up to three fault domains. Placing your virtual machines into an availability set doesn'"
+        }
+      ],
+      "caveats": [
+        "The 30-minute interval is a platform maintenance rule, not proof that an application finishes recovery within that interval."
+      ],
+      "optionChecks": [
+        {
+          "optionId": "a",
+          "isSelectedAnswer": false,
+          "claim": "The source explicitly excludes operating-system and application-specific failures from availability-set protection.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "b",
+          "isSelectedAnswer": true,
+          "claim": "The source says only one update domain is restarted at a time during planned maintenance.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "c",
+          "isSelectedAnswer": true,
+          "claim": "The documented recovery interval before maintenance starts on another update domain is 30 minutes.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "d",
+          "isSelectedAnswer": false,
+          "claim": "The documentation warns the restart order might not proceed sequentially.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-compute-05",
+      "revision": 1,
+      "result": "supported",
+      "summary": "The retrieved availability-set article states that the configured fault-domain and update-domain settings cannot be changed after creation. This directly supports the original correct answer and rejects the in-place-change distractor.",
+      "subObjectiveIds": [
+        "vms.6"
+      ],
+      "referenceIds": [
+        "compute-vm-sets"
+      ],
+      "evidence": [
+        {
+          "referenceId": "compute-vm-sets",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+          "checkedAt": "2026-10-08T01:38:36.246173Z",
+          "excerpt": "have up to 3 fault domains and 20 update domains. These settings can't be changed after the availability set is created. Update domains Update domains indicate groups of virtual machines and underlying physical hardware that can be restarted at the same time. If more than five VMs are configured in an availability set with five update domains, the sixth VM is placed in the same update domain as the first, the seventh with the second, and so on. The order of update domains being restarted might no"
+        }
+      ],
+      "caveats": [],
+      "optionChecks": [
+        {
+          "optionId": "a",
+          "isSelectedAnswer": false,
+          "claim": "The source explicitly says these settings cannot be changed after creation.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "b",
+          "isSelectedAnswer": false,
+          "claim": "The source supports up to 20 update domains; the limitation concerns changing their configured count.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "c",
+          "isSelectedAnswer": true,
+          "claim": "The documented update-domain and fault-domain settings cannot be changed after availability-set creation.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-vm-sets"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-compute-06",
+      "revision": 1,
+      "result": "supported",
+      "summary": "The slot article states that deployment slots are available in Standard, Premium or Isolated App Service tiers. Among only the three options in the question—Free, Basic and Standard—Standard is the supported choice.",
+      "subObjectiveIds": [
+        "app-service.8"
+      ],
+      "referenceIds": [
+        "compute-app-slots"
+      ],
+      "evidence": [
+        {
+          "referenceId": "compute-app-slots",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+          "checkedAt": "2026-10-08T01:38:38.019045Z",
+          "excerpt": "lot. This approach is available if you run in the Standard, Premium, or Isolated tier of an App Service plan. Deployment slots are live apps with their own host names. App content and configuration elements can be swapped between two deployment slots, including the production slot. Deploying your application to a nonproduction slot has the following benefits: You can validate app changes before you swap the slot into production. You can make sure that all instances of the slot are warmed up befo"
+        }
+      ],
+      "caveats": [],
+      "optionChecks": [
+        {
+          "optionId": "a",
+          "isSelectedAnswer": false,
+          "claim": "Basic is not in the documented list; multiple deployment slots require Standard, Premium or Isolated.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-app-slots"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "b",
+          "isSelectedAnswer": true,
+          "claim": "Deployment slots are available on Standard, Premium and Isolated App Service plan tiers.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-app-slots"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "c",
+          "isSelectedAnswer": false,
+          "claim": "Free is not in the documented list; the app must be upgraded to Standard, Premium or Isolated for multiple slots.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-app-slots"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-compute-07",
+      "revision": 1,
+      "result": "supported",
+      "summary": "The rollback guidance instructs immediately swapping the same two slots again after errors appear in the target slot. With the original question expressly excluding further content changes, this restores the previous app content.",
+      "subObjectiveIds": [
+        "app-service.8"
+      ],
+      "referenceIds": [
+        "compute-app-slots"
+      ],
+      "evidence": [
+        {
+          "referenceId": "compute-app-slots",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+          "checkedAt": "2026-10-08T01:38:38.019045Z",
+          "excerpt": "ap, restore the slots to their pre-swap states by swapping the same two slots immediately. Configure auto swap Auto swap streamlines Azure DevOps scenarios where you want to deploy your app continuously with zero cold starts and zero downtime for customers of the app. When auto swap is enabled from a slot into production, every time you push your code changes to that slot, App Service automatically swaps the app into production after it's warmed up in the source slot. Note Auto swap isn't supported in we"
+        }
+      ],
+      "caveats": [],
+      "optionChecks": [
+        {
+          "optionId": "a",
+          "isSelectedAnswer": true,
+          "claim": "After a swap, staging holds the previous production app; Microsoft describes immediately swapping again to restore it.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-app-slots"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "b",
+          "isSelectedAnswer": false,
+          "claim": "Cloning settings does not copy app content, so it does not restore the old production application.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-app-slots"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "c",
+          "isSelectedAnswer": false,
+          "claim": "The source states the former production app moves into the source slot rather than being deleted.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-app-slots"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-compute-08",
+      "revision": 1,
+      "result": "supported",
+      "summary": "The scaling article says to set the minimum number of replicas to one or higher to ensure an instance of a revision remains running. Setting only the maximum to one does not change a zero minimum.",
+      "subObjectiveIds": [
+        "containers.4"
+      ],
+      "referenceIds": [
+        "compute-aca-scale"
+      ],
+      "evidence": [
+        {
+          "referenceId": "compute-aca-scale",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+          "checkedAt": "2026-10-08T01:38:36.970574Z",
+          "excerpt": "t an instance of your revision is always running, set the minimum number of replicas to 1 or higher. During platform upgrades or maintenance, you might temporarily see more replicas than expected. Container Apps ensures your production workload isn't affected by pre-warming new replicas before shifting traffic, similar to default Kubernetes behavior. The extra replicas are removed automatically once the operation completes. Scale rules Three categories of triggers determine how scaling occurs: HTTP : Based on the "
+        }
+      ],
+      "caveats": [],
+      "optionChecks": [
+        {
+          "optionId": "a",
+          "isSelectedAnswer": false,
+          "claim": "A zero minimum allows scaling to zero, so it does not ensure an instance is always running.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-aca-scale"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "b",
+          "isSelectedAnswer": false,
+          "claim": "Maximum limits scale-out; with a zero minimum it does not ensure a running replica.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-aca-scale"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "c",
+          "isSelectedAnswer": true,
+          "claim": "The source explicitly instructs setting minimum replicas to 1 or higher when an instance must always run.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-aca-scale"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-compute-09",
+      "revision": 1,
+      "result": "supported",
+      "summary": "The official scaling article states that, with more than one scale rule, the container app begins scaling once the first condition of any rule is met. The original selected answer correctly describes the rule combination.",
+      "subObjectiveIds": [
+        "containers.4"
+      ],
+      "referenceIds": [
+        "compute-aca-scale"
+      ],
+      "evidence": [
+        {
+          "referenceId": "compute-aca-scale",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+          "checkedAt": "2026-10-08T01:38:36.970574Z",
+          "excerpt": " rule, the container app begins to scale once the first condition of any rule is met. Note If you're using Functions on Container Apps , the default experience automatically configures scale rules based on function triggers and bindings. The Azure portal disables the Add scale rules button for these apps. If you need customer-defined rules, use allowScalingRuleOverride as described in Override auto-generated KEDA scale rules for Azure Functions on Container Apps . HTTP When you use an HTTP sc"
+        }
+      ],
+      "caveats": [],
+      "optionChecks": [
+        {
+          "optionId": "a",
+          "isSelectedAnswer": false,
+          "claim": "Multiple scale rules are explicitly supported and initiate scaling when any condition is met.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-aca-scale"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "b",
+          "isSelectedAnswer": true,
+          "claim": "Microsoft states that with more than one rule the app begins scaling once the first condition of any rule is met.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-aca-scale"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "c",
+          "isSelectedAnswer": false,
+          "claim": "The source uses any-rule behavior rather than requiring all conditions simultaneously.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-aca-scale"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-compute-10",
+      "revision": 1,
+      "result": "supported",
+      "summary": "The scaling article explicitly says that adding or editing scale rules creates a new revision. It describes a revision as an immutable snapshot, directly supporting the original reason for seeing a new deployment revision.",
+      "subObjectiveIds": [
+        "containers.3",
+        "containers.4"
+      ],
+      "referenceIds": [
+        "compute-aca-scale"
+      ],
+      "evidence": [
+        {
+          "referenceId": "compute-aca-scale",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+          "checkedAt": "2026-10-08T01:38:36.970574Z",
+          "excerpt": "ormation, see Scalers in the KEDA documentation . When you add or edit scaling rules, you create a new revision of your container app. A revision is an immutable snapshot of your container app. To learn which types of changes trigger a new revision, see revision change types . Event-driven Container Apps jobs use scaling rules to trigger executions based on events. Scale definition Scaling is the combination of limits, rules, and behavior. Limits define the minimum and maximum possible number of rep"
+        }
+      ],
+      "caveats": [],
+      "optionChecks": [
+        {
+          "optionId": "a",
+          "isSelectedAnswer": true,
+          "claim": "The source states scaling-rule changes create a revision, an immutable snapshot of the container app.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-aca-scale"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "b",
+          "isSelectedAnswer": false,
+          "claim": "The documented behavior is the opposite: adding or editing a rule creates a new revision.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-aca-scale"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        },
+        {
+          "optionId": "c",
+          "isSelectedAnswer": false,
+          "claim": "Replicas are instances of a revision; a revision is the immutable app snapshot, not an individual replica.",
+          "result": "supported",
+          "referenceIds": [
+            "compute-aca-scale"
+          ],
+          "scopeNote": "Checked the explanatory claim under the explicit original scenario assumptions against the retrieved page; not human factual approval."
+        }
+      ]
+    }
+  ],
+  "legacySubskills": [
+    {
+      "questionId": "az104-compute-01",
+      "revision": 1,
+      "subObjectiveIds": [
+        "app-service.8"
+      ]
+    },
+    {
+      "questionId": "az104-compute-02",
+      "revision": 1,
+      "subObjectiveIds": [
+        "vms.6"
+      ]
+    },
+    {
+      "questionId": "az104-compute-03",
+      "revision": 1,
+      "subObjectiveIds": [
+        "vms.6"
+      ]
+    },
+    {
+      "questionId": "az104-compute-04",
+      "revision": 1,
+      "subObjectiveIds": [
+        "vms.6"
+      ]
+    },
+    {
+      "questionId": "az104-compute-05",
+      "revision": 1,
+      "subObjectiveIds": [
+        "vms.6"
+      ]
+    },
+    {
+      "questionId": "az104-compute-06",
+      "revision": 1,
+      "subObjectiveIds": [
+        "app-service.8"
+      ]
+    },
+    {
+      "questionId": "az104-compute-07",
+      "revision": 1,
+      "subObjectiveIds": [
+        "app-service.8"
+      ]
+    },
+    {
+      "questionId": "az104-compute-08",
+      "revision": 1,
+      "subObjectiveIds": [
+        "containers.4"
+      ]
+    },
+    {
+      "questionId": "az104-compute-09",
+      "revision": 1,
+      "subObjectiveIds": [
+        "containers.4"
+      ]
+    },
+    {
+      "questionId": "az104-compute-10",
+      "revision": 1,
+      "subObjectiveIds": [
+        "containers.3",
+        "containers.4"
+      ]
+    }
+  ],
+  "findings": []
+}

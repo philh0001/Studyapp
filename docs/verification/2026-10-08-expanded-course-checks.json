@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-08T11:58:01.503Z",
+  "units": 151,
+  "sections": 413,
+  "addedWords": 35064,
+  "keyPointWords": 14311,
+  "totalStudyWords": 49375,
+  "independentSourceCorrections": 5,
+  "humanApproval": false,
+  "typescript": true,
+  "eslint": true,
+  "unitFiles": 96,
+  "unitTestsPassed": 475,
+  "contentPacksValidated": 8,
+  "browserTestsPassed": 127,
+  "browserTestsSkipped": 2,
+  "browserProjects": [
+    "chromium",
+    "mobile-chromium",
+    "mobile-webkit"
+  ],
+  "limitations": "Browser speech events are simulated; no physical iPhone or real audio verification."
+}

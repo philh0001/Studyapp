@@ -1,0 +1,184 @@
+{
+  "checkedAt": "2026-10-08T11:47:57.682811+00:00",
+  "reviewKind": "AI-assisted semantic source comparison",
+  "humanApproval": false,
+  "findings": [],
+  "lessons": [
+    {
+      "lessonId": "intro-to-azure-cloud-shell--2-what-is-azure-cloud-shell",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+      ],
+      "notes": "Compared all three sections with the unit and current Cloud Shell features/editor docs: managed browser tools, existing account permissions and optional ephemeral versus mounted-storage sessions are supported. Original example illustrates the authentication/authorization distinction."
+    },
+    {
+      "lessonId": "intro-to-azure-cloud-shell--3-how-azure-cloud-shell-works",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/overview",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+      ],
+      "notes": "Compared session lifecycle, saved-file example and practical steps with unit text plus current overview/features/FAQ/editor text. Twenty-minute inactivity and persistence of files rather than process state are supported; no privileged-tool access is implied."
+    },
+    {
+      "lessonId": "intro-to-azure-cloud-shell--4-when-to-use-azure-cloud-shell",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/overview",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+      ],
+      "notes": "Compared browser administration example, inactivity qualification, unprivileged account and twenty-concurrent-user tenant quota with current overview and FAQ. No unsupported single-session or absolute twenty-minute execution claim was added."
+    },
+    {
+      "lessonId": "create-azure-resource-manager-template-vs-code--2-explore-template-structure",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ],
+      "notes": "Compared target-state explanation, template parts and resource/API version distinction with full unit text. Current deployment-modes doc supports the full-resource-definition warning; idempotence is scoped to the same resource identity."
+    },
+    {
+      "lessonId": "create-azure-resource-manager-template-vs-code--3-exercise-create-and-deploy-template",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/3-exercise-create-and-deploy-template",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ],
+      "notes": "Compared every exercise paragraph, CLI parameters and steps with the actual exercise and preceding template unit. Default incremental mode qualifies empty-template behavior; no complete-mode claim or automatic resource deletion was added."
+    },
+    {
+      "lessonId": "create-azure-resource-manager-template-vs-code--4-add-flexibility-arm-template",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ],
+      "notes": "Compared parameters, default versus allowedValues, secure types, parameter limit and runtime output distinction with full unit text. Current incremental deployment doc supports the omitted-property warning. No secrets appear in example content."
+    },
+    {
+      "lessonId": "create-azure-resource-manager-template-vs-code--5-exercise-parameters-output",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules"
+      ],
+      "notes": "Compared parameter wiring and output fragment with actual exercise syntax. Current official resource-name rules correct the training text’s hyphen error: storageAccounts use globally unique 3–24 lowercase letters/numbers. Allowed-values example uses a declared contract, not a blanket resource capability."
+    },
+    {
+      "lessonId": "intro-to-azure-backup--2-what-is-azure-backup",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+      ],
+      "notes": "Compared workload selection, RPO/RTO explanation and protected-backup controls with unit text. Original reporting-service numbers illustrate business targets; no guaranteed recovery time or ransomware immunity is asserted."
+    },
+    {
+      "lessonId": "intro-to-azure-backup--3-how-azure-backup-works",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
+      ],
+      "notes": "Compared MARS/MABS/DPM, vault separation and storage tiers with full unit text; current VM backup introduction supports optional agentless crash consistency. Enhanced-policy article supports four-hour schedules and independent retention decisions."
+    },
+    {
+      "lessonId": "intro-to-azure-backup--4-when-to-use-azure-backup",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+      ],
+      "notes": "Compared whole-VM versus database recovery, independent on-demand retention and regional support distinction with full unit text. No general cross-region protection claim or promise that configuring a policy proves backup completion is added."
+    },
+    {
+      "lessonId": "protect-virtual-machines-with-azure-backup--2-azure-backup-features-scenarios",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+      ],
+      "notes": "Compared historical recovery versus failover, vault permissions/encryption/soft-delete boundaries and storage-resilience planning with actual features unit. Original deleted-document/outage example explains the distinction without guaranteeing recovery objectives."
+    },
+    {
+      "lessonId": "protect-virtual-machines-with-azure-backup--3-back-up-azure-virtual-machine",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
+      ],
+      "notes": "Compared all snapshot, transfer and consistency explanations with actual backup-process unit and current VM backup introduction. Current Enhanced-policy doc supersedes old five-day/daily-only wording; four-hour scheduling and up-to-thirty-day snapshot retention are supported."
+    },
+    {
+      "lessonId": "protect-virtual-machines-with-azure-backup--4-exercise-back-up-azure-virtual-machine",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/4-exercise-back-up-azure-virtual-machine"
+      ],
+      "notes": "Compared lab lifecycle, read-only job-list command and evidence steps with actual exercise. Policy existence is treated as a prerequisite; ConfigureBackup completion is distinguished from successful backup. No Azure commands were executed."
+    },
+    {
+      "lessonId": "protect-virtual-machines-with-azure-backup--5-restore-virtual-machine-data",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ],
+      "notes": "Compared every restore paragraph with full unit text and fresh current restore article. Existing-VM requirement, paired-region options, support-matrix qualifiers and ADE restrictions are supported; no universally available cross-region/subscription/zonal restore is promised."
+    },
+    {
+      "lessonId": "protect-virtual-machines-with-azure-backup--6-exercise-restore-virtual-machine-data",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/6-exercise-restore-virtual-machine-data",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ],
+      "notes": "Compared all replacement exercise sections and steps with actual exercise/current restore guidance. The Stop instruction is restricted to the demonstrated replacement target, not all restores; job submission and completion are distinguished."
+    },
+    {
+      "lessonId": "monitor-azure-vm-using-diagnostic-data--2-monitor-vm-health",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+      ],
+      "notes": "Compared host/guest layers and original troubleshooting scenario with actual unit/current monitoring doc. Current OpenTelemetry versus classic Logs documentation supports workspace distinctions; guest counters/event collection is scoped appropriately."
+    },
+    {
+      "lessonId": "monitor-azure-vm-using-diagnostic-data--3-exercise-create-virtual-machine",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+      ],
+      "notes": "Compared every host-monitoring section and step with actual unit. Recommended-alert and managed-boot-diagnostics choices are preserved; deprecated LAD is avoided. Current monitor-vm doc supports the host-versus-guest configuration boundary."
+    },
+    {
+      "lessonId": "monitor-azure-vm-using-diagnostic-data--4-view-host-metrics",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained"
+      ],
+      "notes": "Compared chart fields and practical steps with full Metrics Explorer unit and current aggregation article. Original interpretation distinguishes captured maxima, time range/grain and different metric units without inferring causation from correlation."
+    },
+    {
+      "lessonId": "monitor-azure-vm-using-diagnostic-data--5-enable-vm-insights",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/tutorial-enable-monitoring",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-maps"
+      ],
+      "notes": "Compared all three sections with fresh current portal tutorial, guest-metrics comparison, classic performance and Map docs. OTel default and workspace type, supported classic collection, metrics-only workbook limitation and exact Map retirement/onboarding dates are supported."
+    },
+    {
+      "lessonId": "monitor-azure-vm-using-diagnostic-data--6-collect-log-data",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection-syslog",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-endpoint-overview",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
+      ],
+      "notes": "Compared collection specification and source selection with actual unit plus current Syslog doc; DCE qualification with fresh endpoint doc; original KQL pipeline with official query operators and unit’s Syslog/severity context. Filters/association/scope checks follow those prerequisites. No universal DCE requirement was added."
+    }
+  ],
+  "sectionsReviewed": 60,
+  "wordsAdded": 4257,
+  "wordCountMethod": "Whitespace-separated paragraph, practical-step and code words; section titles excluded.",
+  "reviewMethod": "Every new paragraph, step and code sample compared semantically with actual full training-unit text and consulted current official product-document text. Worked scenarios are original illustrations, not copied Microsoft assessments. Azure operations were not executed."
+}

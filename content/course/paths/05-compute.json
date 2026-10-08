@@ -1,0 +1,595 @@
+{
+  "id": "az-104-manage-compute-resources",
+  "title": "AZ-104: Deploy and manage Azure compute resources",
+  "url": "https://learn.microsoft.com/en-us/training/paths/az-104-manage-compute-resources/",
+  "modules": [
+    {
+      "id": "intro-to-azure-virtual-machines",
+      "title": "Introduction to Azure virtual machines",
+      "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/",
+      "lessons": [
+        {
+          "id": "intro-to-azure-virtual-machines--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Azure virtual machines provide on-demand compute with control over the guest operating system and installed software.",
+            "Plan the network, capacity, availability and backups before migrating a server."
+          ]
+        },
+        {
+          "id": "intro-to-azure-virtual-machines--2-compile-a-checklist-for-creating-a-vm",
+          "title": "Compile a checklist for creating an Azure Virtual Machine",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm",
+          "kind": "teaching",
+          "points": [
+            "Plan the virtual network, subnets and required traffic before creating the VM; connected networks must use nonoverlapping address ranges.",
+            "Azure reserves the first four and last IP addresses in each subnet. Network security groups filter traffic at subnet or network-interface level.",
+            "Inventory the operating system, CPU, memory, disk input/output and data-location requirements. Choose the region and VM size for those needs.",
+            "General-purpose sizes balance CPU and memory; compute-, memory- and storage-optimized sizes target different bottlenecks. GPU and high-performance-compute sizes serve specialized workloads.",
+            "Resizing a running VM restarts it. If a size is unavailable on its current cluster, stop and deallocate first to select another size available in the region.",
+            "Keep durable application data on data disks rather than temporary storage. VM size limits attached disks and network interfaces.",
+            "Deallocating stops compute charges, but retained disks still incur storage charges. Choose pay-as-you-go for variable use or reservations for predictable long-term use."
+          ]
+        },
+        {
+          "id": "intro-to-azure-virtual-machines--3-create-a-vm",
+          "title": "Exercise - Create a VM using the Azure portal",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/3-create-a-vm",
+          "kind": "exercise",
+          "points": [
+            "This optional exercise requires an Azure subscription and a resource group. You can study the instructions without deploying.",
+            "In the portal, create a virtual machine and choose its subscription, resource group, region, Ubuntu image and size.",
+            "Use SSH public-key authentication, supply an administrator username and generate or provide a key pair. The exercise enables SSH on port 22.",
+            "Review and validate the configuration, create the VM and securely download the private key when prompted.",
+            "After deployment, open the VM overview and use its public IP address with an SSH client."
+          ]
+        },
+        {
+          "id": "intro-to-azure-virtual-machines--4-describe-other-create-vm-options",
+          "title": "Describe the options available to create and manage an Azure Virtual Machine",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options",
+          "kind": "teaching",
+          "points": [
+            "ARM templates declare resources in JSON and can parameterize names and settings for repeatable deployments. Exporting a resource template provides a starting point.",
+            "Azure CLI is cross-platform; az vm create creates a VM. Azure PowerShell provides cmdlets such as New-AzVM.",
+            "Terraform uses configuration files and a previewable execution plan to manage infrastructure.",
+            "REST APIs expose resource operations over HTTP; client SDKs wrap those APIs for application code.",
+            "VM extensions configure software after deployment. Automation can coordinate recurring management tasks.",
+            "Auto-shutdown schedules when a VM shuts down; configure the time and time zone to avoid unnecessary running time."
+          ]
+        },
+        {
+          "id": "intro-to-azure-virtual-machines--5-high-availability",
+          "title": "Manage the availability of your Azure VMs",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability",
+          "kind": "teaching",
+          "points": [
+            "A physical-host failure can interrupt a VM while Azure moves it to a healthy host. Platform maintenance can also require a restart.",
+            "Deploy redundant application instances across availability zones to reduce exposure to a datacenter failure. Each zone has independent power, cooling and networking.",
+            "Scale sets manage groups of VMs and can change instance counts based on demand or a schedule. They can be deployed across zones.",
+            "A load balancer distributes requests across healthy instances; redundancy still requires multiple working application instances.",
+            "Choose storage replication based on regional failure protection, cost and whether secondary-region read access is needed.",
+            "Azure Site Recovery replicates workloads to another location and coordinates failover and failback. Test recovery plans before relying on them."
+          ]
+        },
+        {
+          "id": "intro-to-azure-virtual-machines--6-backup-services",
+          "title": "Back up your virtual machines",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+          "kind": "teaching",
+          "points": [
+            "Azure Backup protects Azure VMs and selected on-premises workloads using components appropriate to the workload.",
+            "A Recovery Services vault manages backup data, recovery points and policies. Define when backups run and how long to retain them.",
+            "Application-consistent backups capture the information needed for application recovery, rather than relying only on a disk copy.",
+            "Backup storage is managed by the service; choose redundancy, encryption and retention to meet recovery requirements."
+          ]
+        },
+        {
+          "id": "intro-to-azure-virtual-machines--7-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/7-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "intro-to-azure-virtual-machines--8-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/8-summary",
+          "kind": "summary",
+          "points": [
+            "Select VM deployment tools for repeatability, then combine availability and backup services with the recovery needs of the application."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configure-virtual-machine-availability",
+      "title": "Configure virtual machine availability",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/",
+      "lessons": [
+        {
+          "id": "configure-virtual-machine-availability--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Availability planning combines redundant VM placement with scaling rules that match changing demand."
+          ]
+        },
+        {
+          "id": "configure-virtual-machine-availability--2-plan-for-maintenance-downtime",
+          "title": "Plan for maintenance and downtime",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/2-plan-for-maintenance-downtime",
+          "kind": "teaching",
+          "points": [
+            "Plan for predicted hardware failure, unexpected host failure and scheduled platform maintenance.",
+            "Live migration can move a VM off failing hardware with a short pause; performance can still be affected.",
+            "Unexpected hardware failure can trigger a reboot on another host and loss of temporary-drive contents.",
+            "Azure maintains the physical platform; you remain responsible for updates to the guest operating system and application software."
+          ]
+        },
+        {
+          "id": "configure-virtual-machine-availability--3-setup-availability-sets",
+          "title": "Create availability sets",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/3-setup-availability-sets",
+          "kind": "teaching",
+          "points": [
+            "An availability set spreads related VMs across physical infrastructure to reduce shared hardware and maintenance failures.",
+            "Assign a VM to its availability set when creating the VM; changing that assignment requires recreation.",
+            "Use multiple VMs for redundancy and separate availability sets for different application tiers. Add load balancing to distribute traffic.",
+            "Availability sets do not protect against application or guest-operating-system failures; retain backup and recovery plans."
+          ]
+        },
+        {
+          "id": "configure-virtual-machine-availability--4-review-update-fault-domains",
+          "title": "Review update domains and fault domains",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains",
+          "kind": "teaching",
+          "points": [
+            "An update domain groups VMs that can be restarted together during planned maintenance. Azure restarts only one update domain at a time.",
+            "Availability sets support 1 to 20 update domains, defaulting to five. The count cannot be changed after creation.",
+            "A fault domain groups VMs sharing infrastructure such as power or network switches. Distributing instances across fault domains reduces common hardware-failure exposure.",
+            "Each VM in an availability set belongs to one update domain and one fault domain."
+          ]
+        },
+        {
+          "id": "configure-virtual-machine-availability--5-review-availability-zones",
+          "title": "Review availability zones",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones",
+          "kind": "teaching",
+          "points": [
+            "An availability zone is a separate physical location within an Azure region with independent power, cooling and networking.",
+            "Enabled regions have at least three separate zones. Distribute application instances across zones to withstand a datacenter failure.",
+            "Zonal resources are pinned to a chosen zone; zone-redundant services replicate across zones automatically.",
+            "Managed disks and VMs can be zonal, while supported storage and database offerings can provide zone redundancy."
+          ]
+        },
+        {
+          "id": "configure-virtual-machine-availability--6-compare-vertical-horizontal-scaling",
+          "title": "Compare vertical and horizontal scaling",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling",
+          "kind": "teaching",
+          "points": [
+            "Vertical scaling changes a VM size, increasing or decreasing its CPU and memory capacity.",
+            "Horizontal scaling changes the number of VM instances serving the workload.",
+            "Vertical scaling is bounded by available hardware sizes and often requires a restart. Horizontal scaling provides more flexibility for distributing demand.",
+            "If scaling requires recreating a VM, plan how durable data is preserved and what interruption users experience."
+          ]
+        },
+        {
+          "id": "configure-virtual-machine-availability--7-implement-scale-sets",
+          "title": "Implement Azure Virtual Machine Scale Sets",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+          "kind": "teaching",
+          "points": [
+            "Virtual Machine Scale Sets deploy and centrally manage groups of VMs and can add or remove instances manually or through autoscale.",
+            "Uniform orchestration uses a shared base image and configuration. Flexible orchestration permits differing VM configurations within a scale set.",
+            "Choose the orchestration mode when creating the scale set.",
+            "Use Azure Load Balancer for layer-four traffic distribution or Application Gateway for layer-seven routing and TLS termination.",
+            "Multiple application instances help maintain service when one instance fails."
+          ]
+        },
+        {
+          "id": "configure-virtual-machine-availability--8-create-scale-sets",
+          "title": "Create Virtual Machine Scale Sets",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/8-create-scale-sets",
+          "kind": "teaching",
+          "points": [
+            "When creating a scale set, choose orchestration mode, image, architecture, size and instance count.",
+            "Flexible orchestration is recommended for new deployments and supports identical or mixed VMs. Choose Uniform when its scale-set VM model and feature set fit the workload.",
+            "Check application compatibility before selecting x64 or Arm64 architecture.",
+            "Maximum spreading places instances across as many available fault domains as possible; fixed spreading can fail when its required fault domains are unavailable."
+          ]
+        },
+        {
+          "id": "configure-virtual-machine-availability--9-implement-autoscale",
+          "title": "Implement autoscale",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale",
+          "kind": "teaching",
+          "points": [
+            "Autoscale changes instance counts as sustained workload demand changes.",
+            "Set scale-out rules to add capacity under increased load and scale-in rules to remove unneeded capacity when demand falls.",
+            "Use schedules for predictable demand changes such as working hours or regular events.",
+            "Match thresholds to acceptable application performance rather than reacting to every brief spike."
+          ]
+        },
+        {
+          "id": "configure-virtual-machine-availability--10-configure-autoscale",
+          "title": "Configure autoscale",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/10-configure-autoscale",
+          "kind": "teaching",
+          "points": [
+            "Choose manual capacity for a fixed instance count, or autoscale for metric- or schedule-driven changes.",
+            "Set minimum, maximum and default instance counts so capacity remains within operating and cost limits.",
+            "Define scale-out and scale-in thresholds and the number of instances each action adds or removes.",
+            "Set the metric averaging period to allow readings to stabilize, and configure schedules where demand is predictable.",
+            "A scale-in policy determines which VM instances are removed."
+          ]
+        },
+        {
+          "id": "configure-virtual-machine-availability--11-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/11-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "configure-virtual-machine-availability--12-summary-resources",
+          "title": "Summary and resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/12-summary-resources",
+          "kind": "summary",
+          "points": [
+            "Availability sets and zones reduce shared failures; scale sets and autoscale adjust capacity to workload demand."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configure-app-service-plans",
+      "title": "Configure Azure App Service plans",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/",
+      "lessons": [
+        {
+          "id": "configure-app-service-plans--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/1-introduction",
+          "kind": "summary",
+          "points": [
+            "An App Service plan determines the compute capacity and scaling features available to its web apps."
+          ]
+        },
+        {
+          "id": "configure-app-service-plans--2-implement-azure",
+          "title": "Implement Azure App Service plans",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure",
+          "kind": "teaching",
+          "points": [
+            "An App Service plan defines the operating system, region, pricing tier, instance size and instance count.",
+            "Multiple apps can share a plan and its compute resources, potentially reducing cost.",
+            "Check remaining capacity before adding an app; overloading shared resources can affect every app in the plan.",
+            "Use a separate plan for a resource-intensive app, independent scaling or a different region."
+          ]
+        },
+        {
+          "id": "configure-app-service-plans--3-determine-plan-pricing",
+          "title": "Determine Azure App Service plan pricing",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+          "kind": "teaching",
+          "points": [
+            "The pricing tier determines available features and how apps run and scale. Compare hardware needs with requirements such as backups and staging slots.",
+            "Free and Shared tiers use shared compute, apply CPU quotas and do not scale out; they are intended for development and testing without an SLA.",
+            "Basic, Standard and Premium tiers provide dedicated compute shared only by apps in that plan.",
+            "Isolated tiers add dedicated network isolation through App Service environments.",
+            "Apps in the same plan share instance capacity and generally scale together. Higher tiers provide additional scaling and deployment features."
+          ]
+        },
+        {
+          "id": "configure-app-service-plans--4-scale-up-scale-out",
+          "title": "Scale up and scale out Azure App Service",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out",
+          "kind": "teaching",
+          "points": [
+            "Scale up by changing the plan tier or instance size to obtain more CPU, memory, storage or features.",
+            "Scale out by increasing the number of instances; the selected tier limits the available count.",
+            "Rule-based autoscale adjusts instance counts according to metrics or schedules.",
+            "Plan scaling affects apps sharing the plan, but does not automatically scale dependencies such as Azure SQL or Storage.",
+            "Scale down when higher capacity or features are no longer required; confirm the lower tier still supports the app."
+          ]
+        },
+        {
+          "id": "configure-app-service-plans--5-plan-scaling",
+          "title": "Configure Azure App Service autoscale",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+          "kind": "teaching",
+          "points": [
+            "Configure autoscale profiles with minimum, maximum and safe default instance counts. When metrics are unavailable, autoscale scales out to the default only if current capacity is lower; it does not scale in to the default.",
+            "A metric rule combines a trigger with a scale-in or scale-out action. Scheduled profiles apply capacity limits and rules at specified times.",
+            "Use both scale-out and scale-in rules so performance can recover under load and unnecessary instances can be removed afterward.",
+            "Choose the appropriate metric statistic and leave adequate space between the minimum and maximum capacity.",
+            "Configure email or webhook notifications to observe scaling events.",
+            "Automatic scaling is a separate HTTP-traffic-driven feature on Premium v2, v3 and v4, configured per app with always-ready instances and no custom scaling rules.",
+            "Choose rule-based autoscale for custom metrics or schedules; consider automatic scaling for unpredictable HTTP traffic with less rule management."
+          ]
+        },
+        {
+          "id": "configure-app-service-plans--6-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/6-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "configure-app-service-plans--7-summary-resources",
+          "title": "Summary and resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/7-summary-resources",
+          "kind": "summary",
+          "points": [
+            "Select an App Service plan for the required features and workload, then use scaling to balance capacity and cost."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configure-azure-app-services",
+      "title": "Configure Azure App Service",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/",
+      "lessons": [
+        {
+          "id": "configure-azure-app-services--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Azure App Service hosts web apps, mobile backends and APIs without managing their underlying servers directly."
+          ]
+        },
+        {
+          "id": "configure-azure-app-services--2-implement",
+          "title": "Implement Azure App Service",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/2-implement",
+          "kind": "teaching",
+          "points": [
+            "App Service supports web apps and APIs on Windows or Linux using supported languages and frameworks.",
+            "Deployment integrations connect source repositories and build pipelines to application releases.",
+            "Apps can scale vertically or horizontally, subject to the selected App Service plan.",
+            "Built-in authentication, IP restrictions and managed identities support application security."
+          ]
+        },
+        {
+          "id": "configure-azure-app-services--3-create-app-service",
+          "title": "Create an app with App Service",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service",
+          "kind": "teaching",
+          "points": [
+            "Choose a unique app name, code or container publishing, runtime stack, operating system, region and App Service plan.",
+            "The runtime stack determines the supported language and version; Linux or custom-container apps can provide a startup command.",
+            "Always On keeps an app loaded during idle periods and is required for continuous or CRON-triggered WebJobs.",
+            "Session affinity routes a client to the same instance during its session. HTTPS Only redirects HTTP requests to HTTPS."
+          ]
+        },
+        {
+          "id": "configure-azure-app-services--4-explore-continuous-integration-deployment",
+          "title": "Explore continuous integration and deployment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/4-explore-continuous-integration-deployment",
+          "kind": "teaching",
+          "points": [
+            "Configure deployment sources through Deployment Center. Continuous deployment publishes updates through a repeatable pipeline.",
+            "GitHub integration can use GitHub Actions or App Service Build Service. Other supported sources include Azure Repos and Bitbucket.",
+            "Build and release pipelines can compile code and run tests before deploying.",
+            "Manual deployment includes pushing to the app remote Git endpoint."
+          ]
+        },
+        {
+          "id": "configure-azure-app-services--5-create-deployment-slots",
+          "title": "Create deployment slots",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots",
+          "kind": "teaching",
+          "points": [
+            "Deployment slots are live apps with their own hostnames, available on supported Standard, Premium and Isolated tiers.",
+            "Deploy to a staging slot to validate an update before swapping it into production.",
+            "A swap moves app content and eligible configuration between slots; the previous production version remains in the other slot for rollback.",
+            "Swapping a warmed deployment can reduce interruption compared with replacing production content directly."
+          ]
+        },
+        {
+          "id": "configure-azure-app-services--6-add-deployment-slots",
+          "title": "Add deployment slots",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+          "kind": "teaching",
+          "points": [
+            "Create a slot with empty content or clone configuration from an existing slot.",
+            "Some settings follow app content during a swap; slot-specific settings remain attached to the slot.",
+            "App settings, connection strings and mounted storage can be marked as slot-specific.",
+            "Custom domains, scale settings, managed identities and virtual network integration stay with their slots. Review configuration before swapping."
+          ]
+        },
+        {
+          "id": "configure-azure-app-services--7-secure-app-service",
+          "title": "Secure your App Service app",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service",
+          "kind": "teaching",
+          "points": [
+            "App Service built-in authentication runs separately from application code and can authenticate users, handle tokens and pass identity information in headers.",
+            "You can instead use authentication supplied by your application framework.",
+            "Allow anonymous requests when the application should decide how to handle unauthenticated visitors.",
+            "Requiring authentication for every request can also restrict access to a public home page.",
+            "Use authentication logs and failed-request traces to investigate sign-in failures."
+          ]
+        },
+        {
+          "id": "configure-azure-app-services--8-create-custom-domain-names",
+          "title": "Create custom domain names",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names",
+          "kind": "teaching",
+          "points": [
+            "A custom domain maps a domain you control to the default App Service hostname.",
+            "Use an A record to map to an IP address or a CNAME to map to another hostname. A CNAME remains valid when the target IP changes.",
+            "Some DNS providers do not allow CNAME records at the domain root, requiring another supported mapping.",
+            "Validate and add the domain in App Service, then configure a TLS binding using a suitable certificate."
+          ]
+        },
+        {
+          "id": "configure-azure-app-services--9-backup-app-service",
+          "title": "Back up and restore your App Service app",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/9-backup-app-service",
+          "kind": "teaching",
+          "points": [
+            "App Service supports restoring app content and configuration from backups; supported tiers and backup types determine available options.",
+            "Custom backups use a storage account and container. Review storage access and firewall requirements before configuring the destination.",
+            "A backup contains compressed app data and a manifest; backup schedules and retention control when copies are kept.",
+            "A full restore replaces existing content; a partial restore leaves excluded files and folders unchanged.",
+            "Automatic backups exclude linked databases. Custom backups support only specified linked database types; protect other dependencies separately and verify restore support."
+          ]
+        },
+        {
+          "id": "configure-azure-app-services--10-use-application-insights",
+          "title": "Use Azure Application Insights",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights",
+          "kind": "teaching",
+          "points": [
+            "Application Insights is part of Azure Monitor and helps diagnose application performance and usage.",
+            "Monitor request rates, response times and failures to identify problems under load.",
+            "Track dependency calls to determine whether external services contribute to slow or failed requests.",
+            "Use exceptions, trace logs and performance counters to investigate individual failures and resource pressure.",
+            "Custom events and metrics can measure application-specific activity."
+          ]
+        },
+        {
+          "id": "configure-azure-app-services--11-simulation-web-apps",
+          "title": "Exercise: Implement Web Apps",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/11-simulation-web-apps",
+          "kind": "exercise",
+          "points": [
+            "This optional lab requires an Azure subscription and migrates a PHP web app to App Service.",
+            "Create the web app and a staging slot, configure deployment and deploy code into staging.",
+            "Swap the tested staging deployment into production, then configure and test autoscaling.",
+            "Follow the full interactive instructions on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "configure-azure-app-services--12-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/12-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "configure-azure-app-services--13-summary-resources",
+          "title": "Summary and resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/13-summary-resources",
+          "kind": "summary",
+          "points": [
+            "App Service combines application hosting with deployment slots, security, custom domains, backups and application monitoring."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configure-azure-container-instances",
+      "title": "Configure Azure Container Instances",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/",
+      "lessons": [
+        {
+          "id": "configure-azure-container-instances--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Containers package applications and dependencies with lighter virtualization than complete virtual machines."
+          ]
+        },
+        {
+          "id": "configure-azure-container-instances--2-compare-containers-to-virtual-machines",
+          "title": "Compare containers to virtual machines",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines",
+          "kind": "teaching",
+          "points": [
+            "Containers virtualize the operating-system environment, while VMs run a complete guest operating system and kernel.",
+            "Containers generally use fewer resources and start faster. Typical process-isolated containers share the host kernel and provide a weaker security boundary than a full VM.",
+            "Container images make application packaging and deployment consistent across environments.",
+            "Use orchestration when many containers require coordinated deployment, scaling and recovery."
+          ]
+        },
+        {
+          "id": "configure-azure-container-instances--3-review",
+          "title": "Review Azure Container Instances",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+          "kind": "teaching",
+          "points": [
+            "Azure Container Instances runs containers without requiring you to manage a VM or Kubernetes cluster.",
+            "A container image packages application code, runtime, libraries, tools and settings.",
+            "Choose CPU and memory when deploying the container group. Changing its CPU, memory or GPU allocation requires deleting and recreating the group.",
+            "Container Instances supports Windows and Linux containers. Azure Files volume mounts for persistent storage are supported only for Linux containers.",
+            "A supported publicly exposed group can have an IP address and DNS name. Linux groups deployed into a virtual network use private connectivity without a public IP."
+          ]
+        },
+        {
+          "id": "configure-azure-container-instances--4-implement-container-groups",
+          "title": "Implement container groups",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+          "kind": "teaching",
+          "points": [
+            "A container group schedules containers on the same host; they share lifecycle, local networking, storage volumes and group resources. Multi-container groups support Linux only; Windows groups support one container.",
+            "Group resource requirements are calculated from the requests of its containers.",
+            "Deploy groups using ARM templates, Bicep or YAML according to the surrounding infrastructure.",
+            "For external access, expose the port at both the group IP address and the container. Containers share a port namespace, so port mapping is not supported.",
+            "Deleting a group releases its IP address and fully qualified domain name.",
+            "Separate supporting tasks into containers, such as an app plus logging, monitoring or content-update components."
+          ]
+        },
+        {
+          "id": "configure-azure-container-instances--5-review-docker-platform",
+          "title": "Review Azure Container Apps",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform",
+          "kind": "teaching",
+          "points": [
+            "Azure Container Apps provides managed container hosting for APIs, microservices, background jobs and event-driven workloads.",
+            "It scales using HTTP traffic, event sources, CPU or memory, and KEDA-supported scalers; supported workloads can scale to zero.",
+            "Container Apps supports service discovery, traffic splitting and on-demand, scheduled or event-driven jobs.",
+            "It abstracts the underlying Kubernetes platform rather than exposing its Kubernetes APIs directly.",
+            "Choose Container Instances for isolated tasks, Container Apps for managed serverless microservices, or AKS when direct Kubernetes control is needed."
+          ]
+        },
+        {
+          "id": "configure-azure-container-instances--6-simulation-containers",
+          "title": "Exercise: Implement Container Instances",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/6-simulation-containers",
+          "kind": "exercise",
+          "points": [
+            "This optional exercise requires an Azure subscription.",
+            "Deploy an Azure Container Instance from a Docker image, then test and verify that the application responds.",
+            "Use the linked Microsoft Learn lab for the complete deployment instructions."
+          ]
+        },
+        {
+          "id": "configure-azure-container-instances--7-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/7-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "configure-azure-container-instances--8-summary-resources",
+          "title": "Summary and resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/8-summary-resources",
+          "kind": "summary",
+          "points": [
+            "Select the container platform based on isolation, orchestration and scaling needs; use container groups for cooperating containers."
+          ]
+        }
+      ]
+    }
+  ]
+}

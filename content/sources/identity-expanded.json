@@ -1,0 +1,162 @@
+[
+  {
+    "referenceId": "identity-deny",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/deny-assignments",
+    "checkedAt": "2026-10-08T01:38:00.071Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "0f5af23a3f1500598d8853659c97660139c722d8900fea763aab176b1a18dcd1"
+  },
+  {
+    "referenceId": "identity-resource-groups",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal",
+    "checkedAt": "2026-10-08T01:38:00.328Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "880865c99fb5982bc2c70115c273a347375883205d9e9d1ba29418e5fc3192cc"
+  },
+  {
+    "referenceId": "identity-policy",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+    "checkedAt": "2026-10-08T01:38:00.329Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "efdacea50fa8f9efbe1e92c1eafee99b0b2a175b7679819ca08995492e78298b"
+  },
+  {
+    "referenceId": "identity-rbac",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+    "checkedAt": "2026-10-08T01:38:00.335Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "d0ad88e2a2c777bab3c1e53a39fe8d8e7b7ac039830d885fa2d84eaeed245750"
+  },
+  {
+    "referenceId": "identity-roles",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+    "checkedAt": "2026-10-08T01:38:00.331Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "62241593250b54b65ad4b4672d2553d50fc1930a80b0c0daad05b688bcb2b1b3"
+  },
+  {
+    "referenceId": "identity-guests",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator",
+    "checkedAt": "2026-10-08T01:38:00.338Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "a5018a1f86ff85412cb462b4c45655fb71f6ff497210f7ab1f043b309f230c6c"
+  },
+  {
+    "referenceId": "identity-subscriptions",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/add-change-subscription-administrator",
+    "checkedAt": "2026-10-08T01:38:00.339Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "8997ee01c830fe397573c2856ccf17c9328a080207873222969eae41e56b779a"
+  },
+  {
+    "referenceId": "identity-scope",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview",
+    "checkedAt": "2026-10-08T01:38:00.343Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "76d5130c47664a383f2f0c6667b9de733f0383931d2ac5139697b7ecbd864709"
+  },
+  {
+    "referenceId": "identity-advisor",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/advisor/advisor-overview",
+    "checkedAt": "2026-10-08T01:38:00.339Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "879301d5ec7bd8248c3a78efb76d64df3789e987b696922c90e8a47b90737223"
+  },
+  {
+    "referenceId": "identity-dynamic",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership",
+    "checkedAt": "2026-10-08T01:38:00.345Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "020c982adba574e4cd9b0a3dc137dd72342f08922708f248ccfc3eb43a2b4d14"
+  },
+  {
+    "referenceId": "identity-locks",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+    "checkedAt": "2026-10-08T01:38:00.700Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "dfdff6f551f4e5a36a411a257220a570205a4de02d57d3b80d9b16144777d6e4"
+  },
+  {
+    "referenceId": "identity-management-groups",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+    "checkedAt": "2026-10-08T01:38:00.704Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "8dd34cc4d9e65d239bed1174edced3a53044270c4120fbe0c5b2cbcb2160e890"
+  },
+  {
+    "referenceId": "identity-groups",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
+    "checkedAt": "2026-10-08T01:38:00.707Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "7a702dda57d25527f6fe469cf3a669b587cd7b51e117f12376408174e37fda45"
+  },
+  {
+    "referenceId": "identity-budgets",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets",
+    "checkedAt": "2026-10-08T01:38:00.703Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "58efe03d20f2e5b72881dc82687f2c7f1c37913874800e99f929d446f5a3bf2f"
+  },
+  {
+    "referenceId": "identity-sspr",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+    "checkedAt": "2026-10-08T01:38:00.910Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "34ebc4baf37ac6cfd9ed5aec163e43135e8a199e147c754c44e402468ec431f4"
+  },
+  {
+    "referenceId": "identity-remediation",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
+    "checkedAt": "2026-10-08T01:38:00.912Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "fd06c245546c379914e8357983c214863d3d76987fe3c2074ec3b5d67140f0b7"
+  },
+  {
+    "referenceId": "identity-sspr-writeback",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-writeback",
+    "checkedAt": "2026-10-08T01:38:00.912Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "65bda612a252104b0784f4b33ac42294f1d1cda462d692b55ffec02262c8859c"
+  },
+  {
+    "referenceId": "identity-tags",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
+    "checkedAt": "2026-10-08T01:38:01.068Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "da385f6fcc7d703361dff9503bba83278fc4256c01e84fff5bbf189d6794c00a"
+  },
+  {
+    "referenceId": "identity-users",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+    "checkedAt": "2026-10-08T01:38:01.069Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "923159c37483b3361605b89e7ccec51bcd0ac0e1c4b50069c591bbbfb57fe214"
+  },
+  {
+    "referenceId": "identity-license",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+    "checkedAt": "2026-10-08T01:38:01.386Z",
+    "result": "checked",
+    "evidenceSummary": "Official Microsoft Learn page retrieved; per-option claim evidence is recorded in expanded draft questions, not human factual approval.",
+    "contentHash": "6f5d5696856e7d731031808cc18307ef905cf0972c38e684330190ddc34b3e9a"
+  }
+]

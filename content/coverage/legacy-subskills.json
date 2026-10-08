@@ -1,0 +1,153 @@
+{
+  "az104-networking-01@1": [
+    "network-security.2"
+  ],
+  "az104-networking-02@1": [
+    "network-security.2"
+  ],
+  "az104-networking-03@1": [
+    "network-security.2"
+  ],
+  "az104-networking-04@1": [
+    "network-security.1"
+  ],
+  "az104-networking-05@1": [
+    "vnets.2"
+  ],
+  "az104-networking-06@1": [
+    "vnets.2"
+  ],
+  "az104-networking-07@1": [
+    "vnets.2"
+  ],
+  "az104-networking-08@1": [
+    "network-security.5"
+  ],
+  "az104-networking-09@1": [
+    "network-security.5"
+  ],
+  "az104-networking-10@1": [
+    "network-security.1"
+  ],
+  "az104-identity-01@1": [
+    "rbac.2"
+  ],
+  "az104-identity-02@1": [
+    "rbac.3"
+  ],
+  "az104-identity-03@1": [
+    "rbac.1"
+  ],
+  "az104-identity-04@1": [
+    "rbac.3"
+  ],
+  "az104-identity-05@1": [
+    "rbac.1"
+  ],
+  "az104-identity-06@1": [
+    "governance.1"
+  ],
+  "az104-identity-07@1": [
+    "governance.1"
+  ],
+  "az104-identity-08@1": [
+    "governance.2"
+  ],
+  "az104-identity-09@1": [
+    "governance.2"
+  ],
+  "az104-identity-10@1": [
+    "governance.2"
+  ],
+  "az104-compute-01@1": [
+    "app-service.8"
+  ],
+  "az104-compute-02@1": [
+    "vms.6"
+  ],
+  "az104-compute-03@1": [
+    "vms.6"
+  ],
+  "az104-compute-04@1": [
+    "vms.6"
+  ],
+  "az104-compute-05@1": [
+    "vms.6"
+  ],
+  "az104-compute-06@1": [
+    "app-service.8"
+  ],
+  "az104-compute-07@1": [
+    "app-service.8"
+  ],
+  "az104-compute-08@1": [
+    "containers.4"
+  ],
+  "az104-compute-09@1": [
+    "containers.4"
+  ],
+  "az104-compute-10@1": [
+    "containers.3",
+    "containers.4"
+  ],
+  "az104-storage-01@1": [
+    "storage-accounts.2"
+  ],
+  "az104-storage-02@1": [
+    "storage-accounts.2"
+  ],
+  "az104-storage-03@1": [
+    "storage-accounts.2"
+  ],
+  "az104-storage-04@1": [
+    "storage-accounts.2"
+  ],
+  "az104-storage-05@1": [
+    "storage-access.2"
+  ],
+  "az104-storage-06@1": [
+    "storage-access.3"
+  ],
+  "az104-storage-07@1": [
+    "storage-access.3"
+  ],
+  "az104-storage-08@1": [
+    "blobs-files.3"
+  ],
+  "az104-storage-09@1": [
+    "blobs-files.3"
+  ],
+  "az104-storage-10@1": [
+    "blobs-files.3"
+  ],
+  "az104-monitoring-01@1": [
+    "monitor.4"
+  ],
+  "az104-monitoring-02@1": [
+    "monitor.4"
+  ],
+  "az104-monitoring-03@1": [
+    "monitor.4"
+  ],
+  "az104-monitoring-04@1": [
+    "monitor.4"
+  ],
+  "az104-monitoring-05@1": [
+    "monitor.3"
+  ],
+  "az104-monitoring-06@1": [
+    "monitor.3"
+  ],
+  "az104-monitoring-07@1": [
+    "backup-recovery.1"
+  ],
+  "az104-monitoring-08@1": [
+    "backup-recovery.4"
+  ],
+  "az104-monitoring-09@1": [
+    "backup-recovery.4"
+  ],
+  "az104-monitoring-10@1": [
+    "backup-recovery.4"
+  ]
+}

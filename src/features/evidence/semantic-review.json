@@ -1,0 +1,1172 @@
+{
+  "az104-identity-01": {
+    "conclusion": "Resource-group scope meets the exact boundary; subscription and management-group choices exceed it. Explicit absence of other grants makes the single answer defensible.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-02": {
+    "conclusion": "Contributor inheritance remains additive with child Reader; neither removal nor narrowing follows from the second grant. Denies and conditions are explicitly excluded.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-03": {
+    "conclusion": "Principal and scope are given, leaving the role definition; tags and region cannot supply permissions. The three-element source definition supports every rejection.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-04": {
+    "conclusion": "RBAC transitivity reaches the user through Operations; direct-only and ignored-nesting claims contradict the documented group example. This must not be generalized to licensing.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-05": {
+    "conclusion": "Service principal and managed identity are principal types; a role definition and scope are distinct assignment elements. Two selected IDs match the two eligible types offered.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-06": {
+    "conclusion": "Initiative/policySet groups definitions; neither an evaluation cycle nor an individual definition is the grouped construct. Terminology matches the Policy overview.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-07": {
+    "conclusion": "Applicable deny policy blocks the noncompliant create despite RBAC permission; policy evaluates creation as well as existing resources. No RBAC override is supported.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-08": {
+    "conclusion": "Parent CanNotDelete inheritance covers later resources without converting to ReadOnly. The options distinguish creation time from inherited lock type.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-09": {
+    "conclusion": "Data-plane blob deletion remains outside a management lock. Neither all-delete blocking nor read-only data permission follows from CanNotDelete.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-10": {
+    "conclusion": "ReadOnly blocks VM restart control-plane POST; CanNotDelete has different semantics and the group lock inherits. The specific VM restart example supports the answer.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-01": {
+    "conclusion": "User Administrator and Guest Inviter are the documented least-privileged task roles; PRA is for role assignment, not invitation alone. The P1 onboarding case does not grant unstated directory roles.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-02": {
+    "conclusion": "The synchronized department authority remains AD DS, so a cloud-only edit or recreating the user cannot satisfy the stated correction. Cloud-only users elsewhere in the case are distinct.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-03": {
+    "conclusion": "Pat is a first-level member and Dev is nested; licensing differs from RBAC transitivity. Group processing/errors and sufficient product licences remain configuration prerequisites.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-04": {
+    "conclusion": "The exhibited equality rule includes Research, excludes Finance and null. P1 coverage and completed processing are explicit; no manual-membership alternative applies.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-05": {
+    "conclusion": "Audit and restrict attribute writers because dynamic membership evaluates writable source values. Manual removals cannot permanently override a dynamic rule; the rule itself is not an attribute ACL.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-06": {
+    "conclusion": "Add B, verify the asynchronously applied licence, then remove A. Removing A sooner risks service loss; the retained licensing source explicitly prescribes this order, not merely an example.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-07": {
+    "conclusion": "With a two-method policy, one method is insufficient and missing registration leads to administrator contact. Enablement does not create authentication data; licence eligibility is assumed by the enabled premise.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-08": {
+    "conclusion": "The on-premises password location makes configured writeback necessary. Cloud methods alone and a separate replacement cloud password do not remove that authority boundary.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-09": {
+    "conclusion": "Resend the existing Pending acceptance invitation from the B2B tile; the full retained guest source explicitly says invitations do not expire. Creating the account does not complete redemption, and replacing it is unnecessary.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-10": {
+    "conclusion": "Account enabled is the sign-in gate; display name and mail nickname are descriptive fields. This prevents initial sign-in without deleting the user.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-11": {
+    "conclusion": "The role-assignable setting forces Assigned membership; PRA and P1 are explicit. Groups Administrator and dynamic membership do not satisfy the documented creation workflow.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-12": {
+    "conclusion": "The inventory counts 120 unique users, not 240 memberships or three groups. P1 entitlement is per unique user; qualifying alternative entitlements are outside the choices.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-13": {
+    "conclusion": "Microsoft 365 groups are user-only and dynamic rules cannot mix users with devices. Device ownership does not convert a user/device mixture into a supported group.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-14": {
+    "conclusion": "Authentication source and privilege level are independent dimensions. Each of the four descriptions has a unique internal/external and member/guest intersection; no alternative pairing survives both dimensions.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-15": {
+    "conclusion": "Tenant location is the fallback and explicit user location is recommended for multi-country licensing. Display names do not determine service eligibility, and service availability is not universal.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-16": {
+    "conclusion": "Errors and issues on the product licensing page addresses assignment errors; group descriptions and welcome-email settings do not expose that state. Portal labels can change independently of licensing semantics.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-17": {
+    "conclusion": "Zero suppresses reconfirmation rather than disabling SSPR or making it occur at every sign-in. The exhibit separates registration requirements from reconfirmation.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-18": {
+    "conclusion": "Outbound 443 relay and local AD DS password-policy enforcement are distinct supported properties. Working writeback is an explicit premise; no inbound rule or complexity bypass is established.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-19": {
+    "conclusion": "Resource-scoped Reader alone meets read-only and one-account boundaries. Group Contributor violates privilege and scope; subscription Reader violates scope.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-20": {
+    "conclusion": "Contributor cannot assign RBAC roles whereas Owner can; Reader cannot assign roles either. Broad resource management and access delegation are not interchangeable capabilities.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-21": {
+    "conclusion": "Stack denies can override an Owner grant unless excluded. A second normal customer deny cannot cancel the stack deny; private-preview availability is date-sensitive and must be checked before factual approval.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-22": {
+    "conclusion": "NotActions subtracts within Role A rather than denying across roles. The exhibited Role B independent grant restores write under the explicitly additive, no-deny premise.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-23": {
+    "conclusion": "Management group, subscription, resource group, resource is a strict scope hierarchy. No alternative order fits broadest-to-specific wording; this is hierarchy ordering rather than deployment sequencing.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-24": {
+    "conclusion": "The exhibited path ends at warehouse resource group, with neither subscription-only nor provider-resource scope. The explanation correctly uses path structure rather than resource naming.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-25": {
+    "conclusion": "Reader lacks writes, Contributor lacks role assignments, and Owner includes both. The requirement descriptions concern permissions, so Owner merely choosing not to write is not an alternative Reader pairing.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-26": {
+    "conclusion": "Nested RBAC access and nontransitive group licensing are intentionally contrasted. Parent grants a role through Child but does not license Morgan through that nesting alone.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-27": {
+    "conclusion": "Resource-group permissions flow down, not up or sideways to a sibling. Shared subscription does not expand the north Reader assignment to south.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-28": {
+    "conclusion": "Contributor can read Policy objects but cannot create/update definitions or assignments. Read visibility does not imply every Policy operation, and visibility is not Owner-only.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-29": {
+    "conclusion": "Removing the direct grant leaves the independently applicable group grant. Continued access is not evidence that removed assignments persist permanently; propagation timing is not the tested premise.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-30": {
+    "conclusion": "Actions minus NotActions and DataActions minus NotDataActions describe distinct planes. Neither NotActions alone nor DataActions granting management operations matches the documented calculation.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-31": {
+    "conclusion": "The exhibit excludes Recovery, not Analyst. The role grant does not cancel the deny; the explicitly excluded principal avoids this particular deny only.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-32": {
+    "conclusion": "DoNotApplyToChildScopes true prevents the subscription deny inheriting to the resource group. It does not expand to other subscriptions, and no other denies or locks are assumed.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-33": {
+    "conclusion": "Provisioned managed identity still needs a scoped role assignment. Identity existence grants no permissions, and a resource-group name is a scope rather than a principal.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-34": {
+    "conclusion": "A false applicable role-assignment condition blocks the action. The question presupposes a supported conditional action; it does not claim all Azure role operations support arbitrary conditions.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-35": {
+    "conclusion": "SDK-created assignment identities need explicit roles; caller-based evaluation and identity-based remediation differ. The Juniper case states no unstated role grants and is consistent with that failure.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-36": {
+    "conclusion": "Changing roleDefinitionIds does not retroactively grant roles. Juniper needs a manual additional assignment, not a second identity; the case retains the existing identity and old grants.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-37": {
+    "conclusion": "After grants are present, a remediation task applies modify operations to existing resources using the assignment identity. A role list is not itself an assignment and wholesale recreation is unnecessary.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-38": {
+    "conclusion": "Group tags do not automatically propagate without policy or explicit tagging. Tags are metadata, not RBAC grants; the absence of tag policy is decisive.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-39": {
+    "conclusion": "Tag-name operations ignore case while values remain case-sensitive. The exhibit therefore permits equivalent operational keys with different Production values; displayed provider casing is not a guarantee of distinct keys.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-40": {
+    "conclusion": "One management group requires a common tenant. The restriction is tenant trust, not a one-subscription limit; cross-tenant governance needs a different design.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-41": {
+    "conclusion": "Six depth levels exclude root and subscription. One-parent topology permits multiple descendants; the numerical distractors confuse topology and counting boundaries.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-42": {
+    "conclusion": "Owner at subscription scope combines full resource management with delegation. Reader and one-group Contributor fail; the question deliberately excludes billing ownership transfer.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-43": {
+    "conclusion": "Budget thresholds notify rather than hard-stop consumption. The absence of automation is explicit, so stopping VMs or a real-time cap cannot be inferred.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-44": {
+    "conclusion": "The full retained budget article explicitly limits action groups to subscription/resource-group scopes. Resource-group support is distinct from broader budget-scope support, so management-group and all-scopes alternatives are false.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-45": {
+    "conclusion": "Resource locations can differ from resource-group metadata location. Shared lifecycle does not force regional co-location or relocate existing workloads.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-46": {
+    "conclusion": "ReadOnly management locks leave valid data-plane blob overwrites outside lock protection. The explicit valid data grant and no other restrictions prevent confusing key-listing POST restrictions with blob authorization.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-47": {
+    "conclusion": "Operational excellence covers process/manageability/deployment practices. Cost and performance are distinct categories even when one recommendation might have multiple downstream benefits.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-48": {
+    "conclusion": "Tags are plain text and unsuitable for secrets. They can appear in exports/reports/logs and are not encrypted secret storage; management groups are not a permitted tag target.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-49": {
+    "conclusion": "Without default-group customization, a new subscription defaults to the single root. Root cannot be moved/deleted; a second root and permanent hierarchy exclusion conflict with the source.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-identity-plus-50": {
+    "conclusion": "A management-group definition may be assigned below its definition scope with assignment parameters. Per-value copies are unnecessary and higher definition placement does not prohibit descendant assignment.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-01": {
+    "conclusion": "ZRS meets synchronous primary-zone-only redundancy; LRS lacks zones and GZRS adds the excluded secondary. Supported standard workload/region are explicit.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-02": {
+    "conclusion": "RA-GRS adds readable secondary while ordinary GRS does not; LRS has no secondary. Blob workload prevents confusing Azure Files support.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-03": {
+    "conclusion": "GRS geo-replication is asynchronous despite synchronous local copies. The explanation correctly identifies potential lag rather than claiming no secondary exists.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-04": {
+    "conclusion": "GZRS combines primary zones and geo-copy; ZRS misses geo-copy and GRS misses primary zones. Secondary read access is not requested.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-05": {
+    "conclusion": "User delegation uses Entra credentials and service SAS uses an account key. Account SAS is also key-signed and service SAS does not span services.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-06": {
+    "conclusion": "Stored access policy supplies start, expiry and permission constraints together. Both distractors incorrectly remove one of the documented constraints.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-07": {
+    "conclusion": "Account and user-delegation SAS cannot use stored access policies. Only service SAS supports that association; the alternatives reverse or overgeneralize support.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-08": {
+    "conclusion": "Cold is optimized for rare online access with sufficiently long retention. Hot is valid storage but not optimized for the stated use; Archive fails immediate online reading.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-09": {
+    "conclusion": "Archive metadata is readable independently of contents; rehydration is required for content. Reading metadata neither promotes the tier nor makes Archive online.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-10": {
+    "conclusion": "Cool explicit placement has 30-day minimum, so 30 minus 21 gives nine fee days. Cold/Archive durations produce the distractors; permanent deletion and disabled soft delete remove retention ambiguity.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-01": {
+    "conclusion": "Subnet network admission and Blob data authorization are independently required. The exhibit has neither sufficient role nor completed identity grant; account keys are not mandatory for an allowed subnet.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-02": {
+    "conclusion": "Same-region Azure services use private source addresses for storage, so repeatedly allowing the VM public IP does not fix admission. A service endpoint plus VNet rule is the offered valid alternative; Owner alone cannot bypass the firewall.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-03": {
+    "conclusion": "Private endpoint creation leaves public endpoint policy independent. Normal service hostname with private DNS remains correct; neither a second endpoint nor a privatelink URL disables public access.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-04": {
+    "conclusion": "Storage.Global supplies any-region endpoint reach, replacing rather than coexisting with Storage on the subnet. Regional Storage scope must not be overgeneralized to all regions.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-05": {
+    "conclusion": "Disallowing Shared Key denies Blob account-key SAS while user delegation remains separate Entra authorization. A stored policy changes constraints, not the SAS signing identity.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-06": {
+    "conclusion": "Deleting the associated policy revokes its service SAS without rotating shared keys used elsewhere. Container descriptive metadata and an unsupported account-SAS policy cannot provide targeted revocation.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-07": {
+    "conclusion": "Six policies exceed the documented five-per-container limit and produce HTTP 400. Permission type and user-delegation SAS do not raise that count.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-08": {
+    "conclusion": "Policy updates may propagate for up to 30 seconds with interim 403. The observed one-second failure is not proof of a permanently invalid policy; account SAS would lose the stated policy model.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-09": {
+    "conclusion": "Blob-only read permission plus HTTPS and short expiry fit least privilege. Delete and account-wide service permissions exceed the requirement; read does not require browse/list permission.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-10": {
+    "conclusion": "Move clients to existing key2, regenerate unused key1, move to new key1, regenerate unused key2. Verification and which key clients currently use make dependencies strict; regenerating an in-use key is not an equivalent order.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-11": {
+    "conclusion": "Rotating key1 revokes key1-signed service/account SAS, including policy-linked service SAS. It does not rotate the Entra delegation key; signatures do not update themselves.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-12": {
+    "conclusion": "Share-level and file/directory permissions follow Kerberos authentication. Authentication and management-page access do not grant ordinary SMB data access; default share permissions are excluded by the stated absence of grants.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-13": {
+    "conclusion": "One account-wide identity source applies across its SMB shares. The NorthQuay proposal needs separate account configuration for simultaneous AD DS and Entra Kerberos sources, not a per-share switch.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-14": {
+    "conclusion": "Elevated Contributor adds ACL modification to Contributor and Reader. The existing Full Control file ACL is explicit, preventing a share role alone from being treated as sufficient.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-15": {
+    "conclusion": "Share Reader bounds a file Modify ACL to read under the documented effective-permission matrix. A file ACL cannot override the narrower share grant; Reader does not add ACL administration.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-16": {
+    "conclusion": "The old signed-IP SAS constraint remains independent of admitted subnet traffic. Same-region private addressing can violate that token condition; network rules do not remove it or require key rotation.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-17": {
+    "conclusion": "Entra signature uniquely identifies user delegation, policy association identifies service SAS, and cross-service scope identifies account SAS. Each pairing is constrained by distinct signature/scope support, not just ability to read a blob.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-18": {
+    "conclusion": "Standard GPv2 supplies Blob, Files, Queue and Table; premium block-blob and file-share account types omit the combined services. The no-premium requirement and four-service list fix the choice.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-19": {
+    "conclusion": "RA-GZRS combines primary zones, geo-copy and secondary reads. GZRS lacks the RA access and RA-GRS lacks primary ZRS; accepted lag prevents a synchronous-replication inference.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-20": {
+    "conclusion": "RA does not remove asynchronous geo-lag. Primary reads serve the fresh-read requirement; secondary absence is neither rollback evidence nor a synchronous-commit guarantee.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-21": {
+    "conclusion": "Azure Files does not expose RA secondary SMB reads. Blob capabilities cannot be applied to every service and replica configuration does not convert file shares into containers.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-22": {
+    "conclusion": "Source change feed and versioning at both ends are required. HNS conflicts with object replication and destination-only feed is insufficient; RivaMedia precreated containers do not satisfy missing features.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-23": {
+    "conclusion": "The separate HNS analytics account is incompatible with object replication. Renaming a destination cannot change source architecture, and HNS does not auto-enable versioning or replication.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-24": {
+    "conclusion": "An active destination replication rule prevents ordinary writes while reads remain possible. Deleting its rule/policy removes that restriction; retries and an SMB role do not fix a Blob replication conflict.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-25": {
+    "conclusion": "Rehydration alone does not restart object replication without a new data update. Archive interaction does not delete the policy or create a synchronous barrier across accounts.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-26": {
+    "conclusion": "CMK vault needs soft delete and purge protection; supported RSA key and separately configured permissions are given. Managed identity remains necessary and SAS is not an encryption key.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-27": {
+    "conclusion": "Pinned version v1 needs an account encryption reference update to v2. Shared access keys and client Blob URLs are unrelated to the pinned vault URI.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-28": {
+    "conclusion": "Account-wide infrastructure encryption is creation-time only; a replacement account/migration is the offered path. Encryption scopes are explicitly excluded and base SSE cannot be disabled.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-29": {
+    "conclusion": "Service SSE is transparent, enabled by default and not disableable. CMK changes key management rather than enabling otherwise-unencrypted storage; uploads need no default encryption rewrite.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-30": {
+    "conclusion": "AzCopy account-to-account Blob transfer uses server-to-server APIs. The laptop coordinates rather than stages all bytes; SMB shares are neither necessary nor the Blob transport.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-31": {
+    "conclusion": "Blob Data Reader at source and Blob Data Contributor at destination satisfy minimum offered download/upload permissions. Management Reader and SMB roles do not grant Blob data rights; sign-in is not authorization.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-32": {
+    "conclusion": "Delete-destination prompt asks before removing destination-only objects. Timestamp comparison is a separate transfer decision; true deletes without asking, so it violates the stated requirement.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-33": {
+    "conclusion": "Recovery object boundaries distinguish blob, container, file-in-live-share and deleted share. File snapshots and share soft delete are not interchangeable; each requirement has one matching feature among the supplied choices.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-34": {
+    "conclusion": "Azure Files cannot expose SMB and NFS on one share; supported premium/SSD account settings with separate shares meet the design. Blob containers are not Files shares; current account/provider support must be checked at approval.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-35": {
+    "conclusion": "Private default container level grants no anonymous access even with reachable public network. Container creation neither grants anonymous read nor anonymous write.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-36": {
+    "conclusion": "Revision2 replaces overlapping lower-bound retention wording with the tier-specific documented 30/90-day minima. Hot frequency and Archive offline requirements remain distinct; revision1 matching uncertainty is retained in history.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 2
+  },
+  "az104-storage-plus-37": {
+    "conclusion": "Explicit Cold duration is 90 days, leaving 55 after day35 deletion. Cool and Archive numerical distractors use different tier minima; no retained soft-delete lifetime is assumed.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-38": {
+    "conclusion": "Copy-based rehydration can preserve the archived source and avoid its source early-deletion fee. It is asynchronous and still incurs retrieval/destination charges; a request is not instant readability or source tier change.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-39": {
+    "conclusion": "Lifecycle prefix includes the container path and is case-sensitive. The shown Annual prefix fails both shape and case; cross-container wildcarding and insensitive matching are unsupported.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-40": {
+    "conclusion": "Last-access rules require enabled tracking and eligible Cool return-to-Hot action. Archive is excluded; missing tracking does not mean every read is recorded. The wrong-option prerequisite excerpt gap remains explicitly open.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-41": {
+    "conclusion": "Policy processing can wait up to24 hours and cannot rehydrate Archive. Neither synchronous save-time execution nor case-insensitive prefix changing makes Archive online.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-42": {
+    "conclusion": "Blob and container soft delete protect different object scopes within retention. Blob soft delete does not protect account deletion or implicitly enable indefinitely recoverable containers.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-43": {
+    "conclusion": "Undelete restores versions before choosing a restored version and copying it current. The word restored constrains identification after undelete; known version IDs can be inventoried earlier but that is not the listed identification step.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-44": {
+    "conclusion": "HNS excludes Blob versioning in the retrieved guidance. Data Owner permissions cannot remove a feature-support limit; uploads do not auto-enable unsupported versioning.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-45": {
+    "conclusion": "At200 share snapshots, delete old snapshots to create another. Labels do not bypass count and snapshots are read-only, not unlimited writable shares.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-46": {
+    "conclusion": "A live share with one deleted file needs file recovery from a prior snapshot. Share undelete targets a deleted share, and editing the read-only snapshot cannot restore the file in place.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-47": {
+    "conclusion": "Prior versions are separate lifecycle targets and accumulate storage cost. Deleting old previous versions after a retention interval addresses that accumulation; container protection or current-blob tiering alone does not.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-48": {
+    "conclusion": "Archive is unavailable under ZRS/GZRS/RA-GZRS. Online-tier breadth does not imply Archive breadth, and assigning a tier cannot silently change account redundancy.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-49": {
+    "conclusion": "New object replication rules ignore preexisting blobs by default; inspect copy scope. Azure Files snapshot limits and matching access-key values have no role in selecting historical block blobs.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-storage-plus-50": {
+    "conclusion": "Management/control-plane visibility and data-plane firewall admission differ. Listing containers does not supply a bypass; authorized Storage Explorer data requests still need an allowed network origin.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-01": {
+    "conclusion": "Action group groups email/workflow choices. User response labels an alert and condition state records the monitored condition, so neither distractor configures those actions.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-02": {
+    "conclusion": "Acknowledged is independent user response; it neither clears a continuing breach nor edits thresholds. Stateful condition resolution is driven by the signal.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-03": {
+    "conclusion": "Alert processing rule schedules action suppression. A metric value and closing one alert do not create a recurring processing rule.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-04": {
+    "conclusion": "Metric and log-search alerts use periodic metric evaluation and KQL workspace queries respectively. Prometheus uses PromQL and activity alerts react to activity events rather than periodically querying Logs.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-05": {
+    "conclusion": "Log Analytics is the portal query editor; dashboards display/pin results and action groups configure notifications. The answer distinguishes authoring from display and alert actions.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-06": {
+    "conclusion": "Shared KQL does not imply complete Azure Data Explorer feature parity. The retained unsupported-feature list refutes universal plugins and SQL-only language claims.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-07": {
+    "conclusion": "Azure VM backup recovery points live in a Recovery Services vault, not only temporary disks or memory. The backup source explicitly excludes host-cache data from crash-consistent capture.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-08": {
+    "conclusion": "After initial backup, changed blocks transfer and disks can back up in parallel. Always-full and one-disk-only alternatives contradict the described process.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-09": {
+    "conclusion": "Linux application consistency requires successful custom pre/post scripts rather than default file consistency or Windows VSS writers. Customer responsibility and script success must remain explicit.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-10": {
+    "conclusion": "Crash-consistent capture includes disk data, not pending memory/cache writes. Agentless opt-in does not create application consistency without coordination.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-01": {
+    "conclusion": "Max preserves the largest recorded sample in each interval; Average may hide peaks and Count measures sample number. This concerns captured samples, not detecting sub-sampling spikes.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-02": {
+    "conclusion": "Dimension splitting gives separate API series; aggregate-only and larger grain change different chart properties. Confirm the metric actually exposes the named API dimension, as the scenario states.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-03": {
+    "conclusion": "Hour grain aggregates a larger interval without changing the24-hour range or creating measurements. Grain equal to range yields one aggregate, not many intervals.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-04": {
+    "conclusion": "One diagnostic setting permits only one destination of each type; two settings serve two workspaces. Granted access and existing destinations are given; a chart does not route logs.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-05": {
+    "conclusion": "Regional diagnostics require same-region storage and trusted-service bypass when its firewall restricts VNet access. Destination must preexist; unrestricted region selection contradicts the regional premise.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-06": {
+    "conclusion": "Five diagnostic settings is the per-resource limit regardless of Log Analytics choice. Keeping all five prevents a direct sixth addition; routing needs redesign.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-07": {
+    "conclusion": "Many VMs may share one associated DCR. Thirty resources is not the thirty-DCR-per-resource association limit; diagnostic settings alone do not collect the stated guest events and action groups do not define collection.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-08": {
+    "conclusion": "Revision2 asks about filtering and delivery, making transformation and destination separately relevant. Backup replacement and alert acknowledgement lie outside DCR ingestion; source supports the service distinction despite one missing literal wrong-option excerpt.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 2
+  },
+  "az104-monitoring-plus-09": {
+    "conclusion": "Where EventID equals4625 filters rows; project chooses columns and take4625 limits rows. The explicit table exhibit supplies numeric EventID, avoiding type-assumption ambiguity.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-10": {
+    "conclusion": "Summarize count by Computer groups and counts. Project does not aggregate and sort does not create counts; no counter arithmetic is needed.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-11": {
+    "conclusion": "Revision2 requires newest-time sorting without a unique order for equal timestamps. Top10 descending TimeGenerated fits that scope; take is unordered and project does not choose the newest ten. The earlier deterministic tie claim is retained in history.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 2
+  },
+  "az104-monitoring-plus-12": {
+    "conclusion": "Revision2 explicitly filters Perf to one comparable counter/instance before hourly averaging. This addresses the retained tutorial warning that mixing different performance counters gives a meaningless result. Average and hourly bin remain the two required operators; projection-only and arbitrary take cannot produce the requested mean.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 2
+  },
+  "az104-monitoring-plus-13": {
+    "conclusion": "Project selects exactly the requested two columns. Where and sort affect rows/order and retain other columns; each distractor fails the output shape.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-14": {
+    "conclusion": "CPU thresholds map to metric alerts and KQL results to log-search alerts. PromQL is distinct and user response is not a rule signal or threshold.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-15": {
+    "conclusion": "Scheduled alert processing suppression leaves alert rules active. Acknowledging a past alert and changing display grain do not suppress future notifications each Sunday.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-16": {
+    "conclusion": "Closed user response leaves condition state independent. It does not alter metrics or future thresholds; configuration changes apply separately to future alerts.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-17": {
+    "conclusion": "Default host metrics do not imply guest-event/log collection. Enhanced monitoring/AMA configuration is separate from backup; the scenario explicitly says it is absent.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-18": {
+    "conclusion": "Storage insights provides cross-account performance/capacity/availability. Vault inventory and packet capture answer different operational questions and cannot replace its storage workbook.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-19": {
+    "conclusion": "Saving customized workbook settings and pinning charts are supported. Monitoring thresholds do not rewrite blobs, and backup schedules do not replace metric collection.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-20": {
+    "conclusion": "IP flow verify identifies packet allowance/deny and the matching rule. Next hop concerns routing and Backup reports concern protection; this question tests NSG filtering specifically.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-21": {
+    "conclusion": "Next hop supplies routing type/IP/table for a destination. IP flow verify addresses filtering; alert user response is unrelated to route computation, with its missing literal candidate excerpt recorded separately.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-22": {
+    "conclusion": "The exhibit produces3 times2 times2 equals12 source-destination-configuration combinations. Summing counts or taking only sources ignores dimensions of the Cartesian expansion.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-23": {
+    "conclusion": "RTT and failed-check percentage are Connection monitor results. Backup retention and blob tier capacity measure different services; configured endpoint/agent prerequisites remain outside the signal-choice task.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-24": {
+    "conclusion": "Recovery Services vaults colocate with protected data sources, requiring a regional vault for each source region. Replication target and a subscription-wide default do not override this placement.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-25": {
+    "conclusion": "Change vault replication before backup configuration; after configuration its direct setting is disabled. Alerts and the first completed backup do not supply a later-change mechanism.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-26": {
+    "conclusion": "Backup vault managed identity with roles grants disk-source access; human creator rights and names do not authorize that identity. Distinguish disk permissions from Key Vault access mechanisms, which can use a service application.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-27": {
+    "conclusion": "Enhanced policy supports four-hour Azure VM cadence. Retention-only changes do not schedule backups and Standard daily-only cadence does not meet multiple-per-day timing.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-28": {
+    "conclusion": "Enhanced supports the stated SSDv2/Ultra offerings and up-to30-day snapshot retention. Unlimited retention and complete Standard parity are not supported; current disk/region exclusions still require checking.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-29": {
+    "conclusion": "Replace existing requires an existing VM, so it fails after deletion. Create VM and restore disks remain routes from available recovery points; the question asks which is unavailable, not which is best.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-30": {
+    "conclusion": "Restore disks plus generated template supports customized new VM creation. Replacing disks on a current VM and simple portal creation do not satisfy the explicitly customized route.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-31": {
+    "conclusion": "Subsequent disk backup is incremental changed-block transfer. It neither always sends unchanged blocks nor protects only temporary storage.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-32": {
+    "conclusion": "Configured supported Cross Region Restore offers Create VM and Restore disks, excluding Replace existing disks. A recovery point and current workload/disk prerequisites remain necessary.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-33": {
+    "conclusion": "Site Recovery cache storage belongs in the source region. Target-only and VM temporary-disk alternatives confuse replication staging with destination or transient VM storage.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-34": {
+    "conclusion": "Replication policy defines retention and app-consistent snapshot frequency. Recipients and target VNet are separate settings; configuring frequency alone is not a blanket application-consistency guarantee.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-35": {
+    "conclusion": "Non-production target network avoids drill interference while a target VNet is still required. Always using live production risks the opposite effect; test failover is not actual production failover.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-36": {
+    "conclusion": "Latest processed avoids new processing and supports low RTO; Latest processes pending data for lower RPO. App-consistent is a separate selection criterion, not a guarantee of both no processing and lowest RPO.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-37": {
+    "conclusion": "Commit deletes available Site Recovery points and fixes the selected point. It does not retain switching forever or change Azure Backup policies; product boundaries matter.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-38": {
+    "conclusion": "Reprotect requires committed failover and reverses secondary-to-primary replication after access/permissions checks. Test cleanup and chart grain are unrelated workflows.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-39": {
+    "conclusion": "Vault diagnostics in Log Analytics feed Backup reports. VM-only diagnostics and metric charts without vault log data cannot supply the cross-vault protection records.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-40": {
+    "conclusion": "Custom Kusto log alerts with an action group add custom notification conditions. Workbook time ranges only affect views and authoring a query does not automatically create an alert.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-41": {
+    "conclusion": "The four stages have data dependencies: table then time filter then count aggregation then count sort. Summarize removes TimeGenerated, so filtering afterward cannot preserve the stated query; sorting count before count exists is invalid.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-42": {
+    "conclusion": "Failover creates the VM to validate, commit finalizes the point, and committed status precedes reprotection. Validation is a runbook milestone, while commit-to-reprotect is an explicit service prerequisite; alternatives violate those dependencies.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-43": {
+    "conclusion": "Filtering-rule diagnosis, next-hop route diagnosis and packet contents map uniquely to the three supplied tools. Packet capture can aid investigation but does not directly return the named rule or selected route tool result.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-44": {
+    "conclusion": "Where filters rows, project selects columns and summarize groups/counts. Each prompt asks a different output transformation, so column selection and row filtering cannot swap pairings.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-45": {
+    "conclusion": "Harbor has AMA installed but app02 lacks DCRA, so association is the missing collection relationship. Closing alerts and changing backup do not repair it; the case supplies workspace/agent prerequisites.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-46": {
+    "conclusion": "Harbor needs the event/time filter before per-computer count. Take4625 is a row count, and projecting only time removes the Computer grouping key; case requirements and exhibit align.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-47": {
+    "conclusion": "Scheduled processing suppression records fired alerts while preventing action-group notification. Deleting DCR sacrifices required telemetry and Closed affects only one prior alert.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-48": {
+    "conclusion": "Linden rehearsal uses its separate non-production network and Latest processed for low-impact/no-extra-processing recovery. Actual commit and disabled protection conflict with healthy protected drill prerequisites.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-49": {
+    "conclusion": "During the actual Linden outage, validated VM commit fixes the point and deletes alternatives. It is not a drill and does not leave points selectable forever; rehearsal and response are separate case phases.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-monitoring-plus-50": {
+    "conclusion": "After committed West Europe failover and primary availability/permission, reprotect runs West Europe to North Europe. Original direction would not protect the currently running VM; the flow transfers initial data and deltas.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of scenario, prompt, every option and explanation, summary, exhibits and relevant retained official evidence; separate from human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-01": {
+    "conclusion": "Pending guest account needs redemption via invitation or direct link. Creation is not redemption, and deleting/replacing the guest or waiting for expiry does not complete this flow; human review should confirm the no-expiry detail in the full invitation section.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-02": {
+    "conclusion": "Group Contributor inherits down rg-atlas to its new account, not to sibling rg-beacon. Per-resource grants are unnecessary and group assignment is supported; no denies/locks/other grants are explicit.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-03": {
+    "conclusion": "The80-percent actual-cost budget notifies without stopping resources. No action automation is configured, so subscription disablement, write deny and VM deallocation cannot be inferred; notification evaluation is not promised real-time.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-04": {
+    "conclusion": "Associated policy change/removal supplies server-side SAS revocation without key rotation. Local deletion, tags and a second unrelated policy cannot revoke the leaked original; propagation delay remains relevant operationally.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-05": {
+    "conclusion": "ZRS supplies the primary synchronous zone copies. LRS and GRS/RA-GRS primary LRS lack that zone requirement; secondary reads do not change primary replication, and supported region/account are explicit.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-06": {
+    "conclusion": "Lifecycle cannot rehydrate Archive regardless of rule count/age. Delete does not create a readable live report; immutability is excluded, so the issue is unsupported tier direction rather than deletion-policy eligibility.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-07": {
+    "conclusion": "The property reference establishes an implicit Bicep dependency and independent resources may deploy in parallel. Read-only access does not remove deployment dependency, textual order is not ordering authority, and universal explicit dependsOn would overconstrain the file.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-08": {
+    "conclusion": "Running-VM resize restarts even when deallocation is not required. Requested model size after failure is not allocated size; disks survive deallocation and ordinary resize does not delete them. Stateful application disruption is a legitimate warning.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-09": {
+    "conclusion": "Minimum replicas1+ expresses the per-revision running-instance floor. Maximum1 with minimum0 and rule removal do not raise the lower bound; this is scaling policy, not an absolute uptime guarantee.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-10": {
+    "conclusion": "Outbound VNet integration is distinct from inbound private access. Private endpoint addresses the missing direction; a second integration or slot does not create that inbound endpoint, and current App Service tier/DNS prerequisites must be checked.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-11": {
+    "conclusion": "Destination10.42.8.19 matches the more-specific /24 route, before equal-prefix priority. Virtual appliance next-hop type cannot defeat longer prefix; None drops traffic once selected, though the question asks route choice.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-12": {
+    "conclusion": "Lower numeric220 allow matches before310 deny and stops evaluation. No earlier rule/other NSG and a new connection are explicit; this avoids stateful existing-flow and cross-NSG precedence ambiguity.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-13": {
+    "conclusion": "Standard LB failing probe stops new connections to that backend without deleting the VM or changing DNS. Other healthy backends and new-inbound scope avoid conflating all-down and established-flow behavior.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-14": {
+    "conclusion": "Scheduled processing suppression retains fired alerts and configured groups. Disabling rules would prevent evaluation, deleting groups is unnecessary, and budget settings are a separate concern.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  },
+  "az104-reserve-plus-15": {
+    "conclusion": "Test failover into nonproduction followed by verification/cleanup matches the drill requirement. Real failover would alter production, indefinite drill resources skip documented cleanup, and production network is not the recommended isolation choice.",
+    "reviewedAt": "2026-10-08",
+    "method": "AI semantic comparison of the full original reserve scenario, prompt, every option and explanation, summary and retained official evidence; not human approval",
+    "reviewedRevision": 1
+  }
+}

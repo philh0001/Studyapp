@@ -1,0 +1,226 @@
+{
+  "domainId": "monitoring",
+  "checkedAt": "2026-10-08T01:41:29.734Z",
+  "humanReviewed": false,
+  "method": "AI-assisted factual comparison against actually retrieved Microsoft Learn sections; no human review or immutable revision edits.",
+  "questions": [
+    {
+      "questionId": "az104-monitoring-01",
+      "revision": 1,
+      "subObjectiveIds": [
+        "monitor.4"
+      ],
+      "findings": [
+        "Retrieved sections support the existing answer and distinction: Action groups trigger notifications or automated workflows; the documented examples include email and Logic Apps.",
+        "No factual correction identified; AI-assisted audit does not replace human review."
+      ],
+      "evidence": [
+        {
+          "referenceId": "monx-alerts",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+          "section": "Overview of Azure Monitor alerts",
+          "checkedAt": "2026-10-08T01:38:45.154Z",
+          "contentHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde",
+          "claim": "Action groups trigger notifications or automated workflows; the documented examples include email and Logic Apps."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-02",
+      "revision": 1,
+      "subObjectiveIds": [
+        "monitor.4"
+      ],
+      "findings": [
+        "Retrieved sections support the existing answer and distinction: The user sets New, Acknowledged or Closed; the system sets Fired or Resolved from the underlying condition.",
+        "No factual correction identified; AI-assisted audit does not replace human review."
+      ],
+      "evidence": [
+        {
+          "referenceId": "monx-alerts",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+          "section": "Overview of Azure Monitor alerts",
+          "checkedAt": "2026-10-08T01:38:45.154Z",
+          "contentHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde",
+          "claim": "The user sets New, Acknowledged or Closed; the system sets Fired or Resolved from the underlying condition."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-03",
+      "revision": 1,
+      "subObjectiveIds": [
+        "monitor.4"
+      ],
+      "findings": [
+        "Retrieved sections support the existing answer and distinction: Alert processing rules can add or suppress action groups, filter alerts and operate on a predefined schedule.",
+        "No factual correction identified; AI-assisted audit does not replace human review."
+      ],
+      "evidence": [
+        {
+          "referenceId": "monx-alerts",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+          "section": "Overview of Azure Monitor alerts",
+          "checkedAt": "2026-10-08T01:38:45.154Z",
+          "contentHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde",
+          "claim": "Alert processing rules can add or suppress action groups, filter alerts and operate on a predefined schedule."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-04",
+      "revision": 1,
+      "subObjectiveIds": [
+        "monitor.4"
+      ],
+      "findings": [
+        "Retrieved sections support the existing answer and distinction: The alert overview describes metric alerts as periodically evaluating resource metrics and supporting multiple conditions. The documented log-search-alert signal comes from querying resource logs at a predefined frequency.",
+        "No factual correction identified; AI-assisted audit does not replace human review."
+      ],
+      "evidence": [
+        {
+          "referenceId": "monx-alerts",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+          "section": "Types of alerts",
+          "checkedAt": "2026-10-08T01:38:45.154Z",
+          "contentHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde",
+          "claim": "The alert overview describes metric alerts as periodically evaluating resource metrics and supporting multiple conditions. The documented log-search-alert signal comes from querying resource logs at a predefined frequency."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-05",
+      "revision": 1,
+      "subObjectiveIds": [
+        "monitor.3"
+      ],
+      "findings": [
+        "Retrieved sections support the existing answer and distinction: Microsoft identifies Log Analytics as the primary portal tool to edit log queries and interactively analyze results before reuse.",
+        "No factual correction identified; AI-assisted audit does not replace human review."
+      ],
+      "evidence": [
+        {
+          "referenceId": "monx-logs",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+          "section": "Get started",
+          "checkedAt": "2026-10-08T01:38:45.624Z",
+          "contentHash": "090721822b64e6e9eac0258ba0583f5530740965d3177ffea585e3b31ed540e2",
+          "claim": "Microsoft identifies Log Analytics as the primary portal tool to edit log queries and interactively analyze results before reuse."
+        },
+        {
+          "referenceId": "monx-alerts",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+          "section": "Get started",
+          "checkedAt": "2026-10-08T01:38:45.154Z",
+          "contentHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde",
+          "claim": "Microsoft identifies Log Analytics as the primary portal tool to edit log queries and interactively analyze results before reuse."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-06",
+      "revision": 1,
+      "subObjectiveIds": [
+        "monitor.3"
+      ],
+      "findings": [
+        "Retrieved sections support the existing answer and distinction: Microsoft documents language differences and a list of unsupported features despite both products using KQL.",
+        "No factual correction identified; AI-assisted audit does not replace human review."
+      ],
+      "evidence": [
+        {
+          "referenceId": "monx-logs",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+          "section": "Language differences",
+          "checkedAt": "2026-10-08T01:38:45.624Z",
+          "contentHash": "090721822b64e6e9eac0258ba0583f5530740965d3177ffea585e3b31ed540e2",
+          "claim": "Microsoft documents language differences and a list of unsupported features despite both products using KQL."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-07",
+      "revision": 1,
+      "subObjectiveIds": [
+        "backup-recovery.1"
+      ],
+      "findings": [
+        "Retrieved sections support the existing answer and distinction: The VM-backup source states backups are stored in a Recovery Services vault with built-in recovery-point management.",
+        "No factual correction identified; AI-assisted audit does not replace human review."
+      ],
+      "evidence": [
+        {
+          "referenceId": "monx-backup",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+          "section": "Backup process",
+          "checkedAt": "2026-10-08T01:38:45.151Z",
+          "contentHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e",
+          "claim": "The VM-backup source states backups are stored in a Recovery Services vault with built-in recovery-point management."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-08",
+      "revision": 1,
+      "subObjectiveIds": [
+        "backup-recovery.4"
+      ],
+      "findings": [
+        "Retrieved sections support the existing answer and distinction: Microsoft describes parallel disk backup and incremental transfer of changed blocks since the previous backup.",
+        "No factual correction identified; AI-assisted audit does not replace human review."
+      ],
+      "evidence": [
+        {
+          "referenceId": "monx-backup",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+          "section": "Backup and restore considerations",
+          "checkedAt": "2026-10-08T01:38:45.151Z",
+          "contentHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e",
+          "claim": "Microsoft describes parallel disk backup and incremental transfer of changed blocks since the previous backup."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-09",
+      "revision": 1,
+      "subObjectiveIds": [
+        "backup-recovery.4"
+      ],
+      "findings": [
+        "Retrieved sections support the existing answer and distinction: Linux application-consistent snapshots require custom pre/post scripts; the source makes the customer responsible for consistency when using them.",
+        "No factual correction identified; AI-assisted audit does not replace human review."
+      ],
+      "evidence": [
+        {
+          "referenceId": "monx-backup",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+          "section": "Snapshot consistency",
+          "checkedAt": "2026-10-08T01:38:45.151Z",
+          "contentHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e",
+          "claim": "Linux application-consistent snapshots require custom pre/post scripts; the source makes the customer responsible for consistency when using them."
+        }
+      ]
+    },
+    {
+      "questionId": "az104-monitoring-10",
+      "revision": 1,
+      "subObjectiveIds": [
+        "backup-recovery.4"
+      ],
+      "findings": [
+        "Retrieved sections support the existing answer and distinction: Crash-consistent snapshots capture existing disk data; in-memory data and writes not transferred to disk are lost on recovery.",
+        "No factual correction identified; AI-assisted audit does not replace human review."
+      ],
+      "evidence": [
+        {
+          "referenceId": "monx-backup",
+          "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+          "section": "Snapshot consistency",
+          "checkedAt": "2026-10-08T01:38:45.151Z",
+          "contentHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e",
+          "claim": "Crash-consistent snapshots capture existing disk data; in-memory data and writes not transferred to disk are lost on recovery."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+import {it,expect} from 'vitest';import {render,screen} from '@testing-library/react';import {Annotations} from '../../src/features/review/Annotations';
+it('note_html_is_plain_text',()=>{render(<Annotations questionId="q" revision={1} initialNote="<script>alert(1)</script>" bookmarked={false} onSaveNote={async()=>{}} onBookmark={async()=>{}}/>);expect(screen.getByRole('textbox',{name:'Personal note'})).toHaveValue('<script>alert(1)</script>');expect(document.querySelector('script')).toBeNull()});

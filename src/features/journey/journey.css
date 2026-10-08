@@ -1,0 +1,7 @@
+.journey{max-width:48rem;margin:auto;overflow-wrap:anywhere}.journey form,.journey article{display:grid;gap:.8rem;margin:1rem 0;padding:1rem;border:1px solid var(--border,#b8c8be);border-radius:.7rem}.journey label{display:grid;gap:.3rem;min-width:0}.journey input,.journey select,.journey textarea,.journey button{min-height:44px;max-width:100%;box-sizing:border-box;font:inherit}.journey textarea{min-height:88px}.journey select{width:100%}.journey fieldset{min-width:0}.journey .journey-check{display:flex;align-items:center;gap:.6rem;min-height:44px}.journey-check input{width:24px}.journey a{display:inline-block;padding:.65rem 0}.journey li{margin:.6rem 0}.journey button{white-space:normal}.journey [role=alert]{border:2px solid #a53535;padding:1rem}
+/* Allow native controls and grid tracks to shrink at phone widths and enlarged text. */
+.journey,.journey form,.journey article,.journey fieldset{min-width:0;max-width:100%;box-sizing:border-box}
+.journey form,.journey article,.journey label{grid-template-columns:minmax(0,1fr)}
+.journey input:not([type=checkbox]),.journey select,.journey textarea{width:100%;min-width:0}
+.journey legend{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+.journey .journey-check input{flex:0 0 24px}

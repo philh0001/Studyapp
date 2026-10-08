@@ -1,0 +1,1944 @@
+[
+  {
+    "moduleId": "allow-users-reset-their-password",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:35.300260Z",
+    "questions": [
+      {
+        "id": "allow-users-reset-their-password-check-01",
+        "prompt": "An eligible licensed tenant will pilot password reset with members of the ResetPilot security group. Other ordinary users must remain outside the pilot. Which scope should you select?",
+        "lessonIds": [
+          "allow-users-reset-their-password--3-implement-azure-ad-self-service-password-reset"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Selected, with ResetPilot as the group",
+            "explanation": "Selected limits ordinary-user SSPR eligibility to the specified security group.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "All",
+            "explanation": "All includes ordinary users throughout the tenant, exceeding the pilot scope.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "None",
+            "explanation": "None disables ordinary-user SSPR, including the intended pilot members.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Company branding",
+            "explanation": "Branding changes the sign-in appearance; it does not select the users eligible for SSPR.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "allow-users-reset-their-password-check-02",
+        "prompt": "A user wants an email alert if someone unexpectedly resets their password through SSPR. Which setting addresses this concern?",
+        "lessonIds": [
+          "allow-users-reset-their-password--2-self-service-password-reset"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Notify admins when other admins reset passwords",
+            "explanation": "That notification concerns administrator resets rather than notifying this ordinary user.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Notify users on password resets",
+            "explanation": "This sends reset notifications to the affected user so an unexpected reset can be noticed.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Require registration at sign-in",
+            "explanation": "Registration gathers recovery information; it does not replace reset-event notifications.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Change the page background color",
+            "explanation": "Branding changes presentation, not notification of a password-reset event.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "allow-users-reset-their-password-check-03",
+        "prompt": "The ordinary-user pilot requires one authentication method. An administrator account instead encounters a two-method reset process. How should you test the ordinary-user experience?",
+        "lessonIds": [
+          "allow-users-reset-their-password--2-self-service-password-reset",
+          "allow-users-reset-their-password--4-exercise-set-up-self-service-password-reset"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Lower the administrator reset requirement to one method",
+            "explanation": "The ordinary-user method count does not lower the strong administrator reset requirement.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Give the test account an administrator role",
+            "explanation": "Adding an administrator role tests the stronger administrator policy rather than the ordinary-user experience.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Use a licensed non-administrator account in the pilot group",
+            "explanation": "The exercise uses a non-administrator because administrator reset policy has stronger requirements.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Test only with the administrator already signed in",
+            "explanation": "An existing administrator session can select the wrong account and does not prove the pilot user can reset a forgotten password.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "allow-users-reset-their-password-check-04",
+        "prompt": "A synchronized employee needs a cloud password reset to update the password in on-premises Active Directory too. Which design meets this requirement?",
+        "lessonIds": [
+          "allow-users-reset-their-password--2-self-service-password-reset"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Cloud-only SSPR without writeback",
+            "explanation": "A cloud-only reset does not provide the required writeback to the on-premises directory.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A custom sign-in background image",
+            "explanation": "Branding does not synchronize passwords or enable writeback.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "An email notification after reset",
+            "explanation": "A notification reports the event; it does not update the on-premises password.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Supported password writeback with eligible licensing and synchronization",
+            "explanation": "Writeback sends cloud password changes to on-premises AD through supported synchronization; the feature needs eligible licensing.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "allow-users-reset-their-password-check-05",
+        "prompt": "You are updating SSPR in a tenant that uses the centralized authentication policy. Where should you manage allowed authentication methods such as Email OTP?",
+        "lessonIds": [
+          "allow-users-reset-their-password--3-implement-azure-ad-self-service-password-reset"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Authentication methods policy",
+            "explanation": "The centralized policy controls supported authentication methods for authentication and SSPR; security questions remain an SSPR-policy exception.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Company branding",
+            "explanation": "Company branding controls sign-in presentation rather than permitted recovery methods.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "The custom helpdesk email field",
+            "explanation": "That field supplies a support contact and does not enable Email OTP.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Only the old SSPR authentication-method checkboxes",
+            "explanation": "After policy migration, supported methods are managed centrally; the old settings are not the correct place for Email OTP.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+              "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "allow-users-reset-their-password-check-06",
+        "prompt": "The tenant has suitable licensing and a branding administrator. The team wants its logo and background on the sign-in experience. What should it configure?",
+        "lessonIds": [
+          "allow-users-reset-their-password--5-exercise-customize-directory-branding"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "A larger SSPR authentication-method count",
+            "explanation": "Method count changes identity verification requirements, not the sign-in appearance.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+              "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Company branding in the intended Entra tenant",
+            "explanation": "Company branding provides the logo, background and other sign-in appearance settings; the exercise then tests the result with a user.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+              "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A custom helpdesk email address only",
+            "explanation": "A helpdesk address supplies support information but does not upload the company logo or background.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+              "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Password writeback",
+            "explanation": "Writeback synchronizes password changes to on-premises AD rather than changing sign-in appearance.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+              "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "configure-virtual-networks",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:35.300260Z",
+    "questions": [
+      {
+        "id": "configure-virtual-networks-check-01",
+        "prompt": "A workload subnet uses 10.24.8.0/27. How many IPv4 addresses remain assignable to Azure resources after the reserved addresses?",
+        "lessonIds": [
+          "configure-virtual-networks--3-create-subnets"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "32",
+            "explanation": "32 is the total address count before subtracting the five Azure reservations.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "27",
+            "explanation": "A /27 contains 32 addresses. Azure reserves five, leaving 27 assignable addresses.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "30",
+            "explanation": "Subtracting only network and broadcast addresses misses the additional Azure-reserved addresses.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "29",
+            "explanation": "Azure reserves five addresses, not three; 32 minus five is 27.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-virtual-networks-check-02",
+        "prompt": "A virtual network uses 10.24.0.0/16 and already has a subnet 10.24.8.0/24. Which additional subnet is valid without overlapping that subnet?",
+        "lessonIds": [
+          "configure-virtual-networks--3-create-subnets"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "10.24.8.128/25",
+            "explanation": "This range lies inside the existing 10.24.8.0/24 subnet, so it overlaps.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "10.25.9.0/24",
+            "explanation": "This range is outside the virtual network address space.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "10.24.9.0/24",
+            "explanation": "This range is inside 10.24.0.0/16 and does not overlap 10.24.8.0/24.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "10.24.8.0/25",
+            "explanation": "This range is contained in the existing subnet and therefore overlaps it.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-virtual-networks-check-03",
+        "prompt": "An on-premises application reaches an Azure VM across an already configured site-to-site VPN. Which VM address supports that private connection?",
+        "lessonIds": [
+          "configure-virtual-networks--5-plan-addressing"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Only a public IP address",
+            "explanation": "A public address is not required to reach the VM privately through the VPN.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/5-plan-addressing",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The final reserved address in the subnet",
+            "explanation": "The final IPv4 address is reserved by Azure and cannot be assigned to the VM.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/5-plan-addressing",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "An unused address outside the VM subnet",
+            "explanation": "The VM private IP must come from its deployed subnet, not an unrelated range.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/5-plan-addressing",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "The private IP address from its subnet",
+            "explanation": "Private addresses support communication inside the virtual network and over configured private hybrid connections.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/5-plan-addressing",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-virtual-networks-check-04",
+        "prompt": "A VM must keep a predictable private address for an IP-based firewall rule. An unused, unreserved address is available in its subnet. Which allocation should you configure?",
+        "lessonIds": [
+          "configure-virtual-networks--8-associate-private-ip-addresses"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Static private IP assignment on the NIC IP configuration",
+            "explanation": "Static assignment lets you select the available subnet address and suits a firewall rule that needs a predictable IP.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/8-associate-private-ip-addresses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Dynamic private IP assignment because it guarantees a chosen address",
+            "explanation": "Dynamic assignment lets Azure select an available address rather than guaranteeing the address you choose.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/8-associate-private-ip-addresses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Static assignment of an address reserved by Azure",
+            "explanation": "Static allocation still cannot use reserved subnet addresses.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/8-associate-private-ip-addresses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Add the desired private address to a public IP resource",
+            "explanation": "Private VM addresses are configured on the NIC; a public IP resource does not allocate that private subnet address.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/8-associate-private-ip-addresses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-virtual-networks-check-05",
+        "prompt": "A Standard public IP resource has been created for a new VM. When is its static public address normally released?",
+        "lessonIds": [
+          "configure-virtual-networks--6-create-public-ip-addressing"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Whenever the VM is stopped",
+            "explanation": "Stopping the associated VM does not release a static public IP resource.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/6-create-public-ip-addressing",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "When the public IP resource is deleted",
+            "explanation": "Static public IPs are allocated at creation and released when the public IP resource is deleted.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/6-create-public-ip-addressing",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Whenever the public IP is disassociated from the NIC",
+            "explanation": "Disassociation does not delete the public IP resource or release its static address.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/6-create-public-ip-addressing",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "After its first inbound connection",
+            "explanation": "Receiving traffic does not end the allocation; resource deletion releases it.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/6-create-public-ip-addressing",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-virtual-networks-check-06",
+        "prompt": "Two workload subnets share a virtual network. Their traffic must pass through a network virtual appliance instead of taking the default subnet-to-subnet path. What is needed?",
+        "lessonIds": [
+          "configure-virtual-networks--3-create-subnets"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Only create the two subnets",
+            "explanation": "Separate subnets alone do not replace the default direct routing between them.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Assign public IPs to all workload VMs",
+            "explanation": "Public IP assignment does not force private subnet traffic through an appliance.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Custom routing through the appliance",
+            "explanation": "Azure routes between subnets by default. Custom routes can direct that traffic through the NVA.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Use overlapping address ranges for the subnets",
+            "explanation": "Overlapping subnet ranges are invalid and do not implement inspection routing.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "configure-network-security-groups",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:35.300260Z",
+    "questions": [
+      {
+        "id": "configure-network-security-groups-check-01",
+        "prompt": "An inbound connection is allowed by the subnet NSG but denied by the NIC NSG. Assume no security-admin override applies. What happens?",
+        "lessonIds": [
+          "configure-network-security-groups--4-determine-network-security-groups-effective-rules"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "The connection is allowed because the subnet is evaluated first",
+            "explanation": "Evaluation order does not make the first scope authoritative; the NIC NSG still filters the connection.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The connection is allowed if the subnet rule has the smaller priority number",
+            "explanation": "Priorities order rules within an NSG, not allow one NSG to override another.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "The connection is denied",
+            "explanation": "Both applicable NSGs must permit the flow. The subnet allow cannot cancel the NIC deny.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Azure removes the NIC deny rule automatically",
+            "explanation": "Azure evaluates independently configured NSGs; it does not remove a rule to resolve differing results.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-network-security-groups-check-02",
+        "prompt": "An NSG has a broad inbound deny at priority 300. You need to allow HTTPS from 198.51.100.24/32 before that deny. Which priority is suitable for the new allow rule?",
+        "lessonIds": [
+          "configure-network-security-groups--5-create-network-security-groups-rules"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "310",
+            "explanation": "310 is evaluated after the matching deny at 300, so it cannot provide the exception.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/5-create-network-security-groups-rules",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "4096",
+            "explanation": "4096 is valid but runs after the matching priority-300 deny.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/5-create-network-security-groups-rules",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "50",
+            "explanation": "50 is outside the custom NSG priority range of 100 to 4096.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/5-create-network-security-groups-rules",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "240",
+            "explanation": "240 is within the custom range and is evaluated before 300, allowing a matching HTTPS exception.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/5-create-network-security-groups-rules",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-network-security-groups-check-03",
+        "prompt": "Web-server VMs are added and removed regularly. You want NSG rules to refer to their application role rather than maintain a list of their IPs. What should you use?",
+        "lessonIds": [
+          "configure-network-security-groups--6-implement-asgs"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "An application security group containing the web NICs",
+            "explanation": "ASGs group VM network interfaces by application role and can be used as NSG sources or destinations.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/6-implement-asgs",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The AzureLoadBalancer service tag",
+            "explanation": "That Microsoft-managed tag represents load-balancer probe traffic, not your changing collection of web VMs.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/6-implement-asgs",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A DNS CNAME record",
+            "explanation": "A DNS alias does not group NICs for use in an NSG rule.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/6-implement-asgs",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A route-table next hop",
+            "explanation": "A next hop controls traffic routing, not application-role membership in a filtering rule.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/6-implement-asgs",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-network-security-groups-check-04",
+        "prompt": "A newly created NSG has no custom rules. Considering only NSG filtering, what happens to an outbound connection to a public internet address?",
+        "lessonIds": [
+          "configure-network-security-groups--3-determine-network-security-groups-rules"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "The final deny always blocks it",
+            "explanation": "The internet allow rule is evaluated before the default final outbound deny.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/3-determine-network-security-groups-rules",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The default AllowInternetOutbound rule permits it",
+            "explanation": "Default outbound rules allow internet traffic before the final deny rule. Actual connectivity still needs a valid route and outbound mechanism.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/3-determine-network-security-groups-rules",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "It requires the inbound AzureLoadBalancer rule",
+            "explanation": "The AzureLoadBalancer inbound rule is unrelated to allowing this outbound internet flow.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/3-determine-network-security-groups-rules",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Default NSG rules exist only for inbound traffic",
+            "explanation": "Azure creates both inbound and outbound default rules.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/3-determine-network-security-groups-rules",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-network-security-groups-check-05",
+        "prompt": "You need to identify the security rule allowing or denying a proposed TCP flow to a VM, without sending application traffic. Which tool best matches this task?",
+        "lessonIds": [
+          "configure-network-security-groups--4-determine-network-security-groups-effective-rules"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "A DNS zone alias record",
+            "explanation": "A DNS alias resolves a resource name; it does not evaluate packet filtering.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A storage replication policy",
+            "explanation": "Storage replication copies blobs and does not diagnose VM NSG rules.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Network Watcher IP flow verify",
+            "explanation": "IP flow verify evaluates a proposed flow against applicable security rules and reports the allowing or denying rule.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A public IP resource overview alone",
+            "explanation": "Public IP allocation details do not identify the applicable security rule for the proposed flow.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-network-security-groups-check-06",
+        "prompt": "A subnet already has an NSG. You need another rule to protect resources in that subnet. Which configuration is valid?",
+        "lessonIds": [
+          "configure-network-security-groups--2-implement-network-security-groups"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Attach a second NSG to the same subnet",
+            "explanation": "The subnet association limit is one NSG, so two concurrent subnet NSGs are not valid.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/2-implement-network-security-groups",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Attach one NSG per address range in the subnet",
+            "explanation": "The NSG limit applies to the subnet, not separately to its address ranges.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/2-implement-network-security-groups",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Delete every default rule before adding the custom rule",
+            "explanation": "Default NSG rules cannot be deleted; higher-priority custom rules can override their effect.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/2-implement-network-security-groups",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Add the rule to the existing subnet NSG",
+            "explanation": "A subnet can have at most one associated NSG, and an NSG can contain multiple rules.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/2-implement-network-security-groups",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "host-domain-azure-dns",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:35.300260Z",
+    "questions": [
+      {
+        "id": "host-domain-azure-dns-check-01",
+        "prompt": "Your registered domain has a public Azure DNS zone, but ordinary internet queries still use the old DNS provider. What change delegates the domain to Azure DNS?",
+        "lessonIds": [
+          "host-domain-azure-dns--3-configure-azure-dns-host-domain"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Add a private virtual-network link",
+            "explanation": "A private-zone link affects private name resolution, not public registrar delegation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Change only the website A record at the old provider",
+            "explanation": "That changes a record at the existing provider but does not delegate authority to Azure DNS.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Create the same public zone again",
+            "explanation": "Creating another Azure zone does not update the domain registrar delegation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Replace the registrar name-server delegation with all four Azure DNS name servers",
+            "explanation": "The registrar delegation points resolvers to the authoritative provider; Azure DNS requires all four assigned name servers.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "host-domain-azure-dns-check-02",
+        "prompt": "The name api.example.org should resolve to two IPv4 addresses. How should you represent these in Azure DNS?",
+        "lessonIds": [
+          "host-domain-azure-dns--2-what-is-azure-dns"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "One A record set for api containing both addresses",
+            "explanation": "A record sets group records with the same name and type, so this set can contain both IPv4 addresses.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+              "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "One CNAME record set containing both IP addresses",
+            "explanation": "CNAME records contain a target name rather than IPv4 addresses, and a CNAME set has one record.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+              "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "One MX record set containing both IP addresses",
+            "explanation": "MX records identify mail-exchange targets; they do not provide the requested IPv4 host mapping.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+              "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Two SOA records for api",
+            "explanation": "SOA records describe zone authority and do not implement the host mapping; an SOA set contains one record.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+              "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "host-domain-azure-dns-check-03",
+        "prompt": "The root name example.org must point to a load balancer whose frontend uses a supported Standard public IP resource. Which record avoids hard-coding the address?",
+        "lessonIds": [
+          "host-domain-azure-dns--5-resolve-name-alias-record"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "A conventional CNAME at the apex",
+            "explanation": "A conventional CNAME cannot coexist with the apex NS and SOA records and is not allowed there.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/5-resolve-name-alias-record",
+              "https://learn.microsoft.com/en-us/azure/dns/dns-alias",
+              "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "An apex A alias record referencing the public IP resource",
+            "explanation": "An Azure alias can reference the public IP resource from an apex A record, coupling resolution to the resource.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/5-resolve-name-alias-record",
+              "https://learn.microsoft.com/en-us/azure/dns/dns-alias",
+              "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "An MX record referencing the load balancer",
+            "explanation": "MX is for mail routing, not apex IPv4 resolution to a load balancer.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/5-resolve-name-alias-record",
+              "https://learn.microsoft.com/en-us/azure/dns/dns-alias",
+              "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A TXT record containing the public IP string",
+            "explanation": "TXT data does not provide the A-record address answer clients need.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/5-resolve-name-alias-record",
+              "https://learn.microsoft.com/en-us/azure/dns/dns-alias",
+              "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "host-domain-azure-dns-check-04",
+        "prompt": "Two Azure virtual networks must resolve internal names in the same private DNS zone, without publishing those names publicly. What should you configure?",
+        "lessonIds": [
+          "host-domain-azure-dns--3-configure-azure-dns-host-domain"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Only a registrar delegation for the private zone",
+            "explanation": "Private DNS zones are not exposed through public registrar delegation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Public A records for every internal name",
+            "explanation": "Public records publish the internal names, contrary to the requirement.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A virtual-network link from the private zone to each network",
+            "explanation": "Links let the specified virtual networks resolve the private-zone records without public publication.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "One unlinked private zone and no network links",
+            "explanation": "Creating the private zone alone does not give the networks the required linked-zone resolution.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "host-domain-azure-dns-check-05",
+        "prompt": "An A record had a one-hour TTL when a resolver cached it. You change its address five minutes later. Why might that resolver still return the old address?",
+        "lessonIds": [
+          "host-domain-azure-dns--3-configure-azure-dns-host-domain"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "An A record can never be updated",
+            "explanation": "A records can be updated; the apparent delay can be due to cached data.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The record automatically became a CNAME",
+            "explanation": "Updating an A-record address does not convert it to a CNAME.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Private-network peering controls the public record TTL",
+            "explanation": "Peering controls network connectivity and does not determine a public DNS record caching lifetime.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Its cached answer can remain valid until the original TTL expires",
+            "explanation": "TTL controls the caching lifetime, so an already cached answer can remain until its existing expiry.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "host-domain-azure-dns-check-06",
+        "prompt": "You created a www A record in a test public zone, but the test domain is not registered or delegated. How can you verify Azure DNS serves the configured record?",
+        "lessonIds": [
+          "host-domain-azure-dns--4-exercise-create-dns-zone-a-record"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Query www directly against one assigned Azure DNS name server",
+            "explanation": "An explicit authoritative-server query can inspect the zone record even without public delegation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/4-exercise-create-dns-zone-a-record"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Expect an ordinary recursive lookup to discover the undelegated zone",
+            "explanation": "Without delegation, ordinary resolution has no reason to use that Azure zone.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/4-exercise-create-dns-zone-a-record"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Create a private DNS link and claim that proves public delegation",
+            "explanation": "Private linked-zone resolution does not establish public registrar delegation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/4-exercise-create-dns-zone-a-record"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Browse the web server IP and claim that proves the DNS record",
+            "explanation": "Direct IP browsing tests the server, not whether Azure DNS serves the www record.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/4-exercise-create-dns-zone-a-record"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "configure-vnet-peering",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:35.300260Z",
+    "questions": [
+      {
+        "id": "configure-vnet-peering-check-01",
+        "prompt": "Two virtual networks in different supported Azure public-cloud regions need direct private connectivity. Their address spaces do not overlap. Which feature matches this requirement?",
+        "lessonIds": [
+          "configure-vnet-peering--2-determine-uses"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Global virtual network peering",
+            "explanation": "Global peering connects virtual networks in different regions using the Microsoft backbone.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Regional peering only",
+            "explanation": "Regional peering is the same-region form and does not describe this cross-region connection.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "An Azure DNS A record alone",
+            "explanation": "DNS resolves names but does not establish network connectivity between the two VNets.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A public IP on each VM as the private link",
+            "explanation": "Public addresses do not create the requested private VNet-to-VNet peering connection.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-vnet-peering-check-02",
+        "prompt": "Two VNets both use 10.60.0.0/16 and currently cannot be peered. What address-planning change is required before ordinary peering can connect them?",
+        "lessonIds": [
+          "configure-vnet-peering--2-determine-uses"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Add identical DNS servers to both VNets",
+            "explanation": "DNS-server settings do not remove the overlapping IP ranges.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Give the connected VNets nonoverlapping address spaces",
+            "explanation": "Peered VNet address spaces must not overlap; duplicating the same /16 violates that requirement.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Create matching NSGs",
+            "explanation": "Security-group configuration does not satisfy the nonoverlapping address-space requirement.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Select global instead of regional peering to permit overlap",
+            "explanation": "Global peering also requires nonoverlapping address spaces.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-vnet-peering-check-03",
+        "prompt": "VNet A is peered with hub B, and B is peered with VNet C. No other connectivity or forwarding is configured. What should you expect between A and C?",
+        "lessonIds": [
+          "configure-vnet-peering--5-determine-service-chaining-uses"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Automatic A-to-C transit through B",
+            "explanation": "Two peering relationships do not automatically create transit between the outer VNets.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/5-determine-service-chaining-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A, B and C become one Azure resource",
+            "explanation": "Peered VNets remain separately managed resources and are not merged.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/5-determine-service-chaining-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "No automatic A-to-C connectivity through those peerings",
+            "explanation": "Ordinary VNet peering is nontransitive; explicit additional connectivity or routing is needed.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/5-determine-service-chaining-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Global peering would make this same topology transitive",
+            "explanation": "Global peering also does not automatically provide transitive connectivity.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/5-determine-service-chaining-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-vnet-peering-check-04",
+        "prompt": "A hub has a supported VPN gateway. A peered spoke has no gateway and needs to share the hub connection to on-premises networks. Which settings enable gateway transit?",
+        "lessonIds": [
+          "configure-vnet-peering--3-determine-gateway-transit-connectivity"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Use the remote gateway on the hub and allow transit on the spoke",
+            "explanation": "Those settings reverse which network hosts and shares the gateway.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/3-determine-gateway-transit-connectivity",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Deploy a spoke gateway while also selecting the remote gateway",
+            "explanation": "A spoke using a remote gateway cannot also have its own gateway.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/3-determine-gateway-transit-connectivity",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Configure DNS links only",
+            "explanation": "DNS-zone links do not configure VPN gateway sharing or on-premises connectivity.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/3-determine-gateway-transit-connectivity",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Allow gateway transit on the hub and use the remote gateway on the spoke",
+            "explanation": "The hub permits gateway sharing and the spoke selects the remote gateway; the spoke must not have its own gateway.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/3-determine-gateway-transit-connectivity",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-vnet-peering-check-05",
+        "prompt": "You create a peering from VNet A to VNet B. A reports Initiated and no return relationship exists. What remains to establish ordinary two-way peering?",
+        "lessonIds": [
+          "configure-vnet-peering--4-create"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Create the reciprocal peering and verify Connected on both sides",
+            "explanation": "A complete peering requires relationships in both directions with Connected status on both VNets.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/4-create"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Treat Initiated as a fully established connection",
+            "explanation": "Initiated indicates the peering is not yet Connected on both sides.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/4-create"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Delete all subnet NSGs",
+            "explanation": "NSG deletion does not create the missing reciprocal peering relationship.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/4-create"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Add a public DNS zone",
+            "explanation": "DNS hosting does not complete the VNet peering relationships.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/4-create"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "configure-vnet-peering-check-06",
+        "prompt": "VMs can communicate by private IP across a peering, but their Azure-provided VM names do not resolve across the two VNets. What should you add for cross-network naming?",
+        "lessonIds": [
+          "configure-vnet-peering--2-determine-uses"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "A second identical peering in the same direction",
+            "explanation": "An extra peering does not expand the Azure-provided DNS resolution boundary.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A suitable linked private DNS zone or custom DNS",
+            "explanation": "Azure-provided name resolution does not automatically span peerings; private linked zones or custom DNS can provide cross-VNet naming.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "A public IP on every VM",
+            "explanation": "Public IPs do not make Azure-provided private VM names resolve across peered networks.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Remove the remote VNet address space",
+            "explanation": "Removing its address space breaks the network design rather than providing DNS resolution.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "control-network-traffic-flow-with-routes",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:35.300260Z",
+    "questions": [
+      {
+        "id": "control-network-traffic-flow-with-routes-check-01",
+        "prompt": "One route table contains UDRs for 10.72.0.0/16 via appliance A and 10.72.5.0/24 via appliance B. Which next hop applies to destination 10.72.5.20?",
+        "lessonIds": [
+          "control-network-traffic-flow-with-routes--2-azure-virtual-network-route"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Appliance A through the /16 route",
+            "explanation": "The /16 matches but is less specific than the /24.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Appliance B through the /24 route",
+            "explanation": "Both UDRs match, and the /24 is the longer, more specific prefix.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Whichever route was created first",
+            "explanation": "Creation order does not replace longest-prefix matching.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Both appliances receive a copy of every packet",
+            "explanation": "Route selection chooses a next hop rather than duplicating traffic across matching UDRs.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "control-network-traffic-flow-with-routes-check-02",
+        "prompt": "For an on-premises destination prefix, the effective table contains a UDR and a BGP route with the same prefix. Neither is a service-endpoint route. Which type normally wins?",
+        "lessonIds": [
+          "control-network-traffic-flow-with-routes--2-azure-virtual-network-route"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "The BGP route because it is learned dynamically",
+            "explanation": "Dynamic learning does not give BGP preference over an equal-prefix UDR.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The older route regardless of type",
+            "explanation": "Creation age is not the documented preference rule.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "The user-defined route",
+            "explanation": "With the same prefix, a UDR normally has higher preference than a BGP route.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Both routes are always used equally",
+            "explanation": "The documented type preference chooses the UDR rather than automatically sharing traffic.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "control-network-traffic-flow-with-routes-check-03",
+        "prompt": "A UDR matches the target address and has next-hop type None. No more specific route applies. What happens to matching traffic?",
+        "lessonIds": [
+          "control-network-traffic-flow-with-routes--2-azure-virtual-network-route"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure sends it to the internet",
+            "explanation": "Internet is a different next-hop type; None does not mean use the internet.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Azure chooses any NVA automatically",
+            "explanation": "An appliance next hop must be configured; None does not select one.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Azure ignores the route because its next hop is empty",
+            "explanation": "None is an explicit supported drop action, not an incomplete route.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Azure drops the traffic",
+            "explanation": "The None next hop means matching traffic is dropped rather than forwarded.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "control-network-traffic-flow-with-routes-check-04",
+        "prompt": "A UDR correctly directs traffic to an Ubuntu NVA. Its Azure NIC has IP forwarding enabled, but guest operating-system forwarding is disabled. What should you do?",
+        "lessonIds": [
+          "control-network-traffic-flow-with-routes--5-exercise-create-nva-vm"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "Enable IP forwarding in the guest operating system too",
+            "explanation": "The exercise enables forwarding on both the Azure NIC and inside the guest; both are needed for this NVA forwarding path.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Only assign a public IP to the NVA",
+            "explanation": "A public IP does not enable the guest to forward packets between workloads.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Disable IP forwarding on the NIC",
+            "explanation": "The Azure NIC must also allow forwarded traffic, so disabling it makes the design less functional.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Change the next hop from Virtual appliance to None",
+            "explanation": "None drops matching traffic rather than forwarding it through the NVA.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "control-network-traffic-flow-with-routes-check-05",
+        "prompt": "The front-end subnet has a route through an NVA to the back-end subnet. The back-end subnet has only system routes. Why can return traffic bypass the NVA?",
+        "lessonIds": [
+          "control-network-traffic-flow-with-routes--6-exercise-route-traffic-through-nva"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "UDRs automatically apply to every subnet in the VNet",
+            "explanation": "A table is effective on associated subnets, not automatically on every subnet.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The forward UDR does not automatically configure the reverse path",
+            "explanation": "A route table affects its associated source subnet. The other subnet needs its own routing if its traffic must also use the appliance.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Every NVA rewrites all Azure route tables",
+            "explanation": "An NVA does not automatically install the matching reverse UDR in all source subnets.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "System routes cannot send traffic between subnets",
+            "explanation": "Azure system routes provide default communication between subnets in a VNet.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "control-network-traffic-flow-with-routes-check-06",
+        "prompt": "Three subnets should use the same UDR policy. What route-table association is supported?",
+        "lessonIds": [
+          "control-network-traffic-flow-with-routes--4-network-virtual-appliances"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "Associate two route tables with each subnet and merge their routes",
+            "explanation": "A subnet cannot have two associated route tables whose routes are merged.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Attach the route table only to the NSG",
+            "explanation": "Route tables associate with subnets, not with NSGs.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Associate one route table with all three subnets",
+            "explanation": "A route table can be associated with multiple subnets, while each subnet can have one associated route table.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Create one route table for every NIC because subnet association is unsupported",
+            "explanation": "Azure supports route-table association at subnet scope; a separate NIC route table is not the association model.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+              "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "intro-to-azure-load-balancer",
+    "revision": 1,
+    "checkedAt": "2026-10-08T11:00:35.300260Z",
+    "questions": [
+      {
+        "id": "intro-to-azure-load-balancer-check-01",
+        "prompt": "An application tier must be reached through a private frontend from Azure VMs and an existing on-premises VPN. Which Azure Load Balancer type fits?",
+        "lessonIds": [
+          "intro-to-azure-load-balancer--2-what-is-azure-load-balancer"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "A public load balancer because VPN clients require public addressing",
+            "explanation": "VPN-connected clients can reach a private frontend; this requirement does not call for a public one.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "A DNS TXT record instead of a frontend",
+            "explanation": "A TXT record does not provide load balancing or a private listener.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "An internal load balancer",
+            "explanation": "An internal load balancer uses a private frontend and can serve private Azure and suitably connected on-premises clients.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "An outbound rule without any frontend or load-balancing rule",
+            "explanation": "Outbound SNAT does not configure the requested inbound application-tier service.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-load-balancer-check-02",
+        "prompt": "A regional web service must route /images/* and /orders/* to different backend pools and needs WAF protection. Which service better fits than Azure Load Balancer?",
+        "lessonIds": [
+          "intro-to-azure-load-balancer--4-when-to-use-azure-load-balancer"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "Azure Load Balancer alone",
+            "explanation": "Load Balancer operates at Layer 4 and cannot make the required URL-path decisions or supply a web application firewall.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Traffic Manager alone",
+            "explanation": "Traffic Manager distributes using DNS; it does not inspect individual URL paths or provide this regional WAF gateway.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "An NSG alone",
+            "explanation": "An NSG filters network traffic using its rules, not HTTP URL paths, and does not act as a WAF gateway.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Application Gateway with WAF",
+            "explanation": "Application Gateway supports regional Layer 7 path routing and WAF. Azure Load Balancer does not inspect URL paths.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-load-balancer-check-03",
+        "prompt": "An HTTP health probe on a Standard Load Balancer receives status 503 from one backend repeatedly until it is marked unhealthy. What happens to new connections for that backend?",
+        "lessonIds": [
+          "intro-to-azure-load-balancer--3-how-azure-load-balancer-works"
+        ],
+        "correctOptionId": "a",
+        "options": [
+          {
+            "id": "a",
+            "text": "The load balancer stops sending new connections to it",
+            "explanation": "HTTP probes expect status 200. Once the backend is unhealthy, new connections are not directed to it.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "The backend remains healthy because it returned any HTTP response",
+            "explanation": "An arbitrary HTTP response is insufficient; 503 does not satisfy the probe success requirement.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "The load balancer automatically repairs the application",
+            "explanation": "A health probe detects health and affects distribution; it does not repair the backend application.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "All healthy backends are immediately removed from the pool",
+            "explanation": "A failure on this backend does not by itself make the other healthy backends ineligible.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-load-balancer-check-04",
+        "prompt": "You want successive connections from the same client IP to prefer the same healthy backend while pool membership remains stable. Which setting addresses this?",
+        "lessonIds": [
+          "intro-to-azure-load-balancer--3-how-azure-load-balancer-works"
+        ],
+        "correctOptionId": "b",
+        "options": [
+          {
+            "id": "a",
+            "text": "Only the default five-tuple distribution",
+            "explanation": "The default hash includes ports, so successive connections with different source ports need not select the same backend.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "Client IP session persistence",
+            "explanation": "Client IP affinity uses a reduced hash to associate connections from the same client IP with the same backend under the stated stable conditions.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Only an HTTP health probe",
+            "explanation": "A probe controls backend health eligibility, not client-IP affinity.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "Only an outbound SNAT rule",
+            "explanation": "Outbound rules manage outbound address translation rather than inbound session persistence.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-load-balancer-check-05",
+        "prompt": "An administrator needs separate frontend ports on a load balancer to reach individual backend VMs for management. Which feature maps those ports to particular instances?",
+        "lessonIds": [
+          "intro-to-azure-load-balancer--3-how-azure-load-balancer-works"
+        ],
+        "correctOptionId": "c",
+        "options": [
+          {
+            "id": "a",
+            "text": "An ordinary load-balancing rule across the whole pool",
+            "explanation": "An ordinary rule distributes flows to eligible pool members rather than defining this instance-specific management mapping.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "An outbound rule",
+            "explanation": "Outbound rules configure SNAT for traffic leaving the backend, not inbound instance-specific port mapping.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Inbound NAT rules",
+            "explanation": "Inbound NAT rules map frontend ports to specific backend instances, matching instance-specific management access.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "A health probe",
+            "explanation": "A probe determines health but does not define the administrator port mapping.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "intro-to-azure-load-balancer-check-06",
+        "prompt": "Backend VMs on a Standard public load balancer need explicitly configured SNAT for connections to public endpoints. Which feature configures this?",
+        "lessonIds": [
+          "intro-to-azure-load-balancer--3-how-azure-load-balancer-works"
+        ],
+        "correctOptionId": "d",
+        "options": [
+          {
+            "id": "a",
+            "text": "An inbound NAT rule",
+            "explanation": "Inbound NAT maps incoming frontend ports to backend instances, not the requested outbound SNAT policy.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          },
+          {
+            "id": "b",
+            "text": "An HA ports rule on an internal load balancer",
+            "explanation": "HA ports load-balance TCP and UDP flows across all ports for an internal Standard frontend; they do not configure this public outbound SNAT policy.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          },
+          {
+            "id": "c",
+            "text": "Only an HTTP health probe",
+            "explanation": "A health probe determines backend eligibility and does not configure outbound address translation.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          },
+          {
+            "id": "d",
+            "text": "An outbound rule",
+            "explanation": "Outbound rules configure SNAT for the backend pool to communicate with internet or other public endpoints.",
+            "sourceUrls": [
+              "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

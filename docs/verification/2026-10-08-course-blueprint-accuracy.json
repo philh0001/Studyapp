@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "kind": "blueprint",
+  "generatedAt": "2026-10-08T10:32:19.415Z",
+  "baselineId": "az104-2026-04-17",
+  "baselineCheckedAt": "2026-10-08T00:48:11.473Z",
+  "source": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104",
+  "status": "unchanged",
+  "canonicalUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104",
+  "contentHash": "163afaf9c861f88a35e230224e6dec2c49efeb2a8918ec88cde664848c4796de",
+  "changes": [],
+  "error": null,
+  "effectiveDate": "2026-04-17",
+  "subskills": 82
+}

@@ -1,0 +1,35 @@
+{
+  "checkedAt": "2026-10-08T07:34:06.950405+00:00",
+  "typecheck": "passed",
+  "lint": "passed",
+  "unitTests": {
+    "passed": 405,
+    "failed": 0,
+    "files": 82
+  },
+  "contentValidation": "blueprint and all seven packs passed",
+  "productionBuild": "passed",
+  "browserChecks": {
+    "passed": 112,
+    "failed": 0,
+    "intentionalDuplicateEngineSkips": 2,
+    "engines": [
+      "Chromium",
+      "phone-sized Chromium",
+      "phone-sized WebKit"
+    ]
+  },
+  "regressions": [
+    "fresh Learn and Timed without approvals",
+    "ordinary attempts update progress, revision queues, coverage, analytics and history",
+    "retired and quarantined content blocked at session transaction boundary",
+    "legacy preview links/presets use ordinary practice while saved legacy sessions retain meaning",
+    "answer/workpad and completed practice persist offline",
+    "saved-session reading position restored",
+    "device-report autosave retains latest edits and permits later restore"
+  ],
+  "contentChanged": false,
+  "humanApprovalFabricated": false,
+  "independentReview": "No outstanding critical or important findings; corrected review copy and rechecked resume/autosave follow-ups.",
+  "physicalDeviceAcceptance": "not performed"
+}

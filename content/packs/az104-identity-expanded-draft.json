@@ -1,0 +1,4005 @@
+{
+  "id": "az104-identity-expanded-draft",
+  "version": 1,
+  "blueprintId": "az104-2026-04-17",
+  "checkedAt": "2026-10-08T01:38:01.386Z",
+  "questions": [
+    {
+      "id": "az104-identity-plus-01",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.1",
+        "entra.4"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "foundation",
+      "scenario": "Moorland delegates employee creation and guest invitations to separate operators. Both need the documented least-privileged role for their task.",
+      "prompt": "Which TWO task-role pairs are documented? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Guest invitation — Guest Inviter",
+          "explanation": "The prerequisites list Guest Inviter as the least-privileged role for inviting an external guest when no directory role assignment is required.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Employee creation — Guest Inviter",
+          "explanation": "Guest Inviter is listed for invitations, while creating a new user requires User Administrator in this documented workflow.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Guest invitation alone — Privileged Role Administrator",
+          "explanation": "Privileged Role Administrator is required for assigning Entra roles, not as the least-privileged role for an invitation alone.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Employee creation — User Administrator",
+          "explanation": "The prerequisites list User Administrator for creating a new user; a guest-invitation role alone does not supply this task permission.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "d",
+        "a"
+      ],
+      "summaryExplanation": "The prerequisites list User Administrator for creating a new user; a guest-invitation role alone does not supply this task permission. The prerequisites list Guest Inviter as the least-privileged role for inviting an external guest when no directory role assignment is required.",
+      "summaryReferenceIds": [
+        "identity-users"
+      ],
+      "references": [
+        {
+          "id": "identity-users",
+          "title": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+          "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+          "section": "Prerequisites",
+          "checkedAt": "2026-10-08T01:38:01.069Z",
+          "documentUpdatedAt": "2026-06-15T17:40:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Prerequisites: The prerequisites list User Administrator for creating a new user; a guest-invitation role alone does not supply this task permission. The prerequisites list Guest Inviter as the least-privileged role for inviting an external guest when no directory role assignment is required. Guest Inviter is listed for invitations, while creating a new user requires User Administrator in this documented workflow. Privileged Role Administrator is required for assigning Entra roles, not as the least-privileged role for an invitation alone.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-users"
+      ],
+      "assessmentReserved": false,
+      "caseStudy": {
+        "id": "identity-onboarding",
+        "title": "Moorland Analytics onboarding",
+        "overview": "Moorland Analytics uses a workforce tenant with Microsoft Entra ID P1, cloud-only employees and users synchronized from AD DS. Analysts receive group-based Microsoft 365 licences. A nested Contractors group must not be assumed to confer licences. External collaboration invitations are permitted. All question-specific permissions and configuration assumptions apply."
+      }
+    },
+    {
+      "id": "az104-identity-plus-02",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "Moorland synchronizes Lee from Windows Server AD DS. Lee changes department, and the source of authority for that property remains AD DS.",
+      "prompt": "Where should the authoritative department correction be made?",
+      "options": [
+        {
+          "id": "a",
+          "text": "By deleting and reinviting Lee as a B2B guest.",
+          "explanation": "Deleting or inviting a user changes the account lifecycle; the documented synchronized-property correction is an AD DS update.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "In Windows Server AD DS, then allow synchronization.",
+          "explanation": "The source explicitly requires updating identity, contact or job information in AD DS for users whose source of authority is AD DS, then waiting for synchronization.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Only in the Entra cloud user properties.",
+          "explanation": "For the stated synchronized source of authority, the documented workflow uses AD DS rather than treating a cloud edit as authoritative.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The source explicitly requires updating identity, contact or job information in AD DS for users whose source of authority is AD DS, then waiting for synchronization.",
+      "summaryReferenceIds": [
+        "identity-users"
+      ],
+      "references": [
+        {
+          "id": "identity-users",
+          "title": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+          "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+          "section": "Delete a user",
+          "checkedAt": "2026-10-08T01:38:01.069Z",
+          "documentUpdatedAt": "2026-06-15T17:40:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Delete a user: The source explicitly requires updating identity, contact or job information in AD DS for users whose source of authority is AD DS, then waiting for synchronization. For the stated synchronized source of authority, the documented workflow uses AD DS rather than treating a cloud edit as authoritative. Deleting or inviting a user changes the account lifecycle; the documented synchronized-property correction is an AD DS update.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-users"
+      ],
+      "assessmentReserved": false,
+      "caseStudy": {
+        "id": "identity-onboarding",
+        "title": "Moorland Analytics onboarding",
+        "overview": "Moorland Analytics uses a workforce tenant with Microsoft Entra ID P1, cloud-only employees and users synchronized from AD DS. Analysts receive group-based Microsoft 365 licences. A nested Contractors group must not be assumed to confer licences. External collaboration invitations are permitted. All question-specific permissions and configuration assumptions apply."
+      }
+    },
+    {
+      "id": "az104-identity-plus-03",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.3"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "Moorland assigns a Microsoft 365 licence to Analysts. Analysts contains Pat directly and the nested Contractors group containing Dev. No direct or other licence assignments exist.",
+      "prompt": "Which TWO conclusions follow? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Neither user can be licensed because Analysts contains a group.",
+          "explanation": "Nested-group non-support does not cancel licensing for direct user members such as Pat.",
+          "referenceIds": [
+            "identity-license"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Pat can receive the licence from Analysts.",
+          "explanation": "Group-based licensing assigns licences to first-level users in the licensed group under the stated absence of other assignment errors.",
+          "referenceIds": [
+            "identity-license"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Dev needs a supported direct group membership or other licence assignment.",
+          "explanation": "Group-based licensing does not support nested groups; a nested member is not licensed merely through the parent group.",
+          "referenceIds": [
+            "identity-license"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Dev is licensed because group-based licensing evaluates nested groups transitively.",
+          "explanation": "The documentation explicitly says only users in the first-level group are assigned licences.",
+          "referenceIds": [
+            "identity-license"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "Group-based licensing assigns licences to first-level users in the licensed group under the stated absence of other assignment errors. Group-based licensing does not support nested groups; a nested member is not licensed merely through the parent group.",
+      "summaryReferenceIds": [
+        "identity-license"
+      ],
+      "references": [
+        {
+          "id": "identity-license",
+          "title": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+          "section": "Before you begin",
+          "checkedAt": "2026-10-08T01:38:01.386Z",
+          "documentUpdatedAt": "2026-05-18T00:00:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Before you begin: Group-based licensing assigns licences to first-level users in the licensed group under the stated absence of other assignment errors. Group-based licensing does not support nested groups; a nested member is not licensed merely through the parent group. The documentation explicitly says only users in the first-level group are assigned licences. Nested-group non-support does not cancel licensing for direct user members such as Pat.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-license"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Licensed group membership",
+          "text": "Analysts (licence assigned)\n├─ Pat (user)\n└─ Contractors (group)\n   └─ Dev (user)"
+        }
+      ],
+      "caseStudy": {
+        "id": "identity-onboarding",
+        "title": "Moorland Analytics onboarding",
+        "overview": "Moorland Analytics uses a workforce tenant with Microsoft Entra ID P1, cloud-only employees and users synchronized from AD DS. Analysts receive group-based Microsoft 365 licences. A nested Contractors group must not be assumed to confer licences. External collaboration invitations are permitted. All question-specific permissions and configuration assumptions apply."
+      }
+    },
+    {
+      "id": "az104-identity-plus-04",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.1",
+        "entra.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A dynamic user group uses the exhibited rule. The tenant has sufficient P1 licences and processing has completed.",
+      "prompt": "Which listed user belongs to the group?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Sol, whose department is Finance.",
+          "explanation": "The equality rule targets Research, so a user whose department is Finance does not satisfy it.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Tao, whose department is unset.",
+          "explanation": "An unset department does not satisfy equality with the specified Research string.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Rae, whose department is Research.",
+          "explanation": "The supported user.department property and -eq comparison include users whose department equals the rule value Research.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The supported user.department property and -eq comparison include users whose department equals the rule value Research.",
+      "summaryReferenceIds": [
+        "identity-dynamic"
+      ],
+      "references": [
+        {
+          "id": "identity-dynamic",
+          "title": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership",
+          "section": "Rule syntax for a single expression",
+          "checkedAt": "2026-10-08T01:38:00.345Z",
+          "documentUpdatedAt": "2026-08-13T22:35:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Rule syntax for a single expression: The supported user.department property and -eq comparison include users whose department equals the rule value Research. The equality rule targets Research, so a user whose department is Finance does not satisfy it. An unset department does not satisfy equality with the specified Research string.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-dynamic"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "code",
+          "title": "Dynamic membership rule",
+          "text": "user.department -eq \"Research\"",
+          "language": "text"
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-05",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.1",
+        "entra.2"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "A dynamic group gates access to sensitive resources using a synchronized department attribute. Security review discovers that users can edit their own department in the source directory.",
+      "prompt": "Which TWO actions follow the documented guidance? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Restrict self-service modification of the security-sensitive attribute.",
+          "explanation": "The source recommends restricting self-service write access to attributes used in security-sensitive dynamic membership groups.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Assume the dynamic rule itself prevents users from changing attributes.",
+          "explanation": "The rule evaluates attributes; the source warns attribute write permissions are an independent security consideration.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Manually remove members permanently without changing their attributes.",
+          "explanation": "You cannot manually add or remove dynamic group members; rule evaluation determines membership.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Audit attribute write permissions in both Entra and the source directory.",
+          "explanation": "Microsoft says group security depends on who can modify rule attributes and recommends auditing write access in both directories.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "d",
+        "a"
+      ],
+      "summaryExplanation": "Microsoft says group security depends on who can modify rule attributes and recommends auditing write access in both directories. The source recommends restricting self-service write access to attributes used in security-sensitive dynamic membership groups.",
+      "summaryReferenceIds": [
+        "identity-dynamic"
+      ],
+      "references": [
+        {
+          "id": "identity-dynamic",
+          "title": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership",
+          "section": "Security consideration: Evaluate attribute write permissions before using them in dynamic group rules",
+          "checkedAt": "2026-10-08T01:38:00.345Z",
+          "documentUpdatedAt": "2026-08-13T22:35:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Security consideration: Evaluate attribute write permissions before using them in dynamic group rules: Microsoft says group security depends on who can modify rule attributes and recommends auditing write access in both directories. The source recommends restricting self-service write access to attributes used in security-sensitive dynamic membership groups. The rule evaluates attributes; the source warns attribute write permissions are an independent security consideration. You cannot manually add or remove dynamic group members; rule evaluation determines membership.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-dynamic"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-06",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.3"
+      ],
+      "type": "ordering",
+      "requiredSelections": 3,
+      "difficulty": "advanced",
+      "scenario": "A user must move from licensed Group A to licensed Group B without a temporary loss of licensed services. Both groups have sufficient suitable licences.",
+      "prompt": "Order the documented migration steps.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Add the user to Group B.",
+          "explanation": "The documented safe migration begins by adding the user to the destination licensed group while the original assignment remains.",
+          "referenceIds": [
+            "identity-license"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Confirm the new licence on the user’s Licenses page.",
+          "explanation": "Microsoft requires confirming the new licence has been applied before removing the source membership, because processing is asynchronous.",
+          "referenceIds": [
+            "identity-license"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Remove the user from Group A.",
+          "explanation": "Removing the original membership is the final step after the destination licence is confirmed, preventing an unlicensed gap.",
+          "referenceIds": [
+            "identity-license"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "The documented safe migration begins by adding the user to the destination licensed group while the original assignment remains. Microsoft requires confirming the new licence has been applied before removing the source membership, because processing is asynchronous. Removing the original membership is the final step after the destination licence is confirmed, preventing an unlicensed gap.",
+      "summaryReferenceIds": [
+        "identity-license"
+      ],
+      "references": [
+        {
+          "id": "identity-license",
+          "title": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+          "section": "Move users between licensed groups",
+          "checkedAt": "2026-10-08T01:38:01.386Z",
+          "documentUpdatedAt": "2026-05-18T00:00:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Move users between licensed groups: The documented safe migration begins by adding the user to the destination licensed group while the original assignment remains. Microsoft requires confirming the new licence has been applied before removing the source membership, because processing is asynchronous. Removing the original membership is the final step after the destination licence is confirmed, preventing an unlicensed gap.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-license"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-07",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.5"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A cloud-only nonadministrator is enabled for SSPR. The administrator requires two authentication methods, but the account has data for only one enabled method.",
+      "prompt": "Which TWO statements explain the failed self-service reset? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "A single registered method always satisfies a two-method policy.",
+          "explanation": "The source explicitly requires data for at least two enabled methods under the stated policy.",
+          "referenceIds": [
+            "identity-sspr"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "SSPR checks registered methods against the configured method count.",
+          "explanation": "The SSPR flow checks whether appropriate data exists for at least two enabled methods when the policy requires two.",
+          "referenceIds": [
+            "identity-sspr"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The user is directed to contact an administrator when required method data is missing.",
+          "explanation": "The documented flow advises contacting an administrator if the authentication methods required by policy are not configured.",
+          "referenceIds": [
+            "identity-sspr"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Enabling SSPR automatically supplies data for a second method.",
+          "explanation": "The source treats enablement and sufficient registered authentication data as separate checks.",
+          "referenceIds": [
+            "identity-sspr"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "The SSPR flow checks whether appropriate data exists for at least two enabled methods when the policy requires two. The documented flow advises contacting an administrator if the authentication methods required by policy are not configured.",
+      "summaryReferenceIds": [
+        "identity-sspr"
+      ],
+      "references": [
+        {
+          "id": "identity-sspr",
+          "title": "Self-service password reset deep dive - Microsoft Entra ID",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+          "section": "How does the password reset process work?",
+          "checkedAt": "2026-10-08T01:38:00.910Z",
+          "documentUpdatedAt": "2026-10-06T22:34:00Z",
+          "evidenceSummary": "Claim-level draft evidence for How does the password reset process work?: The SSPR flow checks whether appropriate data exists for at least two enabled methods when the policy requires two. The documented flow advises contacting an administrator if the authentication methods required by policy are not configured. The source treats enablement and sufficient registered authentication data as separate checks. The source explicitly requires data for at least two enabled methods under the stated policy.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-sspr"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-08",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.5"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "A synchronized user’s password is managed on-premises. SSPR and suitable authentication methods are enabled, but password writeback is not deployed.",
+      "prompt": "Which TWO conclusions match the documented reset flow? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The user is asked to contact an administrator.",
+          "explanation": "The flow specifically directs users with on-premises-managed passwords to an administrator when writeback is not deployed.",
+          "referenceIds": [
+            "identity-sspr"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Writeback must be configured to let the user proceed with this hybrid reset.",
+          "explanation": "The source allows the user to authenticate and reset an on-premises-managed password when SSPR writeback is configured.",
+          "referenceIds": [
+            "identity-sspr"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Cloud authentication methods alone make writeback unnecessary.",
+          "explanation": "The source checks password location and writeback in addition to registered authentication methods.",
+          "referenceIds": [
+            "identity-sspr"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "SSPR always creates a separate replacement cloud password for this user.",
+          "explanation": "The documented hybrid flow requires writeback or directs the user to an administrator rather than silently replacing the authority.",
+          "referenceIds": [
+            "identity-sspr"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "The flow specifically directs users with on-premises-managed passwords to an administrator when writeback is not deployed. The source allows the user to authenticate and reset an on-premises-managed password when SSPR writeback is configured.",
+      "summaryReferenceIds": [
+        "identity-sspr"
+      ],
+      "references": [
+        {
+          "id": "identity-sspr",
+          "title": "Self-service password reset deep dive - Microsoft Entra ID",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+          "section": "How does the password reset process work?",
+          "checkedAt": "2026-10-08T01:38:00.910Z",
+          "documentUpdatedAt": "2026-10-06T22:34:00Z",
+          "evidenceSummary": "Claim-level draft evidence for How does the password reset process work?: The flow specifically directs users with on-premises-managed passwords to an administrator when writeback is not deployed. The source allows the user to authenticate and reset an on-premises-managed password when SSPR writeback is configured. The source checks password location and writeback in addition to registered authentication methods. The documented hybrid flow requires writeback or directs the user to an administrator rather than silently replacing the authority.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-sspr"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-09",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.4"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A permitted B2B invitation has created a guest account. The invitation is still Pending acceptance.",
+      "prompt": "Which action addresses the unredeemed invitation without creating a second account?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Resend the invitation from the existing user’s B2B collaboration tile.",
+          "explanation": "The documented Pending acceptance workflow offers Resend invitation on the existing guest user; redemption is still required.",
+          "referenceIds": [
+            "identity-guests"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Assume the guest can access resources merely because the account exists.",
+          "explanation": "The source says the guest must redeem the invitation to access resources, distinguishing creation from redemption.",
+          "referenceIds": [
+            "identity-guests"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Wait for the invitation to expire and create another user.",
+          "explanation": "The source states an invitation does not expire and provides resending for unredeemed invitations.",
+          "referenceIds": [
+            "identity-guests"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The documented Pending acceptance workflow offers Resend invitation on the existing guest user; redemption is still required.",
+      "summaryReferenceIds": [
+        "identity-guests"
+      ],
+      "references": [
+        {
+          "id": "identity-guests",
+          "title": "Add B2B collaboration users - Microsoft Entra External ID",
+          "url": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator",
+          "section": "External user invitations",
+          "checkedAt": "2026-10-08T01:38:00.338Z",
+          "documentUpdatedAt": "2026-05-08T22:24:00Z",
+          "evidenceSummary": "Claim-level draft evidence for External user invitations: The documented Pending acceptance workflow offers Resend invitation on the existing guest user; redemption is still required. The source says the guest must redeem the invitation to access resources, distinguishing creation from redemption. The source states an invitation does not expire and provides resending for unredeemed invitations.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-guests"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-10",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "An administrator creates a cloud-only user before their employment starts and must prevent initial sign-in without deleting the record.",
+      "prompt": "Which creation setting directly meets this requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Set a different Mail nickname only.",
+          "explanation": "Mail nickname changes the alias; the source identifies Account enabled as the direct sign-in control.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Change Display name only.",
+          "explanation": "Display name records the user name; the source uses Account enabled to prevent sign-in.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Clear Account enabled.",
+          "explanation": "The Basics section says clearing Account enabled prevents the new user from signing in and can be changed after creation.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The Basics section says clearing Account enabled prevents the new user from signing in and can be changed after creation.",
+      "summaryReferenceIds": [
+        "identity-users"
+      ],
+      "references": [
+        {
+          "id": "identity-users",
+          "title": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+          "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+          "section": "Basics",
+          "checkedAt": "2026-10-08T01:38:01.069Z",
+          "documentUpdatedAt": "2026-06-15T17:40:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Basics: The Basics section says clearing Account enabled prevents the new user from signing in and can be changed after creation. Mail nickname changes the alias; the source identifies Account enabled as the direct sign-in control. Display name records the user name; the source uses Account enabled to prevent sign-in.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-users"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-11",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.1"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "A tenant with P1 licences needs a group that can receive Microsoft Entra directory roles. The operator has Privileged Role Administrator.",
+      "prompt": "Which TWO creation conditions are documented? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Groups Administrator alone supplies the stated role-assignable creation permission.",
+          "explanation": "The group instructions specifically require at least Privileged Role Administrator for this setting.",
+          "referenceIds": [
+            "identity-groups"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Enable Microsoft Entra roles can be assigned to the group.",
+          "explanation": "The group creation instructions require this setting for a role-assignable group, with P1/P2 licensing and the privileged administrator role.",
+          "referenceIds": [
+            "identity-groups"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Use Assigned membership.",
+          "explanation": "Enabling role assignment automatically selects Assigned membership, rather than dynamic membership.",
+          "referenceIds": [
+            "identity-groups"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Choose dynamic membership for automatic directory-role membership.",
+          "explanation": "The documented role-assignable group setting forces Assigned membership, preventing the proposed dynamic design.",
+          "referenceIds": [
+            "identity-groups"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "The group creation instructions require this setting for a role-assignable group, with P1/P2 licensing and the privileged administrator role. Enabling role assignment automatically selects Assigned membership, rather than dynamic membership.",
+      "summaryReferenceIds": [
+        "identity-groups"
+      ],
+      "references": [
+        {
+          "id": "identity-groups",
+          "title": "How to manage groups - Microsoft Entra",
+          "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
+          "section": "Create a basic group and add members",
+          "checkedAt": "2026-10-08T01:38:00.707Z",
+          "documentUpdatedAt": "2026-06-23T22:38:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Create a basic group and add members: The group creation instructions require this setting for a role-assignable group, with P1/P2 licensing and the privileged administrator role. Enabling role assignment automatically selects Assigned membership, rather than dynamic membership. The documented role-assignable group setting forces Assigned membership, preventing the proposed dynamic design. The group instructions specifically require at least Privileged Role Administrator for this setting.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-groups"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-12",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.1",
+        "entra.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "One tenant has 120 unique users spread across three overlapping dynamic user groups. The groups contain 240 total memberships.",
+      "prompt": "What is the documented minimum P1 licence inventory for those user memberships?",
+      "options": [
+        {
+          "id": "a",
+          "text": "120 qualifying user licences.",
+          "explanation": "The requirement counts each unique user in one or more dynamic groups, not repeated memberships; 120 unique users need coverage.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "240 qualifying user licences.",
+          "explanation": "The source counts unique users, so overlapping memberships do not double the requirement.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Only three qualifying user licences.",
+          "explanation": "Licensing is per unique user in dynamic groups, not one licence per group.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The requirement counts each unique user in one or more dynamic groups, not repeated memberships; 120 unique users need coverage.",
+      "summaryReferenceIds": [
+        "identity-dynamic"
+      ],
+      "references": [
+        {
+          "id": "identity-dynamic",
+          "title": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership",
+          "section": "License requirements",
+          "checkedAt": "2026-10-08T01:38:00.345Z",
+          "documentUpdatedAt": "2026-08-13T22:35:00Z",
+          "evidenceSummary": "Claim-level draft evidence for License requirements: The requirement counts each unique user in one or more dynamic groups, not repeated memberships; 120 unique users need coverage. The source counts unique users, so overlapping memberships do not double the requirement. Licensing is per unique user in dynamic groups, not one licence per group.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-dynamic"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "table",
+          "title": "Dynamic membership inventory",
+          "columns": [
+            "Measure",
+            "Count"
+          ],
+          "rows": [
+            [
+              "Groups",
+              "3"
+            ],
+            [
+              "Total memberships",
+              "240"
+            ],
+            [
+              "Unique users",
+              "120"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-13",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A team wants a dynamic Microsoft 365 group containing both users and managed devices.",
+      "prompt": "Which documented limitation rules out this design?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Microsoft 365 groups support devices only.",
+          "explanation": "The source states the opposite: Microsoft 365 groups can include only users.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "A user-and-device rule works if all devices have owners.",
+          "explanation": "The source prohibits rules mixing users and devices and says device rules cannot use the device owner’s user attributes.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Microsoft 365 groups contain users only; a dynamic rule cannot mix users and devices.",
+          "explanation": "The source says Microsoft 365 groups include only users and dynamic membership rules cannot combine users and devices.",
+          "referenceIds": [
+            "identity-dynamic"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The source says Microsoft 365 groups include only users and dynamic membership rules cannot combine users and devices.",
+      "summaryReferenceIds": [
+        "identity-dynamic"
+      ],
+      "references": [
+        {
+          "id": "identity-dynamic",
+          "title": "Manage rules for dynamic membership groups in Microsoft Entra ID - Microsoft Entra ID",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership",
+          "section": "Overview and Considerations for dynamic membership groups",
+          "checkedAt": "2026-10-08T01:38:00.345Z",
+          "documentUpdatedAt": "2026-08-13T22:35:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Overview and Considerations for dynamic membership groups: The source says Microsoft 365 groups include only users and dynamic membership rules cannot combine users and devices. The source states the opposite: Microsoft 365 groups can include only users. The source prohibits rules mixing users and devices and says device rules cannot use the device owner’s user attributes.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-dynamic"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-14",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.1",
+        "entra.4"
+      ],
+      "type": "matching",
+      "requiredSelections": 4,
+      "difficulty": "intermediate",
+      "scenario": "A workforce tenant distinguishes account authentication source from guest or member privilege level.",
+      "prompt": "Match each user description to its documented user type. Use each type once.",
+      "options": [
+        {
+          "id": "a",
+          "text": "External member",
+          "explanation": "External members authenticate with an external account but have member access, commonly in multitenant organizations.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "External guest",
+          "explanation": "External guests authenticate externally and have guest-level privileges in the resource tenant.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Internal member",
+          "explanation": "Internal members authenticate with tenant-managed credentials and have member-level access; these are typically employees.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Internal guest",
+          "explanation": "Internal guests have an account in the tenant but guest-level privileges, distinct from externally authenticated guests.",
+          "referenceIds": [
+            "identity-users"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "d",
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Internal members authenticate with tenant-managed credentials and have member-level access; these are typically employees. Internal guests have an account in the tenant but guest-level privileges, distinct from externally authenticated guests. External members authenticate with an external account but have member access, commonly in multitenant organizations. External guests authenticate externally and have guest-level privileges in the resource tenant.",
+      "summaryReferenceIds": [
+        "identity-users"
+      ],
+      "references": [
+        {
+          "id": "identity-users",
+          "title": "How to create, invite, and delete users in Microsoft Entra ID - Microsoft Entra",
+          "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+          "section": "Users in workforce tenants",
+          "checkedAt": "2026-10-08T01:38:01.069Z",
+          "documentUpdatedAt": "2026-06-15T17:40:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Users in workforce tenants: Internal members authenticate with tenant-managed credentials and have member-level access; these are typically employees. Internal guests have an account in the tenant but guest-level privileges, distinct from externally authenticated guests. External members authenticate with an external account but have member access, commonly in multitenant organizations. External guests authenticate externally and have guest-level privileges in the resource tenant.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-users"
+      ],
+      "assessmentReserved": false,
+      "matchPrompts": [
+        {
+          "id": "p1",
+          "text": "Tenant-managed credentials and member privileges"
+        },
+        {
+          "id": "p2",
+          "text": "Tenant-managed credentials and guest privileges"
+        },
+        {
+          "id": "p3",
+          "text": "External authentication and member privileges"
+        },
+        {
+          "id": "p4",
+          "text": "External authentication and guest privileges"
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-15",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.2",
+        "entra.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A licensed group contains users from several countries. New users have no explicit location, and the tenant location is set to one country.",
+      "prompt": "What behavior and corrective practice are documented?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Users without a location inherit the tenant location; set each user location during creation.",
+          "explanation": "The source describes inherited tenant location for group-based licensing and recommends explicitly setting user location for multi-location populations.",
+          "referenceIds": [
+            "identity-license"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Users automatically derive their location from their group’s display name.",
+          "explanation": "The documented fallback is the tenant location, not information inferred from a group name.",
+          "referenceIds": [
+            "identity-license"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Location never matters because all Microsoft services are available everywhere.",
+          "explanation": "The source warns some services are unavailable in some locations and calls for user location configuration.",
+          "referenceIds": [
+            "identity-license"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The source describes inherited tenant location for group-based licensing and recommends explicitly setting user location for multi-location populations.",
+      "summaryReferenceIds": [
+        "identity-license"
+      ],
+      "references": [
+        {
+          "id": "identity-license",
+          "title": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+          "section": "Group-based licensing",
+          "checkedAt": "2026-10-08T01:38:01.386Z",
+          "documentUpdatedAt": "2026-05-18T00:00:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Group-based licensing: The source describes inherited tenant location for group-based licensing and recommends explicitly setting user location for multi-location populations. The documented fallback is the tenant location, not information inferred from a group name. The source warns some services are unavailable in some locations and calls for user location configuration.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-license"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-16",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "Some users in a newly licensed group lack the expected product licence. A support engineer needs the documented place to inspect each assignment error before changing memberships.",
+      "prompt": "Where should the engineer start?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only the group welcome-email setting.",
+          "explanation": "Welcome notifications do not expose license assignment errors; the documented error workflow is on the product’s licensing page.",
+          "referenceIds": [
+            "identity-license",
+            "identity-groups"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Only the group description property.",
+          "explanation": "Group description is descriptive metadata; the licensing article identifies the product Errors & issues tab for errors.",
+          "referenceIds": [
+            "identity-license",
+            "identity-groups"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The product’s Errors & issues tab on Billing > Licenses.",
+          "explanation": "The source directs administrators to the product details Errors & issues tab, then a user, to inspect license assignment problems.",
+          "referenceIds": [
+            "identity-license",
+            "identity-groups"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The source directs administrators to the product details Errors & issues tab, then a user, to inspect license assignment problems.",
+      "summaryReferenceIds": [
+        "identity-license",
+        "identity-groups"
+      ],
+      "references": [
+        {
+          "id": "identity-license",
+          "title": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+          "section": "Manage group-based licensing errors",
+          "checkedAt": "2026-10-08T01:38:01.386Z",
+          "documentUpdatedAt": "2026-05-18T00:00:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Manage group-based licensing errors: The source directs administrators to the product details Errors & issues tab, then a user, to inspect license assignment problems. Welcome notifications do not expose license assignment errors; the documented error workflow is on the product’s licensing page. Group description is descriptive metadata; the licensing article identifies the product Errors & issues tab for errors.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        },
+        {
+          "id": "identity-groups",
+          "title": "How to manage groups - Microsoft Entra",
+          "url": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
+          "section": "Manage group-based licensing errors",
+          "checkedAt": "2026-10-08T01:38:00.707Z",
+          "documentUpdatedAt": "2026-06-23T22:38:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Manage group-based licensing errors: The source directs administrators to the product details Errors & issues tab, then a user, to inspect license assignment problems. Welcome notifications do not expose license assignment errors; the documented error workflow is on the product’s licensing page. Group description is descriptive metadata; the licensing article identifies the product Errors & issues tab for errors.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-license",
+        "identity-groups"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-17",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.5"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "SSPR registration at sign-in is required. The reconfirmation interval is configured to 0 days.",
+      "prompt": "How should the help desk interpret this interval?",
+      "options": [
+        {
+          "id": "a",
+          "text": "SSPR is disabled for every user.",
+          "explanation": "This setting controls reconfirmation, not SSPR enablement; the source describes them as separate configuration concerns.",
+          "referenceIds": [
+            "identity-sspr"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Users are never asked to reconfirm authentication information by this setting.",
+          "explanation": "The source explicitly defines 0 as never prompting for reconfirmation, rather than every sign-in.",
+          "referenceIds": [
+            "identity-sspr"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Users must reconfirm at every sign-in.",
+          "explanation": "The documented special value 0 disables reconfirmation prompts; a positive interval supplies a recurring period.",
+          "referenceIds": [
+            "identity-sspr"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The source explicitly defines 0 as never prompting for reconfirmation, rather than every sign-in.",
+      "summaryReferenceIds": [
+        "identity-sspr"
+      ],
+      "references": [
+        {
+          "id": "identity-sspr",
+          "title": "Self-service password reset deep dive - Microsoft Entra ID",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+          "section": "Reconfirm authentication information",
+          "checkedAt": "2026-10-08T01:38:00.910Z",
+          "documentUpdatedAt": "2026-10-06T22:34:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Reconfirm authentication information: The source explicitly defines 0 as never prompting for reconfirmation, rather than every sign-in. The documented special value 0 disables reconfirmation prompts; a positive interval supplies a recurring period. This setting controls reconfirmation, not SSPR enablement; the source describes them as separate configuration concerns.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-sspr"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "table",
+          "title": "SSPR registration settings",
+          "columns": [
+            "Setting",
+            "Value"
+          ],
+          "rows": [
+            [
+              "Require registration when signing in",
+              "Enabled"
+            ],
+            [
+              "Days before reconfirmation",
+              "0"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-18",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "entra",
+      "subObjectiveIds": [
+        "entra.5"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "A hybrid tenant has working SSPR writeback through Microsoft Entra Connect. A firewall team proposes inbound ports, and the security team asks whether local password rules still apply.",
+      "prompt": "Which TWO documented properties should shape the design? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Writeback requires a new inbound public firewall rule.",
+          "explanation": "The documented transport uses outbound port 443 rather than requiring inbound rules.",
+          "referenceIds": [
+            "identity-sspr-writeback"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Writeback bypasses local password history and complexity.",
+          "explanation": "The source explicitly lists those AD DS restrictions among the checks applied before commit.",
+          "referenceIds": [
+            "identity-sspr-writeback"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Writeback checks the on-premises AD DS password policy.",
+          "explanation": "The source says history, complexity, age, filters and other AD DS restrictions are enforced before the reset is committed.",
+          "referenceIds": [
+            "identity-sspr-writeback"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Writeback communication is outbound over port 443.",
+          "explanation": "The source says its Service Bus relay communication is outbound and requires no inbound firewall rules.",
+          "referenceIds": [
+            "identity-sspr-writeback"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "d"
+      ],
+      "summaryExplanation": "The source says history, complexity, age, filters and other AD DS restrictions are enforced before the reset is committed. The source says its Service Bus relay communication is outbound and requires no inbound firewall rules.",
+      "summaryReferenceIds": [
+        "identity-sspr-writeback"
+      ],
+      "references": [
+        {
+          "id": "identity-sspr-writeback",
+          "title": "On-premises password writeback with self-service password reset - Microsoft Entra ID",
+          "url": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-writeback",
+          "section": "Password writeback provides the following features",
+          "checkedAt": "2026-10-08T01:38:00.912Z",
+          "documentUpdatedAt": "2026-09-08T12:42:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Password writeback provides the following features: The source says history, complexity, age, filters and other AD DS restrictions are enforced before the reset is committed. The source says its Service Bus relay communication is outbound and requires no inbound firewall rules. The documented transport uses outbound port 443 rather than requiring inbound rules. The source explicitly lists those AD DS restrictions among the checks applied before commit.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-sspr-writeback"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-19",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.1",
+        "rbac.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A support analyst must view one storage account’s resource configuration without making changes or viewing sibling resources. No other assignments apply.",
+      "prompt": "Which role and scope satisfy the stated least-privilege requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Contributor on the resource group.",
+          "explanation": "Contributor permits resource changes and resource-group scope includes siblings, exceeding both restrictions.",
+          "referenceIds": [
+            "identity-roles",
+            "identity-scope"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Reader on the subscription.",
+          "explanation": "Reader is suitable for read-only management, but subscription scope includes resources beyond the single account.",
+          "referenceIds": [
+            "identity-roles",
+            "identity-scope"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Reader on the storage account resource.",
+          "explanation": "Reader permits viewing resources without changes; resource scope limits that role to the selected storage account rather than its siblings.",
+          "referenceIds": [
+            "identity-roles",
+            "identity-scope"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "Reader permits viewing resources without changes; resource scope limits that role to the selected storage account rather than its siblings.",
+      "summaryReferenceIds": [
+        "identity-roles",
+        "identity-scope"
+      ],
+      "references": [
+        {
+          "id": "identity-roles",
+          "title": "Azure built-in roles - Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+          "section": "General roles and Scope levels",
+          "checkedAt": "2026-10-08T01:38:00.331Z",
+          "documentUpdatedAt": "2026-09-11T11:45:00Z",
+          "evidenceSummary": "Claim-level draft evidence for General roles and Scope levels: Reader permits viewing resources without changes; resource scope limits that role to the selected storage account rather than its siblings. Contributor permits resource changes and resource-group scope includes siblings, exceeding both restrictions. Reader is suitable for read-only management, but subscription scope includes resources beyond the single account.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        },
+        {
+          "id": "identity-scope",
+          "title": "Understand scope for Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview",
+          "section": "General roles and Scope levels",
+          "checkedAt": "2026-10-08T01:38:00.343Z",
+          "documentUpdatedAt": "2026-02-13T12:10:00Z",
+          "evidenceSummary": "Claim-level draft evidence for General roles and Scope levels: Reader permits viewing resources without changes; resource scope limits that role to the selected storage account rather than its siblings. Contributor permits resource changes and resource-group scope includes siblings, exceeding both restrictions. Reader is suitable for read-only management, but subscription scope includes resources beyond the single account.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-roles",
+        "identity-scope"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-20",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.1"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A deployment operator has Contributor on a subscription. They can create resources but cannot assign Azure roles to another operator.",
+      "prompt": "Which TWO role descriptions explain this? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Contributor manages resources but does not allow Azure RBAC role assignments.",
+          "explanation": "The built-in role description expressly excludes role assignment from Contributor despite broad resource-management permissions.",
+          "referenceIds": [
+            "identity-roles"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Owner includes Azure RBAC role assignment authority.",
+          "explanation": "Owner grants full resource management including assigning roles; it contrasts with Contributor in the built-in role table.",
+          "referenceIds": [
+            "identity-roles"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Reader includes role assignment authority without resource edits.",
+          "explanation": "Reader only views resources and does not allow changes, so it does not confer role-assignment authority.",
+          "referenceIds": [
+            "identity-roles"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Contributor and Owner have identical role-assignment permissions.",
+          "explanation": "The documented descriptions distinguish them precisely on role-assignment authority.",
+          "referenceIds": [
+            "identity-roles"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "The built-in role description expressly excludes role assignment from Contributor despite broad resource-management permissions. Owner grants full resource management including assigning roles; it contrasts with Contributor in the built-in role table.",
+      "summaryReferenceIds": [
+        "identity-roles"
+      ],
+      "references": [
+        {
+          "id": "identity-roles",
+          "title": "Azure built-in roles - Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+          "section": "Privileged and General",
+          "checkedAt": "2026-10-08T01:38:00.331Z",
+          "documentUpdatedAt": "2026-09-11T11:45:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Privileged and General: The built-in role description expressly excludes role assignment from Contributor despite broad resource-management permissions. Owner grants full resource management including assigning roles; it contrasts with Contributor in the built-in role table. Reader only views resources and does not allow changes, so it does not confer role-assignment authority. The documented descriptions distinguish them precisely on role-assignment authority.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-roles"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-21",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A deployment stack created a deny assignment covering resource deletion. An operator has Owner but is not excluded from that deny.",
+      "prompt": "How should a denied delete request be investigated?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Inspect the deny assignment; it can block an otherwise granted action.",
+          "explanation": "The source says deny assignments block specific actions even when a role assignment grants access, and deployment stacks can create them.",
+          "referenceIds": [
+            "identity-deny"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Assume Owner automatically cancels every deny assignment.",
+          "explanation": "The documented deny precedence applies even when a role grants access; Owner alone does not negate a matching deny.",
+          "referenceIds": [
+            "identity-deny"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Create a normal GA customer-managed deny assignment to cancel the stack deny.",
+          "explanation": "The source says generally available deny assignments are created and managed by Azure; customer-managed denies are private preview.",
+          "referenceIds": [
+            "identity-deny"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The source says deny assignments block specific actions even when a role assignment grants access, and deployment stacks can create them.",
+      "summaryReferenceIds": [
+        "identity-deny"
+      ],
+      "references": [
+        {
+          "id": "identity-deny",
+          "title": "List Azure deny assignments - Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/deny-assignments",
+          "section": "How deny assignments are created",
+          "checkedAt": "2026-10-08T01:38:00.071Z",
+          "documentUpdatedAt": "2026-10-07T17:13:00Z",
+          "evidenceSummary": "Claim-level draft evidence for How deny assignments are created: The source says deny assignments block specific actions even when a role assignment grants access, and deployment stacks can create them. The documented deny precedence applies even when a role grants access; Owner alone does not negate a matching deny. The source says generally available deny assignments are created and managed by Azure; customer-managed denies are private preview.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-deny"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-22",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "For an action at the same scope, Role A omits write through NotActions. Role B independently grants that write action. There are no denies or conditions.",
+      "prompt": "Which evaluation is supported by the documented additive model?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Role A’s NotActions is an explicit deny over every other role.",
+          "explanation": "NotActions subtracts from that role’s allowed actions; the source separately checks deny assignments and combines role permissions.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Neither assignment is evaluated because their permissions overlap.",
+          "explanation": "The source explicitly describes multiple overlapping assignments and adds their effective permissions.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Role B can grant write despite Role A’s subtraction.",
+          "explanation": "Actions minus NotActions defines effective permissions for a role; Azure RBAC combines permissions additively across applicable role assignments.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "Actions minus NotActions defines effective permissions for a role; Azure RBAC combines permissions additively across applicable role assignments.",
+      "summaryReferenceIds": [
+        "identity-rbac"
+      ],
+      "references": [
+        {
+          "id": "identity-rbac",
+          "title": "What is Azure role-based access control (Azure RBAC)?",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+          "section": "How Azure RBAC determines if a user has access to a resource",
+          "checkedAt": "2026-10-08T01:38:00.335Z",
+          "documentUpdatedAt": "2025-10-15T22:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for How Azure RBAC determines if a user has access to a resource: Actions minus NotActions defines effective permissions for a role; Azure RBAC combines permissions additively across applicable role assignments. NotActions subtracts from that role’s allowed actions; the source separately checks deny assignments and combines role permissions. The source explicitly describes multiple overlapping assignments and adds their effective permissions.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-rbac"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "code",
+          "title": "Applicable role fragments",
+          "text": "Role A: Actions=[\"*\"], NotActions=[\"example/resource/write\"]\nRole B: Actions=[\"example/resource/write\"], NotActions=[]",
+          "language": "text"
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-23",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.2"
+      ],
+      "type": "ordering",
+      "requiredSelections": 4,
+      "difficulty": "foundation",
+      "scenario": "A team documents the inheritance chain for a resource inside a resource group, inside a subscription associated with a management group.",
+      "prompt": "Order these scopes from broadest to most specific.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Resource",
+          "explanation": "An individual resource is the most specific of the four listed Azure role-assignment scopes.",
+          "referenceIds": [
+            "identity-scope"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Management group",
+          "explanation": "Management groups sit above subscriptions; a role assignment here is inherited by descendant scopes.",
+          "referenceIds": [
+            "identity-scope"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Subscription",
+          "explanation": "A subscription is below the management group and above its resource groups in the documented scope hierarchy.",
+          "referenceIds": [
+            "identity-scope"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Resource group",
+          "explanation": "A resource group is below subscription scope and contains the target resource.",
+          "referenceIds": [
+            "identity-scope"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c",
+        "d",
+        "a"
+      ],
+      "summaryExplanation": "Management groups sit above subscriptions; a role assignment here is inherited by descendant scopes. A subscription is below the management group and above its resource groups in the documented scope hierarchy. A resource group is below subscription scope and contains the target resource. An individual resource is the most specific of the four listed Azure role-assignment scopes.",
+      "summaryReferenceIds": [
+        "identity-scope"
+      ],
+      "references": [
+        {
+          "id": "identity-scope",
+          "title": "Understand scope for Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview",
+          "section": "Scope levels",
+          "checkedAt": "2026-10-08T01:38:00.343Z",
+          "documentUpdatedAt": "2026-02-13T12:10:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Scope levels: Management groups sit above subscriptions; a role assignment here is inherited by descendant scopes. A subscription is below the management group and above its resource groups in the documented scope hierarchy. A resource group is below subscription scope and contains the target resource. An individual resource is the most specific of the four listed Azure role-assignment scopes.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-scope"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-24",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An administrator checks the scope argument in the exhibit before applying a role assignment. The intended boundary is only the warehouse resource group.",
+      "prompt": "What boundary does the supplied string identify?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The warehouse resource group.",
+          "explanation": "The scope structure ending in /resourceGroups/warehouse identifies that resource group rather than one provider resource or the whole subscription.",
+          "referenceIds": [
+            "identity-scope"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The entire subscription.",
+          "explanation": "The resourceGroups segment makes the scope more specific than the subscription-only prefix.",
+          "referenceIds": [
+            "identity-scope"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A single storage account inside warehouse.",
+          "explanation": "No /providers/Microsoft.Storage/storageAccounts/... resource path is present, so this is a resource-group scope.",
+          "referenceIds": [
+            "identity-scope"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The scope structure ending in /resourceGroups/warehouse identifies that resource group rather than one provider resource or the whole subscription.",
+      "summaryReferenceIds": [
+        "identity-scope"
+      ],
+      "references": [
+        {
+          "id": "identity-scope",
+          "title": "Understand scope for Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview",
+          "section": "Scope format",
+          "checkedAt": "2026-10-08T01:38:00.343Z",
+          "documentUpdatedAt": "2026-02-13T12:10:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Scope format: The scope structure ending in /resourceGroups/warehouse identifies that resource group rather than one provider resource or the whole subscription. The resourceGroups segment makes the scope more specific than the subscription-only prefix. No /providers/Microsoft.Storage/storageAccounts/... resource path is present, so this is a resource-group scope.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-scope"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "code",
+          "title": "Role assignment scope",
+          "text": "/subscriptions/11111111-1111-1111-1111-111111111111/resourceGroups/warehouse",
+          "language": "text"
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-25",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.1"
+      ],
+      "type": "matching",
+      "requiredSelections": 3,
+      "difficulty": "foundation",
+      "scenario": "A security team compares three general Azure built-in roles using the documented resource-management permissions.",
+      "prompt": "Match each requirement to the role. Use every role once.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Contributor",
+          "explanation": "Contributor manages resources but does not permit assigning Azure RBAC roles, matching deployment without access delegation.",
+          "referenceIds": [
+            "identity-roles"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Owner",
+          "explanation": "Owner includes full resource management and Azure RBAC role assignments, matching management plus access delegation.",
+          "referenceIds": [
+            "identity-roles"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Reader",
+          "explanation": "Reader views resources but does not allow changes, matching read-only management rather than deployment or delegation.",
+          "referenceIds": [
+            "identity-roles"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "a",
+        "b"
+      ],
+      "summaryExplanation": "Reader views resources but does not allow changes, matching read-only management rather than deployment or delegation. Contributor manages resources but does not permit assigning Azure RBAC roles, matching deployment without access delegation. Owner includes full resource management and Azure RBAC role assignments, matching management plus access delegation.",
+      "summaryReferenceIds": [
+        "identity-roles"
+      ],
+      "references": [
+        {
+          "id": "identity-roles",
+          "title": "Azure built-in roles - Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+          "section": "Privileged and General",
+          "checkedAt": "2026-10-08T01:38:00.331Z",
+          "documentUpdatedAt": "2026-09-11T11:45:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Privileged and General: Reader views resources but does not allow changes, matching read-only management rather than deployment or delegation. Contributor manages resources but does not permit assigning Azure RBAC roles, matching deployment without access delegation. Owner includes full resource management and Azure RBAC role assignments, matching management plus access delegation.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-roles"
+      ],
+      "assessmentReserved": false,
+      "matchPrompts": [
+        {
+          "id": "p1",
+          "text": "View resource configuration without changes"
+        },
+        {
+          "id": "p2",
+          "text": "Manage resources without assigning Azure RBAC roles"
+        },
+        {
+          "id": "p3",
+          "text": "Manage resources and assign Azure RBAC roles"
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-26",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.3"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "Morgan belongs to Child, which belongs to Parent. Parent has an Azure role assignment and a group-based Microsoft 365 licence. Morgan has no separate licence or role assignment.",
+      "prompt": "Which TWO conclusions avoid confusing the two systems? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Neither system recognizes any nested group permissions.",
+          "explanation": "Azure RBAC does recognize transitive nested group assignments; the licence limitation does not remove that behavior.",
+          "referenceIds": [
+            "identity-rbac",
+            "identity-license"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Both systems assign exactly the same access through nesting.",
+          "explanation": "The sources document different behavior: RBAC transitivity and group-licensing first-level-only membership.",
+          "referenceIds": [
+            "identity-rbac",
+            "identity-license"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Azure RBAC can grant Morgan the Parent role through transitive membership.",
+          "explanation": "The Azure RBAC overview explicitly describes nested group role assignments as transitive.",
+          "referenceIds": [
+            "identity-rbac",
+            "identity-license"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "The Parent licence does not reach Morgan solely through nested membership.",
+          "explanation": "The licensing source explicitly says nested groups are not supported and only first-level users get licences.",
+          "referenceIds": [
+            "identity-rbac",
+            "identity-license"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "d"
+      ],
+      "summaryExplanation": "The Azure RBAC overview explicitly describes nested group role assignments as transitive. The licensing source explicitly says nested groups are not supported and only first-level users get licences.",
+      "summaryReferenceIds": [
+        "identity-rbac",
+        "identity-license"
+      ],
+      "references": [
+        {
+          "id": "identity-rbac",
+          "title": "What is Azure role-based access control (Azure RBAC)?",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+          "section": "Groups and Before you begin",
+          "checkedAt": "2026-10-08T01:38:00.335Z",
+          "documentUpdatedAt": "2025-10-15T22:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Groups and Before you begin: The Azure RBAC overview explicitly describes nested group role assignments as transitive. The licensing source explicitly says nested groups are not supported and only first-level users get licences. Azure RBAC does recognize transitive nested group assignments; the licence limitation does not remove that behavior. The sources document different behavior: RBAC transitivity and group-licensing first-level-only membership.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        },
+        {
+          "id": "identity-license",
+          "title": "Assign or unassign licenses to a group in the Microsoft 365 admin center - Microsoft 365 admin",
+          "url": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+          "section": "Groups and Before you begin",
+          "checkedAt": "2026-10-08T01:38:01.386Z",
+          "documentUpdatedAt": "2026-05-18T00:00:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Groups and Before you begin: The Azure RBAC overview explicitly describes nested group role assignments as transitive. The licensing source explicitly says nested groups are not supported and only first-level users get licences. Azure RBAC does recognize transitive nested group assignments; the licence limitation does not remove that behavior. The sources document different behavior: RBAC transitivity and group-licensing first-level-only membership.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-rbac",
+        "identity-license"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Group nesting",
+          "text": "Parent (Azure role + Microsoft 365 licence)\n└─ Child\n   └─ Morgan"
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-27",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.2",
+        "rbac.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A service principal has Reader on resource group north only. A request targets a resource in sibling resource group south, with no other assignments.",
+      "prompt": "What does the documented scope inheritance imply?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The north assignment supplies no role permissions on the south resource.",
+          "explanation": "Role permissions inherit to lower scopes, not sideways to a sibling resource group outside the assignment scope.",
+          "referenceIds": [
+            "identity-scope"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The assignment applies because both groups share a subscription.",
+          "explanation": "Sharing a subscription does not expand a resource-group assignment upward or sideways; inheritance flows to children.",
+          "referenceIds": [
+            "identity-scope"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Resource-group scope is equivalent to subscription scope.",
+          "explanation": "The scope overview explicitly distinguishes these levels and says each level makes the boundary more specific.",
+          "referenceIds": [
+            "identity-scope"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Role permissions inherit to lower scopes, not sideways to a sibling resource group outside the assignment scope.",
+      "summaryReferenceIds": [
+        "identity-scope"
+      ],
+      "references": [
+        {
+          "id": "identity-scope",
+          "title": "Understand scope for Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview",
+          "section": "Scope levels",
+          "checkedAt": "2026-10-08T01:38:00.343Z",
+          "documentUpdatedAt": "2026-02-13T12:10:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Scope levels: Role permissions inherit to lower scopes, not sideways to a sibling resource group outside the assignment scope. Sharing a subscription does not expand a resource-group assignment upward or sideways; inheritance flows to children. The scope overview explicitly distinguishes these levels and says each level makes the boundary more specific.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-scope"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "diagram",
+          "title": "Sibling scopes",
+          "text": "Subscription S\n├─ north (Reader assigned)\n└─ south\n   └─ requested resource"
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-28",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.1",
+        "rbac.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An operator with Contributor can read a policy definition, but cannot update its definition or assignment. The request is not blocked by a lock.",
+      "prompt": "Which documented role limitation explains this?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Policy definitions are invisible to every role below Owner.",
+          "explanation": "The source says definitions, initiatives and assignments are readable to all roles over the applicable scope.",
+          "referenceIds": [
+            "identity-policy"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Contributor automatically has every Azure Policy operation.",
+          "explanation": "The source distinguishes Resource Policy Contributor and Owner from Contributor’s more limited policy permissions.",
+          "referenceIds": [
+            "identity-policy"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Contributor can read policy operations but cannot create or update definitions and assignments.",
+          "explanation": "The policy source explicitly describes Contributor’s read access and its lack of definition and assignment create/update permissions.",
+          "referenceIds": [
+            "identity-policy"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The policy source explicitly describes Contributor’s read access and its lack of definition and assignment create/update permissions.",
+      "summaryReferenceIds": [
+        "identity-policy"
+      ],
+      "references": [
+        {
+          "id": "identity-policy",
+          "title": "Overview of Azure Policy - Azure Policy",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+          "section": "Azure RBAC permissions in Azure Policy",
+          "checkedAt": "2026-10-08T01:38:00.329Z",
+          "documentUpdatedAt": "2026-07-08T05:12:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Azure RBAC permissions in Azure Policy: The policy source explicitly describes Contributor’s read access and its lack of definition and assignment create/update permissions. The source says definitions, initiatives and assignments are readable to all roles over the applicable scope. The source distinguishes Resource Policy Contributor and Owner from Contributor’s more limited policy permissions.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-policy"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-29",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A user is assigned an action-granting role directly and through an independent group. An administrator removes only the direct assignment. No denies or conditions apply.",
+      "prompt": "Why can the action remain authorized?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Removed assignments remain permanently active by design.",
+          "explanation": "The source states removing a role assignment revokes that assignment; continued access here comes from the separate group assignment.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The applicable group assignment still grants the action.",
+          "explanation": "Access is granted through role assignments and effective permissions are additive; removing one does not remove another applicable grant.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Removing any one assignment always revokes every permission for the user.",
+          "explanation": "The source describes multiple assignments whose permissions combine; removal of one does not delete the others.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "Access is granted through role assignments and effective permissions are additive; removing one does not remove another applicable grant.",
+      "summaryReferenceIds": [
+        "identity-rbac"
+      ],
+      "references": [
+        {
+          "id": "identity-rbac",
+          "title": "What is Azure role-based access control (Azure RBAC)?",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+          "section": "Role assignments",
+          "checkedAt": "2026-10-08T01:38:00.335Z",
+          "documentUpdatedAt": "2025-10-15T22:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Role assignments: Access is granted through role assignments and effective permissions are additive; removing one does not remove another applicable grant. The source describes multiple assignments whose permissions combine; removal of one does not delete the others. The source states removing a role assignment revokes that assignment; continued access here comes from the separate group assignment.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-rbac"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-30",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.1",
+        "rbac.3"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "A custom role reviewer separates permissions for Azure resource management from permissions to read stored data.",
+      "prompt": "Which TWO documented permission calculations apply? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "NotActions is the only field that grants data permissions.",
+          "explanation": "The documented data permission calculation uses DataActions and NotDataActions, not NotActions alone.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "DataActions grants every management operation automatically.",
+          "explanation": "The overview distinguishes management Actions from data DataActions rather than treating data access as every management permission.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Actions minus NotActions yields effective management permissions.",
+          "explanation": "The overview explicitly writes Actions - NotActions = Effective management permissions.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "DataActions minus NotDataActions yields effective data permissions.",
+          "explanation": "The overview separately writes DataActions - NotDataActions = Effective data permissions.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "d"
+      ],
+      "summaryExplanation": "The overview explicitly writes Actions - NotActions = Effective management permissions. The overview separately writes DataActions - NotDataActions = Effective data permissions.",
+      "summaryReferenceIds": [
+        "identity-rbac"
+      ],
+      "references": [
+        {
+          "id": "identity-rbac",
+          "title": "What is Azure role-based access control (Azure RBAC)?",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+          "section": "Role definition and How Azure RBAC determines if a user has access to a resource",
+          "checkedAt": "2026-10-08T01:38:00.335Z",
+          "documentUpdatedAt": "2025-10-15T22:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Role definition and How Azure RBAC determines if a user has access to a resource: The overview explicitly writes Actions - NotActions = Effective management permissions. The overview separately writes DataActions - NotDataActions = Effective data permissions. The documented data permission calculation uses DataActions and NotDataActions, not NotActions alone. The overview distinguishes management Actions from data DataActions rather than treating data access as every management permission.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-rbac"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-31",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A system-created deny targets All Principals, but excludes the Recovery service principal. Both Recovery and Analyst otherwise have the needed role grant.",
+      "prompt": "Which principal avoids this deny under the exhibited configuration?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Analyst only.",
+          "explanation": "Analyst is not in ExcludePrincipals and remains included by All Principals, whereas Recovery is the explicit exclusion.",
+          "referenceIds": [
+            "identity-deny"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Both, because a role grant cancels the deny.",
+          "explanation": "A deny can block actions even when granted by a role; the exclusion, not the grant alone, removes Recovery from this deny.",
+          "referenceIds": [
+            "identity-deny"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Recovery only.",
+          "explanation": "ExcludePrincipals lists principals to which the deny does not apply; All Principals otherwise covers the Analyst.",
+          "referenceIds": [
+            "identity-deny"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "ExcludePrincipals lists principals to which the deny does not apply; All Principals otherwise covers the Analyst.",
+      "summaryReferenceIds": [
+        "identity-deny"
+      ],
+      "references": [
+        {
+          "id": "identity-deny",
+          "title": "List Azure deny assignments - Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/deny-assignments",
+          "section": "Deny assignment properties",
+          "checkedAt": "2026-10-08T01:38:00.071Z",
+          "documentUpdatedAt": "2026-10-07T17:13:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Deny assignment properties: ExcludePrincipals lists principals to which the deny does not apply; All Principals otherwise covers the Analyst. Analyst is not in ExcludePrincipals and remains included by All Principals, whereas Recovery is the explicit exclusion. A deny can block actions even when granted by a role; the exclusion, not the grant alone, removes Recovery from this deny.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-deny"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "table",
+          "title": "Deny principal configuration",
+          "columns": [
+            "Property",
+            "Value"
+          ],
+          "rows": [
+            [
+              "Principals",
+              "All Principals"
+            ],
+            [
+              "ExcludePrincipals",
+              "Recovery"
+            ],
+            [
+              "Blocked action",
+              "resource/delete"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-32",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A deny is at subscription scope with DoNotApplyToChildScopes=true. The questioned action targets a resource-group child scope, and another role grants it. No other denies or locks apply.",
+      "prompt": "What does that flag mean for this child-scope request?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The deny must apply to every child because the property is ignored.",
+          "explanation": "The source documents DoNotApplyToChildScopes specifically as the inheritance-control property.",
+          "referenceIds": [
+            "identity-deny"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "This deny does not apply to child scopes.",
+          "explanation": "The documented property controls whether the deny applies to child scopes; true prevents its inheritance into the resource-group child.",
+          "referenceIds": [
+            "identity-deny"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The deny expands to all other subscriptions.",
+          "explanation": "The flag controls child-scope applicability, not expansion into unrelated subscriptions.",
+          "referenceIds": [
+            "identity-deny"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The documented property controls whether the deny applies to child scopes; true prevents its inheritance into the resource-group child.",
+      "summaryReferenceIds": [
+        "identity-deny"
+      ],
+      "references": [
+        {
+          "id": "identity-deny",
+          "title": "List Azure deny assignments - Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/deny-assignments",
+          "section": "Deny assignment properties",
+          "checkedAt": "2026-10-08T01:38:00.071Z",
+          "documentUpdatedAt": "2026-10-07T17:13:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Deny assignment properties: The documented property controls whether the deny applies to child scopes; true prevents its inheritance into the resource-group child. The flag controls child-scope applicability, not expansion into unrelated subscriptions. The source documents DoNotApplyToChildScopes specifically as the inheritance-control property.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-deny"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "code",
+          "title": "Deny inheritance setting",
+          "text": "Scope: /subscriptions/S\nDoNotApplyToChildScopes: true\nRequested scope: /subscriptions/S/resourceGroups/rg",
+          "language": "text"
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-33",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.1",
+        "rbac.2"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An automation workload needs Azure resource permissions. Its managed identity is already provisioned; no role assignment has been made.",
+      "prompt": "Which operation is the documented way to grant scoped resource access?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Attach the required role definition to the managed identity at the intended scope.",
+          "explanation": "A managed identity is a supported security principal; role assignment combines that principal, role definition and scope to grant access.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Use the managed identity’s existence as sufficient authorization.",
+          "explanation": "The overview identifies role assignments as how access is granted; merely having a principal is not a role grant.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Replace the managed identity with a resource-group name as the principal.",
+          "explanation": "A resource-group name identifies scope, while the supported security principal represents the workload identity.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "A managed identity is a supported security principal; role assignment combines that principal, role definition and scope to grant access.",
+      "summaryReferenceIds": [
+        "identity-rbac"
+      ],
+      "references": [
+        {
+          "id": "identity-rbac",
+          "title": "What is Azure role-based access control (Azure RBAC)?",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+          "section": "Security principal",
+          "checkedAt": "2026-10-08T01:38:00.335Z",
+          "documentUpdatedAt": "2025-10-15T22:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Security principal: A managed identity is a supported security principal; role assignment combines that principal, role definition and scope to grant access. The overview identifies role assignments as how access is granted; merely having a principal is not a role grant. A resource-group name identifies scope, while the supported security principal represents the workload identity.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-rbac"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-34",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "rbac",
+      "subObjectiveIds": [
+        "rbac.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A role grants the requested action at the correct scope, but an assignment condition evaluates false. No deny assignment applies.",
+      "prompt": "Which result matches the documented evaluation sequence?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The action grant means conditions are never evaluated.",
+          "explanation": "The source explicitly evaluates conditions after identifying the action in applicable roles.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Only deny assignments can ever block a request.",
+          "explanation": "The source also blocks requests when no applicable action grant exists or a role-assignment condition is not met.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Access is not allowed because the condition is not met.",
+          "explanation": "After confirming an action grant, Azure RBAC evaluates role-assignment conditions; unmet conditions result in access being denied.",
+          "referenceIds": [
+            "identity-rbac"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "After confirming an action grant, Azure RBAC evaluates role-assignment conditions; unmet conditions result in access being denied.",
+      "summaryReferenceIds": [
+        "identity-rbac"
+      ],
+      "references": [
+        {
+          "id": "identity-rbac",
+          "title": "What is Azure role-based access control (Azure RBAC)?",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+          "section": "How Azure RBAC determines if a user has access to a resource",
+          "checkedAt": "2026-10-08T01:38:00.335Z",
+          "documentUpdatedAt": "2025-10-15T22:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for How Azure RBAC determines if a user has access to a resource: After confirming an action grant, Azure RBAC evaluates role-assignment conditions; unmet conditions result in access being denied. The source explicitly evaluates conditions after identifying the action in applicable roles. The source also blocks requests when no applicable action grant exists or a role-assignment condition is not met.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-rbac"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-35",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.1"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "Juniper creates its custom modify-policy assignment through an SDK. The managed identity exists but has no resource-modification role assignment.",
+      "prompt": "Which TWO facts explain the remediation failure? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Policy evaluation always uses the managed identity instead of the requesting caller.",
+          "explanation": "The source distinguishes remediation identity use from policy evaluation, which uses the caller’s identity.",
+          "referenceIds": [
+            "identity-remediation"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "SDK-created assignments require the identity’s roles to be granted manually.",
+          "explanation": "The source contrasts portal automatic role grants with SDK assignments, where roles must manually be granted to the managed identity.",
+          "referenceIds": [
+            "identity-remediation"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The assignment identity needs the minimum RBAC role that can remediate the resources.",
+          "explanation": "The source says the managed identity performs deployment or modification and must have the required minimum resource permissions.",
+          "referenceIds": [
+            "identity-remediation"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Creating a managed identity automatically grants it every required role through any SDK.",
+          "explanation": "The source explicitly says SDK callers must manually grant the listed roles.",
+          "referenceIds": [
+            "identity-remediation"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "The source contrasts portal automatic role grants with SDK assignments, where roles must manually be granted to the managed identity. The source says the managed identity performs deployment or modification and must have the required minimum resource permissions.",
+      "summaryReferenceIds": [
+        "identity-remediation"
+      ],
+      "references": [
+        {
+          "id": "identity-remediation",
+          "title": "Remediate non-compliant resources - Azure Policy",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
+          "section": "How remediation access control works",
+          "checkedAt": "2026-10-08T01:38:00.912Z",
+          "documentUpdatedAt": "2025-12-12T18:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for How remediation access control works: The source contrasts portal automatic role grants with SDK assignments, where roles must manually be granted to the managed identity. The source says the managed identity performs deployment or modification and must have the required minimum resource permissions. The source explicitly says SDK callers must manually grant the listed roles. The source distinguishes remediation identity use from policy evaluation, which uses the caller’s identity.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-remediation"
+      ],
+      "assessmentReserved": false,
+      "caseStudy": {
+        "id": "identity-policy-rollout",
+        "title": "Juniper Works compliance rollout",
+        "overview": "Juniper Works governs two subscriptions in one tenant. A custom modify policy adds the CostCenter tag. Its assignment was created through an SDK with a managed identity. Existing noncompliant resources require remediation. Later the definition gains another required role. No role grants beyond those explicitly stated should be assumed."
+      }
+    },
+    {
+      "id": "az104-identity-plus-36",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.1"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "Juniper later edits roleDefinitionIds in its policy definition to add a necessary role. The existing assignment identity has only the old role set.",
+      "prompt": "What additional action is documented?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Manually grant the newly required permissions to the assignment identity.",
+          "explanation": "The source says editing roleDefinitionIds later does not automatically grant the new permissions, even for portal-created assignments.",
+          "referenceIds": [
+            "identity-remediation"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Wait for the definition edit to automatically add identity role assignments.",
+          "explanation": "Changing a definition does not automatically update the assignment or identity; new permissions must be manually granted.",
+          "referenceIds": [
+            "identity-remediation"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Create a second managed identity on the same policy assignment.",
+          "explanation": "Each policy assignment can have only one managed identity, although that identity can have multiple roles.",
+          "referenceIds": [
+            "identity-remediation"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The source says editing roleDefinitionIds later does not automatically grant the new permissions, even for portal-created assignments.",
+      "summaryReferenceIds": [
+        "identity-remediation"
+      ],
+      "references": [
+        {
+          "id": "identity-remediation",
+          "title": "Remediate non-compliant resources - Azure Policy",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
+          "section": "Configure the managed identity",
+          "checkedAt": "2026-10-08T01:38:00.912Z",
+          "documentUpdatedAt": "2025-12-12T18:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Configure the managed identity: The source says editing roleDefinitionIds later does not automatically grant the new permissions, even for portal-created assignments. Changing a definition does not automatically update the assignment or identity; new permissions must be manually granted. Each policy assignment can have only one managed identity, although that identity can have multiple roles.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-remediation"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "table",
+          "title": "Juniper policy change",
+          "columns": [
+            "Item",
+            "State"
+          ],
+          "rows": [
+            [
+              "Definition required roles",
+              "Tag role + newly required role"
+            ],
+            [
+              "Assignment identity granted roles",
+              "Tag role only"
+            ]
+          ]
+        }
+      ],
+      "caseStudy": {
+        "id": "identity-policy-rollout",
+        "title": "Juniper Works compliance rollout",
+        "overview": "Juniper Works governs two subscriptions in one tenant. A custom modify policy adds the CostCenter tag. Its assignment was created through an SDK with a managed identity. Existing noncompliant resources require remediation. Later the definition gains another required role. No role grants beyond those explicitly stated should be assumed."
+      }
+    },
+    {
+      "id": "az104-identity-plus-37",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.1"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "Juniper’s existing resources are noncompliant with the modify tag policy. The assignment identity now has the required roles. The policy assignment remains active.",
+      "prompt": "Which TWO statements describe remediation of this existing inventory? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The assignment’s managed identity authorizes resource modification.",
+          "explanation": "The remediation source explicitly uses the identity associated with the policy assignment for modification or deployment.",
+          "referenceIds": [
+            "identity-remediation"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Only deleting and recreating every resource can bring existing inventory into compliance.",
+          "explanation": "The source provides remediation tasks specifically for existing noncompliant resources without requiring wholesale resource recreation.",
+          "referenceIds": [
+            "identity-remediation"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The policy definition’s role list alone gives the identity permissions without assignments.",
+          "explanation": "The source requires the managed identity to receive the specified RBAC roles; a definition role list is not itself a grant.",
+          "referenceIds": [
+            "identity-remediation"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "A remediation task applies the modify operations to existing resources.",
+          "explanation": "The source defines remediation tasks as applying modify operations or deployIfNotExists templates to existing noncompliant resources.",
+          "referenceIds": [
+            "identity-remediation"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "d",
+        "a"
+      ],
+      "summaryExplanation": "The source defines remediation tasks as applying modify operations or deployIfNotExists templates to existing noncompliant resources. The remediation source explicitly uses the identity associated with the policy assignment for modification or deployment.",
+      "summaryReferenceIds": [
+        "identity-remediation"
+      ],
+      "references": [
+        {
+          "id": "identity-remediation",
+          "title": "Remediate non-compliant resources - Azure Policy",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
+          "section": "Remediate non-compliant resources with Azure Policy",
+          "checkedAt": "2026-10-08T01:38:00.912Z",
+          "documentUpdatedAt": "2025-12-12T18:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Remediate non-compliant resources with Azure Policy: The source defines remediation tasks as applying modify operations or deployIfNotExists templates to existing noncompliant resources. The remediation source explicitly uses the identity associated with the policy assignment for modification or deployment. The source provides remediation tasks specifically for existing noncompliant resources without requiring wholesale resource recreation. The source requires the managed identity to receive the specified RBAC roles; a definition role list is not itself a grant.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-remediation"
+      ],
+      "assessmentReserved": false,
+      "caseStudy": {
+        "id": "identity-policy-rollout",
+        "title": "Juniper Works compliance rollout",
+        "overview": "Juniper Works governs two subscriptions in one tenant. A custom modify policy adds the CostCenter tag. Its assignment was created through an SDK with a managed identity. Existing noncompliant resources require remediation. Later the definition gains another required role. No role grants beyond those explicitly stated should be assumed."
+      }
+    },
+    {
+      "id": "az104-identity-plus-38",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "An administrator tags a resource group CostCenter=R7. A supported resource is subsequently created inside it without any tag policy or explicit tag assignment.",
+      "prompt": "What default tag state should the administrator expect on that resource?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The group tag becomes an Azure role assignment on the resource.",
+          "explanation": "Tags are key-value metadata; inheritance of role permissions is separate from tag propagation.",
+          "referenceIds": [
+            "identity-tags"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "It does not inherit the group’s CostCenter tag automatically.",
+          "explanation": "The source states resources do not inherit tags applied to a resource group or subscription; policy or explicit tagging is required.",
+          "referenceIds": [
+            "identity-tags"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "It automatically receives CostCenter=R7 from its group.",
+          "explanation": "The tags article explicitly rules out automatic resource inheritance from parent resource-group tags.",
+          "referenceIds": [
+            "identity-tags"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The source states resources do not inherit tags applied to a resource group or subscription; policy or explicit tagging is required.",
+      "summaryReferenceIds": [
+        "identity-tags"
+      ],
+      "references": [
+        {
+          "id": "identity-tags",
+          "title": "Use tags to organize your Azure resources and management hierarchy - Azure Resource Manager",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
+          "section": "Inherit tags",
+          "checkedAt": "2026-10-08T01:38:01.068Z",
+          "documentUpdatedAt": "2025-12-08T23:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Inherit tags: The source states resources do not inherit tags applied to a resource group or subscription; policy or explicit tagging is required. The tags article explicitly rules out automatic resource inheritance from parent resource-group tags. Tags are key-value metadata; inheritance of role permissions is separate from tag propagation.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-tags"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-39",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A cost-allocation tool compares the tags in the exhibit during updates and reporting.",
+      "prompt": "Which interpretation is documented?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tag-name operations are case-insensitive, but the two values differ by case.",
+          "explanation": "Microsoft says tag names are case-insensitive for operations while tag values are case-sensitive; providers may preserve displayed key casing.",
+          "referenceIds": [
+            "identity-tags"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Both tag names and values are always case-insensitive.",
+          "explanation": "The source specifically treats values as case-sensitive, so Production and production are distinct values.",
+          "referenceIds": [
+            "identity-tags"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Tag keys differing only by case are guaranteed unrelated operational keys.",
+          "explanation": "Operations update or retrieve a tag name regardless of its casing; displayed key casing may still be preserved.",
+          "referenceIds": [
+            "identity-tags"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Microsoft says tag names are case-insensitive for operations while tag values are case-sensitive; providers may preserve displayed key casing.",
+      "summaryReferenceIds": [
+        "identity-tags"
+      ],
+      "references": [
+        {
+          "id": "identity-tags",
+          "title": "Use tags to organize your Azure resources and management hierarchy - Azure Resource Manager",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
+          "section": "Tag usage and recommendations",
+          "checkedAt": "2026-10-08T01:38:01.068Z",
+          "documentUpdatedAt": "2025-12-08T23:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Tag usage and recommendations: Microsoft says tag names are case-insensitive for operations while tag values are case-sensitive; providers may preserve displayed key casing. The source specifically treats values as case-sensitive, so Production and production are distinct values. Operations update or retrieve a tag name regardless of its casing; displayed key casing may still be preserved.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-tags"
+      ],
+      "assessmentReserved": false,
+      "exhibits": [
+        {
+          "type": "table",
+          "title": "Tag observations",
+          "columns": [
+            "Resource",
+            "Key",
+            "Value"
+          ],
+          "rows": [
+            [
+              "A",
+              "Environment",
+              "Production"
+            ],
+            [
+              "B",
+              "environment",
+              "production"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-40",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.7"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A company wants one management group to contain subscriptions that trust two different Entra tenants, so one group policy governs both.",
+      "prompt": "Which documented constraint prevents that design?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Every subscription must use a different Entra tenant.",
+          "explanation": "The documented requirement is the opposite: subscriptions inside a management group share a tenant.",
+          "referenceIds": [
+            "identity-management-groups"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "A management group can never contain more than one subscription.",
+          "explanation": "The source introduces management groups specifically to govern multiple subscriptions at scale.",
+          "referenceIds": [
+            "identity-management-groups"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "All subscriptions in one management group must trust the same Entra tenant.",
+          "explanation": "The overview states this tenant requirement for management groups; a single group cannot aggregate the proposed cross-tenant subscriptions.",
+          "referenceIds": [
+            "identity-management-groups"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The overview states this tenant requirement for management groups; a single group cannot aggregate the proposed cross-tenant subscriptions.",
+      "summaryReferenceIds": [
+        "identity-management-groups"
+      ],
+      "references": [
+        {
+          "id": "identity-management-groups",
+          "title": "Organize your resources with management groups - Azure Governance - Azure governance",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+          "section": "What are Azure management groups?",
+          "checkedAt": "2026-10-08T01:38:00.704Z",
+          "documentUpdatedAt": "2025-07-21T22:12:00Z",
+          "evidenceSummary": "Claim-level draft evidence for What are Azure management groups?: The overview states this tenant requirement for management groups; a single group cannot aggregate the proposed cross-tenant subscriptions. The documented requirement is the opposite: subscriptions inside a management group share a tenant. The source introduces management groups specifically to govern multiple subscriptions at scale.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-management-groups"
+      ],
+      "assessmentReserved": false
+    },
+    {
+      "id": "az104-identity-plus-41",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.7"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A designer counts only management-group levels below the root, excluding subscription scope.",
+      "prompt": "What maximum depth is documented for this count?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Only one child level because each group has one parent.",
+          "explanation": "Having one parent does not prohibit descendants; the source allows a tree with up to six levels and many children.",
+          "referenceIds": [
+            "identity-management-groups"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Six management-group levels.",
+          "explanation": "The source states a management-group tree supports up to six depth levels excluding the root level and subscription level.",
+          "referenceIds": [
+            "identity-management-groups"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Six levels including root and subscriptions.",
+          "explanation": "The source explicitly excludes root and subscription levels from this six-level limit.",
+          "referenceIds": [
+            "identity-management-groups"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The source states a management-group tree supports up to six depth levels excluding the root level and subscription level.",
+      "summaryReferenceIds": [
+        "identity-management-groups"
+      ],
+      "references": [
+        {
+          "id": "identity-management-groups",
+          "title": "Organize your resources with management groups - Azure Governance - Azure governance",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+          "section": "Important facts about management groups",
+          "checkedAt": "2026-10-08T01:38:00.704Z",
+          "documentUpdatedAt": "2025-07-21T22:12:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Important facts about management groups: The source states a management-group tree supports up to six depth levels excluding the root level and subscription level. The source explicitly excludes root and subscription levels from this six-level limit. Having one parent does not prohibit descendants; the source allows a tree with up to six levels and many children.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-management-groups"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-identity-plus-42",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.5"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "For a pay-as-you-go subscription, an authorized existing administrator must delegate full resource administration and the ability to grant others access. The billing account itself is not being transferred.",
+      "prompt": "Which documented Azure role assignment meets the requirement?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Owner at subscription scope.",
+          "explanation": "The source describes assigning Owner at subscription scope for full subscription resource access including delegating access to others.",
+          "referenceIds": [
+            "identity-subscriptions",
+            "identity-roles"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Reader at subscription scope.",
+          "explanation": "Reader does not provide full resource administration or access delegation; the documented subscription-administrator assignment is Owner.",
+          "referenceIds": [
+            "identity-subscriptions",
+            "identity-roles"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Contributor on one resource group.",
+          "explanation": "The documented operation requires subscription scope and Owner’s access-delegation capability, not limited group Contributor permissions.",
+          "referenceIds": [
+            "identity-subscriptions",
+            "identity-roles"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "The source describes assigning Owner at subscription scope for full subscription resource access including delegating access to others.",
+      "summaryReferenceIds": [
+        "identity-subscriptions",
+        "identity-roles"
+      ],
+      "references": [
+        {
+          "id": "identity-subscriptions",
+          "title": "Add or change Azure subscription administrators - Microsoft Cost Management",
+          "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/add-change-subscription-administrator",
+          "section": "Assign a subscription administrator",
+          "checkedAt": "2026-10-08T01:38:00.339Z",
+          "documentUpdatedAt": "2026-04-30T11:20:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Assign a subscription administrator: The source describes assigning Owner at subscription scope for full subscription resource access including delegating access to others. Reader does not provide full resource administration or access delegation; the documented subscription-administrator assignment is Owner. The documented operation requires subscription scope and Owner’s access-delegation capability, not limited group Contributor permissions.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        },
+        {
+          "id": "identity-roles",
+          "title": "Azure built-in roles - Azure RBAC",
+          "url": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+          "section": "Assign a subscription administrator",
+          "checkedAt": "2026-10-08T01:38:00.331Z",
+          "documentUpdatedAt": "2026-09-11T11:45:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Assign a subscription administrator: The source describes assigning Owner at subscription scope for full subscription resource access including delegating access to others. Reader does not provide full resource administration or access delegation; the documented subscription-administrator assignment is Owner. The documented operation requires subscription scope and Owner’s access-delegation capability, not limited group Contributor permissions.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-subscriptions",
+        "identity-roles"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-identity-plus-43",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.6"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "A subscription’s actual spending crosses its budget threshold. No automation action group or other spending-control mechanism is configured.",
+      "prompt": "Which TWO expectations match the documented budget behavior? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "The budget is a hard real-time spending cap.",
+          "explanation": "The source describes periodic cost evaluation and alerts, not a real-time cap that blocks charges.",
+          "referenceIds": [
+            "identity-budgets"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "A budget alert informs recipients when its threshold is met.",
+          "explanation": "Budgets can alert on actual or forecasted costs; notifications are triggered at configured thresholds after evaluation.",
+          "referenceIds": [
+            "identity-budgets"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Resources and consumption continue without automatic stopping by the budget itself.",
+          "explanation": "The source explicitly states resources are not affected and consumption is not stopped by budget thresholds.",
+          "referenceIds": [
+            "identity-budgets"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "All VMs are automatically stopped at the threshold.",
+          "explanation": "The source says budget notifications do not stop consumption or affect resources; stopping would require an additional mechanism.",
+          "referenceIds": [
+            "identity-budgets"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b",
+        "c"
+      ],
+      "summaryExplanation": "Budgets can alert on actual or forecasted costs; notifications are triggered at configured thresholds after evaluation. The source explicitly states resources are not affected and consumption is not stopped by budget thresholds.",
+      "summaryReferenceIds": [
+        "identity-budgets"
+      ],
+      "references": [
+        {
+          "id": "identity-budgets",
+          "title": "Tutorial - Create and manage budgets - Microsoft Cost Management",
+          "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets",
+          "section": "Create and manage Azure budgets",
+          "checkedAt": "2026-10-08T01:38:00.703Z",
+          "documentUpdatedAt": "2025-09-26T22:10:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Create and manage Azure budgets: Budgets can alert on actual or forecasted costs; notifications are triggered at configured thresholds after evaluation. The source explicitly states resources are not affected and consumption is not stopped by budget thresholds. The source says budget notifications do not stop consumption or affect resources; stopping would require an additional mechanism. The source describes periodic cost evaluation and alerts, not a real-time cap that blocks charges.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-budgets"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-identity-plus-44",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.6"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "advanced",
+      "scenario": "A governance team compares budget automation at resource-group scope and management-group scope. It wants to call an action group directly from the budget.",
+      "prompt": "Which documented scope supports that direct action-group integration?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Every supported budget scope without exception.",
+          "explanation": "The article lists budget scopes separately from action-group scopes and explicitly limits the latter.",
+          "referenceIds": [
+            "identity-budgets"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Resource-group scope.",
+          "explanation": "The source limits budget action-group support to subscription and resource-group scopes, so this listed scope is supported.",
+          "referenceIds": [
+            "identity-budgets"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Management-group scope.",
+          "explanation": "Although management groups can be budget scopes, the source restricts action-group integration to subscriptions and resource groups.",
+          "referenceIds": [
+            "identity-budgets"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The source limits budget action-group support to subscription and resource-group scopes, so this listed scope is supported.",
+      "summaryReferenceIds": [
+        "identity-budgets"
+      ],
+      "references": [
+        {
+          "id": "identity-budgets",
+          "title": "Tutorial - Create and manage budgets - Microsoft Cost Management",
+          "url": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets",
+          "section": "Trigger an action group",
+          "checkedAt": "2026-10-08T01:38:00.703Z",
+          "documentUpdatedAt": "2025-09-26T22:10:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Trigger an action group: The source limits budget action-group support to subscription and resource-group scopes, so this listed scope is supported. Although management groups can be budget scopes, the source restricts action-group integration to subscriptions and resource groups. The article lists budget scopes separately from action-group scopes and explicitly limits the latter.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-budgets"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-identity-plus-45",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.4"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A solution groups resources sharing a deployment lifecycle, including workloads in two regions. Its resource group is located in a compliance-approved third region.",
+      "prompt": "Which TWO statements are documented? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Resources inside one group may be in different regions.",
+          "explanation": "The resource-group article explicitly permits resources in different regions and recommends grouping by shared lifecycle.",
+          "referenceIds": [
+            "identity-resource-groups"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Every resource must be in the group’s selected region.",
+          "explanation": "The article explicitly allows different resource regions, distinguishing them from metadata placement.",
+          "referenceIds": [
+            "identity-resource-groups"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A group’s location relocates all existing resources automatically.",
+          "explanation": "The source describes group location as metadata placement, not an operation to relocate hosted resources.",
+          "referenceIds": [
+            "identity-resource-groups"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "The resource-group location determines where its metadata is stored.",
+          "explanation": "The source explains that the selected resource-group location is the location of its metadata.",
+          "referenceIds": [
+            "identity-resource-groups"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "d",
+        "a"
+      ],
+      "summaryExplanation": "The source explains that the selected resource-group location is the location of its metadata. The resource-group article explicitly permits resources in different regions and recommends grouping by shared lifecycle.",
+      "summaryReferenceIds": [
+        "identity-resource-groups"
+      ],
+      "references": [
+        {
+          "id": "identity-resource-groups",
+          "title": "Use the Azure portal and Azure Resource Manager to Manage Resource Groups - Azure Resource Manager",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal",
+          "section": "What is a resource group",
+          "checkedAt": "2026-10-08T01:38:00.328Z",
+          "documentUpdatedAt": "2026-03-04T23:27:00Z",
+          "evidenceSummary": "Claim-level draft evidence for What is a resource group: The source explains that the selected resource-group location is the location of its metadata. The resource-group article explicitly permits resources in different regions and recommends grouping by shared lifecycle. The article explicitly allows different resource regions, distinguishing them from metadata placement. The source describes group location as metadata placement, not an operation to relocate hosted resources.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-resource-groups"
+      ],
+      "assessmentReserved": true,
+      "exhibits": [
+        {
+          "type": "table",
+          "title": "Regional inventory",
+          "columns": [
+            "Item",
+            "Region"
+          ],
+          "rows": [
+            [
+              "Resource group metadata",
+              "West Europe"
+            ],
+            [
+              "Workload A",
+              "East US"
+            ],
+            [
+              "Workload B",
+              "North Europe"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "az104-identity-plus-46",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.2"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "intermediate",
+      "scenario": "A storage account has a ReadOnly management lock. An operator has valid data-plane permission to overwrite blob contents. No other restrictions apply.",
+      "prompt": "Which TWO statements distinguish the protected surfaces? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "ReadOnly changes every storage data permission into read-only access.",
+          "explanation": "ReadOnly restricts management operations and does not rewrite data-plane permissions or prevent all blob content operations.",
+          "referenceIds": [
+            "identity-locks"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Any request to the blob service necessarily uses the management control plane.",
+          "explanation": "The source distinguishes service-instance endpoints from management.azure.com control-plane operations.",
+          "referenceIds": [
+            "identity-locks"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The lock applies to control-plane operations.",
+          "explanation": "The lock article explicitly limits management locks to control-plane Azure operations rather than data-plane service requests.",
+          "referenceIds": [
+            "identity-locks"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "The lock alone does not stop the authorized blob overwrite.",
+          "explanation": "The source specifically says storage account locks do not protect blob data from deletion or modification through the data plane.",
+          "referenceIds": [
+            "identity-locks"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "d"
+      ],
+      "summaryExplanation": "The lock article explicitly limits management locks to control-plane Azure operations rather than data-plane service requests. The source specifically says storage account locks do not protect blob data from deletion or modification through the data plane.",
+      "summaryReferenceIds": [
+        "identity-locks"
+      ],
+      "references": [
+        {
+          "id": "identity-locks",
+          "title": "Lock your Azure resources to protect your infrastructure - Azure Resource Manager",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+          "section": "Understand scope of locks",
+          "checkedAt": "2026-10-08T01:38:00.700Z",
+          "documentUpdatedAt": "2026-04-10T06:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Understand scope of locks: The lock article explicitly limits management locks to control-plane Azure operations rather than data-plane service requests. The source specifically says storage account locks do not protect blob data from deletion or modification through the data plane. ReadOnly restricts management operations and does not rewrite data-plane permissions or prevent all blob content operations. The source distinguishes service-instance endpoints from management.azure.com control-plane operations.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-locks"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-identity-plus-47",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.6"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "foundation",
+      "scenario": "A platform team needs recommendations concerning process efficiency, resource manageability and deployment best practices rather than cost thresholds.",
+      "prompt": "Which Advisor category is described for these concerns?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Performance only.",
+          "explanation": "Performance recommendations improve application speed; the stated deployment practices are documented under operational excellence.",
+          "referenceIds": [
+            "identity-advisor"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Operational excellence.",
+          "explanation": "The source defines operational excellence recommendations around process and workflow efficiency, resource manageability and deployment best practices.",
+          "referenceIds": [
+            "identity-advisor"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Cost only.",
+          "explanation": "Cost recommendations optimize spending; the stated process and manageability concerns are described under operational excellence.",
+          "referenceIds": [
+            "identity-advisor"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "b"
+      ],
+      "summaryExplanation": "The source defines operational excellence recommendations around process and workflow efficiency, resource manageability and deployment best practices.",
+      "summaryReferenceIds": [
+        "identity-advisor"
+      ],
+      "references": [
+        {
+          "id": "identity-advisor",
+          "title": "Introduction to Azure Advisor - Azure Advisor",
+          "url": "https://learn.microsoft.com/en-us/azure/advisor/advisor-overview",
+          "section": "What is Advisor?",
+          "checkedAt": "2026-10-08T01:38:00.339Z",
+          "documentUpdatedAt": "2026-05-18T22:10:00Z",
+          "evidenceSummary": "Claim-level draft evidence for What is Advisor?: The source defines operational excellence recommendations around process and workflow efficiency, resource manageability and deployment best practices. Cost recommendations optimize spending; the stated process and manageability concerns are described under operational excellence. Performance recommendations improve application speed; the stated deployment practices are documented under operational excellence.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-advisor"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-identity-plus-48",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.3"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "An administrator proposes placing a database password in a resource tag so a deployment script can retrieve it.",
+      "prompt": "Which source-backed concern should reject that tagging design?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tags are plain text and can appear in reports, exports and logs.",
+          "explanation": "Microsoft warns against sensitive tag values because tags are plain text and can be exposed through cost reports, commands, exported templates and monitoring logs.",
+          "referenceIds": [
+            "identity-tags"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Tag values are always encrypted secrets with confidential retrieval.",
+          "explanation": "The source explicitly calls tags plain text and warns that many channels can expose sensitive values.",
+          "referenceIds": [
+            "identity-tags"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Tags can be applied only to management groups.",
+          "explanation": "The source allows tags on resources, resource groups and subscriptions, and specifically excludes management groups.",
+          "referenceIds": [
+            "identity-tags"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "a"
+      ],
+      "summaryExplanation": "Microsoft warns against sensitive tag values because tags are plain text and can be exposed through cost reports, commands, exported templates and monitoring logs.",
+      "summaryReferenceIds": [
+        "identity-tags"
+      ],
+      "references": [
+        {
+          "id": "identity-tags",
+          "title": "Use tags to organize your Azure resources and management hierarchy - Azure Resource Manager",
+          "url": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
+          "section": "Tag usage and recommendations",
+          "checkedAt": "2026-10-08T01:38:01.068Z",
+          "documentUpdatedAt": "2025-12-08T23:11:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Tag usage and recommendations: Microsoft warns against sensitive tag values because tags are plain text and can be exposed through cost reports, commands, exported templates and monitoring logs. The source explicitly calls tags plain text and warns that many channels can expose sensitive values. The source allows tags on resources, resource groups and subscriptions, and specifically excludes management groups.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-tags"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-identity-plus-49",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.7"
+      ],
+      "type": "single",
+      "requiredSelections": 1,
+      "difficulty": "intermediate",
+      "scenario": "A new subscription is created in an existing tenant with management groups. No default-management-group customization is specified.",
+      "prompt": "Which documented default and root constraint should administrators expect?",
+      "options": [
+        {
+          "id": "a",
+          "text": "The subscription automatically creates a second root group that can be deleted.",
+          "explanation": "The source says each directory has a single root group and it cannot be deleted.",
+          "referenceIds": [
+            "identity-management-groups"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "The subscription stays permanently outside the management-group hierarchy.",
+          "explanation": "All subscriptions fold up into the single root and new subscriptions default there under the stated assumptions.",
+          "referenceIds": [
+            "identity-management-groups"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "The subscription defaults to the root management group; the root cannot be moved or deleted.",
+          "explanation": "The source lists both new subscriptions defaulting to root and the root management group being immovable and undeletable.",
+          "referenceIds": [
+            "identity-management-groups"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c"
+      ],
+      "summaryExplanation": "The source lists both new subscriptions defaulting to root and the root management group being immovable and undeletable.",
+      "summaryReferenceIds": [
+        "identity-management-groups"
+      ],
+      "references": [
+        {
+          "id": "identity-management-groups",
+          "title": "Organize your resources with management groups - Azure Governance - Azure governance",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+          "section": "Important facts about the root management group",
+          "checkedAt": "2026-10-08T01:38:00.704Z",
+          "documentUpdatedAt": "2025-07-21T22:12:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Important facts about the root management group: The source lists both new subscriptions defaulting to root and the root management group being immovable and undeletable. The source says each directory has a single root group and it cannot be deleted. All subscriptions fold up into the single root and new subscriptions default there under the stated assumptions.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-management-groups"
+      ],
+      "assessmentReserved": true
+    },
+    {
+      "id": "az104-identity-plus-50",
+      "revision": 1,
+      "certificationId": "AZ-104",
+      "blueprintId": "az104-2026-04-17",
+      "domainId": "identity",
+      "objectiveId": "governance",
+      "subObjectiveIds": [
+        "governance.1",
+        "governance.7"
+      ],
+      "type": "multiple",
+      "requiredSelections": 2,
+      "difficulty": "advanced",
+      "scenario": "A region-limiting policy definition is created at a management group. A descendant subscription needs its own allowed-location values. The definition already exposes a location parameter.",
+      "prompt": "Which TWO documented design choices meet that requirement? Choose two.",
+      "options": [
+        {
+          "id": "a",
+          "text": "Create a new identical definition for every parameter value by necessity.",
+          "explanation": "The documented purpose of parameters is to reduce the number of definitions while allowing different assignment values.",
+          "referenceIds": [
+            "identity-policy"
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Assume a higher-level definition can only be assigned at its original management-group scope.",
+          "explanation": "The source explicitly permits scoping an assignment of a management-group definition down to a descendant subscription or group.",
+          "referenceIds": [
+            "identity-policy"
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Assign the management-group definition at the descendant subscription scope.",
+          "explanation": "The source recommends higher-level definitions with assignments at child scopes and permits assignments down to a subscription or resource group.",
+          "referenceIds": [
+            "identity-policy"
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Supply the subscription’s allowed locations as assignment parameter values.",
+          "explanation": "The source says parameters let a definition be reused across scenarios by passing different values when assigning it.",
+          "referenceIds": [
+            "identity-policy"
+          ]
+        }
+      ],
+      "correctOptionIds": [
+        "c",
+        "d"
+      ],
+      "summaryExplanation": "The source recommends higher-level definitions with assignments at child scopes and permits assignments down to a subscription or resource group. The source says parameters let a definition be reused across scenarios by passing different values when assigning it.",
+      "summaryReferenceIds": [
+        "identity-policy"
+      ],
+      "references": [
+        {
+          "id": "identity-policy",
+          "title": "Overview of Azure Policy - Azure Policy",
+          "url": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+          "section": "Recommendations for managing policies and Policy definition",
+          "checkedAt": "2026-10-08T01:38:00.329Z",
+          "documentUpdatedAt": "2026-07-08T05:12:00Z",
+          "evidenceSummary": "Claim-level draft evidence for Recommendations for managing policies and Policy definition: The source recommends higher-level definitions with assignments at child scopes and permits assignments down to a subscription or resource group. The source says parameters let a definition be reused across scenarios by passing different values when assigning it. The documented purpose of parameters is to reduce the number of definitions while allowing different assignment values. The source explicitly permits scoping an assignment of a management-group definition down to a descendant subscription or group.",
+          "microsoftOwnershipVerified": true,
+          "fallbackReason": null
+        }
+      ],
+      "provenance": "ai-assisted",
+      "status": "draft",
+      "review": null,
+      "tags": [
+        "identity-expanded",
+        "identity-policy"
+      ],
+      "assessmentReserved": true
+    }
+  ]
+}

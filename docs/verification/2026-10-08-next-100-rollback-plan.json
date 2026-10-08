@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "kind": "rollback-plan",
+  "execute": false,
+  "worker": "az104-revision-web",
+  "currentVersionId": "b56e3daf-94cc-48dc-89a9-5bc843bf016e",
+  "targetVersionId": null,
+  "ready": false,
+  "reason": "No prior verified Worker version is recorded; inspect Cloudflare history and recover a matching passing build artifact first.",
+  "command": null,
+  "preChecks": [
+    "Confirm the failed deployment version and Worker name.",
+    "Check that the target version has a passing retained verification report and matching build artifact.",
+    "Preserve browser-local data; rollback changes assets only.",
+    "Cloudflare rollback may require compatible bindings; inspect version details before execution."
+  ],
+  "postChecks": [
+    "Re-run deployment verification against the target build artifact.",
+    "Run live install/offline and learn/assessment/backup smoke checks.",
+    "Record rollback version and evidence; do not erase failed release records."
+  ]
+}

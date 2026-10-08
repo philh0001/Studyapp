@@ -1,0 +1,185 @@
+{
+  "domainId": "networking",
+  "checkedAt": "2026-10-08T01:42:23.144Z",
+  "method": "AI-assisted comparison of immutable starter revision 1 with retrieved official Microsoft Learn sections",
+  "humanReview": false,
+  "questions": [
+    {
+      "questionId": "az104-networking-01",
+      "revision": 1,
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.2"
+      ],
+      "result": "supported-with-conditions",
+      "checkedAt": "2026-10-08T01:38:21.631Z",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+      "sourceReferenceId": "networking-plus-nsg",
+      "evidenceSummary": "Lower numbers have higher priority; rule 200 matches first and stops processing before allow rule 300.",
+      "findings": [],
+      "caveats": [
+        "This audit is AI-assisted evidence reconciliation, not human factual review."
+      ]
+    },
+    {
+      "questionId": "az104-networking-02",
+      "revision": 1,
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.2"
+      ],
+      "result": "supported-with-conditions",
+      "checkedAt": "2026-10-08T01:38:21.631Z",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+      "sourceReferenceId": "networking-plus-nsg",
+      "evidenceSummary": "NSG rule changes affect new connections; the source gives this established-SSH example explicitly.",
+      "findings": [],
+      "caveats": [
+        "This audit is AI-assisted evidence reconciliation, not human factual review."
+      ]
+    },
+    {
+      "questionId": "az104-networking-03",
+      "revision": 1,
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.2"
+      ],
+      "result": "supported-with-conditions",
+      "checkedAt": "2026-10-08T01:38:21.631Z",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+      "sourceReferenceId": "networking-plus-nsg",
+      "evidenceSummary": "The source says an outbound port-80 allow does not need an inbound response rule because flow state is tracked.",
+      "findings": [],
+      "caveats": [
+        "This audit is AI-assisted evidence reconciliation, not human factual review."
+      ]
+    },
+    {
+      "questionId": "az104-networking-04",
+      "revision": 1,
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.1"
+      ],
+      "result": "supported-with-conditions",
+      "checkedAt": "2026-10-08T01:38:21.631Z",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+      "sourceReferenceId": "networking-plus-nsg",
+      "evidenceSummary": "The source explicitly says default security rules cannot be removed. Azure assigns defaults the lowest priorities so custom rules with lower numbers are processed first.",
+      "findings": [],
+      "caveats": [
+        "This audit is AI-assisted evidence reconciliation, not human factual review."
+      ]
+    },
+    {
+      "questionId": "az104-networking-05",
+      "revision": 1,
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.2"
+      ],
+      "result": "supported-with-conditions",
+      "checkedAt": "2026-10-08T01:38:21.406Z",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+      "sourceReferenceId": "networking-plus-peering",
+      "evidenceSummary": "Microsoft states that traffic between peered-network VMs routes through its backbone rather than a gateway or public internet.",
+      "findings": [],
+      "caveats": [
+        "This audit is AI-assisted evidence reconciliation, not human factual review."
+      ]
+    },
+    {
+      "questionId": "az104-networking-06",
+      "revision": 1,
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.2"
+      ],
+      "result": "supported-with-conditions",
+      "checkedAt": "2026-10-08T01:38:21.406Z",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+      "sourceReferenceId": "networking-plus-peering",
+      "evidenceSummary": "The source states peers must sync after the address space is resized and recommends syncing after every resize operation.",
+      "findings": [],
+      "caveats": [
+        "This audit is AI-assisted evidence reconciliation, not human factual review."
+      ]
+    },
+    {
+      "questionId": "az104-networking-07",
+      "revision": 1,
+      "objectiveId": "vnets",
+      "subObjectiveIds": [
+        "vnets.2"
+      ],
+      "result": "supported-with-conditions",
+      "checkedAt": "2026-10-08T01:38:21.406Z",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+      "sourceReferenceId": "networking-plus-peering",
+      "evidenceSummary": "A virtual network using a remote gateway cannot have its own; the documented gateway must be local or remote.",
+      "findings": [],
+      "caveats": [
+        "This audit is AI-assisted evidence reconciliation, not human factual review.",
+        "Peering gateway transit requires compatible gateway and explicitly enabled peering settings."
+      ]
+    },
+    {
+      "questionId": "az104-networking-08",
+      "revision": 1,
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.5"
+      ],
+      "result": "supported-with-conditions",
+      "checkedAt": "2026-10-08T01:38:21.556Z",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+      "sourceReferenceId": "networking-plus-privateEndpoint",
+      "evidenceSummary": "The source defines Pending as awaiting owner approval and says only endpoints in Approved state can send traffic.",
+      "findings": [],
+      "caveats": [
+        "This audit is AI-assisted evidence reconciliation, not human factual review.",
+        "Endpoint approval alone does not configure DNS, service authorization, or other network controls."
+      ]
+    },
+    {
+      "questionId": "az104-networking-09",
+      "revision": 1,
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.5"
+      ],
+      "result": "supported-with-conditions",
+      "checkedAt": "2026-10-08T01:38:21.556Z",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+      "sourceReferenceId": "networking-plus-privateEndpoint",
+      "evidenceSummary": "The endpoint must be in the same region and subscription as the virtual network, while the private-link resource can be in a different region.",
+      "findings": [],
+      "caveats": [
+        "This audit is AI-assisted evidence reconciliation, not human factual review.",
+        "The private endpoint NIC and VNet location requirement is distinct from the target service location."
+      ]
+    },
+    {
+      "questionId": "az104-networking-10",
+      "revision": 1,
+      "objectiveId": "network-security",
+      "subObjectiveIds": [
+        "network-security.1"
+      ],
+      "result": "supported-with-conditions",
+      "checkedAt": "2026-10-08T01:38:21.612Z",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups",
+      "sourceReferenceId": "networking-plus-asg",
+      "evidenceSummary": "Application security groups group VMs by application structure and let security policy be reused without maintaining explicit IP addresses.",
+      "findings": [],
+      "caveats": [
+        "This audit is AI-assisted evidence reconciliation, not human factual review."
+      ]
+    }
+  ],
+  "unresolvedGaps": [
+    "No unsupported answer was identified in these ten documented, conditional scenarios; human factual review remains required.",
+    "Basic public IP retirement is accounted for in new questions; the original ten contain no Basic SKU claim."
+  ]
+}

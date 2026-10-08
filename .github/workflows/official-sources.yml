@@ -1,0 +1,47 @@
+name: Scheduled official evidence reports
+on:
+  schedule:
+    - cron: '17 5 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: studyapp-official-evidence
+  cancel-in-progress: false
+jobs:
+  retrieve:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - name: Original whole-page URL and hash observations
+        id: sources
+        continue-on-error: true
+        run: node --experimental-strip-types scripts/check-sources.mjs --output artifacts/official/source-report.json
+      - name: Compare current measured blueprint with preserved baseline
+        id: blueprint
+        continue-on-error: true
+        run: node --experimental-strip-types scripts/check-blueprint.mjs --output artifacts/official/blueprint-report.json
+      - name: Compare official article sections with preserved evidence
+        id: sections
+        continue-on-error: true
+        run: node --experimental-strip-types scripts/check-sections.mjs --output artifacts/official/section-report.json
+      - name: Explain report-only review boundary
+        if: always()
+        run: |
+          echo '## Official evidence retrieval' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Download the report artifacts and inspect changed sections, question assumptions, explanations, and blueprint mappings. Outages preserve factual approval. Reports never approve questions, edit packs, replace baselines, open PRs, or deploy.' >> "$GITHUB_STEP_SUMMARY"
+          echo 'Whole-page step: ${{ steps.sources.outcome }}; blueprint step: ${{ steps.blueprint.outcome }}; sections step: ${{ steps.sections.outcome }}.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Retain observed reports and retrieved guide
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: official-evidence-${{ github.run_id }}
+          path: artifacts/official/
+          if-no-files-found: error
+          retention-days: 90

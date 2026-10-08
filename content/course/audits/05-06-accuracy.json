@@ -1,0 +1,1067 @@
+{
+  "checkedAt": "2026-10-08T10:28:36.979301+00:00",
+  "reviewKind": "AI-assisted official-source audit",
+  "humanApproval": false,
+  "paths": [
+    "az-104-manage-compute-resources",
+    "az-104-monitor-backup-resources"
+  ],
+  "pointsReviewed": 251,
+  "lessons": [
+    {
+      "id": "intro-to-azure-virtual-machines--1-introduction",
+      "pointHashes": [
+        "91e7c8ee4d821cb9ebb89c636ce375d3c52baa0b93801cad501318027975ff0c",
+        "b84b12201676831662b38ea03df6b2a7f8459bf3f812c1c7b7dd82b59cc207c0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-virtual-machines--2-compile-a-checklist-for-creating-a-vm",
+      "pointHashes": [
+        "70d894147feef9ec9b9cb42c86d70fe3e9293900a43c34dde1591f02ef3c6e93",
+        "6256a4606be7587d291945a99b2c970eab78b27cb69f2d7540a8742fd49d71d3",
+        "8aaaa9a5814ddbfebd8a68d89b137cb7cd3350ee8a2c17e48542de9b4bec0558",
+        "efb3dda634fe2065fd2b9db82e5ec88be1b08033576d5542b5634267d1f16ddc",
+        "0bb6fda3b0139fb06fc24648b9509adc288549f59d3e70aa592df00ae9d9e571",
+        "a471b2138d5e1e9dc03ceaf6d88922a6d5d65a7c9526041372d3ac33b8638abe",
+        "dc03854859f2b6d2ecf27a33a04ee5ab1a8dd35169c6ec19c83d1f9369892b70"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-virtual-machines--3-create-a-vm",
+      "pointHashes": [
+        "beff9440e080332f4cd778788359a6702da68eb500c13d8548c8f505d65a87ac",
+        "f9fa86edf72a687b2167b730942f81a113d88df8cd49b9aba1e19dab7d04f44f",
+        "15c18e07c0f14e336a09a0811c932b11bc9cec7cba007d0d97d512800afe109b",
+        "3be5497dcfcccdf97c4d065aa3f0a2fd76dc875175c82dc7a69b351e82b75222",
+        "3812164c30b338bcf50d4926dee989cd00c809d19367e856431bcf0b5957c001"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/3-create-a-vm"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-virtual-machines--4-describe-other-create-vm-options",
+      "pointHashes": [
+        "106268b1418e2a850a3990567c3025ab66808e429d0fce8948abe519613888d7",
+        "cea2f34b6290ed320128e8278a0d6a12c37d1c0b60023d2fb600639902bd7f44",
+        "056b09de29ba74991b969f69289592e79a08a1c7f1ef18c8776509b77f66e028",
+        "af217f0bfc8a29d9b64fb9225b904feb7058c9265999e2aaa9c577aad9112b98",
+        "b29f546297f199cbf02fb78386d588fe26efd2c03ad43b2050d7a4abe9971c31",
+        "412936509f4c582fcac769a1dab588f25f000439db5537012eac5aa376893b51"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-virtual-machines--5-high-availability",
+      "pointHashes": [
+        "4329a6e67da33634d83b6865babc5548e24b2527126d6162ad054f07f20727d1",
+        "53a36bb14c21e5a185e6555a43ba9c6a116e7bc8d532e436e30e1d0bdabaffbf",
+        "a1f7ca784d933687594dc36bbfdc7f01ec831927d174b22bfab42894c3adf866",
+        "c718af4d69143d5e13e8d43736ebe0e648842c553ab257a3dc5bbb6e0db6276d",
+        "b98e52101272805994c9e382db0c8b2b3de6ae8d762b9a24205cb9060e226eb8",
+        "d96f5b76c0a27f78b74a91bc27be122cffefc57003b6bc810e479d6ebafec9f0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-virtual-machines--6-backup-services",
+      "pointHashes": [
+        "07bdec20e9ca4189673d197d682df55724d0c9c3732db57387ca50788e6ad392",
+        "916b31f1c0fe27def33199b3839057a1dd01f0652b27c2c54f3214fed4300e85",
+        "45a0a3c04f4ab375df9dd543a6d08103abb7b2e94ef41ded3b227551d4c39909",
+        "cb689023c2cd262f3c9fc7594c9a1b584c116fdc6bd13805291f9f10dfbb6331"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-virtual-machines--7-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/7-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-virtual-machines--8-summary",
+      "pointHashes": [
+        "fe0844003d4c30d0db39636e66bd8df820913da60583e9e8513155c5fffe646f"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/8-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-machine-availability--1-introduction",
+      "pointHashes": [
+        "39a37631e9b098bfc493d334af3f48eedaa696e8ebe06275bef9d229544e5fbf"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-machine-availability--2-plan-for-maintenance-downtime",
+      "pointHashes": [
+        "5cf2a695e67195baadf7da4ba3c327c075fdafa4e1d5ab217be9f2e96d812ff5",
+        "d2a7bf1a0ffcdbcb74f878b9ee0307a0145499421b1390dc0b77bbefa5be141b",
+        "65ef8748ca203dcf34c3706c3ece16e7679e0c6acef4562c0d777d49c5883119",
+        "fd0ea5ffbadf194acca90fba06e8e11a5408d23cdb6f74859d00de3377fe8c85"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/2-plan-for-maintenance-downtime"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-machine-availability--3-setup-availability-sets",
+      "pointHashes": [
+        "a4df1eff0a4c360fc4fb749b9550cbd965f223c9e9e05cbc6002a5dbdbd0598a",
+        "d08d9b5c3e1502f67ffaefdfc7c54d9263240af5d481ac7c576aaf32139e09f8",
+        "4ee5b117363bd69f52f2fb37e11f5d52fa1ba6b2b59d7b2f903b4dd77915f731",
+        "e26063708ab5e42f1f394f0cc1a2bac068c8bb3c53e5bc2e457b4f142fd2b5fd"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/3-setup-availability-sets"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-machine-availability--4-review-update-fault-domains",
+      "pointHashes": [
+        "45bb3357f56e796c9230b9a3ad6b60c6b8c05a41a2d9a3c05febd135df41eca3",
+        "a9ef71a33c9bb0472fd8bf8e2536256b50bc87e19af9d63636bd7272247e2624",
+        "a86b7970876dd5c4fba77ea93fb1b24641f153bdce97dfc2b12d7250aa5255be",
+        "e487566ae1f255c77a1f381866931a332bead555fd003efcf1b22e28d6a8c678"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-machine-availability--5-review-availability-zones",
+      "pointHashes": [
+        "8dcea2b9872b3dcb02b7082c0705952e1a32865ed7e2e52167655f7e3cb873a1",
+        "1e197386738d75c8b698ef132dc4804e2f37217a3d9da8ff94117c2468ffe3d6",
+        "c12d4804befe716e7401058d4d2f57c8e9edef064ee44b97ca3d510331a44071",
+        "327b889c4e7daaf5d79df725be890d118b82342e31bab5c3236e7c80b211b211"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-machine-availability--6-compare-vertical-horizontal-scaling",
+      "pointHashes": [
+        "4a9945477a9ea13eeb3340c2c7c2998ccf2a621a583a250ad15372877c76450e",
+        "c074a8bd93e76fd391f8b2c8387853f5cb5c4ac6a48fefe3d36cc89aac044c31",
+        "8bfebd580635c7b9d05ee98493357f01bce42d251096209f72e2172952abfd2d",
+        "603253a98b99483aba982cb5f7525eae5eff183df92d20227f2cf31da892f7f0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-machine-availability--7-implement-scale-sets",
+      "pointHashes": [
+        "3a75509a885525923d574f98edca0b243eaae37355ab5c19441e00bb3b555c9e",
+        "5e7ca8289bb77219a202e30a3e1d05f2dc6df841bf484ac9564cdb498ccc06ff",
+        "c79604b56ea36fb6db4669605f4ee372c56072ccc1e83c0ffab51ec74662ec99",
+        "79abaf0ab04f85e943616b434c63734b7084085c54d3c72e7b082a3d790b8f5d",
+        "0572c4ac38f185a9c9e6588e44c2e57e8d2b1c31bf92a6fe13d41d9e78fc6f66"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-machine-availability--8-create-scale-sets",
+      "pointHashes": [
+        "ae11ae0099c82153447173b2fe273056af6f619f4af90d11c01f594dcd54d186",
+        "ea53464813e98c0cf9dd43f2e87c9c6111e99aba6e3674239d4e0505385909c4",
+        "f056059d817da2427d85163a72b70d800f7401e5ccbaf2b32a33c78416b642ba",
+        "71f08bd446e0c9b4372e4863f4702f48abeb750397bed21858f801c431ec547b"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/8-create-scale-sets",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Flexible orchestration is the default recommended option for new deployments in this lesson; choose Uniform when the workload requires identical instances.",
+          "after": "Flexible orchestration is recommended for new deployments and supports identical or mixed VMs. Choose Uniform when its scale-set VM model and feature set fit the workload.",
+          "reason": "Identical instances alone do not require Uniform; Flexible also supports identical VMs."
+        }
+      ]
+    },
+    {
+      "id": "configure-virtual-machine-availability--9-implement-autoscale",
+      "pointHashes": [
+        "27148519f043bf9cfce8446bcf26211f9a6b66b733f3bc5ff955635bea46161e",
+        "eb57af28cbf7b19d346863266ea41ffb51e9f6e2afeb20b63ba2d96a33d9974e",
+        "12bce2d54fca1341c3a0a4b24fa35c5cbe650ede3734fb997987d6741c9e69b0",
+        "611cbd6b0372efdf8b75aa957064079abe14b0f0e17c7469709fa672064b03e5"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-machine-availability--10-configure-autoscale",
+      "pointHashes": [
+        "f3209866deb7431859089e9135387b4a4b09f6851c6be437aeb1019ac6bd7444",
+        "f07faa3aa53bfba7fd360d75c4346ac31ee7e790faf41189dc4689747c3d9cab",
+        "07da2f7b528bb46972a03ef578f0ea85f4fad13dd3f845beae8a93b39d9e3184",
+        "a8efebcca0343978797964e83dd9ea5596e4e3bdf756c33f339fc77cd4bafa37",
+        "9c33cf9bf6c90a9bc047e04b2c0552dee6ca98b40a3609ae61838986802b52a6"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/10-configure-autoscale"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-machine-availability--11-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/11-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-virtual-machine-availability--12-summary-resources",
+      "pointHashes": [
+        "10ce53fe2e11852425e7868405d871899eeb6fd6dd98fab348e5037ac02dbbc0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/12-summary-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-app-service-plans--1-introduction",
+      "pointHashes": [
+        "c24720064488db4605d6af70ee40147e25a9572056c83c31c818549469a6b5e2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-app-service-plans--2-implement-azure",
+      "pointHashes": [
+        "75066f82f5cd299edb7b30560bb77a5607ac2863f9a1aab1d890d1180f6ddd75",
+        "8695532d0e50d3395f26a1baae48fca8bede8be350bb86249586d3e5591677bf",
+        "a63651fdcf2eea2ef5b215113919a20e8b95dd8b22c73875eb7184f293df6193",
+        "e20390fed1085c6249b287ef55b22e81079f3cb49ed60943018d525962286cbd"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-app-service-plans--3-determine-plan-pricing",
+      "pointHashes": [
+        "a7cfca92da08e3471d68d70f9da35c87a4f4df23e30b2051070f336dd5c2e3c5",
+        "737652c2677f051d2ce725bbe4d0de28c2470b2dc8ac80a54165480a14512c69",
+        "85b7a02dd279255d829fe4484ae7f1caacb18a04ef1a9e7bf7d228cad36f5817",
+        "be27a571ab27cb35c5f39ac1549b47934bbc6db0ae0d7b2517071fe5c13a8c7e",
+        "916bb59168b4eace4ac6cf48aea2fa1ce0f8f10d0cc2d44567163cc967301ce1"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-app-service-plans--4-scale-up-scale-out",
+      "pointHashes": [
+        "93eab03eb6083325c7777abd31b09ecca05f0f2d385686a561e459383cc48d63",
+        "508003be19d75d6e04897712519f83051a868a865dac35182f1fbe7c8f47be0e",
+        "1b2fd568e4328855a2ddb469c23360f368e9691d0b652b843f246953fe071d62",
+        "124c473545e1ac5d59d93ddf19c65be2fa8761bc1ffde12b635f1648aeff76e2",
+        "d6868add892af1cadc50f5a5aca16838a123e82eb0593717f0f414ec36fd4a1a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-app-service-plans--5-plan-scaling",
+      "pointHashes": [
+        "51b661b188445749c8778db06e86eba1caa0ebc4220e9d647e1a1f33ab51ba54",
+        "5571536a99c2de295d89b6d04204f1294f50b6d0dc5f75f061d07deab840b38f",
+        "9e68bd5e2fcc8f62cafdd4081c48fb61cbec0c616ea7d00b2e5b33808af3ae90",
+        "a827bbdf4b324ab4acccd45693fb7422e3ed1dfd140b135826fda7da3f16f914",
+        "78d39871f436c1e2b27c47acb8fce91e021843258fe07e2aca2138c8b9a4989f",
+        "b782405159e3c090633619ba2bb73da585018b54d04aa87b07232cb5809d0353",
+        "f09557314fe943e00d879c07237d716518b75f5092a7b8ae59c712db72778886"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Configure autoscale profiles with minimum, maximum and safe default instance counts. The default is used when metrics are unavailable.",
+          "after": "Configure autoscale profiles with minimum, maximum and safe default instance counts. When metrics are unavailable, autoscale scales out to the default only if current capacity is lower; it does not scale in to the default.",
+          "reason": "Default capacity is a scale-out fallback, not an unconditional reset."
+        },
+        {
+          "before": "A rule combines a metric or schedule trigger with a scale-in or scale-out action.",
+          "after": "A metric rule combines a trigger with a scale-in or scale-out action. Scheduled profiles apply capacity limits and rules at specified times.",
+          "reason": "Distinguish metric-rule triggers from schedules on autoscale profiles."
+        },
+        {
+          "before": "Automatic scaling is a separate HTTP-traffic-driven feature on supported Premium tiers, using always-ready instances without custom rules.",
+          "after": "Automatic scaling is a separate HTTP-traffic-driven feature on Premium v2, v3 and v4, configured per app with always-ready instances and no custom scaling rules.",
+          "reason": "Current docs include Premium v4 and per-app scaling."
+        }
+      ]
+    },
+    {
+      "id": "configure-app-service-plans--6-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/6-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-app-service-plans--7-summary-resources",
+      "pointHashes": [
+        "bd870d18711b3e701ae530c862e59ee60e18eddd14c291f8e31bb9ace53771ac"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/7-summary-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-app-services--1-introduction",
+      "pointHashes": [
+        "d7c21bbd5deed1b66e85dbb6ff7a782459a6e96e5f9ba26ec73bbb0cb5c2a57b"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-app-services--2-implement",
+      "pointHashes": [
+        "b8b00b99e417c20b584f29f784c687afdb201f8b7ad567cb2f09db75409e11b3",
+        "ff83231f4a47e2e879dfa56d3dcae8ff10d574a0db4357c112ee38c14aeb44ef",
+        "ae86f4486b968aa2675402289e661a382e00edc67b393deb718fcd9057b60520",
+        "b71c297befabc03630851a379c2f00445ce6a40eb4ca3f1c475f458daf92aff9"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/2-implement"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-app-services--3-create-app-service",
+      "pointHashes": [
+        "fd544f9aab4c9fbdea9cdd61f4f36428c405d9cd39893f167191fff76b85c67d",
+        "40323347e7ba099688cff39657df57a8b5ad113077b2a8d81c424a92d43653fa",
+        "7a0f5d223da83d67b9618e337937804d2795c223ad7d9c5b635bf436d6b4ad7e",
+        "a445230ce7762b218dcbf955f86a4659f30e57fe6c4bea310e7c4471d3280c6e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-app-services--4-explore-continuous-integration-deployment",
+      "pointHashes": [
+        "dbdcd494f4c2c7a16f8726599b0447b9f83fc5c53db83a2eb23450f5b2727878",
+        "5bcb99022b9018f35963a9bd0b370a75acb1f01c46eefb5becc45297b6136b34",
+        "67e72417b1e3d1f4f679955851f9f8b0a9948a6f0978108728483bd8c633073b",
+        "3cd02d918cddd95682be5ec240df8a5520547c6c19237d9544752db18ecdd285"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/4-explore-continuous-integration-deployment"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-app-services--5-create-deployment-slots",
+      "pointHashes": [
+        "bdd4ba5cfba8a8c3cb5f797b2cd33bfb238f7814e6e1d158a58ae612d625c3d3",
+        "dc202e8bfd3acaaa1565da77539b02188264e35962e5c0f6f48c1b9c97a8ab3c",
+        "6bef9658ce6a74587708a6e307a89f1dd8395c7d08d81a6811ac2dafb6a4ab7b",
+        "5c34fbfc4d80f37eb88f212349d54ba3665fa20afb84732b00294d185b899591"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-app-services--6-add-deployment-slots",
+      "pointHashes": [
+        "c0f631aae16e9e4421b572c404b9f724da4baa87b0f926956df1db62f7e3e827",
+        "e0b3cce29e67ce8ccf948bcece4e0c0f3f467bb0be22adf31de71cc9e35cb430",
+        "446b77ec4dd93677e1621af28388e6a2020e5237361567959501724688a5979d",
+        "9a1f410d381c8f5fe085f8900d2cb49c2be3bf32567b7750b57981dfd8c6c184"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-app-services--7-secure-app-service",
+      "pointHashes": [
+        "15f00db4eaa5e9c0b0e348d0d6eeb8a724d43e4575e0968be3803c8cbaf94b56",
+        "45f9cd2e6f7ddd13e5bbcdd7f89b52b601b9e6282fc7f11fd078e09c695be813",
+        "c83dc456aed1d7b0e0026081389dec06d8227427038a1d27fecb2a350cab939c",
+        "69870e1ca4ce434f0d247721aad331970581193b5321cabc18f9732b239ca3c1",
+        "7405f091e9e3696aecfdcebc3c2173f5b4fabbc3cf0f9b0a1519186d78ab763d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-app-services--8-create-custom-domain-names",
+      "pointHashes": [
+        "15bf835d16f9b8c67bca074e264d949c55cceafcb37e22dc5cab5095f1b4d280",
+        "4fa075db7e6cb6bfad35403729f139bd7396509bffee843c010e5b00eef723af",
+        "924af67b2744309f3452dc921fe2e20dda58f91c579521f0ab42364176d546da",
+        "7713195db84faa682ba26ac2de4cf5442f158c232dba6505a821ccdad7dab8b9"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-app-services--9-backup-app-service",
+      "pointHashes": [
+        "82a7357d6afdf53f782d157634ee47076fe2ada6478c334aa9bc5f1ecc31dd3d",
+        "66b9cba5858e80e7d88a499a9efada293ad318cd7e4eb0c01d4878fd9675fa53",
+        "92779775d6df5e3ebecfbc3e070afe94deb3d6e3aeaf57dc9d52acb32d9b797c",
+        "b207de886dc4ba9088962fcdbf59591330fd85e062552890ca384b48237420ca",
+        "838f5ef8384e6e211cb96816c9d0cf1bc8574a4220496aca473ac6e47f641369"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/9-backup-app-service",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Do not assume a backup captures every external dependency. Confirm database protection and supported restore behavior for the chosen configuration.",
+          "after": "Automatic backups exclude linked databases. Custom backups support only specified linked database types; protect other dependencies separately and verify restore support.",
+          "reason": "Replace a generic caution with the concrete automatic/custom database distinction."
+        }
+      ]
+    },
+    {
+      "id": "configure-azure-app-services--10-use-application-insights",
+      "pointHashes": [
+        "de9a5f3d5fe91b7c30707c966ed94c4a0a04fbd29e131e316ede6311351f0fa9",
+        "3236d46237903bff5a6dd95f5a7e648e373d42ea7762af874516464d1ca7ef1f",
+        "bb0485685f32f3369f5c92129182394d403ff77bc7ce47b6015107c6e805a00a",
+        "f4c84aca5a0ade7b5790a588f699210915d8368a497e1d7131f65351a4d93e61",
+        "c24ecd8ce54936858c654df222fc6de7c0ac7010140a2551aee73ef7b262f3d7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-app-services--11-simulation-web-apps",
+      "pointHashes": [
+        "658d3de486a3d266baf7f02990d8cd872951c411ded2a4b757a8264943192262",
+        "b7abef23daf56a46a321d042c831d9d5ff6032be83529d91163f5b1dbdfcd02c",
+        "aca4db22d2faf6eb6463b451508fb3e9b7036fb847b813a1d5a353cd5899e481",
+        "642552479dee9aedbff513a3231e7c913235796e9e26361e5737fe6aad75c893"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/11-simulation-web-apps"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-app-services--12-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/12-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-app-services--13-summary-resources",
+      "pointHashes": [
+        "a6d698403a3de8763048bf858c1c4d803cc1b7fe6a5696f64f0e90f457de78ca"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/13-summary-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-container-instances--1-introduction",
+      "pointHashes": [
+        "f00c0fbc0b44fa4c37a0a68219619d0169bd090a7291ea9597e7f70e86b425e1"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-container-instances--2-compare-containers-to-virtual-machines",
+      "pointHashes": [
+        "e32d2c33268a4a1efaef361f6918f89723f519f536d34810df1645b37de21d91",
+        "10530564fca80f8501e64dfbe1c4925136c26d77e8aea638dd3439820026fd58",
+        "faccf6ae086aedc268483e390c2013f67399eb7079eed226a8d5beb34fbafd77",
+        "5f2357261979a30803dffb01d172f163aa80960ff52b85309da4f57bd5336661"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Containers generally use fewer resources and start faster, but their isolation is not equivalent to a full VM security boundary.",
+          "after": "Containers generally use fewer resources and start faster. Typical process-isolated containers share the host kernel and provide a weaker security boundary than a full VM.",
+          "reason": "Qualify the generic comparison so it does not imply all container isolation models have the same boundary."
+        }
+      ]
+    },
+    {
+      "id": "configure-azure-container-instances--3-review",
+      "pointHashes": [
+        "398ce3de94b4cc1fed7a8204b8b8eafc9f40813ecde31fe87a37f57375fd083c",
+        "6faac7dcb3fd227606d994686e3f21136fa4a79106ef857cd9b733ce31c93522",
+        "79f51c9161379dcedc9163dd82ebdd8a809204a289d1ce30bded9c2dedd46758",
+        "419faa811ccd1cdaa715399e13442af2fe73d28960e8d253ae7fbf90dd79e148",
+        "22e16e58fe3405d6d55944fff8d974e00485247597b86517c6820d343843042a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Choose the CPU and memory allocation when deploying the container group; its resource allocation is fixed for its lifetime.",
+          "after": "Choose CPU and memory when deploying the container group. Changing its CPU, memory or GPU allocation requires deleting and recreating the group.",
+          "reason": "Explain what fixed allocation means operationally."
+        },
+        {
+          "before": "Container Instances supports Windows and Linux containers and Azure Files mounts for persistent storage.",
+          "after": "Container Instances supports Windows and Linux containers. Azure Files volume mounts for persistent storage are supported only for Linux containers.",
+          "reason": "Windows container groups do not support Azure Files mounts."
+        }
+      ]
+    },
+    {
+      "id": "configure-azure-container-instances--4-implement-container-groups",
+      "pointHashes": [
+        "f86bc09474641e5439432dd56f1430f67730515fdaa3ff35ce68e6be26178ab9",
+        "c7e10ffef01b365280b9195a2cb8fca1009afb6619cb6ab6ca7698d82b368df4",
+        "1fc1053570bdf888ba3cf5ba70e45a4e37e2b6ada6fa9045edefca43a42f44ab",
+        "fc2a6088993d17a252f08bd43338770d55d40e2fd28d3724cc575d77cb64e1d2",
+        "b22df2293f0798f334a6a2db225ec74cf8f07b493ea53aa95366252f8d8a8977",
+        "b247e1c627c581cc0fc14f143438be9855873762ec96824492ede0fa0bc348d2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "A container group schedules containers on the same host; they share lifecycle, local networking, storage volumes and group resources.",
+          "after": "A container group schedules containers on the same host; they share lifecycle, local networking, storage volumes and group resources. Multi-container groups support Linux only; Windows groups support one container.",
+          "reason": "Add the platform limitation missing from the training unit."
+        }
+      ]
+    },
+    {
+      "id": "configure-azure-container-instances--5-review-docker-platform",
+      "pointHashes": [
+        "3a64f78f325a9d7b0880d120c4c8ea93cb528035f6b8472d6e71208e91d4965b",
+        "7533259579692fce264abc531a88cc121f86859ef21b72d432918d012cedae3e",
+        "d32671dfa1eb5e4dafc88239917aff0e3b2d36d5c7b7e8dc7f523b8abdfd8de6",
+        "75bee8bc4b85dd17e44271389266749c1c4a39e16ce545a3e5196f8d23e45ec5",
+        "8a1e132253916bde096e96302cf3c4273c0b12f5699ec85b23148255d736ecb7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-container-instances--6-simulation-containers",
+      "pointHashes": [
+        "ea7e4ce7473a054f86afe8484262f99a03a57fa6e264adc90ef452b9ecd37bda",
+        "bdc9d7238990f98fb557da897336debac5d0ef781c2c6d9ced61c968ac0debbb",
+        "dcb6a954e5da17f65b82edf0f7a59806272082dbdb1de202c49500617b1b6100"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/6-simulation-containers"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-container-instances--7-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/7-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "configure-azure-container-instances--8-summary-resources",
+      "pointHashes": [
+        "bc07cc93c5c5f6f22ccfdfaa5332e8cedbedd6cb6cde28970326f5ba9a91c8b0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/8-summary-resources"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-backup--1-introduction",
+      "pointHashes": [
+        "ca5266f0a9c796ab4dca8077c2213b1559b5e889c8b617364443f3c69ac60586",
+        "e030df1c833d1f374572fb6595c7e92e7befb69a729be1102f1dc55c30527387"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-backup--2-what-is-azure-backup",
+      "pointHashes": [
+        "d5c79a98d664a1c1ac6ebafa11da49889c088b909c9a398b31b9c95d5fac57e5",
+        "18e2c7adec5e4dab912265e6923976a8a56f36d55280f19a00bee7d091593bc6",
+        "7f4af68d92fabf88271bbc4dc4006f3dc7e990441a3c2f0e6c61327706628605",
+        "2d21d6e7f5a12413083ee2bbad8beac4be2a4433a20709e76f09a5ab8241a8a7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-backup--3-how-azure-backup-works",
+      "pointHashes": [
+        "6705309098ea7f54c0612ba3517aba547341208febd8a303dafdccffbedc9391",
+        "24eea5151bbe43211da91f4ae70cd3da2570ba60192d9fadf8707f7429505afc",
+        "1924e260837efb898a210d9d924928fd2e395a1719f63893f453ff0444c8f20d",
+        "5d6f6a0c25bcf570b4fe0b422f40affbaa809647a697277109e0a00fa6a1bd01",
+        "8b67b4eb30c11dafe618c4fa49c9ce8e8583cc8ffded384d805cd53ecc0aa428",
+        "1dcccb2b9b792a539a8e216165cb8763e380e792f16ccb47d996533d627200a8",
+        "cfdc5127ac2419891109c4d4c4ea6465d9cb7e342539f9797fe2da24c8cb68a0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Azure VM backup uses workload extensions and disk snapshots. Vaults hold recovery points and backup policies.",
+          "after": "Azure VM backup takes disk snapshots. Application- or filesystem-consistent backups use a VM extension; supported agentless backups are crash-consistent. Vaults manage recovery points and policies.",
+          "reason": "Current VM backup supports agentless crash-consistent backups; extensions are not universal."
+        }
+      ]
+    },
+    {
+      "id": "intro-to-azure-backup--4-when-to-use-azure-backup",
+      "pointHashes": [
+        "a88a4acc5926069f102c5fd77edc86e7eb04587827399cfce5b57154caacf358",
+        "79ebbea0434c318c0d4cb412d8d8877aa4fdd53225cd7b4e042715cd36ddd044",
+        "6dbc08205324366489a12f7ac1aa6b7e7da4824c0aa0304fa3664e3617e82746",
+        "ebff5f4c66d0f932f02c14c9a09255d10238f5751ec3f23399cf5de491a22e4b",
+        "6d56070a54a0fb4622df6adc386c664ee6259008cf4881569e6e2cfd2b5afe88"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-backup--5-knowledge-check",
+      "pointHashes": [
+        "217e7091d571ba5d87d92cf0b50703e87518e7ecfb82439b7bf07c421c7ad69d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/5-knowledge-check"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "intro-to-azure-backup--6-summary",
+      "pointHashes": [
+        "3d293170a73ad2b483798631f4662f443c206e0bb82929e5c63ee7fec129322c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/6-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "protect-virtual-machines-with-azure-backup--1-introduction",
+      "pointHashes": [
+        "6d38dca29ee18a58e949dca9b9db59f90a14e1faee452d1b995ac152493f4ebc",
+        "0c93a8af4c00b52ebe4e892a2b46545288817160d105cad14d2372a9cd8d1bdf"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "protect-virtual-machines-with-azure-backup--2-azure-backup-features-scenarios",
+      "pointHashes": [
+        "193033615572849e7418d51056b4c93310514a153a9d3c1d273a84d7aa820037",
+        "bb233995f1e488896a9e4b5bde40fc2d6b317af7cbd21ca0fd67e0bce7e637b8",
+        "891112fd7104430ef9824352b0a267b95f4473e3d11a27db3c2d9f4f366457f5",
+        "e97af041c6945de5aa27883d98cd9290c278511de02e2c450a9f97bfb8ef7ea9",
+        "a7636a66d78f01c89183698d8a7c6a71410fe743c168572179471a187085625b",
+        "6eb9479df50b0ff85199d4c955f0c664c8a60edb478fb7dc7fd7a50f5aafdf5a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "protect-virtual-machines-with-azure-backup--3-back-up-azure-virtual-machine",
+      "pointHashes": [
+        "24bc427bea58d75d6105cc5b6485810ac4c1b64b2028afe7cb472ca6c5b201cd",
+        "2d2d78980780ee8051014412628a9096a700a448c07eee6fd93318b3801d0a53",
+        "7be3dd6895f27eb2e89c8f77eb927515335be97fb5783b7292e58caed8de43bd",
+        "dafb929b1cb663c0e963c8ed6a780108817500b7a8d071dadda306afe5fb12a6",
+        "ab6c8987d590419f7abc3d3e10839da24ae5303c290301f1fab2657dfb608fba",
+        "886977f2e8fc9d14a8555bcb68843fbdd46b2f5fc56686f9310691b2f3fb58bd"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "protect-virtual-machines-with-azure-backup--4-exercise-back-up-azure-virtual-machine",
+      "pointHashes": [
+        "665d00b3c92a672fd5c5dbe2648940c6fce3b524e524a68e90720a7a9971ffce",
+        "4073ee6e50623603cd6e4ad5700e0cc88a3685e1e37acdf098bcfe19baea2b5c",
+        "389bc52813c01b3a290b29d6b30965453c5e9c966c382c644d7635a82aa0f24f",
+        "b53a8ccc2732771838a5b1ca48754e441775d19b30d484b543855a02db3b531b",
+        "49d28c315dccf712993d31e385ebeae28926754f71508c5cf9c949a52c59f828",
+        "d611490994739eb77c5d9a205e936c008458a478ae08ff37dd6c63d54204ec9e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/4-exercise-back-up-azure-virtual-machine"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "protect-virtual-machines-with-azure-backup--5-restore-virtual-machine-data",
+      "pointHashes": [
+        "34429ae0a15e5772fec809fa66d9cc09a5cc4e654ddfe0e8dd737a523d1560de",
+        "39a1d18c33d2fba95c8c6df201635a2ce87ee4ff4c82114b6df7734149dc2774",
+        "14e7c32334ae1dc1e25f67b253b07015857595219a749617468c1ab7a1e81b5f",
+        "5077fe4fa503a1b99c7204ced173e2e9d65cf0deab6f10c8e06b75ab772abae2",
+        "3189b4398f0f2143e665c00b19d4368c0630076feec36bfb9e256e3024b8d5c6",
+        "53488820bac1b7fd6b2b851a32dbc26841544d271ad180ec8fdb425cddd03c72"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Cross-subscription restore requires the vault property to be enabled and a supported managed VM within the same tenant. Snapshot-tier recovery points are not supported.",
+          "after": "Cross-subscription restore uses vault-tier points for supported managed VMs in the same tenant. Restore to a subscription other than the protected VM or vault subscription requires the vault setting; ADE- and customer-key-encrypted disks are unsupported.",
+          "reason": "Current docs distinguish protected/vault subscriptions and exclude encrypted disk configurations."
+        }
+      ]
+    },
+    {
+      "id": "protect-virtual-machines-with-azure-backup--6-exercise-restore-virtual-machine-data",
+      "pointHashes": [
+        "928f57847e5aa72de79f2e218075602749017615c7ccc9f6d5d3070e2ba18b53",
+        "413508a0c97ecdbe81193b5025548ded71bc60609cab04b1318075302ec84c7a",
+        "183118b9afdef697d6abf1e4bf25b75c90abfc2295760b237e1ef223cedb5a0c",
+        "9ef4a3635bdeef5ab04807c69e8301ed414a2c7a7b1b990fbf8d5a5392e92bb4",
+        "e6b06151a4494c302cd17ff4082488ed6057d26cfb2574186b420c819aadf5b9"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/6-exercise-restore-virtual-machine-data"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "protect-virtual-machines-with-azure-backup--7-summary",
+      "pointHashes": [
+        "948acc6d389181abba08ca802a4c3e0c70ad5328c1a23c637901788fa7a4bf68",
+        "ff2aef8b0ec4a96ff08117cd72e1b4b79f9f3a1aac29d20d294f3f702a5d3700"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/7-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "monitor-azure-vm-using-diagnostic-data--1-introduction",
+      "pointHashes": [
+        "6e0a5dd91670adb6f5fd7971d5d8d09b5400be2ec9d827c013d0e8fc48b4318c",
+        "005ccdf820a5424fdc1700565324bc69c40af2d6d6b3b2fdb7d7c29cdf2b9db5"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/1-introduction"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "monitor-azure-vm-using-diagnostic-data--2-monitor-vm-health",
+      "pointHashes": [
+        "b2c7f3247b484d5e3bd7cf84dd84ae8a900ed31dcfbe0ea73dc8ee53ea318a02",
+        "345b2d5a1b178ca806d77ff46624b7e043c191ba580a1e2fdf077aa55e4fecd0",
+        "38c760ac64d22b4da7178e29b4588e5077667beb3e2f3de2f86dc13c96ae8a11",
+        "c42e5b94b162d46c79575595e3c62679b49090b35c4efc2de1d68c25f5c3b7d4",
+        "eb313b9c4ba4fd4c93be63702db20c843f51687c6105487959837f1b1033c85e",
+        "c3fb2a64d1a2e90980801c5ccbdefb9d8f389e1be954c525a44641f902265104",
+        "452549ff6045ec92fe14f73970cfb5de981c17aff1a780c9924cf56eaaf8cda2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Azure automatically collects VM host metrics and activity logs. Guest data needs Azure Monitor Agent and data collection rules.",
+          "after": "Azure automatically collects VM host metrics and activity logs. Configure Azure Monitor Agent and data collection rules for guest performance counters and event logs.",
+          "reason": "Scope the agent requirement to the guest telemetry demonstrated rather than every application telemetry method."
+        },
+        {
+          "before": "VM insights helps install the agent, configure common performance collection and show curated performance workbooks.",
+          "after": "The lesson uses classic logs-based VM insights: Azure Monitor Agent collects common guest performance data into Log Analytics for curated charts and workbooks. Current monitoring also offers OpenTelemetry metrics stored in an Azure Monitor workspace.",
+          "reason": "Label the classic lesson workflow because current portal onboarding defaults to OpenTelemetry metrics."
+        }
+      ]
+    },
+    {
+      "id": "monitor-azure-vm-using-diagnostic-data--3-exercise-create-virtual-machine",
+      "pointHashes": [
+        "0bb4f7a162bf66eadd707e84ef23e69cbc891d494a761814131be459c0428082",
+        "70595d33b9381cbbe859ea14b08600a48a6c9c24f829ffb78f25fa09784649ee",
+        "d080919e82ce5f99e9412e58dcbc39f172ba89491635f06584b64d04d69baf9e",
+        "2000e88127f118ad5a76a120f217c9b1e4d900a03a59ff0644505460d809dede"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "monitor-azure-vm-using-diagnostic-data--4-view-host-metrics",
+      "pointHashes": [
+        "84c307b83d70e8066763ce404039764c4150913fe7bc326c280bb294654d63ad",
+        "a40775ad2fc0e37f3aca2f4637cb0aa9a81f770e586da2a428c66d7b9bd28fda",
+        "4ec0ac71f6a29c6f9b24be03d7908c67491e2f6b06aa347e50c4391d585a0938",
+        "6a7bdbd479445f8eb28d4821b90e1a0ad13769e10f374dc03d788bd26c1da9c8"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics"
+      ],
+      "result": "supported",
+      "changes": []
+    },
+    {
+      "id": "monitor-azure-vm-using-diagnostic-data--5-enable-vm-insights",
+      "pointHashes": [
+        "d5dbd19c8b90bbcfcbde44444d346b9910eaf977f3ffaa472829373bbc8bac39",
+        "f98479978129f21027752e0f7f0b5c9dd4ff52406c8c26df17bb174d0ad6bdd2",
+        "52fcf7ca84ec9a0091dff5862606f7b9e5ba7933377e9be7701329b39b9bf987",
+        "11bbf81da6cda7b25f600a4868722366b6789d14f3dd3eb99bea4fda8290cae3",
+        "7cf3469e3024f45b5fb059ad80e2f2f9e8ef4ac0f9e7df74b475139280b74e88"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/tutorial-enable-monitoring",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-maps"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Enable VM insights from the VM Insights page and configure its data collection rule and Log Analytics workspace.",
+          "after": "The lesson demonstrates classic logs-based VM insights with a data collection rule and Log Analytics workspace. Current portal onboarding uses Monitor and Configure, with OpenTelemetry metrics selected by default and a logs-based option.",
+          "reason": "Current portal no longer matches the universal Insights/Enable instruction in the old unit."
+        },
+        {
+          "before": "VM insights installs Azure Monitor Agent and collects a predefined set of guest performance counters. Allow time for installation and data ingestion.",
+          "after": "For classic logs-based monitoring, Azure Monitor Agent collects a predefined set of guest performance counters. Allow time for agent installation and data ingestion.",
+          "reason": "Scope the statement to the demonstrated classic workflow."
+        },
+        {
+          "before": "View the collected counters in Insights performance workbooks; this rule sends data to Azure Monitor Logs rather than Metrics Explorer.",
+          "after": "View classic logs-based counters in VM insights performance charts and workbooks. These counters go to Log Analytics; OpenTelemetry monitoring instead stores metrics in an Azure Monitor workspace.",
+          "reason": "Avoid presenting classic Logs storage as the only current guest monitoring model."
+        },
+        {
+          "before": "Optional process and dependency mapping adds a view of connected application components.",
+          "after": "VM insights Map and Dependency Agent are deprecated and retire on 30 June 2028. New portal onboarding ended on 30 September 2025; do not enable them for new deployments.",
+          "reason": "The training unit still suggests enabling an optional Map feature that current product docs explicitly deprecate."
+        }
+      ]
+    },
+    {
+      "id": "monitor-azure-vm-using-diagnostic-data--6-collect-log-data",
+      "pointHashes": [
+        "ab0c927988379fa1b1a836032be4f950a4e577d137483f7c39ff42f1dae2d3b6",
+        "0477fd495e2e7335eb19e6768546332d79bcdc7f0bd012db6130d5aab4bab3b1",
+        "8277b011faaa82035ea864f430e7810c95e2092e6307030856bc31941ff6401d",
+        "fc185a3179ea06956ca447b6eb4862c8cb9b9249dfe6cb63acb0702a4ef91ea2",
+        "dc478734719f3533330c62ffee306338ac2165cd9faad7e33367c9f942cef5d0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-endpoint-overview"
+      ],
+      "result": "corrected",
+      "changes": [
+        {
+          "before": "Set the destination to a Log Analytics workspace; configure the collection endpoint as required by the demonstrated setup.",
+          "after": "Send Syslog to a Log Analytics workspace. The lesson creates a data collection endpoint, but ordinary public-endpoint Syslog collection does not require one; Private Link does.",
+          "reason": "Correct the implication that the illustrated endpoint is always required."
+        }
+      ]
+    },
+    {
+      "id": "monitor-azure-vm-using-diagnostic-data--7-summary",
+      "pointHashes": [
+        "420f40c99e422d166ccda656ab41373a32fec2cbfe4cb77f81426f86d4412bde",
+        "68139bf9eb4bf9b30a54da168602981c9147fb576354c4b3e6f6a78621e75ba2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/7-summary"
+      ],
+      "result": "supported",
+      "changes": []
+    }
+  ],
+  "findings": []
+}

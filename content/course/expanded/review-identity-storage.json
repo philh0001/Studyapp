@@ -1,0 +1,847 @@
+{
+  "checkedAt": "2026-10-08T11:53:26.323Z",
+  "reviewKind": "Independent AI-assisted semantic official-source comparison",
+  "humanApproval": false,
+  "findings": [],
+  "corrections": [
+    {
+      "lessonId": "configure-azure-files-file-sync--4-create-file-share-snapshots",
+      "sectionTitle": "Plan deletion and retained capacity",
+      "issue": "The training unit says snapshots persist until deleted, but the current cited product documentation limits supported retention to 10 years; the unqualified expansion implied indefinite retention.",
+      "correction": "Added the current supported retention limit of up to 10 years and kept deliberate obsolete-snapshot deletion guidance.",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files"
+      ]
+    }
+  ],
+  "lessons": [
+    {
+      "lessonId": "understand-azure-active-directory--2-examine-azure-active-directory",
+      "sectionHashes": [
+        "2b97908132cf6b287def6287778f3b53e8877cef7b01210bbd2ee6a814367752",
+        "777a1ada45579c5724db7a028c1a5badb48bfbbbfeb83e009a1243b049da2786"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Directory tenant versus Azure subscription boundary, SaaS/app registration and verified organizational names; identity authentication does not itself grant resource permissions. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "understand-azure-active-directory--3-compare-azure-active-directory-domain-services",
+      "sectionHashes": [
+        "1ae28372f302dfb09e32de8340b01e45ab36b062b90fb0374e755ffd96d70145",
+        "9a630205ae7d53d6046ac57f2f12d794d1a69513cfaf5a735b1c2519e5b3091d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Compared AD DS traditional protocols and Group Policy with Entra modern identity and device management; no claim that Entra ID is a cloud domain controller. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "understand-azure-active-directory--4-examine-azure-directory-service-cloud-apps",
+      "sectionHashes": [
+        "824b1ff63b7d199fa17bd6105699911066668112bf217de6fed80112fe0f3783",
+        "03a0c816117600abb7c6e83f21149d51480b191396d24c29a5e4a077b8931ed2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps",
+        "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Checked shared directory integration and App Service sign-in configuration; application authentication and application/resource authorization remain distinct. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "understand-azure-active-directory--5-compare-azure-premium-p1-p2-plans",
+      "sectionHashes": [
+        "33934d6e630024909cd6a5a0a70e0f991080bc6b80cf4dfb5a47ff6eefdecd27",
+        "8294419b7c78f991ec0840de1abc7e5d2da45b36fcd571caf52ef46b998e2413"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. P1 Conditional Access/writeback/Connect Health and P2 Identity Protection/PIM checked against current licensing; adjacent governance entitlements are not called P2-exclusive. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "understand-azure-active-directory--6-examine-azure-domain-services",
+      "sectionHashes": [
+        "8d83ac8e351b4791c9fecb943e588e64f26cb2a9f2ca86a0ac63992d40e76499",
+        "0ff7d684be38b29f84506188c6de4960628cc2e937867f4d0bf176324fd190d5"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services",
+        "https://learn.microsoft.com/en-us/entra/identity/domain-services/overview",
+        "https://learn.microsoft.com/en-us/entra/identity/domain-services/synchronization"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Legacy LDAP/Kerberos/NTLM workload rationale checked against managed-domain product guidance; verified one-way synchronization and password-hash prerequisites without copying outdated managed-domain limitations. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--2-users",
+      "sectionHashes": [
+        "e00fcba45dd0b96af905bded1d756c6c102ec75a2a456b09624ae6d204c99b1b",
+        "6fd7e891bd4e60f3ab3fd3f23df90edfc34412c83da87b4e61beebdd7692a1a9"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/2-users",
+        "https://learn.microsoft.com/en-us/entra/identity/hybrid/cloud-sync/what-is-cloud-sync"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. User source, guest collaboration and directory context checked; current Cloud Sync documentation explicitly supports optional device synchronization, so the older unit comparison is qualified. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--3-exercise-assign-licenses-users",
+      "sectionHashes": [
+        "80ae58c32916ee685cda0ef2adfcf7fc8b4f578387aaee28cbdb41440704ba17",
+        "e90519b4ddcb02e6a2216b97203c399c997df53f96f6e5f04bcd5c3abd8ce328"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/3-exercise-assign-licenses-users",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. User/group preparation, usage location, direct membership and Microsoft 365 license assignment checked; License Administrator support and processing errors verified in current licensing guidance. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--4-exercise-restore-remove-deleted-users",
+      "sectionHashes": [
+        "b36c21ac1e46812c9dee3c3c368b1f8a456296d6b384de73746218c155bc11d4",
+        "77a71c13e22ab1111b045ae5a378e49a1ae034ea1af03dcbf3bea1c61e4e5482"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. 30-day user recovery, permanent-deletion boundary and original-object restoration checked against the exercise; the procedure uses a clearly identified test identity. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--5-groups",
+      "sectionHashes": [
+        "42fddfe27b4cad267f4c491f11d9680f232cf047423fa5aad61d73453b57bb91",
+        "36952ae32d0db8b6661352318312b3735f39f187904051c93e0f57a069b1efea"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Security versus Microsoft 365 collaboration groups and assigned/dynamic membership checked; P1 or Intune for Education entitlement applies to unique user members, not device members. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--6-exercise-add-groups-azure-active-directory",
+      "sectionHashes": [
+        "6c4b2e2c77f8f2acc5f85710ef1b82001b4732b7728be49063cda89f7c858abf",
+        "5545571e32d49e196e6b39e40d6f949f4a20bd3de02a77b6c0d72fe4fa00fa2d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/6-exercise-add-groups-azure-active-directory"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Collaboration group ownership and membership verification are relevant to the original group exercise; creating a group is not presented as assigning a product license. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--7-configure-manage-device-registration",
+      "sectionHashes": [
+        "f7b1c7ecd959cfd27e33689556f97861b68aca06814fc6cddbc0717013903a23",
+        "2db4990b8768df5df4e80033ed15c9844f49dd96eec9ff4dea4541734adda55b"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration",
+        "https://learn.microsoft.com/en-us/windows/security/identity-protection/hello-for-business/deploy/hybrid-cloud-kerberos-trust",
+        "https://learn.microsoft.com/en-us/entra/identity/hybrid/connect/how-to-connect-device-writeback"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Registration, Entra join and hybrid join compared with their distinct device states; Intune/compliance and cloud Kerberos trust qualifications verified rather than equating them with device state. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--8-manage-licenses",
+      "sectionHashes": [
+        "6661595d973e0e3205382032de5ba767b0ca1616299f02feba24d41e20040d6c",
+        "18c85f5bd1e6c4d7275bf0aea55761110b5c6377acaecad4299c7861907446a5"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/8-manage-licenses",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Product/service-plan distinction, usage-location availability, background processing, one consumed product license across assignment paths and no nested-group traversal checked. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--9-exercise-change-group-license-assignments",
+      "sectionHashes": [
+        "d823e5395294948e1c2118edc34d1854684ae1587eb8de89ae0917dde9296556",
+        "71bc685563995a60aae5abe948254b4e66eb6e8d59fd5746e29d337db562d58f"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. License capacity, conflicting plans, prerequisites, usage-location and proxy-address errors checked; migration overlaps preserve effective entitlement and do not double-count identical product licenses. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--10-exercise-change-user-license-assignments",
+      "sectionHashes": [
+        "b2b62d54a7fb674e099a99030c0889511f83c5904fda40ac2ee09f423d2532e3",
+        "cae02439ca420be919a3242e710977b07dea08f24b2175f9454c60cf2f5d9b3a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/10-exercise-change-user-license-assignments",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/assign-licenses-to-users?view=o365-worldwide",
+        "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Individual Microsoft 365 license assignment checked against the exercise; effective direct/group assignments and accurate usage location remain explicit. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--11-create-custom-security-attributes",
+      "sectionHashes": [
+        "8df4183831cbe25842eab921a8080c1535d7a22f6f485548c5140da119cb8dc7",
+        "fd6ebb1e564c0b50a0b1dd7aa3618ee405442ec9874eb93b1d9d77ac4785d800"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/11-create-custom-security-attributes",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-overview",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/custom-security-attributes-manage"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Custom attribute types, multi/predefined values, attribute sets and dedicated roles checked; Global Administrator has no automatic attribute permission, and unsupported downstream token/domain scenarios are correctly excluded. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "create-configure-manage-identities--12-explore-automatic-user-creation",
+      "sectionHashes": [
+        "f03c4612d63220bdf871dbd2b2df5fe5048fdb8b7a0c15fa2c8601fcb9381cb4",
+        "10d6d6bc939b9aac157c17b33f942ea3c995d4477e39ab863a8e0096c7b135ec"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. SCIM provisioning versus authentication and API-driven inbound provisioning checked against the full unit; authoritative source, Entra repository and target remain distinct. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "describe-core-architectural-components-of-azure--2-what-microsoft-azure",
+      "sectionHashes": [
+        "1feec5660195baf556de20626d8bdbd9d431d3dc32162602ae07292adf5bc006",
+        "764a86d7900867aa1bee2b45bce4283813feda2468caa870b46d277af35e189d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/2-what-microsoft-azure"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. IaaS hosting versus managed-service modernization and scale-up/out reasoning checked against the actual unit scenario; no unsupported automatic scaling guarantee. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "describe-core-architectural-components-of-azure--3-get-started-azure-accounts",
+      "sectionHashes": [
+        "a927d194a56f57d7dc05dc811daf27bc70138765548578a2b592e0673873f047",
+        "8662b2faa32707f1de0f685dc3d38661c85a32b23ac048c21a774c9fe02ca7d1"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/3-get-started-azure-accounts"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Account identity, selected subscription and billing/resource context checked; free/student offers remain bounded and payment verification is distinguished from paid upgrade. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "describe-core-architectural-components-of-azure--5-describe-azure-physical-infrastructure",
+      "sectionHashes": [
+        "2343c4f320c0c411de5437aadc82bdcf7483d88a5ac4918a9ba261beff64380b",
+        "e3476db8aea78ac0df63016a493bd71cca8a97f7ccc43443d120e01188de2e22"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Region, zonal/zone-redundant placement and regional recovery compared with the complete unit; region pairs and automatic failover are deliberately not universal. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "describe-core-architectural-components-of-azure--6-describe-azure-management-infrastructure",
+      "sectionHashes": [
+        "20a1bf06f88485a0e6cd41ae0368d5796ef2956a7a386d5d18e95d0ec09cbb61",
+        "47ab856828532f15f01abb61021144e88bc69a6a4432fde42d1ef5733d63881a"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deploy-to-subscription"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Resource-group lifecycle and scope exceptions checked with subscription deployments; six management-group levels exclude root/subscriptions, and scope inheritance does not imply universal property/tag inheritance. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "sovereignty-policy-initiatives--cloud-adoption-framework",
+      "sectionHashes": [
+        "da5d319a4ba051d121ee2b532c5e964212fc47a75bf21eb05ba3d93321a09ced",
+        "e8d4d59755acf35ef9569182270abd10789eb7ac2b0934eec0382f3d58b408a5"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/cloud-adoption-framework"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Governance risk, documented operating rules, automated controls and continuing review correspond to the full CAF unit; original examples explain why controls exist. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "sovereignty-policy-initiatives--azure-policy-design-principles",
+      "sectionHashes": [
+        "635f2f90fcdc7d0c7c737ccac813fafb9c3560f276dba25583834036dcc3609f",
+        "fb3c3ad561d3b30c8988da127acfe2ccdca39a8f267f3b40caef2a49bc77b639"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. ARM control-plane authorization and supported service-specific data-plane policy modes checked; existing noncompliant resources are not said to be deleted or moved by deny. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "sovereignty-policy-initiatives--azure-policy-resources",
+      "sectionHashes": [
+        "1cd23c6131b78bc85126be7455a589cdc405c263b55c74d5b6c869173fc8747d",
+        "d310f96e1fbc4372be71aa7f30cd0cf08fe9e5b30ba3dd2edf4938e562226734"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources",
+        "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Definition storage, initiative assignment, exclusions/selectors, exemptions and manual attestations checked; modify/DINE remediation requires the managed identity and actual change permissions. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "sovereignty-policy-initiatives--azure-policy-definitions",
+      "sectionHashes": [
+        "6bf6dea5df6611257b395e11b3d1b16e6c2b898f083e6c0a66fe0d522b905c99",
+        "ffb6c2d93a80be43cf85e6d155acb9f4ebfac2ca80bee8b15b66c129d99e0904",
+        "60dd338dbd2b0f4dfbc2e2023d5e8c780b8f9df6bf523401c92cb56ecfb1b33d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions",
+        "https://learn.microsoft.com/en-us/azure/governance/policy/concepts/definition-structure-basics"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Policy condition operators, aliases/parameters and effect distinctions checked; current definition documentation corrects the unit indexed/all simplification, including resource-group/subscription tag policies. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "sovereignty-policy-initiatives--azure-policies-evaluation-resources",
+      "sectionHashes": [
+        "e71367f52d137a44d3821a5f67e86f7a4e0d1f544242a389d395b6bb901a3c94",
+        "d33c02991608763ed4e0d58b35ecd02efea4454296308e1f7abfc08a5a206a9e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Evaluation triggers, 24-hour cycle, processing delay, DoNotEnforce versus disabled, DINE remediation and Event Grid response checked; no guaranteed immediate scan completion. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "secure-azure-resources-with-rbac--2-rbac-overview",
+      "sectionHashes": [
+        "edfae99b2163f2233457d4ba18e0939a8ac15567cfb763cbddcc40d58184289b",
+        "1e6f5c6beb13be766cd0c4859d0242741ef46ac82e9be691442bfbd60a8c3aee"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Principal/role/scope and Owner/UAA/Contributor roles checked; additive grants, NotActions versus global denial, deny assignments and management/data permissions correctly distinguished. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "secure-azure-resources-with-rbac--4-list-access",
+      "sectionHashes": [
+        "77f132a92415914b3fcccff9892d32d4e63392e63f62c16652e9c0209f9aeb24",
+        "b6c8e110b878dd2ca969b1a42ca99d42602b6c0505d57d1d1c584701d78811f3"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. IAM direct/inherited grants and role-definition inspection checked against the complete listing exercise; a narrower local grant cannot erase inherited access. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "secure-azure-resources-with-rbac--5-grant-access",
+      "sectionHashes": [
+        "c006f9f661885e8f7ed8d3273acec60e32549bceaa7998a1514afc27ff20db53",
+        "5b0bf2f75dda8ad57327b6553927285f87b6732cd4c3870acd693d5564b4111e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access",
+        "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. VM Contributor assignment scope, assigner permissions, review/verification and removing the correct grant checked; remaining inherited/group grants are explicitly considered. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "secure-azure-resources-with-rbac--6-view-activity-logs",
+      "sectionHashes": [
+        "0008cecaccd524fdeae0a01c5dc691a6d0b65fc350fdf9a01ccef94a068082aa",
+        "379ad9d6dce7ca2358d2f9293069ff83b7994075dca8ebf020336e0f20bd4fb4"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Activity-log assignment and custom-role change operations and CSV scope checked; historical event evidence is not confused with current effective permissions. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "allow-users-reset-their-password--2-self-service-password-reset",
+      "sectionHashes": [
+        "4d72e0404b2624df7f01d785f3c195e55afb6d222e42b90ccd1838057fe14f81",
+        "066cc87426f361ef1ab2f68f8ff5a1393ba06d7fe343b2ae09a970694131f396"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Current SSPR identity proof, Authenticator method count, privileged two-gate policy, Global Administrator notifications, cloud licensing and hybrid writeback prerequisites checked. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "allow-users-reset-their-password--3-implement-azure-ad-self-service-password-reset",
+      "sectionHashes": [
+        "b21a135ab8f75ed0bfd3e974aee881d128e5f08372ec0fe940697f183f265a84",
+        "1329c6dc4946c839fa6bd31b627cd3a9c53a33123e1d4a5f37be51a70a1ddfb1"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-policy",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-methods-manage"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Non-administrator licensed pilot, separate admin policy, registration/helpdesk/notifications checked; current Authentication methods policy migration and security-question exception verified. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "allow-users-reset-their-password--4-exercise-set-up-self-service-password-reset",
+      "sectionHashes": [
+        "2e98c7257792c2ac8d78688897a33cfe325553b3dbefe098d6723dd042b89678",
+        "edc0fc901cdafd41f838512282eb4f2fb80c093fd55d418bf3b2ae7977377ec3"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/how-to-authentication-methods-manage",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Email-based pilot checked against both the exercise and current migration policy; Email OTP supports tenant-member password reset separately from B2B guest sign-in, and registration is distinguished from later reset. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "allow-users-reset-their-password--5-exercise-customize-directory-branding",
+      "sectionHashes": [
+        "6de74c6cb155ad24bbf7ad4a4d3db0b07d3269db933f5c640d0df3357379a267",
+        "81464db25cb8b63d16eddc09262a944e4556435205ef0581c9a16dd7e1793663"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Eligible branding license, Organizational Branding Administrator, image-specific requirements and browser verification checked; personal Microsoft accounts and unspecified defaults remain qualified. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-accounts--2-implement-azure-storage",
+      "sectionHashes": [
+        "471a78744ddc0213ff2a20e8289157be338c0d0ddc3d62766bcea62bc67d1597",
+        "2e367dd9176e964fd206fc8150cdabd369498121ce0c65d6adadccd6a22b92a7",
+        "e3d3aa93b00b9a1693c08637934a056ed2d4007aa0901ab888ab20f71623ac5c"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/2-implement-azure-storage",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/secure-file-transfer-protocol-support",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/network-file-system-protocol-support",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Service/interface choice, managed disks versus file/object access, redundancy versus overwrite recovery and Blob SFTP/NFSv3 HNS prerequisites checked. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-accounts--3-explore-azure-storage-services",
+      "sectionHashes": [
+        "5f023cbcec8d9e6d379e90b2aecf95e7cfa74c8051980945f15f2c0022cd1f57",
+        "c79570d2c6d4981cf2b38316f9f1a02c01ce1b6ada51e238db8c56036c4df8cd",
+        "820758c238e3d9094957d5810ed21cd065f61b0d0c728b37bf57ed012fc01ce2"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Blob/File/Queue/Table service models and 64-KB queue message limit checked; plain Table Storage is not credited with Cosmos DB global distribution/secondary indexes. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-accounts--4-determine-storage-account-kinds",
+      "sectionHashes": [
+        "b47c347c5ae84ffc2f8f230668de3a373e82d2b76d7c765ec5a71796fd60762d",
+        "ac87f69921cb3c0fdda0ed911f299c35d86e856e58f6e93ab778f4f710d07728",
+        "a2ba8d953d3207098b7262bd90c8ca9d0a802e20fbda0c3f0e133c8893e00ff7"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/files/create-classic-file-share"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. GPv2 and specialized premium account capabilities checked; standard/premium migration, legacy upgrades and current HDD FileStorage StandardV2 provisioned shares verified. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-accounts--5-determine-replication-strategies",
+      "sectionHashes": [
+        "6dcb554a5a9d9a3caca9f508cfa1fa9628d7278a972403790973f685301418b4",
+        "3ecb126ab2caec45d7a7a166508e9732f256187d9eded23c68d88eea7c9720b5",
+        "212b4b91d1eab96fc8672a98b93fb9aacbb49e99b05b2d8b34e1507c31d1d96d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. LRS/ZRS/GRS/GZRS failure placement, synchronous primary versus asynchronous geo transfer, RA secondary-read support and stale-read/failover distinction checked. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-accounts--6-access-storage",
+      "sectionHashes": [
+        "21c6d0a586c4c62f97f698c11f7a2ced7896f7f8d6c873cb70674091ffbc9e68",
+        "5d8ab2afdca03ac258f841ad15954485730bc6d04df194f518d440bdd6082238",
+        "83f5b27db0a8e0398c9632db079a27b6b7af1fd638da33fcd19c5f861bd08688"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/6-access-storage",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-custom-domain-name",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Service endpoint/object-path structure and custom subdomain mapping checked; direct CNAME mapping does not supply HTTPS certificates or override secure-transfer requirements. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-accounts--7-secure-storage-endpoints",
+      "sectionHashes": [
+        "101d3322b5a5fb2649f91b97c10c39452691e0a78d5cd0c67074f957445aaac5",
+        "bb2a446a8a0b367457fcc7b123a182fa30652c77c3fd936e50bf546c7c7ee602",
+        "552805d2ad00a7b37c7e9d60b108871a3b2d0a198be8150aef94efc3ccc94e8d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/7-secure-storage-endpoints",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Firewall network admission versus data permissions, public service endpoints versus per-service private endpoints and separate public-access restriction/DNS checked. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-blob-storage--2-implement",
+      "sectionHashes": [
+        "489552d34e3c1e1b6bf943c3b8e800e9398e4101b5ed35809a937cea2c3c5eee",
+        "38a020b4743ba22d91ea75e6f311ad90c9ccca82b01187b500a7d4d5c68cb92b",
+        "7a02177d42f95f55f08a2f67f94471096d4c2e6f27ec559cdde37be41aa74544"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/2-implement",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Object hierarchy and original mixed public/private workload checked; object replication HNS/snapshot exclusions and supporting protections remain qualified. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-blob-storage--3-create-blob-containers",
+      "sectionHashes": [
+        "e33d71f47b289e09725701bf0bbc321b282db961f5b9e7d9e3ca358b79f5aacb",
+        "693abb51be36ea96b22b7fa04fff7347f21c9a017d87963fa2401ed1ded7e2c3",
+        "b951bef5289c6aec97a3b8eb46d9071c6e781178708ddc8165f98d1e04fbfc20"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/3-create-blob-containers",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Container naming including consecutive-hyphen prohibition checked; Blob anonymous read versus Container listing, account-level anonymous setting and no anonymous write are correct. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-blob-storage--4-create-blob-access-tiers",
+      "sectionHashes": [
+        "4da08ab4778a3dc4868c30a020cc7fd7cb0f1ebd901f73da6554fd2ee6b8df2d",
+        "9310739f12c35e122de81069a86ab7f84a57be26b2f1c9ce10a9be95a56a4984",
+        "b3aa96247d0f5cb1efb7dff49263ef5e91b695293e9bb246f0cf30c2cf109f9d"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Hot/Cool/Cold online versus Archive offline, 30/90/180-day minimum billing, early-operation charges, archive redundancy and base/version/snapshot rehydration methods checked. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-blob-storage--5-add-blob-lifecycle-management-rules",
+      "sectionHashes": [
+        "68ccf9050ef699ce18adc130a8824e18f9b2ef24681cbd224bc860a131bba27e",
+        "ab3a2557558552b49ce42b0f342a3c373d0d7106b402bd75117afffbefb1bab7",
+        "fde602489d8127a7426c084b33ffdb4e6dffa40238625083085bfa7f33f99c99"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/5-add-blob-lifecycle-management-rules",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Lifecycle prefix/time/action reasoning, retained versions/snapshots and full-policy updates checked; no rehydration, encryption-scope archival and immutable-container deletion limitations verified. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-blob-storage--6-determine-blob-object-replication",
+      "sectionHashes": [
+        "3e914a10389b07a2e2d55f1473319404ce4f80fc5ebaef29c289c43f53efbb74",
+        "1139af708251432b01da754d3c2c08e6a41faa639ff80a110aa84494976f7573",
+        "8e6f519d092e5e5f50e7523da97c897c2857ea3f1388a5d199a571b661e00d93"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Asynchronous block-blob content/metadata/version replication checked; supported accounts, source change feed, both-account versioning, HNS/snapshot exclusions and Archive retrigger conditions verified. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-blob-storage--7-upload-blobs",
+      "sectionHashes": [
+        "76fcf67dd3cb601bfe4444546e16743398f400f25f48a31aaccaa8452d45b0a6",
+        "95ab690ecdabc30153d1be2dc8b5fc9b8848aff00959b2cfb23567393c5441e9",
+        "7db1ed9c45608d6385abcf050e1da8159347436755a3c3231648ba42d2daf855"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Fixed blob type, block/append/page use, transfer-tool selection and authorized sample validation checked; modern managed disks are kept separate from generic page-blob uploads. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-blob-storage--8-determine-storage-pricing",
+      "sectionHashes": [
+        "39433d82b562f5ca41ec0161c4cf9be966961bb2d75538b8591d761c1e670827",
+        "211c8d88eddbcb24c6ff01942d52099245ce87d9e16e7c864e97f13be1ef14d3",
+        "33f5052319c95f0aa14833fcadbd7528f389f0da7d482842f4dc3bd00dadd468"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/8-determine-storage-pricing",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Capacity, operations, retrieval, retention, geography and supporting-feature cost dimensions checked against the pricing unit; no fixed price or universal cheapest tier asserted. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-blob-storage--9-simulation-blobs",
+      "sectionHashes": [
+        "37be2c2d8200a7ec6ec677541094d59df9c3dc4e2c58eae9a62bc714d48c07b4",
+        "ae8cf54cfb337bc461d5341d6fad11941e8c529c56f0ae57f6c99b047ab65e57",
+        "2eaa0d1e4c2421ced181af56cc65e9623718b50b3aed223ac341a066575ba609"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/9-simulation-blobs",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Public-content lab requirements checked; independent public read/list, versioning/soft-delete and redundancy observations do not imply global delivery latency or write permission. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-security--2-review-strategies",
+      "sectionHashes": [
+        "13b3cee7b8ff97f8114d35cb4f3c8add086300abf6d4267281e25c225a53d859",
+        "d6398e1fc952e491b2315beb833c1a8aae94f3deac1f4edb0833b267a78527ee",
+        "e0b697114cfb6f65f70feeaae75efc4032f11934d68e8506473ef98230f01ec0"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Defense in depth, managed identity/data-role scope and Shared Key compatibility checked; at-rest/transport encryption is not treated as authorization. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-security--3-create-shared-access-signatures",
+      "sectionHashes": [
+        "cc2f4a983773f85d8b318b4875afa4517210976f5f398cc299d652be3f89e67e",
+        "c8d3e87f3ac3f309569a5c3e343181e035531a889b5be930603168aa6f4ec26d",
+        "2dbfd73f953a255e9c27278fb3688273eb7ef90cbee8593225dea767b6ed6c2e"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/create-user-delegation-sas",
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Current SAS overview/REST documentation supports user delegation across Blob/DFS, Queue, Table and Files; service/account signing, stored-policy exclusions, revocation, skew and 30-second propagation checked. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-security--4-identify-uri-sas-parameters",
+      "sectionHashes": [
+        "c342d794a9a1dbb7af6f151b4f7260c49ce4641dedc59888a5d1d1a43ddfe956",
+        "7004f5cb85c3bfa8540248ccb2cd7d05043d129b21a89db35466a987f4975d39",
+        "591fa9293a5cec4c95508f61932ab29fca92a4699d6aac13a61bb022c6f57fd4"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/4-identify-uri-sas-parameters",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/create-service-sas",
+        "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Resource address and sv/sp/st/se/spr/sip fields checked against coherent SAS types; Blob sr is not mixed with account service/resource fields, and signed values cannot simply be edited. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-security--5-determine-storage-service-encryption",
+      "sectionHashes": [
+        "438b099dff034855e64529328500036188bac8174d2e8dc124d92ce495bff137",
+        "64b19e591c0136596100d668c75dad7346b78827425b32f138dc501d531dd656",
+        "3122327f5e978cf06e3799540b62c82c9ad577c3f8ec75a91e3b7552067bca11"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage",
+        "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Automatic service encryption and optional infrastructure layer checked; storage account access keys are distinct from CMKs, and two-key rotation considers dependent clients and signed SAS. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-security--6-create-customer-managed-keys",
+      "sectionHashes": [
+        "17a5a3127a9f36b74f8a0381cc3f6c37b2fc904d484d8962b1b875b3dfb83264",
+        "0b33ab43eef35bf2d42f3bda00b466edf257b53dc4aa516fe1500c0e9b13c0a1",
+        "aade2a56fc287d0adcc2e4bc53783ef2f6fb0f47b4cba12ee9318c0ab0dfaa79"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/6-create-customer-managed-keys",
+        "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Current CMK product guidance permits supported cross-region/subscription/tenant layouts; managed-identity get/wrapKey/unwrapKey, key protection and revoked-key failure checked. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-security--7-apply-best-practices",
+      "sectionHashes": [
+        "ce52cf159577f1e55372db2ea35f8267fc28c10d2e4edb91d91c9483f5fe7de2",
+        "8a8704854df47c1272164a6d43f7a7efec271493cca708c56e4b6b545db1d489",
+        "857b5f73747041fac31f50d8235a8dc5cdac86c4ce0897ff0cf457a77ee2d09f"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/7-apply-best-practices",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview",
+        "https://learn.microsoft.com/en-us/azure/defender-for-cloud/defender-for-storage-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Storage Insights operational metrics versus Defender security capabilities checked; plan/feature/support/cost qualifications avoid blanket malware protection or authorization claims. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-storage-security--8-simulation-storage",
+      "sectionHashes": [
+        "46640b78f3236dbb1c28d8fbc99f6ddd3d521c1ed5c4e3e8e2bfc2b24f53845c",
+        "792f0c537c6ccaf12769487e82196fc60290597a1df4a4c3960b9e785d574d51",
+        "69d8f7dd2d78337c8354fe116e440799d6de215c4086dff9cb32d6c031c12e62"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/8-simulation-storage",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-configure-file-level-permissions",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Blob/File security lab relevance checked; SMB identity/share/file permission layers, REST-only file SAS credential usage and independent network verification remain explicit. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-azure-files-file-sync--2-compare-files-to-blobs",
+      "sectionHashes": [
+        "0a33108d0b7bdff7902ee516579b9ecef4b5ceb5f47c5ac7859b8a0719f9d2fb",
+        "c949493b372e62b403a3859209f4a1525ad1ffc15e4050c9505669ce5cd90ba8",
+        "94cb439b8db278514cb229ad2d66604162e7463eb7f9e4b329e3a405e6e0a525"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/2-compare-files-to-blobs",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/secure-file-transfer-protocol-support",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/network-file-system-protocol-support",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+        "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Files versus Blob interface migration checked, including HNS exceptions; local Windows File Sync cache is distinguished from direct mount and requires SMB cloud endpoints. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-azure-files-file-sync--3-manage-file-shares",
+      "sectionHashes": [
+        "1acafbe15721deda3935da1ef1e1fa935b8532d9f600498df7877592f9adb8de",
+        "b1d9f7d19c7acb398828dee5d98a77c0f00bbe0d596f60e7e1481b01e04c6e2e",
+        "91cde02d1c90e38b975aacbe4b924750f5f94d3f7c9d6c2d285d14dfbdd15790"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/3-manage-file-shares",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/files/understanding-billing",
+        "https://learn.microsoft.com/en-us/azure/storage/files/create-classic-file-share",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-configure-file-level-permissions",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Current classic-share protocol/media/billing combinations checked; StandardV2 HDD provisioned v2 and selected identity/share/file/network layers are accurately separated. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-azure-files-file-sync--4-create-file-share-snapshots",
+      "sectionHashes": [
+        "6b9cd962ad8821ca055eaa77f4bc6952afcdd02e829005cb2b8d8b2465db3935",
+        "0bdd39415870ae4776f5c26773a85968c28d9e182637407be75049f365b3a6ba",
+        "5390dc34dec1c8be1fbe435daef8054d311932f61fdfa53682c19bbb8509d044"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/4-create-file-share-snapshots",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Snapshot read-only/incremental recovery, redundancy, 200-count limit and deletion/soft-delete interaction checked; corrected retention wording to include current documented maximum of 10 years. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-azure-files-file-sync--5-implement-file-sync",
+      "sectionHashes": [
+        "5e5af5fdcd67eb4bff4e7f17c4a2bd67fc38fdf077b2085599353b2cb613c659",
+        "8a77ff93eff29311284216b0681e64ff0f6daff080637abebc4ed5635032d91c",
+        "64016ca685db8446bbf5523ef1d04af2040ab2b64318a9ebd761155d8c1948b9"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Whole-share soft-delete scope, 1–365-day retention, account-level classic-share setting and Microsoft.FileShares exclusion checked; overwrites/item deletion need snapshots or backup. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-azure-files-file-sync--6-identify-components",
+      "sectionHashes": [
+        "2ee0b2e394b3a80981e5cf819c1f13c17805c754892a947da18dafe93359651b",
+        "29cee87f71f6a98a7ae1b2ec8fb3ee5ca292b376adb875765a2a3af6c527b3da",
+        "f6c99a76a1c329b254fea9dfb3a78dc05f657c80cb5acc09c9fa2c2ee1ddf1ce"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/6-identify-components",
+        "https://learn.microsoft.com/en-us/azure/storage/common/authorize-data-access",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. Storage Explorer management visibility versus data access and scoped credentials checked; account keys and dependent SAS use coordinated rotation, not simultaneous regeneration. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    },
+    {
+      "lessonId": "configure-azure-files-file-sync--7-deploy-azure-file-sync",
+      "sectionHashes": [
+        "298727a1e695e0f8b03ae8e931a550adefd2035e7ca7b5831bdea5bef6f80101",
+        "3bc8987b85801699c65ba51a31d5527cd6830e621433769c4b4c1111baae731b",
+        "695181bdcd064afa3d74cb00dfe45da892579c59983d348d62b68bc6e838a929"
+      ],
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files"
+      ],
+      "notes": "Independently compared every new paragraph with the actual official unit text and applicable cited current product documentation. File Sync agent/service/group/server/cloud endpoint topology checked; SMB-only cloud share, directly attached NTFS, tiering recall, supported servers and database/log consistency limitations verified. Original teaching/scenarios; no executable code or Azure operations. No 12-word verbatim sequence from the paired unit was found."
+    }
+  ]
+}

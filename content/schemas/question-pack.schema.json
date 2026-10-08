@@ -1,0 +1,440 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]+$",
+      "maxLength": 100
+    },
+    "version": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "blueprintId": {
+      "type": "string",
+      "pattern": "^[a-zA-Z0-9_-]+$",
+      "maxLength": 100
+    },
+    "checkedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "questions": {
+      "type": "array",
+      "maxItems": 5000,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "maxLength": 100
+          },
+          "revision": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "certificationId": {
+            "const": "AZ-104"
+          },
+          "blueprintId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "maxLength": 100
+          },
+          "domainId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "maxLength": 100
+          },
+          "objectiveId": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9_-]+$",
+            "maxLength": 100
+          },
+          "type": {
+            "enum": [
+              "single",
+              "multiple",
+              "ordering",
+              "matching"
+            ]
+          },
+          "requiredSelections": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 6
+          },
+          "difficulty": {
+            "enum": [
+              "foundation",
+              "intermediate",
+              "advanced"
+            ]
+          },
+          "scenario": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8000
+          },
+          "prompt": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 4000
+          },
+          "options": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 6,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]+$",
+                  "maxLength": 100
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8000
+                },
+                "explanation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8000
+                },
+                "referenceIds": {
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9_-]+$",
+                    "maxLength": 100
+                  },
+                  "minItems": 1,
+                  "uniqueItems": true
+                }
+              },
+              "required": [
+                "id",
+                "text",
+                "explanation",
+                "referenceIds"
+              ]
+            }
+          },
+          "correctOptionIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]+$",
+              "maxLength": 100
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "summaryExplanation": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 8000
+          },
+          "summaryReferenceIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]+$",
+              "maxLength": 100
+            },
+            "minItems": 1,
+            "uniqueItems": true
+          },
+          "references": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 20,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]+$",
+                  "maxLength": 100
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8000
+                },
+                "url": {
+                  "type": "string",
+                  "format": "uri",
+                  "maxLength": 2000
+                },
+                "section": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 1000
+                },
+                "checkedAt": {
+                  "type": "string",
+                  "format": "date-time"
+                },
+                "documentUpdatedAt": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "format": "date-time"
+                },
+                "evidenceSummary": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8000
+                },
+                "microsoftOwnershipVerified": {
+                  "type": "boolean"
+                },
+                "fallbackReason": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "maxLength": 2000
+                }
+              },
+              "required": [
+                "id",
+                "title",
+                "url",
+                "section",
+                "checkedAt",
+                "documentUpdatedAt",
+                "evidenceSummary",
+                "microsoftOwnershipVerified",
+                "fallbackReason"
+              ]
+            }
+          },
+          "provenance": {
+            "enum": [
+              "original",
+              "user-created",
+              "ai-assisted"
+            ]
+          },
+          "status": {
+            "enum": [
+              "draft",
+              "reviewed",
+              "verified",
+              "retired"
+            ]
+          },
+          "review": {
+            "anyOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "reviewer": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 8000
+                  },
+                  "reviewedAt": {
+                    "type": "string",
+                    "format": "date-time"
+                  },
+                  "method": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 8000
+                  }
+                },
+                "required": [
+                  "reviewer",
+                  "reviewedAt",
+                  "method"
+                ]
+              }
+            ]
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 8000
+            },
+            "maxItems": 30
+          },
+          "assessmentReserved": {
+            "type": "boolean"
+          },
+          "subObjectiveIds": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 82,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "pattern": "^[a-zA-Z0-9_-]+\\.[1-9][0-9]*$",
+              "maxLength": 110
+            }
+          },
+          "matchPrompts": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 6,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "id",
+                "text"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9_-]+$",
+                  "maxLength": 100
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8000
+                }
+              }
+            }
+          },
+          "caseStudy": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "id",
+              "title",
+              "overview"
+            ],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9_-]+$",
+                "maxLength": 100
+              },
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 8000
+              },
+              "overview": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 8000
+              }
+            }
+          },
+          "exhibits": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 10,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "type",
+                "title"
+              ],
+              "properties": {
+                "type": {
+                  "enum": [
+                    "table",
+                    "code",
+                    "diagram"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8000
+                },
+                "columns": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 20,
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 8000
+                  }
+                },
+                "rows": {
+                  "type": "array",
+                  "minItems": 1,
+                  "maxItems": 100,
+                  "items": {
+                    "type": "array",
+                    "minItems": 1,
+                    "maxItems": 20,
+                    "items": {
+                      "type": "string",
+                      "maxLength": 8000
+                    }
+                  }
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 8000
+                },
+                "language": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 100
+                }
+              }
+            }
+          }
+        },
+        "required": [
+          "id",
+          "revision",
+          "certificationId",
+          "blueprintId",
+          "domainId",
+          "objectiveId",
+          "type",
+          "requiredSelections",
+          "difficulty",
+          "scenario",
+          "prompt",
+          "options",
+          "correctOptionIds",
+          "summaryExplanation",
+          "summaryReferenceIds",
+          "references",
+          "provenance",
+          "status",
+          "review",
+          "tags",
+          "assessmentReserved"
+        ]
+      }
+    }
+  },
+  "required": [
+    "id",
+    "version",
+    "blueprintId",
+    "checkedAt",
+    "questions"
+  ]
+}

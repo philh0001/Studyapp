@@ -1,0 +1,328 @@
+{
+  "checkedAt": "2026-10-08T11:01:00.935301Z",
+  "reviewKind": "AI-assisted semantic source comparison",
+  "humanApproval": false,
+  "moduleIds": [
+    "intro-to-azure-cloud-shell",
+    "create-azure-resource-manager-template-vs-code",
+    "understand-azure-active-directory",
+    "create-configure-manage-identities",
+    "describe-core-architectural-components-of-azure",
+    "sovereignty-policy-initiatives",
+    "secure-azure-resources-with-rbac"
+  ],
+  "questionsReviewed": 42,
+  "optionsReviewed": 168,
+  "findings": [],
+  "questions": [
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Cloud Shell supplies an authenticated browser shell with Azure tools already installed. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Cloud Shell authenticates the signed-in account; it does not elevate its Azure resource permissions. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: The mounted share persists clouddrive files across temporary sessions and devices. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Cloud Shell is intended for interactive use; inactivity can terminate the session and its running work. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: A custom environment can provide administrator privileges that the unprivileged Cloud Shell account lacks. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: The current Cloud Shell editor supports code <filename> to open a file for editing. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Parameters accept environment-specific input, allowing the same resource definition to use different names. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: secureString is the suitable type for a password, and avoiding embedded secrets keeps them out of template source. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: The reference function retrieves runtime resource properties, and outputs return the endpoint object after deployment. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: With the same identities and unchanged settings, repeating the deployment does not create duplicate resources. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Basic is outside the allowedValues list, so the supplied input fails the parameter constraint. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Incremental deployment reapplies the resource properties; omitted properties can reset to defaults, so declare all required non-default values. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: The same tenant can serve multiple subscriptions, while each subscription is associated with one tenant at a time. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: A service principal is the tenant-specific representation of an application. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: The managed service provides traditional domain capabilities without the team deploying and maintaining domain controllers. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Entra users and groups have a flat directory structure; traditional AD DS OU-based Group Policy is not an Entra ID feature. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: P2 includes Identity Protection capabilities for risk-based user and sign-in protection. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps",
+        "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: App Service authentication can enforce sign-in using the configured tenant; requiring authentication protects access to the app. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Dynamic user rules evaluate user attributes and update membership when the matching attributes change. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ],
+      "notes": "Reread current dynamic-membership product documentation, which explicitly says device members need no license; did not repeat the older training unit’s device-licensing implication."
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Hybrid joined devices retain the on-premises domain join and also have an Entra device identity. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: The account remains restorable within the 30-day retention window unless it was permanently deleted. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Verifying the inherited licenses before removing direct ones avoids a gap in service access; the same product is consumed only once per user. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: SCIM and the provisioning service automate user and group lifecycle changes through the target application’s endpoint. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Zones are physically separate datacenter groups with independent power, cooling and networking within a region. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: A zone-redundant service spreads or replicates across zones through the platform, unlike a single-zone placement. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: A shared resource-group lifecycle allows the contained lab resources to be deleted together when the lab ends. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Subscriptions provide billing and access-control boundaries and can separate lifecycle environments. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Management groups sit above subscriptions and allow governance assignments to apply across the subscriptions beneath them. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: The module explicitly warns that services may require customer-configured recovery and replication across regions. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: An initiative groups policy definitions so they can be assigned and tracked together for a shared goal. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: audit records a warning for noncompliance without blocking the request. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: A deny policy evaluates existing resources for compliance but does not delete them merely because they violate the newly assigned rule. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources",
+        "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Policy remediation uses the assignment’s managed identity, which must be authorized for the deployment it performs. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: DoNotEnforce retains compliance evaluation while suppressing the policy effect during resource requests. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: Mitigated records that the policy’s intent is satisfied through another method. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-01",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: This role and narrow scope allow VM management in the intended group without granting access-management authority. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-02",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: NotActions subtracts from one role’s Actions; it is not a deny that overrides permissions granted by a different role. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-03",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: An inherited assignment originates at the parent scope; remove or change that assignment there to revoke its grant. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-04",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: These identify who receives access, what operations are permitted and where the access applies. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-05",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: User Access Administrator manages user access to Azure resources, including role assignments at its authorized scope. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-06",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs"
+      ],
+      "notes": "Compared all four option explanations with the actual cited source text. Verified principle: The Activity Log records Azure RBAC changes; the timespan and operation filters isolate the relevant events. The three alternatives do not satisfy the scenario; no Microsoft assessment text was used."
+    }
+  ]
+}

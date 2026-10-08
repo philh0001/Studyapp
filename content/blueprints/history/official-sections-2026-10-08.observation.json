@@ -1,0 +1,1508 @@
+{
+  "version": 1,
+  "kind": "sections",
+  "generatedAt": "2026-10-08T02:20:24.321Z",
+  "baselineGeneratedAt": "2026-10-08T02:16:54.930Z",
+  "entries": [
+    {
+      "referenceId": "compute-aca-ingress",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/ingress-overview",
+      "checkedAt": "2026-10-08T02:19:31.429Z",
+      "baselineHash": "257f7fef5ffb029a0fe89f2ef850dc2f60d286193db322666b7dc4ece5eb7430",
+      "contentHash": "257f7fef5ffb029a0fe89f2ef850dc2f60d286193db322666b7dc4ece5eb7430",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-aca-revisions",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/revisions",
+      "checkedAt": "2026-10-08T02:19:32.896Z",
+      "baselineHash": "f3cd882e551677e2dcf91974d0d1521e1cde3b8d40ccfa9844c8e3f7cd876b08",
+      "contentHash": "f3cd882e551677e2dcf91974d0d1521e1cde3b8d40ccfa9844c8e3f7cd876b08",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-aca-scale",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+      "checkedAt": "2026-10-08T02:19:33.331Z",
+      "baselineHash": "f7026c4f7c539104848e7b4d5e3834355080871cd8a39b366894c23f7c85d2e7",
+      "contentHash": "f7026c4f7c539104848e7b4d5e3834355080871cd8a39b366894c23f7c85d2e7",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-aci-groups",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups",
+      "checkedAt": "2026-10-08T02:19:33.803Z",
+      "baselineHash": "bc4154ff02c953b62c50f094af838f5f20f70a1007c467a5f86dfdfd581fe3b1",
+      "contentHash": "bc4154ff02c953b62c50f094af838f5f20f70a1007c467a5f86dfdfd581fe3b1",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-aci-restart",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-restart-policy",
+      "checkedAt": "2026-10-08T02:19:34.214Z",
+      "baselineHash": "93ad7cdbf1324e8f96580d628891db9953e83808e55b0aa8d8a3b7294e170cd8",
+      "contentHash": "93ad7cdbf1324e8f96580d628891db9953e83808e55b0aa8d8a3b7294e170cd8",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-acr",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-intro",
+      "checkedAt": "2026-10-08T02:19:34.662Z",
+      "baselineHash": "e878526cf1e96e2e7e68ab00ea4e86626f6d0f7c961f19e727967c963ef02681",
+      "contentHash": "e878526cf1e96e2e7e68ab00ea4e86626f6d0f7c961f19e727967c963ef02681",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-acr-identity",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-registry/container-registry-authentication-managed-identity",
+      "checkedAt": "2026-10-08T02:19:35.076Z",
+      "baselineHash": "cb64cced23bb76d3bc45df641ae2a7bdbf01d021c06f745235c4ab2da57651d6",
+      "contentHash": "cb64cced23bb76d3bc45df641ae2a7bdbf01d021c06f745235c4ab2da57651d6",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-app-autoscale",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling",
+      "checkedAt": "2026-10-08T02:19:35.535Z",
+      "baselineHash": "1216b09e6a5e4aed2dbcdd28aec49db61d830d4b8dca22f03eb865e80c0ebc82",
+      "contentHash": "1216b09e6a5e4aed2dbcdd28aec49db61d830d4b8dca22f03eb865e80c0ebc82",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-app-backup",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/manage-backup",
+      "checkedAt": "2026-10-08T02:19:36.000Z",
+      "baselineHash": "48780e5b28263c44e81c7617bb8a5e5d298889dfc7c4bc575b34ef5d8a605028",
+      "contentHash": "48780e5b28263c44e81c7617bb8a5e5d298889dfc7c4bc575b34ef5d8a605028",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-app-domain",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain",
+      "checkedAt": "2026-10-08T02:19:36.512Z",
+      "baselineHash": "900e997b13ff11920f5913ae53c7f2e31e6e6f05f8b850be6eb40a6d93e07cbe",
+      "contentHash": "900e997b13ff11920f5913ae53c7f2e31e6e6f05f8b850be6eb40a6d93e07cbe",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-app-plans",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+      "checkedAt": "2026-10-08T02:19:36.927Z",
+      "baselineHash": "8303a663fcd34835270bc3b886ece00ea0fe6267f0d4527c97586dac321ab7c5",
+      "contentHash": "8303a663fcd34835270bc3b886ece00ea0fe6267f0d4527c97586dac321ab7c5",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-app-private",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/overview-private-endpoint",
+      "checkedAt": "2026-10-08T02:19:37.316Z",
+      "baselineHash": "6f456a248d2efc7ef74ad82f51a77e164eb6a1a72f6af30880b0f621646895b0",
+      "contentHash": "6f456a248d2efc7ef74ad82f51a77e164eb6a1a72f6af30880b0f621646895b0",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-app-scale",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up",
+      "checkedAt": "2026-10-08T02:19:37.707Z",
+      "baselineHash": "6c69cb364989bee7e125ad76babc2136f1597dbf2ba5954bc326741504f65d85",
+      "contentHash": "6c69cb364989bee7e125ad76babc2136f1597dbf2ba5954bc326741504f65d85",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-app-slots",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+      "checkedAt": "2026-10-08T02:19:38.092Z",
+      "baselineHash": "b9770d5cb696e9ed7b94d8ca891daf55feb7d9cf532381c62205d84484700916",
+      "contentHash": "b9770d5cb696e9ed7b94d8ca891daf55feb7d9cf532381c62205d84484700916",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-app-tls",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/configure-ssl-bindings",
+      "checkedAt": "2026-10-08T02:19:38.567Z",
+      "baselineHash": "5bc876dd8edeb8536d4e6289f6f40d67c472f518a2ea2b213e68ff73c7b25f40",
+      "contentHash": "5bc876dd8edeb8536d4e6289f6f40d67c472f518a2ea2b213e68ff73c7b25f40",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-app-vnet",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/overview-vnet-integration",
+      "checkedAt": "2026-10-08T02:19:38.959Z",
+      "baselineHash": "2c877e8fd833f9c07154429b7aaa6c534b19464f51601388a36e765f42831fa4",
+      "contentHash": "2c877e8fd833f9c07154429b7aaa6c534b19464f51601388a36e765f42831fa4",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-arm-export",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/export-template-portal",
+      "checkedAt": "2026-10-08T02:19:39.367Z",
+      "baselineHash": "f4fde713a98da652814bed581c34e4a0e6aa1537044297c5298164c618eab038",
+      "contentHash": "f4fde713a98da652814bed581c34e4a0e6aa1537044297c5298164c618eab038",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-arm-modes",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes",
+      "checkedAt": "2026-10-08T02:19:39.783Z",
+      "baselineHash": "45c2ceab24fcb4c71c5e8e46b483fc3f0cb75fa7b04fba409ac5f234a781be68",
+      "contentHash": "45c2ceab24fcb4c71c5e8e46b483fc3f0cb75fa7b04fba409ac5f234a781be68",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-arm-parameters",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/parameters",
+      "checkedAt": "2026-10-08T02:19:40.175Z",
+      "baselineHash": "135004117372945d3be1a7dc7c9540a7e7e68ce4edd882fc18d138a329025e4b",
+      "contentHash": "135004117372945d3be1a7dc7c9540a7e7e68ce4edd882fc18d138a329025e4b",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-bicep-cli",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-cli",
+      "checkedAt": "2026-10-08T02:19:40.563Z",
+      "baselineHash": "18a7b2dfb0399e6b832f771598bc13949337ee03df04a5ba753e3ad98e5fae13",
+      "contentHash": "18a7b2dfb0399e6b832f771598bc13949337ee03df04a5ba753e3ad98e5fae13",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-bicep-decompile",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/decompile",
+      "checkedAt": "2026-10-08T02:19:40.960Z",
+      "baselineHash": "c1d2a02648efa1b5c6b04f6b3d0b02fab4b5e08763c58356d0d04736fab43acd",
+      "contentHash": "c1d2a02648efa1b5c6b04f6b3d0b02fab4b5e08763c58356d0d04736fab43acd",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-bicep-dependencies",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/resource-dependencies",
+      "checkedAt": "2026-10-08T02:19:41.362Z",
+      "baselineHash": "59e48736bdf774876781f5f51815ff0d7e594cd6ca9a090f6382784818a10cde",
+      "contentHash": "59e48736bdf774876781f5f51815ff0d7e594cd6ca9a090f6382784818a10cde",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-bicep-files",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/file",
+      "checkedAt": "2026-10-08T02:19:41.770Z",
+      "baselineHash": "55a3c16f1095ed1b3e3529e78dd649e48e95b3fb880002985f03cd7cfbbd9f83",
+      "contentHash": "55a3c16f1095ed1b3e3529e78dd649e48e95b3fb880002985f03cd7cfbbd9f83",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-bicep-parameters",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/parameters",
+      "checkedAt": "2026-10-08T02:19:42.168Z",
+      "baselineHash": "b1b4207e2959f05fc826eaed0a524d6a2d0bf336b0e998c4209443379371d5e5",
+      "contentHash": "b1b4207e2959f05fc826eaed0a524d6a2d0bf336b0e998c4209443379371d5e5",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-bicep-whatif",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/bicep/deploy-what-if",
+      "checkedAt": "2026-10-08T02:19:42.570Z",
+      "baselineHash": "b9ac74f34515101886b869606fc1cc2da2742bcc325b07b0d5e56d3217d68921",
+      "contentHash": "b9ac74f34515101886b869606fc1cc2da2742bcc325b07b0d5e56d3217d68921",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-vm-attach",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/attach-disk-portal",
+      "checkedAt": "2026-10-08T02:19:42.975Z",
+      "baselineHash": "4d4ae8c669ff464db3cf8221ded495d924521e16fb16d6d7101e415b30f76f55",
+      "contentHash": "4d4ae8c669ff464db3cf8221ded495d924521e16fb16d6d7101e415b30f76f55",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-vm-disk-types",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/disks-types",
+      "checkedAt": "2026-10-08T02:19:43.363Z",
+      "baselineHash": "7c6c5ace1e7f3b7f012f59dba21b854ee84173b2ce2f31de162b4c48eed7b4a7",
+      "contentHash": "7c6c5ace1e7f3b7f012f59dba21b854ee84173b2ce2f31de162b4c48eed7b4a7",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-vm-disks",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/managed-disks-overview",
+      "checkedAt": "2026-10-08T02:19:43.783Z",
+      "baselineHash": "381281dae4bbdfeb3abc775e08603140d78b3d7b45fafbf774e5b932e74bf0b5",
+      "contentHash": "381281dae4bbdfeb3abc775e08603140d78b3d7b45fafbf774e5b932e74bf0b5",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-vm-encryption",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/disk-encryption",
+      "checkedAt": "2026-10-08T02:19:44.170Z",
+      "baselineHash": "d665c7b6cde06c4a3a8a9ff55de96f3204afd4d1426a8efdfed04c12e84f21a2",
+      "contentHash": "d665c7b6cde06c4a3a8a9ff55de96f3204afd4d1426a8efdfed04c12e84f21a2",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-vm-host-encryption",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/linux/disks-enable-host-based-encryption-cli",
+      "checkedAt": "2026-10-08T02:19:44.567Z",
+      "baselineHash": "7d5bf67c5900be1dfbeb58c09916e0e381c7145b6d6026202e55d30a27dec5f7",
+      "contentHash": "7d5bf67c5900be1dfbeb58c09916e0e381c7145b6d6026202e55d30a27dec5f7",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-vm-move",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/move-resource-group-and-subscription",
+      "checkedAt": "2026-10-08T02:19:44.971Z",
+      "baselineHash": "fe594e300acc8bf7911d35ba97054005912a34fcc5168bbced55555b291aff0a",
+      "contentHash": "fe594e300acc8bf7911d35ba97054005912a34fcc5168bbced55555b291aff0a",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-vm-region",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/resource-mover/tutorial-move-region-virtual-machines",
+      "checkedAt": "2026-10-08T02:19:45.394Z",
+      "baselineHash": "738364faa683d19e9ebb2aafe5c772b06c6ebd3dd98618ef98b0acd00d71c715",
+      "contentHash": "738364faa683d19e9ebb2aafe5c772b06c6ebd3dd98618ef98b0acd00d71c715",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-vm-resize",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm",
+      "checkedAt": "2026-10-08T02:19:45.801Z",
+      "baselineHash": "59b7a57c4b849487c842abf3c88f3d9662f9af140aaebe65a7e1ac84f6d70e02",
+      "contentHash": "59b7a57c4b849487c842abf3c88f3d9662f9af140aaebe65a7e1ac84f6d70e02",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-vm-sets",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+      "checkedAt": "2026-10-08T02:19:46.207Z",
+      "baselineHash": "ab64e18fa8645df872cbaa74b89d7115493a90005b3561f3b6b70edbf1d3bb45",
+      "contentHash": "ab64e18fa8645df872cbaa74b89d7115493a90005b3561f3b6b70edbf1d3bb45",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-vm-zones",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability",
+      "checkedAt": "2026-10-08T02:19:46.599Z",
+      "baselineHash": "41f087beab7efc6b291dbd94b039efe37c61ba35ea11fd55892fa1e96e9e01c2",
+      "contentHash": "41f087beab7efc6b291dbd94b039efe37c61ba35ea11fd55892fa1e96e9e01c2",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-vmss-autoscale",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview",
+      "checkedAt": "2026-10-08T02:19:47.009Z",
+      "baselineHash": "3f91cf8684b4bdaa938d7370faf024fc18cba07820d8406950fae9d6bd577930",
+      "contentHash": "3f91cf8684b4bdaa938d7370faf024fc18cba07820d8406950fae9d6bd577930",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "compute-vmss-flex",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes",
+      "checkedAt": "2026-10-08T02:19:47.414Z",
+      "baselineHash": "925429b0197266ef523cb5095fd6fa69596af3942764d1034d645ad7588e0b19",
+      "contentHash": "925429b0197266ef523cb5095fd6fa69596af3942764d1034d645ad7588e0b19",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-deny",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/deny-assignments",
+      "checkedAt": "2026-10-08T02:19:47.811Z",
+      "baselineHash": "0f5af23a3f1500598d8853659c97660139c722d8900fea763aab176b1a18dcd1",
+      "contentHash": "0f5af23a3f1500598d8853659c97660139c722d8900fea763aab176b1a18dcd1",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-resource-groups",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal",
+      "checkedAt": "2026-10-08T02:19:48.218Z",
+      "baselineHash": "880865c99fb5982bc2c70115c273a347375883205d9e9d1ba29418e5fc3192cc",
+      "contentHash": "880865c99fb5982bc2c70115c273a347375883205d9e9d1ba29418e5fc3192cc",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-policy",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+      "checkedAt": "2026-10-08T02:19:48.599Z",
+      "baselineHash": "efdacea50fa8f9efbe1e92c1eafee99b0b2a175b7679819ca08995492e78298b",
+      "contentHash": "efdacea50fa8f9efbe1e92c1eafee99b0b2a175b7679819ca08995492e78298b",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-rbac",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+      "checkedAt": "2026-10-08T02:19:48.999Z",
+      "baselineHash": "d0ad88e2a2c777bab3c1e53a39fe8d8e7b7ac039830d885fa2d84eaeed245750",
+      "contentHash": "d0ad88e2a2c777bab3c1e53a39fe8d8e7b7ac039830d885fa2d84eaeed245750",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-roles",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/built-in-roles",
+      "checkedAt": "2026-10-08T02:19:49.381Z",
+      "baselineHash": "62241593250b54b65ad4b4672d2553d50fc1930a80b0c0daad05b688bcb2b1b3",
+      "contentHash": "62241593250b54b65ad4b4672d2553d50fc1930a80b0c0daad05b688bcb2b1b3",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-guests",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/entra/external-id/add-users-administrator",
+      "checkedAt": "2026-10-08T02:19:49.920Z",
+      "baselineHash": "a5018a1f86ff85412cb462b4c45655fb71f6ff497210f7ab1f043b309f230c6c",
+      "contentHash": "a5018a1f86ff85412cb462b4c45655fb71f6ff497210f7ab1f043b309f230c6c",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-subscriptions",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/cost-management-billing/manage/add-change-subscription-administrator",
+      "checkedAt": "2026-10-08T02:19:50.272Z",
+      "baselineHash": "8997ee01c830fe397573c2856ccf17c9328a080207873222969eae41e56b779a",
+      "contentHash": "8997ee01c830fe397573c2856ccf17c9328a080207873222969eae41e56b779a",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-scope",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/scope-overview",
+      "checkedAt": "2026-10-08T02:19:50.622Z",
+      "baselineHash": "76d5130c47664a383f2f0c6667b9de733f0383931d2ac5139697b7ecbd864709",
+      "contentHash": "76d5130c47664a383f2f0c6667b9de733f0383931d2ac5139697b7ecbd864709",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-advisor",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/advisor/advisor-overview",
+      "checkedAt": "2026-10-08T02:19:50.981Z",
+      "baselineHash": "879301d5ec7bd8248c3a78efb76d64df3789e987b696922c90e8a47b90737223",
+      "contentHash": "879301d5ec7bd8248c3a78efb76d64df3789e987b696922c90e8a47b90737223",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-dynamic",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership",
+      "checkedAt": "2026-10-08T02:19:51.366Z",
+      "baselineHash": "020c982adba574e4cd9b0a3dc137dd72342f08922708f248ccfc3eb43a2b4d14",
+      "contentHash": "020c982adba574e4cd9b0a3dc137dd72342f08922708f248ccfc3eb43a2b4d14",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-locks",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+      "checkedAt": "2026-10-08T02:19:51.800Z",
+      "baselineHash": "dfdff6f551f4e5a36a411a257220a570205a4de02d57d3b80d9b16144777d6e4",
+      "contentHash": "dfdff6f551f4e5a36a411a257220a570205a4de02d57d3b80d9b16144777d6e4",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-management-groups",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/governance/management-groups/overview",
+      "checkedAt": "2026-10-08T02:19:52.181Z",
+      "baselineHash": "8dd34cc4d9e65d239bed1174edced3a53044270c4120fbe0c5b2cbcb2160e890",
+      "contentHash": "8dd34cc4d9e65d239bed1174edced3a53044270c4120fbe0c5b2cbcb2160e890",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-groups",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-manage-groups",
+      "checkedAt": "2026-10-08T02:19:52.533Z",
+      "baselineHash": "7a702dda57d25527f6fe469cf3a669b587cd7b51e117f12376408174e37fda45",
+      "contentHash": "7a702dda57d25527f6fe469cf3a669b587cd7b51e117f12376408174e37fda45",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-budgets",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/cost-management-billing/costs/tutorial-acm-create-budgets",
+      "checkedAt": "2026-10-08T02:19:52.888Z",
+      "baselineHash": "58efe03d20f2e5b72881dc82687f2c7f1c37913874800e99f929d446f5a3bf2f",
+      "contentHash": "58efe03d20f2e5b72881dc82687f2c7f1c37913874800e99f929d446f5a3bf2f",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-sspr",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+      "checkedAt": "2026-10-08T02:19:53.265Z",
+      "baselineHash": "34ebc4baf37ac6cfd9ed5aec163e43135e8a199e147c754c44e402468ec431f4",
+      "contentHash": "34ebc4baf37ac6cfd9ed5aec163e43135e8a199e147c754c44e402468ec431f4",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-remediation",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources",
+      "checkedAt": "2026-10-08T02:19:53.635Z",
+      "baselineHash": "fd06c245546c379914e8357983c214863d3d76987fe3c2074ec3b5d67140f0b7",
+      "contentHash": "fd06c245546c379914e8357983c214863d3d76987fe3c2074ec3b5d67140f0b7",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-sspr-writeback",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-writeback",
+      "checkedAt": "2026-10-08T02:19:53.997Z",
+      "baselineHash": "65bda612a252104b0784f4b33ac42294f1d1cda462d692b55ffec02262c8859c",
+      "contentHash": "65bda612a252104b0784f4b33ac42294f1d1cda462d692b55ffec02262c8859c",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-tags",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources",
+      "checkedAt": "2026-10-08T02:19:54.363Z",
+      "baselineHash": "da385f6fcc7d703361dff9503bba83278fc4256c01e84fff5bbf189d6794c00a",
+      "contentHash": "da385f6fcc7d703361dff9503bba83278fc4256c01e84fff5bbf189d6794c00a",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-users",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-create-delete-users",
+      "checkedAt": "2026-10-08T02:19:54.730Z",
+      "baselineHash": "923159c37483b3361605b89e7ccec51bcd0ac0e1c4b50069c591bbbfb57fe214",
+      "contentHash": "923159c37483b3361605b89e7ccec51bcd0ac0e1c4b50069c591bbbfb57fe214",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "identity-license",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/microsoft-365/admin/manage/manage-group-licenses?view=o365-worldwide&preserve-view=true",
+      "checkedAt": "2026-10-08T02:19:55.107Z",
+      "baselineHash": "6f5d5696856e7d731031808cc18307ef905cf0972c38e684330190ddc34b3e9a",
+      "contentHash": "6f5d5696856e7d731031808cc18307ef905cf0972c38e684330190ddc34b3e9a",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "guide",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/credentials/certifications/resources/study-guides/az-104",
+      "checkedAt": "2026-10-08T02:19:55.494Z",
+      "baselineHash": "163afaf9c861f88a35e230224e6dec2c49efeb2a8918ec88cde664848c4796de",
+      "contentHash": "163afaf9c861f88a35e230224e6dec2c49efeb2a8918ec88cde664848c4796de",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "rbac",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/role-based-access-control/overview",
+      "checkedAt": "2026-10-08T02:19:48.999Z",
+      "baselineHash": "d0ad88e2a2c777bab3c1e53a39fe8d8e7b7ac039830d885fa2d84eaeed245750",
+      "contentHash": "d0ad88e2a2c777bab3c1e53a39fe8d8e7b7ac039830d885fa2d84eaeed245750",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "policy",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/governance/policy/overview",
+      "checkedAt": "2026-10-08T02:19:48.599Z",
+      "baselineHash": "efdacea50fa8f9efbe1e92c1eafee99b0b2a175b7679819ca08995492e78298b",
+      "contentHash": "efdacea50fa8f9efbe1e92c1eafee99b0b2a175b7679819ca08995492e78298b",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "locks",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources",
+      "checkedAt": "2026-10-08T02:19:51.800Z",
+      "baselineHash": "dfdff6f551f4e5a36a411a257220a570205a4de02d57d3b80d9b16144777d6e4",
+      "contentHash": "dfdff6f551f4e5a36a411a257220a570205a4de02d57d3b80d9b16144777d6e4",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "redundancy",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+      "checkedAt": "2026-10-08T02:19:55.864Z",
+      "baselineHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44",
+      "contentHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "sas",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+      "checkedAt": "2026-10-08T02:19:56.234Z",
+      "baselineHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667",
+      "contentHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "tiers",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+      "checkedAt": "2026-10-08T02:19:56.612Z",
+      "baselineHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60",
+      "contentHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "availability",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview",
+      "checkedAt": "2026-10-08T02:19:46.207Z",
+      "baselineHash": "ab64e18fa8645df872cbaa74b89d7115493a90005b3561f3b6b70edbf1d3bb45",
+      "contentHash": "ab64e18fa8645df872cbaa74b89d7115493a90005b3561f3b6b70edbf1d3bb45",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "slots",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+      "checkedAt": "2026-10-08T02:19:38.092Z",
+      "baselineHash": "b9770d5cb696e9ed7b94d8ca891daf55feb7d9cf532381c62205d84484700916",
+      "contentHash": "b9770d5cb696e9ed7b94d8ca891daf55feb7d9cf532381c62205d84484700916",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "containers",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/scale-app",
+      "checkedAt": "2026-10-08T02:19:33.331Z",
+      "baselineHash": "f7026c4f7c539104848e7b4d5e3834355080871cd8a39b366894c23f7c85d2e7",
+      "contentHash": "f7026c4f7c539104848e7b4d5e3834355080871cd8a39b366894c23f7c85d2e7",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "peering",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+      "checkedAt": "2026-10-08T02:19:56.966Z",
+      "baselineHash": "6742103bde3e01b00d05d703b7ad56b9920c853538b7ede3b7d2314ab5d35952",
+      "contentHash": "6742103bde3e01b00d05d703b7ad56b9920c853538b7ede3b7d2314ab5d35952",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "nsg",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+      "checkedAt": "2026-10-08T02:19:57.327Z",
+      "baselineHash": "b141eccde42ed5b61214c53cb494e39e4881d53626a2ccb8fb8885feb929a2e4",
+      "contentHash": "b141eccde42ed5b61214c53cb494e39e4881d53626a2ccb8fb8885feb929a2e4",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "private",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+      "checkedAt": "2026-10-08T02:19:58.009Z",
+      "baselineHash": "79325b0246194e2059b11065f8bb4bc5f728e91a1a981ef96dc6d81da74f1ce4",
+      "contentHash": "79325b0246194e2059b11065f8bb4bc5f728e91a1a981ef96dc6d81da74f1ce4",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "alerts",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+      "checkedAt": "2026-10-08T02:19:58.368Z",
+      "baselineHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde",
+      "contentHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "logs",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+      "checkedAt": "2026-10-08T02:19:58.721Z",
+      "baselineHash": "090721822b64e6e9eac0258ba0583f5530740965d3177ffea585e3b31ed540e2",
+      "contentHash": "090721822b64e6e9eac0258ba0583f5530740965d3177ffea585e3b31ed540e2",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "backup",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+      "checkedAt": "2026-10-08T02:19:59.095Z",
+      "baselineHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e",
+      "contentHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-dcr",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview",
+      "checkedAt": "2026-10-08T02:19:59.482Z",
+      "baselineHash": "9a693f7fe85657abc894e77d9666b14e3a17019ce69a58527c62f5d5b1a183a8",
+      "contentHash": "9a693f7fe85657abc894e77d9666b14e3a17019ce69a58527c62f5d5b1a183a8",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-metrics",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained",
+      "checkedAt": "2026-10-08T02:19:59.867Z",
+      "baselineHash": "a01d84be64fe061cf3d33627baad6bcd30d3deede2389271878af35f3f2a7943",
+      "contentHash": "a01d84be64fe061cf3d33627baad6bcd30d3deede2389271878af35f3f2a7943",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-vault",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault",
+      "checkedAt": "2026-10-08T02:20:00.217Z",
+      "baselineHash": "386905fb328ccdbac3759a3c86b829f565d34ae6d22b731c3c8e77b8bcc77d79",
+      "contentHash": "386905fb328ccdbac3759a3c86b829f565d34ae6d22b731c3c8e77b8bcc77d79",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-kql",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+      "checkedAt": "2026-10-08T02:20:00.573Z",
+      "baselineHash": "c19f7c7bfa20c506a783ef95a0e283bbc6b05e4e9d61446e2821147c5942262e",
+      "contentHash": "c19f7c7bfa20c506a783ef95a0e283bbc6b05e4e9d61446e2821147c5942262e",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-storage",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview",
+      "checkedAt": "2026-10-08T02:20:00.962Z",
+      "baselineHash": "2fa89c03c2ff8c774cf323aaa11f40b92a8bfa40da36e560a3bae548de8c0858",
+      "contentHash": "2fa89c03c2ff8c774cf323aaa11f40b92a8bfa40da36e560a3bae548de8c0858",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-backupvault",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-vault-overview",
+      "checkedAt": "2026-10-08T02:20:01.319Z",
+      "baselineHash": "24f0f4cdea4e9a7e1886b43fae3fb3a2dc5faa19d2f75acb6efdd1d72e1a6ea6",
+      "contentHash": "24f0f4cdea4e9a7e1886b43fae3fb3a2dc5faa19d2f75acb6efdd1d72e1a6ea6",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-backupalerts",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-monitoring-use-azuremonitor",
+      "checkedAt": "2026-10-08T02:20:01.668Z",
+      "baselineHash": "6ee02034292726a936bf07abb97a756e3808fafde34d2eb98e03ec133bb99aa9",
+      "contentHash": "6ee02034292726a936bf07abb97a756e3808fafde34d2eb98e03ec133bb99aa9",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-restore",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms",
+      "checkedAt": "2026-10-08T02:20:02.062Z",
+      "baselineHash": "d2f7d3cd2ab8348fb822a53d46e2d0dd5c814760a722f036d8a6030ed1d5eb18",
+      "contentHash": "d2f7d3cd2ab8348fb822a53d46e2d0dd5c814760a722f036d8a6030ed1d5eb18",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-reports",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/configure-reports",
+      "checkedAt": "2026-10-08T02:20:02.437Z",
+      "baselineHash": "8bcf852e011e2b005e7b45ddb6359f7d2c0808bbb2eed4055e228af082836120",
+      "contentHash": "8bcf852e011e2b005e7b45ddb6359f7d2c0808bbb2eed4055e228af082836120",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-failover",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback",
+      "checkedAt": "2026-10-08T02:20:02.858Z",
+      "baselineHash": "f65013b8c4256c70a04bc119c845ca610ca50d3a95a3c4b54d0f28f7dda8e0a8",
+      "contentHash": "f65013b8c4256c70a04bc119c845ca610ca50d3a95a3c4b54d0f28f7dda8e0a8",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-connection",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview",
+      "checkedAt": "2026-10-08T02:20:03.209Z",
+      "baselineHash": "88862c456fe55b9b4c23e762b4dd57b685f55c450d2a36012d81f76ef49f23aa",
+      "contentHash": "88862c456fe55b9b4c23e762b4dd57b685f55c450d2a36012d81f76ef49f23aa",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-replication",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-replication",
+      "checkedAt": "2026-10-08T02:20:03.564Z",
+      "baselineHash": "d4e977d30d5f339c8083de4d7f9f737be387a92f0cc48bc5d574b6fb0f617c8b",
+      "contentHash": "d4e977d30d5f339c8083de4d7f9f737be387a92f0cc48bc5d574b6fb0f617c8b",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-backup",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+      "checkedAt": "2026-10-08T02:19:59.095Z",
+      "baselineHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e",
+      "contentHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-alerts",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+      "checkedAt": "2026-10-08T02:19:58.368Z",
+      "baselineHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde",
+      "contentHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-diagnostic",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings",
+      "checkedAt": "2026-10-08T02:20:03.922Z",
+      "baselineHash": "7fac41e65b4ab90b5961b552a1a08cccb1ccea6f30c8d2c7fe4811f5189e7d9b",
+      "contentHash": "7fac41e65b4ab90b5961b552a1a08cccb1ccea6f30c8d2c7fe4811f5189e7d9b",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-testfailover",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill",
+      "checkedAt": "2026-10-08T02:20:04.274Z",
+      "baselineHash": "d67792e1e03387ea3047340bea01278649d6fb8eb979507221f51c70fb91ea71",
+      "contentHash": "d67792e1e03387ea3047340bea01278649d6fb8eb979507221f51c70fb91ea71",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-processing",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules",
+      "checkedAt": "2026-10-08T02:20:04.619Z",
+      "baselineHash": "c64cb90a431168cea2936035e664a0e8114838d8932ad8a6999346d32b231fd9",
+      "contentHash": "c64cb90a431168cea2936035e664a0e8114838d8932ad8a6999346d32b231fd9",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-logs",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+      "checkedAt": "2026-10-08T02:19:58.721Z",
+      "baselineHash": "090721822b64e6e9eac0258ba0583f5530740965d3177ffea585e3b31ed540e2",
+      "contentHash": "090721822b64e6e9eac0258ba0583f5530740965d3177ffea585e3b31ed540e2",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-policy",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy",
+      "checkedAt": "2026-10-08T02:20:04.977Z",
+      "baselineHash": "b09840bbe103c242003ff24a8c7323c25a2738b329ea77977eb203fcf72fe2f3",
+      "contentHash": "b09840bbe103c242003ff24a8c7323c25a2738b329ea77977eb203fcf72fe2f3",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-watcher",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+      "checkedAt": "2026-10-08T02:20:05.329Z",
+      "baselineHash": "b90a207a7e26eca5126ae4ff46a2496003fdedd3b21767ee25df2890e6b1c1c6",
+      "contentHash": "b90a207a7e26eca5126ae4ff46a2496003fdedd3b21767ee25df2890e6b1c1c6",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "monx-insights",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+      "checkedAt": "2026-10-08T02:20:05.680Z",
+      "baselineHash": "b87cd99069585ff97ce2ceaa4e3de33181054591d1790e81d19e8d2c800d5646",
+      "contentHash": "b87cd99069585ff97ce2ceaa4e3de33181054591d1790e81d19e8d2c800d5646",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-peering",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview",
+      "checkedAt": "2026-10-08T02:19:56.966Z",
+      "baselineHash": "6742103bde3e01b00d05d703b7ad56b9920c853538b7ede3b7d2314ab5d35952",
+      "contentHash": "6742103bde3e01b00d05d703b7ad56b9920c853538b7ede3b7d2314ab5d35952",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-privateDns",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/private-dns-overview",
+      "checkedAt": "2026-10-08T02:20:06.060Z",
+      "baselineHash": "dc81631e39c2fe291565bd24e7f1a4df8435563611179dd2e3bb4bb49e112ad1",
+      "contentHash": "dc81631e39c2fe291565bd24e7f1a4df8435563611179dd2e3bb4bb49e112ad1",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-vnet",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-overview",
+      "checkedAt": "2026-10-08T02:20:06.406Z",
+      "baselineHash": "02b41cad8fa24a3a4a8be5dd52ebcb4c52c58a58a76d004daca7cd4f90775d44",
+      "contentHash": "02b41cad8fa24a3a4a8be5dd52ebcb4c52c58a58a76d004daca7cd4f90775d44",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-probe",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+      "checkedAt": "2026-10-08T02:20:06.759Z",
+      "baselineHash": "7cd88d9de0a362d5416895c08220b4b5d0f1341c02a80c3b086172150544bb77",
+      "contentHash": "7cd88d9de0a362d5416895c08220b4b5d0f1341c02a80c3b086172150544bb77",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-subnet",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet",
+      "checkedAt": "2026-10-08T02:20:07.111Z",
+      "baselineHash": "43ce1f72c78eedb446bcdee2ec2ee1733055030e2970e5e4961c980bd2f88ce9",
+      "contentHash": "43ce1f72c78eedb446bcdee2ec2ee1733055030e2970e5e4961c980bd2f88ce9",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-dns",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-overview",
+      "checkedAt": "2026-10-08T02:20:07.471Z",
+      "baselineHash": "3468e6ec3be842ebd2c43d6bda2b95378be974bc7f564d48a186516f92865c09",
+      "contentHash": "3468e6ec3be842ebd2c43d6bda2b95378be974bc7f564d48a186516f92865c09",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-lb",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+      "checkedAt": "2026-10-08T02:20:07.866Z",
+      "baselineHash": "1d6e1250f6f0ebf3a38531140e653949f5fcae847510a3fa2a5ec5649f96a251",
+      "contentHash": "1d6e1250f6f0ebf3a38531140e653949f5fcae847510a3fa2a5ec5649f96a251",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-privateEndpoint",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-overview",
+      "checkedAt": "2026-10-08T02:19:58.009Z",
+      "baselineHash": "79325b0246194e2059b11065f8bb4bc5f728e91a1a981ef96dc6d81da74f1ce4",
+      "contentHash": "79325b0246194e2059b11065f8bb4bc5f728e91a1a981ef96dc6d81da74f1ce4",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-privateLinks",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/private-dns-virtual-network-links",
+      "checkedAt": "2026-10-08T02:20:08.216Z",
+      "baselineHash": "ce686840aa5a9b9754f32b2a45a785817b363316c343eda5c6327ff5a9dfa803",
+      "contentHash": "ce686840aa5a9b9754f32b2a45a785817b363316c343eda5c6327ff5a9dfa803",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-records",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records",
+      "checkedAt": "2026-10-08T02:20:08.578Z",
+      "baselineHash": "2ed9315fdfc77bc5579d8d37074016a2812b0630b2ea358961ed1383b515bd79",
+      "contentHash": "2ed9315fdfc77bc5579d8d37074016a2812b0630b2ea358961ed1383b515bd79",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-route",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+      "checkedAt": "2026-10-08T02:20:08.963Z",
+      "baselineHash": "18f33fde495bdcca4f6847f14b0bda1df5e56401bde57814d8918d1e041f20c9",
+      "contentHash": "18f33fde495bdcca4f6847f14b0bda1df5e56401bde57814d8918d1e041f20c9",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-asg",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/application-security-groups",
+      "checkedAt": "2026-10-08T02:20:09.374Z",
+      "baselineHash": "7049a7e12389d4521498c71ab4bb87c32c599fcaa331a43f44a5fc7a64a23cd8",
+      "contentHash": "7049a7e12389d4521498c71ab4bb87c32c599fcaa331a43f44a5fc7a64a23cd8",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-effective",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-group-how-it-works",
+      "checkedAt": "2026-10-08T02:20:09.724Z",
+      "baselineHash": "e8a109f05cbb48c7b6a786f12562fec24c87b22ebbf737281457f5871a6a434d",
+      "contentHash": "e8a109f05cbb48c7b6a786f12562fec24c87b22ebbf737281457f5871a6a434d",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-delegate",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/dns/dns-delegate-domain-azure-dns",
+      "checkedAt": "2026-10-08T02:20:10.087Z",
+      "baselineHash": "5de53b994547feba0496ed7550bc264335e018f2dbf8290e5c4519cd3f343d98",
+      "contentHash": "5de53b994547feba0496ed7550bc264335e018f2dbf8290e5c4519cd3f343d98",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-nsg",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview",
+      "checkedAt": "2026-10-08T02:19:57.327Z",
+      "baselineHash": "b141eccde42ed5b61214c53cb494e39e4881d53626a2ccb8fb8885feb929a2e4",
+      "contentHash": "b141eccde42ed5b61214c53cb494e39e4881d53626a2ccb8fb8885feb929a2e4",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-bastion",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/bastion/configuration-settings",
+      "checkedAt": "2026-10-08T02:20:10.435Z",
+      "baselineHash": "3000e417a65d511f04195c8dd87937fc907c07d515f6e315f11418fe4d69990f",
+      "contentHash": "3000e417a65d511f04195c8dd87937fc907c07d515f6e315f11418fe4d69990f",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-privateDnsEndpoint",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/private-link/private-endpoint-dns",
+      "checkedAt": "2026-10-08T02:20:10.788Z",
+      "baselineHash": "c413263a60d2cf7e98c7347518e3bbb34a1a2d70e35dae9dd32776b627415fc6",
+      "contentHash": "c413263a60d2cf7e98c7347518e3bbb34a1a2d70e35dae9dd32776b627415fc6",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-ip",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses",
+      "checkedAt": "2026-10-08T02:20:11.167Z",
+      "baselineHash": "bbede26d4d543197c8b0ee61fb6fc9e58fbc5dc673dda731be542c2a9fb28df0",
+      "contentHash": "bbede26d4d543197c8b0ee61fb6fc9e58fbc5dc673dda731be542c2a9fb28df0",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-watcher",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-troubleshoot-overview",
+      "checkedAt": "2026-10-08T02:20:11.525Z",
+      "baselineHash": "ad3e9938887678f3d6e62918f67b1ad0d728d3790a27f362ee881a2d687e5394",
+      "contentHash": "ad3e9938887678f3d6e62918f67b1ad0d728d3790a27f362ee881a2d687e5394",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-endpoint",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview",
+      "checkedAt": "2026-10-08T02:20:11.886Z",
+      "baselineHash": "18949b591ce16e5cc6b056657fbbcb8303a8e9073178c4388725b9d54d8c89bc",
+      "contentHash": "18949b591ce16e5cc6b056657fbbcb8303a8e9073178c4388725b9d54d8c89bc",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-troubleshoot",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/troubleshoot/azure/load-balancer/load-balancer-troubleshoot-health-probe-status",
+      "checkedAt": "2026-10-08T02:20:12.263Z",
+      "baselineHash": "68fd0d8b5f93a6d833c6d987e58ed85d7fb21443001e0bda06faefe84cdf3a6b",
+      "contentHash": "68fd0d8b5f93a6d833c6d987e58ed85d7fb21443001e0bda06faefe84cdf3a6b",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-managePeering",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-peering",
+      "checkedAt": "2026-10-08T02:20:12.629Z",
+      "baselineHash": "205252a6ea8932e8aec337d7e59a4b048c53193cce601132fe93c88bfa0416a0",
+      "contentHash": "205252a6ea8932e8aec337d7e59a4b048c53193cce601132fe93c88bfa0416a0",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "networking-plus-components",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/load-balancer/components",
+      "checkedAt": "2026-10-08T02:20:12.997Z",
+      "baselineHash": "7320553524934ab92d977546555855ea89b6ef54ca20ac507907a554546bdc91",
+      "contentHash": "7320553524934ab92d977546555855ea89b6ef54ca20ac507907a554546bdc91",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-firewall",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security",
+      "checkedAt": "2026-10-08T02:20:13.364Z",
+      "baselineHash": "9b590e56a19268836ef39ed5911c3399c5262e5f41afcd47a0e7991cd0bb47b2",
+      "contentHash": "9b590e56a19268836ef39ed5911c3399c5262e5f41afcd47a0e7991cd0bb47b2",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-sas",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview",
+      "checkedAt": "2026-10-08T02:19:56.234Z",
+      "baselineHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667",
+      "contentHash": "0660afa3c434891c74f7b9a34817ad7659829a8503dbbc112bc58e9dee708667",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-keys",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-keys-manage",
+      "checkedAt": "2026-10-08T02:20:13.714Z",
+      "baselineHash": "c6c5b0c204771df0afc468878e249c6079c300365d1b09b98063054cf218f4bd",
+      "contentHash": "c6c5b0c204771df0afc468878e249c6079c300365d1b09b98063054cf218f4bd",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-file-identity",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-active-directory-overview",
+      "checkedAt": "2026-10-08T02:20:14.091Z",
+      "baselineHash": "012bb02c3abe6d0cad7c239814b62ea541f270cb58de0804d7475f8aef9c4d33",
+      "contentHash": "012bb02c3abe6d0cad7c239814b62ea541f270cb58de0804d7475f8aef9c4d33",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-file-share-permissions",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-assign-share-level-permissions",
+      "checkedAt": "2026-10-08T02:20:14.442Z",
+      "baselineHash": "ef728a9f2667415e68fd853b491ffb636d70d34d8c941364f87aa284f8b73895",
+      "contentHash": "ef728a9f2667415e68fd853b491ffb636d70d34d8c941364f87aa284f8b73895",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-file-ntfs",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-identity-configure-file-level-permissions",
+      "checkedAt": "2026-10-08T02:20:14.799Z",
+      "baselineHash": "ec52acaf006cee31d3f5959253373edf3cded41cdb82b47fe679f5858737b652",
+      "contentHash": "ec52acaf006cee31d3f5959253373edf3cded41cdb82b47fe679f5858737b652",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-redundancy",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-redundancy",
+      "checkedAt": "2026-10-08T02:19:55.864Z",
+      "baselineHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44",
+      "contentHash": "4656ef957d01f7ff307fa93413685738405a98d7d084b0ad6d41d29f7dbe1d44",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-object-replication",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview",
+      "checkedAt": "2026-10-08T02:20:15.159Z",
+      "baselineHash": "7a89668e6d3c7a34aa13d66a584cad0eaaed22e6f2e0584b91705279eee59b24",
+      "contentHash": "7a89668e6d3c7a34aa13d66a584cad0eaaed22e6f2e0584b91705279eee59b24",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-encryption",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-service-encryption",
+      "checkedAt": "2026-10-08T02:20:15.513Z",
+      "baselineHash": "0d7f2a0620420d90dc27c2ab88ab52faa6def788229fa9d009b329d1e8954762",
+      "contentHash": "0d7f2a0620420d90dc27c2ab88ab52faa6def788229fa9d009b329d1e8954762",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-cmk",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview",
+      "checkedAt": "2026-10-08T02:20:15.890Z",
+      "baselineHash": "a9247cc00f3eb0bba6018b492dafad893424c866502c36398b0647d4aec5608d",
+      "contentHash": "a9247cc00f3eb0bba6018b492dafad893424c866502c36398b0647d4aec5608d",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-azcopy",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-v10",
+      "checkedAt": "2026-10-08T02:20:16.279Z",
+      "baselineHash": "d7df02ce1fd7542a18dd3c83579c12ef4c39723f9798750e0152e3eec5c4774d",
+      "contentHash": "d7df02ce1fd7542a18dd3c83579c12ef4c39723f9798750e0152e3eec5c4774d",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-azcopy-entra",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-authorize-user-identity",
+      "checkedAt": "2026-10-08T02:20:16.666Z",
+      "baselineHash": "4d0e681eec59ca6901aeee24aed6c20e79d3820ed829b7e34e1f2d9b25bcbd35",
+      "contentHash": "4d0e681eec59ca6901aeee24aed6c20e79d3820ed829b7e34e1f2d9b25bcbd35",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-azcopy-copy",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-copy",
+      "checkedAt": "2026-10-08T02:20:17.023Z",
+      "baselineHash": "c96aedfb4e8332805f5aeecee3c194d9cfe6d72265e2cddee5c20e80d26849aa",
+      "contentHash": "c96aedfb4e8332805f5aeecee3c194d9cfe6d72265e2cddee5c20e80d26849aa",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-azcopy-sync",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-use-azcopy-blobs-synchronize",
+      "checkedAt": "2026-10-08T02:20:17.433Z",
+      "baselineHash": "29514889ec1b07616588252df7fa864a88c1ae5623e92bdfc4a918b85117ecd1",
+      "contentHash": "29514889ec1b07616588252df7fa864a88c1ae5623e92bdfc4a918b85117ecd1",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-lifecycle",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview",
+      "checkedAt": "2026-10-08T02:20:17.802Z",
+      "baselineHash": "fc66a2789f362b21730ec133bf8fa4845404b8a0c0b4c5f7680c32344d274d72",
+      "contentHash": "fc66a2789f362b21730ec133bf8fa4845404b8a0c0b4c5f7680c32344d274d72",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-lifecycle-policy",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-policy-configure",
+      "checkedAt": "2026-10-08T02:20:18.154Z",
+      "baselineHash": "9f9f9b1d3ac647834d4fb5e210aaf46d2d0a38422f1a2e7335038e6682d570fe",
+      "contentHash": "9f9f9b1d3ac647834d4fb5e210aaf46d2d0a38422f1a2e7335038e6682d570fe",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-blob-delete",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-blob-overview",
+      "checkedAt": "2026-10-08T02:20:18.522Z",
+      "baselineHash": "2fbc6a832df1fb6f659abca09d252c2d40d3b8292122ae7166d5131f4acdd61c",
+      "contentHash": "2fbc6a832df1fb6f659abca09d252c2d40d3b8292122ae7166d5131f4acdd61c",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-container-delete",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/soft-delete-container-overview",
+      "checkedAt": "2026-10-08T02:20:18.901Z",
+      "baselineHash": "a3e94e65ce6488af84d80395e6277abcd685bfd5cc21ddf01d7369d09961a95e",
+      "contentHash": "a3e94e65ce6488af84d80395e6277abcd685bfd5cc21ddf01d7369d09961a95e",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-versioning",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/versioning-overview",
+      "checkedAt": "2026-10-08T02:20:19.255Z",
+      "baselineHash": "f1573941a1f246bdbbf91cf33a5d2216aded05ed3d1d3c498a5798f00f6d5a0c",
+      "contentHash": "f1573941a1f246bdbbf91cf33a5d2216aded05ed3d1d3c498a5798f00f6d5a0c",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-tiers",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview",
+      "checkedAt": "2026-10-08T02:19:56.612Z",
+      "baselineHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60",
+      "contentHash": "2b6d43ab6684c501d27b50d032a6ccb6f2143b108e0712bed2ebff41fde0ec60",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-file-snapshots",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-snapshots-files",
+      "checkedAt": "2026-10-08T02:20:19.613Z",
+      "baselineHash": "cdea54a08f2a961a7d94c8f0bc5b6076975fc4feff218e42a0e01070fb5c33c0",
+      "contentHash": "cdea54a08f2a961a7d94c8f0bc5b6076975fc4feff218e42a0e01070fb5c33c0",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-file-delete",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion",
+      "checkedAt": "2026-10-08T02:20:19.977Z",
+      "baselineHash": "149dc8aefe75b33609015d4404868a1e198e5b34b498ea8535ba0f96bd9c983e",
+      "contentHash": "149dc8aefe75b33609015d4404868a1e198e5b34b498ea8535ba0f96bd9c983e",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-file-planning",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-planning",
+      "checkedAt": "2026-10-08T02:20:20.327Z",
+      "baselineHash": "056078e25a8e8e2872920d43a2c98eb17df956ba80853142edc5a6c5a32e791e",
+      "contentHash": "056078e25a8e8e2872920d43a2c98eb17df956ba80853142edc5a6c5a32e791e",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-rehydrate",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/archive-rehydrate-overview",
+      "checkedAt": "2026-10-08T02:20:20.681Z",
+      "baselineHash": "54b96ba2630f6c7439c90cec7aae18ddb157e57791cc231efdc25bf8c587667e",
+      "contentHash": "54b96ba2630f6c7439c90cec7aae18ddb157e57791cc231efdc25bf8c587667e",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-containers",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-portal",
+      "checkedAt": "2026-10-08T02:20:21.054Z",
+      "baselineHash": "811c202ccffd0e62c0416ed17914f7025a73ebcd4f7f54815ecce9924a7e9886",
+      "contentHash": "811c202ccffd0e62c0416ed17914f7025a73ebcd4f7f54815ecce9924a7e9886",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-policy",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/rest/api/storageservices/define-stored-access-policy",
+      "checkedAt": "2026-10-08T02:20:21.405Z",
+      "baselineHash": "143f260dbbfddf0817a2a164ba4a48c9fb2dc8750b77d7adfc1fe97537040861",
+      "contentHash": "143f260dbbfddf0817a2a164ba4a48c9fb2dc8750b77d7adfc1fe97537040861",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-infrastructure-encryption",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/infrastructure-encryption-enable",
+      "checkedAt": "2026-10-08T02:20:21.767Z",
+      "baselineHash": "b2b7bff91a84aa23031e56bc4d37939d1f0dc5fd30ec998e6ee8aba2890a0e71",
+      "contentHash": "b2b7bff91a84aa23031e56bc4d37939d1f0dc5fd30ec998e6ee8aba2890a0e71",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-private",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints",
+      "checkedAt": "2026-10-08T02:20:22.126Z",
+      "baselineHash": "7ff58c139826b42bc249433201386cce4c5f677ff81037c75b10b1723be10c76",
+      "contentHash": "7ff58c139826b42bc249433201386cce4c5f677ff81037c75b10b1723be10c76",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-firewall-limitations",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-network-security-limitations",
+      "checkedAt": "2026-10-08T02:20:22.479Z",
+      "baselineHash": "dd0ba3819d0ec7d10e54a094dfbfb4f90e18c4c4c15216b43fa8392fc0db9b24",
+      "contentHash": "dd0ba3819d0ec7d10e54a094dfbfb4f90e18c4c4c15216b43fa8392fc0db9b24",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-shared-key",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/shared-key-authorization-prevent",
+      "checkedAt": "2026-10-08T02:20:22.838Z",
+      "baselineHash": "e1471ea14b57c932c33ad7a6df80ab88fa8a98339a2343aa90ae281ab3750de8",
+      "contentHash": "e1471ea14b57c932c33ad7a6df80ab88fa8a98339a2343aa90ae281ab3750de8",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-account-create",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-create",
+      "checkedAt": "2026-10-08T02:20:23.207Z",
+      "baselineHash": "12dfe6eb12da9bd420a6d8e890decaeb6d0dd32a6ac938116d28b5f56a8c2798",
+      "contentHash": "12dfe6eb12da9bd420a6d8e890decaeb6d0dd32a6ac938116d28b5f56a8c2798",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-service-sas",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/rest/api/storageservices/create-service-sas",
+      "checkedAt": "2026-10-08T02:20:23.593Z",
+      "baselineHash": "e613fba101012cfe82aac83312e2c20960558c1b3b303563cf1010243d4a8bf5",
+      "contentHash": "e613fba101012cfe82aac83312e2c20960558c1b3b303563cf1010243d4a8bf5",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    },
+    {
+      "referenceId": "storage-plus-blob-rbac",
+      "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/blobs/assign-azure-role-data-access",
+      "checkedAt": "2026-10-08T02:20:23.967Z",
+      "baselineHash": "431e5afc7e789f090dc5c3b67d6e8e128ea567e989d6bd3212c3566729215c20",
+      "contentHash": "431e5afc7e789f090dc5c3b67d6e8e128ea567e989d6bd3212c3566729215c20",
+      "status": "unchanged",
+      "changes": [],
+      "error": null
+    }
+  ]
+}

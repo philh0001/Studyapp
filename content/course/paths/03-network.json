@@ -1,0 +1,743 @@
+{
+  "id": "az-104-manage-virtual-networks",
+  "title": "AZ-104: Configure and manage virtual networks for Azure administrators",
+  "url": "https://learn.microsoft.com/en-us/training/paths/az-104-manage-virtual-networks/",
+  "modules": [
+    {
+      "id": "configure-virtual-networks",
+      "title": "Configure virtual networks",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/",
+      "lessons": [
+        {
+          "id": "configure-virtual-networks--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/1-introduction",
+          "kind": "summary",
+          "points": [
+            "A virtual network gives Azure resources a private network and can connect them to on-premises networks."
+          ]
+        },
+        {
+          "id": "configure-virtual-networks--2-plan-virtual-networks",
+          "title": "Plan virtual networks",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/2-plan-virtual-networks",
+          "kind": "teaching",
+          "points": [
+            "Plan a virtual network as a logically isolated network with its own CIDR address space.",
+            "Choose nonoverlapping address ranges before connecting Azure networks to each other or to on-premises networks.",
+            "Control DNS settings and divide the address space into subnets suited to your workloads.",
+            "Use a cloud-only network when no on-premises connection is needed; use a site-to-site IPsec VPN for a secure hybrid connection."
+          ]
+        },
+        {
+          "id": "configure-virtual-networks--3-create-subnets",
+          "title": "Create subnets",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+          "kind": "teaching",
+          "points": [
+            "Each subnet must use a unique, nonoverlapping CIDR range contained within the virtual network address space.",
+            "In each IPv4 subnet, Azure reserves the first four addresses and the final address; allow for these when sizing the subnet.",
+            "Leave address space for services that need dedicated subnets, such as VPN Gateway.",
+            "Azure routes between subnets by default; use custom routes when traffic must pass through a network virtual appliance.",
+            "A subnet can have at most one network security group. Its rules filter traffic to and from subnet resources.",
+            "Private Link provides private connectivity to supported services without exposing the connection to the public internet."
+          ]
+        },
+        {
+          "id": "configure-virtual-networks--4-create-virtual-networks",
+          "title": "Create virtual networks",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/4-create-virtual-networks",
+          "kind": "teaching",
+          "points": [
+            "Create a virtual network with a subscription, resource group, name, region and planned IP address space.",
+            "Define at least one subnet inside that address space and avoid overlap with other subnet ranges.",
+            "Check current networking resource limits in Microsoft documentation before deploying a large design."
+          ]
+        },
+        {
+          "id": "configure-virtual-networks--5-plan-addressing",
+          "title": "Plan IP addressing",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/5-plan-addressing",
+          "kind": "teaching",
+          "points": [
+            "Private IP addresses support communication inside a virtual network and over private hybrid connections such as VPN or ExpressRoute.",
+            "Public IP addresses support internet-facing communication.",
+            "Choose a static address when DNS records, firewall rules, IP-based security or server roles require a predictable address.",
+            "Use dynamic private-IP assignment when the resource does not require a fixed address; Standard public IPs use static allocation."
+          ]
+        },
+        {
+          "id": "configure-virtual-networks--6-create-public-ip-addressing",
+          "title": "Create public IP addressing",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/6-create-public-ip-addressing",
+          "kind": "teaching",
+          "points": [
+            "For new public IPs, select a supported Standard SKU, IP version and tier; Standard public IP allocation is static. Basic public IPs retired on 30 September 2025.",
+            "The public IP SKU and tier must match the load balancer that uses it.",
+            "A static public IP is allocated when its resource is created and released when that resource is deleted."
+          ]
+        },
+        {
+          "id": "configure-virtual-networks--7-associate-public-ip-addresses",
+          "title": "Associate public IP addresses",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/7-associate-public-ip-addresses",
+          "kind": "teaching",
+          "points": [
+            "Associate a VM public IP through its network interface configuration.",
+            "Load Balancer, Application Gateway and Azure Firewall use public IPs in their front-end configurations; gateways use gateway IP configurations.",
+            "Standard public IP addresses use static allocation and a secure-by-default model, with zonal and zone-redundant options where supported."
+          ]
+        },
+        {
+          "id": "configure-virtual-networks--8-associate-private-ip-addresses",
+          "title": "Allocate or assign private IP addresses",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/8-associate-private-ip-addresses",
+          "kind": "teaching",
+          "points": [
+            "A private IP comes from the subnet in which the resource is deployed.",
+            "Dynamic assignment is the default: Azure selects an available address that is neither assigned nor reserved.",
+            "Static assignment lets you select an unused, unreserved address in the subnet range.",
+            "VMs use NIC IP configurations; internal load balancers and application gateways use front-end configurations."
+          ]
+        },
+        {
+          "id": "configure-virtual-networks--9-simulation-create-networks",
+          "title": "Exercise: Create and configure virtual networks",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/9-simulation-create-networks",
+          "kind": "exercise",
+          "points": [
+            "Plan an application virtual network with separate front-end and back-end subnets, plus a hub network with a firewall subnet.",
+            "Create both networks in the same region and configure private peering between them.",
+            "The official hands-on exercise needs an Azure subscription; read its steps before choosing to deploy resources."
+          ]
+        },
+        {
+          "id": "configure-virtual-networks--10-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/10-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "configure-virtual-networks--11-summary-resources",
+          "title": "Summary and resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/11-summary-resources",
+          "kind": "summary",
+          "points": [
+            "Size nonoverlapping networks and subnets, then choose private or public addressing for each resource.",
+            "Use segmentation and connectivity controls together to support secure communication."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configure-network-security-groups",
+      "title": "Configure network security groups",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/",
+      "lessons": [
+        {
+          "id": "configure-network-security-groups--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Network security groups filter inbound and outbound traffic using allow and deny rules."
+          ]
+        },
+        {
+          "id": "configure-network-security-groups--2-implement-network-security-groups",
+          "title": "Implement network security groups",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/2-implement-network-security-groups",
+          "kind": "teaching",
+          "points": [
+            "Associate an NSG with a subnet or a network interface to filter traffic at that scope.",
+            "One NSG can be reused across multiple associations, but each subnet or NIC can have at most one NSG.",
+            "Subnet rules affect the resources in that subnet; NIC rules affect traffic through that interface.",
+            "Inspect a VM overview to find its associated NSGs, subnets, interfaces and rules."
+          ]
+        },
+        {
+          "id": "configure-network-security-groups--3-determine-network-security-groups-rules",
+          "title": "Determine network security group rules",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/3-determine-network-security-groups-rules",
+          "kind": "teaching",
+          "points": [
+            "An NSG includes default inbound and outbound rules. You cannot delete them, but a higher-priority custom rule can override their effect.",
+            "Define source, destination, port ranges, protocol and an allow or deny action.",
+            "Custom priorities range from 100 to 4096. A lower number is evaluated first.",
+            "Default inbound rules permit VirtualNetwork service-tag traffic and AzureLoadBalancer health probes, then deny other inbound traffic.",
+            "Default outbound rules permit virtual-network and internet traffic, then deny other outbound traffic."
+          ]
+        },
+        {
+          "id": "configure-network-security-groups--4-determine-network-security-groups-effective-rules",
+          "title": "Determine network security group effective rules",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules",
+          "kind": "teaching",
+          "points": [
+            "Inbound traffic is evaluated at the subnet NSG before the NIC NSG; outbound traffic is evaluated at the NIC before the subnet.",
+            "If both scopes have NSGs, traffic must be permitted by both. An allow rule at one scope cannot cancel a deny at the other.",
+            "Subnet NSGs can also affect communication between VMs in the same subnet.",
+            "Leave gaps between priority numbers so later rules can be inserted without renumbering existing rules.",
+            "Use Effective security rules to inspect the rules applying to a NIC. Network Watcher IP flow verify can identify the rule allowing or denying a proposed flow."
+          ]
+        },
+        {
+          "id": "configure-network-security-groups--5-create-network-security-groups-rules",
+          "title": "Create network security group rules",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/5-create-network-security-groups-rules",
+          "kind": "teaching",
+          "points": [
+            "Create inbound or outbound rules with the required source, destination, protocol, ports, action and priority.",
+            "Predefined services such as HTTPS, SSH or RDP help populate protocol and destination-port settings.",
+            "Augmented rules can combine multiple IP ranges and port ranges to reduce separate rule definitions.",
+            "Assign lower priority numbers to rules that must be evaluated before broader rules."
+          ]
+        },
+        {
+          "id": "configure-network-security-groups--6-implement-asgs",
+          "title": "Implement application security groups",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/6-implement-asgs",
+          "kind": "teaching",
+          "points": [
+            "An application security group groups VM network interfaces by application role, such as web servers or database servers.",
+            "Use an ASG as a source or destination in NSG rules instead of maintaining a list of individual VM IP addresses.",
+            "Assign each server NIC to the appropriate ASG, then define traffic allowed between application tiers.",
+            "For example, allow web traffic to the web tier, allow database traffic from that tier to the application tier, and explicitly deny other database sources before the default VirtualNetwork allow rule.",
+            "ASGs group your VMs; service tags represent Microsoft-managed IP prefixes for Azure services."
+          ]
+        },
+        {
+          "id": "configure-network-security-groups--7-simulation-create-network-groups",
+          "title": "Exercise - Implement virtual networking",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/7-simulation-create-network-groups",
+          "kind": "exercise",
+          "points": [
+            "Create virtual networks and subnets, then configure ASGs and NSGs to allow required communication and deny unwanted access.",
+            "Test the resulting VM connectivity rather than relying only on the rule definitions.",
+            "The official exercise requires an Azure subscription and includes optional public and private DNS configuration."
+          ]
+        },
+        {
+          "id": "configure-network-security-groups--8-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/8-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "configure-network-security-groups--9-summary-resources",
+          "title": "Summary and resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/9-summary-resources",
+          "kind": "summary",
+          "points": [
+            "Evaluate rule priority and both subnet and NIC scopes when troubleshooting traffic.",
+            "Use application security groups to express workload relationships without maintaining individual IP lists."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "host-domain-azure-dns",
+      "title": "Host your domain on Azure DNS",
+      "url": "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/",
+      "lessons": [
+        {
+          "id": "host-domain-azure-dns--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Azure DNS hosts domain records using Azure infrastructure; domain registration remains with a registrar."
+          ]
+        },
+        {
+          "id": "host-domain-azure-dns--2-what-is-azure-dns",
+          "title": "What is Azure DNS?",
+          "url": "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+          "kind": "teaching",
+          "points": [
+            "DNS translates domain names into IP addresses using authoritative records and cached lookup results.",
+            "Azure DNS hosts and manages zones with Azure credentials, tools, RBAC, activity logs and resource locks; it does not register domain names.",
+            "A records map names to IPv4 addresses, CNAME records map names to other names, MX records identify mail servers, and TXT records carry text such as ownership verification.",
+            "A record set groups records with the same name and type. SOA and CNAME record sets each contain only one record.",
+            "Azure creates NS and SOA records when you create a DNS zone.",
+            "Private DNS zones provide name resolution for linked virtual networks without publishing those records to the internet.",
+            "Alias record sets can reference supported Azure resources and use A, AAAA or CNAME record types."
+          ]
+        },
+        {
+          "id": "host-domain-azure-dns--3-configure-azure-dns-host-domain",
+          "title": "Configure Azure DNS to host your domain",
+          "url": "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain",
+          "kind": "teaching",
+          "points": [
+            "Create a public DNS zone using the registered domain name, subscription and resource group.",
+            "Retrieve its Azure DNS name servers and update domain delegation at the registrar to use all four.",
+            "Verify delegation by querying the domain SOA record with a tool such as nslookup. Allow time for DNS changes to propagate.",
+            "Create host records with the appropriate type, target and TTL; TTL determines how long a resolver may cache the record.",
+            "For private names, create a private DNS zone and add a virtual network link for each network that needs to resolve its records."
+          ]
+        },
+        {
+          "id": "host-domain-azure-dns--4-exercise-create-dns-zone-a-record",
+          "title": "Exercise - Create a DNS zone and an A record by using Azure DNS",
+          "url": "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/4-exercise-create-dns-zone-a-record",
+          "kind": "exercise",
+          "points": [
+            "Create a public DNS zone, inspect its automatically created NS and SOA records, then add a www A record pointing to the example IP address.",
+            "Query the assigned Azure DNS name server to verify the A record even if the example domain has not been registered or delegated.",
+            "This exercise is optional and requires your own Azure subscription if you deploy it."
+          ]
+        },
+        {
+          "id": "host-domain-azure-dns--5-resolve-name-alias-record",
+          "title": "Dynamically resolve resource name by using alias record",
+          "url": "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/5-resolve-name-alias-record",
+          "kind": "teaching",
+          "points": [
+            "The zone apex is the root domain, often represented by the at sign in DNS records. A conventional CNAME cannot be placed there.",
+            "Use an Azure alias record to connect a supported A or AAAA record at the apex to an Azure resource rather than hard-coding its IP address.",
+            "Supported targets include public IP resources and supported Traffic Manager, CDN and Front Door resources.",
+            "Alias records track the target resource lifecycle and changes, reducing stale or dangling references."
+          ]
+        },
+        {
+          "id": "host-domain-azure-dns--6-exercise-create-alias-records",
+          "title": "Exercise - Create alias records for Azure DNS",
+          "url": "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/6-exercise-create-alias-records",
+          "kind": "exercise",
+          "points": [
+            "The official setup creates two VMs and a load balancer, then connects them to a public IP resource.",
+            "Create an apex A record, enable Alias record set, choose Azure resource and select the load balancer public IP resource.",
+            "Verify the test site responds through the load balancer. Registered-domain resolution also requires correct DNS delegation.",
+            "Read the optional exercise before deploying; it creates resources in your own Azure subscription."
+          ]
+        },
+        {
+          "id": "host-domain-azure-dns--7-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/7-summary",
+          "kind": "summary",
+          "points": [
+            "Delegate a registered domain to Azure DNS, then use suitable record sets and aliases to resolve its services.",
+            "Remove resources created by the optional exercises when finished to avoid continuing charges."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "configure-vnet-peering",
+      "title": "Configure Azure Virtual Network peering",
+      "url": "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/",
+      "lessons": [
+        {
+          "id": "configure-vnet-peering--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Virtual network peering provides private communication between Azure networks in the same or different regions."
+          ]
+        },
+        {
+          "id": "configure-vnet-peering--2-determine-uses",
+          "title": "Determine Azure Virtual Network peering uses",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+          "kind": "teaching",
+          "points": [
+            "Regional peering connects networks in the same region; global peering connects networks in different regions.",
+            "Traffic stays on the Microsoft backbone rather than traversing the public internet. Peering does not require a VPN gateway for direct network-to-network communication.",
+            "Peered virtual networks remain separately managed resources and may belong to different subscriptions or tenants.",
+            "Peered address spaces must not overlap.",
+            "Azure-provided name resolution does not automatically span peered networks; use linked private DNS zones or custom DNS for cross-network names.",
+            "Check cloud-specific and resource-specific peering support before designing connections across regions."
+          ]
+        },
+        {
+          "id": "configure-vnet-peering--3-determine-gateway-transit-connectivity",
+          "title": "Determine gateway transit and connectivity",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/3-determine-gateway-transit-connectivity",
+          "kind": "teaching",
+          "points": [
+            "Gateway transit lets a peered network use a VPN gateway in another network, commonly a hub.",
+            "Configure the hub to allow gateway transit and the spoke to use the remote gateway. A spoke using a remote gateway cannot also have its own gateway.",
+            "Peering settings also control traffic to the remote network and acceptance of traffic forwarded from that network.",
+            "A virtual network can have only one VPN gateway; gateway transit avoids deploying a separate gateway in each spoke.",
+            "Gateway transit supports regional and global peering and can extend connectivity to site-to-site, point-to-site or other network connections.",
+            "NSG rules still control which traffic is permitted between the networks."
+          ]
+        },
+        {
+          "id": "configure-vnet-peering--4-create",
+          "title": "Create virtual network peering",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/4-create",
+          "kind": "teaching",
+          "points": [
+            "Prepare two virtual networks and an account with Network Contributor or equivalent peering permissions.",
+            "Create the peering relationships and select the required traffic and gateway settings in the portal, CLI or PowerShell.",
+            "Verify that the peering status is Connected on both networks. An Initiated status on only one side is not a completed connection."
+          ]
+        },
+        {
+          "id": "configure-vnet-peering--5-determine-service-chaining-uses",
+          "title": "Extend peering with user-defined routes and service chaining",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/5-determine-service-chaining-uses",
+          "kind": "teaching",
+          "points": [
+            "Peering is not transitive: peering A to B and B to C does not automatically connect A to C.",
+            "A hub-and-spoke design centralizes shared NVAs or gateways in the hub.",
+            "Use user-defined routes to send traffic to an NVA or VPN gateway in a peered network for service chaining; an ExpressRoute gateway cannot be a UDR next hop.",
+            "Azure Virtual Network Manager can centrally manage hub-and-spoke or mesh connectivity at scale."
+          ]
+        },
+        {
+          "id": "configure-vnet-peering--6-simulation-peering",
+          "title": "Exercise - Implement Intersite Connectivity",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/6-simulation-peering",
+          "kind": "exercise",
+          "points": [
+            "Deploy test VMs into separate networks and verify the initial connectivity using Network Watcher or PowerShell.",
+            "Configure network peerings, then test connectivity again; the exercise also offers an optional custom route.",
+            "The official hands-on lab requires your own Azure subscription."
+          ]
+        },
+        {
+          "id": "configure-vnet-peering--7-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/7-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "configure-vnet-peering--8-summary-resources",
+          "title": "Summary and resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/8-summary-resources",
+          "kind": "summary",
+          "points": [
+            "Use private peering for direct connectivity and gateway transit for shared access to external networks.",
+            "Extend nontransitive peering designs with explicit routing and service chaining when required."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "control-network-traffic-flow-with-routes",
+      "title": "Manage and control traffic flow in your Azure deployment with routes",
+      "url": "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/",
+      "lessons": [
+        {
+          "id": "control-network-traffic-flow-with-routes--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Custom routes control traffic paths, including sending traffic through a network virtual appliance for inspection."
+          ]
+        },
+        {
+          "id": "control-network-traffic-flow-with-routes--2-azure-virtual-network-route",
+          "title": "Identify routing capabilities of an Azure virtual network",
+          "url": "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+          "kind": "teaching",
+          "points": [
+            "Azure installs system routes for each subnet. You cannot delete these routes, but user-defined routes can override applicable defaults.",
+            "A route combines a destination address prefix with a next hop such as virtual network, internet, virtual appliance, VPN gateway or None; None drops matching traffic.",
+            "Use a route table and user-defined routes to direct traffic through a firewall or other network virtual appliance.",
+            "Service tags let Microsoft maintain the address prefixes for a supported Azure service instead of you tracking IP changes manually.",
+            "BGP exchanges routes between Azure gateways and on-premises networks over supported VPN or ExpressRoute connections.",
+            "Azure normally chooses the longest matching prefix, then prefers UDR, BGP and system routes for equal prefixes. Preferred system routes for VNets, peering and service endpoints override BGP; service-endpoint routes cannot be overridden by UDRs.",
+            "Do not create multiple user-defined routes with the same address prefix in one route table."
+          ]
+        },
+        {
+          "id": "control-network-traffic-flow-with-routes--3-exercise-create-custom-routes",
+          "title": "Exercise - Create custom routes",
+          "url": "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/3-exercise-create-custom-routes",
+          "kind": "exercise",
+          "points": [
+            "Create a route table and add a route for the private subnet with next-hop type Virtual appliance and the appliance private IP.",
+            "Create public, private and perimeter subnets, then associate the route table with the public subnet.",
+            "The example directs public-to-private traffic through an appliance that will be deployed in the perimeter subnet. The optional exercise requires an Azure subscription."
+          ]
+        },
+        {
+          "id": "control-network-traffic-flow-with-routes--4-network-virtual-appliances",
+          "title": "What is an NVA?",
+          "url": "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+          "kind": "teaching",
+          "points": [
+            "An NVA is a VM-based network function such as a firewall, router, proxy or intrusion detection appliance.",
+            "Place it in the traffic path with user-defined routes and enable IP forwarding on its network interface and inside its operating system.",
+            "Separate workloads into subnets when the appliance must inspect traffic flowing between them.",
+            "Each subnet can use one route table; a route table can be associated with multiple subnets.",
+            "An appliance in the traffic path becomes a dependency for connectivity, so design high availability rather than relying on a single failing instance."
+          ]
+        },
+        {
+          "id": "control-network-traffic-flow-with-routes--5-exercise-create-nva-vm",
+          "title": "Exercise - Create an NVA and virtual machines",
+          "url": "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+          "kind": "exercise",
+          "points": [
+            "Deploy the example Ubuntu VM into the perimeter subnet to act as the network appliance.",
+            "Enable IP forwarding on the Azure NIC and in the guest operating system; both are needed for forwarded traffic to reach its destination.",
+            "Use the official optional instructions for the exact commands; deployment uses your own Azure subscription."
+          ]
+        },
+        {
+          "id": "control-network-traffic-flow-with-routes--6-exercise-route-traffic-through-nva",
+          "title": "Exercise - Route traffic through the NVA",
+          "url": "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva",
+          "kind": "exercise",
+          "points": [
+            "Deploy public and private test VMs with traceroute available, then wait for deployment and package installation to complete.",
+            "Trace the public-to-private path: the first hop should be the NVA and the next hop the private VM.",
+            "Trace the return direction separately. In this example, the private subnet uses system routes and reaches the public VM directly.",
+            "This shows that a route table affects the associated source subnet; configuring one direction does not automatically configure the reverse path."
+          ]
+        },
+        {
+          "id": "control-network-traffic-flow-with-routes--7-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/7-summary",
+          "kind": "summary",
+          "points": [
+            "Use route tables and correctly configured forwarding to send subnet traffic through an NVA.",
+            "Delete optional lab resources when finished so charges do not continue."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intro-to-azure-load-balancer",
+      "title": "Introduction to Azure Load Balancer",
+      "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/",
+      "lessons": [
+        {
+          "id": "intro-to-azure-load-balancer--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Azure Load Balancer distributes network traffic across VMs or scale-set instances using rules and health probes."
+          ]
+        },
+        {
+          "id": "intro-to-azure-load-balancer--2-what-is-azure-load-balancer",
+          "title": "What is Azure Load Balancer?",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer",
+          "kind": "teaching",
+          "points": [
+            "Use a public load balancer for internet-facing traffic and an internal load balancer for a private front end.",
+            "The public front end maps incoming IP and port combinations to private back-end addresses and ports.",
+            "Internal load balancing supports private application tiers and on-premises access over suitable hybrid connections.",
+            "Rules determine distribution; health probes prevent new traffic being directed to unhealthy back-end instances."
+          ]
+        },
+        {
+          "id": "intro-to-azure-load-balancer--3-how-azure-load-balancer-works",
+          "title": "How Azure Load Balancer works",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works",
+          "kind": "teaching",
+          "points": [
+            "Load Balancer operates at Layer 4 and makes decisions using IP addresses, TCP or UDP and ports, rather than HTTP host names or URL paths.",
+            "Configure a front-end IP, a back-end pool, load-balancing rules and health probes. A rule maps a front-end IP and port to back-end IPs and ports.",
+            "The default distribution hashes source IP, source port, destination IP, destination port and protocol. Client IP affinity uses fewer fields to keep related connections on a back-end instance.",
+            "TCP probes check connection establishment; HTTP and HTTPS probes expect a successful HTTP 200 response. A failed probe stops new connections to the affected instance.",
+            "Inbound NAT rules map front-end ports to individual back-end instances, for example for administration.",
+            "HA port rules on an internal Standard load balancer balance TCP and UDP flows across all ports, useful for highly available NVAs.",
+            "Outbound rules configure SNAT for back-end instances that need access to public endpoints."
+          ]
+        },
+        {
+          "id": "intro-to-azure-load-balancer--4-when-to-use-azure-load-balancer",
+          "title": "When to use Azure Load Balancer",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer",
+          "kind": "teaching",
+          "points": [
+            "Choose Load Balancer for high-performance TCP or UDP traffic and private or public VM application tiers.",
+            "Use Application Gateway when routing must inspect HTTP host names or URL paths, or needs regional web application firewall features.",
+            "Use Front Door for global Layer 7 delivery and acceleration across regions; Traffic Manager distributes traffic using DNS.",
+            "A single lightly used server may not need load balancing; choose the service from application and availability requirements."
+          ]
+        },
+        {
+          "id": "intro-to-azure-load-balancer--5-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/5-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "intro-to-azure-load-balancer--6-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/6-summary",
+          "kind": "summary",
+          "points": [
+            "Load Balancer combines Layer 4 rules, health probes and optional affinity to distribute traffic reliably.",
+            "Distinguish it from Layer 7 Application Gateway and Front Door, and DNS-based Traffic Manager."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intro-to-azure-application-gateway",
+      "title": "Introduction to Azure Application Gateway",
+      "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/",
+      "lessons": [
+        {
+          "id": "intro-to-azure-application-gateway--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Application Gateway manages web requests with load balancing, TLS processing and optional web application firewall protection."
+          ]
+        },
+        {
+          "id": "intro-to-azure-application-gateway--2-what-is-azure-application-gateway",
+          "title": "What is Azure Application Gateway?",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+          "kind": "teaching",
+          "points": [
+            "Application Gateway routes HTTP traffic to pools containing VMs, scale sets, App Service apps or reachable on-premises servers.",
+            "It balances requests across healthy back ends; session stickiness can keep a client session on the same server.",
+            "It supports TLS termination and end-to-end encryption, plus optional WAF protection against common web attacks.",
+            "Standard_v2 and WAF_v2 support autoscaling as traffic changes; connection draining supports graceful removal of back-end servers."
+          ]
+        },
+        {
+          "id": "intro-to-azure-application-gateway--3-how-azure-application-gateway-works",
+          "title": "How Azure Application Gateway works",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+          "kind": "teaching",
+          "points": [
+            "A front-end IP receives traffic. A listener matches a protocol, port, host and IP combination, and a routing rule connects that listener to a back-end pool.",
+            "Layer 7 path-based routing sends different URL paths to different pools; multi-site listeners route using host names.",
+            "Back-end HTTP settings define protocol, timeout, session affinity, connection draining and probe behavior.",
+            "TLS termination decrypts incoming traffic at the gateway to offload back-end work. Configure HTTPS to the back end when traffic must be re-encrypted.",
+            "Optional WAF policies inspect requests for threats such as SQL injection and cross-site scripting before requests reach the application.",
+            "Health probes determine eligible back ends; HTTP responses from 200 through 399 are normally healthy for the probe described here.",
+            "Additional features include redirects, header rewrites, custom error pages, v2 autoscaling and WebSocket support. HTTP/2 is supported on client-to-gateway connections; back-end HTTP connections use HTTP/1.1."
+          ]
+        },
+        {
+          "id": "intro-to-azure-application-gateway--4-when-to-use-azure-application-gateway",
+          "title": "When to use Azure Application Gateway",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/4-when-to-use-azure-application-gateway",
+          "kind": "teaching",
+          "points": [
+            "Choose Application Gateway for regional HTTP routing, TLS offload, session affinity and optional WAF protection.",
+            "It can front reachable on-premises web servers as well as Azure-hosted web applications.",
+            "Choose Front Door for global web delivery, Traffic Manager for DNS-based distribution, or Load Balancer for Layer 4 TCP and UDP traffic.",
+            "Decide whether the application actually needs a pool and gateway before adding this service."
+          ]
+        },
+        {
+          "id": "intro-to-azure-application-gateway--5-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/5-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "intro-to-azure-application-gateway--6-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/6-summary",
+          "kind": "summary",
+          "points": [
+            "Use listeners, routing rules, back-end settings and health probes together to route web requests.",
+            "Add TLS and optional WAF controls according to the security requirements of the application."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "intro-to-azure-network-watcher",
+      "title": "Introduction to Azure Network Watcher",
+      "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/",
+      "lessons": [
+        {
+          "id": "intro-to-azure-network-watcher--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Network Watcher provides monitoring and diagnostic tools for networking used by Azure IaaS resources."
+          ]
+        },
+        {
+          "id": "intro-to-azure-network-watcher--2-what-is-azure-network-watcher",
+          "title": "What is Azure Network Watcher?",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+          "kind": "teaching",
+          "points": [
+            "Use Topology to see resource relationships and Connection Monitor to track connectivity and latency over time.",
+            "IP flow verify identifies whether traffic is allowed or denied and which security rule applies. NSG diagnostics examines filtering for supported resources.",
+            "Next hop reports the route, next-hop type and IP used for a destination; Effective security rules combines applicable subnet and NIC rules.",
+            "Connection troubleshoot tests connectivity at a point in time rather than continuously monitoring it.",
+            "Packet capture records traffic for detailed analysis; VPN troubleshoot diagnoses virtual network gateways and their connections.",
+            "Virtual network flow logs record IP traffic in storage, and Traffic analytics visualizes it. New NSG flow logs cannot be created; existing NSG flow logs retire on 30 September 2027.",
+            "Network Watcher is primarily for IaaS networking, rather than general PaaS monitoring or website analytics."
+          ]
+        },
+        {
+          "id": "intro-to-azure-network-watcher--3-how-azure-network-watcher-works",
+          "title": "How Azure Network Watcher works",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+          "kind": "teaching",
+          "points": [
+            "Creating or updating a virtual network normally enables Network Watcher in that subscription and region. If automatic enablement was previously disabled, enable it manually; open the tool through portal search.",
+            "Topology shows resources and their Contains or Associated relationships so you can inspect the network layout.",
+            "Connection Monitor probes endpoints at intervals. Azure VM sources need the Network Watcher extension; on-premises sources need Azure Arc and Azure Monitor Agent.",
+            "For IP flow verify, provide the VM, NIC, local and remote IPs and ports, protocol and direction.",
+            "Next hop uses effective NIC routes to identify whether packets go to the intended network, gateway or appliance.",
+            "Packet capture uses the VM extension, accepts traffic filters and saves captured data to disk or blob storage.",
+            "Connection troubleshooting can identify DNS, guest firewall, NSG, route, CPU or memory issues; VPN diagnostics return health details and recommended actions."
+          ]
+        },
+        {
+          "id": "intro-to-azure-network-watcher--4-when-to-use-azure-network-watcher",
+          "title": "When to use Azure Network Watcher",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher",
+          "kind": "teaching",
+          "points": [
+            "Use IP flow verify to investigate an NSG blocking communication, such as a required management port between VMs.",
+            "Use VPN troubleshoot for gateway and site-to-site connection health, then inspect its diagnostic logs and recommendations.",
+            "Measure endpoint latency across regions or hybrid connections before changing workload placement.",
+            "For PaaS service issues or website analytics, use the appropriate service-specific monitoring and health tools instead."
+          ]
+        },
+        {
+          "id": "intro-to-azure-network-watcher--5-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/5-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "intro-to-azure-network-watcher--6-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/6-summary",
+          "kind": "summary",
+          "points": [
+            "Choose the Network Watcher tool that matches the problem: filtering, routing, continuous connectivity, packet details or VPN health."
+          ]
+        }
+      ]
+    }
+  ]
+}

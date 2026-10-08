@@ -1,0 +1,731 @@
+[
+  {
+    "lessonId": "intro-to-azure-cloud-shell--2-what-is-azure-cloud-shell",
+    "sections": [
+      {
+        "title": "A ready-made administration environment",
+        "paragraphs": [
+          "Cloud Shell moves the command-line tools into a Microsoft-managed environment, so the browser is your access point rather than the machine doing the administration. Bash and PowerShell are alternative shell experiences. Choose the one that matches the script you need: an Azure CLI example uses az commands, while an Azure PowerShell example uses Az cmdlets. Keeping these examples in their intended shell makes quoting and variables easier to follow."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+        ]
+      },
+      {
+        "title": "Authentication does not add permission",
+        "paragraphs": [
+          "Consider an engineer who can read a resource group but cannot change its virtual machines. Signing in through Cloud Shell makes the engineer’s account available to Azure tools; it does not promote the account to Contributor. The same distinction applies when moving between a managed workstation and a browser. A successful sign-in identifies the operator, while the account’s Azure permissions determine which resource operations are authorized."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell"
+        ]
+      },
+      {
+        "title": "Choose how files survive",
+        "paragraphs": [
+          "A troubleshooting script is useful only if you can find it during the next incident. Current Cloud Shell can run without attached storage, but files in that ephemeral session disappear when it closes. Mount storage when you need scripts or keys later. For a practical comparison, locate a saved script in CloudDrive, open it in the built-in editor, and distinguish that persistent file from the temporary running shell."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-cloud-shell--3-how-azure-cloud-shell-works",
+    "sections": [
+      {
+        "title": "Follow the session lifecycle",
+        "paragraphs": [
+          "Opening Cloud Shell allocates a temporary environment for your signed-in user. You can enter through the portal, its direct browser address, or supported documentation links. The environment is designed for interaction: twenty minutes without interactive activity ends the session. Starting another session restores access to persistent storage when configured, but does not resume the previous shell’s running processes or unsaved interactive state."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/overview",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+        ]
+      },
+      {
+        "title": "Separate file storage from machine state",
+        "paragraphs": [
+          "Suppose you edit a diagnostic script and set several Bash variables while investigating a VM. A saved script on mounted storage can be reused from another browser session. Those shell variables and the current process state belong to the temporary environment. Treat persistence as a file-storage capability, not a promise that the whole troubleshooting session becomes a durable virtual machine."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+        ]
+      },
+      {
+        "title": "Trace a reusable working session",
+        "paragraphs": [
+          "Use a small text file to practise the boundary between editing, saving and reopening. The editor gives browser-based access to files, and Cloud Shell also includes common administration tools such as Git, kubectl and Terraform. Their presence avoids local installation for routine use; it does not make the environment an unrestricted machine for arbitrary privileged software."
+        ],
+        "steps": [
+          "Choose Bash or PowerShell for the commands you intend to use.",
+          "Locate or create the practice file on your mounted CloudDrive and save changes in the editor.",
+          "Open a later session and verify the saved file is present before relying on it in a runbook."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-cloud-shell--4-when-to-use-azure-cloud-shell",
+    "sections": [
+      {
+        "title": "Match the task to an interactive shell",
+        "paragraphs": [
+          "Cloud Shell is well suited to an administrator who needs occasional command-line access while away from the usual workstation. For example, a browser session can provide the maintained Azure tools and an existing saved diagnostic script during an on-call investigation. The benefit is reducing setup on the borrowed device. The operator still needs the appropriate Azure account and resource permissions for the intended commands."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell"
+        ]
+      },
+      {
+        "title": "Recognize the environment’s boundaries",
+        "paragraphs": [
+          "The twenty-minute rule concerns inactivity, not a blanket ban on every command that lasts longer than twenty minutes. Nevertheless, an unattended workflow should not depend on an interactive session surviving. Cloud Shell users are unprivileged and cannot use sudo. When an installation requires elevated access or unsupported system changes, choose a suitable machine or container whose lifecycle and configuration you control."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/overview",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+        ]
+      },
+      {
+        "title": "Plan persistence and shared usage",
+        "paragraphs": [
+          "A team preparing a training event should consider both saved files and the tenant’s concurrent-user quota. Mounted storage keeps scripts available between sessions; an ephemeral session is appropriate when those files need not survive. Cloud Shell has a default limit of twenty concurrent users per tenant. A larger class should arrange a quota increase in advance, rather than interpreting a tenant quota error as a problem with an individual script."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+          "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-azure-resource-manager-template-vs-code--2-explore-template-structure",
+    "sections": [
+      {
+        "title": "Describe a target configuration",
+        "paragraphs": [
+          "An ARM template records what a deployment should contain in JSON: resource types, names and properties, rather than a sequence of portal clicks. That makes configuration reviewable alongside application code. Resource Manager coordinates dependencies and can create independent resources in parallel. For example, a reviewed storage definition can be reused for several environments while the resource configuration remains traceable in version control."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure"
+        ]
+      },
+      {
+        "title": "Read the template in layers",
+        "paragraphs": [
+          "Start with $schema and contentVersion, which describe the document format and the version you assign to this template. Then inspect parameters for caller-supplied values, variables for reusable expressions, resources for deployed objects, and outputs for returned results. A resource’s type combines its provider and resource type, such as Microsoft.Storage/storageAccounts. Its apiVersion selects the version of that resource’s deployment contract; it is different from contentVersion."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure"
+        ]
+      },
+      {
+        "title": "Understand what repetition means",
+        "paragraphs": [
+          "Idempotence means deploying the same desired configuration to the same resource identity does not create a duplicate merely because you rerun it. It does not mean an incomplete resource definition safely preserves every existing property. In incremental mode, define the resource’s complete intended non-default properties, because omitted properties can reset. Review the resulting deployment record and resource settings together; a successful deployment is evidence of execution, while those settings show the actual configuration."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure",
+          "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-azure-resource-manager-template-vs-code--3-exercise-create-and-deploy-template",
+    "sections": [
+      {
+        "title": "Use an empty deployment to learn the workflow",
+        "paragraphs": [
+          "Begin with a template that has an empty resources array. This separates learning the deployment process from learning a particular resource’s properties. In the default incremental mode, an empty template creates no resources while still giving you a deployment record to inspect. Its success demonstrates that the template was accepted at the selected scope; it does not prove that any later storage definition is valid."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/3-exercise-create-and-deploy-template",
+          "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+        ]
+      },
+      {
+        "title": "Make the deployment boundary explicit",
+        "paragraphs": [
+          "Before adding storage, identify the subscription and lab resource group you intend to use. The template file supplies the resource definitions, while the command supplies the deployment scope. A deployment name labels the operation in history; it is not the storage account’s name. The example below explicitly supplies the resource group rather than depending on a previously configured CLI default."
+        ],
+        "code": {
+          "language": "bash",
+          "text": "az deployment group create \\\n  --name storage-practice \\\n  --resource-group <lab-resource-group> \\\n  --template-file azuredeploy.json"
+        },
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/3-exercise-create-and-deploy-template"
+        ]
+      },
+      {
+        "title": "Compare the two deployment results",
+        "paragraphs": [
+          "After the empty deployment, add a storage account resource with a valid name, API version, location, kind and SKU, then review the updated deployment. You should be able to explain why the first operation had no deployed resources and the second has storage. Keep the account’s resource settings and the deployment history in view, since they answer different questions: what exists now and which operation produced or updated it."
+        ],
+        "steps": [
+          "Inspect the empty template’s resources array and deployment result.",
+          "Review every required storage resource property before the second deployment.",
+          "Locate the resulting storage account and compare its properties with the template."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/3-exercise-create-and-deploy-template"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-azure-resource-manager-template-vs-code--4-add-flexibility-arm-template",
+    "sections": [
+      {
+        "title": "Parameterize genuine differences",
+        "paragraphs": [
+          "A template becomes reusable when values that vary by environment are inputs instead of hardcoded resource properties. For example, development and production can supply different account names or supported redundancy SKUs to the same definition. A parameter’s type and constraints describe acceptable input. A default is used when the caller omits that value; allowedValues restricts what can be supplied and does not automatically choose a different entry from the list."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+        ]
+      },
+      {
+        "title": "Keep secrets out of ordinary values",
+        "paragraphs": [
+          "Use secureString for a password or secret and secureObject for an object containing sensitive values. Do not place a secret directly in the template or give it a hardcoded default. Distinguish a resource name, which is useful deployment metadata, from credentials, which need protection. The parameter limit is 256 per template, so use inputs to represent configuration differences rather than recreating every constant as a parameter."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+        ]
+      },
+      {
+        "title": "Return useful results without changing input",
+        "paragraphs": [
+          "An output exposes a value after deployment, such as the storage account’s service endpoints retrieved through reference. Outputs let another operation discover deployment results without copying a guessed endpoint into a script. They do not replace the parameters that determine the resource configuration. When redeploying with a changed input, keep the full intended resource definition: incremental mode reapplies properties and omitted values can revert to defaults."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template",
+          "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "create-azure-resource-manager-template-vs-code--5-exercise-parameters-output",
+    "sections": [
+      {
+        "title": "Connect declarations to the resource",
+        "paragraphs": [
+          "Defining storageName in the parameters section is only half the change. Replace the resource’s fixed name with the parameters function so deployment input actually affects the account. Apply the same principle to storageSKU: declare a default and supported allowed values, then use that parameter in the resource’s sku.name. A declared but unused parameter changes no resource property."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+        ]
+      },
+      {
+        "title": "Test a constraint deliberately",
+        "paragraphs": [
+          "Imagine a deployment contract that permits Standard_LRS and Standard_GRS. Supplying Standard_GRS exercises a permitted alternative; supplying Basic should fail the declared allowed-values constraint. That comparison teaches the difference between choosing an input and validating it. Storage account names require global uniqueness and lowercase letters or numbers, with three to twenty-four characters. For example, a name like reportstore2026 follows the character pattern, but still needs an available globally unique name."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output",
+          "https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/resource-name-rules"
+        ]
+      },
+      {
+        "title": "Inspect the output contract",
+        "paragraphs": [
+          "After deploying a permitted configuration, inspect both the resulting resource and the storageEndpoint output. The output uses the resource’s runtime primaryEndpoints object, so it reflects the deployed account rather than a manually composed string. The following fragment belongs in the template’s outputs section; it is not a complete template. Checking the object in deployment results helps connect the declared output type with its actual value."
+        ],
+        "code": {
+          "language": "json",
+          "text": "\"storageEndpoint\": {\n  \"type\": \"object\",\n  \"value\": \"[reference(parameters('storageName')).primaryEndpoints]\"\n}"
+        },
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-backup--2-what-is-azure-backup",
+    "sections": [
+      {
+        "title": "Start with the object you must recover",
+        "paragraphs": [
+          "Azure Backup provides managed protection for supported resources, but the protected object differs by workload. A whole-VM recovery, a particular database recovery and recovery of a deleted file are different operational needs. Choose the relevant backup offering before selecting a schedule. Central management helps administrators govern policies and monitor protected resources across their estate; it does not make every workload share the same recovery options."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+        ]
+      },
+      {
+        "title": "Translate business requirements into RPO and RTO",
+        "paragraphs": [
+          "Suppose a reporting service can tolerate losing at most four hours of changes and must return within three hours. The first requirement is its recovery point objective: how far back the recovered data may be. The second is its recovery time objective: how long restoring usable service may take. A backup interval alone does not prove the service meets both targets; recovery also needs an available recovery point and a successful restore."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+        ]
+      },
+      {
+        "title": "Protect the backups themselves",
+        "paragraphs": [
+          "Recovery copies need protection as well as the live workload. Encryption protects data, access controls limit who can manage backup and restore operations, and deletion protection helps retain recoverable backups after an accidental or malicious deletion. Treat these capabilities as parts of a protection design, rather than assuming the existence of a backup makes every ransomware scenario harmless. Pair the policy’s retention and schedule with the workload’s recovery and compliance requirements."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-backup--3-how-azure-backup-works",
+    "sections": [
+      {
+        "title": "Separate collection from management",
+        "paragraphs": [
+          "The method of collecting protected data depends on the workload. MARS can protect supported Windows files, folders and system state; MABS or DPM supports additional on-premises scenarios. Azure VM protection uses snapshots, with extensions for application- or filesystem-consistent backup and supported agentless crash-consistent options. Recovery Services vaults and Backup vaults manage policies and recovery points for their supported workloads, so choose the vault and collection path together."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+        ]
+      },
+      {
+        "title": "Follow the recovery point through storage",
+        "paragraphs": [
+          "A VM snapshot near the source supports faster operational recovery, while the vault copy provides a separately managed recovery copy and longer retention. Supported archive storage serves infrequently accessed long-term points and has a different retrieval profile. These tiers are not interchangeable promises of instant recovery. The first backup captures protected data, and later incremental VM backups identify changed blocks rather than retransferring every unchanged block."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+        ]
+      },
+      {
+        "title": "Apply schedule, retention and redundancy independently",
+        "paragraphs": [
+          "Consider a VM with a four-hour backup requirement and a separate need to retain older points. Enhanced policy can schedule multiple VM backups per day, as frequently as every four hours; retention controls how long points remain, not when jobs run. Vault redundancy determines the storage failure protection. Review these three decisions separately so that extending retention is not mistaken for improving backup frequency or adding regional protection."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "intro-to-azure-backup--4-when-to-use-azure-backup",
+    "sections": [
+      {
+        "title": "Choose the right recovery granularity",
+        "paragraphs": [
+          "For a database hosted on a VM, recovering the entire machine and recovering one database to a particular time are different goals. Whole-VM backup protects the VM’s disks and configuration for VM recovery. Workload-aware SQL protection offers full, differential and transaction-log backups, including database-level recovery. Choose the offering around what the application owner needs back, rather than selecting VM backup merely because the database happens to run inside a VM."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+        ]
+      },
+      {
+        "title": "Design planned and exceptional retention",
+        "paragraphs": [
+          "A compliance requirement to retain annual recovery points is a policy-design question, while an extra backup before a risky change is an on-demand operation. On-demand backup can have its own retention setting instead of inheriting the scheduled policy’s retention. For an original example, an administrator can plan routine retention for daily operations and separately record how long a pre-upgrade recovery point must remain available."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+        ]
+      },
+      {
+        "title": "Verify placement and operational evidence",
+        "paragraphs": [
+          "Vault placement and restore support are workload-specific. A backup design spanning regions must not assume that support for restoring into a paired secondary region permits protecting any source from any vault region. Review the workload support before selecting a vault. Then inspect job outcomes and reporting: a policy assignment establishes intended protection, whereas completed backups and available points show that the protection has actually produced recovery data."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "protect-virtual-machines-with-azure-backup--2-azure-backup-features-scenarios",
+    "sections": [
+      {
+        "title": "Distinguish history from failover",
+        "paragraphs": [
+          "Azure Backup keeps earlier recovery points so you can recover from deletion, corruption or an unwanted change. Site Recovery replicates workloads and coordinates failover during an outage. In a simple example, an accidentally deleted business document needs an earlier clean copy; a regional outage needs a plan for running the workload elsewhere. Both concerns can exist in the same system, but copying an unwanted change into a replica does not itself provide the earlier clean state."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+        ]
+      },
+      {
+        "title": "Treat the vault as a protection boundary",
+        "paragraphs": [
+          "A Recovery Services vault manages Azure VM recovery points and policies and provides a boundary for backup access. Role assignments govern who can perform backup administration or restore operations. Encryption and supported customer-managed-key configurations protect backup data, while soft delete adds recovery opportunity after deletion. These controls address different threats, so assigning a backup policy should be accompanied by a review of permissions and deletion protection."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+        ]
+      },
+      {
+        "title": "Select resilience for the recovery copies",
+        "paragraphs": [
+          "Locally redundant, zone-redundant and geo-redundant vault storage protect against different storage failure scopes. Match the selection to the continuity plan rather than choosing it solely from the live VM’s location. As a design exercise, identify the incident you need to withstand, the acceptable age of recovered data and the time allowed to restore service. These answers guide both backup protection and whether replication and failover are also needed."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "protect-virtual-machines-with-azure-backup--3-back-up-azure-virtual-machine",
+    "sections": [
+      {
+        "title": "Follow snapshot creation and vault transfer",
+        "paragraphs": [
+          "The policy starts a VM backup job. For supported agent-based backups, the extension coordinates the snapshot; Azure Backup then transfers the changed disk blocks to vault storage. Disks can be backed up in parallel. Snapshot creation and completion of the vault transfer are distinct milestones, so a recently created local recovery point is not proof that its vault copy has already completed."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+        ]
+      },
+      {
+        "title": "Know what consistency preserves",
+        "paragraphs": [
+          "Application-consistent Windows backups coordinate with VSS writers, while Linux applications need suitable pre- and post-backup scripts. Filesystem consistency protects filesystem integrity but an application may still require recovery or cleanup when it starts. Crash consistency captures data already on disk and omits pending memory or unwritten I/O. VSS coordination does not mean the backup contains a runnable copy of all process memory."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+        ]
+      },
+      {
+        "title": "Choose policy against the workload",
+        "paragraphs": [
+          "For a service that needs several scheduled backups per day, inspect Enhanced policy instead of assuming every VM policy is daily-only. It supports schedules as frequently as four hours and longer snapshot retention, up to thirty days. Selective disk protection can focus protection on required disks, but excluded data will not appear in that recovery point. Compare the intended recoverable data, schedule and retention before enabling protection."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "protect-virtual-machines-with-azure-backup--4-exercise-back-up-azure-virtual-machine",
+    "sections": [
+      {
+        "title": "Prepare a controlled backup experiment",
+        "paragraphs": [
+          "Use a lab Windows VM and Linux VM to compare how protection is enabled through the portal and CLI. The purpose is to follow the protection lifecycle, not to treat the exercise’s historical image or size as the only supported choice. Identify the lab resource group, VM names, vault and policy before beginning. The chosen policy must exist and support the VM configuration rather than relying on a policy name being universally present."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/4-exercise-back-up-azure-virtual-machine"
+        ]
+      },
+      {
+        "title": "Distinguish configuration from a backup job",
+        "paragraphs": [
+          "Enabling protection associates the VM with a vault and policy. It does not mean an initial backup has already finished. Start an on-demand backup when you need a point before the next scheduled run, then inspect jobs until you can distinguish ConfigureBackup completion from Backup completion. The read-only command below lists jobs in the selected vault; its placeholders identify your own lab resources."
+        ],
+        "code": {
+          "language": "bash",
+          "text": "az backup job list \\\n  --resource-group <lab-resource-group> \\\n  --vault-name <lab-vault> \\\n  --output table"
+        },
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/4-exercise-back-up-azure-virtual-machine"
+        ]
+      },
+      {
+        "title": "Collect evidence from both views",
+        "paragraphs": [
+          "For a useful practical record, compare the VM’s last-backup status with the vault’s backup-job view. The VM view answers whether that item has a recent backup outcome; the vault view lets you follow operations across protected items. Record the selected policy and the backup outcome together, then inspect the available recovery points. This is stronger evidence for a later restore exercise than a screenshot showing only that protection was enabled."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/4-exercise-back-up-azure-virtual-machine"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "protect-virtual-machines-with-azure-backup--5-restore-virtual-machine-data",
+    "sections": [
+      {
+        "title": "Choose where recovery will land",
+        "paragraphs": [
+          "Create a new VM is a convenient path to bring up a recovered machine, while Restore disks gives you recovered disks and a template for a customized VM configuration. Replace existing uses a VM that still exists and replaces its disks from the selected point, taking a snapshot of current disks first. A deleted original VM cannot be the target of Replace existing, so its disappearance changes the restore decision."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+        ]
+      },
+      {
+        "title": "Check regional and subscription conditions",
+        "paragraphs": [
+          "Cross-region restore uses a supported paired secondary region and supports creating a VM or restoring disks rather than replacing existing disks there. Cross-subscription restore has separate managed-VM, vault-tier, tenant and encryption requirements. Do not infer that a point usable for an ordinary local restore automatically qualifies for every cross-region, cross-subscription or cross-zonal path. Check the current support matrix against the actual point and VM configuration."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+        ]
+      },
+      {
+        "title": "Select the smallest supported recovery",
+        "paragraphs": [
+          "For a misplaced report, file recovery can avoid restoring an entire otherwise healthy VM when the configuration supports it. Azure Disk Encryption VMs have restrictions: file-level recovery and replacing the existing VM are not supported in that workflow. An appropriate alternative is to restore the VM and then copy the needed files. Decide the target and encryption conditions before choosing a recovery action, rather than discovering those boundaries halfway through an incident."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "protect-virtual-machines-with-azure-backup--6-exercise-restore-virtual-machine-data",
+    "sections": [
+      {
+        "title": "Prepare for the demonstrated disk replacement",
+        "paragraphs": [
+          "This exercise uses an existing backed-up VM, a staging storage account and a recovery point. Its Stop step applies to the demonstrated replacement workflow; it is not a universal requirement to stop a live source before every kind of backup restore. First verify that the lab VM still exists and the desired recovery point is available. Then choose the staging account and stop the replacement target as directed."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/6-exercise-restore-virtual-machine-data",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+        ]
+      },
+      {
+        "title": "Choose a point for a reason",
+        "paragraphs": [
+          "Suppose an unwanted change occurred after yesterday’s successful backup. Select a recovery point from before that change, accepting that later changes will not be present in the restored disks. The point’s timestamp is part of the recovery decision, while its consistency and available tier also matter. Choosing the newest point without considering the incident could recover the same unwanted state you are trying to undo."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/6-exercise-restore-virtual-machine-data",
+          "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+        ]
+      },
+      {
+        "title": "Follow the job to its outcome",
+        "paragraphs": [
+          "Open the VM’s Backup page, select Restore VM, choose the point, and use Replace existing with the lab staging location. Starting the operation and seeing a restore notification is only submission. Inspect Backup Jobs for the restore status and subtasks, and then verify the recovered VM and the relevant data. This connects the chosen historical point to an observable result instead of assuming that a submitted job completed successfully."
+        ],
+        "steps": [
+          "Confirm the target VM, staging account and selected recovery point.",
+          "Submit the disk-replacement restore for the stopped lab target.",
+          "Inspect the restore job and subtasks, then check the recovered data."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/6-exercise-restore-virtual-machine-data"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "monitor-azure-vm-using-diagnostic-data--2-monitor-vm-health",
+    "sections": [
+      {
+        "title": "Investigate the correct layer",
+        "paragraphs": [
+          "A VM has host-level signals, a guest operating system, workloads and applications. CPU and network activity visible from the Azure host do not tell you everything happening inside an application. Azure collects host metrics and activity logs automatically, while the guest counters and event logs demonstrated here need additional collection configuration. Boot diagnostics gives a startup screenshot and serial output, which is especially useful when normal guest access is unavailable."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+        ]
+      },
+      {
+        "title": "Match the data to its store",
+        "paragraphs": [
+          "Metrics describe numerical values over time; logs provide timestamped records that can explain events. A DCR describes the collected guest sources and their destination. Current OpenTelemetry guest metrics use an Azure Monitor workspace, while classic logs-based performance collection uses Log Analytics. Guest event logs also use Log Analytics and KQL. These workspace types serve different data paths, so a visible host chart does not prove guest logs are arriving."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+        ]
+      },
+      {
+        "title": "Work from symptom to evidence",
+        "paragraphs": [
+          "For an original investigation, imagine a VM has high host CPU and users report slow requests. Use the host graph to identify the time interval, then compare available guest performance data and relevant event records during that interval. An activity-log operation may explain a configuration change, while Syslog may reveal an operating-system event. Correlated timing helps focus the investigation, but a graph by itself does not establish which application caused the symptom."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "monitor-azure-vm-using-diagnostic-data--3-exercise-create-virtual-machine",
+    "sections": [
+      {
+        "title": "Know what the lab enables",
+        "paragraphs": [
+          "Creating the lab Linux VM gives you a chance to inspect monitoring that is available before guest collection is configured. Enable the recommended alert rules and their notifications explicitly, and use boot diagnostics with managed storage. The Linux Diagnostics Agent is deprecated; it is not the required path to collect new guest data. Host charts and recommended alerts can reveal conditions without collecting every guest event or performance counter."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine"
+        ]
+      },
+      {
+        "title": "Read three different evidence sources",
+        "paragraphs": [
+          "The VM overview’s platform graphs show availability, CPU, disks and networking. The activity log records Azure resource operations, which helps establish whether a management change occurred around the incident. Boot diagnostics shows startup screenshots and serial output. These are complementary surfaces: a restart operation in the activity log and a failed boot message answer different parts of the same investigation, even when the VM is inaccessible through its usual application."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine"
+        ]
+      },
+      {
+        "title": "Explain a missing guest measurement",
+        "paragraphs": [
+          "If host Percentage CPU is visible but guest available memory is absent, first ask whether guest collection was enabled. Creating the VM and enabling boot diagnostics does not automatically create the DCR needed for the demonstrated guest counters and event logs. In the lab, compare the populated host charts with the unconfigured guest section before moving to enhanced monitoring. This makes the host-versus-guest boundary visible instead of treating every empty chart as a VM failure."
+        ],
+        "steps": [
+          "Review the lab VM’s platform metric graphs.",
+          "Inspect a relevant resource operation in Activity log.",
+          "Open the boot screenshot and serial log, then identify which guest data still needs collection configuration."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "monitor-azure-vm-using-diagnostic-data--4-view-host-metrics",
+    "sections": [
+      {
+        "title": "Define the question before the chart",
+        "paragraphs": [
+          "Metrics Explorer lets you select the resource scope, metric namespace, metric and aggregation. The namespace matters because it identifies the collection of metrics offered by a resource; storage, for example, exposes service-specific namespaces. Start with a question such as whether brief CPU peaks coincide with increased inbound traffic, then choose the VM scope and the metrics that can actually address it. Adding more charts is useful only when each contributes relevant evidence."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics"
+        ]
+      },
+      {
+        "title": "Choose the meaning of each plotted value",
+        "paragraphs": [
+          "Maximum CPU shows the highest recorded CPU value within each interval, whereas Average can hide a short peak among lower samples. Sum adds values, Count reports the number of values, and Minimum identifies the lowest value. Not every aggregation is meaningful for every metric. Distinguish the time range shown on the screen from the grain that groups samples into each plotted interval."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained"
+        ]
+      },
+      {
+        "title": "Build and interpret a comparison",
+        "paragraphs": [
+          "For the lab investigation, plot Percentage CPU using Max and add Inbound Flows using Avg over the same thirty-minute range. Compare when the curves change rather than treating their different units as equivalent quantities. A coincident increase suggests where to investigate next; it does not prove that one signal caused the other. Adjust the selected interval if aggregation obscures the detail you need, while retaining a time range relevant to the incident."
+        ],
+        "steps": [
+          "Select the VM scope and Percentage CPU with Maximum aggregation.",
+          "Add Inbound Flows with Average aggregation.",
+          "Set the common time range and examine whether the recorded peaks occur together."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "monitor-azure-vm-using-diagnostic-data--5-enable-vm-insights",
+    "sections": [
+      {
+        "title": "Choose the current guest-metrics experience",
+        "paragraphs": [
+          "The training unit demonstrates classic logs-based VM insights, but current portal onboarding starts from Monitor and Configure. OpenTelemetry metrics are selected by default and are recommended for new deployments; logs-based monitoring remains an alternative. Select deliberately because OpenTelemetry guest metrics go to an Azure Monitor workspace, while classic VM insights performance data goes to Log Analytics. The choice affects both storage and how you later view and query the data."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/tutorial-enable-monitoring",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+        ]
+      },
+      {
+        "title": "Trace the supported classic collection path",
+        "paragraphs": [
+          "When studying the classic workflow, follow Azure Monitor Agent, its DCR and the selected Log Analytics workspace as separate pieces. The rule defines the guest performance collection, the agent collects it, and the workspace holds the records used by the performance workbooks. Allow time for installation and ingestion, and confirm the agent and DCR association before assuming an empty workbook means the workload is healthy or broken. The classic performance workbook does not display metrics-only OpenTelemetry collection."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/tutorial-enable-monitoring",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+        ]
+      },
+      {
+        "title": "Avoid the retired onboarding direction",
+        "paragraphs": [
+          "Do not follow the older unit’s suggestion to enable dependency mapping for a new VM. VM insights Map and Dependency Agent are deprecated; new portal onboarding ended on 30 September 2025 and retirement is scheduled for 30 June 2028. For a worked planning example, a newly deployed application server should use the supported guest-monitoring experience appropriate to its telemetry needs, rather than making a new monitoring design depend on the deprecated Map feature."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-maps",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/tutorial-enable-monitoring",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+        ]
+      }
+    ]
+  },
+  {
+    "lessonId": "monitor-azure-vm-using-diagnostic-data--6-collect-log-data",
+    "sections": [
+      {
+        "title": "Collect events independently of performance counters",
+        "paragraphs": [
+          "The classic VM insights DCR collects a predefined set of performance counters, not every event from the guest. To investigate operating-system events, define a separate Linux Syslog source, choose the relevant facilities and severities, associate the rule with the VM and send the records to Log Analytics. Sharing a DCR across compatible VMs can keep collection settings consistent, while different source requirements may justify additional rules."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/data-collection-syslog"
+        ]
+      },
+      {
+        "title": "Decide whether an endpoint is required",
+        "paragraphs": [
+          "The training example creates a data collection endpoint, but that is not a universal prerequisite for public-endpoint Syslog collection. Azure Monitor Agent requires a DCE for Private Link configurations, including agents on networks sharing DNS with an Azure Monitor Private Link Scope. Assess the network design before adding an endpoint. A DCR controls the data collection specification; a DCE addresses the relevant collection endpoint and network-access requirements."
+        ],
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-endpoint-overview"
+        ]
+      },
+      {
+        "title": "Query the records that actually arrived",
+        "paragraphs": [
+          "After configuration, select the correct VM or Log Analytics workspace scope and inspect Syslog records in the relevant time range. The original query below groups last-hour records by their reported severity. It helps establish which severities are being received before you narrow an investigation. An empty result should prompt checks of scope, time range, source filters, agent status and association, rather than an immediate conclusion that no guest events occurred."
+        ],
+        "code": {
+          "language": "kql",
+          "text": "Syslog\n| where TimeGenerated > ago(1h)\n| summarize count() by SeverityLevel\n| order by count_ desc"
+        },
+        "sourceUrls": [
+          "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data",
+          "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries"
+        ]
+      }
+    ]
+  }
+]

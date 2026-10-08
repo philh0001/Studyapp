@@ -1,0 +1,658 @@
+{
+  "id": "az-104-manage-identities-governance",
+  "title": "AZ-104: Manage identities and governance in Azure",
+  "url": "https://learn.microsoft.com/en-us/training/paths/az-104-manage-identities-governance/",
+  "modules": [
+    {
+      "id": "understand-azure-active-directory",
+      "title": "Understand Microsoft Entra ID",
+      "url": "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/",
+      "lessons": [
+        {
+          "id": "understand-azure-active-directory--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Microsoft Entra ID is a cloud identity and access service for users, applications and devices."
+          ]
+        },
+        {
+          "id": "understand-azure-active-directory--2-examine-azure-active-directory",
+          "title": "Examine Microsoft Entra ID",
+          "url": "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory",
+          "kind": "teaching",
+          "points": [
+            "Microsoft manages the Entra ID directory service; customers do not deploy or maintain its domain controllers.",
+            "Use Entra ID for users and groups, application access, single sign-on, multifactor authentication and Conditional Access.",
+            "A tenant is an isolated directory instance containing identities and applications.",
+            "An Azure subscription is associated with exactly one Entra tenant at a time; the same tenant can serve multiple subscriptions.",
+            "A tenant receives an onmicrosoft.com domain and can also use verified custom domain names.",
+            "Entra ID does not use the traditional organizational-unit and Group Policy hierarchy of AD DS.",
+            "An application object defines an application; a service principal represents that application in a particular tenant."
+          ]
+        },
+        {
+          "id": "understand-azure-active-directory--3-compare-azure-active-directory-domain-services",
+          "title": "Compare Microsoft Entra ID and Active Directory Domain Services",
+          "url": "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services",
+          "kind": "teaching",
+          "points": [
+            "AD DS is a Windows Server directory with a hierarchical structure, organizational units, Group Policy and domain-joined computers.",
+            "AD DS uses LDAP for directory queries and Kerberos for authentication.",
+            "Entra ID is designed for internet applications and uses web protocols including SAML, OpenID Connect and OAuth.",
+            "Entra users and groups have a flat directory structure; traditional AD DS Group Policy does not apply to them.",
+            "Running an AD DS domain controller on an Azure virtual machine is distinct from using Entra ID.",
+            "The source recommends extra data disks for AD DS database, logs and SYSVOL on Azure virtual machines, with disk host caching set to None."
+          ]
+        },
+        {
+          "id": "understand-azure-active-directory--4-examine-azure-directory-service-cloud-apps",
+          "title": "Examine Microsoft Entra ID as a directory service for cloud apps",
+          "url": "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps",
+          "kind": "teaching",
+          "points": [
+            "A shared Entra tenant can provide identity services for Azure, Microsoft 365, Dynamics 365 and Intune.",
+            "Centralized application authentication can give users single sign-on across integrated cloud applications.",
+            "App Service authentication can use an Entra tenant to limit website access to accounts from that directory.",
+            "Deployment slots can use separate authentication settings."
+          ]
+        },
+        {
+          "id": "understand-azure-active-directory--5-compare-azure-premium-p1-p2-plans",
+          "title": "Compare Microsoft Entra ID P1 and P2 plans",
+          "url": "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+          "kind": "teaching",
+          "points": [
+            "Entra ID premium editions add capabilities beyond the free directory features and require the relevant licenses.",
+            "P1 capabilities described here include Conditional Access, password reset with writeback, self-service group management and Connect Health.",
+            "P2 adds Identity Protection for risk-based account and sign-in protection.",
+            "P2 also adds Privileged Identity Management to control permanent and temporary privileged access through activation workflows.",
+            "Check current Microsoft licensing documentation before deciding which edition is required; plans and feature entitlements change."
+          ]
+        },
+        {
+          "id": "understand-azure-active-directory--6-examine-azure-domain-services",
+          "title": "Examine Microsoft Entra Domain Services",
+          "url": "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services",
+          "kind": "teaching",
+          "points": [
+            "Entra Domain Services provides managed domain capabilities for workloads needing domain join, Group Policy or traditional authentication.",
+            "It can support applications using LDAP, NTLM or Kerberos without you operating the domain controllers.",
+            "An alternative is to connect to on-premises domain controllers over a VPN or run AD DS domain controllers on Azure virtual machines.",
+            "With on-premises directory integration, users can use organizational identities across local and cloud environments.",
+            "The managed service reduces domain-controller maintenance and replication administration, but has service-specific limitations and usage charges."
+          ]
+        },
+        {
+          "id": "understand-azure-active-directory--7-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/7-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "understand-azure-active-directory--8-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/8-summary",
+          "kind": "summary",
+          "points": [
+            "Entra ID serves cloud identity needs, AD DS provides traditional domain services, and managed Entra Domain Services supports suitable legacy application requirements."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "create-configure-manage-identities",
+      "title": "Create, configure, and manage identities",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/",
+      "lessons": [
+        {
+          "id": "create-configure-manage-identities--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Manage user identities, groups, licensing and device registration centrally, giving people only the access needed for their work."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--2-users",
+          "title": "Create, configure, and manage users",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/2-users",
+          "kind": "teaching",
+          "points": [
+            "Manage user objects under Identity, Users, All users in the Entra admin center; switch directory before changing another tenant.",
+            "Cloud identities are managed in Entra ID; directory-synchronized identities originate in on-premises Active Directory.",
+            "Guest accounts represent people outside the organization, such as contractors, and their access should be removed when no longer needed.",
+            "Cloud Sync uses lightweight agents with cloud-managed synchronization; choose Cloud Sync or Connect Sync after comparing the capabilities your deployment requires.",
+            "User type and source help distinguish tenant members, invited guests and synchronized accounts."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--3-exercise-assign-licenses-users",
+          "title": "Exercise - assign licenses to users",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/3-exercise-assign-licenses-users",
+          "kind": "exercise",
+          "points": [
+            "Use a tenant where you have the required user-administration permissions to create a test user.",
+            "Create an assigned security group and add the test user as a member, with an administrator as its owner.",
+            "In the Microsoft 365 admin center, open Billing, Licenses, select a product, choose Groups and assign the license to the group.",
+            "Verify the group assignment and the resulting license on the test user."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--4-exercise-restore-remove-deleted-users",
+          "title": "Exercise - restore or remove deleted users",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users",
+          "kind": "exercise",
+          "points": [
+            "Select a test account in Entra Users and delete it, then open Deleted users to find the suspended account.",
+            "Deleted user accounts can be restored during the 30-day retention window.",
+            "Choose Restore user, confirm the operation, and verify that the account appears again under All users.",
+            "Permanent deletion cannot be undone; use the official lab instructions and required administrator role."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--5-groups",
+          "title": "Create, configure, and manage groups",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+          "kind": "teaching",
+          "points": [
+            "Use security groups to manage access to shared resources; members can include users, devices and service principals.",
+            "Use Microsoft 365 groups for collaboration resources such as shared mailboxes, calendars, files and SharePoint sites.",
+            "Assigned membership is maintained manually. Dynamic membership adds or removes members according to attribute-based rules.",
+            "Dynamic user membership works with security and Microsoft 365 groups; dynamic device membership applies only to security groups.",
+            "A change such as a user moving department can change their dynamic group memberships automatically.",
+            "Dynamic user groups require enough Entra ID P1 or Intune for Education licenses for every unique user member; dynamic device group members need no license."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--6-exercise-add-groups-azure-active-directory",
+          "title": "Exercise - add groups in Microsoft Entra ID",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/6-exercise-add-groups-azure-active-directory",
+          "kind": "exercise",
+          "points": [
+            "In Entra Identity, Groups, create a Microsoft 365 group with Assigned membership.",
+            "Choose an owner and members, then verify the new group in All groups after refreshing if necessary.",
+            "Follow the official exercise in a tenant where you have the required user-administration permissions."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--7-configure-manage-device-registration",
+          "title": "Configure and manage device registration",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration",
+          "kind": "teaching",
+          "points": [
+            "Entra registered devices support personal-device and mobile scenarios; users can keep local device sign-in while adding a work account.",
+            "Entra joined devices use an organizational account for device sign-in and suit cloud-first management.",
+            "Hybrid Entra joined devices remain joined to on-premises AD DS and also have an Entra device identity.",
+            "Use hybrid join when existing applications require AD machine authentication or devices must retain Group Policy and existing imaging processes.",
+            "Device identity can support Conditional Access; Intune or another management tool applies compliance and security settings.",
+            "Entra join supports Windows 10 and Windows 11 except Home editions; check current support before choosing other operating systems.",
+            "Windows Hello for Business cloud Kerberos trust enables on-premises authentication from Entra joined or hybrid joined devices after Microsoft Entra Kerberos and the required policies are configured."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--8-manage-licenses",
+          "title": "Manage licenses",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/8-manage-licenses",
+          "kind": "teaching",
+          "points": [
+            "Assign user service licenses through the Microsoft 365 admin center or supported administration APIs and tools.",
+            "Group-based licensing assigns product licenses to members automatically and removes inherited licenses when members leave.",
+            "Provide enough licenses for each unique member who needs the licensed product and meet the group-based licensing entitlement requirements.",
+            "A product license can have selected service plans disabled when a service is not required.",
+            "The same product assigned through multiple groups or both directly and through a group consumes one license for that user.",
+            "Set each user’s correct usage location before assignment because some services are not available in every location.",
+            "Investigate assignment errors such as insufficient licenses or conflicting services rather than assuming every group member was licensed successfully."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--9-exercise-change-group-license-assignments",
+          "title": "Exercise - change group license assignments",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments",
+          "kind": "exercise",
+          "points": [
+            "Review the group’s current license assignments, then change them under Billing, Licenses in the Microsoft 365 admin center.",
+            "Check processing results and user error states after the assignment; group licensing runs in the background.",
+            "Resolve insufficient licenses, conflicting service plans, missing prerequisites, unsupported usage locations or duplicate proxy addresses as applicable.",
+            "For an add-on product, assign its prerequisite service plan together with the add-on in the licensing group.",
+            "When migrating direct licenses to group assignments, first assign equivalent group licenses and verify success before removing the direct assignments.",
+            "Check a subset of users and audit logs during migration so that users do not lose services or data.",
+            "After correcting a license problem, trigger supported reprocessing where needed and verify that the user’s resulting license state is correct."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--10-exercise-change-user-license-assignments",
+          "title": "Exercise - change user license assignments",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/10-exercise-change-user-license-assignments",
+          "kind": "exercise",
+          "points": [
+            "Create a test user in Entra ID and set the user’s usage location.",
+            "In Microsoft 365 Billing, Licenses, choose a product and use Assign licenses for the test account.",
+            "Verify the result on the user’s Licenses page in the Entra admin center."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--11-create-custom-security-attributes",
+          "title": "Create custom security attributes",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/11-create-custom-security-attributes",
+          "kind": "teaching",
+          "points": [
+            "Custom security attributes are tenant-wide business-specific key-value pairs assigned to users or enterprise applications.",
+            "Use them to categorize identities and applications or support fine-grained resource-access decisions.",
+            "Attribute types are Boolean, integer and string. Integer and string attributes can allow multiple values or predefined choices; Boolean attributes are single-valued.",
+            "Attributes can also be assigned to users synchronized from on-premises AD.",
+            "The source states that custom security attributes are not supported in Entra Domain Services, SAML token claims or JWT claims."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--12-explore-automatic-user-creation",
+          "title": "Explore automatic user creation",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation",
+          "kind": "teaching",
+          "points": [
+            "SCIM is an open standard for exchanging identity information and automating user and group provisioning.",
+            "The Entra provisioning service connects to a target application’s SCIM endpoint using its schema and REST APIs.",
+            "An authoritative HR system can drive creation, attribute updates and deprovisioning as employees join, change roles or leave.",
+            "API-driven inbound provisioning supports sources that do not expose a SCIM endpoint by accepting workforce data from an automation tool or script.",
+            "Keep provisioning and deprovisioning connected to the identity lifecycle so that departed employees do not retain unnecessary access."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--13-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/13-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "create-configure-manage-identities--14-summary-resources",
+          "title": "Summary and resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/14-summary-resources",
+          "kind": "summary",
+          "points": [
+            "User lifecycle, group membership, licensing and device identity work together to control access and keep organizational identities current."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "describe-core-architectural-components-of-azure",
+      "title": "Describe the core architectural components of Azure",
+      "url": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/",
+      "lessons": [
+        {
+          "id": "describe-core-architectural-components-of-azure--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Azure has a physical structure of datacenters, zones and regions, alongside a management hierarchy for resources, access and billing."
+          ]
+        },
+        {
+          "id": "describe-core-architectural-components-of-azure--2-what-microsoft-azure",
+          "title": "What is Microsoft Azure",
+          "url": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/2-what-microsoft-azure",
+          "kind": "teaching",
+          "points": [
+            "Azure provides cloud services ranging from virtual machines and storage to managed databases and web applications.",
+            "Move an existing workload to virtual machines or modernize parts of it using managed services.",
+            "Scale resources up or out when demand rises and reduce them when demand falls to avoid unnecessary unused capacity."
+          ]
+        },
+        {
+          "id": "describe-core-architectural-components-of-azure--3-get-started-azure-accounts",
+          "title": "Get started with Azure accounts",
+          "url": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/3-get-started-azure-accounts",
+          "kind": "teaching",
+          "points": [
+            "An Azure subscription is required to create and use Azure resources.",
+            "An account can have several subscriptions, allowing development, testing and production workloads to be separated.",
+            "Free and student offers have service limits and time-limited credits; check the current offer before relying on it.",
+            "When practicing in Azure, monitor usage and remove resources that are no longer needed to avoid unexpected costs."
+          ]
+        },
+        {
+          "id": "describe-core-architectural-components-of-azure--5-describe-azure-physical-infrastructure",
+          "title": "Describe Azure physical infrastructure",
+          "url": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure",
+          "kind": "teaching",
+          "points": [
+            "A region groups nearby datacenters connected by low-latency networking. Choose a suitable region for regional resource deployments.",
+            "Service availability, virtual machine sizes and storage features differ by region; some services such as Entra ID and Azure DNS are global.",
+            "Availability zones are physically separate datacenter groups within a region, each with independent power, cooling and networking.",
+            "A zonal resource is placed in a selected zone, while a zone-redundant service replicates across zones. Not every region or service supports zones.",
+            "Region pairs can support resilience across a geography, but not every region has a traditional pair.",
+            "Do not assume regional failover or replication is automatic: individual services may require customer configuration.",
+            "Sovereign Azure environments are isolated from the main Azure environment to meet particular legal or compliance requirements."
+          ]
+        },
+        {
+          "id": "describe-core-architectural-components-of-azure--6-describe-azure-management-infrastructure",
+          "title": "Describe Azure management infrastructure",
+          "url": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure",
+          "kind": "teaching",
+          "points": [
+            "The management hierarchy is management group, subscription, resource group and resource.",
+            "A resource group contains resource-group-scoped resources; each belongs to one group at a time. Some resources, such as policy definitions, exist at subscription or management-group scope. Groups cannot be nested or renamed.",
+            "Deleting a resource group deletes the resources it contains, so group resources with an appropriate shared lifecycle.",
+            "A subscription is a billing and access-management boundary; separate subscriptions can isolate environments, teams or cost reporting.",
+            "Management groups organize multiple subscriptions so that governance and access settings can apply across them.",
+            "Azure RBAC assignments and Azure Policy assignments at parent scopes apply to child scopes, including subscriptions and their resources.",
+            "A tenant has a Tenant Root Group. Management groups can be nested up to six levels, excluding the root and subscription levels; each group or subscription has one parent."
+          ]
+        },
+        {
+          "id": "describe-core-architectural-components-of-azure--8-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/8-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "describe-core-architectural-components-of-azure--9-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/9-summary",
+          "kind": "summary",
+          "points": [
+            "Use regions and zones for physical placement and resilience, and the management hierarchy for organization, access and governance."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sovereignty-policy-initiatives",
+      "title": "Azure Policy initiatives",
+      "url": "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/",
+      "lessons": [
+        {
+          "id": "sovereignty-policy-initiatives--overview",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/overview",
+          "kind": "summary",
+          "points": [
+            "Azure Policy evaluates resource configurations against governance rules and applies the configured effects.",
+            "An initiative groups policy definitions into a single assignment and compliance view for a shared governance goal."
+          ]
+        },
+        {
+          "id": "sovereignty-policy-initiatives--cloud-adoption-framework",
+          "title": "Cloud Adoption Framework for Azure",
+          "url": "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/cloud-adoption-framework",
+          "kind": "teaching",
+          "points": [
+            "Cloud governance is an ongoing process: build a governance team, assess risks, document policies, enforce them and monitor results.",
+            "Translate business risks and tolerance into clear rules and processes for identifying violations.",
+            "Governance policies cover regulatory compliance, security, operations, costs, data and resource management.",
+            "Azure Policy can restrict regions or VM sizes, require tags, assess existing configurations and support remediation.",
+            "Use the compliance dashboard to investigate both overall compliance and specific resource or policy results.",
+            "Balance governance controls with operational needs and test new policies before they affect important workloads."
+          ]
+        },
+        {
+          "id": "sovereignty-policy-initiatives--azure-policy-design-principles",
+          "title": "Azure Policy design principles",
+          "url": "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles",
+          "kind": "teaching",
+          "points": [
+            "Choose assignment scope carefully: management groups cover many subscriptions, while resource-group or resource scope narrows the impact.",
+            "Resource Manager handles control-plane operations such as creating and configuring resources; service data-plane operations access data directly.",
+            "Resource Manager authenticates and authorizes a control-plane request before passing it to the appropriate resource provider.",
+            "Azure Policy is integrated with Resource Manager; certain services also support specialized data-plane policy modes.",
+            "For a new or updated resource, policy evaluates the intended resource state during the request.",
+            "For existing resources, a newly assigned policy evaluates compliance through scans. A deny policy does not delete existing noncompliant resources.",
+            "Use management groups and subscriptions to organize governance rather than repeatedly configuring every resource separately."
+          ]
+        },
+        {
+          "id": "sovereignty-policy-initiatives--azure-policy-resources",
+          "title": "Azure Policy resources",
+          "url": "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources",
+          "kind": "teaching",
+          "points": [
+            "A definition describes the condition to test and the effect to apply; an initiative groups definitions for a shared purpose.",
+            "The definition’s location, at management-group or subscription level, limits where it can be assigned.",
+            "An assignment applies a definition or initiative at a scope and can supply parameters, exclusions, selectors and noncompliance messages.",
+            "An exemption records an accepted exception: Mitigated means the policy intent is met another way, while Waiver accepts noncompliance.",
+            "Manual policy effects use attestations to record the compliance state.",
+            "Remediation tasks can bring existing noncompliant resources into compliance for modify or deployIfNotExists assignments.",
+            "Remediation for deployIfNotExists or modify requires a managed identity on the assignment with the necessary Azure RBAC permissions."
+          ]
+        },
+        {
+          "id": "sovereignty-policy-initiatives--azure-policy-definitions",
+          "title": "Azure Policy definitions",
+          "url": "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions",
+          "kind": "teaching",
+          "points": [
+            "A policy definition is JSON containing a policy rule and optional parameters, with metadata and mode controlling its interpretation.",
+            "The if block identifies matching resources; the then block specifies an effect.",
+            "Combine conditions with allOf, anyOf and not, and use field, value or count expressions to inspect resource properties or arrays.",
+            "Deny blocks a noncompliant resource request; audit reports a warning without blocking it.",
+            "Modify changes supported properties or tags; deployIfNotExists can deploy a related resource when its conditions are met.",
+            "AuditIfNotExists checks a related resource, denyAction can block supported deletion actions, and manual allows compliance attestation.",
+            "Disabled turns off evaluation for the assignment’s effect. When policies are layered, each is evaluated independently and the combined restrictions apply."
+          ]
+        },
+        {
+          "id": "sovereignty-policy-initiatives--azure-policies-evaluation-resources",
+          "title": "Evaluation of resources through Azure Policy",
+          "url": "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources",
+          "kind": "teaching",
+          "points": [
+            "Policy evaluations are triggered by assignments or updates, resource changes, exemptions, subscription changes and scheduled or on-demand scans.",
+            "The standard full compliance evaluation runs every 24 hours; use az policy state trigger-scan for an on-demand evaluation when appropriate.",
+            "Compliance evaluation can take time depending on scope, policy complexity and system load; do not assume results update immediately.",
+            "Investigate noncompliant, conflicting or error states rather than relying only on the overall compliance percentage.",
+            "Set assignment enforcementMode to DoNotEnforce to evaluate compliance without enforcing policy effects; this differs from the disabled effect, which prevents evaluation.",
+            "Start new deny or modify policies without enforcement, check compliance and application health, then enable them through progressively larger deployment rings.",
+            "Azure Policy state-change events can be routed through Event Grid to handlers such as Functions, Logic Apps or a webhook."
+          ]
+        },
+        {
+          "id": "sovereignty-policy-initiatives--check",
+          "title": "Check your knowledge",
+          "url": "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "sovereignty-policy-initiatives--summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/summary",
+          "kind": "summary",
+          "points": [
+            "Design policy scope and effects carefully, evaluate before enforcing, and expand deployment only after compliance and application-health checks."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "secure-azure-resources-with-rbac",
+      "title": "Secure your Azure resources with Azure role-based access control (Azure RBAC)",
+      "url": "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/",
+      "lessons": [
+        {
+          "id": "secure-azure-resources-with-rbac--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Azure role-based access control specifies who can access Azure resources, which operations they can perform and where that access applies."
+          ]
+        },
+        {
+          "id": "secure-azure-resources-with-rbac--2-rbac-overview",
+          "title": "What is Azure RBAC?",
+          "url": "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview",
+          "kind": "teaching",
+          "points": [
+            "A role assignment combines a security principal, a role definition and a scope: who, what and where.",
+            "Principals include users, groups and applications. A role definition lists permitted operations.",
+            "Scopes include management group, subscription, resource group and individual resource; child scopes inherit parent assignments.",
+            "Owner manages resources and access. Contributor manages resources but cannot grant access. Reader views resources. User Access Administrator manages access.",
+            "Assign the least privilege needed, using a narrow scope and a suitable built-in or custom role.",
+            "Azure RBAC permissions are additive across assignments. NotActions subtract operations from one role’s Actions but do not prevent another role from granting them.",
+            "Use Access control, also called IAM, to inspect assignments, grant access or remove role assignments."
+          ]
+        },
+        {
+          "id": "secure-azure-resources-with-rbac--3-knowledge-check-rbac-overview",
+          "title": "Knowledge check - What is Azure RBAC?",
+          "url": "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/3-knowledge-check-rbac-overview",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "secure-azure-resources-with-rbac--4-list-access",
+          "title": "Exercise - List access using Azure RBAC and the Azure portal",
+          "url": "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access",
+          "kind": "exercise",
+          "points": [
+            "Use My permissions in the Azure portal to review your own role assignments and their scopes.",
+            "Open a resource group’s Access control, IAM, and Role assignments tab to see who has access.",
+            "Distinguish assignments made at the current scope from permissions inherited from a parent scope.",
+            "Use the Roles tab to inspect built-in and custom role definitions and their assignments."
+          ]
+        },
+        {
+          "id": "secure-azure-resources-with-rbac--5-grant-access",
+          "title": "Exercise - Grant access using Azure RBAC and the Azure portal",
+          "url": "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access",
+          "kind": "exercise",
+          "points": [
+            "Use an account with role-assignment permissions, such as Owner or User Access Administrator at the intended scope.",
+            "Open the resource group’s Access control, IAM, and choose Add role assignment.",
+            "Select Virtual Machine Contributor, select the intended user, then review the role, member and scope before assigning.",
+            "The assignment lets the user manage virtual machines within that resource group; its scope does not cover unrelated groups.",
+            "Remove the specific role assignment to revoke that grant, and check whether other assignments still provide access."
+          ]
+        },
+        {
+          "id": "secure-azure-resources-with-rbac--6-view-activity-logs",
+          "title": "Exercise - View activity logs for Azure RBAC changes",
+          "url": "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs",
+          "kind": "exercise",
+          "points": [
+            "Open Azure Activity Log and choose the timespan for the access-change investigation.",
+            "Filter operations for role-assignment creation or deletion and custom-role definition creation, updates or deletion.",
+            "Open an event to review its details and identify the change.",
+            "Download the filtered activity log as CSV when a report is needed."
+          ]
+        },
+        {
+          "id": "secure-azure-resources-with-rbac--7-knowledge-check-rbac",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/7-knowledge-check-rbac",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "secure-azure-resources-with-rbac--8-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/8-summary",
+          "kind": "summary",
+          "points": [
+            "Grant access by combining the right principal, role and scope, and use the Activity Log to investigate access changes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "allow-users-reset-their-password",
+      "title": "Allow users to reset their password with Microsoft Entra self-service password reset",
+      "url": "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/",
+      "lessons": [
+        {
+          "id": "allow-users-reset-their-password--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Self-service password reset lets eligible users recover access without waiting for an administrator to reset their password."
+          ]
+        },
+        {
+          "id": "allow-users-reset-their-password--2-self-service-password-reset",
+          "title": "What is self-service password reset in Microsoft Entra ID?",
+          "url": "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+          "kind": "teaching",
+          "points": [
+            "Changing a known password while signed in differs from resetting a forgotten or expired password through SSPR.",
+            "The reset process identifies the user, verifies identity using configured methods, accepts a new password and can send configured notifications.",
+            "Require users to register the minimum number of permitted authentication methods before they rely on SSPR.",
+            "Administrator accounts have stronger reset requirements: two authentication methods and no security questions.",
+            "Enable user notifications to reveal unexpected resets, and enable administrator notifications so Global Administrators are alerted when another administrator resets a password.",
+            "Cloud-only password reset requires an eligible Microsoft 365 or Entra premium license. On-premises password writeback requires Entra ID P1/P2 or Microsoft 365 Business Premium plus supported synchronization configuration.",
+            "For synchronized users, password writeback sends cloud password changes back to the on-premises directory through a supported Connect or Cloud Sync deployment."
+          ]
+        },
+        {
+          "id": "allow-users-reset-their-password--3-implement-azure-ad-self-service-password-reset",
+          "title": "Implement Microsoft Entra self-service password reset",
+          "url": "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+          "kind": "teaching",
+          "points": [
+            "For the pilot described here, prepare an eligible licensed tenant, an Authentication Policy Administrator, a non-administrator test user and a security group.",
+            "Choose None to disable user SSPR, Selected to pilot with a security group, or All for tenant-wide user rollout.",
+            "Set the required number of methods in Password reset. Manage allowed methods in the Authentication methods policy; security questions remain in the SSPR policy.",
+            "Require registration at sign-in if appropriate and decide how often users should reconfirm their authentication information.",
+            "Configure user and administrator reset notifications and a custom helpdesk email address or URL.",
+            "Test with a non-administrator account because administrator reset requirements differ from ordinary users."
+          ]
+        },
+        {
+          "id": "allow-users-reset-their-password--4-exercise-set-up-self-service-password-reset",
+          "title": "Exercise - Set up self-service password reset",
+          "url": "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+          "kind": "exercise",
+          "points": [
+            "Create an assigned security group for pilot users and add a non-administrator test account.",
+            "Set password reset to Selected, choose the pilot group and save the configuration.",
+            "Review the required method count, registration and notifications in Password reset, enable Email OTP for the pilot users in the Authentication methods policy, and configure the helpdesk contact.",
+            "Sign in as the test user at the official registration portal and register the email method used by this exercise.",
+            "Use the official reset portal to verify identity, receive the verification code, set a new password and confirm the reset works.",
+            "Use a separate private browser session if an existing administrator session interferes with the test."
+          ]
+        },
+        {
+          "id": "allow-users-reset-their-password--5-exercise-customize-directory-branding",
+          "title": "Exercise - Customize directory branding",
+          "url": "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+          "kind": "exercise",
+          "points": [
+            "Use an eligible licensed tenant and an Organizational Branding Administrator, then prepare background and logo files to the current branding image requirements.",
+            "In the intended Entra tenant, open Company branding and configure the favicon, background image and background color.",
+            "Review and save the branding, then sign in as the test user in a new browser window to check the result.",
+            "Verify that branding also appears when the user selects the forgotten-password flow."
+          ]
+        },
+        {
+          "id": "allow-users-reset-their-password--6-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/6-summary",
+          "kind": "summary",
+          "points": [
+            "After a lab, remove its test user and group and turn off the pilot SSPR setting if it is no longer needed.",
+            "Keep production password-reset settings separate from temporary exercise configuration."
+          ]
+        }
+      ]
+    }
+  ]
+}

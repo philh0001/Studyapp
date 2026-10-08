@@ -1,0 +1,173 @@
+{
+  "id": "az-104-administrator-prerequisites",
+  "title": "AZ-104: Prerequisites for Azure administrators",
+  "url": "https://learn.microsoft.com/en-us/training/paths/az-104-administrator-prerequisites/",
+  "modules": [
+    {
+      "id": "intro-to-azure-cloud-shell",
+      "title": "Introduction to Azure Cloud Shell",
+      "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/",
+      "lessons": [
+        {
+          "id": "intro-to-azure-cloud-shell--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/1-introduction",
+          "kind": "summary",
+          "points": [
+            "Azure Cloud Shell provides an authenticated browser command line for managing Azure resources with Bash or PowerShell."
+          ]
+        },
+        {
+          "id": "intro-to-azure-cloud-shell--2-what-is-azure-cloud-shell",
+          "title": "What is Azure Cloud Shell?",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+          "kind": "teaching",
+          "points": [
+            "Cloud Shell lets you manage virtual machines, storage and networking without installing Azure command-line tools locally.",
+            "Microsoft maintains the Azure CLI and PowerShell modules in the hosted environment.",
+            "The shell uses your signed-in account and its existing permissions; opening a shell does not grant additional resource access.",
+            "Persist scripts and SSH keys in Cloud Shell storage so that they remain available between sessions.",
+            "Use the Cloud Shell editor to change stored scripts directly in the browser."
+          ]
+        },
+        {
+          "id": "intro-to-azure-cloud-shell--3-how-azure-cloud-shell-works",
+          "title": "How does Azure Cloud Shell work?",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+          "kind": "teaching",
+          "points": [
+            "Open Cloud Shell from shell.azure.com, the Azure portal or a supported Microsoft Learn code snippet.",
+            "A temporary host is allocated to your session; choose Bash or PowerShell before running commands.",
+            "Sessions terminate after 20 minutes of inactivity. Start a new session to continue working.",
+            "Files stored on CloudDrive persist after the temporary session ends and can be accessed from another device.",
+            "An Azure Files share can be mounted for persistent files; the share is associated with a particular region.",
+            "Open the built-in editor from the toolbar or run code <filename> to edit a file.",
+            "Cloud Shell includes tools such as Git, Terraform, Ansible, kubectl and Helm, alongside Azure tools."
+          ]
+        },
+        {
+          "id": "intro-to-azure-cloud-shell--4-when-to-use-azure-cloud-shell",
+          "title": "When should you use Azure Cloud Shell?",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+          "kind": "teaching",
+          "points": [
+            "Choose Cloud Shell for occasional Azure administration from a browser when your usual workstation is unavailable.",
+            "Use persistent storage when you need the same scripts in later sessions.",
+            "Avoid relying on a temporary shell session for unattended or long-running work; inactivity can disconnect the session and lose its current state.",
+            "Choose your own virtual machine or container when you need administrator privileges or unsupported installed tools.",
+            "Cloud Shell has a default limit of 20 concurrent users per tenant; request a quota increase for larger training sessions."
+          ]
+        },
+        {
+          "id": "intro-to-azure-cloud-shell--5-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/5-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "intro-to-azure-cloud-shell--6-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/6-summary",
+          "kind": "summary",
+          "points": [
+            "Use Cloud Shell for browser-based administration, and save files in persistent storage rather than relying on the temporary host."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "create-azure-resource-manager-template-vs-code",
+      "title": "Deploy Azure infrastructure by using JSON ARM templates",
+      "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/",
+      "lessons": [
+        {
+          "id": "create-azure-resource-manager-template-vs-code--1-introduction",
+          "title": "Introduction",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/1-introduction",
+          "kind": "summary",
+          "points": [
+            "ARM templates describe Azure infrastructure declaratively in JSON and can be versioned with application code.",
+            "Microsoft recommends Bicep for people starting infrastructure as code on Azure because it offers simpler authoring than JSON templates."
+          ]
+        },
+        {
+          "id": "create-azure-resource-manager-template-vs-code--2-explore-template-structure",
+          "title": "Explore Azure Resource Manager template structure",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure",
+          "kind": "teaching",
+          "points": [
+            "Infrastructure as code keeps resource configuration in version control, making deployments repeatable and changes traceable.",
+            "An ARM template declares the desired resources and properties; Resource Manager organizes their creation and dependencies.",
+            "Templates are idempotent: repeating an unchanged deployment does not create duplicate resources.",
+            "The required template sections include $schema, contentVersion and resources. Optional sections include parameters, variables, functions and outputs.",
+            "Parameters supply deployment-specific values; variables simplify expressions; outputs return values after deployment.",
+            "Deploy a local template after signing in with az login or Connect-AzAccount and selecting the intended subscription and resource group.",
+            "For resource-group deployment, use az deployment group create or New-AzResourceGroupDeployment; review deployment status and history in the portal."
+          ]
+        },
+        {
+          "id": "create-azure-resource-manager-template-vs-code--3-exercise-create-and-deploy-template",
+          "title": "Exercise - Create and deploy an Azure Resource Manager template",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/3-exercise-create-and-deploy-template",
+          "kind": "exercise",
+          "points": [
+            "Create azuredeploy.json in Visual Studio Code with the template schema, version and an initially empty resources section.",
+            "Sign in using Azure CLI or PowerShell, select the intended subscription, and create or select the exercise resource group.",
+            "Deploy the empty template in the default incremental mode and inspect its successful deployment record; it creates no resources.",
+            "Add a Microsoft.Storage/storageAccounts resource with its name, API version, location, kind and SKU, then deploy the updated template.",
+            "Review the resource and deployment history in the Azure portal. Follow the official exercise in your own chosen lab environment."
+          ]
+        },
+        {
+          "id": "create-azure-resource-manager-template-vs-code--4-add-flexibility-arm-template",
+          "title": "Add flexibility to your Azure Resource Manager template by using parameters and outputs",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template",
+          "kind": "teaching",
+          "points": [
+            "Use parameters for values that vary by environment, such as resource names, SKUs, size and capacity.",
+            "Define each parameter with a type and optionally a default, allowed values, length or value constraints, and a description.",
+            "A template supports up to 256 parameters; supply values on the command line or in a parameter file.",
+            "Use secureString for secrets and secureObject for objects containing sensitive values. Do not hardcode secrets or provide secret defaults.",
+            "Reference a parameter in a resource with the parameters function, so one template can serve several environments.",
+            "Outputs have a declared type and value; the reference function can retrieve runtime resource properties such as storage endpoints.",
+            "Redeploying with the same resource names and scopes updates existing resources. In incremental mode, specify all non-default properties because omitted properties can reset to defaults."
+          ]
+        },
+        {
+          "id": "create-azure-resource-manager-template-vs-code--5-exercise-parameters-output",
+          "title": "Exercise - Add parameters and outputs to your Azure Resource Manager template",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output",
+          "kind": "exercise",
+          "points": [
+            "Add a storageName parameter and use it in the storage account resource name.",
+            "Add a storageSKU parameter with an allowedValues list and replace the fixed SKU with the parameter expression.",
+            "Deploy with an allowed SKU, then observe that a value outside the allowed list fails validation.",
+            "Add a storageEndpoint output using the storage account runtime properties and inspect it in the deployment result and portal.",
+            "Follow the official exercise for exact commands and naming requirements; this app does not deploy resources for you."
+          ]
+        },
+        {
+          "id": "create-azure-resource-manager-template-vs-code--6-knowledge-check",
+          "title": "Module assessment",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/6-knowledge-check",
+          "kind": "knowledge-check",
+          "points": [
+            "Complete the interactive check on Microsoft Learn."
+          ]
+        },
+        {
+          "id": "create-azure-resource-manager-template-vs-code--7-summary",
+          "title": "Summary",
+          "url": "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/7-summary",
+          "kind": "summary",
+          "points": [
+            "Parameters make a template reusable across deployments, while outputs expose useful results such as resource endpoints."
+          ]
+        }
+      ]
+    }
+  ]
+}

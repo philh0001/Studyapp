@@ -1,0 +1,1445 @@
+{
+  "checkedAt": "2026-10-08T11:04:24.509411Z",
+  "reviewKind": "Independent AI-assisted semantic comparison with retained official Microsoft source text",
+  "humanApproval": false,
+  "questionsReviewed": 168,
+  "optionsReviewed": 672,
+  "findings": [],
+  "corrections": [],
+  "method": "Read every prompt, key, option and explanation across the four packs. Compared technical claims with actual retrieved Microsoft Learn teaching/exercise text and retained current product documentation, including current limitations that supersede older training wording. Checked exactly one supported answer under each scenario, module relevance and valid teaching/exercise lesson IDs. Cache availability, URL matching and hashes were not used as substitutes for semantic review. No Azure resource operations, human approval or comparison against actual exam banks was performed. These are original revision questions; official knowledge-check questions were excluded from source comparison.",
+  "questions": [
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+      ],
+      "notes": "Key b: Cloud Shell supplies an authenticated browser shell with Azure tools already installed. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/2-what-is-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features"
+      ],
+      "notes": "Key c: Cloud Shell authenticates the signed-in account; it does not elevate its Azure resource permissions. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+      ],
+      "notes": "Key d: The mounted share persists clouddrive files across temporary sessions and devices. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+      ],
+      "notes": "Key a: Cloud Shell is intended for interactive use; inactivity can terminate the session and its running work. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/4-when-to-use-azure-cloud-shell",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/features",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/faq-troubleshooting"
+      ],
+      "notes": "Key b: A custom environment can provide administrator privileges that the unprivileged Cloud Shell account lacks. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-cloud-shell-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-cloud-shell/3-how-azure-cloud-shell-works",
+        "https://learn.microsoft.com/en-us/azure/cloud-shell/use-cloud-shell-editor"
+      ],
+      "notes": "Current editor documentation explicitly supports code <filename>; this resolves the older training page\u2019s Classic-mode caveat. The other commands authenticate or manage Kubernetes rather than editing this file."
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+      ],
+      "notes": "Key c: Parameters accept environment-specific input, allowing the same resource definition to use different names. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template"
+      ],
+      "notes": "Key d: secureString is the suitable type for a password, and avoiding embedded secrets keeps them out of template source. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+      ],
+      "notes": "Key a: The reference function retrieves runtime resource properties, and outputs return the endpoint object after deployment. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/2-explore-template-structure",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ],
+      "notes": "Key b: With the same identities and unchanged settings, repeating the deployment does not create duplicate resources. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/5-exercise-parameters-output"
+      ],
+      "notes": "Key c: Basic is outside the allowedValues list, so the supplied input fails the parameter constraint. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "create-azure-resource-manager-template-vs-code-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-azure-resource-manager-template-vs-code/4-add-flexibility-arm-template",
+        "https://learn.microsoft.com/en-us/azure/azure-resource-manager/templates/deployment-modes"
+      ],
+      "notes": "Compared incremental deployment behavior at resource and property levels: unrelated omitted resources remain, but omitted properties of declared resources can reset. The negative question is unambiguous."
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+      ],
+      "notes": "Key d: The same tenant can serve multiple subscriptions, while each subscription is associated with one tenant at a time. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/2-examine-azure-active-directory"
+      ],
+      "notes": "Key a: A service principal is the tenant-specific representation of an application. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/6-examine-azure-domain-services"
+      ],
+      "notes": "Key b: The managed service provides traditional domain capabilities without the team deploying and maintaining domain controllers. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/3-compare-azure-active-directory-domain-services"
+      ],
+      "notes": "Key c: Entra users and groups have a flat directory structure; traditional AD DS OU-based Group Policy is not an Entra ID feature. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/5-compare-azure-premium-p1-p2-plans",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/licensing"
+      ],
+      "notes": "Key d: P2 includes Identity Protection capabilities for risk-based user and sign-in protection. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "understand-azure-active-directory-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/understand-azure-active-directory/4-examine-azure-directory-service-cloud-apps",
+        "https://learn.microsoft.com/en-us/azure/app-service/configure-authentication-provider-aad"
+      ],
+      "notes": "Key a: App Service authentication can enforce sign-in using the configured tenant; requiring authentication protects access to the app. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ],
+      "notes": "Key a: Dynamic user rules evaluate user attributes and update membership when the matching attributes change. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/5-groups",
+        "https://learn.microsoft.com/en-us/entra/identity/users/groups-dynamic-membership"
+      ],
+      "notes": "Current dynamic-membership documentation explicitly exempts device members from member licensing; its unique-user licensing rule must not be converted into a per-device requirement."
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/7-configure-manage-device-registration"
+      ],
+      "notes": "Key c: Hybrid joined devices retain the on-premises domain join and also have an Entra device identity. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/4-exercise-restore-remove-deleted-users"
+      ],
+      "notes": "Key d: The account remains restorable within the 30-day retention window unless it was permanently deleted. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/9-exercise-change-group-license-assignments"
+      ],
+      "notes": "Key a: Verifying the inherited licenses before removing direct ones avoids a gap in service access; the same product is consumed only once per user. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "create-configure-manage-identities-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/create-configure-manage-identities/12-explore-automatic-user-creation"
+      ],
+      "notes": "Key b: SCIM and the provisioning service automate user and group lifecycle changes through the target application\u2019s endpoint. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+      ],
+      "notes": "Key b: Zones are physically separate datacenter groups with independent power, cooling and networking within a region. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+      ],
+      "notes": "Key c: A zone-redundant service spreads or replicates across zones through the platform, unlike a single-zone placement. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+      ],
+      "notes": "Key d: A shared resource-group lifecycle allows the contained lab resources to be deleted together when the lab ends. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+      ],
+      "notes": "Key a: Subscriptions provide billing and access-control boundaries and can separate lifecycle environments. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/6-describe-azure-management-infrastructure"
+      ],
+      "notes": "Key b: Management groups sit above subscriptions and allow governance assignments to apply across the subscriptions beneath them. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "describe-core-architectural-components-of-azure-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/describe-core-architectural-components-of-azure/5-describe-azure-physical-infrastructure"
+      ],
+      "notes": "Key c: The module explicitly warns that services may require customer-configured recovery and replication across regions. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+      ],
+      "notes": "Key c: An initiative groups policy definitions so they can be assigned and tracked together for a shared goal. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-definitions"
+      ],
+      "notes": "Key d: audit records a warning for noncompliance without blocking the request. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-design-principles"
+      ],
+      "notes": "Key a: A deny policy evaluates existing resources for compliance but does not delete them merely because they violate the newly assigned rule. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources",
+        "https://learn.microsoft.com/en-us/azure/governance/policy/how-to/remediate-resources"
+      ],
+      "notes": "Key b: Policy remediation uses the assignment\u2019s managed identity, which must be authorized for the deployment it performs. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policies-evaluation-resources"
+      ],
+      "notes": "Key c: DoNotEnforce retains compliance evaluation while suppressing the policy effect during resource requests. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "sovereignty-policy-initiatives-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/sovereignty-policy-initiatives/azure-policy-resources"
+      ],
+      "notes": "Key d: Mitigated records that the policy\u2019s intent is satisfied through another method. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+      ],
+      "notes": "Key d: This role and narrow scope allow VM management in the intended group without granting access-management authority. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+      ],
+      "notes": "Key a: NotActions subtracts from one role\u2019s Actions; it is not a deny that overrides permissions granted by a different role. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/4-list-access"
+      ],
+      "notes": "Key b: An inherited assignment originates at the parent scope; remove or change that assignment there to revoke its grant. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/2-rbac-overview"
+      ],
+      "notes": "Key c: These identify who receives access, what operations are permitted and where the access applies. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/5-grant-access"
+      ],
+      "notes": "Key d: User Access Administrator manages user access to Azure resources, including role assignments at its authorized scope. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "secure-azure-resources-with-rbac-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/secure-azure-resources-with-rbac/6-view-activity-logs"
+      ],
+      "notes": "Key a: The Activity Log records Azure RBAC changes; the timespan and operation filters isolate the relevant events. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset"
+      ],
+      "notes": "Key a: Selected limits ordinary-user SSPR eligibility to the specified security group. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+      ],
+      "notes": "Key b: This sends reset notifications to the affected user so an unexpected reset can be noticed. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/4-exercise-set-up-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks"
+      ],
+      "notes": "Key c: The exercise uses a non-administrator because administrator reset policy has stronger requirements. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/2-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-howitworks",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-sspr-licensing"
+      ],
+      "notes": "Key d: Writeback sends cloud password changes to on-premises AD through supported synchronization; the feature needs eligible licensing. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/3-implement-azure-ad-self-service-password-reset",
+        "https://learn.microsoft.com/en-us/entra/identity/authentication/concept-authentication-methods-manage"
+      ],
+      "notes": "Centralized authentication-method management and the continuing security-question exception are supported by current migration documentation; branding and helpdesk details are unrelated."
+    },
+    {
+      "questionId": "allow-users-reset-their-password-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/allow-users-reset-their-password/5-exercise-customize-directory-branding",
+        "https://learn.microsoft.com/en-us/entra/fundamentals/how-to-customize-branding"
+      ],
+      "notes": "Key b: Company branding provides the logo, background and other sign-in appearance settings; the exercise then tests the result with a user. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-virtual-networks-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ],
+      "notes": "Key b: A /27 contains 32 addresses. Azure reserves five, leaving 27 assignable addresses. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-virtual-networks-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ],
+      "notes": "Key c: This range is inside 10.24.0.0/16 and does not overlap 10.24.8.0/24. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-virtual-networks-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/5-plan-addressing",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ],
+      "notes": "Key d: Private addresses support communication inside the virtual network and over configured private hybrid connections. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-virtual-networks-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/8-associate-private-ip-addresses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-faq"
+      ],
+      "notes": "Key a: Static assignment lets you select the available subnet address and suits a firewall rule that needs a predictable IP. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-virtual-networks-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/6-create-public-ip-addressing",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/ip-services/public-ip-addresses"
+      ],
+      "notes": "Key b: Static public IPs are allocated at creation and released when the public IP resource is deleted. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-virtual-networks-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-networks/3-create-subnets",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Key c: Azure routes between subnets by default. Custom routes can direct that traffic through the NVA. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-network-security-groups-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Both applicable NSGs must permit the flow; the scenario excludes security-admin overrides. Priority comparisons across separate NSGs cannot overturn the NIC deny."
+    },
+    {
+      "questionId": "configure-network-security-groups-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/5-create-network-security-groups-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Key d: 240 is within the custom range and is evaluated before 300, allowing a matching HTTPS exception. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-network-security-groups-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/6-implement-asgs",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Key a: ASGs group VM network interfaces by application role and can be used as NSG sources or destinations. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-network-security-groups-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/3-determine-network-security-groups-rules",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Checked the default outbound rule table. NSG permission is qualified separately from actual outbound routing/SNAT, so the answer does not promise internet connectivity."
+    },
+    {
+      "questionId": "configure-network-security-groups-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/4-determine-network-security-groups-effective-rules"
+      ],
+      "notes": "Key c: IP flow verify evaluates a proposed flow against applicable security rules and reports the allowing or denying rule. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-network-security-groups-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-network-security-groups/2-implement-network-security-groups",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/network-security-groups-overview"
+      ],
+      "notes": "Key d: A subnet can have at most one associated NSG, and an NSG can contain multiple rules. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+      ],
+      "notes": "Key d: The registrar delegation points resolvers to the authoritative provider; Azure DNS requires all four assigned name servers. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/2-what-is-azure-dns",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+      ],
+      "notes": "Key a: A record sets group records with the same name and type, so this set can contain both IPv4 addresses. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/5-resolve-name-alias-record",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-alias",
+        "https://learn.microsoft.com/en-us/azure/dns/dns-zones-records"
+      ],
+      "notes": "Key b: An Azure alias can reference the public IP resource from an apex A record, coupling resolution to the resource. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+      ],
+      "notes": "Key c: Links let the specified virtual networks resolve the private-zone records without public publication. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/3-configure-azure-dns-host-domain"
+      ],
+      "notes": "Key d: TTL controls the caching lifetime, so an already cached answer can remain until its existing expiry. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "host-domain-azure-dns-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/host-domain-azure-dns/4-exercise-create-dns-zone-a-record"
+      ],
+      "notes": "Key a: An explicit authoritative-server query can inspect the zone record even without public delegation. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-vnet-peering-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Key a: Global peering connects virtual networks in different regions using the Microsoft backbone. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-vnet-peering-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Key b: Peered VNet address spaces must not overlap; duplicating the same /16 violates that requirement. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-vnet-peering-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/5-determine-service-chaining-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Key c: Ordinary VNet peering is nontransitive; explicit additional connectivity or routing is needed. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-vnet-peering-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/3-determine-gateway-transit-connectivity",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Key d: The hub permits gateway sharing and the spoke selects the remote gateway; the spoke must not have its own gateway. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-vnet-peering-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/4-create"
+      ],
+      "notes": "Key a: A complete peering requires relationships in both directions with Connected status on both VNets. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-vnet-peering-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-vnet-peering/2-determine-uses",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-network-peering-overview"
+      ],
+      "notes": "Key b: Azure-provided name resolution does not automatically span peerings; private linked zones or custom DNS can provide cross-VNet naming. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Key b: Both UDRs match, and the /24 is the longer, more specific prefix. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "The equal-prefix UDR/BGP preference is supported and appropriately excludes service-endpoint route exceptions."
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Key d: The None next hop means matching traffic is dropped rather than forwarded. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Key a: The exercise enables forwarding on both the Azure NIC and inside the guest; both are needed for this NVA forwarding path. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Key b: A route table affects its associated source subnet. The other subnet needs its own routing if its traffic must also use the appliance. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "control-network-traffic-flow-with-routes-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Key c: A route table can be associated with multiple subnets, while each subnet can have one associated route table. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer"
+      ],
+      "notes": "Key c: An internal load balancer uses a private frontend and can serve private Azure and suitably connected on-premises clients. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer"
+      ],
+      "notes": "Key d: Application Gateway supports regional Layer 7 path routing and WAF. Azure Load Balancer does not inspect URL paths. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ],
+      "notes": "Key a: HTTP probes expect status 200. Once the backend is unhealthy, new connections are not directed to it. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ],
+      "notes": "Key b: Client IP affinity uses a reduced hash to associate connections from the same client IP with the same backend under the stated stable conditions. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ],
+      "notes": "Key c: Inbound NAT rules map frontend ports to specific backend instances, matching instance-specific management access. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-load-balancer-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works"
+      ],
+      "notes": "Key d: Outbound rules configure SNAT for the backend pool to communicate with internet or other public endpoints. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+      ],
+      "notes": "Key b: Path-based routing maps URL path patterns to backend pools, matching the two paths in this scenario. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+      ],
+      "notes": "Key d: Multi-site listeners match hostnames, and their routing rules send each site to its intended backend pool. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+      ],
+      "notes": "Key a: HTTPS backend settings make the gateway establish an encrypted backend connection after frontend TLS termination. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+      ],
+      "notes": "Key c: Probes test backend health so unhealthy servers are excluded from request distribution. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+      ],
+      "notes": "Key b: Gateway-managed affinity cookies direct later requests in the session to the same backend, matching locally stored session state. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-application-gateway-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works"
+      ],
+      "notes": "Key a: WAF inspects web requests using attack-detection rules that address threats such as SQL injection and cross-site scripting. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+      ],
+      "notes": "Key c: IP flow verify evaluates the packet\u2019s addresses, ports, protocol and direction and identifies the security rule that allows or denies it. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+      ],
+      "notes": "Key a: Next hop uses effective NIC routes to identify the destination\u2019s next-hop type and IP, exposing an incorrect appliance route. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+      ],
+      "notes": "Key d: Connection Monitor repeatedly probes configured endpoints and tracks connectivity and latency over time. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+      ],
+      "notes": "Key b: Packet capture records VM traffic, supports packet-parameter filters, and saves the capture to disk or blob storage. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works"
+      ],
+      "notes": "Key a: Topology visualizes network resources and their relationships, making it suitable for understanding the inherited layout. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-network-watcher-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher"
+      ],
+      "notes": "Key c: VPN troubleshoot evaluates gateway and connection health and returns fault details and recommended actions. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-storage-accounts-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+      ],
+      "notes": "Key b: Queue Storage stores messages for asynchronous processing, separating the upload request from later worker activity. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-storage-accounts-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+      ],
+      "notes": "Key d: General-purpose v2 supports blobs, queues and tables, matching the application\u2019s standard storage requirements. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-storage-accounts-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+      ],
+      "notes": "Key a: ZRS synchronously replicates across three availability zones in one region, providing the requested zone resilience without geographic replication. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-storage-accounts-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/5-determine-replication-strategies"
+      ],
+      "notes": "Key c: RA-GRS adds a readable secondary endpoint to asynchronous geo-replication, matching the permitted replication lag. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-storage-accounts-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/7-secure-storage-endpoints",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-private-endpoints"
+      ],
+      "notes": "Key b: Creating a private endpoint does not automatically block public access. Disabling public network access closes that separate network path. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-storage-accounts-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/4-determine-storage-account-kinds",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-account-overview"
+      ],
+      "notes": "Key a: Standard and Premium account kinds cannot be converted directly; deploy the required kind and migrate supported data. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-blob-storage-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+      ],
+      "notes": "Key c: Append blobs optimize adding blocks to the end, making them suitable for growing logs. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-blob-storage-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/3-create-blob-containers"
+      ],
+      "notes": "Key a: Blob and Container anonymous levels are effective only when account-level anonymous access is allowed. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-blob-storage-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/4-create-blob-access-tiers",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/access-tiers-overview"
+      ],
+      "notes": "The current access-tier documentation treats 30-day Cool retention in GPv2 as minimum billing duration, not a deletion lock. Early-deletion charges are correctly qualified."
+    },
+    {
+      "questionId": "configure-blob-storage-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/5-add-blob-lifecycle-management-rules"
+      ],
+      "notes": "Key b: Lifecycle filters select the intended blobs, while the age condition and tier action define when and how they transition. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-blob-storage-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/6-determine-blob-object-replication",
+        "https://learn.microsoft.com/en-us/azure/storage/blobs/object-replication-overview"
+      ],
+      "notes": "Key a: Object replication requires blob versioning in source and destination accounts plus change feed in the source. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-blob-storage-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-blob-storage/7-upload-blobs"
+      ],
+      "notes": "Key c: AzCopy is the command-line tool for transferring data to and from Blob Storage and between storage locations. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-storage-security-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/2-review-strategies",
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+      ],
+      "notes": "Key b: A managed identity enables Microsoft Entra authorization without application-held account keys, and a scoped role limits data access. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-storage-security-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "notes": "Key d: The SAS can restrict resource, permissions and validity time, while HTTPS protects the credential in transit. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-storage-security-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/3-create-shared-access-signatures",
+        "https://learn.microsoft.com/en-us/azure/storage/common/storage-sas-overview"
+      ],
+      "notes": "Key a: A stored access policy supplies server-side control for a service SAS, allowing its governed access to be changed or revoked without key rotation. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-storage-security-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/4-identify-uri-sas-parameters"
+      ],
+      "notes": "Key c: spr specifies allowed protocols; restricting it to https requires HTTPS requests. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-storage-security-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/6-create-customer-managed-keys",
+        "https://learn.microsoft.com/en-us/azure/storage/common/customer-managed-keys-overview"
+      ],
+      "notes": "Key b: These vault protections and managed-identity permissions meet the prerequisites for Azure Storage to use the customer-managed key. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-storage-security-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-security/5-determine-storage-service-encryption"
+      ],
+      "notes": "Key a: Infrastructure encryption adds a second layer using a separate key and algorithm in addition to storage service encryption. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/2-compare-files-to-blobs",
+        "https://learn.microsoft.com/en-us/training/modules/configure-storage-accounts/3-explore-azure-storage-services"
+      ],
+      "notes": "Key d: Azure Files provides managed SMB file shares, fitting applications that already expect shared-file access. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/3-manage-file-shares"
+      ],
+      "notes": "Key b: SMB uses TCP 445, so permitting that required connection addresses the specified firewall block. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/4-create-file-share-snapshots",
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+      ],
+      "notes": "Key a: The snapshot preserves the earlier point-in-time file state and can be used to restore an individual file. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/5-implement-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/files/storage-files-prevent-file-share-deletion"
+      ],
+      "notes": "Key c: Share soft delete retains the deleted share, including its contents and snapshots, so it can be undeleted during retention. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+      ],
+      "notes": "Key b: The cloud endpoint is an SMB share and the server endpoint is a path on a supported NTFS data volume of the registered Windows Server. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-files-file-sync-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-files-file-sync/7-deploy-azure-file-sync",
+        "https://learn.microsoft.com/en-us/azure/storage/file-sync/file-sync-planning"
+      ],
+      "notes": "Key d: Cloud tiering retains frequently accessed files locally and recalls tiered content from Azure when users access it. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+      ],
+      "notes": "Key a: Deallocation releases compute allocation, while retained disks remain stored and continue to incur applicable storage charges. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+      ],
+      "notes": "Key c: Deallocation releases the current cluster placement, allowing selection of another available regional size; the operation requires interruption planning. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm"
+      ],
+      "notes": "Key d: Separate persistent data disks provide durable storage; backups add recovery protection for loss or corruption. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+      ],
+      "notes": "Key b: ARM templates declare resources in JSON and parameters let the same definition deploy environments with different names and settings. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+      ],
+      "notes": "Key c: Separate zones reduce shared datacenter exposure, and a load balancer distributes requests among working redundant instances. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-virtual-machines-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability"
+      ],
+      "notes": "Key a: Azure Backup retains recovery points, while the vault and policy manage backup schedule and retention for later recovery. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains"
+      ],
+      "notes": "Key a: Update domains group VMs that can restart together; spreading these VMs across them separates their planned-maintenance batches. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ],
+      "notes": "Key b: Zones are physically separate locations with independent power, cooling and networking; replicated instances in other zones can serve the workload. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling"
+      ],
+      "notes": "Key c: Horizontal scaling changes instance count; adding instances is scale out. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+      ],
+      "notes": "Key d: Flexible orchestration allows differing VM images, sizes and configurations within one scale set. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale"
+      ],
+      "notes": "Key a: Paired rules add instances when demand requires them and remove unnecessary instances after demand falls. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-virtual-machine-availability-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets"
+      ],
+      "notes": "Key b: Application Gateway provides layer-seven routing and TLS termination for the stated web traffic. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-app-service-plans-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ],
+      "notes": "Key b: A separate plan provides a separate compute and scaling boundary rather than burdening the existing apps' shared capacity. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-app-service-plans-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ],
+      "notes": "Key c: Free and Shared use shared compute with CPU quotas and cannot scale out. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-app-service-plans-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+      ],
+      "notes": "Key d: Scale up changes tier or instance size to obtain more per-instance CPU, memory or features. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-app-service-plans-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out"
+      ],
+      "notes": "Key a: Plan scaling affects App Service compute; dependent databases and storage require their own capacity decisions. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-app-service-plans-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+      ],
+      "notes": "Key b: Autoscale supports schedule-based profiles and custom rules for predictable demand. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-app-service-plans-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings"
+      ],
+      "notes": "Current autoscale settings explicitly say missing-metric fallback scales out from below default but does not scale in from above default. Six instances therefore are not reduced to four."
+    },
+    {
+      "questionId": "configure-azure-app-services-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service"
+      ],
+      "notes": "Key c: Always On keeps the app loaded during idle periods and is required for continuous or CRON-triggered WebJobs. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-app-services-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots"
+      ],
+      "notes": "Key d: A live staging slot permits validation before its content and eligible configuration are exchanged with production. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-app-services-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+      ],
+      "notes": "Key a: Slot-specific connection strings remain attached to their slots when app content swaps. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-app-services-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service"
+      ],
+      "notes": "Key b: This permits unauthenticated traffic to reach app code, where the app can protect the appropriate routes. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-app-services-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names"
+      ],
+      "notes": "Key c: CNAME maps one hostname to another, so it follows resolution of the target when the target IP changes. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-app-services-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights"
+      ],
+      "notes": "Key d: Dependency telemetry reveals latency and failures in calls to external services. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines"
+      ],
+      "notes": "The question deliberately specifies typical process isolation, avoiding a universal shared-kernel assertion for every container isolation technology."
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ],
+      "notes": "Key a: Containers in a group share lifecycle, resources, local networking and storage volumes; multi-container groups support Linux. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files"
+      ],
+      "notes": "Current ACI Azure Files documentation explicitly limits mounts to Linux containers. General support for Windows containers does not imply feature parity."
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ],
+      "notes": "Key c: External access requires a group-level exposed port and a container listening on that port; ACI has no port mapping. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update"
+      ],
+      "notes": "Current ACI update documentation lists CPU, memory and GPU changes as requiring group deletion and recreation; a restart or DNS-label edit cannot change the allocation."
+    },
+    {
+      "questionId": "configure-azure-container-instances-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform"
+      ],
+      "notes": "Key a: Container Apps supplies managed serverless microservices, scaling and traffic splitting while abstracting the underlying Kubernetes platform. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/2-what-is-azure-backup"
+      ],
+      "notes": "Key a: RPO expresses tolerable data loss in time; RTO expresses the target service-restoration time. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+      ],
+      "notes": "Key b: MARS supports direct Azure backup of supported Windows files, folders and system state. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+      ],
+      "notes": "Key c: Incremental backups focus on changed data blocks after the initial full copy. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+      ],
+      "notes": "Key d: Backup policies define backup schedule and recovery-point retention for the protected workload. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/3-how-azure-backup-works"
+      ],
+      "notes": "Key a: Archive storage targets infrequently accessed long-term recovery points; eligibility must be checked for the workload. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "intro-to-azure-backup-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-backup/4-when-to-use-azure-backup"
+      ],
+      "notes": "Key b: On-demand backups can use specific retention settings independent of the scheduled-policy retention. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+      ],
+      "notes": "Key b: Azure Backup retains recovery points for restoring an earlier data state after loss or corruption. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine"
+      ],
+      "notes": "Key c: Azure VM backup uses a Recovery Services vault to manage policies, recovery points and backup/restore operations. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/3-back-up-azure-virtual-machine",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction"
+      ],
+      "notes": "Key d: Linux application consistency requires application-appropriate pre/post scripts; it should not be assumed from a basic snapshot alone. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ],
+      "notes": "Key a: Replace existing targets a VM that still exists. A deleted VM requires another supported restore option. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/5-restore-virtual-machine-data",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms"
+      ],
+      "notes": "Key b: Restore disk recovers disks and provides a template for customized VM creation; restored disks can also be attached where supported. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "protect-virtual-machines-with-azure-backup-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/protect-virtual-machines-with-azure-backup/2-azure-backup-features-scenarios"
+      ],
+      "notes": "Key c: Soft delete preserves deleted backup data temporarily so it can be recovered within the configured protection period. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-01",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/2-monitor-vm-health",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm"
+      ],
+      "notes": "Key c: Host metrics are automatic; guest event-log collection requires an agent and an appropriate DCR selecting data and destinations. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-02",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/3-exercise-create-virtual-machine"
+      ],
+      "notes": "Key d: Boot diagnostics exposes screenshots and boot output for investigating startup failures. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-03",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/4-view-host-metrics"
+      ],
+      "notes": "Key a: Maximum shows the highest sampled value in each aggregation interval, matching the request for peaks. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-04",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/5-enable-vm-insights",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/vminsights-performance",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/metrics-opentelemetry-guest"
+      ],
+      "notes": "The explicit classic logs-based qualifier is necessary: current documentation distinguishes Log Analytics storage for that path from Azure Monitor workspace storage for OpenTelemetry metrics."
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-05",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+      ],
+      "notes": "Key c: The rule selects Linux Syslog and sends those guest events to the chosen Log Analytics workspace. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    },
+    {
+      "questionId": "monitor-azure-vm-using-diagnostic-data-check-06",
+      "optionsReviewed": 4,
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/monitor-azure-vm-using-diagnostic-data/6-collect-log-data"
+      ],
+      "notes": "Key d: KQL queries in Log Analytics can filter the collected Syslog records by relevant fields such as severity. The three competing answers and their explanations were reviewed against the stated requirements and the cited teaching/exercise context; no competing option satisfies those requirements."
+    }
+  ]
+}

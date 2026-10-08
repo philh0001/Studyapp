@@ -1,0 +1,170 @@
+[
+  {
+    "referenceId": "monx-dcr",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/data-collection-rule-overview",
+    "checkedAt": "2026-10-08T01:38:44.778Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Data Collection Rules in Azure Monitor - Azure Monitor | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/dcr.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "9a693f7fe85657abc894e77d9666b14e3a17019ce69a58527c62f5d5b1a183a8"
+  },
+  {
+    "referenceId": "monx-metrics",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/metrics/metrics-aggregation-explained",
+    "checkedAt": "2026-10-08T01:38:44.843Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Azure Monitor metrics aggregation and display explained - Azure Monitor | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/metrics.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "a01d84be64fe061cf3d33627baad6bcd30d3deede2389271878af35f3f2a7943"
+  },
+  {
+    "referenceId": "monx-vault",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-create-recovery-services-vault",
+    "checkedAt": "2026-10-08T01:38:44.878Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Create and Configure Recovery Services Vaults - Azure Backup | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/vault.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "386905fb328ccdbac3759a3c86b829f565d34ae6d22b731c3c8e77b8bcc77d79"
+  },
+  {
+    "referenceId": "monx-kql",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/get-started-queries",
+    "checkedAt": "2026-10-08T01:38:44.919Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Get started with log queries in Azure Monitor Logs - Azure Monitor | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/kql.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "c19f7c7bfa20c506a783ef95a0e283bbc6b05e4e9d61446e2821147c5942262e"
+  },
+  {
+    "referenceId": "monx-storage",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/storage/common/storage-insights-overview",
+    "checkedAt": "2026-10-08T01:38:44.951Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Monitor Azure Storage services with Azure Monitor Storage insights | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/storage.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "2fa89c03c2ff8c774cf323aaa11f40b92a8bfa40da36e560a3bae548de8c0858"
+  },
+  {
+    "referenceId": "monx-backupvault",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-vault-overview",
+    "checkedAt": "2026-10-08T01:38:44.991Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Overview of the Backup vaults - Azure Backup | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/backupvault.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "24f0f4cdea4e9a7e1886b43fae3fb3a2dc5faa19d2f75acb6efdd1d72e1a6ea6"
+  },
+  {
+    "referenceId": "monx-backupalerts",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-monitoring-use-azuremonitor",
+    "checkedAt": "2026-10-08T01:38:45.021Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Azure Monitor Logs in Azure Backup - Azure Backup | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/backupalerts.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "6ee02034292726a936bf07abb97a756e3808fafde34d2eb98e03ec133bb99aa9"
+  },
+  {
+    "referenceId": "monx-restore",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-arm-restore-vms",
+    "checkedAt": "2026-10-08T01:38:45.069Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Restore VMs by using the Azure portal using Azure Backup - Azure Backup | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/restore.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "d2f7d3cd2ab8348fb822a53d46e2d0dd5c814760a722f036d8a6030ed1d5eb18"
+  },
+  {
+    "referenceId": "monx-reports",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/configure-reports",
+    "checkedAt": "2026-10-08T01:38:45.094Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Configure Azure Backup reports - Azure Backup | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/reports.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "8bcf852e011e2b005e7b45ddb6359f7d2c0808bbb2eed4055e228af082836120"
+  },
+  {
+    "referenceId": "monx-failover",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-failover-failback",
+    "checkedAt": "2026-10-08T01:38:45.108Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Tutorial to fail over Azure VMs to a secondary region for disaster recovery with Azure Site Recovery. - Azure Site Recovery | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/failover.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "f65013b8c4256c70a04bc119c845ca610ca50d3a95a3c4b54d0f28f7dda8e0a8"
+  },
+  {
+    "referenceId": "monx-connection",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview",
+    "checkedAt": "2026-10-08T01:38:45.132Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Connection Monitor Overview - Azure Network Watcher | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/connection.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "88862c456fe55b9b4c23e762b4dd57b685f55c450d2a36012d81f76ef49f23aa"
+  },
+  {
+    "referenceId": "monx-replication",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-how-to-enable-replication",
+    "checkedAt": "2026-10-08T01:38:45.146Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Configure replication for Azure VMs in Azure Site Recovery - Azure Site Recovery | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/replication.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "d4e977d30d5f339c8083de4d7f9f737be387a92f0cc48bc5d574b6fb0f617c8b"
+  },
+  {
+    "referenceId": "monx-backup",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+    "checkedAt": "2026-10-08T01:38:45.151Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page About Azure VM backup - Azure Backup | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/backup.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "3ae361131fbf1a4972364a8066ead2bdd65d27ca0b83382dea9857de5ff9411e"
+  },
+  {
+    "referenceId": "monx-alerts",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-overview",
+    "checkedAt": "2026-10-08T01:38:45.154Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Overview of Azure Monitor alerts - Azure Monitor | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/alerts.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "dc4e4d32c6fff366d104c6adff1e1a2865b75c2ae6568ac9910f15dc7ed97cde"
+  },
+  {
+    "referenceId": "monx-diagnostic",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/data-collection/diagnostic-settings",
+    "checkedAt": "2026-10-08T01:38:45.406Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Diagnostic Settings in Azure Monitor - Azure Monitor | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/diagnostic.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "7fac41e65b4ab90b5961b552a1a08cccb1ccea6f30c8d2c7fe4811f5189e7d9b"
+  },
+  {
+    "referenceId": "monx-testfailover",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/site-recovery/azure-to-azure-tutorial-dr-drill",
+    "checkedAt": "2026-10-08T01:38:45.613Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Tutorial to run an Azure VM disaster recovery drill with Azure Site Recovery - Azure Site Recovery | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/testfailover.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "d67792e1e03387ea3047340bea01278649d6fb8eb979507221f51c70fb91ea71"
+  },
+  {
+    "referenceId": "monx-processing",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/alerts/alerts-processing-rules",
+    "checkedAt": "2026-10-08T01:38:45.619Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Alert processing rules for Azure Monitor alerts - Azure Monitor | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/processing.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "c64cb90a431168cea2936035e664a0e8114838d8932ad8a6999346d32b231fd9"
+  },
+  {
+    "referenceId": "monx-logs",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/logs/log-query-overview",
+    "checkedAt": "2026-10-08T01:38:45.624Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Log queries in Azure Monitor - Azure Monitor | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/logs.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "090721822b64e6e9eac0258ba0583f5530740965d3177ffea585e3b31ed540e2"
+  },
+  {
+    "referenceId": "monx-policy",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-enhanced-policy",
+    "checkedAt": "2026-10-08T01:38:45.629Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Back Up Azure VMs with the Enhanced Policy - Azure Backup | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/policy.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "b09840bbe103c242003ff24a8c7323c25a2738b329ea77977eb203fcf72fe2f3"
+  },
+  {
+    "referenceId": "monx-watcher",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+    "checkedAt": "2026-10-08T01:38:45.633Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Azure Network Watcher Overview | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/watcher.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "b90a207a7e26eca5126ae4ff46a2496003fdedd3b21767ee25df2890e6b1c1c6"
+  },
+  {
+    "referenceId": "monx-insights",
+    "canonicalUrl": "https://learn.microsoft.com/en-us/azure/azure-monitor/vm/monitor-vm",
+    "checkedAt": "2026-10-08T01:38:45.724Z",
+    "result": "checked",
+    "evidenceSummary": "Retrieved official Microsoft Learn page Monitor virtual machines in Azure - Azure Monitor | Microsoft Learn. HTML stored in /tmp/studyapp-monitoring-sources/insights.html; question references record claim-level sections. AI authoring is not human review.",
+    "contentHash": "b87cd99069585ff97ce2ceaa4e3de33181054591d1790e81d19e8d2c800d5646"
+  }
+]

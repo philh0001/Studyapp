@@ -1,0 +1,135 @@
+{
+  "checkedAt": "2026-10-08T11:44:19.968227+00:00",
+  "reviewKind": "AI-assisted semantic source comparison",
+  "humanApproval": false,
+  "findings": [],
+  "lessons": [
+    {
+      "lessonId": "control-network-traffic-flow-with-routes--2-azure-virtual-network-route",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/2-azure-virtual-network-route",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Read a route as a forwarding decision; Work through specificity and exceptions; Connect policy to the source subnet. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "control-network-traffic-flow-with-routes--3-exercise-create-custom-routes",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/3-exercise-create-custom-routes",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Plan the three roles before creating resources; Understand what the association changes; Review a complete configuration. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "control-network-traffic-flow-with-routes--4-network-virtual-appliances",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/4-network-virtual-appliances",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/components"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Separate routing from inspection; Make transit possible at both layers; Design for an appliance failure. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "control-network-traffic-flow-with-routes--5-exercise-create-nva-vm",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/5-exercise-create-nva-vm",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Build a forwarding device deliberately; Understand the two forwarding switches; Check the device before blaming the route. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "control-network-traffic-flow-with-routes--6-exercise-route-traffic-through-nva",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/control-network-traffic-flow-with-routes/6-exercise-route-traffic-through-nva",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/virtual-networks-udr-overview",
+        "https://learn.microsoft.com/en-us/azure/virtual-network/diagnose-network-routing-problem"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Distinguish provisioning from readiness; Explain both traces; Use evidence to choose the next check. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "intro-to-azure-load-balancer--2-what-is-azure-load-balancer",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/2-what-is-azure-load-balancer",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Scale a service behind one entry point; Choose public or private exposure; Separate availability from access permissions. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "intro-to-azure-load-balancer--3-how-azure-load-balancer-works",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/3-how-azure-load-balancer-works",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/components",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Follow a flow through the components; Choose probes and affinity for a reason; Do not confuse distribution with translation. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "intro-to-azure-load-balancer--4-when-to-use-azure-load-balancer",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-load-balancer/4-when-to-use-azure-load-balancer",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Choose from the information the service must inspect; Compare regional and global responsibilities; Apply the comparison to a deployment. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "intro-to-azure-application-gateway--2-what-is-azure-application-gateway",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/2-what-is-azure-application-gateway",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Place a web-aware gateway before the application; Separate encryption, session state and scaling; Work through a portal scenario. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "intro-to-azure-application-gateway--3-how-azure-application-gateway-works",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/3-how-azure-application-gateway-works",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/configuration-listeners",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-custom-probe-overview"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Connect listeners, rules and pools; Work through host and path routing; Keep protocol legs and security controls distinct. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "intro-to-azure-application-gateway--4-when-to-use-azure-application-gateway",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-application-gateway/4-when-to-use-azure-application-gateway",
+        "https://learn.microsoft.com/en-us/azure/application-gateway/features",
+        "https://learn.microsoft.com/en-us/azure/load-balancer/load-balancer-overview"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Turn application requirements into selection criteria; Check the backend reachability requirement; Compare alternatives before deployment. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "intro-to-azure-network-watcher--2-what-is-azure-network-watcher",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/2-what-is-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/nsg-flow-logs-overview"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Choose the question before the diagnostic tool; Use several evidence types together; Use current traffic logging options. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "intro-to-azure-network-watcher--3-how-azure-network-watcher-works",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/3-how-azure-network-watcher-works",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Establish the monitoring prerequisites; Describe an exact test instead of a vague failure; Build a small continuous monitoring example. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    },
+    {
+      "lessonId": "intro-to-azure-network-watcher--4-when-to-use-azure-network-watcher",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-network-watcher/4-when-to-use-azure-network-watcher",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/network-watcher-overview",
+        "https://learn.microsoft.com/en-us/azure/network-watcher/connection-monitor-overview"
+      ],
+      "notes": "Compared all added paragraphs and steps with full official unit text and actual cited product documentation. Checked: Diagnose a blocked management connection; Investigate hybrid failures and latency separately; Make a change that follows the evidence. Original example addresses and application names illustrate the documented behavior; no Microsoft knowledge-check content copied."
+    }
+  ],
+  "sectionsReviewed": 42,
+  "wordsAdded": 3087
+}

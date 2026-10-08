@@ -1,0 +1,14 @@
+.library-page { overflow-wrap: anywhere; }
+.library-fields { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,260px),1fr)); gap: 0 18px; }
+.library-checks { display: grid; gap: 8px; }
+.library-result-heading, .library-actions, .library-links { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.library-result-heading h2 { margin-right: auto; }
+.library-links { margin: 16px 0; }
+.library-links a, .library-actions a { min-height: 48px; display: inline-flex; align-items: center; }
+.library-result details { margin-top: 18px; }
+.library-page summary { cursor: pointer; min-height: 48px; padding: 12px 0; }
+.library-page .field input, .library-page .field select, .library-page .field textarea { min-width: 0; width: 100%; }
+.library-note, .library-preflight { margin: 18px 0; padding: 16px; border-left: 3px solid currentColor; background: var(--surface-soft,transparent); }
+.library-note p { white-space: pre-wrap; }
+.library-saved { padding-top: 18px; margin-top: 18px; border-top: 1px solid currentColor; }
+@media (max-width: 430px) { .library-actions > button { width: 100%; } .library-result-heading { align-items: flex-start; } }

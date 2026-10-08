@@ -1,0 +1,296 @@
+{
+  "checkedAt": "2026-10-08T11:50:26.177199+00:00",
+  "reviewKind": "AI-assisted semantic source comparison",
+  "humanApproval": false,
+  "findings": [],
+  "lessons": [
+    {
+      "lessonId": "intro-to-azure-virtual-machines--2-compile-a-checklist-for-creating-a-vm",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/2-compile-a-checklist-for-creating-a-vm",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm"
+      ],
+      "notes": "Compared every paragraph with the complete VM checklist unit and current resize documentation. Avoided obsolete disk preview labels and unsupported universal VM disk counts."
+    },
+    {
+      "lessonId": "intro-to-azure-virtual-machines--3-create-a-vm",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/3-create-a-vm"
+      ],
+      "notes": "Compared portal steps and prerequisites with the full exercise. No subscription deployment was performed; avoided hard-coded passwords and claims that public SSH is required for every VM."
+    },
+    {
+      "lessonId": "intro-to-azure-virtual-machines--4-describe-other-create-vm-options",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/4-describe-other-create-vm-options"
+      ],
+      "notes": "Compared tool distinctions and CLI command syntax with the complete actual unit. Command uses existing lab group and authenticated intended subscription; it was not executed. Kept Automation general rather than recommending retired Automation Update Management."
+    },
+    {
+      "lessonId": "intro-to-azure-virtual-machines--5-high-availability",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/5-high-availability",
+        "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines"
+      ],
+      "notes": "Compared full availability unit with current VM reliability documentation. Avoided obsolete claims that a Standard Load Balancer is included free with VM tiers."
+    },
+    {
+      "lessonId": "intro-to-azure-virtual-machines--6-backup-services",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/intro-to-azure-virtual-machines/6-backup-services",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-vms-introduction",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-overview",
+        "https://learn.microsoft.com/en-us/azure/backup/backup-azure-about-mars"
+      ],
+      "notes": "Compared full unit with current VM backup process, backup overview and MARS agent documentation. Retains Windows files/folders/system-state scope, agentless crash-consistent support and policy-controlled protection; no unlimited-transfer or retention promise."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--2-plan-for-maintenance-downtime",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/2-plan-for-maintenance-downtime",
+        "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines"
+      ],
+      "notes": "Compared both sections with the entire maintenance unit and current VM reliability guidance. Distinguishes predictive live migration from unexpected host failure without promising zero interruption."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--3-setup-availability-sets",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/3-setup-availability-sets",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ],
+      "notes": "Compared set membership, tier separation and recreation requirements with complete unit and current availability-set documentation. No SLA or instance-count guarantee was added."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--4-review-update-fault-domains",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/4-review-update-fault-domains",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/availability-set-overview"
+      ],
+      "notes": "Compared all domain definitions and immutable update-domain count with full unit/current documentation. Worked example is conceptual, not a promise of a specific assignment pattern."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--5-review-availability-zones",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/5-review-availability-zones",
+        "https://learn.microsoft.com/en-us/azure/reliability/reliability-virtual-machines"
+      ],
+      "notes": "Compared zone versus region and zonal/zone-redundant distinctions with complete unit/current VM reliability documentation. Avoided implying that zonal placement automatically duplicates applications."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--6-compare-vertical-horizontal-scaling",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/6-compare-vertical-horizontal-scaling",
+        "https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/resize-vm",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+      ],
+      "notes": "Compared complete vertical/horizontal unit and current resize process. Original workload comparison is conditional and does not assume all applications can scale out."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--7-implement-scale-sets",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/7-implement-scale-sets",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes"
+      ],
+      "notes": "Compared complete scale-set unit and current orchestration-mode documentation. Preserves Flexible support for identical VMs and immutable mode; separates load balancing from redundancy."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--8-create-scale-sets",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/8-create-scale-sets",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-orchestration-modes",
+        "https://learn.microsoft.com/en-us/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-manage-fault-domains"
+      ],
+      "notes": "Compared creation choices with complete unit and current spreading table. Avoided stale universal claim that fixed spreading always means five domains in every mode."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--9-implement-autoscale",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/9-implement-autoscale",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings"
+      ],
+      "notes": "Compared sustained-demand and scheduled-capacity explanations with full unit and current autoscale/profile docs. No misleading schedule-as-webhook trigger or automatic vertical resizing claim."
+    },
+    {
+      "lessonId": "configure-virtual-machine-availability--10-configure-autoscale",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-virtual-machine-availability/10-configure-autoscale",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview"
+      ],
+      "notes": "Compared all settings with full configure-autoscale unit and current profile schema. Corrects default fallback semantics and keeps scale-in state assumptions explicit."
+    },
+    {
+      "lessonId": "configure-app-service-plans--2-implement-azure",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/2-implement-azure",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ],
+      "notes": "Compared complete plan-implementation unit and current hosting-plan docs. Uses dedicated-tier sharing and standard plan-wide behavior rather than claiming every tier has identical instance placement."
+    },
+    {
+      "lessonId": "configure-app-service-plans--3-determine-plan-pricing",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/3-determine-plan-pricing",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+      ],
+      "notes": "Compared full pricing unit with current hosting plans and automatic scaling docs. Avoided obsolete Isolated v1 recommendations and fixed slot/instance counts from training tables."
+    },
+    {
+      "lessonId": "configure-app-service-plans--4-scale-up-scale-out",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/4-scale-up-scale-out",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-scale-up",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ],
+      "notes": "Compared full scaling unit and current plan/scale-up docs. Preserves dependency independence; qualifies plan-wide scaling and avoids zero-interruption guarantees."
+    },
+    {
+      "lessonId": "configure-app-service-plans--5-plan-scaling",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-app-service-plans/5-plan-scaling",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-overview",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-automatic-scaling"
+      ],
+      "notes": "Compared all sections against complete unit and current profile/automatic scaling documentation. Maintains per-app automatic scaling, Premium v4 and scale-out-only default fallback."
+    },
+    {
+      "lessonId": "configure-azure-app-services--2-implement",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/2-implement",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization"
+      ],
+      "notes": "Compared full implementation unit with current App Service overview and authentication docs. Avoided asserting every language runs on every OS or that platform authentication supplies complete business authorization."
+    },
+    {
+      "lessonId": "configure-azure-app-services--3-create-app-service",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/3-create-app-service",
+        "https://learn.microsoft.com/en-us/azure/app-service/configure-common",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview"
+      ],
+      "notes": "Compared complete create-app unit and current configuration docs, including app-setting restart behavior. Keeps Always On requirements and supported runtime combinations qualified."
+    },
+    {
+      "lessonId": "configure-azure-app-services--4-explore-continuous-integration-deployment",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/4-explore-continuous-integration-deployment",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-continuous-deployment",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+      ],
+      "notes": "Compared complete deployment unit with current Deployment Center docs. Original release scenario; no stale assertion that FTP is an automated repository source."
+    },
+    {
+      "lessonId": "configure-azure-app-services--5-create-deployment-slots",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/5-create-deployment-slots",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ],
+      "notes": "Compared full slot-creation unit with current staging documentation. Includes resource sharing and documented Linux/container auto-swap limitation; avoids guaranteed zero-downtime or database rollback claims."
+    },
+    {
+      "lessonId": "configure-azure-app-services--6-add-deployment-slots",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/6-add-deployment-slots",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots"
+      ],
+      "notes": "Compared complete add-slots unit with current clone/swap tables. Default slot-specific behavior is qualified; no claim that cloned settings copy content or private endpoints."
+    },
+    {
+      "lessonId": "configure-azure-app-services--7-secure-app-service",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/7-secure-app-service",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-authentication-authorization"
+      ],
+      "notes": "Compared entire security unit with current authentication architecture and rejection choices. Distinguishes authentication from app-specific authorization; qualifies Windows failed-request traces."
+    },
+    {
+      "lessonId": "configure-azure-app-services--8-create-custom-domain-names",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/8-create-custom-domain-names",
+        "https://learn.microsoft.com/en-us/azure/app-service/app-service-web-tutorial-custom-domain"
+      ],
+      "notes": "Compared full custom-domain unit with current mapping tutorial. Includes TXT verification guidance and supported managed-certificate tiers; avoids unsupported root-CNAME instructions."
+    },
+    {
+      "lessonId": "configure-azure-app-services--9-backup-app-service",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/9-backup-app-service",
+        "https://learn.microsoft.com/en-us/azure/app-service/manage-backup"
+      ],
+      "notes": "Compared full backup unit with current backup documentation. Preserves automatic/custom distinction, virtual-network firewall support, database limitations and verified 31 March 2028 deprecation date."
+    },
+    {
+      "lessonId": "configure-azure-app-services--10-use-application-insights",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/10-use-application-insights",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/app/app-insights-overview"
+      ],
+      "notes": "Compared entire Application Insights unit and current overview. Keeps instrumentation and platform support conditional; original dependency investigation scenario, no promise of automatic universal telemetry."
+    },
+    {
+      "lessonId": "configure-azure-app-services--11-simulation-web-apps",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-app-services/11-simulation-web-apps",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview",
+        "https://learn.microsoft.com/en-us/azure/app-service/deploy-staging-slots",
+        "https://learn.microsoft.com/en-us/azure/azure-monitor/autoscale/autoscale-understanding-settings",
+        "https://learn.microsoft.com/en-us/azure/app-service/overview-hosting-plans"
+      ],
+      "notes": "Compared complete exercise objectives and current hosting/slots/profile docs. Avoids obsolete implication that the PHP target must use Windows; no Azure resources were deployed."
+    },
+    {
+      "lessonId": "configure-azure-container-instances--2-compare-containers-to-virtual-machines",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/2-compare-containers-to-virtual-machines",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview",
+        "https://learn.microsoft.com/en-us/azure/container-apps/overview"
+      ],
+      "notes": "Compared full container/VM comparison with current ACI and Container Apps overview. Qualifies process isolation rather than claiming ACI lacks a VM-equivalent isolation boundary."
+    },
+    {
+      "lessonId": "configure-azure-container-instances--3-review",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/3-review",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ],
+      "notes": "Compared full ACI unit and current resource update, groups and Files-mount docs. Preserves deletion/recreation for resource changes and Linux-only feature restrictions."
+    },
+    {
+      "lessonId": "configure-azure-container-instances--4-implement-container-groups",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/4-implement-container-groups",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups"
+      ],
+      "notes": "Compared complete group unit and current group docs. Retains Linux-only multiple containers, shared port namespace, request aggregation and released endpoints."
+    },
+    {
+      "lessonId": "configure-azure-container-instances--5-review-docker-platform",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/5-review-docker-platform",
+        "https://learn.microsoft.com/en-us/azure/container-apps/overview",
+        "https://learn.microsoft.com/en-us/azure/container-apps/scale-app"
+      ],
+      "notes": "Compared full Container Apps unit/current overview and scaling docs. Keeps scale-to-zero conditional, explains missing-ingress/custom-rule restart limitation and supported minimum replica baseline; no direct Kubernetes API exposure."
+    },
+    {
+      "lessonId": "configure-azure-container-instances--6-simulation-containers",
+      "sourceUrls": [
+        "https://learn.microsoft.com/en-us/training/modules/configure-azure-container-instances/6-simulation-containers",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-overview",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-container-groups",
+        "https://learn.microsoft.com/en-us/azure/container-instances/container-instances-update"
+      ],
+      "notes": "Compared complete exercise objectives with current ACI/group/update documentation. Does not invent the external lab’s image, credentials or command syntax; no resources were deployed."
+    }
+  ],
+  "sectionsReviewed": 91,
+  "wordsAdded": 7629
+}
