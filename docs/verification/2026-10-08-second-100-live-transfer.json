@@ -1,0 +1,48 @@
+{
+  "kind": "actual-live-resource-transfer",
+  "url": "https://az104-revision-web.showtime-workers.workers.dev",
+  "checkedAt": "2026-10-08T05:07:29.345Z",
+  "browser": "156.0.8078.4",
+  "serviceWorkers": "blocked",
+  "files": [
+    {
+      "file": "/assets/index-DAe89zrD.js",
+      "encodedBodySize": 48963,
+      "decodedBodySize": 166200,
+      "transferSize": 49263
+    },
+    {
+      "file": "/assets/rolldown-runtime-hePW80VL.js",
+      "encodedBodySize": 440,
+      "decodedBodySize": 716,
+      "transferSize": 740
+    },
+    {
+      "file": "/assets/vendor-BFrqGuZg.js",
+      "encodedBodySize": 103381,
+      "decodedBodySize": 320039,
+      "transferSize": 103681
+    },
+    {
+      "file": "/assets/trust-RP6GRrhI.js",
+      "encodedBodySize": 224,
+      "decodedBodySize": 334,
+      "transferSize": 524
+    },
+    {
+      "file": "/assets/validators-CI8esFNU.js",
+      "encodedBodySize": 22875,
+      "decodedBodySize": 332851,
+      "transferSize": 23175
+    },
+    {
+      "file": "/assets/question-bank-qA3mPXWy.js",
+      "encodedBodySize": 138876,
+      "decodedBodySize": 899567,
+      "transferSize": 139176
+    }
+  ],
+  "encodedJavaScriptBytes": 314759,
+  "decodedJavaScriptBytes": 1719707,
+  "note": "Cold phone-sized Chromium Resource Timing on live same-origin JavaScript. Excludes service-worker offline installation; no physical-device speed claim."
+}

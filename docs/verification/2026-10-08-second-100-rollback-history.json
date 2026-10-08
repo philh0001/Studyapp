@@ -1,0 +1,17 @@
+[
+  {
+    "id": "a37d4b9a-960e-4569-84e0-91b22ca230f7",
+    "verified": true,
+    "sourceSha": "2e44ae8449246553aefc585218271684202b0370",
+    "verificationReport": "2026-10-08-second-100-deployment-verification.json"
+  },
+  {
+    "id": "b56e3daf-94cc-48dc-89a9-5bc843bf016e",
+    "verified": true,
+    "sourceSha": "86670424886ac1242f6f1a592b101eb3cf432963",
+    "verificationReport": "2026-10-08-second-100-baseline-deployment-verification.json",
+    "matchingBuild": "/tmp/studyapp-second100-baseline/dist",
+    "matchingArchive": "/tmp/studyapp-second100-baseline-dist.tar.gz",
+    "retention": "Temporary workspace artifact; rebuild from source and reverify if unavailable."
+  }
+]

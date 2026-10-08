@@ -1,0 +1,244 @@
+{
+  "version": 1,
+  "kind": "deployment-verification",
+  "url": "https://az104-revision-web.showtime-workers.workers.dev",
+  "checkedAt": "2026-10-08T05:07:22.543Z",
+  "ok": true,
+  "files": [
+    {
+      "path": "/assets/Analytics-BYwMBjXN.js",
+      "expectedHash": "413ad66b8e863eb96a6ea0094d8e134c725bb215aaa5b55263a92d81a68468d8",
+      "actualHash": "413ad66b8e863eb96a6ea0094d8e134c725bb215aaa5b55263a92d81a68468d8",
+      "matching": true
+    },
+    {
+      "path": "/assets/Analytics-CuVty6j_.css",
+      "expectedHash": "fee257f580ad91eb16f66e0ccaff5632a96d118169176a3fb81ecb9620a78341",
+      "actualHash": "fee257f580ad91eb16f66e0ccaff5632a96d118169176a3fb81ecb9620a78341",
+      "matching": true
+    },
+    {
+      "path": "/assets/EvidenceHealth-BUx1oBCs.js",
+      "expectedHash": "756a89d7485648a4df972c98b0ce8c771850f16594b1395db6b8debf9594599f",
+      "actualHash": "756a89d7485648a4df972c98b0ce8c771850f16594b1395db6b8debf9594599f",
+      "matching": true
+    },
+    {
+      "path": "/assets/EvidenceWorkbench-CSvdYI5z.js",
+      "expectedHash": "754c3cdf91526a7ed2debf82e81c5f1c49de59a6cc07f4d20a779518c86f8921",
+      "actualHash": "754c3cdf91526a7ed2debf82e81c5f1c49de59a6cc07f4d20a779518c86f8921",
+      "matching": true
+    },
+    {
+      "path": "/assets/EvidenceWorkbench-CTgAy7pj.css",
+      "expectedHash": "035cad169af93bf94d4b192154bf95c6e1a00368f68a72b497861ccc7bf37cac",
+      "actualHash": "035cad169af93bf94d4b192154bf95c6e1a00368f68a72b497861ccc7bf37cac",
+      "matching": true
+    },
+    {
+      "path": "/assets/Explorer-Chqs3dH6.css",
+      "expectedHash": "4d16397eb905556b0984784ebaba9b3264d9b48825374db57a651191e3a8a1d5",
+      "actualHash": "4d16397eb905556b0984784ebaba9b3264d9b48825374db57a651191e3a8a1d5",
+      "matching": true
+    },
+    {
+      "path": "/assets/Explorer-DlKZtHNM.js",
+      "expectedHash": "14ac9e90b47197f073b08f08d24555f8412860498086f925f15944f107fbf4f8",
+      "actualHash": "14ac9e90b47197f073b08f08d24555f8412860498086f925f15944f107fbf4f8",
+      "matching": true
+    },
+    {
+      "path": "/assets/Journey-Dsln67f_.css",
+      "expectedHash": "3908b1d2846cbff7af746a5eaab42963dd11a0691d2cc7bd911f389af6e63f2f",
+      "actualHash": "3908b1d2846cbff7af746a5eaab42963dd11a0691d2cc7bd911f389af6e63f2f",
+      "matching": true
+    },
+    {
+      "path": "/assets/Journey-qj_qWfwQ.js",
+      "expectedHash": "0971a8d465db809301902955849de6d4fa1cb2e4c8189b74c52619836bb1c6dd",
+      "actualHash": "0971a8d465db809301902955849de6d4fa1cb2e4c8189b74c52619836bb1c6dd",
+      "matching": true
+    },
+    {
+      "path": "/assets/LearningCenter-Ba43CWpk.css",
+      "expectedHash": "d63763997501a95bbb3924a02dc4a47f47f35bbbb15961d9b140ebee18c02737",
+      "actualHash": "d63763997501a95bbb3924a02dc4a47f47f35bbbb15961d9b140ebee18c02737",
+      "matching": true
+    },
+    {
+      "path": "/assets/LearningCenter-DIbDKqMC.js",
+      "expectedHash": "b0b4547a302612c068fb1eaa8580ba4b19c3bd9887bbda895c671d3e2fd58578",
+      "actualHash": "b0b4547a302612c068fb1eaa8580ba4b19c3bd9887bbda895c671d3e2fd58578",
+      "matching": true
+    },
+    {
+      "path": "/assets/Library-BtvAGNTh.js",
+      "expectedHash": "62451c040b3ac65132fd15d927bb235e021ddd67f0192f91326b2f8cedfa644d",
+      "actualHash": "62451c040b3ac65132fd15d927bb235e021ddd67f0192f91326b2f8cedfa644d",
+      "matching": true
+    },
+    {
+      "path": "/assets/Library-C1r_fTYa.css",
+      "expectedHash": "34a4b6200aa53a8e57d4e8a1369c459e5825dcc6ca11bc6fb2b02fbac9796f12",
+      "actualHash": "34a4b6200aa53a8e57d4e8a1369c459e5825dcc6ca11bc6fb2b02fbac9796f12",
+      "matching": true
+    },
+    {
+      "path": "/assets/Maintenance-D0l2Fdps.css",
+      "expectedHash": "6fefcc859cccd26fa488b02ceb716fc4042f56cd3d59fee20d0fd67ec503f5c0",
+      "actualHash": "6fefcc859cccd26fa488b02ceb716fc4042f56cd3d59fee20d0fd67ec503f5c0",
+      "matching": true
+    },
+    {
+      "path": "/assets/Maintenance-DGGvrXgG.js",
+      "expectedHash": "4eeb93bf772c858286775032bf7606d409ca20b042e0d8cbd73bef652306b7e5",
+      "actualHash": "4eeb93bf772c858286775032bf7606d409ca20b042e0d8cbd73bef652306b7e5",
+      "matching": true
+    },
+    {
+      "path": "/assets/QuestionWorkpad-BHJ-5zbf.css",
+      "expectedHash": "07ce1f80e917fafbfe473b0e594540dd8d4f98e68408250849e9adc75960984b",
+      "actualHash": "07ce1f80e917fafbfe473b0e594540dd8d4f98e68408250849e9adc75960984b",
+      "matching": true
+    },
+    {
+      "path": "/assets/QuestionWorkpad-CWWnjTwK.js",
+      "expectedHash": "cf23e9c6966e8108d859b11e0faf05f30292eb745bdc6cb73b8f6386b2a3b151",
+      "actualHash": "cf23e9c6966e8108d859b11e0faf05f30292eb745bdc6cb73b8f6386b2a3b151",
+      "matching": true
+    },
+    {
+      "path": "/assets/Reports-BZEFKU4p.js",
+      "expectedHash": "4d6b9bb6fb984b9288bcd80ab386015c9486f4f59aafb5c22e7e13afa8fc49ad",
+      "actualHash": "4d6b9bb6fb984b9288bcd80ab386015c9486f4f59aafb5c22e7e13afa8fc49ad",
+      "matching": true
+    },
+    {
+      "path": "/assets/Reports-DgWaQ3P2.css",
+      "expectedHash": "887918e4330c89478e49d1ba49d8637750052fe52bc9ec60b959c0694db8f7cc",
+      "actualHash": "887918e4330c89478e49d1ba49d8637750052fe52bc9ec60b959c0694db8f7cc",
+      "matching": true
+    },
+    {
+      "path": "/assets/SourceDashboard-BaVDDGU0.js",
+      "expectedHash": "a2ad1aaae17dbd320dd2bd44097546ee3949261937248134d237a55a0c557abb",
+      "actualHash": "a2ad1aaae17dbd320dd2bd44097546ee3949261937248134d237a55a0c557abb",
+      "matching": true
+    },
+    {
+      "path": "/assets/SourceDashboard-FYQ48iyM.css",
+      "expectedHash": "7dc78939e6467c53ec5da1588a88704a55e91bc48c97de80d800fa569ec2e71c",
+      "actualHash": "7dc78939e6467c53ec5da1588a88704a55e91bc48c97de80d800fa569ec2e71c",
+      "matching": true
+    },
+    {
+      "path": "/assets/index-DAe89zrD.js",
+      "expectedHash": "fcefd15dbc8447015bbb363a455bb265a4ce5f7a0416e481915fc65caeb3aaeb",
+      "actualHash": "fcefd15dbc8447015bbb363a455bb265a4ce5f7a0416e481915fc65caeb3aaeb",
+      "matching": true
+    },
+    {
+      "path": "/assets/index-DpwtYJAj.css",
+      "expectedHash": "ccd4c8f894d1dfd93dac7a9c6853867cf729eebcafa26ce43833e66f38f9bbf7",
+      "actualHash": "ccd4c8f894d1dfd93dac7a9c6853867cf729eebcafa26ce43833e66f38f9bbf7",
+      "matching": true
+    },
+    {
+      "path": "/assets/learning-data-DDLwAr-r.js",
+      "expectedHash": "2527eb215832c4b90136d1f664084bcb4050c563acff2135ae1da64f3fe13744",
+      "actualHash": "2527eb215832c4b90136d1f664084bcb4050c563acff2135ae1da64f3fe13744",
+      "matching": true
+    },
+    {
+      "path": "/assets/question-bank-qA3mPXWy.js",
+      "expectedHash": "c4e9d7ab4fea4a71e8b6e2bab8bc2d4424851ac9b8d0f149c1d871e34c2a473a",
+      "actualHash": "c4e9d7ab4fea4a71e8b6e2bab8bc2d4424851ac9b8d0f149c1d871e34c2a473a",
+      "matching": true
+    },
+    {
+      "path": "/assets/rolldown-runtime-hePW80VL.js",
+      "expectedHash": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+      "actualHash": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+      "matching": true
+    },
+    {
+      "path": "/assets/study-data-CHXtLcZB.js",
+      "expectedHash": "b73ef37af80683836881c39114a2590a11d27dcc26c496daa8099644ff1e1e7b",
+      "actualHash": "b73ef37af80683836881c39114a2590a11d27dcc26c496daa8099644ff1e1e7b",
+      "matching": true
+    },
+    {
+      "path": "/assets/trust-RP6GRrhI.js",
+      "expectedHash": "3d1465417da64614481429dcecedf682fcbdce006e91c922791738ee01d623e4",
+      "actualHash": "3d1465417da64614481429dcecedf682fcbdce006e91c922791738ee01d623e4",
+      "matching": true
+    },
+    {
+      "path": "/assets/validators-CI8esFNU.js",
+      "expectedHash": "ea22014e08c436261d6ee88037d708e50afa0bbf0555db46d65b59bc26e777b6",
+      "actualHash": "ea22014e08c436261d6ee88037d708e50afa0bbf0555db46d65b59bc26e777b6",
+      "matching": true
+    },
+    {
+      "path": "/assets/vendor-BFrqGuZg.js",
+      "expectedHash": "8b3f4f31381d55b902a1b762a29cc45d062a8ee3ed2db88def13d9ee5cb859ff",
+      "actualHash": "8b3f4f31381d55b902a1b762a29cc45d062a8ee3ed2db88def13d9ee5cb859ff",
+      "matching": true
+    },
+    {
+      "path": "/icons/icon-192.png",
+      "expectedHash": "806da937d64bfb0c7809dcc2ea4e889f3d5764ef5c5249558705249a14a4f498",
+      "actualHash": "806da937d64bfb0c7809dcc2ea4e889f3d5764ef5c5249558705249a14a4f498",
+      "matching": true
+    },
+    {
+      "path": "/icons/icon-512.png",
+      "expectedHash": "2d1736e38bc857a7f44760c4df5ebd181eb0005b290a097f0fd4408c7c9edfcb",
+      "actualHash": "2d1736e38bc857a7f44760c4df5ebd181eb0005b290a097f0fd4408c7c9edfcb",
+      "matching": true
+    },
+    {
+      "path": "/icons/icon.svg",
+      "expectedHash": "754d5be67d3381a03ab164e5a1dd4de870553ff3640332b60320b68bee72b70d",
+      "actualHash": "754d5be67d3381a03ab164e5a1dd4de870553ff3640332b60320b68bee72b70d",
+      "matching": true
+    },
+    {
+      "path": "/icons/maskable-512.png",
+      "expectedHash": "2d1736e38bc857a7f44760c4df5ebd181eb0005b290a097f0fd4408c7c9edfcb",
+      "actualHash": "2d1736e38bc857a7f44760c4df5ebd181eb0005b290a097f0fd4408c7c9edfcb",
+      "matching": true
+    },
+    {
+      "path": "/",
+      "expectedHash": "4bd06b46c8cfed4e73f7492801d1c42d7f965d726e7b806fd885f6b16588f0ee",
+      "actualHash": "4bd06b46c8cfed4e73f7492801d1c42d7f965d726e7b806fd885f6b16588f0ee",
+      "matching": true
+    },
+    {
+      "path": "/manifest.webmanifest",
+      "expectedHash": "7a6373d0d5c65fa747fee7445cc16f62a5f238a0b186e2dbd30b2b2711b7eebd",
+      "actualHash": "7a6373d0d5c65fa747fee7445cc16f62a5f238a0b186e2dbd30b2b2711b7eebd",
+      "matching": true
+    },
+    {
+      "path": "/offline-assets.json",
+      "expectedHash": "ed4c561092c32f6f864bc53a4013819a1724fd65f7ff15264039c06d9f61a148",
+      "actualHash": "ed4c561092c32f6f864bc53a4013819a1724fd65f7ff15264039c06d9f61a148",
+      "matching": true
+    },
+    {
+      "path": "/sw.js",
+      "expectedHash": "d2e7baa0e08c53e57f24a72d25ada3507a3c19f68a4b44e54c28084a86419e13",
+      "actualHash": "d2e7baa0e08c53e57f24a72d25ada3507a3c19f68a4b44e54c28084a86419e13",
+      "matching": true
+    },
+    {
+      "path": "/workbox-2fbc6a65.js",
+      "expectedHash": "39c2e6ae44c3f29666f6a328b6523bf13a053a1d95c74af8ddea82b1045b0b6e",
+      "actualHash": "39c2e6ae44c3f29666f6a328b6523bf13a053a1d95c74af8ddea82b1045b0b6e",
+      "matching": true
+    }
+  ],
+  "errors": []
+}
